@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: A.P.C.科学联盟-在线图书馆
+subtitle: '往期科普组文章汇总以及海量电子资源综合库'
+description: 'A.P.C.科学联盟图书馆'
 keywords:
-author: John Doe
-language: en
+author: A君
+language: zh-cn
 timezone: ''
 
 # URL
@@ -102,4 +102,6 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: git@github.com:APC-ScienceUnion/APC-ScienceUnion.github.io.git
+  branch: main
