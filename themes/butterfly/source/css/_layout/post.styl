@@ -191,7 +191,7 @@ beautify()
     position: relative
     margin: 40px 0 10px
     padding: 10px 16px
-    border: 1px solid var(--light-grey)
+    border: 2px solid var(--light-grey)
     transition: box-shadow .3s ease-in-out
 
     &:before
@@ -199,16 +199,16 @@ beautify()
       position: absolute
       top: 2px
       right: 12px
-      color: $theme-color
+      color: '#223254'
       content: '\f1f9'
       font-size: 1.3em
 
     &:hover
-      box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5)
+      box-shadow: 0 0 16px 0 rgba(255, 255, 255, 1), 0 4px 8px 0 rgba(255, 255, 255, 1)
 
     .post-copyright
       &-meta
-        color: $light-blue
+        color: $black
         font-weight: bold
 
       &-info
@@ -216,6 +216,7 @@ beautify()
 
         a
           text-decoration: underline
+          color: #223254
           word-break: break-word
 
           &:hover
