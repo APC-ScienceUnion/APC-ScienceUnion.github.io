@@ -1,23 +1,55 @@
-- class_name: 天文书籍
-  class_desc: 天文相关书籍，下列为测试link
+- class_name: 天文
+  class_desc: 刚柔交错，天文也
   link_list:
-    - name: Hexo
-      link: https://hexo.io/zh-tw/
-      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
-      descr: 快速、简单且强大的网誌框架
+    - name: 天文爱好者手册
+      link: https://raw.githubusercontent.com/APC-ScienceUnion/FileBed/main/《天文爱好者手册》.pdf
+      avatar: https://s2.loli.net/2022/03/13/QH6gfTdM3JiRZan.png
+      descr: 作者：冯韵芳
 
-- class_name: 物理书籍
-  class_desc: test link
+- class_name: 物理
+  class_desc: 析万物之理，判天地之美
+  link_list:
+    - name: 自然哲学之数学原理
+      link: https://raw.githubusercontent.com/APC-ScienceUnion/FileBed/main/《自然哲学之数学原理》-%20牛顿.pdf
+      avatar: https://s2.loli.net/2022/03/13/P9da2NSUMVBTeb5.png
+      descr: 作者：艾萨克·牛顿
+
+- class_name: 化学
+  class_desc: 变化的学问
+  link_list:
+    - name: 结构化学基础(第四版)
+      link: https://raw.githubusercontent.com/APC-ScienceUnion/FileBed/main/《结构化学基础(第四版)》-周公度.pdf
+      avatar: https://s2.loli.net/2022/03/13/OU1fIiaFgqvBY75.png
+      descr: 作者：周公度
+
+- class_name: 生物
+  class_desc: 野火烧不尽，春风吹又生
+  link_list:
+    - name: 暂无
+      link: https://raw.githubusercontent.com/APC-ScienceUnion/FileBed/main/
+      avatar: https://www.youtube.com/
+      descr: 暂无
+
+- class_name: 数学
+  class_desc: 想象成了计算的系数，于是数学也成了诗
   link_list:
     - name: Youtube
       link: https://www.youtube.com/
       avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
       descr: 视频网站
-    - name: Weibo
-      link: https://www.weibo.com/
-      avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
-      descr: 中国最大社交分享平臺
-    - name: Twitter
-      link: https://twitter.com/
-      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
-      descr: 社交分享平臺
+
+- class_name: 地理
+  class_desc: 天有日月星辰谓之文，地有山川陵谷谓之理
+  link_list:
+    - name: Youtube
+      link: https://www.youtube.com/
+      avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
+      descr: 视频网站
+
+- class_name: 计算机科学
+  class_desc: 由0与1组成的世界
+  link_list:
+    - name: Real-Time Renderering3提炼总结
+      link: https://raw.githubusercontent.com/APC-ScienceUnion/FileBed/main/《Real-Time%20Rendering%203rd》%20提炼总结.pdf
+      avatar: https://s2.loli.net/2022/03/13/8yYobHFdwtPg17T.png
+      descr: 作者：毛星云
