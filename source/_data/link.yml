@@ -2,54 +2,82 @@
   class_desc: 刚柔交错，天文也
   link_list:
     - name: 天文爱好者手册
-      link: https://raw.githubusercontent.com/APC-ScienceUnion/FileBed/main/《天文爱好者手册》.pdf
+      link: https://filebed.apc-library.xyz/Astronomy/天文爱好者手册.pdf
       avatar: https://s2.loli.net/2022/03/13/QH6gfTdM3JiRZan.png
       descr: 作者：冯韵芳
+    - name: 夜观星空
+      link: https://filebed.apc-library.xyz/Astronomy/夜观星空.pdf
+      avatar: https://s2.loli.net/2022/03/13/o6C2XNHVhx7zQfF.png
+      descr: 作者：特伦斯·迪金森
 
 - class_name: 物理
   class_desc: 析万物之理，判天地之美
   link_list:
-    - name: 自然哲学之数学原理
-      link: https://raw.githubusercontent.com/APC-ScienceUnion/FileBed/main/《自然哲学之数学原理》-%20牛顿.pdf
-      avatar: https://s2.loli.net/2022/03/13/P9da2NSUMVBTeb5.png
-      descr: 作者：艾萨克·牛顿
+    - name: 物理学大题典1-力学
+      link: https://filebed.apc-library.xyz/Physics/物理学大题典1-力学.pdf
+      avatar: https://s2.loli.net/2022/03/13/o2AbEUXk5dImsJi.png
+      descr: 作者：张永德
 
 - class_name: 化学
   class_desc: 变化的学问
   link_list:
     - name: 结构化学基础(第四版)
-      link: https://raw.githubusercontent.com/APC-ScienceUnion/FileBed/main/《结构化学基础(第四版)》-周公度.pdf
+      link: https://filebed.apc-library.xyz/Chemistry/结构化学基础(第四版).pdf
       avatar: https://s2.loli.net/2022/03/13/OU1fIiaFgqvBY75.png
       descr: 作者：周公度
+    - name: 元素化学上册
+      link: https://filebed.apc-library.xyz/Chemistry/元素化学上册.pdf
+      avatar: https://s2.loli.net/2022/03/13/3WdBYVklo1IAPmK.png
+      descr: 作者：格林伍德
+    - name: 元素化学中册
+      link: https://filebed.apc-library.xyz/Chemistry/元素化学中册.pdf
+      avatar: https://s2.loli.net/2022/03/13/3WdBYVklo1IAPmK.png
+      descr: 作者：格林伍德
+    - name: 元素化学下册
+      link: https://filebed.apc-library.xyz/Chemistry/元素化学下册.pdf
+      avatar: https://s2.loli.net/2022/03/13/3WdBYVklo1IAPmK.png
+      descr: 作者：格林伍德
 
 - class_name: 生物
   class_desc: 野火烧不尽，春风吹又生
   link_list:
-    - name: 暂无
-      link: https://raw.githubusercontent.com/APC-ScienceUnion/FileBed/main/
-      avatar: https://www.youtube.com/
-      descr: 暂无
+    - name: 奈特人体神经解剖彩色图谱-2006
+      link: https://filebed.apc-library.xyz/Biology/奈特人体神经解剖彩色图谱-2006.pdf
+      avatar: https://s2.loli.net/2022/03/13/prWAD5jqh2f986g.png
+      descr: 作者：David L. Felten
+    - name: 奈特药理学彩色图谱-2006
+      link: https://filebed.apc-library.xyz/Biology/奈特药理学彩色图谱-2006.pdf
+      avatar: https://s2.loli.net/2022/03/13/UxJgq46S5s27BnI.png
+      descr: 作者：Robert B. Raffa
 
 - class_name: 数学
   class_desc: 想象成了计算的系数，于是数学也成了诗
   link_list:
-    - name: Youtube
-      link: https://www.youtube.com/
-      avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
-      descr: 视频网站
+    - name: 自然哲学之数学原理
+      link: https://filebed.apc-library.xyz/Mathematical/自然哲学之数学原理.pdf
+      avatar: https://s2.loli.net/2022/03/13/P9da2NSUMVBTeb5.png
+      descr: 作者：艾萨克·牛顿
+    - name: 同济高等数学第六版上册
+      link: https://filebed.apc-library.xyz/Mathematical/同济高等数学第六版上册.pdf
+      avatar: https://s2.loli.net/2022/03/13/o1Pui6pfZVjcbKk.png
+      descr: 作者：同济大学数学系
 
 - class_name: 地理
   class_desc: 天有日月星辰谓之文，地有山川陵谷谓之理
   link_list:
-    - name: Youtube
-      link: https://www.youtube.com/
+    - name: 占位符
+      link: null
       avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
-      descr: 视频网站
+      descr: 暂时没有
 
 - class_name: 计算机科学
   class_desc: 由0与1组成的世界
   link_list:
     - name: Real-Time Renderering3提炼总结
-      link: https://raw.githubusercontent.com/APC-ScienceUnion/FileBed/main/《Real-Time%20Rendering%203rd》%20提炼总结.pdf
+      link: https://filebed.apc-library.xyz/ComputerScience/Real-Time%20Rendering%203rd.pdf
       avatar: https://s2.loli.net/2022/03/13/8yYobHFdwtPg17T.png
       descr: 作者：毛星云
+    - name: HTML5从入门到精通
+      link: https://filebed.apc-library.xyz/ComputerScience/HTML5从入门到精通.pdf
+      avatar: https://s2.loli.net/2022/03/13/oBQ9a7mu18zcTgU.png
+      descr: 作者：中文学习教程
