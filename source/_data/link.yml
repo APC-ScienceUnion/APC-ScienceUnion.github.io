@@ -65,10 +65,10 @@
 - class_name: 地理
   class_desc: 天有日月星辰谓之文，地有山川陵谷谓之理
   link_list:
-    - name: 占位符
-      link: null
-      avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
-      descr: 暂时没有
+    - name: 地理学与生活(全彩)-第11版
+      link: https://filebed.apc-library.xyz/Geography/地理学与生活(全彩)-第11版
+      avatar: https://s2.loli.net/2022/03/13/UL8VwaJ3bB1yXcE.png
+      descr: 作者：[美]阿瑟·格蒂斯
 
 - class_name: 计算机科学
   class_desc: 由0与1组成的世界

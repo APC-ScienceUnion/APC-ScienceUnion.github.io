@@ -146,3 +146,10 @@ image_minifier:
   optimizationLevel: 2 
   pngquant: true
   progressive: true
+
+markdown:
+  plugins:
+    - plugin:
+      name: '@neilsustc/markdown-it-katex'
+      options:
+        strict: false
