@@ -47,15 +47,6 @@
   </url>
   
   <url>
-    <loc>https://www.apc-library.xyz/categories/index.html</loc>
-    
-    <lastmod>2022-03-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.apc-library.xyz/link/index.html</loc>
     
     <lastmod>2022-03-13</lastmod>
@@ -66,6 +57,15 @@
   
   <url>
     <loc>https://www.apc-library.xyz/tags/index.html</loc>
+    
+    <lastmod>2022-03-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.apc-library.xyz/categories/index.html</loc>
     
     <lastmod>2022-03-13</lastmod>
     
