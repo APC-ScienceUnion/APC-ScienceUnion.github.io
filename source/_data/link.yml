@@ -9,6 +9,10 @@
       link: https://filebed.apc-library.xyz/Astronomy/夜观星空.pdf
       avatar: https://s2.loli.net/2022/03/13/o6C2XNHVhx7zQfF.png
       descr: 作者：特伦斯·迪金森
+    - name: 基础天文学
+      link: https://filebed.apc-library.xyz/Astronomy/基础天文学.pdf
+      avatar: https://s2.loli.net/2022/03/27/oIeRAi2rWhBxTtG.png
+      descr: 作者：刘学富
 
 - class_name: 物理
   class_desc: 析万物之理，判天地之美
@@ -81,3 +85,11 @@
       link: https://filebed.apc-library.xyz/ComputerScience/HTML5从入门到精通.pdf
       avatar: https://s2.loli.net/2022/03/13/oBQ9a7mu18zcTgU.png
       descr: 作者：中文学习教程
+    - name: UnityShader入门精要
+      link: https://filebed.apc-library.xyz/ComputerScience/UnityShader入门精要.pdf
+      avatar: https://s2.loli.net/2022/03/27/lgQz58id9CFHuwV.png
+      descr: 作者：冯乐乐
+    - name: ProGit
+      link: https://filebed.apc-library.xyz/ComputerScience/progit.pdf
+      avatar: https://s2.loli.net/2022/03/27/FzfDR8e5A3IlymM.png
+      descr: 作者：Scott Chacon
