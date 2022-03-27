@@ -17,6 +17,18 @@
       link: https://filebed.apc-library.xyz/Astronomy/通俗天文学.pdf
       avatar: https://s2.loli.net/2022/03/27/Iqvp31bwlFgfG7h.png
       descr: 作者：[美]西蒙·纽康
+    - name: 天文学新概论(第四版)
+      link: https://filebed.apc-library.xyz/Astronomy/天文学新概论.pdf
+      avatar: https://s2.loli.net/2022/03/27/8zDjnd94NST2EWh.png
+      descr: 作者：苏宜
+    - name: 极简天文学
+      link: https://filebed.apc-library.xyz/Astronomy/极简天文学.pdf
+      avatar: https://s2.loli.net/2022/03/27/7sXnmKYBT3jS2b5.png
+      descr: 作者：[英]科林·斯图尔特
+    - name: 大众天文学
+      link: https://filebed.apc-library.xyz/Astronomy/大众天文学.pdf
+      avatar: https://s2.loli.net/2022/03/27/inufQGVgpIOs7Ar.png
+      descr: 作者：C.弗拉马利翁
     - name: 天文爱好者手册
       link: https://filebed.apc-library.xyz/Astronomy/天文爱好者手册.pdf
       avatar: https://s2.loli.net/2022/03/13/QH6gfTdM3JiRZan.png
@@ -101,3 +113,7 @@
       link: https://filebed.apc-library.xyz/ComputerScience/progit.pdf
       avatar: https://s2.loli.net/2022/03/27/FzfDR8e5A3IlymM.png
       descr: 作者：Scott Chacon
+    - name: 深入浅出图神经网络-GNN原理解析
+      link: https://filebed.apc-library.xyz/ComputerScience/深入浅出图神经网络.pdf
+      avatar: https://s2.loli.net/2022/03/27/sTbKyLfv9kAV3h8.png
+      descr: 作者：刘忠雨
