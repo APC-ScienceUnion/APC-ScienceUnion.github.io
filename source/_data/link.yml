@@ -1,10 +1,6 @@
 - class_name: 天文
   class_desc: 刚柔交错，天文也
   link_list:
-    - name: 天文爱好者手册
-      link: https://filebed.apc-library.xyz/Astronomy/天文爱好者手册.pdf
-      avatar: https://s2.loli.net/2022/03/13/QH6gfTdM3JiRZan.png
-      descr: 作者：冯韵芳
     - name: 夜观星空
       link: https://filebed.apc-library.xyz/Astronomy/夜观星空.pdf
       avatar: https://s2.loli.net/2022/03/13/o6C2XNHVhx7zQfF.png
@@ -13,6 +9,18 @@
       link: https://filebed.apc-library.xyz/Astronomy/基础天文学.pdf
       avatar: https://s2.loli.net/2022/03/27/oIeRAi2rWhBxTtG.png
       descr: 作者：刘学富
+    - name: 实用天文学
+      link: https://filebed.apc-library.xyz/Astronomy/实用天文学.pdf
+      avatar: https://s2.loli.net/2022/03/27/IjRxDqpbmEFXy5k.png
+      descr: 作者：陈永龄
+    - name: 通俗天文学:和大师一起与宇宙对话
+      link: https://filebed.apc-library.xyz/Astronomy/通俗天文学.pdf
+      avatar: https://s2.loli.net/2022/03/27/Iqvp31bwlFgfG7h.png
+      descr: 作者：[美]西蒙·纽康
+    - name: 天文爱好者手册
+      link: https://filebed.apc-library.xyz/Astronomy/天文爱好者手册.pdf
+      avatar: https://s2.loli.net/2022/03/13/QH6gfTdM3JiRZan.png
+      descr: 作者：冯韵芳
 
 - class_name: 物理
   class_desc: 析万物之理，判天地之美
