@@ -2,7 +2,8 @@
 title: 植物卡片
 cover: https://tvax3.sinaimg.cn/large/006UcwnJly1h0tmk4op6tj31o02yoqv5.jpg
 ---
-> **雄黄兰**
+{% note info simple %}
+**雄黄兰**
 制作人：癸草
 {% endnote %}
 
