@@ -1,7 +1,9 @@
 ---
 title: 植物卡片
-cover: https://raw.githubusercontent.com/Guiny-Time/PictureBed/main/2022%E5%8C%96%E6%8B%9F24h.png
+cover: https://tvax3.sinaimg.cn/large/006UcwnJly1h0tmk4op6tj31o02yoqv5.jpg
 ---
 {% gallery %}
-![氟氯双醛-2022化拟新年12时辰](https://raw.githubusercontent.com/Guiny-Time/PictureBed/main/2022%E5%8C%96%E6%8B%9F24h.png)
+风雨兰
+![](https://tvax3.sinaimg.cn/large/006UcwnJly1h0tmk4op6tj31o02yoqv5.jpg)
+风雨兰*2
 {% endgallery %}
