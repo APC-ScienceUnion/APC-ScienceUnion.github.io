@@ -2,11 +2,13 @@
 title: 植物卡片
 cover: https://tvax3.sinaimg.cn/large/006UcwnJly1h0tmk4op6tj31o02yoqv5.jpg
 ---
-{% gallery %}
 雄黄兰
+{% gallery %}
 ![](https://tvax3.sinaimg.cn/large/006UcwnJly1h0tmk4op6tj31o02yoqv5.jpg)
 ![](https://tva1.sinaimg.cn/large/006UcwnJly1h0tmlvuuy9j31o02yob2a.jpg)
+{% endgallery %}
 美人蕉
+{% gallery %}
 ![](https://tva1.sinaimg.cn/large/006UcwnJly1h0tmmx8b8ej31o02yoe82.jpg)
 ![](https://tva2.sinaimg.cn/large/006UcwnJly1h0tmmx8b8ej31o02yoe82.jpg)
 ![](https://tvax4.sinaimg.cn/large/006UcwnJgy1h0tmtxuld7j31o02yoe81.jpg)
