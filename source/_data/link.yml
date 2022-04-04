@@ -25,6 +25,18 @@
       link: https://filebed.apc-library.xyz/Astronomy/极简天文学 .pdf
       avatar: https://s2.loli.net/2022/03/27/7sXnmKYBT3jS2b5.png
       descr: 作者：[英]科林·斯图尔特
+    - name: 南大天文-上
+      link: https://filebed.apc-library.xyz/Astronomy/南大天文 上.pdf
+      avatar: https://tvax3.sinaimg.cn/large/006UcwnJgy1h0xwrpblb8j30km0a1gm9.jpg
+      descr: 作者：南京大学天文系
+    - name: 南大天文-中
+      link: https://filebed.apc-library.xyz/Astronomy/南大天文 中.pdf
+      avatar: https://tvax3.sinaimg.cn/large/006UcwnJgy1h0xwrpblb8j30km0a1gm9.jpg
+      descr: 作者：南京大学天文系
+    - name: 南大天文-下
+      link: https://filebed.apc-library.xyz/Astronomy/南大天文 下.pdf
+      avatar: https://tvax3.sinaimg.cn/large/006UcwnJgy1h0xwrpblb8j30km0a1gm9.jpg
+      descr: 作者：南京大学天文系
     - name: 大众天文学
       link: https://filebed.apc-library.xyz/Astronomy/大众天文学.pdf
       avatar: https://s2.loli.net/2022/03/27/inufQGVgpIOs7Ar.png
@@ -41,6 +53,14 @@
       link: https://filebed.apc-library.xyz/Physics/物理学大题典1-力学.pdf
       avatar: https://s2.loli.net/2022/03/13/o2AbEUXk5dImsJi.png
       descr: 作者：张永德
+    - name: 黑洞物理学
+      link: https://filebed.apc-library.xyz/Physics/黑洞物理学.pdf
+      avatar: https://tva3.sinaimg.cn/large/006UcwnJgy1h0xwim2040j30ft0jbaak.jpg
+      descr: 作者：王永久
+    - name: 天体物理学
+      link: https://filebed.apc-library.xyz/Physics/天体物理学.pdf
+      avatar: https://tvax3.sinaimg.cn/large/006UcwnJgy1h0xwla2wenj30a60dvt9b.jpg
+      descr: 作者：李宗伟、肖兴华
 
 - class_name: 化学
   class_desc: 变化的学问
