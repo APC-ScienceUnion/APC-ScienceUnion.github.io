@@ -8,8 +8,6 @@ copyright_author: '我本张逸仙'
 katex: true
 ---
 
-# 变分推断与生成模型
-
 > 作者：我本张逸仙
 
 # 一. 变分推断
