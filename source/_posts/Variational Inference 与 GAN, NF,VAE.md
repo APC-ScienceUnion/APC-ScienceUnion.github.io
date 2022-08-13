@@ -9,6 +9,7 @@ katex: true
 ---
 
 > 作者：我本张逸仙
+作者知乎主页链接：<a href="https://www.zhihu.com/people/yi-xian-zhang-91">Thinker</a>
 
 # 一. 变分推断
 
