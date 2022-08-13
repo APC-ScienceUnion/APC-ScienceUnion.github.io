@@ -14,9 +14,7 @@ katex: true
 # 一. 变分推断
 
 基本思路就是：在概率模型中，经常需要近似难以计算的概率分布。对于所有未知量的推断都可以看作是后验概率的推断（因为贝叶斯公式可以构造）：
-$$
-p(x) = \sum p(x|z)p(z)
-$$
+$$p(x) = \sum p(x|z)p(z)$$
 对于大量数据而言，马尔可夫蒙特卡洛方法就太慢了，因此就需要用到**变分推断法**。
 
 这里经常遇到的是两种变量，一个是**real data：$x$**，还有一个是**latent data: $z$​**。
@@ -24,41 +22,27 @@ $$
 那么构造的推断问题就是：输入数据的后验条件概率分布$p(z|x)$​​的得知。通过**ELBO**的方法，希望找出一个**真实的分布$q(z)$**，用这个真实的分布来近似代替真实的**后验分布$p(z|x)$​**。
 
 因此需要优化的是它们的KL散度:
-$$
-q^*(z) = argmin_{q(z)∈Q}KL(q(z)||p(z|x))
-$$
+$$q^*(z) = argmin_{q(z)∈Q}KL(q(z)||p(z|x))$$
 而KL散度值也可以进一步改写：(下面的期望均是对$q(z)$的期望​)
-$$
-KL(q(z)||p(z|x)) =E(\log q(z)) - E(\log p(z|x))\\
+$$KL(q(z)||p(z|x)) =E(\log q(z)) - E(\log p(z|x))\\
 =E(\log q(z)) - E(\log p(x,z))
-+ \log p(x)
-$$
++ \log p(x)$$
 因此，定义**evidence lower bound（简称ELBO）**：
-$$
-ELBO(q) = E(\log p(z,x)) - E(\log q(z))
-$$
+$$ELBO(q) = E(\log p(z,x)) - E(\log q(z))$$
 当然了，上面的$q(z)$​可以换$q(z|x)$，那么等式只需要稍加修正一下即可：​
 
 不论是在VAE,GAN还是在NF里面，总有一个不等式特别重要：
 
 - 让$p_\theta(z|x)$与$q_\phi(z|x)$尽可能近似
-  $$
-  D_{KL}(q_\phi(z|x)||p_\theta(z|x))
+  $$D_{KL}(q_\phi(z|x)||p_\theta(z|x))
   = \log(p_\theta(x)) - \sum_zq_{\phi}(z|x)\log(\frac{p_{\theta}(x,z)}{q_{\phi}(z|x)})
-  \\=\log(p_\theta(x)) - L(\theta,\phi;x)
-  $$
+  \\=\log(p_\theta(x)) - L(\theta,\phi;x)$$
   该方程想要$D_{KL}$​尽可能接近于0，就是让他们俩个尽可能地接近，因此，继续做转换得到：
-  $$
-  L(\theta,\phi;x) = E_{q_{\phi}(z|x)}[\log(p_{\theta}(x|z))] - D_{KL}(q_{\phi}(z|x)||p_{\theta}(z))
-  $$
+  $$L(\theta,\phi;x) = E_{q_{\phi}(z|x)}[\log(p_{\theta}(x|z))] - D_{KL}(q_{\phi}(z|x)||p_{\theta}(z))$$
   所以，把两个等式联立，就可得到：
-  $$
-  \log(p_\theta(x)) - D_{KL}(q_\phi(z|x)||p_\theta(z|x)) = E_{q_{\phi}(z|x)}[\log(p_{\theta}(x|z))] - D_{KL}(q_{\phi}(z|x)||p_{\theta}(z))
-  $$
+  $$\log(p_\theta(x)) - D_{KL}(q_\phi(z|x)||p_\theta(z|x)) = E_{q_{\phi}(z|x)}[\log(p_{\theta}(x|z))] - D_{KL}(q_{\phi}(z|x)||p_{\theta}(z))$$
   而目标是要让$D_{KL}(q_\phi(z|x)||p_\theta(z|x))$​尽可能接近于0，因此可以得到论文中的等式：
-  $$
-  \log(p_\theta(x)) ≥ E_{q_{\phi}(z|x)}[\log(p_{\theta}(x|z))] - D_{KL}(q_{\phi}(z|x)||p_{\theta}(z)) = -F (x)
-  $$
+  $$\log(p_\theta(x)) ≥ E_{q_{\phi}(z|x)}[\log(p_{\theta}(x|z))] - D_{KL}(q_{\phi}(z|x)||p_{\theta}(z)) = -F (x)$$
   上面的公式便是**变分推理**的重要的地方。这里的$F$被称为**ELBO**界
 
 # 二. VAE (变分自编码器)
