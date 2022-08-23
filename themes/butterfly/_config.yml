@@ -9,6 +9,7 @@ menu:
   分类: /categories/ || fas fa-folder-open
   图片||fa-regular fa-images:
     植物卡片: /gallery/PlantCard/ || fa-brands fa-pagelines
+    Science&三行情书: /gallery/ScienceLetter/ || fa-solid fa-envelope
   资源: /link/ || fas fa-link
   关于我们: /about/ || fas fa-heart
 
