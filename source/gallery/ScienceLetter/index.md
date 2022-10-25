@@ -5,6 +5,7 @@ cover: https://tvax1.sinaimg.cn/large/006UcwnJly1h5h6tjj65hj31ck0yg1ky.jpg
 {% note info simple %}
 **Science&三行情书**是2022年夏天阿婆村举办的一场征集活动。我们选出了部分优秀作品，在经过作者同意的情况下制作成了这些精美的卡片并展示了出来。
 作者信息标注在卡片底部区域，**请勿在未经许可的情况下二次使用或编辑作品**
+图片加载较慢，请耐心等待~
 {% endnote %}
 
 {% gallery %}
