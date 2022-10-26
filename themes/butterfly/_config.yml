@@ -115,7 +115,7 @@ category_per_img:
   生物学: https://tva4.sinaimg.cn/large/006UcwnJly1h7hs683aiej30zk0k0an0.jpg
   古生物学: https://tva3.sinaimg.cn/large/006UcwnJly1h76c3yim51j32z01o77wl.jpg
   地质学: https://tvax3.sinaimg.cn/large/006UcwnJly1h7ht1ot0ujj31g30z84qp.jpg
-  天文学: https://tva4.sinaimg.cn/large/006UcwnJly1h7htuqqwsdj335s2zyb2c.jpg
+  天文历法: https://tva4.sinaimg.cn/large/006UcwnJly1h7htuqqwsdj335s2zyb2c.jpg
   心理学: https://tva3.sinaimg.cn/large/006UcwnJly1h7htwu35ljj30vi0ppq7r.jpg
   机械制造: https://tvax4.sinaimg.cn/large/006UcwnJly1h7hu01jsvzj30uk0kdgp8.jpg
   物理: https://tva1.sinaimg.cn/large/006UcwnJly1h7hu1bwtlfj312w0h6wgv.jpg
@@ -186,10 +186,10 @@ anchor: false
 # toc (目錄)
 toc:
   post: true
-  page: false
+  page: true
   number: true
   expand: false
-  style_simple: false # for post
+  style_simple: true # for post
 
 post_copyright:
   enable: true
@@ -489,8 +489,8 @@ index_top_img_height:
 # The user interface setting of category and tag page (category和tag頁的UI設置)
 # index - same as Homepage UI (index 值代表 UI將與首頁的UI一樣)
 # default - same as archives UI 默認跟archives頁面UI一樣
-category_ui: # 留空或 index
-tag_ui: # 留空或 index
+category_ui: index# 留空或 index
+tag_ui: index# 留空或 index
 
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
