@@ -79,17 +79,17 @@ favicon: img/icon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://tva1.sinaimg.cn/large/006UcwnJly1h7hrodko46j34k24k2ha4.jpg
+  img: https://yanxuan.nosdn.127.net/f6034ec77971722fca3080793ae3359f.png
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://tva2.sinaimg.cn/large/006UcwnJly1h7hrk479owj34n433k1l0.jpg
+index_img: https://bing.ioliu.cn/v1/?w=1920&h=1200
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://tva3.sinaimg.cn/large/006UcwnJly1h7hroutnfhj33g81md4qp.jpg
+default_top_img: https://yanxuan.nosdn.127.net/432fbacb591f9256c9884ed43d05ffa0.png
 
 # The banner image of archive page
 archive_img:
@@ -111,17 +111,17 @@ category_img:
 # format:
 #  - category name: xxxxx
 category_per_img:
-  人文历史: https://tvax3.sinaimg.cn/large/006UcwnJly1h7hs500ki1j30uz0n8gsk.jpg
-  生物学: https://tva4.sinaimg.cn/large/006UcwnJly1h7hs683aiej30zk0k0an0.jpg
-  古生物学: https://tva3.sinaimg.cn/large/006UcwnJly1h76c3yim51j32z01o77wl.jpg
-  地质学: https://tvax3.sinaimg.cn/large/006UcwnJly1h7ht1ot0ujj31g30z84qp.jpg
-  天文历法: https://tva4.sinaimg.cn/large/006UcwnJly1h7htuqqwsdj335s2zyb2c.jpg
-  心理学: https://tva3.sinaimg.cn/large/006UcwnJly1h7htwu35ljj30vi0ppq7r.jpg
-  机械制造: https://tvax4.sinaimg.cn/large/006UcwnJly1h7hu01jsvzj30uk0kdgp8.jpg
-  物理: https://tva1.sinaimg.cn/large/006UcwnJly1h7hu1bwtlfj312w0h6wgv.jpg
-  社会经济: https://tvax4.sinaimg.cn/large/006UcwnJly1h7hvu0da55j315o0kutpx.jpg
-  航空航天: https://tvax2.sinaimg.cn/large/006UcwnJly1h7hvvkdld7j345c2cc1kx.jpg
-  计算机科学: https://tvax4.sinaimg.cn/large/006UcwnJly1h7hvxf9hz5j31400m8q6o.jpg
+  人文历史: https://yanxuan.nosdn.127.net/e5c6eeb0a6ea2dd9a711d592555bf6cb.png
+  生物学: https://yanxuan.nosdn.127.net/401163c39705a35fef2510b059c8da74.png
+  古生物学: https://pic.rmb.bdstatic.com/bjh/e95a156e6aeb6b97f2d81508cc137eaf.png
+  地质学: https://yanxuan.nosdn.127.net/9cb0802b8a22911d05e4161107c3fa59.png
+  天文历法: https://pic.rmb.bdstatic.com/bjh/414ea0ba8528d62b232d892168acfe93.jpeg
+  心理学: https://yanxuan.nosdn.127.net/1b99ad4cc38057f08a480c6f2d8c2d55.png
+  机械制造: https://yanxuan.nosdn.127.net/18d03fc54fce4e5af951ac43b8f67322.png
+  物理学: https://yanxuan.nosdn.127.net/478767bc7f7d00d5a8948d878055b4a4.png
+  社会经济: https://yanxuan.nosdn.127.net/e17534d8f164c2fb6ab2424c4068a42f.png
+  航空航天: https://pic.rmb.bdstatic.com/bjh/ed8c6243b317240d5790ae83a89e6419.png
+  计算机科学: https://yanxuan.nosdn.127.net/1b71722722c74013e6717c40afa39af4.png
 
 cover:
   # display the cover or not (是否顯示文章封面)
@@ -133,7 +133,7 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - https://s2.loli.net/2022/03/12/RFyAuhOHdJnBXEY.jpg
+    - https://yanxuan.nosdn.127.net/f6034ec77971722fca3080793ae3359f.png
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
@@ -144,7 +144,7 @@ error_img:
 error_404:
   enable: true
   subtitle: 'Page Not Found'
-  background: https://tva2.sinaimg.cn/large/006UcwnJly1h7hrpa67jdj31kx14htgd.jpg
+  background: https://yanxuan.nosdn.127.net/05b43f8c98231f291b424cb78d46c93f.png
 
 post_meta:
   page: # Home Page
@@ -201,7 +201,7 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: https://tvax1.sinaimg.cn/large/006UcwnJly1h7hrpoat2kj3062066t98.jpg
+    - img: https://yanxuan.nosdn.127.net/f1a9eb5f52d07d5772ed06000cd03394.png
       link: https://afdian.net/@apc-library
       text: 爱发电(点击图片跳转)
 
@@ -495,7 +495,7 @@ tag_ui: index# 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: 'url(https://tvax4.sinaimg.cn/large/006UcwnJly1h7hs1cm734j33uw5mnkhj.jpg)'
+background: 'url(https://yanxuan.nosdn.127.net/ab8e7fb9a56a076169745cbce3dcd56e.png)'
 
 # Footer Background
 footer_bg: true
