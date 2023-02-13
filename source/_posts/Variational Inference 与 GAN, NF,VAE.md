@@ -3,7 +3,7 @@ tags: ['计算机科学','GAN','对抗学习','NF','VAE','变分自编码器','�
 title: 变分推断与生成模型
 date: '2022-08-13 18:06:01'
 categories: '计算机科学'
-cover: https://tva3.sinaimg.cn/large/006UcwnJly1h55efqdgjmj30rm0ckq5p.jpg
+cover: https://yanxuan.nosdn.127.net/690ea921fa343b9d40c9bbc3e95f8cc3.png
 copyright_author: '我本张逸仙'
 katex: true
 ---
@@ -11,7 +11,7 @@ katex: true
 > 作者：我本张逸仙
 作者知乎主页链接：<a href="https://www.zhihu.com/people/yi-xian-zhang-91">Thinker</a>
 
-# 一. 变分推断
+# 变分推断
 
 基本思路就是：在概率模型中，经常需要近似难以计算的概率分布。对于所有未知量的推断都可以看作是后验概率的推断（因为贝叶斯公式可以构造）：
 $$p(x) = \sum p(x|z)p(z)$$
@@ -45,13 +45,13 @@ $$ELBO(q) = E(\log p(z,x)) - E(\log q(z))$$
   $$\log(p_\theta(x)) ≥ E_{q_{\phi}(z|x)}[\log(p_{\theta}(x|z))] - D_{KL}(q_{\phi}(z|x)||p_{\theta}(z)) = -F (x)$$
   上面的公式便是**变分推理**的重要的地方。这里的$F$被称为**ELBO**界
 
-# 二. VAE (变分自编码器)
+# VAE (变分自编码器)
 
 VAE是想要上面求解的$ELBO$​​尽可能地大，它提出了SGVB和重参数方法。
 
 VAE的网络架构图如下所示：
 
-<img src="https://tva2.sinaimg.cn/large/006UcwnJly1h55eci5870j30qb0gqjtb.jpg" style="zoom:50%;" />
+<img src="https://yanxuan.nosdn.127.net/4eb4b7ba0ca6d984ca1344da0f43e942.png" style="zoom:50%;" />
 
 简单来说，它是输入real data $x$，通过一个生成网络$h,g$生成想要得到的$\mu_x,\sigma_x$：
 $$
@@ -91,11 +91,11 @@ $$
 
 如果你想要生成一个全新的图片的话，直接对$z$进行sampling，然后代入decoder网络，就可以得到一个全新的图片了。
 
-# 三. GAN (对抗学习)
+# GAN (对抗学习)
 
 GAN是一个生成器G--generator网络和一个判别器D-discriminator网络构成的：
 
-<img src="https://tva3.sinaimg.cn/large/006UcwnJly1h55efqdgjmj30rm0ckq5p.jpg" style="zoom:50%;" />
+<img src="https://yanxuan.nosdn.127.net/690ea921fa343b9d40c9bbc3e95f8cc3.png" style="zoom:50%;" />
 
 GAN可以认为是使用的是交叉熵的公式来判别分布的相似的：
 $$
@@ -144,7 +144,7 @@ C(G) = -log(4) + KL(p_{data}||\frac{p_{data}+p_g}{2})+ KL(p_{g}||\frac{p_{data}+
 $$
 当JSD为0的时候，就认为$p_{data}$​和$p_g$相等了，就分不出彼此来了。此时C* = -log4​​
 
-# 四. NF (流模型)
+# NF (流模型)
 
 标准化流是另外一种生成网络，它基于一个空间变化的定理。
 
@@ -171,7 +171,7 @@ $$
 
 然后假设它是一系列的Flow网络组成
 
-<img src="https://tvax4.sinaimg.cn/large/006UcwnJly1h55esfn2mfj30y806i76i.jpg" style="zoom:50%;" />
+<img src="https://yanxuan.nosdn.127.net/9285896772cfd53daf0198d127c0ed11.png" style="zoom:50%;" />
 
 因此对原网络进行修改：
 $$
@@ -185,7 +185,7 @@ $$
 
 **1. Coupling Layer**: -- > 用在NICE 和 Real NVP里面的
 
-<img src="https://tva2.sinaimg.cn/large/006UcwnJly1h55esr5szsj31bi0rzthl.jpg" style="zoom:40%;" />
+<img src="https://yanxuan.nosdn.127.net/daf504484d6d28bb2190c83603860ba1.png" style="zoom:40%;" />
 
 它让前**1：d**的直接从z->x，而后边的**d+1:D**的就要通过前边的数据经过F和H网络求解$\beta_{d+1:D}$和$\gamma_{d+1:D}$，经过线性叠加：
 $$
@@ -205,7 +205,7 @@ $$
 
 因此必须要交错的去处理它，每一个网络随机选取d项，且d的大小也需要不一样，这样stacking起来后才会有效果。
 
-<img src="https://tvax3.sinaimg.cn/large/006UcwnJly1h55et9ian9j30wy08gwhp.jpg" style="zoom:50%;" />
+<img src="https://yanxuan.nosdn.127.net/27cc85c539216ea3bde0a311946d7bca.png" style="zoom:50%;" />
 
 
 
@@ -236,7 +236,7 @@ $$
 
 只要W是好求解的，那么结果也就很好求解：
 
-<img src="https://tvax4.sinaimg.cn/large/006UcwnJly1h55etopj8fj30v30gcwh4.jpg" style="zoom:50%;" />
+<img src="https://yanxuan.nosdn.127.net/5730eab1fc07ca30294728bd9a46616e.png" style="zoom:50%;" />
 
 因此结果就是，对角线上的W矩阵相乘：
 $$
