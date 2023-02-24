@@ -4,6 +4,9 @@ if theme.aside.card_webinfo.enable
       i.fas.fa-chart-line
       span= _p('aside.card_webinfo.headline')
     .webinfo
+      if theme.aside.card_webinfo.map
+        .webinfo-item
+          script(type="text/javascript" id="clstr_globe" src=url_for('//clustrmaps.com/globe.js?d=jmZyciKGGLH6lXdrapXyVjzTuxakhRoo1yZTvN-_Oj8'))
       if theme.aside.card_webinfo.post_count
         .webinfo-item
           .item-name= _p('aside.card_webinfo.article_name') + " :"
