@@ -86,7 +86,8 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://bing.ioliu.cn/v1/?w=1920&h=1200
+index_img: https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN
+# https://bing.ioliu.cn/v1/?w=1920&h=1200
 
 # If the banner of page not setting, it will show the top_img
 default_top_img: https://yanxuan.nosdn.127.net/432fbacb591f9256c9884ed43d05ffa0.png

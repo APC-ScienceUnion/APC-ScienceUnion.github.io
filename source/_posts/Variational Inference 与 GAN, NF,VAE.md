@@ -4,7 +4,7 @@ title: 变分推断与生成模型
 date: '2022-08-13 18:06:01'
 categories: '计算机科学'
 cover: https://yanxuan.nosdn.127.net/690ea921fa343b9d40c9bbc3e95f8cc3.png
-copyright_author: '我本张逸仙'
+copyright_author: 'Thinker'
 katex: true
 ---
 
