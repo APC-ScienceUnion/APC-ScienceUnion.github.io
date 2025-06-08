@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>每日必应壁纸/每日一天文图/每日新闻</title>
+      <title>必应每日壁纸/每日一天文图/维基百科每日一图/每日新闻</title>
       <link href="/2025/06/07/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB/"/>
       <url>/2025/06/07/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="每日必应壁纸"><a class="markdownIt-Anchor" href="#每日必应壁纸"></a> 每日必应壁纸</h1><img src="https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN" /><p><span data-bing-description data-url="https://bing.ee123.net/detail/"></span></p><h1 id="每日一天文图"><a class="markdownIt-Anchor" href="#每日一天文图"></a> 每日一天文图</h1><div data-apod></div><h1 id="每日新闻"><a class="markdownIt-Anchor" href="#每日新闻"></a> 每日新闻</h1><div data-news60></div><img src="https://api.03c3.cn/api/zb" width=400 />]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="每日必应壁纸"><a class="markdownIt-Anchor" href="#每日必应壁纸"></a> 每日必应壁纸</h1><img src="https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN" /><p><span data-bing-description data-url="https://bing.ee123.net/detail/"></span></p><h1 id="每日一天文图"><a class="markdownIt-Anchor" href="#每日一天文图"></a> 每日一天文图</h1><div data-apod></div><h1 id="维基百科每日一图"><a class="markdownIt-Anchor" href="#维基百科每日一图"></a> 维基百科每日一图</h1><div id="wiki-daily-placeholder"></div><h1 id="每日新闻"><a class="markdownIt-Anchor" href="#每日新闻"></a> 每日新闻</h1><div data-news60></div><img src="https://api.03c3.cn/api/zb" width=400 />]]></content>
       
       
       
