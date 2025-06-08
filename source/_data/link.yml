@@ -2,47 +2,47 @@
   class_desc: 刚柔交错，天文也
   link_list:
     - name: 夜观星空
-      link: https://filebed.apc-library.xyz/Astronomy/夜观星空.pdf
+      link: https://filebed.apc-science.cn/Astronomy/夜观星空.pdf
       avatar: https://s2.loli.net/2022/03/13/o6C2XNHVhx7zQfF.png
       descr: 作者：特伦斯·迪金森
     - name: 基础天文学
-      link: https://filebed.apc-library.xyz/Astronomy/基础天文学.pdf
+      link: https://filebed.apc-science.cn/Astronomy/基础天文学.pdf
       avatar: https://s2.loli.net/2022/03/27/oIeRAi2rWhBxTtG.png
       descr: 作者：刘学富
     - name: 实用天文学
-      link: https://filebed.apc-library.xyz/Astronomy/实用天文学.pdf
+      link: https://filebed.apc-science.cn/Astronomy/实用天文学.pdf
       avatar: https://s2.loli.net/2022/03/27/IjRxDqpbmEFXy5k.png
       descr: 作者：陈永龄
     - name: 通俗天文学:和大师一起与宇宙对话
-      link: https://filebed.apc-library.xyz/Astronomy/通俗天文学 .pdf
+      link: https://filebed.apc-science.cn/Astronomy/通俗天文学 .pdf
       avatar: https://s2.loli.net/2022/03/27/Iqvp31bwlFgfG7h.png
       descr: 作者：[美]西蒙·纽康
     - name: 天文学新概论(第四版)
-      link: https://filebed.apc-library.xyz/Astronomy/天文学新概论.pdf
+      link: https://filebed.apc-science.cn/Astronomy/天文学新概论.pdf
       avatar: https://s2.loli.net/2022/03/27/8zDjnd94NST2EWh.png
       descr: 作者：苏宜
     - name: 极简天文学
-      link: https://filebed.apc-library.xyz/Astronomy/极简天文学 .pdf
+      link: https://filebed.apc-science.cn/Astronomy/极简天文学 .pdf
       avatar: https://s2.loli.net/2022/03/27/7sXnmKYBT3jS2b5.png
       descr: 作者：[英]科林·斯图尔特
     - name: 南大天文-上
-      link: https://filebed.apc-library.xyz/Astronomy/南大天文 上.pdf
+      link: https://filebed.apc-science.cn/Astronomy/南大天文 上.pdf
       avatar: https://tvax3.sinaimg.cn/large/006UcwnJgy1h0xwrpblb8j30km0a1gm9.jpg
       descr: 作者：南京大学天文系
     - name: 南大天文-中
-      link: https://filebed.apc-library.xyz/Astronomy/南大天文 中.pdf
+      link: https://filebed.apc-science.cn/Astronomy/南大天文 中.pdf
       avatar: https://tvax3.sinaimg.cn/large/006UcwnJgy1h0xwrpblb8j30km0a1gm9.jpg
       descr: 作者：南京大学天文系
     - name: 南大天文-下
-      link: https://filebed.apc-library.xyz/Astronomy/南大天文 下.pdf
+      link: https://filebed.apc-science.cn/Astronomy/南大天文 下.pdf
       avatar: https://tvax3.sinaimg.cn/large/006UcwnJgy1h0xwrpblb8j30km0a1gm9.jpg
       descr: 作者：南京大学天文系
     - name: 大众天文学
-      link: https://filebed.apc-library.xyz/Astronomy/大众天文学.pdf
+      link: https://filebed.apc-science.cn/Astronomy/大众天文学.pdf
       avatar: https://s2.loli.net/2022/03/27/inufQGVgpIOs7Ar.png
       descr: 作者：C.弗拉马利翁
     - name: 天文爱好者手册
-      link: https://filebed.apc-library.xyz/Astronomy/天文爱好者手册.pdf
+      link: https://filebed.apc-science.cn/Astronomy/天文爱好者手册.pdf
       avatar: https://s2.loli.net/2022/03/13/QH6gfTdM3JiRZan.png
       descr: 作者：冯韵芳
 
@@ -50,15 +50,15 @@
   class_desc: 析万物之理，判天地之美
   link_list:
     - name: 物理学大题典1-力学
-      link: https://filebed.apc-library.xyz/Physics/物理学大题典1-力学.pdf
+      link: https://filebed.apc-science.cn/Physics/物理学大题典1-力学.pdf
       avatar: https://s2.loli.net/2022/03/13/o2AbEUXk5dImsJi.png
       descr: 作者：张永德
     - name: 黑洞物理学
-      link: https://filebed.apc-library.xyz/Physics/黑洞物理学.pdf
+      link: https://filebed.apc-science.cn/Physics/黑洞物理学.pdf
       avatar: https://tva3.sinaimg.cn/large/006UcwnJgy1h0xwim2040j30ft0jbaak.jpg
       descr: 作者：王永久
     - name: 天体物理学
-      link: https://filebed.apc-library.xyz/Physics/天体物理学.pdf
+      link: https://filebed.apc-science.cn/Physics/天体物理学.pdf
       avatar: https://tvax3.sinaimg.cn/large/006UcwnJgy1h0xwla2wenj30a60dvt9b.jpg
       descr: 作者：李宗伟、肖兴华
 
@@ -66,23 +66,23 @@
   class_desc: 变化的学问
   link_list:
     - name: 结构化学基础(第四版)
-      link: https://filebed.apc-library.xyz/Chemistry/结构化学基础(第四版).pdf
+      link: https://filebed.apc-science.cn/Chemistry/结构化学基础(第四版).pdf
       avatar: https://s2.loli.net/2022/03/13/OU1fIiaFgqvBY75.png
       descr: 作者：周公度
     - name: 元素化学上册
-      link: https://filebed.apc-library.xyz/Chemistry/元素化学上册.pdf
+      link: https://filebed.apc-science.cn/Chemistry/元素化学上册.pdf
       avatar: https://s2.loli.net/2022/03/13/3WdBYVklo1IAPmK.png
       descr: 作者：格林伍德
     - name: 元素化学中册
-      link: https://filebed.apc-library.xyz/Chemistry/元素化学中册.pdf
+      link: https://filebed.apc-science.cn/Chemistry/元素化学中册.pdf
       avatar: https://s2.loli.net/2022/03/13/3WdBYVklo1IAPmK.png
       descr: 作者：格林伍德
     - name: 元素化学下册
-      link: https://filebed.apc-library.xyz/Chemistry/元素化学下册.pdf
+      link: https://filebed.apc-science.cn/Chemistry/元素化学下册.pdf
       avatar: https://s2.loli.net/2022/03/13/3WdBYVklo1IAPmK.png
       descr: 作者：格林伍德
     - name: 天体化学
-      link: https://filebed.apc-library.xyz/Chemistry/天体化学.pdf
+      link: https://filebed.apc-science.cn/Chemistry/天体化学.pdf
       avatar: https://tvax4.sinaimg.cn/large/006UcwnJgy1h0xxkgj91sj30cd0goabp.jpg
       descr: 作者：欧阳自远
 
@@ -90,15 +90,15 @@
   class_desc: 野火烧不尽，春风吹又生
   link_list:
     - name: 奈特人体神经解剖彩色图谱-2006
-      link: https://filebed.apc-library.xyz/Biology/奈特人体神经解剖彩色图谱-2006.pdf
+      link: https://filebed.apc-science.cn/Biology/奈特人体神经解剖彩色图谱-2006.pdf
       avatar: https://s2.loli.net/2022/03/13/prWAD5jqh2f986g.png
       descr: 作者：David L. Felten
     - name: 奈特药理学彩色图谱-2006
-      link: https://filebed.apc-library.xyz/Biology/奈特药理学彩色图谱-2006.pdf
+      link: https://filebed.apc-science.cn/Biology/奈特药理学彩色图谱-2006.pdf
       avatar: https://s2.loli.net/2022/03/13/UxJgq46S5s27BnI.png
       descr: 作者：Robert B. Raffa
     - name: 运动软组织损伤学
-      link: https://filebed.apc-library.xyz/Biology/运动软组织损伤学.pdf
+      link: https://filebed.apc-science.cn/Biology/运动软组织损伤学.pdf
       avatar: https://s2.loli.net/2022/03/27/CG8h1OIfdj3HpRr.png
       descr: 作者：王煜
 
@@ -106,35 +106,35 @@
   class_desc: 想象成了计算的系数，于是数学也成了诗
   link_list:
     - name: 自然哲学之数学原理
-      link: https://filebed.apc-library.xyz/Mathematical/自然哲学之数学原理.pdf
+      link: https://filebed.apc-science.cn/Mathematical/自然哲学之数学原理.pdf
       avatar: https://s2.loli.net/2022/03/13/P9da2NSUMVBTeb5.png
       descr: 作者：艾萨克·牛顿
     - name: 同济高等数学第六版上册
-      link: https://filebed.apc-library.xyz/Mathematical/同济高等数学第六版上册.pdf
+      link: https://filebed.apc-science.cn/Mathematical/同济高等数学第六版上册.pdf
       avatar: https://s2.loli.net/2022/03/13/o1Pui6pfZVjcbKk.png
       descr: 作者：同济大学数学系
     - name: 数学辞海-第一卷
-      link: https://filebed.apc-library.xyz/Mathematical/数学辞海第1卷 .pdf
+      link: https://filebed.apc-science.cn/Mathematical/数学辞海第1卷 .pdf
       avatar: https://tvax4.sinaimg.cn/large/006UcwnJgy1h0xw8tj2l5j30rk0kf75z.jpg
       descr: 作者：何思謙
     - name: 数学辞海-第二卷
-      link: https://filebed.apc-library.xyz/Mathematical/数学辞海第2卷 .pdf
+      link: https://filebed.apc-science.cn/Mathematical/数学辞海第2卷 .pdf
       avatar: https://tvax4.sinaimg.cn/large/006UcwnJgy1h0xw8tj2l5j30rk0kf75z.jpg
       descr: 作者：何思謙
     - name: 数学辞海-第三卷
-      link: https://filebed.apc-library.xyz/Mathematical/数学辞海第3卷 .pdf
+      link: https://filebed.apc-science.cn/Mathematical/数学辞海第3卷 .pdf
       avatar: https://tvax4.sinaimg.cn/large/006UcwnJgy1h0xw8tj2l5j30rk0kf75z.jpg
       descr: 作者：何思謙
     - name: 数学辞海-第四卷
-      link: https://filebed.apc-library.xyz/Mathematical/数学辞海第4卷 .pdf
+      link: https://filebed.apc-science.cn/Mathematical/数学辞海第4卷 .pdf
       avatar: https://tvax4.sinaimg.cn/large/006UcwnJgy1h0xw8tj2l5j30rk0kf75z.jpg
       descr: 作者：何思謙
     - name: 数学辞海-第五卷
-      link: https://filebed.apc-library.xyz/Mathematical/数学辞海第5卷 .pdf
+      link: https://filebed.apc-science.cn/Mathematical/数学辞海第5卷 .pdf
       avatar: https://tvax4.sinaimg.cn/large/006UcwnJgy1h0xw8tj2l5j30rk0kf75z.jpg
       descr: 作者：何思謙
     - name: 数学辞海-第六卷
-      link: https://filebed.apc-library.xyz/Mathematical/数学辞海第6卷 .pdf
+      link: https://filebed.apc-science.cn/Mathematical/数学辞海第6卷 .pdf
       avatar: https://tvax4.sinaimg.cn/large/006UcwnJgy1h0xw8tj2l5j30rk0kf75z.jpg
       descr: 作者：何思謙
 
@@ -142,7 +142,7 @@
   class_desc: 天有日月星辰谓之文，地有山川陵谷谓之理
   link_list:
     - name: 地理学与生活(全彩)第11版
-      link: https://filebed.apc-library.xyz/Geography/地理学与生活(全彩插图)第11版.pdf
+      link: https://filebed.apc-science.cn/Geography/地理学与生活(全彩插图)第11版.pdf
       avatar: https://s2.loli.net/2022/03/13/UL8VwaJ3bB1yXcE.png
       descr: 作者：[美]阿瑟·格蒂斯
 
@@ -150,22 +150,22 @@
   class_desc: 由0与1组成的世界
   link_list:
     - name: Real-Time Renderering3提炼总结
-      link: https://filebed.apc-library.xyz/ComputerScience/Real-Time%20Rendering%203rd.pdf
+      link: https://filebed.apc-science.cn/ComputerScience/Real-Time%20Rendering%203rd.pdf
       avatar: https://s2.loli.net/2022/03/13/8yYobHFdwtPg17T.png
       descr: 作者：毛星云
     - name: HTML5从入门到精通
-      link: https://filebed.apc-library.xyz/ComputerScience/HTML5从入门到精通.pdf
+      link: https://filebed.apc-science.cn/ComputerScience/HTML5从入门到精通.pdf
       avatar: https://s2.loli.net/2022/03/13/oBQ9a7mu18zcTgU.png
       descr: 作者：中文学习教程
     - name: UnityShader入门精要
-      link: https://filebed.apc-library.xyz/ComputerScience/UnityShader入门精要.pdf
+      link: https://filebed.apc-science.cn/ComputerScience/UnityShader入门精要.pdf
       avatar: https://s2.loli.net/2022/03/27/lgQz58id9CFHuwV.png
       descr: 作者：冯乐乐
     - name: ProGit
-      link: https://filebed.apc-library.xyz/ComputerScience/progit.pdf
+      link: https://filebed.apc-science.cn/ComputerScience/progit.pdf
       avatar: https://s2.loli.net/2022/03/27/FzfDR8e5A3IlymM.png
       descr: 作者：Scott Chacon
     - name: 深入浅出图神经网络-GNN原理解析
-      link: https://filebed.apc-library.xyz/ComputerScience/深入浅出图神经网络.pdf
+      link: https://filebed.apc-science.cn/ComputerScience/深入浅出图神经网络.pdf
       avatar: https://s2.loli.net/2022/03/27/sTbKyLfv9kAV3h8.png
       descr: 作者：刘忠雨

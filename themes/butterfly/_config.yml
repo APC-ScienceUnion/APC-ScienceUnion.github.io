@@ -838,7 +838,9 @@ inject:
     - <link rel="stylesheet" href="/css/background.css">
 
   bottom:
-    # - <script src="xxxx"></script>
+    - <script src="/js/bing.js"></script>
+    - <script src="/js/apod.js"></script>
+    - <script src="/js/news60.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work

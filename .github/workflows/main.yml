@@ -34,7 +34,7 @@ jobs:
       - name: Deploy
         run: |
           cd public
-          git config --global user.email "bot@apc-library.xyz"
+          git config --global user.email "bot@apc-science.cn"
           git config --global user.name "Auto Deploy Bot"
           git add .
           git commit -m "Automatic Deploy"
