@@ -91,6 +91,8 @@
             
             <tag> 计算机科学 </tag>
             
+            <tag> 投稿作品 </tag>
+            
             <tag> 知识图谱 </tag>
             
             <tag> 大型语言模型 </tag>
@@ -102,8 +104,6 @@
             <tag> KGs </tag>
             
             <tag> RAG </tag>
-            
-            <tag> 投稿作品 </tag>
             
         </tags>
       
@@ -432,8 +432,6 @@
             
             <tag> 计算机科学 </tag>
             
-            <tag> 投稿作品 </tag>
-            
             <tag> GAN </tag>
             
             <tag> 对抗学习 </tag>
@@ -443,6 +441,8 @@
             <tag> VAE </tag>
             
             <tag> 变分自编码器 </tag>
+            
+            <tag> 投稿作品 </tag>
             
         </tags>
       
@@ -975,9 +975,9 @@
             
             <tag> 太阳 </tag>
             
-            <tag> 恒星 </tag>
-            
             <tag> 太阳暗条 </tag>
+            
+            <tag> 恒星 </tag>
             
         </tags>
       

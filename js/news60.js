@@ -26,18 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // 2. 中间行用无序列表展示
         if (lines.length > 2) {
-          formattedContent += '<ul style="margin-left: 20px; padding-left: 0; list-style-type: none;">';
+          formattedContent += '<ol>';
           
           // 处理中间行（从第2行到倒数第2行）
           for (let i = 1; i < lines.length - 1; i++) {
             // 移除原始文本中的数字序号（如"1."、"2."等）
             const cleanedLine = lines[i].replace(/^\d+\.\s*/, '');
             formattedContent += `<li style="margin-bottom: 8px; position: relative; padding-left: 15px;">
-              <span style="position: absolute; left: 0;">-</span> ${cleanedLine}
+              ${cleanedLine}
             </li>`;
           }
           
-          formattedContent += '</ul>';
+          formattedContent += '</ol>';
         }
         
         // 3. 最后一行原样展示
@@ -48,13 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 插入处理后的内容
         newsContainers.forEach(container => {
           container.innerHTML = formattedContent;
-          
-          // 添加基本容器样式
-          container.style.background = '#f8f9fa';
-          container.style.borderLeft = '4px solid #4e73df';
-          container.style.padding = '20px';
-          container.style.margin = '25px 0';
-          container.style.borderRadius = '0 4px 4px 0';
+
         });
       })
       .catch(error => {
