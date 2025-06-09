@@ -192,7 +192,7 @@ function showImageWithError(container, dateDisplay, img, errorMessage) {
 // 从原始文本中提取描述的函数（优化匹配逻辑）
 function extractDescription(rawText) {
   // 尝试匹配标准格式
-  const startMarker = '| style="padding:0 6px 0 0" |';
+  const startMarker = '" |';
   const startIndex = rawText.indexOf(startMarker);
   
   if (startIndex !== -1) {
