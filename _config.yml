@@ -29,6 +29,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - H5Games/**
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -137,11 +138,13 @@ html_minifier:
   enable: true 
   ignore_error: false 
   exclude:
+    - H5Games/**/*.html
   
 css_minifier: 
   enable: true 
   exclude: 
     - '*.min.css' 
+    - H5Games/**/*.css
 
 js_minifier:
   enable: true 
@@ -150,6 +153,7 @@ js_minifier:
   compress: 
   exclude: 
     - '*.min.js'
+    - H5Games/**/*.js
 
 image_minifier: 
   enable: true 

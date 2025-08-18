@@ -125,6 +125,7 @@ category_per_img:
   计算机科学: https://yanxuan.nosdn.127.net/1b71722722c74013e6717c40afa39af4.png
   数学: https://image.baidu.com/search/down?url=https://tvax3.sinaimg.cn/large/006UcwnJly1hdtl1raf7kj30zk0jzh2f.jpg
   旗帜学: https://picx.zhimg.com/80/v2-293cb25856193d90cfa0e0827cd72d04.png
+  联盟游戏: https://baijiahao.baidu.com/bjh/picproxy?param=usauzJ08pXXnylxe15KsoSZ7+SUP0MgEgHWdPjXl8KbBJ+3mYjYHVnsX6DFymw8vskcCmeOcrv2zKE0dWLo3d5HV/cy3hAjihbgLW3UwFsNeh1mlre2gtkyQ4S5QoDeuC7Wbe+c4LWDBy0BcqhMnI7fv8I856+Ap
 
 cover:
   # display the cover or not (是否顯示文章封面)
@@ -530,7 +531,7 @@ canvas_fluttering_ribbon:
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: true
+  enable: false
   color: '255,255,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   opacity: 0.9 # the opacity of line (0~1), default: 0.5.
   zIndex: -1 # z-index property of the background, default: -1.
@@ -836,11 +837,16 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="/css/background.css">
+    #背景宇宙星光
+    - <link rel="stylesheet" href="/css/universe.css">
+    - '<canvas id="universe" ></canvas>'
 
   bottom:
+    - '<script src="/js/universe.js"></script>' # 背景宇宙星光
     - <script src="/js/bing.js"></script>
     - <script src="/js/apod.js"></script>
     - <script src="/js/news60.js"></script>
+    - <script src="/js/wikiDaily.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
