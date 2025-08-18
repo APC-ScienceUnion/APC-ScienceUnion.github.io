@@ -5,11 +5,30 @@
     
     <entry>
       <title>必应每日壁纸/每日一天文图/维基百科每日一图/每日新闻</title>
-      <link href="/2025/06/07/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB/"/>
-      <url>/2025/06/07/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB/</url>
+      <link href="/2099/12/31/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB/"/>
+      <url>/2099/12/31/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB/</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="每日必应壁纸"><a class="markdownIt-Anchor" href="#每日必应壁纸"></a> 每日必应壁纸</h1><img src="https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN" /><p><span data-bing-description data-url="https://bing.ee123.net/detail/"></span></p><h1 id="每日一天文图"><a class="markdownIt-Anchor" href="#每日一天文图"></a> 每日一天文图</h1><div data-apod></div><h1 id="维基百科每日一图"><a class="markdownIt-Anchor" href="#维基百科每日一图"></a> 维基百科每日一图</h1><div id="wiki-daily-placeholder"></div><h1 id="每日新闻"><a class="markdownIt-Anchor" href="#每日新闻"></a> 每日新闻</h1><div data-news60></div><img src="https://api.03c3.cn/api/zb" width=400 />]]></content>
       
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【玄之试炼】网页版小游戏</title>
+      <link href="/2025/08/19/%E3%80%90%E7%8E%84%E4%B9%8B%E8%AF%95%E7%82%BC%E3%80%91%E7%BD%91%E9%A1%B5%E7%89%88%E5%B0%8F%E6%B8%B8%E6%88%8F/"/>
+      <url>/2025/08/19/%E3%80%90%E7%8E%84%E4%B9%8B%E8%AF%95%E7%82%BC%E3%80%91%E7%BD%91%E9%A1%B5%E7%89%88%E5%B0%8F%E6%B8%B8%E6%88%8F/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="game-container" style="width:100%;max-width:960px;margin:0 auto;">  <div style="position:relative;width:100%;padding-top:62.5%;background:#000;">    <iframe      src="/H5Games/XuanXueTestH5/index.html"      style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"      loading="lazy"      allow="fullscreen; gamepad; xr-spatial-tracking">    </iframe>  </div>  <p style="text-align:center;color:#888;font-size:0.9em;margin-top:8px;">若无法加载，请刷新页面，或在桌面浏览器打开体验更佳。</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 联盟游戏 </category>
+          
+      </categories>
       
       
     </entry>
@@ -368,13 +387,13 @@
       
         <tags>
             
+            <tag> 翻译 </tag>
+            
             <tag> 物理 </tag>
             
             <tag> 量子力学 </tag>
             
             <tag> 量子纠缠 </tag>
-            
-            <tag> 翻译 </tag>
             
         </tags>
       
@@ -399,13 +418,13 @@
       
         <tags>
             
-            <tag> 翻译 </tag>
-            
             <tag> 生物学 </tag>
             
             <tag> 基因 </tag>
             
             <tag> 遗传 </tag>
+            
+            <tag> 翻译 </tag>
             
         </tags>
       
@@ -688,9 +707,9 @@
       
         <tags>
             
-            <tag> 矿物 </tag>
-            
             <tag> 科普组第8小组 </tag>
+            
+            <tag> 矿物 </tag>
             
         </tags>
       
@@ -845,11 +864,11 @@
             
             <tag> 天文学 </tag>
             
-            <tag> 科普组第8小组 </tag>
-            
             <tag> 航天 </tag>
             
             <tag> 历史 </tag>
+            
+            <tag> 科普组第8小组 </tag>
             
         </tags>
       
