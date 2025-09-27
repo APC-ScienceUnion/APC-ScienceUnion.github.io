@@ -847,6 +847,7 @@ inject:
     - <script src="/js/apod.js"></script>
     - <script src="/js/news60.js"></script>
     - <script src="/js/wikiDaily.js"></script>
+    - <script src="/js/todayInHistory.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
