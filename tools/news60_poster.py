@@ -205,11 +205,11 @@ def build_poster(lines: List[str], header: str, width: int = 1080) -> Image.Imag
     y_cursor += 8
     draw.line([(margin, y_cursor), (width - margin, y_cursor)], fill=(238, 238, 238), width=2)
     y_cursor += 36
-    draw.text((margin, y_cursor), "制图：格物社 / A.P.C.科学联盟", font=font_footer, fill=(138, 138, 138))
+    draw.text((margin, y_cursor), "图像制作：格物社 / A.P.C.科学联盟", font=font_footer, fill=(138, 138, 138))
     y_cursor += 34
     draw.text((margin, y_cursor), "头图供图：樾澄", font=font_footer, fill=(138, 138, 138))
     y_cursor += 34
-    draw.text((margin, y_cursor), "鸣谢：daily60s", font=font_footer, fill=(138, 138, 138))
+    draw.text((margin, y_cursor), "特别鸣谢：daily60s", font=font_footer, fill=(138, 138, 138))
 
     return canvas
 

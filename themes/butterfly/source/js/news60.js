@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (newsContainers.length === 0) return;
     
     const apiUrl = 'https://60s-api.viki.moe/v2/60s?encoding=text';
+    // 页脚固定文案（避免在调用与实现处重复传参）
+    const FOOTER_LINES = [
+      '图像制作：格物社 / A.P.C.科学联盟',
+      '头图供图：樾澄',
+      '特别鸣谢：daily60s API'
+    ];
     
     fetch(apiUrl)
       .then(response => {
@@ -81,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
             weekText,
             titleText,
             items,
-            footer: '制图：格物社 / A.P.C.科学联盟',
             year: y,
             month: m,
             day: d
@@ -121,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ================= Canvas 长图生成 =================
 // 生成新闻长图
-function generateNewsPoster({ headerUrl = '', dateText, weekText, titleText, items, footer, year, month, day }) {
+function generateNewsPoster({ headerUrl = '', dateText, weekText, titleText, items, year, month, day }) {
   return new Promise(async (resolve, reject) => {
     try {
       const width = 1080; // 适配主流手机分享宽度
@@ -300,11 +305,11 @@ function generateNewsPoster({ headerUrl = '', dateText, weekText, titleText, ite
 
       ctx.fillStyle = '#8a8a8a';
       ctx.font = fonts.footer;
-      ctx.fillText(footer, marginX, yCursor);
-      yCursor += 34;
-      ctx.fillText('头图供图：樾澄', marginX, yCursor);
-      yCursor += 34;
-      ctx.fillText('鸣谢：daily60s', marginX, yCursor);
+      // 统一从常量 FOOTER_LINES 渲染
+      FOOTER_LINES.forEach(line => {
+        ctx.fillText(line, marginX, yCursor);
+        yCursor += 34;
+      });
 
       const fileName = `news60_${year}-${month}-${day}.png`;
       let dataUrl = '';
