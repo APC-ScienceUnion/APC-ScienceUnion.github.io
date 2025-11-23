@@ -2,37 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const containers = document.querySelectorAll('[data-today-in-history]');
   if (containers.length === 0) return;
 
-  const apiUrl = 'https://60s.viki.moe/v2/today-in-history';
-
   // 渲染加载态
   containers.forEach(container => {
     container.innerHTML = `
       <div style="display:flex;align-items:center;justify-content:center;padding:20px;">
         <div style="width:28px;height:28px;border:3px solid #93c5fd;border-top-color:transparent;border-radius:50%;animation:spin 0.8s linear infinite"></div>
-        <span style="margin-left:10px;color:#666;">正在加载历史上的今天...</span>
+        <span style="margin-left:10px;color:#666;">正在加载科学史上的今天...</span>
       </div>
       <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
     `;
   });
 
-  fetch(apiUrl)
-    .then(r => {
-      if (!r.ok) throw new Error(`HTTP 错误: ${r.status}`);
-      return r.json();
-    })
-    .then(() => {
-      // 不再使用远端 today-in-history 接口的数据，
-      // 而是统一由 Qwen3 生成“科学史上的今天”列表与长图。
-      renderScienceHistoryPoster(containers);
-    })
-    .catch(err => {
-      const errorHtml = `
-        <div style="color:#b91c1c;padding:15px;background:#fee2e2;border-left:4px solid #ef4444;border-radius:8px;">
-          加载历史上的今天失败: ${err.message}
-        </div>
-      `;
-      containers.forEach(c => c.innerHTML = errorHtml);
-    });
+  // 直接使用 Doubao + Qwen 的链路生成内容和长图，不再依赖已弃用的 60s 接口
+  renderScienceHistoryPoster(containers);
 });
 
 
@@ -118,7 +100,7 @@ function generateScienceHistoryPoster({ headerUrl = '', dateText, weekText, titl
         '图像制作：格物社 / A.P.C.科学联盟',
         '灵感赖渊：缪卿九',
         '头图供图：Marianna Armata/Getty Image',
-        '特别鸣谢：Qwen-3-Max、doubao-seed-1.6',
+        '特别鸣谢：Qwen-3-Max、kimi-k2-0905-preview',
         '免责声明：图片内容由 AI 总结生成，不代表格物社/A.P.C.科学联盟立场'
       ];
       const footerH = 36 * footerLines.length + 80;
@@ -255,10 +237,17 @@ function renderScienceHistoryPoster(containers) {
   if (!containers || !containers.length) return;
 
   const first = containers[0];
-  const apiKey = first.getAttribute('data-qwen-key') || '';
+  const qwenKey = first.getAttribute('data-qwen-key') || '';
+  const kimiKey = first.getAttribute('data-kimi-key') || '';
   const headerUrl = first.getAttribute('data-history-header') || '';
 
-  if (!apiKey) {
+  if (!kimiKey || !qwenKey) {
+    try {
+      console.error('[ScienceHistory] 缺少必要的 API Key：', {
+        hasKimi: !!kimiKey,
+        hasQwen: !!qwenKey
+      });
+    } catch (_) {}
     return;
   }
 
@@ -402,7 +391,9 @@ function renderScienceHistoryPoster(containers) {
     }
   }
 
-  const prompt = `我要求你整理“科学史上的今天”资料，今天是${iso}。请注意，科学史包括自然科学（理学/工学/农学/医学等）与人文社科（哲学/经济学等）。你禁止包括任何娱乐新闻或无关紧要的小事。
+  // ====== 第一步：调用 Kimi 生成初稿 ======
+
+  const kimiPrompt = `我要求你整理“科学史上的今天”资料，今天是${iso}。请注意，科学史包括自然科学（理学/工学/农学/医学等）与人文社科（哲学/经济学等）。你禁止包括任何娱乐新闻或无关紧要的小事。
 
 你的回答必须满足以下要求：
 0、关于检索的网页只允许查询权威博物馆的历史资料以及公开的权威百科和网站百科资料、以及权威有名的杂志。
@@ -431,34 +422,82 @@ function renderScienceHistoryPoster(containers) {
 
 5、年份必须**由早到晚**排序。`;
 
-  // 按照阿里云百炼千问3 OpenAI 兼容接口格式调用：
-  // 参考控制台文档示例：https://bailian.console.aliyun.com/... 的 qwen3-max 调用说明
-  const body = {
-    model: 'qwen3-max-preview',
-    messages: [
-      { role: 'system', content: '你是一个精通科学史的、严谨的学者' },
-      { role: 'user', content: prompt }
-    ],
-    // 参考通义千问 OpenAI 兼容接口文档：
-    // https://www.alibabacloud.com/help/zh/model-studio/qwen-api-reference?spm=a2c63.p38356.0.i6
-    // - temperature: 设为 0.1，输出更稳定
-    // - extra_body.enable_thinking: 开启思考过程，但我们不读取 reasoning_content，只用最终回答
-    temperature: 0.1,
-    extra_body: {
-      enable_thinking: true
-    }
-  };
+  const kimiUrl = 'https://api.moonshot.cn/v1/chat/completions';
+  const qwenUrl = 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
 
-  const url = 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
-
-  fetch(url, {
+  // 先请求 Kimi
+  fetch(kimiUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`
+      'Authorization': `Bearer ${kimiKey}`
     },
-    body: JSON.stringify(body)
+    body: JSON.stringify({
+      // 按照 Kimi 官方 Chat API 文档格式：
+      // https://api.moonshot.cn/v1/chat/completions
+      // 只需要 model + messages + temperature 等标准字段
+      model: 'kimi-k2-0905-preview',
+      messages: [
+        { role: 'system', content: '你是一个精通科学史的、严谨的学者。' },
+        { role: 'user', content: kimiPrompt }
+      ],
+      temperature: 0.1
+    })
   })
+    .then(r => {
+      if (!r.ok) throw new Error(`Kimi API 错误: ${r.status}`);
+      return r.json();
+    })
+    .then(kimiData => {
+      // 调试日志：输出 Kimi 原始返回和 message.content
+      try {
+        console.debug('[ScienceHistory][Kimi] raw response:', kimiData);
+      } catch (_) {}
+
+      const kmChoices = (kimiData && kimiData.choices) || [];
+      if (!kmChoices.length) throw new Error('Kimi 未返回候选结果');
+      const kmMsg = kmChoices[0].message || {};
+      const kimiContent = typeof kmMsg.content === 'string'
+        ? kmMsg.content
+        : (Array.isArray(kmMsg.content) ? kmMsg.content.map(p => p.text || '').join('') : '');
+
+      if (!kimiContent.trim()) throw new Error('Kimi 返回文本为空');
+
+      try {
+        console.debug('[ScienceHistory][Kimi] message.content:', kimiContent);
+      } catch (_) {}
+
+      // ====== 第二步：调用 Qwen3 校验豆包结果 ======
+      const qwenPrompt =
+`你是一个精通科学史的、严谨的学者。请检查我收集的资料【${kimiContent}】中的内容是否准确（你必须严格审查日期与事件的真实性）。
+
+- 如果有条目错误，必须直接删除该条目。
+- 检查无误后，保持资料原本的格式（科学史上的今天（${iso}）以及后续内容）返回给我（你需要确保剩下的条目都正确）
+- 如果所有条目均不正确，你只需要返回原本资料的header（即科学史上的今天（${iso}））
+- 禁止输出条目外的内容。`;
+
+      const qwenBody = {
+        model: 'qwen3-max-preview',
+        messages: [
+          { role: 'system', content: '你是一个精通科学史的、严谨的学者' },
+          { role: 'user', content: qwenPrompt }
+        ],
+        // 与前端其它调用保持一致
+        temperature: 0.1,
+        extra_body: {
+          enable_thinking: true
+        }
+      };
+
+      return fetch(qwenUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${qwenKey}`
+        },
+        body: JSON.stringify(qwenBody)
+      });
+    })
     .then(r => {
       if (!r.ok) throw new Error(`Qwen3 API 错误: ${r.status}`);
       return r.json();
