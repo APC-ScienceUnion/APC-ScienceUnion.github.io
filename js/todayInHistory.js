@@ -13,9 +13,93 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   });
 
-  // 直接使用 Doubao + Qwen 的链路生成内容和长图，不再依赖已弃用的 60s 接口
-  renderScienceHistoryPoster(containers);
+  // 从静态 JSON + PNG 渲染文本和长图，不在浏览器内调用 Kimi/Qwen
+  renderScienceHistoryFromStatic(containers);
 });
+
+// 使用静态生成的 science_today.json / science_today.png 渲染页面
+function renderScienceHistoryFromStatic(containers) {
+  // 兼容 Hexo 的 root 配置：在本地 (/) 和 GitHub Pages (/repo/) 下都能正确定位到静态资源
+  let root = '/';
+  try {
+    if (window.KEEP && window.KEEP.hexo_config && window.KEEP.hexo_config.root) {
+      root = window.KEEP.hexo_config.root;
+    } else if (window.CONFIG && window.CONFIG.root) {
+      root = window.CONFIG.root;
+    }
+  } catch (_) {}
+  if (!root) root = '/';
+  if (!root.endsWith('/')) root += '/';
+
+  const jsonUrl = root + 'ScienceHistory/science_today.json?_=' + Date.now();
+  const imgUrl = root + 'ScienceHistory/science_today.png';
+
+  fetch(jsonUrl)
+    .then(r => {
+      if (!r.ok) throw new Error(`JSON 加载失败: ${r.status}`);
+      return r.text();
+    })
+    .then(text => {
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        // 这里就是你现在看到的 Unexpected token '<' 的情况，说明拿到的是 HTML（如 404 页面），而不是 JSON
+        throw new Error(`JSON 解析失败: ${e.message}，响应前 80 字符: ${text.slice(0, 80)}`);
+      }
+
+      const title = data.title || '科学史上的今天';
+      const dateText = data.date_text || '';
+      const weekText = data.week || '';
+      const items = Array.isArray(data.items) ? data.items : [];
+
+      const listHtml = items.length
+        ? items.map(line => `
+            <li style="padding:6px 0;border-bottom:1px solid #eee;line-height:1.7;">
+              ${line}
+            </li>
+          `).join('')
+        : '<div style="padding:16px;color:#6b7280;">今天暂无记录</div>';
+
+      const cardHtml = `
+        <div style="max-width:900px;margin:16px auto;padding:18px 20px;background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(149,157,165,0.2);">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:10px;">
+            <div>
+              <h2 style="margin:0;font-size:22px;color:#111827;">${title}</h2>
+              <div style="margin-top:4px;color:#6b7280;font-size:14px;">${dateText} ${weekText}</div>
+            </div>
+          </div>
+          <ol style="list-style:none;padding:0;margin:0;">${listHtml}</ol>
+        </div>
+      `;
+
+      containers.forEach(c => {
+        c.innerHTML = cardHtml;
+
+        // 追加静态长图
+        const wrap = document.createElement('div');
+        wrap.style.marginTop = '18px';
+
+        const img = new Image();
+        img.src = imgUrl;
+        img.alt = '科学史上的今天 长图';
+        img.style.width = '100%';
+        img.style.borderRadius = '8px';
+        img.style.boxShadow = '0 6px 24px rgba(0,0,0,.08)';
+
+        wrap.appendChild(img);
+        c.appendChild(wrap);
+      });
+    })
+    .catch(err => {
+      const errorHtml = `
+        <div style="color:#b91c1c;padding:15px;background:#fee2e2;border-left:4px solid #ef4444;border-radius:8px;">
+          加载科学史上的今天失败: ${err.message}
+        </div>
+      `;
+      containers.forEach(c => c.innerHTML = errorHtml);
+    });
+}
 
 
 // ================== 科学史上的今天 长图生成（千问 Qwen3） ==================
@@ -474,6 +558,7 @@ function renderScienceHistoryPoster(containers) {
 - 如果有条目错误，必须直接删除该条目。
 - 检查无误后，保持资料原本的格式（科学史上的今天（${iso}）以及后续内容）返回给我（你需要确保剩下的条目都正确）
 - 如果所有条目均不正确，你只需要返回原本资料的header（即科学史上的今天（${iso}））
+- 禁止输出条目原本的序号
 - 禁止输出条目外的内容。`;
 
       const qwenBody = {
