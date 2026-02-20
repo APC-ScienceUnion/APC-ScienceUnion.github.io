@@ -297,7 +297,7 @@ function generateNewsPoster({ headerUrl = '', dateText, weekText, titleText, ite
       ctx.font = fonts.footer;
       ctx.fillText(footer, marginX, yCursor);
       yCursor += 34;
-      ctx.fillText('头图供图：樾澄', marginX, yCursor);
+      ctx.fillText('头图供图：SORTZE', marginX, yCursor);
       yCursor += 34;
       ctx.fillText('特别鸣谢：daily60s API', marginX, yCursor);
 
