@@ -127,6 +127,7 @@ category_per_img:
   旗帜学: https://picx.zhimg.com/80/v2-293cb25856193d90cfa0e0827cd72d04.png
   联盟游戏: https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ib82s7ntu8j30xc0k0k51.jpg
   化学: https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ib82v3jm41j325s1fv1ky.jpg
+  能源动力: https://i0.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ibgtqi3hl7j31400m87wh.jpg
 
 cover:
   # display the cover or not (是否顯示文章封面)
@@ -575,17 +576,17 @@ display_mode: light
 
 # Beautify (美化頁面顯示)
 beautify:
-  enable: false
+  enable: true
   field: post # site/post
-  title-prefix-icon: # '\f0c1'
+  title-prefix-icon: '\f105' # '\f0c1'
   title-prefix-icon-color: # '#F47466'
 
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
 font:
-  global-font-size: 17px
+  global-font-size: 16px
   code-font-size:
-  font-family: Times New Roman,"宋体",sans-serif
+  font-family: Times New Roman,sans-serif
   code-font-family:
 
 # Font settings for the site title and site subtitle
