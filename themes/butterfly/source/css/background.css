@@ -1,13 +1,694 @@
-/* 首页 卡片文章背景透明 */
-#recent-posts>.recent-post-item,.layout>div:first-child:not(.recent-posts),.layout_post>#page,.layout_post>#post,.read-mode .layout_post>#post{
-    /* 白色透明度 */
-    background: rgba(255,255,255,.9);
-    color: #222;
+/* 首頁：頂欄固定；站名與副標題在 #nav 左側；關閉主題 hero 對 #site-title 的大字樣式（已改用 .nav-brand-title） */
+#page-header.full_page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  height: auto !important;
+  min-height: 0;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.12);
+  transition: none !important;
 }
 
-/* 侧边栏设置 */
-#aside-content>.card-widget,.sticky_layout>.card-widget{
-    /* 白色透明度 */
-    background: rgba(255,255,255,.95) !important;
+#page-header.full_page::before {
+  display: none !important;
+}
+
+#page-header.full_page #scroll-down {
+  display: none !important;
+}
+
+#page-header.full_page #nav {
+  position: relative !important;
+  top: auto !important;
+  opacity: 1 !important;
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 12px;
+  width: 100%;
+  height: auto !important;
+  min-height: 52px;
+  max-height: none;
+  padding: 8px 16px 8px 20px;
+  transition: none !important;
+}
+
+#page-header.full_page .nav-site-brand {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: min(42vw, 320px);
+  text-align: left;
+  padding-right: 8px;
+}
+
+#page-header.full_page .nav-brand-title {
+  margin: 0;
+  line-height: 1.25;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+#page-header.full_page .nav-brand-title a#site-name {
+  color: inherit !important;
+  text-decoration: none;
+  font-weight: inherit;
+  text-shadow: inherit;
+}
+
+@media (min-width: 768px) {
+  #page-header.full_page .nav-brand-title {
+    font-size: 1.12rem;
+  }
+}
+
+/* 滾動後頂欄白底：左側站名改深色 */
+#page-header.full_page.nav-fixed .nav-brand-title,
+#page-header.full_page.nav-visible .nav-brand-title {
+  color: #1a1a1a !important;
+  text-shadow: none;
+}
+
+#page-header.full_page.nav-fixed .nav-brand-title a#site-name,
+#page-header.full_page.nav-visible .nav-brand-title a#site-name {
+  color: #1a1a1a !important;
+}
+
+#page-header.full_page #menus {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+/* 關閉主題「下拉」頂欄位移動畫（nav-fixed / nav-visible） */
+#page-header.full_page.nav-fixed #nav,
+#page-header.full_page.nav-visible #nav {
+  position: relative !important;
+  top: auto !important;
+  transform: none !important;
+  transition: none !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: none;
+}
+
+/* 首頁頂欄下級菜單旁小三角（視覺上的「下拉」圖標） */
+#page-header.full_page .menus_item > a > i.fa-chevron-down,
+#page-header.full_page .menus_item > a > i.fas.fa-chevron-down {
+  display: none !important;
+}
+
+/* 關閉進場動畫殘留（主題 enter_transitions 關閉後仍保險覆蓋） */
+#page-header.full_page,
+#page-header.full_page #nav,
+#page-header.full_page .nav-site-brand,
+#page-header.full_page .nav-brand-title {
+  animation: none !important;
+}
+
+/*
+ * 頂圖改為整頁 #web_bg 時（html.page-hero-body-bg）：header 為窄欄 + 可選 #page-site-info。
+ * #nav 為 position:absolute，文章頁無流內子元素時若 min-height:0，header 高度會塌成 0，
+ * 主內容頂到視口與頂欄重疊；保留 min-height:60px 與主題頂欄同高以占位，有 #page-site-info 時仍可由 height:auto 撐開。
+ */
+html.page-hero-body-bg #page-header.not-top-img {
+  height: auto !important;
+  min-height: 60px;
+  margin-bottom: 8px;
+}
+
+/* 與 #content-inner.layout 同寬度上限與水平 padding，便於與主欄對齊（內頁頂部標題 + 首頁站名/副標） */
+html.page-hero-body-bg #page-header.not-top-img .page-hero-title-track,
+html.site-home .home-hero-title-wrap .page-hero-title-track {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (min-width: 2000px) {
+  html.page-hero-body-bg #page-header.not-top-img .page-hero-title-track,
+  html.site-home .home-hero-title-wrap .page-hero-title-track {
+    max-width: 1500px;
+  }
+}
+
+@media (max-width: 768px) {
+  html.page-hero-body-bg #page-header.not-top-img .page-hero-title-track,
+  html.site-home .home-hero-title-wrap .page-hero-title-track {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+/* 桌面雙欄：標題僅佔主欄列（與 .layout 子項 26% / 74% 一致），不對整屏居中 */
+@media (min-width: 901px) {
+  html.page-hero-body-bg.aside-at-left #page-header.not-top-img .page-hero-title-track,
+  html.site-home.aside-at-left .home-hero-title-wrap .page-hero-title-track {
+    display: grid;
+    grid-template-columns: 26% 74%;
+    align-items: start;
+  }
+
+  html.page-hero-body-bg.aside-at-left #page-header.not-top-img .page-hero-title-track #page-site-info,
+  html.site-home.aside-at-left .home-hero-title-wrap .page-hero-title-track .home-hero-title-block {
+    grid-column: 2;
+    width: 100%;
+    max-width: none;
+  }
+
+  html.page-hero-body-bg.aside-at-right #page-header.not-top-img .page-hero-title-track,
+  html.site-home.aside-at-right .home-hero-title-wrap .page-hero-title-track {
+    display: grid;
+    grid-template-columns: 74% 26%;
+    align-items: start;
+  }
+
+  html.page-hero-body-bg.aside-at-right #page-header.not-top-img .page-hero-title-track #page-site-info,
+  html.site-home.aside-at-right .home-hero-title-wrap .page-hero-title-track .home-hero-title-block {
+    grid-column: 1;
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 900px) {
+  html.page-hero-body-bg #page-header.not-top-img .page-hero-title-track,
+  html.site-home .home-hero-title-wrap .page-hero-title-track {
+    display: block;
+  }
+
+  html.page-hero-body-bg #page-header.not-top-img .page-hero-title-track #page-site-info,
+  html.site-home .home-hero-title-wrap .page-hero-title-track .home-hero-title-block {
+    grid-column: auto;
+    width: 100%;
+    max-width: none;
+  }
+}
+
+html.page-hero-body-bg #page-header.not-top-img #page-site-info {
+  position: static !important;
+  top: auto !important;
+  bottom: auto !important;
+  /* 與 #nav（absolute、高 60px）同起點；水平由 .page-hero-title-track 負責，避免與 track padding 重疊 */
+  padding: 60px 0 10px;
+  text-align: center;
+}
+
+html.page-hero-body-bg #page-header.not-top-img #site-title {
+  margin: 0;
+  color: #fff !important;
+  text-shadow:
+    0 0 1px rgba(0, 0, 0, 0.45),
+    0 0 8px rgba(0, 0, 0, 0.32),
+    0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/*
+ * 頂圖併入 #web_bg 後，主題默認 .layout 40px + 首欄 50px 上內邊距會顯得過空；
+ * 僅在此模式下收緊 nav → 主內容 與 卡片內標題上方 留白。
+ */
+/* 統一頂部留白，避免主欄與側欄分別設 padding-top 造成錯位 */
+html.page-hero-body-bg #content-inner.layout {
+  padding-top: 22px;
+}
+
+html.page-hero-body-bg #body-wrap.post #content-inner.layout {
+  padding-top: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  html.page-hero-body-bg #content-inner.layout {
+    padding-top: 16px;
+  }
+
+  html.page-hero-body-bg #body-wrap.post #content-inner.layout {
+    padding-top: 12px;
+  }
+}
+
+html.page-hero-body-bg #content-inner.layout > div:first-child:not(.recent-posts):not(.layout-main) {
+  padding-top: 22px;
+}
+
+@media screen and (max-width: 768px) {
+  html.page-hero-body-bg #content-inner.layout > div:first-child:not(.recent-posts):not(.layout-main) {
+    padding-top: 16px;
+  }
+}
+
+#web_bg {
+  animation: none !important;
+  /* 全屏背景圖模糊：0.2 強度對應 ~2px（過強會糊成團） */
+  filter: blur(2px);
+  transform: scale(1.02);
+  transform-origin: center center;
+}
+
+/* 全屏背景略壓暗（疊在 #web_bg 之上、內容之下）；首頁再加一層以配合淺色字與更透玻璃 */
+#web_bg::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -998;
+  background: rgba(0, 0, 0, 0.38);
+  pointer-events: none;
+}
+
+html.site-home #web_bg::after {
+  background: rgba(0, 0, 0, 0.62);
+}
+
+/* 首屏：頂欄下留白 + 中間大標題區（隨頁面滾動，非 fixed） */
+#body-wrap:has(#page-header.full_page) {
+  padding-top: 88px;
+}
+
+.home-hero-title-wrap {
+  /* 水平留白由內層 .page-hero-title-track 與 #content-inner 一致 */
+  padding: 28px 0 36px;
+  pointer-events: none;
+}
+
+.home-hero-title-wrap .home-hero-title-block {
+  text-align: center;
+}
+
+.home-hero-title-wrap .home-hero-title {
+  margin: 0;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.35;
+  text-shadow: 0 0 14px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.02em;
+}
+
+.home-hero-title-wrap .home-hero-subtitle {
+  margin: 14px auto 0;
+  max-width: 42em;
+  line-height: 1.55;
+  font-size: 0.98rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .home-hero-title-wrap .home-hero-title {
+    font-size: 2.65rem;
+  }
+  .home-hero-title-wrap .home-hero-subtitle {
+    font-size: 1.12rem;
+  }
+}
+
+/* 首頁文章列表塊：約 80% 不透明白底；標題與摘要純黑，元信息仍灰（略加深） */
+html.site-home #recent-posts > .recent-post-item,
+html.site-home #recent-posts.recent-posts.category_ui > .recent-post-item {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  backdrop-filter: saturate(108%) blur(6px);
+  -webkit-backdrop-filter: saturate(108%) blur(6px);
+  box-sizing: border-box;
+  transition:
+    border-width 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.32s ease;
+}
+
+html.site-home #recent-posts > .recent-post-item:hover,
+html.site-home #recent-posts.recent-posts.category_ui > .recent-post-item:hover {
+  border-width: 3px !important;
+  border-style: solid !important;
+  border-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.14),
+    0 0 20px rgba(255, 255, 255, 0.85),
+    0 0 42px rgba(255, 255, 255, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.site-home #recent-posts > .recent-post-item,
+  html.site-home #recent-posts.recent-posts.category_ui > .recent-post-item {
+    transition: none;
+  }
+}
+
+/* 首頁：側欄卡、首塊、404 等仍為較透玻璃 + 淺色字 */
+html.site-home .layout > div:first-child:not(.recent-posts):not(.layout-main):not(#post),
+html.site-home #aside-content > .card-widget,
+html.site-home .sticky_layout > .card-widget,
+html.site-home #body-wrap.error404 #error-wrap .error-content {
+  background: rgba(255, 255, 255, 0.34) !important;
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.42) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+  backdrop-filter: saturate(108%) blur(4px);
+  -webkit-backdrop-filter: saturate(108%) blur(4px);
+}
+
+/* 非首頁（標籤、分類、歸檔、獨立頁、友鏈等）：玻璃 0.85 + 主題字色 */
+html:not(.site-home) #recent-posts > .recent-post-item,
+html:not(.site-home) #recent-posts.recent-posts.category_ui > .recent-post-item,
+html:not(.site-home) .layout > div:first-child:not(.recent-posts):not(.layout-main):not(#post),
+html:not(.site-home) #aside-content > .card-widget,
+html:not(.site-home) .sticky_layout > .card-widget,
+html:not(.site-home) #archive .article-sort-item:not(.year),
+html:not(.site-home) #category,
+html:not(.site-home) #tag,
+html:not(.site-home) .flink-list > .flink-list-item,
+html:not(.site-home) #body-wrap.error404 #error-wrap .error-content {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: var(--font-color) !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  backdrop-filter: saturate(108%) blur(4px);
+  -webkit-backdrop-filter: saturate(108%) blur(4px);
+}
+
+/* 僅文章閱讀頁主內容塊：完全不透明，避免與頂圖漸變疊出發灰 */
+html:not(.site-home) #body-wrap.post #content-inner > #post {
+  background: #fff !important;
+  color: var(--font-color) !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#recent-posts > .recent-post-item,
+#recent-posts.recent-posts.category_ui > .recent-post-item {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#aside-content > .card-widget,
+.sticky_layout > .card-widget {
+  border-radius: 12px;
+}
+
+.layout > div:first-child:not(.recent-posts):not(.layout-main):not(#post) {
+  border-radius: 12px;
+}
+
+/* 首頁式列表：主欄僅含文章塊，分頁在側欄之後 DOM，flex 換行占滿寬，避免分頁與側欄底對齊 */
+@media (min-width: 901px) {
+  /* 僅換行 + 主欄不拉高；勿設整行 align-items:flex-start，否則側欄內 position:sticky 易失效 */
+  #content-inner.layout:has(> .layout-main) {
+    flex-wrap: wrap;
+  }
+
+  #content-inner.layout:has(> .layout-main) > #pagination {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+    order: 99;
+    box-sizing: border-box;
+  }
+
+  #content-inner.layout:has(> .layout-main) > .layout-main {
+    align-self: flex-start;
+  }
+}
+
+.layout-main > .recent-posts {
+  width: 100%;
+}
+
+/* 文章閱讀頁 #post：底色與毛玻璃見上條「僅文章閱讀頁主內容塊」 */
+#body-wrap.post #content-inner > #post {
+  border-radius: 12px;
+}
+
+#body-wrap.post #article-container.post-content {
+  color: var(--font-color);
+}
+
+#body-wrap.post #article-container.post-content a {
+  color: var(--text-highlight-color);
+}
+
+#body-wrap.post #article-container.post-content a:hover {
+  color: var(--pseudo-hover);
+}
+
+html.read-mode #body-wrap.post #content-inner > #post {
+  background: var(--card-bg, #fff) !important;
+  color: var(--font-color) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 歸檔/分類/標籤時間軸年份行：首頁淺色；其餘頁跟主題字色 */
+html.site-home #archive .article-sort-item.year,
+html.site-home #category .article-sort-item.year,
+html.site-home #tag .article-sort-item.year {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+html:not(.site-home) #archive .article-sort-item.year,
+html:not(.site-home) #category .article-sort-item.year,
+html:not(.site-home) #tag .article-sort-item.year {
+  color: var(--font-color) !important;
+  opacity: 0.88;
+}
+
+/* 首頁列表：元信息（日期/分類/標籤）灰色不變為黑；白底上略加深 */
+html.site-home #recent-posts .article-meta-wrap,
+html.site-home #recent-posts .article-meta-wrap .article-meta,
+html.site-home #recent-posts .article-meta-wrap time,
+html.site-home #recent-posts .article-meta-wrap .article-meta-label,
+html.site-home #recent-posts .article-meta-wrap .article-meta-separator,
+html.site-home #recent-posts .article-meta-wrap .post-meta-date,
+html.site-home #recent-posts .article-meta-wrap .sticky,
+html.site-home #recent-posts .article-meta-wrap i {
+  color: rgba(88, 96, 112, 0.92) !important;
+}
+
+html.site-home #recent-posts .article-meta-wrap a {
+  color: rgba(72, 82, 100, 0.95) !important;
+}
+
+html.site-home #recent-posts .article-meta-wrap a:hover {
+  color: var(--text-highlight-color, #3b82f6) !important;
+  text-decoration: underline;
+}
+
+/* 標題與摘要：純黑；摘要內鏈接仍用主題強調色 */
+html.site-home #recent-posts .content,
+html.site-home #recent-posts a.article-title {
+  color: #000 !important;
+}
+
+html.site-home #recent-posts .content a {
+  color: var(--text-highlight-color) !important;
+}
+
+html.site-home #recent-posts .content a:hover {
+  color: var(--pseudo-hover, #2563eb) !important;
+}
+
+html.site-home #recent-posts a.article-title:hover {
+  color: var(--text-highlight-color) !important;
+}
+
+html.site-home #archive .article-sort-item:not(.year) .article-sort-item-time,
+html.site-home #archive .article-sort-item:not(.year) .article-sort-item-time time,
+html.site-home #archive .article-sort-item:not(.year) .article-sort-item-title,
+html.site-home #category .article-sort-item:not(.year) .article-sort-item-time,
+html.site-home #category .article-sort-item:not(.year) .article-sort-item-time time,
+html.site-home #category .article-sort-item:not(.year) .article-sort-item-title,
+html.site-home #tag .article-sort-item:not(.year) .article-sort-item-time,
+html.site-home #tag .article-sort-item:not(.year) .article-sort-item-time time,
+html.site-home #tag .article-sort-item:not(.year) .article-sort-item-title,
+html.site-home #category .article-sort-title,
+html.site-home #tag .article-sort-title {
+  color: rgba(255, 255, 255, 0.94) !important;
+}
+
+html.site-home #archive .article-sort-item:not(.year) .article-sort-item-title:hover,
+html.site-home #category .article-sort-item:not(.year) .article-sort-item-title:hover,
+html.site-home #tag .article-sort-item:not(.year) .article-sort-item-title:hover {
+  color: #fff !important;
+}
+
+html:not(.site-home) #archive .article-sort-item:not(.year) .article-sort-item-time,
+html:not(.site-home) #archive .article-sort-item:not(.year) .article-sort-item-time time,
+html:not(.site-home) #archive .article-sort-item:not(.year) .article-sort-item-title,
+html:not(.site-home) #category .article-sort-item:not(.year) .article-sort-item-time,
+html:not(.site-home) #category .article-sort-item:not(.year) .article-sort-item-time time,
+html:not(.site-home) #category .article-sort-item:not(.year) .article-sort-item-title,
+html:not(.site-home) #tag .article-sort-item:not(.year) .article-sort-item-time,
+html:not(.site-home) #tag .article-sort-item:not(.year) .article-sort-item-time time,
+html:not(.site-home) #tag .article-sort-item:not(.year) .article-sort-item-title,
+html:not(.site-home) #category .article-sort-title,
+html:not(.site-home) #tag .article-sort-title {
+  color: var(--font-color) !important;
+}
+
+html:not(.site-home) #archive .article-sort-item:not(.year) .article-sort-item-title:hover,
+html:not(.site-home) #category .article-sort-item:not(.year) .article-sort-item-title:hover,
+html:not(.site-home) #tag .article-sort-item:not(.year) .article-sort-item-title:hover {
+  color: var(--text-highlight-color) !important;
+}
+
+/* 首頁側欄淺色；其餘頁由主題字色與鏈接色 */
+html.site-home #aside-content .author-info__name,
+html.site-home #aside-content .author-info__description,
+html.site-home #aside-content .aside-list .title,
+html.site-home #aside-content .webinfo .item-name,
+html.site-home #aside-content .webinfo .item-count,
+html.site-home #aside-content .card-category-list,
+html.site-home #aside-content .card-category-list a,
+html.site-home #aside-content .card-more-btn,
+html.site-home #aside-content .card-tags a,
+html.site-home #aside-content .card-archives a {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* 與首頁文章元信息同系灰：作者卡三列（文章/標籤/分類+數字）、最新文章列表日期 */
+html.site-home #aside-content .card-info-data .headline,
+html.site-home #aside-content .card-info-data .length-num,
+html.site-home #aside-content .aside-list time {
+  color: rgba(200, 206, 218, 0.88) !important;
+}
+
+html.site-home #aside-content .card-category-list a:hover,
+html.site-home #aside-content .card-tags a:hover,
+html.site-home #aside-content .card-archives a:hover {
+  color: #fff !important;
+}
+
+html:not(.site-home) #aside-content .card-category-list a:hover,
+html:not(.site-home) #aside-content .card-tags a:hover,
+html:not(.site-home) #aside-content .card-archives a:hover {
+  color: var(--text-highlight-color) !important;
+}
+
+#archive .article-sort-item:not(.year),
+#category .article-sort-item:not(.year),
+#tag .article-sort-item:not(.year) {
+  border-radius: 10px;
+  padding: 10px 12px !important;
+  margin-left: 10px !important;
+}
+
+.flink-list > .flink-list-item {
+  border-radius: 10px;
+}
+
+/* 分頁：首頁淺色玻璃鈕；其餘頁跟主題 */
+html.site-home #pagination .pagination a.page-number,
+html.site-home #pagination .pagination span.page-number,
+html.site-home #pagination .pagination span.extend {
+  background: rgba(255, 255, 255, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: saturate(108%) blur(3px);
+  -webkit-backdrop-filter: saturate(108%) blur(3px);
+}
+
+html:not(.site-home) #pagination .pagination a.page-number,
+html:not(.site-home) #pagination .pagination span.page-number,
+html:not(.site-home) #pagination .pagination span.extend {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: var(--font-color) !important;
+  backdrop-filter: saturate(108%) blur(3px);
+  -webkit-backdrop-filter: saturate(108%) blur(3px);
+}
+
+/* 獨立頁 #page：僅首頁強制淺色正文（非首頁用主題變量） */
+html.site-home #body-wrap.page .layout > div:first-child:not(#post):not(#recent-posts),
+html.site-home #body-wrap.page .layout > div:first-child:not(#post):not(#recent-posts) .page-content {
+  color: rgba(255, 255, 255, 0.94) !important;
+}
+
+html.site-home #body-wrap.page .layout > div:first-child:not(#post):not(#recent-posts) .page-content a {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+html:not(.site-home) #body-wrap.page .layout > div:first-child:not(#post):not(#recent-posts),
+html:not(.site-home) #body-wrap.page .layout > div:first-child:not(#post):not(#recent-posts) .page-content {
+  color: var(--font-color) !important;
+}
+
+html:not(.site-home) #body-wrap.page .layout > div:first-child:not(#post):not(#recent-posts) .page-content a {
+  color: var(--text-highlight-color) !important;
+}
+
+/* 友鏈卡片文字 */
+html.site-home .flink-item-name,
+html.site-home .flink-item-desc {
+  color: rgba(255, 255, 255, 0.93) !important;
+}
+
+html:not(.site-home) .flink-item-name,
+html:not(.site-home) .flink-item-desc {
+  color: var(--font-color) !important;
+}
+
+/* 版權併入「網站資訊」時隱藏底欄；單欄模式側欄隱藏時恢復底欄 */
+#body-wrap:has(#aside-content .card-webinfo) #footer {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+}
+
+html.hide-aside #body-wrap #footer {
+  display: block !important;
+  height: auto !important;
+  min-height: unset !important;
+  margin: unset !important;
+  padding: unset !important;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+
+.card-webinfo .card-webinfo-footer-hr {
+  margin: 14px 0 10px;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+html:not(.site-home) .card-webinfo .card-webinfo-footer-hr {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+.card-webinfo .card-webinfo-footer {
+  font-size: 12px;
+  line-height: 1.55;
+  text-align: center;
+  padding: 0 4px 2px;
+}
+
+html.site-home .card-webinfo .card-webinfo-footer {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+html:not(.site-home) .card-webinfo .card-webinfo-footer {
+  color: var(--font-color);
+  opacity: 0.88;
 }
 

@@ -4,14 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
   container.id = 'wiki-picture-container';
   container.className = 'm-auto max-w-4xl bg-white rounded-lg shadow-md p-5 my-6';
   
-  // 创建加载提示
+  // 创建加载提示（与必应 / APOD / 每日新闻 同一套 apc-loading.js）
   const loading = document.createElement('div');
   loading.id = 'wiki-loading';
-  loading.className = 'flex justify-center items-center py-10';
-  loading.innerHTML = `
-      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
-      <p class="ml-4 text-gray-600">正在加载维基百科每日图片...</p>
-  `;
+  loading.innerHTML =
+    typeof window.apcLoadingHtml === 'function'
+      ? window.apcLoadingHtml('正在加载维基百科每日图片…')
+      : '<p style="padding:20px;color:#888;">正在加载维基百科每日图片…</p>';
   container.appendChild(loading);
   
   // 查找占位符并插入容器

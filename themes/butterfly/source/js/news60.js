@@ -1,18 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     const newsContainers = document.querySelectorAll('[data-news60]');
     if (newsContainers.length === 0) return;
-    
-    const apiUrl = 'https://60s-api.viki.moe/v2/60s?encoding=text';
-    
-    fetch(apiUrl)
-      .then(response => {
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        return response.text();
-      })
-      .then(text => {
-        // 分割文本为行
-        const lines = text.split('\n').filter(line => line.trim() !== '');
-        
+
+    const newsLoading =
+      typeof window.apcLoadingHtml === 'function'
+        ? window.apcLoadingHtml('正在加载每日新闻…')
+        : '<p style="padding:20px;color:#888;">正在加载每日新闻…</p>';
+    newsContainers.forEach((c) => {
+      c.innerHTML = newsLoading;
+    });
+
+    const API_URLS = [
+      'https://60s.viki.moe/v2/60s?encoding=text',
+      'https://60s-api.viki.moe/v2/60s?encoding=text',
+    ];
+
+    async function fetchNewsText() {
+      let lastErr;
+      for (const apiUrl of API_URLS) {
+        try {
+          const response = await fetch(apiUrl);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          const text = await response.text();
+          const lines = text.split('\n').filter((line) => line.trim() !== '');
+          if (lines.length) return lines;
+        } catch (e) {
+          lastErr = e;
+        }
+      }
+      throw lastErr || new Error('60s API 不可用');
+    }
+
+    fetchNewsText()
+      .then((lines) => {
         // 确保至少有1行
         if (lines.length === 0) {
           throw new Error('API返回空内容');
@@ -69,8 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
           items.push(lines[i].replace(/^\d+\.\s*/, '').trim());
         }
 
-        // 插入处理后的内容 + 生成长图
-        newsContainers.forEach(container => {
+        // 插入文本后由 Canvas 生成长图（每次打开页面自动更新，无需本地命令）
+        newsContainers.forEach((container) => {
           container.innerHTML = formattedContent;
 
           const headerUrl = container.getAttribute('data-news60-header') || '';
@@ -84,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
             footer: '图像制作：格物社 / A.P.C.科学联盟',
             year: y,
             month: m,
-            day: d
-          }).then(({dataUrl, fileName, canvas}) => {
+            day: d,
+          }).then(({ dataUrl, fileName, canvas }) => {
             const wrap = document.createElement('div');
             wrap.style.marginTop = '18px';
 
@@ -96,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
               img.alt = '今日简报 长图';
               visualEl = img;
             } else {
-              // CORS 受限时直接展示 Canvas（不可导出）
               visualEl = canvas;
             }
             visualEl.style.width = '100%';
@@ -105,9 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             wrap.appendChild(visualEl);
             container.appendChild(wrap);
-          }).catch(() => {
-            // 忽略长图生成失败，保留文本展示
-          });
+          }).catch(() => {});
         });
       })
       .catch(error => {

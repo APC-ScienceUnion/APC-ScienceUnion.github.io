@@ -20,7 +20,8 @@
   +minWidth2000()
     max-width: 1500px
 
-  & > div:first-child:not(.recent-posts)
+  //- .layout-main 僅作首頁式列表的主欄包層，不套用單頁大卡片 padding
+  & > div:first-child:not(.recent-posts):not(.layout-main)
     @extend .cardHover
     align-self: flex-start
     padding: 50px 40px

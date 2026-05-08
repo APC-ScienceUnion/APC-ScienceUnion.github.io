@@ -1,9 +1,41 @@
 - var htmlClassHideAside = theme.aside.enable && theme.aside.hide ? 'hide-aside' : ''
 - var hideAside = !theme.aside.enable || page.aside === false ? 'hide-aside' : ''
 - var pageType = is_post() ? 'post' : 'page'
+//- 文章 / 標籤 / 分類 / 歸檔 / 獨立頁：有圖片路徑頂圖時，改為整頁 #web_bg 底層，不再用 header 大橫幅（與 header/index.pug 同步判斷）
+- var useHeroAsWebBg = false
+- var pageHeroForBg = false
+if theme.background && !theme.disable_top_img && page.top_img !== false && !is_home() && page.type !== '404'
+  if is_post()
+    - pageHeroForBg = page.top_img || page.cover || page.randomcover
+  else if is_page()
+    - pageHeroForBg = page.top_img || theme.default_top_img
+  else if is_tag()
+    - pageHeroForBg = theme.tag_per_img && theme.tag_per_img[page.tag]
+    - pageHeroForBg = pageHeroForBg ? pageHeroForBg : (theme.tag_img !== false ? theme.tag_img || theme.default_top_img : false)
+  else if is_category()
+    - pageHeroForBg = theme.category_per_img && theme.category_per_img[page.category]
+    - pageHeroForBg = pageHeroForBg ? pageHeroForBg : (theme.category_img !== false ? theme.category_img || theme.default_top_img : false)
+  else if is_archive()
+    - pageHeroForBg = theme.archive_img !== false ? theme.archive_img || theme.default_top_img : false
+  else
+    - pageHeroForBg = page.top_img || theme.default_top_img
+  if pageHeroForBg && pageHeroForBg !== false && ('' + pageHeroForBg).indexOf('/') !== -1
+    - useHeroAsWebBg = true
+
+//- 首頁大標題區 / 頂圖併入 #web_bg 頁：大標題與 #content-inner 主欄水平對齊（側欄左/右）
+- var heroAsideLayout = ''
+if is_home() || useHeroAsWebBg
+  if !theme.aside.enable || page.aside === false || hideAside === 'hide-aside' || htmlClassHideAside === 'hide-aside'
+    - heroAsideLayout = 'hero-main-only'
+  else if theme.aside.position === 'left'
+    - heroAsideLayout = 'aside-at-left'
+  else
+    - heroAsideLayout = 'aside-at-right'
+
+- var htmlRootClass = [htmlClassHideAside, is_home() ? 'site-home' : '', useHeroAsWebBg ? 'page-hero-body-bg' : '', heroAsideLayout].filter(Boolean).join(' ')
 
 doctype html
-html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside)
+html(lang=config.language data-theme=theme.display_mode class=htmlRootClass)
   head
     include ./head.pug
   body
@@ -11,13 +43,31 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
       !=partial('includes/loading/loading', {}, {cache: true})
 
     if theme.background
-      #web_bg
+      - var webBgMerged = ''
+      if useHeroAsWebBg
+        - var heroLayer = `url('${url_for(pageHeroForBg)}')`
+        - webBgMerged = `background: ${heroLayer} center/cover no-repeat fixed, ${theme.background} center/cover no-repeat fixed;`
+      else if !theme.disable_top_img && (theme.index_img !== false)
+        //- 與首頁一致：頂圖層 + theme.background（未啟用「頂圖作全頁底」時）
+        - var hmIdx = theme.index_img || theme.default_top_img
+        - var layerIdx = hmIdx && hmIdx.indexOf('/') !== -1 ? `url('${url_for(hmIdx)}')` : hmIdx
+        - webBgMerged = `background: ${layerIdx} center/cover no-repeat fixed, ${theme.background} center/cover no-repeat fixed;`
+      #web_bg(style=webBgMerged ? webBgMerged : false)
       
     !=partial('includes/sidebar', {}, {cache: true})
 
     if page.type !== '404'
       #body-wrap(class=pageType)
         include ./header/index.pug
+
+        if is_home()
+          #home-hero-title-wrap.home-hero-title-wrap
+            .page-hero-title-track
+              .home-hero-title-block
+                h1.home-hero-title= config.title
+                if theme.subtitle.enable
+                  #home-hero-subtitle.home-hero-subtitle
+                    span#subtitle
 
         main#content-inner.layout(class=hideAside)
           if body
@@ -26,6 +76,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
             block content
             if theme.aside.enable && page.aside !== false
               include widget/index.pug
+            block pagination_after_aside
 
         - var footerBg = theme.footer_bg
         if (footerBg)

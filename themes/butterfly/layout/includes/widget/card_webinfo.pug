@@ -32,3 +32,16 @@ if theme.aside.card_webinfo.enable
           .item-name= _p('aside.card_webinfo.last_push_date.name') + " :"
           .item-count#last-push-date(data-lastPushDate=date_xml(Date.now()))
 
+    if theme.footer && (theme.footer.custom_text || (theme.footer.owner && theme.footer.owner.enable))
+      hr.card-webinfo-footer-hr
+      .card-webinfo-footer
+        if theme.footer.owner && theme.footer.owner.enable
+          - var _ftNow = new Date()
+          - var _ftYear = _ftNow.getFullYear()
+          if theme.footer.owner.since && theme.footer.owner.since != _ftYear
+            != `&copy;${theme.footer.owner.since} - ${_ftYear} ${theme.footer.custom_text || ''}`
+          else
+            != `&copy;${_ftYear} ${theme.footer.custom_text || ''}`
+        else if theme.footer.custom_text
+          != theme.footer.custom_text
+

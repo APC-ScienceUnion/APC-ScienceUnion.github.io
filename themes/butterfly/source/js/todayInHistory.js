@@ -2,15 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const containers = document.querySelectorAll('[data-today-in-history]');
   if (containers.length === 0) return;
 
-  // 渲染加载态
-  containers.forEach(container => {
-    container.innerHTML = `
-      <div style="display:flex;align-items:center;justify-content:center;padding:20px;">
-        <div style="width:28px;height:28px;border:3px solid #93c5fd;border-top-color:transparent;border-radius:50%;animation:spin 0.8s linear infinite"></div>
-        <span style="margin-left:10px;color:#666;">正在加载科学史上的今天...</span>
-      </div>
-      <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
-    `;
+  const histLoading =
+    typeof window.apcLoadingHtml === 'function'
+      ? window.apcLoadingHtml('正在加载科学史上的今天…')
+      : '<p style="padding:20px;color:#888;">正在加载科学史上的今天…</p>';
+  containers.forEach((container) => {
+    container.innerHTML = histLoading;
   });
 
   // 从静态 JSON + PNG 渲染文本和长图，不在浏览器内调用 Kimi/Qwen

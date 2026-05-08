@@ -55,21 +55,23 @@
     background: $dark-black
 
 .layout
-  & > .recent-posts
-    .pagination
-      & > *
-        display: inline-block
-        margin: 0 6px
-        width: w = 2.5em
-        height: w
-        line-height: w
+  //- 分頁在 #recent-posts 內，或在 .layout-main 外層、或獨占一行時均為 nav#pagination（非 div），須單獨匹配
+  & > #pagination .pagination,
+  & > .layout-main > .recent-posts .pagination,
+  & > .recent-posts .pagination
+    & > *
+      display: inline-block
+      margin: 0 6px
+      width: w = 2.5em
+      height: w
+      line-height: w
 
-      & > *:not(.space)
-        @extend .cardHover
+    & > *:not(.space)
+      @extend .cardHover
 
-        &:hover
-          background: var(--btn-hover-color)
-          color: var(--btn-color)
+      &:hover
+        background: var(--btn-hover-color)
+        color: var(--btn-color)
 
   & > div:not(.recent-posts)
     .pagination

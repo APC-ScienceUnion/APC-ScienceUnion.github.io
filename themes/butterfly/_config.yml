@@ -5,7 +5,7 @@
 menu:
   主页: / || fas fa-home
   时间轴: /archives/ || fas fa-archive
-  标签: /tags/ || fas fa-tags
+  # 标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
   图片||fa-regular fa-images:
     植物卡片: /gallery/PlantCard/ || fa-brands fa-pagelines
@@ -411,7 +411,7 @@ footer:
   owner:
     enable: true
     since: 2016
-  custom_text: A.P.C.科学联盟/格物社 · 在线电子图书馆
+  custom_text: 格物社 · 在线电子图书馆
   copyright: false # Copyright of theme and framework
 
 # Analysis
@@ -510,7 +510,7 @@ footer_bg: true
 rightside-bottom:
 
 # Enter transitions (開啓網頁進入效果)
-enter_transitions: true
+enter_transitions: false
 
 # Background effects (背景特效)
 # --------------------------------------
@@ -630,7 +630,7 @@ aside:
   hide: false
   button: true
   mobile: true # display on mobile
-  position: right # left or right
+  position: left # left or right
   card_author:
     enable: true
     description:
@@ -845,6 +845,7 @@ inject:
 
   bottom:
     - '<script src="/js/universe.js"></script>' # 背景宇宙星光
+    - <script src="/js/apc-loading.js"></script>
     - <script src="/js/bing.js"></script>
     - <script src="/js/apod.js"></script>
     - <script src="/js/news60.js"></script>

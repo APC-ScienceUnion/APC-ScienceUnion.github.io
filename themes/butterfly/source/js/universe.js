@@ -28,22 +28,27 @@ function dark() {
     }
     function y() {
       (this.reset = function() {
-        (this.giant = m(3)), (this.comet =
-          !this.giant && !o && m(10)), (this.x = l(0, n - 10)), (this.y = l(
-          0,
-          e
-        )), (this.r = l(1.1, 2.6)), (this.dx =
-          l(t, 6 * t) + (this.comet + 1 - 1) * t * l(50, 120) + 2 * t), (this.dy =
-          -l(t, 6 * t) -
-          (this.comet + 1 - 1) *
-            t *
-            l(
-              50,
-              120
-            )), (this.fadingOut = null), (this.fadingIn = !0), (this.opacity = 0), (this.opacityTresh = l(
-          0.2,
-          1 - 0.4 * (this.comet + 1 - 1)
-        )), (this.do = l(5e-4, 0.002) + 0.001 * (this.comet + 1 - 1));
+        (this.giant = m(3)),
+        (this.comet = !this.giant && !o && m(3)),
+          (this.r = l(1.1, 2.6));
+        var base = l(t, 6 * t),
+          cometExtra = (this.comet ? 1 : 0) * t * l(50, 120);
+        if (this.comet) {
+          (this.x = l(0.48 * n, n - 10)),
+            (this.y = l(0, 0.38 * e)),
+            (this.dx = -(base + cometExtra + 2 * t)),
+            (this.dy = base + cometExtra);
+        } else {
+          (this.x = l(0, n - 10)),
+            (this.y = l(0, e)),
+            (this.dx = base + cometExtra + 2 * t),
+            (this.dy = -(base + cometExtra));
+        }
+        (this.fadingOut = null),
+          (this.fadingIn = !0),
+          (this.opacity = 0),
+          (this.opacityTresh = l(0.2, 1 - 0.4 * (this.comet + 1 - 1))),
+          (this.do = l(5e-4, 0.002) + 0.001 * (this.comet + 1 - 1));
       }), (this.fadeIn = function() {
         this.fadingIn &&
           (
@@ -55,7 +60,9 @@ function dark() {
           (
             (this.fadingOut = !(this.opacity < 0)),
             (this.opacity -= this.do / 2),
-            (this.x > n || this.y < 0) && ((this.fadingOut = !1), this.reset())
+            (this.comet
+              ? this.x < -80 || this.y > e + 80
+              : this.x > n || this.y < 0) && ((this.fadingOut = !1), this.reset())
           );
       }), (this.draw = function() {
         if ((h.beginPath(), this.giant))
@@ -97,9 +104,12 @@ function dark() {
           );
         h.closePath(), h.fill();
       }), (this.move = function() {
-        (this.x += this.dx), (this.y += this.dy), !1 === this.fadingOut &&
-          this.reset(), (this.x > n - n / 4 || this.y < 0) &&
-          (this.fadingOut = !0);
+        (this.x += this.dx),
+          (this.y += this.dy),
+          !1 === this.fadingOut && this.reset(),
+          (this.comet
+            ? this.x < -n / 6 || this.y > e + n / 10
+            : this.x > n - n / 4 || this.y < 0) && (this.fadingOut = !0);
       }), setTimeout(function() {
         o = !1;
       }, 50);

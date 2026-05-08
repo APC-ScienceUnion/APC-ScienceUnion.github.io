@@ -2,6 +2,9 @@ extends includes/layout.pug
 
 block content
   include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  .layout-main
+    #recent-posts.recent-posts
+      +postUI
+
+block pagination_after_aside
+  include includes/pagination.pug
