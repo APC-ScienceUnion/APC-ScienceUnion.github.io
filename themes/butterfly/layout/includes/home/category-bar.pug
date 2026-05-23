@@ -1,0 +1,37 @@
+//- 首頁標題下方：頂級分類橫條（圖標取自 category_per_img）
+- var barCfg = theme.home_category_bar || {}
+- var barEnable = barCfg.enable !== false
+if barEnable && site.categories.length
+  - var barLimit = barCfg.limit != null ? barCfg.limit : 0
+  - var barMoreLink = barCfg.more_link || '/categories/'
+  - var barMoreTitle = barCfg.more_title || '全部分类'
+  -
+    var homeCatList = site.categories.find({ parent: { $exists: false } })
+    var homeCatItems = []
+    homeCatList.forEach(function (cat) {
+      if (cat.length) homeCatItems.push(cat)
+    })
+    homeCatItems.sort(function (a, b) {
+      return b.length - a.length
+    })
+    if (barLimit > 0) {
+      homeCatItems = homeCatItems.slice(0, barLimit)
+    }
+  if homeCatItems.length
+    #home-category-bar.home-category-bar
+      .page-hero-title-track
+        .home-category-bar-inner
+          .home-category-bar-list(role="list")
+            each cat in homeCatItems
+              - var catIcon = theme.category_per_img && theme.category_per_img[cat.name]
+              a.home-category-bar-item(role="listitem" href=url_for(cat.path) title=cat.name)
+                .home-category-bar-item-icon
+                  if catIcon
+                    img(src=catIcon alt="" loading="lazy" decoding="async")
+                  else
+                    i.fas.fa-folder-open(aria-hidden="true")
+                .home-category-bar-item-text
+                  span.home-category-bar-item-name= cat.name
+                  span.home-category-bar-item-count (#{cat.length})
+          a.home-category-bar-more(href=url_for(barMoreLink) title=barMoreTitle aria-label=barMoreTitle)
+            i.fas.fa-angles-right(aria-hidden="true")

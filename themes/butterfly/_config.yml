@@ -113,9 +113,8 @@ category_img:
 #  - category name: xxxxx
 category_per_img:
   人文历史: https://yanxuan.nosdn.127.net/e5c6eeb0a6ea2dd9a711d592555bf6cb.png
-  生物学: https://yanxuan.nosdn.127.net/401163c39705a35fef2510b059c8da74.png
-  古生物学: https://pic.rmb.bdstatic.com/bjh/e95a156e6aeb6b97f2d81508cc137eaf.png
-  地质学: https://yanxuan.nosdn.127.net/9cb0802b8a22911d05e4161107c3fa59.png
+  生命科学: https://yanxuan.nosdn.127.net/401163c39705a35fef2510b059c8da74.png
+  地球科学: https://yanxuan.nosdn.127.net/9cb0802b8a22911d05e4161107c3fa59.png
   天文历法: https://pic.rmb.bdstatic.com/bjh/414ea0ba8528d62b232d892168acfe93.jpeg
   心理学: https://yanxuan.nosdn.127.net/1b99ad4cc38057f08a480c6f2d8c2d55.png
   机械制造: https://yanxuan.nosdn.127.net/18d03fc54fce4e5af951ac43b8f67322.png
@@ -123,11 +122,10 @@ category_per_img:
   社会经济: https://yanxuan.nosdn.127.net/e17534d8f164c2fb6ab2424c4068a42f.png
   航空航天: https://pic.rmb.bdstatic.com/bjh/ed8c6243b317240d5790ae83a89e6419.png
   计算机科学: https://yanxuan.nosdn.127.net/1b71722722c74013e6717c40afa39af4.png
-  数学: https://image.baidu.com/search/down?url=https://tvax3.sinaimg.cn/large/006UcwnJly1hdtl1raf7kj30zk0jzh2f.jpg
+  数学: https://i1.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1idfhxybvnuj318g0rsase.jpg
   旗帜学: https://picx.zhimg.com/80/v2-293cb25856193d90cfa0e0827cd72d04.png
-  联盟游戏: https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ib82s7ntu8j30xc0k0k51.jpg
+  联盟活动: https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ib82s7ntu8j30xc0k0k51.jpg
   化学: https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ib82v3jm41j325s1fv1ky.jpg
-  能源动力: https://i0.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ibgtqi3hl7j31400m87wh.jpg
 
 cover:
   # display the cover or not (是否顯示文章封面)
@@ -619,6 +617,13 @@ subtitle:
   sub: 
       - 在知识的海洋中寻找属于自己的岛屿
 
+# 首頁標題下方分類橫條
+home_category_bar:
+  enable: true
+  limit: 0 # 0 表示顯示全部頂級分類（按文章數從多到少自動排序）
+  more_link: /categories/
+  more_title: 全部分类
+
 # Loading Animation (加載動畫)
 preloader: false
 
@@ -846,6 +851,7 @@ inject:
   bottom:
     - '<script src="/js/universe.js"></script>' # 背景宇宙星光
     - <script src="/js/apc-loading.js"></script>
+    - <script src="/js/home-category-bar.js"></script>
     - <script src="/js/bing.js"></script>
     - <script src="/js/apod.js"></script>
     - <script src="/js/news60.js"></script>
