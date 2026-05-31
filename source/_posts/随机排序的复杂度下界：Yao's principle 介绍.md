@@ -13,7 +13,7 @@ katex: true
 {% endnote %}
 
 > 作者：silverxz
-审核：$\Delta\delta Delta$
+审核：phy东西
 
 # Introduction
 
