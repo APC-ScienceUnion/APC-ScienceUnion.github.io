@@ -1,3 +1,34 @@
+/* 全站加粗（strong/b）：群青，便于与正文区分 */
+:root {
+  --text-bold-color: #1e50a2;
+}
+
+body strong,
+body b {
+  color: var(--text-bold-color);
+  font-weight: 700;
+}
+
+/* 导航、代码、公式、按钮等不加粗着色 */
+#nav strong,
+#nav b,
+#menus strong,
+#menus b,
+#sidebar-menus strong,
+#sidebar-menus b,
+pre strong,
+pre b,
+code strong,
+code b,
+.katex strong,
+.katex b,
+button strong,
+button b,
+.btn strong,
+.btn b {
+  color: inherit;
+}
+
 /* 首頁：頂欄固定；站名與副標題在 #nav 左側；關閉主題 hero 對 #site-title 的大字樣式（已改用 .nav-brand-title） */
 #page-header.full_page {
   position: fixed;
