@@ -3,15 +3,18 @@
 # --------------------------------------
 
 menu:
-  主页: / || fas fa-home
   时间轴: /archives/ || fas fa-archive
   # 标签: /tags/ || fas fa-tags
-  分类: /categories/ || fas fa-folder-open
-  图片||fa-regular fa-images:
+  文章分类: /categories/ || fas fa-folder-open
+  科普画廊||fa-regular fa-images:
     植物卡片: /gallery/PlantCard/ || fa-brands fa-pagelines
     Science&三行情书: /gallery/ScienceLetter/ || fa-solid fa-envelope
-  资源: /link/ || fas fa-link
+  在线资源: /link/ || fas fa-link
+  联萌新闻: /apc-news/ || fas fa-bullhorn
   关于我们: /about/ || fas fa-heart
+
+# 联萌新闻（按 start 年份分页，/apc-news/ 为最新年份）
+apc_news: {}
 
 # Code Blocks (代碼相關)
 # --------------------------------------

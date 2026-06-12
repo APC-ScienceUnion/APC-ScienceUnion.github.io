@@ -850,6 +850,23 @@ html:not(.site-home) #pagination .pagination span.extend {
   -webkit-backdrop-filter: saturate(108%) blur(3px);
 }
 
+/* 当前页码高亮（覆盖上方通用分页按钮样式） */
+html.site-home #pagination .pagination span.page-number.current {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.98) !important;
+  color: #1e50a2 !important;
+  font-weight: 700;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.45);
+}
+
+html:not(.site-home) #pagination .pagination span.page-number.current {
+  background: #536499 !important;
+  border-color: #536499 !important;
+  color: #fff !important;
+  font-weight: 600;
+  cursor: default;
+}
+
 /* 獨立頁 #page：僅首頁強制淺色正文（非首頁用主題變量） */
 html.site-home #body-wrap.page .layout > div:first-child:not(#post):not(#recent-posts),
 html.site-home #body-wrap.page .layout > div:first-child:not(#post):not(#recent-posts) .page-content {
@@ -925,5 +942,314 @@ html.site-home .card-webinfo .card-webinfo-footer {
 html:not(.site-home) .card-webinfo .card-webinfo-footer {
   color: var(--font-color);
   opacity: 0.88;
+}
+
+/* ========== 联萌新闻（时间轴式活动列表） ========== */
+html:not(.site-home) #apc-news .article-sort-item.apc-news-item {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: var(--font-color) !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  backdrop-filter: saturate(108%) blur(4px);
+  -webkit-backdrop-filter: saturate(108%) blur(4px);
+  border-radius: 12px;
+  align-items: flex-start;
+  height: auto;
+  min-height: 80px;
+  padding: 12px 14px;
+  flex-wrap: nowrap;
+}
+
+html.site-home #apc-news .article-sort-item.apc-news-item {
+  background: rgba(255, 255, 255, 0.34) !important;
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.42) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+  backdrop-filter: saturate(108%) blur(4px);
+  -webkit-backdrop-filter: saturate(108%) blur(4px);
+  border-radius: 12px;
+  align-items: flex-start;
+  height: auto;
+  min-height: 80px;
+  padding: 12px 14px;
+  flex-wrap: nowrap;
+}
+
+#apc-news .article-sort-item.apc-news-item.no-article-cover {
+  height: auto;
+}
+
+/* 活动头图：完整显示、与日历行顶对齐 */
+#apc-news .article-sort-item.apc-news-item .article-sort-item-img {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
+  margin-top: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+#apc-news .article-sort-item.apc-news-item .article-sort-item-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+
+#apc-news .article-sort-item.apc-news-item .article-sort-item-img img:hover {
+  transform: none;
+  filter: none;
+}
+
+#apc-news .article-sort-item.apc-news-item .article-sort-item-info {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0 0 0 16px;
+  align-self: flex-start;
+}
+
+#apc-news .article-sort-item.year.apc-news-month {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0;
+  min-height: 0;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+#apc-news .article-sort-item-title {
+  margin: 6px 0 10px;
+  font-size: 1.15em;
+  font-weight: 600;
+  line-height: 1.45;
+  -webkit-line-clamp: unset;
+  transform: none !important;
+}
+
+#apc-news .article-sort-item-time {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+#apc-news .apc-news-date {
+  padding-left: 2px;
+}
+
+#apc-news .apc-status {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+#apc-news .apc-status.status-upcoming {
+  background: rgba(59, 130, 246, 0.15);
+  color: #2563eb;
+}
+
+#apc-news .apc-status.status-ongoing {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+}
+
+#apc-news .apc-status.status-ended {
+  background: rgba(107, 114, 128, 0.15);
+  color: #6b7280;
+}
+
+#apc-news .apc-news-content {
+  width: 100%;
+  font-size: 0.95em;
+  line-height: 1.75;
+  color: inherit;
+}
+
+#apc-news .apc-news-content p {
+  margin: 0.5em 0;
+}
+
+/* 正文内多图横向自适应排列（N 张图同一行等分宽度） */
+#apc-news .apc-news-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: 100%;
+  margin: 8px 0;
+  align-items: flex-start;
+}
+
+#apc-news .apc-news-gallery-item {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+#apc-news .apc-news-gallery-item img,
+#apc-news .apc-news-content img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0;
+}
+
+/* 兜底：段落内若仍有多图，强制横向排列 */
+#apc-news .apc-news-content p:has(> img) {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+#apc-news .apc-news-content p:has(> img) br {
+  display: none;
+}
+
+#apc-news .apc-news-content p:has(> img) img {
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+  max-height: 360px;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  #apc-news .apc-news-gallery,
+  #apc-news .apc-news-content p:has(> img) {
+    flex-wrap: wrap;
+  }
+
+  #apc-news .apc-news-gallery-item,
+  #apc-news .apc-news-content p:has(> img) img {
+    flex: 1 1 calc(50% - 4px);
+    min-width: calc(50% - 4px);
+  }
+}
+
+#apc-news .apc-news-content blockquote {
+  margin: 0.75em 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid rgba(59, 130, 246, 0.45);
+  opacity: 0.92;
+}
+
+#apc-news .apc-news-year-pagination.is-top {
+  margin: 12px 0 20px;
+}
+
+#apc-news .apc-news-year-pagination.is-bottom {
+  margin-top: 24px;
+}
+
+#apc-news .apc-news-year-pagination {
+  width: 100%;
+  margin-left: 0;
+  padding-left: 0;
+  text-align: center;
+}
+
+#apc-news .apc-news-year-pagination .pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#apc-news .apc-news-year-pagination .page-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-width: 2.5em;
+  height: 2.5em;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+html.site-home #apc-news .apc-news-year-pagination a.page-number,
+html.site-home #apc-news .apc-news-year-pagination span.page-number:not(.current) {
+  background: rgba(255, 255, 255, 0.52) !important;
+  border: 1px solid rgba(255, 255, 255, 0.62) !important;
+  color: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: saturate(108%) blur(3px);
+  -webkit-backdrop-filter: saturate(108%) blur(3px);
+}
+
+html.site-home #apc-news .apc-news-year-pagination a.page-number:hover {
+  background: rgba(255, 255, 255, 0.72) !important;
+  color: #fff !important;
+}
+
+html:not(.site-home) #apc-news .apc-news-year-pagination a.page-number,
+html:not(.site-home) #apc-news .apc-news-year-pagination span.page-number:not(.current) {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(0, 0, 0, 0.14) !important;
+  color: rgba(44, 52, 68, 0.96) !important;
+  backdrop-filter: saturate(108%) blur(3px);
+  -webkit-backdrop-filter: saturate(108%) blur(3px);
+}
+
+html:not(.site-home) #apc-news .apc-news-year-pagination a.page-number:hover {
+  background: #536499 !important;
+  border-color: #536499 !important;
+  color: #fff !important;
+}
+
+html.site-home #apc-news .apc-news-year-pagination span.page-number.current {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(255, 255, 255, 0.98) !important;
+  color: #1e50a2 !important;
+  font-weight: 700;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.45);
+  cursor: default;
+}
+
+html:not(.site-home) #apc-news .apc-news-year-pagination span.page-number.current {
+  background: #536499 !important;
+  border: 1px solid #536499 !important;
+  color: #fff !important;
+  font-weight: 600;
+  cursor: default;
+}
+
+#apc-news .article-sort-title .apc-news-year-label {
+  margin-left: 0.35em;
+  font-size: 0.72em;
+  font-weight: 500;
+  opacity: 0.82;
+}
+
+html.site-home #apc-news .article-sort-item.year,
+html.site-home #apc-news .article-sort-item:not(.year) .article-sort-item-time,
+html.site-home #apc-news .article-sort-item:not(.year) .article-sort-item-title,
+html.site-home #apc-news .apc-news-content {
+  color: rgba(255, 255, 255, 0.94) !important;
+}
+
+html:not(.site-home) #apc-news .article-sort-title,
+html:not(.site-home) #apc-news .article-sort-item.year,
+html:not(.site-home) #apc-news .article-sort-item:not(.year) .article-sort-item-time,
+html:not(.site-home) #apc-news .article-sort-item:not(.year) .article-sort-item-title,
+html:not(.site-home) #apc-news .apc-news-content {
+  color: var(--font-color) !important;
 }
 

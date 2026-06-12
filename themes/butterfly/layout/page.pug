@@ -3,6 +3,8 @@ extends includes/layout.pug
 block content
   if page.type === 'categories'
     include includes/page/categories.pug
+  else if page.type === 'apc-news'
+    include includes/page/apc-news.pug
   else
     #page
       if top_img === false

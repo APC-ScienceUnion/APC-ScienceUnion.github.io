@@ -1,0 +1,14 @@
+//- 联萌新闻：按年份分页（页码显示为年份）
+nav.apc-news-year-pagination(class=paginationPosition === 'top' ? 'is-top' : 'is-bottom')
+  .pagination
+    if page.apc_news_newer_year
+      a.page-number.prev(href=apc_news_year_url(page.apc_news_newer_year, page.apc_news_years) title=page.apc_news_newer_year + '年')
+        i.fas.fa-chevron-left.fa-fw
+    each y in page.apc_news_years
+      if y === page.apc_news_year
+        span.page-number.current= y
+      else
+        a.page-number(href=apc_news_year_url(y, page.apc_news_years))= y
+    if page.apc_news_older_year
+      a.page-number.next(href=apc_news_year_url(page.apc_news_older_year, page.apc_news_years) title=page.apc_news_older_year + '年')
+        i.fas.fa-chevron-right.fa-fw
