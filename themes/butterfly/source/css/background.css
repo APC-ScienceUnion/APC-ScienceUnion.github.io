@@ -1004,6 +1004,13 @@ html.site-home #apc-news .article-sort-item.apc-news-item {
   filter: none;
 }
 
+#apc-news .article-sort-item.apc-news-item .article-sort-item-img a[data-fancybox] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+}
+
 #apc-news .article-sort-item.apc-news-item .article-sort-item-info {
   flex: 1 1 auto;
   min-width: 0;
@@ -1103,6 +1110,11 @@ html.site-home #apc-news .article-sort-item.apc-news-item {
   object-fit: contain;
   border-radius: 8px;
   margin: 0;
+}
+
+#apc-news a[data-fancybox] {
+  display: block;
+  cursor: zoom-in;
 }
 
 /* 兜底：段落内若仍有多图，强制横向排列 */
