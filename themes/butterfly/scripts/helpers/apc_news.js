@@ -127,3 +127,26 @@ hexo.extend.helper.register('apc_news_year_url', function (year, years) {
   return this.url_for('/apc-news/' + year + '/')
 })
 
+/** 返回当前进行中的联萌新闻（按 start 倒序） */
+hexo.extend.helper.register('apc_ongoing_news', function () {
+  const items = (this.site.data.apc_news || []).slice()
+  const now = moment()
+
+  return items.filter(function (item) {
+    const startDate = moment(item.start).startOf('day')
+    const endDate = moment(item.end || item.start).endOf('day')
+    return !now.isBefore(startDate) && !now.isAfter(endDate)
+  }).sort(function (a, b) {
+    return new Date(b.start) - new Date(a.start)
+  })
+})
+
+/** 首页新闻框：Markdown 转纯文本摘要 */
+hexo.extend.helper.register('apc_news_excerpt', function (content, length) {
+  length = length || 200
+  if (!content) return ''
+  const html = hexo.render.renderSync({ text: content, engine: 'markdown' })
+  const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+  return text.length > length ? text.slice(0, length) + '…' : text
+})
+

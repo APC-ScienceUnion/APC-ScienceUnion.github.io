@@ -1,0 +1,25 @@
+//- 首页：进行中的联萌新闻推广框（无进行中活动时不渲染）
+- var ongoingNews = apc_ongoing_news()
+if ongoingNews.length
+  - var item = ongoingNews[0]
+  - var hasCover = !!(item.cover && ('' + item.cover).trim())
+  - var startText = date(item.start, 'YYYY-MM-DD')
+  - var endText = item.end ? date(item.end, 'YYYY-MM-DD') : startText
+  - var dateText = endText !== startText ? startText + ' ~ ' + endText : startText
+  a.home-apc-news-box(href=url_for('/apc-news/') title='联萌新闻：' + item.title)
+    span.home-apc-news-box-ribbon(aria-hidden='true') 新闻
+    if hasCover
+      .home-apc-news-box-cover
+        img(src=item.cover alt=item.title onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'`)
+    .home-apc-news-box-body(class=!hasCover ? 'no-cover' : '')
+      .home-apc-news-box-meta
+        span.home-apc-news-box-status
+          i.fas.fa-bullhorn.home-apc-news-box-bullhorn(aria-hidden='true')
+          span.home-apc-news-box-tag 进行中
+        span.home-apc-news-box-date
+          i.far.fa-calendar-alt
+          = dateText
+      .home-apc-news-box-title-row
+        h2.home-apc-news-box-title= item.title
+        i.fas.fa-arrow-right.home-apc-news-box-title-arrow(aria-hidden='true')
+      p.home-apc-news-box-content= apc_news_excerpt(item.content, 180)
