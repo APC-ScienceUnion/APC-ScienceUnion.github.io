@@ -3,11 +3,28 @@
 # content: 支持 Markdown，可插入图片
 
 - title: 十周年晚会相关活动
-  start: 2026-06-29
+  start: 2026-07-05
   end: 2026-07-05
-  cover: 
+  cover: https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iel7jyiylej319y19y1kx.jpg
   content: |
-    联盟十周年活动正在筹备中~
+    联盟十周年活动正在筹备中~扫码可以加入活动群！
+    ![活动海报](https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iel7jyiylej319y19y1kx.jpg)
+
+- title: 🎉A.P.C.科学联盟十周年庆典晚会即将开启！留下你的祝福吧~
+  start: 2026-06-28
+  end: 2026-07-05
+  cover: https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iel7ot249xj30xc0xcall.jpg
+  content: |
+    十年格物致知，一路步履不停。
+    在评论区留下你对格物社/A.P.C.科学联盟十周年生日的祝福寄语，即可参与抽奖！
+
+    【参与方式】
+    在动态评论区写下祝福，我们将在本平台随机抽取1位朋友送出apc十周年A5纪念笔记本*1。
+
+    PS. 小红书（格物社）、抖音（A.P.C.科学联盟）、QQ空间（2681412751）同步开奖，每个渠道各抽取1人！多平台留言可以增加中奖概率哦~
+
+    开奖日期：2026/7/5
+    ![活动海报](https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iel7ot249xj30xc0xcall.jpg)
 
 - title: 《格物・2019 年刊》：预售开启
   start: 2026-06-21
