@@ -855,6 +855,7 @@ inject:
     - '<script src="/js/universe.js"></script>' # 背景宇宙星光
     - <script src="/js/apc-loading.js"></script>
     - <script src="/js/home-category-bar.js"></script>
+    - <script src="/js/apc-news-status.js"></script>
     - <script src="/js/bing.js"></script>
     - <script src="/js/apod.js"></script>
     - <script src="/js/news60.js"></script>

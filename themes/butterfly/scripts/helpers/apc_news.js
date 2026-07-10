@@ -96,6 +96,7 @@ hexo.extend.helper.register('apc_md', function (content) {
 
 
 
+/** 活动状态：构建时 moment() 为生成时刻；页面加载后由 apc-news-status.js 按访客本地日期刷新 */
 hexo.extend.helper.register('apc_status', function (start, end) {
 
   const now = moment()

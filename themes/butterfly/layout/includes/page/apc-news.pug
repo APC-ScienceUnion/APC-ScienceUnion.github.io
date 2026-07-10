@@ -32,7 +32,7 @@
           .article-sort-item-time
             i.far.fa-calendar-alt
             span.apc-news-date= dateText
-            span.apc-status(class=status.class)= status.text
+            span.apc-status(class=status.class data-start=startText data-end=endText)= status.text
           h3.article-sort-item-title= item.title
           .apc-news-content!= apc_md(item.content)
   if page.apc_news_years && page.apc_news_years.length > 1

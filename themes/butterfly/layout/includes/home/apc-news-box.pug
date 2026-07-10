@@ -6,6 +6,7 @@ if ongoingNews.length
   - var startText = date(item.start, 'YYYY-MM-DD')
   - var endText = item.end ? date(item.end, 'YYYY-MM-DD') : startText
   - var dateText = endText !== startText ? startText + ' ~ ' + endText : startText
+  - var boxStatus = apc_status(item.start, item.end)
   a.home-apc-news-box(href=url_for('/apc-news/') title='联萌新闻：' + item.title)
     span.home-apc-news-box-ribbon(aria-hidden='true') 新闻
     if hasCover
@@ -15,7 +16,7 @@ if ongoingNews.length
       .home-apc-news-box-meta
         span.home-apc-news-box-status
           i.fas.fa-bullhorn.home-apc-news-box-bullhorn(aria-hidden='true')
-          span.home-apc-news-box-tag 进行中
+          span.home-apc-news-box-tag(class=boxStatus.class data-start=startText data-end=endText)= boxStatus.text
         span.home-apc-news-box-date
           i.far.fa-calendar-alt
           = dateText
