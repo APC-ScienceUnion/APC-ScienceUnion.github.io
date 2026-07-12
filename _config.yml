@@ -163,7 +163,8 @@ image_minifier:
   optimizationLevel: 2 
   pngquant: true
   progressive: true
-  exclude: gif
+  exclude:
+    - gif
 
 markdown:
   plugins:
