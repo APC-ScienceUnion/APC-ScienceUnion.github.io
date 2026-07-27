@@ -223,6 +223,10 @@ document.addEventListener('DOMContentLoaded', function () {
    */
   const runLightbox = () => {
     btf.loadLightbox(document.querySelectorAll('#article-container img:not(.no-lightbox)'))
+    document.querySelectorAll('#apc-news .apc-news-item').forEach((item, idx) => {
+      const imgs = item.querySelectorAll('img:not(.no-lightbox)')
+      if (imgs.length) btf.loadLightbox(imgs, `apc-news-${idx}`)
+    })
   }
 
   /**

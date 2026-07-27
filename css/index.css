@@ -2000,8 +2000,12 @@ figure.highlight pre .javascript .function {
   color: #858585;
   font-size: 95%;
 }
-.article-sort-item-time time {
-  padding-left: 6px;
+.article-sort-item-time i {
+  margin-right: 6px;
+}
+.article-sort-item-time time,
+.article-sort-item-time span {
+  padding-left: 2px;
   cursor: default;
 }
 .article-sort-item-title {
