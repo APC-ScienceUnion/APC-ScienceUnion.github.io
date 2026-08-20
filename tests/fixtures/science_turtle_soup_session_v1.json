@@ -1,0 +1,19 @@
+{
+  "format": "apc.science-turtle-soup.session",
+  "schemaVersion": 1,
+  "datasetVersion": 1,
+  "exportedAt": "2026-08-21T01:00:00.000Z",
+  "session": {
+    "sessionId": "browser-import-test-20260821",
+    "domainId": "mathematics",
+    "seed": 0,
+    "startedAt": "2026-08-21T00:59:00.000Z",
+    "actions": [
+      {
+        "kind": "question",
+        "text": "这位数学家来自瑞士吗？",
+        "at": "2026-08-21T00:59:30.000Z"
+      }
+    ]
+  }
+}
