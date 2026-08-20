@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#211913">
+  <meta name="description" content="A.P.C. 科学联盟反五子棋网页版：连成五子的一方落败，支持移子规则、启发式 AI、棋谱保存与复盘。">
+  <title>反五子棋 · FWZQ</title>
+  <link rel="icon" href="../img/favicon.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="返回 A.P.C. 科学联盟首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>
+        <strong>FWZQ</strong>
+        <small>A.P.C. SCIENCE UNION</small>
+      </span>
+    </a>
+    <div class="header-actions">
+      <button class="icon-button" id="rulesButton" type="button" aria-haspopup="dialog" title="查看规则">
+        <span aria-hidden="true">?</span><span class="sr-only">查看规则</span>
+      </button>
+      <a class="home-link" href="/">返回博客</a>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="intro" aria-labelledby="pageTitle">
+      <div>
+        <p class="eyebrow">ANTI-FIVE GOMOKU</p>
+        <h1 id="pageTitle">反五子棋</h1>
+        <p>目标不是抢先连成五子，而是让对手先踏入那条危险的直线。</p>
+      </div>
+      <div class="rule-pill"><span></span> 连五者输</div>
+    </section>
+
+    <section class="game-layout">
+      <div class="board-card">
+        <div class="board-heading">
+          <div>
+            <span class="turn-stone black" id="turnStone" aria-hidden="true"></span>
+            <div>
+              <small id="phaseLabel">当前行棋</small>
+              <strong id="turnLabel">黑方</strong>
+            </div>
+          </div>
+          <div class="move-counter"><small>回合 / 步</small><strong><span id="turnCount">0</span> / <span id="moveCount">0</span></strong></div>
+        </div>
+
+        <div class="canvas-wrap" id="canvasWrap">
+          <canvas id="board" width="900" height="900" aria-label="15 乘 15 反五子棋棋盘" role="application"></canvas>
+          <div class="result-overlay" id="resultOverlay" hidden>
+            <span id="resultKicker">对局结束</span>
+            <strong id="resultText">黑方获胜</strong>
+            <button type="button" id="overlayNewGame">再来一局</button>
+          </div>
+          <div class="thinking" id="thinking" hidden aria-live="polite">
+            <span></span><span></span><span></span><b>AI 正在思考</b>
+          </div>
+        </div>
+
+        <div class="board-tools" aria-label="棋盘显示选项">
+          <button class="tool-toggle is-on" type="button" data-toggle="arrows" aria-pressed="true"><span>↗</span>移子箭头</button>
+          <button class="tool-toggle is-on" type="button" data-toggle="rays" aria-pressed="true"><span>✦</span>辅助射线</button>
+          <button class="tool-toggle" type="button" data-toggle="danger" aria-pressed="false"><span>!</span>危险提示</button>
+          <button class="tool-toggle" type="button" data-toggle="numbers" aria-pressed="false"><span>#</span>显示手数</button>
+          <button class="tool-toggle is-on" type="button" data-toggle="sound" aria-pressed="true"><span>♪</span>音效</button>
+        </div>
+
+        <div class="review-bar" id="reviewBar">
+          <div class="review-meta">
+            <span>棋谱进度</span>
+            <strong><span id="reviewPosition">0</span> / <span id="reviewTotal">0</span></strong>
+          </div>
+          <div class="review-controls">
+            <button type="button" id="reviewPrev" aria-label="上一手">‹</button>
+            <input id="reviewSlider" type="range" min="0" max="0" value="0" aria-label="棋谱进度">
+            <button type="button" id="reviewNext" aria-label="下一手">›</button>
+            <button class="latest-button" type="button" id="reviewLatest">回到对局</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="control-card" aria-label="对局控制面板">
+        <section class="status-card" aria-live="polite">
+          <div class="status-topline">
+            <span id="engineLabel">浏览器启发式 AI</span>
+            <span class="status-dot" id="statusDot"></span>
+          </div>
+          <div class="clock" id="clock">0:00.0</div>
+          <p id="statusText">黑方先行，请在棋盘上落子。</p>
+        </section>
+
+        <section class="control-section">
+          <div class="section-title"><span>对局设定</span><small>随时可调整</small></div>
+          <label class="field">
+            <span>对局模式</span>
+            <select id="modeSelect">
+              <option value="human-black">人执黑</option>
+              <option value="human-white">人执白</option>
+              <option value="pvp">双人对战</option>
+              <option value="watch">AI 观战</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>AI 强度</span>
+            <select id="difficultySelect">
+              <option value="easy">轻松 · 快速随机</option>
+              <option value="medium" selected>标准 · 局面评估</option>
+              <option value="hard">深入 · 两层搜索</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>白方禁移回合</span>
+            <select id="whiteRestrictSelect">
+              <option value="0">不限制</option>
+              <option value="1">1 回合</option>
+              <option value="2" selected>2 回合</option>
+              <option value="3">3 回合</option>
+              <option value="4">4 回合</option>
+            </select>
+          </label>
+          <label class="switch-field">
+            <span><b>屏蔽立即自杀着</b><small>保持与桌面版默认规则一致</small></span>
+            <input id="suicideToggle" type="checkbox" checked>
+            <i aria-hidden="true"></i>
+          </label>
+        </section>
+
+        <section class="action-grid" aria-label="对局操作">
+          <button class="primary-action" type="button" id="newGameButton"><span>＋</span>新对局</button>
+          <button type="button" id="undoButton"><span>↶</span>悔棋</button>
+          <button type="button" id="saveButton"><span>↓</span>保存棋谱</button>
+          <button type="button" id="loadButton"><span>↑</span>读取棋谱</button>
+          <input id="recordInput" type="file" accept=".afg,.txt,text/plain" hidden>
+        </section>
+
+        <section class="legend-card">
+          <div><i class="legend-dot red"></i><span><b>红色</b>己方危险点</span></div>
+          <div><i class="legend-dot amber"></i><span><b>金色</b>对方危险点</span></div>
+          <div><i class="legend-dot green"></i><span><b>绿色</b>移子可达点</span></div>
+        </section>
+
+        <section class="quick-rules">
+          <div class="section-title"><span>玩法速览</span><button type="button" id="rulesTextButton">完整规则</button></div>
+          <ol>
+            <li><span>01</span><p>黑方先行，双方轮流在空位落子。</p></li>
+            <li><span>02</span><p>点击对方棋子可“占领”，再沿直线把它安置到空位。</p></li>
+            <li><span>03</span><p>任意一方横、竖或斜线连成五子，该方立即落败。</p></li>
+          </ol>
+        </section>
+
+        <footer>桌面版界面：硅基飙尘葆光<br>Web 版由 A.P.C. 科学联盟迁移</footer>
+      </aside>
+    </section>
+  </main>
+
+  <dialog id="rulesDialog" class="rules-dialog">
+    <form method="dialog">
+      <button class="dialog-close" aria-label="关闭规则">×</button>
+      <p class="eyebrow">HOW TO PLAY</p>
+      <h2>反五子棋规则</h2>
+      <div class="dialog-rule"><span>01</span><div><h3>连五者输</h3><p>棋盘为 15×15，黑方先行。任意一方在横、竖或斜线上连成至少五枚自己的棋子，该方落败。</p></div></div>
+      <div class="dialog-rule"><span>02</span><div><h3>落子或移子</h3><p>普通回合可在空位落子；也可点击一枚对方棋子进行占领，再把拿起的对方棋子沿八个直线方向安置到连续可达的空位。占领和安置共同构成一个回合。</p></div></div>
+      <div class="dialog-rule"><span>03</span><div><h3>白方平衡限制</h3><p>默认情况下，白方最初两个回合只能普通落子，不能移子。你可以在对局设定中调整这个数值。</p></div></div>
+      <div class="dialog-rule"><span>04</span><div><h3>桌面版兼容</h3><p>保存格式为 UTF-8 的 .afg 文本，坐标和核心规则与原 Python 桌面版兼容。浏览器版使用本地启发式 AI，不加载 KataGo、CUDA 或 Torch 模型。</p></div></div>
+      <button class="dialog-confirm" value="close">开始对局</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="./engine.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
