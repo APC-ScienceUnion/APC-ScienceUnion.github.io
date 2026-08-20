@@ -10,7 +10,9 @@ menu:
     植物卡片: /gallery/PlantCard/ || fa-brands fa-pagelines
     Science&三行情书: /gallery/ScienceLetter/ || fa-solid fa-envelope
   在线资源: /link/ || fas fa-link
-  反五子棋: /fwzq/ || fas fa-chess-board
+  联盟游戏||fas fa-gamepad:
+    反五子棋: /fwzq/ || fas fa-chess-board
+    玄之试炼: /H5Games/XuanXueTestH5/ || fas fa-dice-d20
   联萌新闻: /apc-news/ || fas fa-bullhorn
   关于我们: /about/ || fas fa-heart
 

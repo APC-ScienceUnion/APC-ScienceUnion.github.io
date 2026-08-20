@@ -1,59 +1,155 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | 玄の试炼</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171316">
+  <meta name="description" content="A.P.C. 科学联盟 Unity WebGL 游戏《玄之试炼》。">
+  <title>玄之试炼 · 联盟游戏</title>
+  <link rel="icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="game-header">
+      <a class="brand" href="/" aria-label="返回 A.P.C. 科学联盟首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>联盟游戏</strong>
+          <small>A.P.C. SCIENCE UNION</small>
+        </span>
+      </a>
+      <div class="game-heading">
+        <strong>玄之试炼</strong>
+        <span>UNITY WEBGL · V1.0.4</span>
+      </div>
+      <nav class="header-actions" aria-label="页面导航">
+        <a href="/fwzq/">反五子棋</a>
+        <a class="home-link" href="/">返回博客</a>
+      </nav>
+    </header>
+
+    <main class="game-main">
+      <section id="unity-container" aria-label="玄之试炼 Unity WebGL 游戏">
+        <div id="unity-stage">
+          <canvas id="unity-canvas" width="960" height="600" tabindex="0" aria-label="玄之试炼游戏画面"></canvas>
+
+          <div id="unity-loading-bar" aria-live="polite">
+            <div class="loading-emblem" aria-hidden="true"><span>玄</span></div>
+            <p class="loading-kicker">ENTERING THE TRIAL</p>
+            <strong>正在准备玄之试炼</strong>
+            <div id="unity-progress" role="progressbar" aria-label="游戏加载进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div id="unity-progress-bar-full"></div>
+            </div>
+            <div class="loading-meta">
+              <span id="unity-loading-detail">正在连接游戏资源</span>
+              <span id="unity-progress-label">0%</span>
+            </div>
+            <p class="loading-note">首次载入约 115 MB，慢速网络可能需要数分钟，建议使用 Wi-Fi。</p>
+          </div>
+
+          <div id="unity-error" role="alert" hidden>
+            <span class="error-symbol" aria-hidden="true">!</span>
+            <p class="loading-kicker">TRIAL INTERRUPTED</p>
+            <strong>游戏加载失败</strong>
+            <p id="unity-error-text">请检查网络、浏览器 WebGL2 支持和可用内存。</p>
+            <div class="error-actions">
+              <button id="unity-retry" type="button">重新加载</button>
+              <a href="/">返回博客</a>
+            </div>
+          </div>
+
+          <div id="unity-warning" role="status" aria-live="polite"></div>
         </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">玄の试炼</div>
-      </div>
-    </div>
-    <script>
+
+        <footer id="unity-footer">
+          <div class="build-info">
+            <span class="build-dot" aria-hidden="true"></span>
+            <span><strong>玄之试炼</strong><small>硅基 · Unity WebGL</small></span>
+          </div>
+          <span id="runtime-status" aria-live="polite">加载中</span>
+          <button id="unity-fullscreen-button" type="button" aria-label="进入全屏" disabled>
+            <span aria-hidden="true">⛶</span> 全屏
+          </button>
+        </footer>
+      </section>
+
+      <p id="rotate-hint"><span aria-hidden="true">↻</span> 横屏体验更佳</p>
+    </main>
+  </div>
+
+  <noscript>
+    <div class="noscript-message">玄之试炼需要启用 JavaScript 才能运行。</div>
+  </noscript>
+
+  <script>
+    (function () {
+      "use strict";
 
       var container = document.querySelector("#unity-container");
+      var stage = document.querySelector("#unity-stage");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
+      var progress = document.querySelector("#unity-progress");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var progressLabel = document.querySelector("#unity-progress-label");
+      var loadingDetail = document.querySelector("#unity-loading-detail");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
+      var errorBox = document.querySelector("#unity-error");
+      var errorText = document.querySelector("#unity-error-text");
+      var retryButton = document.querySelector("#unity-retry");
+      var runtimeStatus = document.querySelector("#runtime-status");
+      var unityInstance = null;
+      var failed = false;
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+      function unityShowBanner(message, type) {
+        var item = document.createElement("div");
+        item.textContent = String(message || "");
+        item.className = type === "error" ? "banner-error" : "banner-warning";
+        warningBanner.appendChild(item);
+        warningBanner.hidden = false;
+        if (type !== "error") {
+          window.setTimeout(function () {
+            if (item.parentNode) item.parentNode.removeChild(item);
+            warningBanner.hidden = !warningBanner.children.length;
+          }, 6000);
         }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
+      }
+
+      function showLoadError(message) {
+        if (failed) return;
+        failed = true;
+        loadingBar.hidden = true;
+        errorText.textContent = String(message || "请检查网络、浏览器 WebGL2 支持和可用内存。");
+        errorBox.hidden = false;
+        runtimeStatus.textContent = "加载失败";
+      }
+
+      function updateProgress(value) {
+        var percent = Math.max(0, Math.min(100, Math.round(Number(value || 0) * 100)));
+        progressBarFull.style.width = percent + "%";
+        progressLabel.textContent = percent + "%";
+        progress.setAttribute("aria-valuenow", String(percent));
+        loadingDetail.textContent = percent < 8
+          ? "正在连接游戏资源"
+          : percent < 90
+            ? "正在下载大型游戏资源"
+            : "正在启动 Unity 引擎";
+      }
+
+      function supportsWebGL2() {
+        try {
+          var probe = document.createElement("canvas");
+          var context = probe.getContext("webgl2");
+          if (context) {
+            var loseContext = context.getExtension("WEBGL_lose_context");
+            if (loseContext) loseContext.loseContext();
+          }
+          return Boolean(window.WebAssembly && context);
+        } catch (_error) {
+          return false;
         }
-        updateBannerVisibility();
       }
 
       var buildUrl = "Build";
@@ -67,65 +163,93 @@
         productName: "玄の试炼",
         productVersion: "1.0.4",
         showBanner: unityShowBanner,
+        autoSyncPersistentDataPath: true,
+        devicePixelRatio: window.matchMedia("(pointer: coarse)").matches
+          ? 1
+          : Math.min(window.devicePixelRatio || 1, 2)
       };
 
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+      retryButton.addEventListener("click", function () {
+        window.location.reload();
+      });
 
-      // If you would like all file writes inside Unity Application.persistentDataPath
-      // directory to automatically persist so that the contents are remembered when
-      // the user revisits the site the next time, uncomment the following line:
-      // config.autoSyncPersistentDataPath = true;
-      // This autosyncing is currently not the default behavior to avoid regressing
-      // existing user projects that might rely on the earlier manual
-      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
-      // expected to change.
+      fullscreenButton.addEventListener("click", function () {
+        if (!unityInstance) return;
+        if (document.fullscreenElement && document.exitFullscreen) {
+          document.exitFullscreen().catch(function () {
+            unityShowBanner("无法退出全屏，请按 Esc 键。", "warning");
+          });
+          return;
+        }
+        function unityFullscreenFallback() {
+          try {
+            unityInstance.SetFullscreen(1);
+          } catch (_error) {
+            unityShowBanner("当前浏览器无法进入全屏，请尝试系统横屏。", "warning");
+          }
+        }
+        if (!container.requestFullscreen) {
+          unityFullscreenFallback();
+          return;
+        }
+        try {
+          var request = container.requestFullscreen();
+          if (request && typeof request.catch === "function") request.catch(unityFullscreenFallback);
+        } catch (_error) {
+          unityFullscreenFallback();
+        }
+      });
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
+      document.addEventListener("fullscreenchange", function () {
+        var active = Boolean(document.fullscreenElement);
+        fullscreenButton.setAttribute("aria-label", active ? "退出全屏" : "进入全屏");
+        fullscreenButton.lastChild.nodeValue = active ? " 退出" : " 全屏";
+      });
 
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
+      window.addEventListener("offline", function () {
+        if (!unityInstance && !failed) loadingDetail.textContent = "网络已断开，正在等待恢复";
+      });
 
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
+      window.addEventListener("online", function () {
+        if (!unityInstance && !failed) loadingDetail.textContent = "网络已恢复，继续加载";
+      });
 
+      canvas.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+      });
 
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+      loadingBar.hidden = false;
+      errorBox.hidden = true;
+      warningBanner.hidden = true;
+      updateProgress(0);
 
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
+      if (!supportsWebGL2()) {
+        showLoadError("当前浏览器不支持 WebGL2 或 WebAssembly，请升级浏览器后重试。");
+        return;
       }
 
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-              }).catch((message) => {
-                alert(message);
-              });
-            };
-
-      document.body.appendChild(script);
-
-    </script>
-  </body>
+      var loaderScript = document.createElement("script");
+      loaderScript.src = loaderUrl;
+      loaderScript.onerror = function () {
+        showLoadError("Unity 加载器下载失败，请检查网络后重试。");
+      };
+      loaderScript.onload = function () {
+        if (typeof createUnityInstance !== "function") {
+          showLoadError("Unity 加载器初始化失败，请重新加载页面。");
+          return;
+        }
+        createUnityInstance(canvas, config, updateProgress).then(function (instance) {
+          unityInstance = instance;
+          loadingBar.hidden = true;
+          fullscreenButton.disabled = false;
+          runtimeStatus.textContent = "已就绪";
+          canvas.focus();
+        }).catch(function (error) {
+          showLoadError(error && error.message ? error.message : error);
+        });
+      };
+      document.body.appendChild(loaderScript);
+    })();
+  </script>
+</body>
 </html>
