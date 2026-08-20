@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10191c">
+  <meta name="description" content="A.P.C. 科学联盟科学海龟汤：选择科学领域，通过是、不是、不清楚的问答锁定一个科学对象。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <title>科学海龟汤 · 联盟游戏</title>
+  <link rel="icon" href="../img/favicon.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="grid-noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="返回 A.P.C. 科学联盟首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><b>?</b></span>
+      <span>
+        <strong>科学海龟汤</strong>
+        <small>A.P.C. SCIENCE UNION</small>
+      </span>
+    </a>
+    <nav class="header-actions" aria-label="联盟游戏导航">
+      <a href="/fwzq/">反五子棋</a>
+      <a href="/H5Games/XuanXueTestH5/">玄之试炼</a>
+      <button class="round-button" id="rulesButton" type="button" aria-haspopup="dialog" title="查看规则">?</button>
+      <a class="home-link" href="/">返回博客</a>
+    </nav>
+  </header>
+
+  <main class="app-shell">
+    <section class="intro" aria-labelledby="pageTitle">
+      <div>
+        <p class="eyebrow">SCIENTIFIC YES / NO MYSTERY</p>
+        <h1 id="pageTitle">用问题，逼近一个科学对象</h1>
+        <p>选定领域后，系统会秘密选出一个真实对象。你每次提出一个可判断真假的问题，我只回答“是 / 不是 / 不清楚”。</p>
+      </div>
+      <div class="mode-pill"><span aria-hidden="true"></span> 单场本地存档</div>
+    </section>
+
+    <section class="game-layout" aria-label="科学海龟汤游戏区">
+      <article class="play-card">
+        <header class="session-header">
+          <div class="session-identity">
+            <span class="domain-symbol" id="domainSymbol" aria-hidden="true">?</span>
+            <div>
+              <small>当前领域</small>
+              <strong id="domainName">尚未开局</strong>
+            </div>
+          </div>
+          <div class="session-actions">
+            <span class="session-state" id="sessionState"><i></i>等待开始</span>
+            <button type="button" id="newGameButton">新场次</button>
+          </div>
+        </header>
+
+        <section class="soup-surface" aria-labelledby="surfaceTitle">
+          <div class="surface-meta">
+            <span>汤面</span>
+            <small id="caseCode">CASE —</small>
+          </div>
+          <div class="surface-content">
+            <span class="quote-mark" aria-hidden="true">“</span>
+            <h2 id="surfaceTitle">选择一个领域，开始第一场科学推理。</h2>
+            <p id="surfaceHint">汤面只会告诉你对象的大类，真正的答案藏在问答之中。</p>
+          </div>
+          <div class="surface-stats" aria-label="场次统计">
+            <div><small>提问</small><strong id="questionCount">0</strong></div>
+            <div><small>已确认</small><strong id="knownCount">0</strong></div>
+            <div><small>已排除</small><strong id="excludedCount">0</strong></div>
+          </div>
+        </section>
+
+        <section class="suggestion-strip" aria-label="问题示例">
+          <span>可以这样问</span>
+          <div id="suggestionList"></div>
+        </section>
+
+        <section class="history-section" aria-labelledby="historyTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">QUESTION LOG</p>
+              <h2 id="historyTitle">问答记录</h2>
+            </div>
+            <span id="roundLabel">0 轮</span>
+          </div>
+          <div class="history-list" id="historyList" aria-live="polite">
+            <div class="empty-history" id="emptyHistory">
+              <span aria-hidden="true">⌁</span>
+              <strong>还没有问题</strong>
+              <p>尽量一次只问一个可以用“是或不是”判断的问题。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="composer" id="composer">
+          <label for="questionInput">你的问题</label>
+          <textarea id="questionInput" rows="2" maxlength="220" placeholder="例如：这位人物生活在 20 世纪吗？" disabled></textarea>
+          <div class="composer-footer">
+            <span><b id="characterCount">0</b> / 220 · Enter 提问，Shift + Enter 换行</span>
+            <div>
+              <button class="guess-button" id="guessButton" type="button" disabled>我来猜汤底</button>
+              <button class="ask-button" id="askButton" type="button" disabled>提交问题 <span>↗</span></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="finished-panel" id="finishedPanel" hidden aria-live="polite">
+          <p class="eyebrow" id="finishedEyebrow">CASE SOLVED</p>
+          <h2 id="finishedTitle">回答正确</h2>
+          <p class="answer-name" id="answerName"></p>
+          <p id="answerReveal"></p>
+          <button type="button" id="finishedNewGame">再来一场</button>
+        </section>
+      </article>
+
+      <aside class="evidence-card" aria-label="推理侧栏">
+        <section class="save-status" aria-live="polite">
+          <div class="save-icon" aria-hidden="true">▣</div>
+          <div>
+            <small>本地状态</small>
+            <strong id="saveStatus">等待开局</strong>
+            <p id="saveDetail">刷新后可从本机恢复；游戏不会主动上传记录。</p>
+          </div>
+          <span class="lock-chip" id="lockChip">检查中</span>
+        </section>
+
+        <section class="evidence-section yes-section">
+          <div class="evidence-title">
+            <span class="answer-dot yes">是</span>
+            <div><h2>它是什么</h2><small id="yesCount">0 条</small></div>
+          </div>
+          <ul class="evidence-list" id="yesRecords">
+            <li class="empty-record">尚无已确认信息</li>
+          </ul>
+        </section>
+
+        <section class="evidence-section no-section">
+          <div class="evidence-title">
+            <span class="answer-dot no">否</span>
+            <div><h2>它不是什么</h2><small id="noCount">0 条</small></div>
+          </div>
+          <ul class="evidence-list" id="noRecords">
+            <li class="empty-record">尚无已排除信息</li>
+          </ul>
+        </section>
+
+        <section class="evidence-section unknown-section">
+          <div class="evidence-title">
+            <span class="answer-dot unknown">?</span>
+            <div><h2>什么还不清楚</h2><small id="unknownCount">0 条</small></div>
+          </div>
+          <ul class="evidence-list" id="unknownRecords">
+            <li class="empty-record">尚无不确定问题</li>
+          </ul>
+        </section>
+
+        <section class="record-tools">
+          <div class="section-heading compact">
+            <div><p class="eyebrow">LOCAL RECORD</p><h2>场次记录</h2></div>
+          </div>
+          <p>浏览器会自动保存一个当前场次；导出文件可用于手动备份或换设备恢复。</p>
+          <div class="tool-grid">
+            <button type="button" id="exportButton" disabled><span>↓</span>导出记录</button>
+            <button type="button" id="importButton"><span>↑</span>上传恢复</button>
+            <button class="reveal-button" type="button" id="revealButton" disabled><span>◉</span>放弃并揭晓</button>
+          </div>
+          <input id="recordInput" type="file" accept=".json,application/json" hidden>
+          <small class="privacy-note">记录文件含恢复题目的随机种子，请勿查看源码或文件内容，以免剧透。</small>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <dialog id="setupDialog" class="modal setup-dialog">
+    <form method="dialog">
+      <button class="dialog-close" value="cancel" aria-label="关闭">×</button>
+      <p class="eyebrow">NEW SCIENCE CASE</p>
+      <h2>选择本场领域</h2>
+      <p class="dialog-lead">系统会从所选领域秘密抽取一个对象。同一浏览器只保留一场当前游戏。</p>
+      <div class="domain-grid" id="domainGrid" role="radiogroup" aria-label="科学领域"></div>
+      <p class="replace-warning" id="replaceWarning" hidden>开始后会覆盖当前未结束的场次；你可以先导出记录。</p>
+      <div class="dialog-actions">
+        <button class="secondary-button" value="cancel">取消</button>
+        <button class="primary-button" id="startGameButton" type="button">开始游戏</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="guessDialog" class="modal guess-dialog">
+    <form method="dialog" id="guessForm">
+      <button class="dialog-close" value="cancel" aria-label="关闭">×</button>
+      <p class="eyebrow">SUBMIT THE BOTTOM</p>
+      <h2>你猜到汤底了吗？</h2>
+      <p class="dialog-lead">填写对象的常用全名。答对后，本场会立即停止并揭晓科学说明。</p>
+      <label for="guessInput">对象名称</label>
+      <input id="guessInput" type="text" maxlength="220" autocomplete="off" placeholder="例如：莱昂哈德·欧拉">
+      <div class="dialog-actions">
+        <button class="secondary-button" value="cancel">继续提问</button>
+        <button class="primary-button" id="submitGuessButton" type="submit">提交汤底</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="rulesDialog" class="modal rules-dialog">
+    <form method="dialog">
+      <button class="dialog-close" value="close" aria-label="关闭">×</button>
+      <p class="eyebrow">HOW TO PLAY</p>
+      <h2>科学海龟汤规则</h2>
+      <div class="rule-list">
+        <article><span>01</span><div><h3>选一个领域</h3><p>系统会在数学、化学、地球科学、生物、天文、计算机科学或物理中秘密选出一个真实对象，只给出对象大类作为汤面。</p></div></article>
+        <article><span>02</span><div><h3>提出真假问题</h3><p>每次只问一个能用真假判断的问题。系统只会显示“是”“不是”或“不清楚”；没有经过题库核实的事实不会猜答。</p></div></article>
+        <article><span>03</span><div><h3>整理证据</h3><p>侧栏自动归纳已确认、已排除和仍不清楚的内容，重复事实不会反复堆积，但完整问答历史会保留。</p></div></article>
+        <article><span>04</span><div><h3>猜中即结束</h3><p>使用“我来猜汤底”提交对象名称。答对后立即停止本场；放弃揭晓不会计为答对。</p></div></article>
+        <article><span>05</span><div><h3>保存在本机</h3><p>状态自动写入浏览器本地存储，并在支持的浏览器中同步保存为站点私有状态文件。可导出 JSON，或上传 JSON 恢复。游戏本身不会主动上传记录；请勿在提问中写入敏感信息。</p></div></article>
+      </div>
+      <button class="primary-button full-button" value="close">明白了</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript">科学海龟汤需要启用 JavaScript 才能进行问答和保存场次。</div></noscript>
+
+  <script src="./cases.js"></script>
+  <script src="./engine.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
