@@ -31,6 +31,7 @@ i18n_dir: :lang
 skip_render:
   - H5Games/**
   - 10th-link/**
+  - fwzq/**
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -140,12 +141,14 @@ html_minifier:
   ignore_error: false 
   exclude:
     - H5Games/**/*.html
+    - fwzq/**/*.html
   
 css_minifier: 
   enable: true 
   exclude: 
     - '*.min.css' 
     - H5Games/**/*.css
+    - fwzq/**/*.css
 
 js_minifier:
   enable: true 
@@ -155,6 +158,7 @@ js_minifier:
   exclude: 
     - '*.min.js'
     - H5Games/**/*.js
+    - fwzq/**/*.js
 
 image_minifier: 
   enable: true 
