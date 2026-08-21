@@ -7,3 +7,11 @@ public/
 .deploy*/
 _multiconfig.yml
 package.json
+# Local AI/serverless secrets and tooling state
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.netlify/
+.wrangler/
