@@ -1,18 +1,24 @@
 "use strict";
 
 (function startScienceTurtleSoup() {
-  const Cases = globalThis.ScienceSoupCases;
+  const Catalog = globalThis.ScienceSoupCatalog;
   const Engine = globalThis.ScienceSoupEngine;
-  if (!Cases || !Engine) throw new Error("科学海龟汤核心模块没有加载。");
+  const Api = globalThis.ScienceSoupApi;
+  if (!Catalog || !Engine || !Api) throw new Error("科学海龟汤前端模块没有完整加载。");
 
-  const STORAGE_KEY = "apc.science-turtle-soup.current.v1";
-  const BACKUP_KEY = "apc.science-turtle-soup.backup.v1";
-  const OPFS_FILE = "science-turtle-soup-active.json";
-  const LOCK_NAME = "apc.science-turtle-soup.writer.v1";
-  const LOCK_DB_NAME = "apc.science-turtle-soup.coordination.v1";
+  const STORAGE_KEY = "apc.science-turtle-soup.current.v2";
+  const BACKUP_KEY = "apc.science-turtle-soup.backup.v2";
+  const OPFS_FILE = "science-turtle-soup-active-v2.json";
+  const LEGACY_STORAGE_KEYS = [
+    "apc.science-turtle-soup.current.v1",
+    "apc.science-turtle-soup.backup.v1"
+  ];
+  const LEGACY_OPFS_FILE = "science-turtle-soup-active.json";
+  const LOCK_NAME = "apc.science-turtle-soup.writer.v2";
+  const LOCK_DB_NAME = "apc.science-turtle-soup.coordination.v2";
   const LOCK_STORE_NAME = "leases";
   const LOCK_LEASE_MS = 12000;
-  const MAX_FILE_BYTES = 256 * 1024;
+  const MAX_FILE_BYTES = 512 * 1024;
   const tabId = typeof crypto.randomUUID === "function"
     ? crypto.randomUUID()
     : `tab-${Date.now()}-${Math.random().toString(36).slice(2)}`;
@@ -21,18 +27,20 @@
   const ids = [
     "rulesButton", "newGameButton", "domainSymbol", "domainName", "sessionState", "caseCode",
     "surfaceTitle", "surfaceHint", "questionCount", "knownCount", "excludedCount", "suggestionList",
-    "roundLabel", "historyList", "emptyHistory", "composer", "questionInput", "characterCount", "guessButton",
+    "roundLabel", "historyList", "composer", "questionInput", "characterCount", "guessButton",
     "askButton", "finishedPanel", "finishedEyebrow", "finishedTitle", "answerName", "answerReveal",
     "finishedNewGame", "saveStatus", "saveDetail", "lockChip", "yesCount", "noCount", "unknownCount",
     "yesRecords", "noRecords", "unknownRecords", "exportButton", "importButton", "revealButton", "recordInput",
     "setupDialog", "domainGrid", "replaceWarning", "startGameButton", "guessDialog", "guessForm", "guessInput",
-    "submitGuessButton", "rulesDialog", "toast"
+    "submitGuessButton", "rulesDialog", "toast", "networkBanner", "networkMessage", "retryButton"
   ];
   for (const id of ids) elements[id] = document.getElementById(id);
 
   let currentSession = null;
-  let selectedDomainId = Cases.DOMAINS[0].id;
+  let selectedDomainId = Catalog.DOMAINS[0].id;
   let isWritable = false;
+  let serverValidated = false;
+  let isOnline = navigator.onLine !== false;
   let lockMode = "checking";
   let releaseLock = null;
   let leaseTimer = null;
@@ -43,25 +51,17 @@
   let lockDatabasePromise = null;
   let leaseRefreshInFlight = false;
   let mutationInProgress = false;
+  let networkState = "idle";
+  let networkMessage = "";
+  let retryTask = null;
+  let persistenceBlocked = false;
 
   function showToast(message, isError) {
     window.clearTimeout(toastTimer);
     elements.toast.textContent = String(message);
     elements.toast.classList.toggle("is-error", Boolean(isError));
     elements.toast.classList.add("is-visible");
-    toastTimer = window.setTimeout(() => elements.toast.classList.remove("is-visible"), 3200);
-  }
-
-  function randomSeed() {
-    if (globalThis.crypto && typeof crypto.getRandomValues === "function") {
-      return crypto.getRandomValues(new Uint32Array(1))[0];
-    }
-    return Math.floor(Math.random() * 0x100000000) >>> 0;
-  }
-
-  function makeSessionId() {
-    if (globalThis.crypto && typeof crypto.randomUUID === "function") return crypto.randomUUID();
-    return `soup-${Date.now()}-${Math.random().toString(36).slice(2, 12)}`;
+    toastTimer = window.setTimeout(() => elements.toast.classList.remove("is-visible"), 3600);
   }
 
   function safeStorageGet(key) {
@@ -80,22 +80,21 @@
       return true;
     } catch (error) {
       storageInfo.local = false;
-      storageInfo.error = "自动保存不可用，请及时导出记录";
+      storageInfo.error = "自动缓存不可用，请及时导出记录";
       return false;
     }
   }
 
-  async function readOpfsText() {
+  async function readOpfsText(fileName, markAvailable) {
     if (!navigator.storage || typeof navigator.storage.getDirectory !== "function") return null;
     try {
       const root = await navigator.storage.getDirectory();
-      const handle = await root.getFileHandle(OPFS_FILE);
+      const handle = await root.getFileHandle(fileName);
       const file = await handle.getFile();
       if (file.size > MAX_FILE_BYTES) throw new Error("本地状态文件过大");
-      storageInfo.opfs = true;
+      if (markAvailable) storageInfo.opfs = true;
       return await file.text();
     } catch (error) {
-      if (error && error.name === "NotFoundError") return null;
       return null;
     }
   }
@@ -132,11 +131,11 @@
       const candidates = [];
       const current = parseStoredCandidate(safeStorageGet(STORAGE_KEY), "local");
       const backup = parseStoredCandidate(safeStorageGet(BACKUP_KEY), "backup");
-      const opfs = parseStoredCandidate(await readOpfsText(), "opfs");
+      const opfs = parseStoredCandidate(await readOpfsText(OPFS_FILE, true), "opfs");
       if (current) candidates.push(current);
       if (backup) candidates.push(backup);
       if (opfs) candidates.push(opfs);
-      candidates.sort((a, b) => b.timestamp - a.timestamp || b.session.revision - a.session.revision);
+      candidates.sort((a, b) => b.timestamp - a.timestamp || b.session.state.revision - a.session.state.revision);
       return candidates[0] || null;
     },
 
@@ -149,11 +148,16 @@
       saveQueue = saveQueue.then(() => writeOpfsText(text)).catch(() => false);
       const opfsSaved = await saveQueue;
       const persisted = localSaved || opfsSaved;
-      if (!persisted) storageInfo.error = "自动保存失败，请导出记录后再继续";
+      if (!persisted) storageInfo.error = "本机缓存失败；当前页面仍保留 AI 结果";
       renderSaveStatus();
       return { bundle, persisted, local: localSaved, opfs: opfsSaved };
     }
   };
+
+  async function hasLegacyState() {
+    if (LEGACY_STORAGE_KEYS.some((key) => Boolean(safeStorageGet(key)))) return true;
+    return Boolean(await readOpfsText(LEGACY_OPFS_FILE, false));
+  }
 
   function openLockDatabase() {
     if (!globalThis.indexedDB) return Promise.reject(new Error("浏览器不支持单场互斥锁"));
@@ -213,6 +217,7 @@
 
   function loseWriterAccess() {
     isWritable = false;
+    serverValidated = false;
     lockMode = "readonly";
     window.clearInterval(leaseTimer);
     leaseTimer = null;
@@ -287,14 +292,19 @@
       const renewed = await updateIndexedDbLease("renew");
       if (renewed) return true;
     } catch (error) {
-      // Losing the coordination store must never leave this page writable.
+      // A failed lease refresh must never leave the page writable.
     }
     loseWriterAccess();
     return false;
   }
 
   function broadcastUpdate() {
-    if (channel) channel.postMessage({ type: "state-updated", revision: currentSession ? currentSession.revision : -1 });
+    if (!channel) return;
+    channel.postMessage({
+      type: "state-updated",
+      sessionId: currentSession ? currentSession.state.sessionId : "",
+      revision: currentSession ? currentSession.state.revision : -1
+    });
   }
 
   async function reloadReadonlyState() {
@@ -306,23 +316,86 @@
     }
   }
 
+  function setNetwork(nextState, message, onRetry) {
+    networkState = nextState;
+    networkMessage = message || "";
+    retryTask = typeof onRetry === "function" ? onRetry : null;
+    renderNetworkStatus();
+    updateComposerState();
+  }
+
+  function renderNetworkStatus() {
+    if (!elements.networkBanner) return;
+    const visible = networkState !== "idle";
+    elements.networkBanner.hidden = !visible;
+    elements.networkBanner.className = `network-banner is-${networkState}`;
+    elements.networkMessage.textContent = networkMessage || "AI 服务就绪";
+    elements.retryButton.hidden = !retryTask || mutationInProgress || !isOnline;
+    elements.retryButton.disabled = mutationInProgress || !isOnline;
+  }
+
+  function errorMessage(error, fallback) {
+    if (!isOnline || (error && error.code === "NETWORK_ERROR")) {
+      return "当前无法连接 AI 服务。本次操作没有被算作“不清楚”，请联网后用原操作重试。";
+    }
+    return error && error.message ? error.message : fallback;
+  }
+
+  function blockForPersistence(message, afterSave, restoreValidation) {
+    persistenceBlocked = true;
+    serverValidated = false;
+    setNetwork("warning", message, () => retryCurrentPersistence(afterSave, restoreValidation));
+  }
+
+  async function retryCurrentPersistence(afterSave, restoreValidation) {
+    if (!currentSession || mutationInProgress || !isWritable) return;
+    mutationInProgress = true;
+    let continueAfterSave = false;
+    setNetwork("syncing", "正在重新写入本机场次状态…", null);
+    render();
+    try {
+      if (!(await ensureWriterAccess())) return;
+      const saved = await StateStore.save(currentSession);
+      if (!saved.persisted) {
+        blockForPersistence("本机仍无法保存场次；请允许站点存储或先导出记录。", afterSave, restoreValidation);
+        return;
+      }
+      persistenceBlocked = false;
+      serverValidated = restoreValidation !== false;
+      broadcastUpdate();
+      setNetwork("idle", "", null);
+      showToast("本机场次状态已恢复保存。");
+      continueAfterSave = typeof afterSave === "function";
+    } finally {
+      mutationInProgress = false;
+      render();
+    }
+    if (continueAfterSave) await afterSave();
+  }
+
+  async function stillOwnWriterAfterNetwork() {
+    if (await ensureWriterAccess()) return true;
+    serverValidated = false;
+    setNetwork("error", "等待 AI 时本页面失去了场次操作权；返回结果未写入，请在当前可写标签页继续。", null);
+    return false;
+  }
+
   function renderDomainOptions() {
     elements.domainGrid.replaceChildren();
-    for (const domain of Cases.DOMAINS) {
+    for (const domain of Catalog.DOMAINS) {
       const label = document.createElement("label");
       label.className = "domain-option";
       label.dataset.domain = domain.id;
-
       const input = document.createElement("input");
       input.type = "radio";
       input.name = "science-domain";
       input.value = domain.id;
       input.checked = domain.id === selectedDomainId;
+      input.disabled = mutationInProgress;
       input.addEventListener("change", () => {
         selectedDomainId = domain.id;
         updateDomainSelection();
       });
-
       const icon = document.createElement("span");
       icon.textContent = domain.icon;
       const copy = document.createElement("span");
@@ -354,71 +427,253 @@
       showToast("另一标签页正在操作本场游戏，请先关闭它再刷新此页。", true);
       return;
     }
-    selectedDomainId = currentSession ? currentSession.domainId : selectedDomainId;
+    selectedDomainId = currentSession ? currentSession.state.domainId : selectedDomainId;
     renderDomainOptions();
-    elements.replaceWarning.hidden = !(currentSession && currentSession.status === "playing");
+    elements.replaceWarning.hidden = !(currentSession && currentSession.state.status === "playing");
     if (!elements.setupDialog.open) elements.setupDialog.showModal();
   }
 
-  async function startNewGame() {
+  async function startNewGame(options) {
+    options = options || {};
     if (!isWritable || mutationInProgress) return;
-    if (currentSession && currentSession.status === "playing") {
+    if (persistenceBlocked) {
+      showToast("请先重试保存或导出当前场次，再开始新游戏。", true);
+      return;
+    }
+    if (!isOnline) {
+      setNetwork("offline", "当前离线，联网后才能创建 AI 场次。", () => startNewGame(options));
+      return;
+    }
+    if (!options.skipConfirm && currentSession && currentSession.state.status === "playing") {
       const confirmed = window.confirm("开始新场次会覆盖当前未结束的游戏。是否继续？");
       if (!confirmed) return;
     }
+    const actionId = options.actionId || Api.createActionId();
+    const domainId = options.domainId || selectedDomainId;
     mutationInProgress = true;
-    updateComposerState();
+    setNetwork("creating", "AI 正在准备新的科学汤面…", null);
+    render();
     try {
       if (!(await ensureWriterAccess())) return;
-      const nextSession = Engine.makeSession({
-        domainId: selectedDomainId,
-        seed: randomSeed(),
-        sessionId: makeSessionId(),
-        startedAt: new Date().toISOString()
-      });
+      const payload = await Api.start(domainId, actionId);
+      if (!(await stillOwnWriterAfterNetwork())) return;
+      const nextSession = Engine.createSession(payload);
+      if (nextSession.state.domainId !== domainId) throw new Error("AI 返回了错误的科学领域。");
       const saved = await StateStore.save(nextSession);
       if (!saved.persisted) {
-        showToast("无法保存新场次。请允许本地存储后重试。", true);
+        setNetwork("error", "新场次未能写入本机，当前场次没有被替换。请允许站点存储后重试。", () => startNewGame({ actionId, domainId, skipConfirm: true }));
+        showToast("新场次未保存，当前场次没有被替换。", true);
         return;
       }
       currentSession = nextSession;
-      broadcastUpdate();
+      persistenceBlocked = false;
+      serverValidated = true;
+      elements.questionInput.value = "";
+      elements.guessInput.value = "";
       if (elements.setupDialog.open) elements.setupDialog.close();
       render(true);
+      broadcastUpdate();
+      setNetwork("idle", "", null);
+      showToast("AI 场次已开始。");
       elements.questionInput.focus();
       window.scrollTo({ top: 0, behavior: "smooth" });
-      showToast("新场次已开始，并已保存到本机。");
     } catch (error) {
-      showToast(error.message || "无法开始新场次。", true);
+      serverValidated = Boolean(currentSession && serverValidated);
+      setNetwork("error", errorMessage(error, "无法开始 AI 场次。"), error && error.retryable !== false
+        ? () => startNewGame({ actionId, domainId, skipConfirm: true })
+        : null);
+      showToast(errorMessage(error, "无法开始 AI 场次。"), true);
     } finally {
       mutationInProgress = false;
-      updateComposerState();
+      render();
     }
   }
 
-  async function applyPlayerAction(kind, text) {
-    if (!isWritable || mutationInProgress || !currentSession || currentSession.status !== "playing") return;
+  async function persistPending(session) {
+    const saved = await StateStore.save(session);
+    if (!saved.persisted) {
+      storageInfo.error = "待确认操作未能缓存；请勿刷新页面";
+      renderSaveStatus();
+    }
+    return saved;
+  }
+
+  async function beginPlayerAction(kind, text) {
+    if (!isWritable || mutationInProgress || !serverValidated || !isOnline || !currentSession) return;
+    if (currentSession.state.status !== "playing" || currentSession.pendingAction) return;
     mutationInProgress = true;
-    updateComposerState();
+    let shouldSend = false;
     try {
       if (!(await ensureWriterAccess())) return;
-      const nextSession = Engine.applyAction(currentSession, { kind, text, at: new Date().toISOString() });
-      const saved = await StateStore.save(nextSession);
-      if (!saved.persisted) throw new Error("本次记录未能保存，请导出记录或允许本地存储后重试。");
-      currentSession = nextSession;
-      broadcastUpdate();
-      render(true);
-      const last = currentSession.turns[currentSession.turns.length - 1];
-      if (last && last.answer === Engine.ANSWERS.CORRECT) {
-        showToast("回答正确，本场游戏已结束。");
-        window.setTimeout(() => elements.finishedPanel.scrollIntoView({ behavior: "smooth", block: "center" }), 80);
+      currentSession = Engine.beginAction(currentSession, {
+        actionId: Api.createActionId(),
+        kind,
+        text,
+        at: new Date().toISOString()
+      });
+      const saved = await persistPending(currentSession);
+      if (!saved.persisted) {
+        blockForPersistence("待确认操作未能写入本机，尚未发送给 AI。请重试保存或导出记录。", () => sendPendingAction());
+        return;
       }
-      else if (kind === "guess") showToast("还不是正确答案，继续缩小范围吧。");
+      render(true);
+      shouldSend = true;
     } catch (error) {
-      showToast(error.message || "无法处理这次输入。", true);
+      showToast(error.message || "无法准备这次操作。", true);
     } finally {
       mutationInProgress = false;
-      updateComposerState();
+      render();
+    }
+    if (shouldSend) await sendPendingAction();
+  }
+
+  async function reconcileConflict() {
+    if (!currentSession) return;
+    try {
+      const withoutPending = currentSession.pendingAction ? Engine.cancelPending(currentSession) : currentSession;
+      const payload = await Api.resume(withoutPending.sessionToken);
+      if (!(await stillOwnWriterAfterNetwork())) return;
+      const reconciled = Engine.resumeSession(withoutPending, payload);
+      currentSession = reconciled;
+      const saved = await StateStore.save(reconciled);
+      if (!saved.persisted) {
+        blockForPersistence("同步后的场次未能写入本机；请重试保存或导出记录。", null);
+        return;
+      }
+      persistenceBlocked = false;
+      serverValidated = true;
+      render();
+      broadcastUpdate();
+      setNetwork("error", "场次已同步。刚才的输入没有记入记录，请检查后重新提交。", null);
+    } catch (error) {
+      serverValidated = false;
+      setNetwork("error", errorMessage(error, "场次同步失败。"), () => resumeCurrentSession());
+    }
+  }
+
+  async function sendPendingAction() {
+    if (!isWritable || mutationInProgress || !currentSession || !currentSession.pendingAction) return;
+    if (!isOnline) {
+      setNetwork("offline", "当前离线；待确认操作没有被当作“不清楚”。联网后可用原操作重试。", () => sendPendingAction());
+      return;
+    }
+    mutationInProgress = true;
+    const pending = currentSession.pendingAction;
+    setNetwork("sending", "AI 判断中…请稍候，本次输入尚未计入问答。", null);
+    render(true);
+    try {
+      if (!(await ensureWriterAccess())) return;
+      let payload;
+      if (pending.kind === "question") {
+        payload = await Api.question(currentSession.sessionToken, pending.text, pending.baseRevision, pending.actionId);
+      } else if (pending.kind === "guess") {
+        payload = await Api.guess(currentSession.sessionToken, pending.text, pending.baseRevision, pending.actionId);
+      } else {
+        payload = await Api.reveal(currentSession.sessionToken, pending.baseRevision, pending.actionId);
+      }
+      if (!(await stillOwnWriterAfterNetwork())) return;
+      const nextSession = Engine.applyServerAction(currentSession, payload);
+      currentSession = nextSession;
+      serverValidated = true;
+      if (pending.kind === "question" && elements.questionInput.value === pending.text) {
+        elements.questionInput.value = "";
+      }
+      if (pending.kind === "guess") {
+        if (elements.guessInput.value === pending.text) elements.guessInput.value = "";
+        if (elements.guessDialog.open) elements.guessDialog.close();
+      }
+      render(true);
+      const saved = await StateStore.save(nextSession);
+      if (!saved.persisted) {
+        blockForPersistence("AI 已确认本次结果，但本机缓存失败。请立即导出记录或重试保存。", null);
+        showToast("AI 结果已生效，但本机缓存失败。", true);
+      } else {
+        persistenceBlocked = false;
+        broadcastUpdate();
+        setNetwork("idle", "", null);
+      }
+      const last = nextSession.turns[nextSession.turns.length - 1];
+      if (last && last.answer === "correct") {
+        showToast("回答正确，本场游戏已结束。");
+        window.setTimeout(() => elements.finishedPanel.scrollIntoView({ behavior: "smooth", block: "center" }), 80);
+      } else if (pending.kind === "guess") {
+        showToast("还不是正确答案，继续缩小范围吧。");
+      }
+    } catch (error) {
+      if (!(await stillOwnWriterAfterNetwork())) return;
+      if (error && error.status === 409) {
+        await reconcileConflict();
+      } else if (error && error.retryable === false) {
+        currentSession = Engine.cancelPending(currentSession);
+        if (["SESSION_EXPIRED", "INVALID_SESSION_TOKEN", "ORIGIN_NOT_ALLOWED"].includes(error.code)) {
+          serverValidated = false;
+        }
+        const saved = await StateStore.save(currentSession);
+        if (!saved.persisted) {
+          const mayResume = !["SESSION_EXPIRED", "INVALID_SESSION_TOKEN", "ORIGIN_NOT_ALLOWED"].includes(error.code);
+          blockForPersistence("被拒绝的操作未能从本机待处理状态中移除，请重试保存或导出记录。", null, mayResume);
+        } else {
+          setNetwork("error", errorMessage(error, "AI 服务拒绝了本次输入。"), null);
+        }
+        render();
+      } else {
+        const saved = await persistPending(currentSession);
+        if (!saved.persisted) {
+          blockForPersistence("待确认操作未能保存在本机；请重试保存后再发送。", () => sendPendingAction());
+        } else {
+          setNetwork(isOnline ? "error" : "offline", errorMessage(error, "AI 判断失败。"), () => sendPendingAction());
+        }
+      }
+      showToast(errorMessage(error, "AI 判断失败；本次操作尚未计入记录。"), true);
+    } finally {
+      mutationInProgress = false;
+      render();
+    }
+  }
+
+  async function resumeCurrentSession(options) {
+    options = options || {};
+    if (!currentSession || mutationInProgress || !isWritable) return;
+    if (!isOnline) {
+      serverValidated = false;
+      setNetwork("offline", "当前离线，只能查看本机缓存；联网后可继续。", () => resumeCurrentSession(options));
+      render();
+      return;
+    }
+    mutationInProgress = true;
+    setNetwork("syncing", options.initial ? "正在验证上次 AI 场次…" : "正在同步 AI 场次…", null);
+    render();
+    try {
+      if (!(await ensureWriterAccess())) return;
+      const payload = await Api.resume(currentSession.sessionToken);
+      if (!(await stillOwnWriterAfterNetwork())) return;
+      const resumed = Engine.resumeSession(currentSession, payload);
+      const saved = await StateStore.save(resumed);
+      if (!saved.persisted) {
+        serverValidated = false;
+        setNetwork("error", "AI 场次已验证，但未能写入本机；原缓存没有被替换。请允许站点存储后重试。", () => resumeCurrentSession(options));
+        return;
+      }
+      currentSession = resumed;
+      persistenceBlocked = false;
+      serverValidated = true;
+      render();
+      broadcastUpdate();
+      if (resumed.pendingAction) {
+        setNetwork("error", "上次操作的结果仍待确认。请用原操作重试，网络失败不会算作“不清楚”。", () => sendPendingAction());
+      } else {
+        setNetwork("idle", "", null);
+        if (!options.silent) showToast("已与 AI 服务同步上次场次。");
+      }
+    } catch (error) {
+      serverValidated = false;
+      setNetwork(isOnline ? "error" : "offline", errorMessage(error, "无法验证上次 AI 场次。"), error && error.retryable !== false
+        ? () => resumeCurrentSession(options)
+        : null);
+      if (!options.initial) showToast(errorMessage(error, "场次同步失败。"), true);
+    } finally {
+      mutationInProgress = false;
+      render();
     }
   }
 
@@ -428,9 +683,7 @@
       showToast("请先输入一个问题。", true);
       return;
     }
-    elements.questionInput.value = "";
-    updateComposerState();
-    await applyPlayerAction("question", text);
+    await beginPlayerAction("question", text);
   }
 
   async function submitGuess(event) {
@@ -440,16 +693,14 @@
       showToast("请输入对象名称。", true);
       return;
     }
-    elements.guessInput.value = "";
-    if (elements.guessDialog.open) elements.guessDialog.close();
-    await applyPlayerAction("guess", text);
+    await beginPlayerAction("guess", text);
   }
 
   async function revealAnswer() {
-    if (!currentSession || currentSession.status !== "playing" || !isWritable) return;
+    if (!currentSession || currentSession.state.status !== "playing" || !isWritable) return;
     const confirmed = window.confirm("确定要放弃并揭晓汤底吗？这不会算作答对。");
     if (!confirmed) return;
-    await applyPlayerAction("reveal", "");
+    await beginPlayerAction("reveal", "");
   }
 
   function downloadRecord() {
@@ -462,12 +713,12 @@
       const anchor = document.createElement("a");
       const stamp = new Date().toISOString().replace(/[-:]/g, "").slice(0, 15);
       anchor.href = url;
-      anchor.download = `science-turtle-soup-${stamp}.json`;
+      anchor.download = `science-turtle-soup-v2-${stamp}.json`;
       document.body.append(anchor);
       anchor.click();
       anchor.remove();
       window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-      showToast("当前场次记录已导出。");
+      showToast("当前公开记录与恢复凭据已导出，请妥善保管。");
     } catch (error) {
       showToast(error.message || "导出失败。", true);
     }
@@ -475,31 +726,58 @@
 
   async function importRecord(file) {
     if (!file || !isWritable || mutationInProgress) return;
+    if (!isOnline) {
+      showToast("上传恢复必须先联网验证场次凭据。", true);
+      elements.recordInput.value = "";
+      return;
+    }
     mutationInProgress = true;
-    updateComposerState();
+    setNetwork("syncing", "正在向 AI 服务验证上传记录…", null);
+    render();
     try {
       if (file.size <= 0) throw new Error("记录文件为空。");
-      if (file.size > MAX_FILE_BYTES) throw new Error("记录文件超过 256 KB 上限。");
+      if (file.size > MAX_FILE_BYTES) throw new Error("记录文件超过 512 KB 上限。");
       const text = await file.text();
       const bundle = JSON.parse(text);
-      const restored = Engine.importSession(bundle);
-      if (currentSession && currentSession.status === "playing") {
-        const confirmed = window.confirm("上传记录会替换当前场次。是否继续？");
-        if (!confirmed) return;
+      const candidate = Engine.importSession(bundle);
+      if (currentSession && currentSession.state.status === "playing") {
+        const confirmed = window.confirm("上传记录会在服务端验证成功后替换当前场次。是否继续？");
+        if (!confirmed) {
+          setNetwork("idle", "", null);
+          return;
+        }
       }
       if (!(await ensureWriterAccess())) return;
+      const payload = await Api.resume(candidate.sessionToken);
+      if (!(await stillOwnWriterAfterNetwork())) return;
+      const restored = Engine.resumeSession(candidate, payload);
       const saved = await StateStore.save(restored);
-      if (!saved.persisted) throw new Error("记录通过验证，但无法写入本机；当前场次未改变。");
+      if (!saved.persisted) {
+        setNetwork("error", "上传记录通过验证，但未能写入本机；当前场次没有被替换。请允许站点存储后重新上传。", null);
+        showToast("上传记录未能保存，当前场次没有被替换。", true);
+        return;
+      }
       currentSession = restored;
-      broadcastUpdate();
+      persistenceBlocked = false;
+      serverValidated = true;
       render(true);
-      showToast("记录已验证并恢复。");
+      broadcastUpdate();
+      if (restored.pendingAction) {
+        setNetwork("error", "记录已恢复，但有一项操作仍待确认。", () => sendPendingAction());
+      } else {
+        setNetwork("idle", "", null);
+        showToast("记录已由 AI 服务验证并恢复。");
+      }
     } catch (error) {
-      showToast(error instanceof SyntaxError ? "JSON 文件无法解析，当前场次未改变。" : (error.message || "记录恢复失败。"), true);
+      const message = error instanceof SyntaxError
+        ? "JSON 文件无法解析，当前场次未改变。"
+        : (error.message || "记录验证失败，当前场次未改变。");
+      setNetwork("error", message, null);
+      showToast(message, true);
     } finally {
       mutationInProgress = false;
-      updateComposerState();
       elements.recordInput.value = "";
+      render();
     }
   }
 
@@ -520,9 +798,40 @@
     }
   }
 
-  function renderHistory(turns, scrollToEnd) {
+  function appendHistoryItem(turn, index, pending) {
+    const item = document.createElement("article");
+    item.className = pending ? "history-item is-pending" : "history-item";
+    const number = document.createElement("span");
+    number.className = "history-index";
+    number.textContent = pending ? "··" : String(index + 1).padStart(2, "0");
+    const copy = document.createElement("div");
+    copy.className = "history-copy";
+    const question = document.createElement("p");
+    question.textContent = turn.kind === "reveal" ? "玩家选择放弃并请求揭晓汤底" : turn.text;
+    const meta = document.createElement("small");
+    if (pending) {
+      meta.textContent = "已保留原输入 · 等待服务端确认";
+    } else {
+      const time = new Date(turn.at).toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit" });
+      meta.textContent = `${turn.kind === "guess" ? "汤底猜测" : turn.kind === "reveal" ? "结束场次" : "真假提问"} · ${time}`;
+    }
+    copy.append(question, meta);
+    const chip = document.createElement("span");
+    if (pending) {
+      chip.className = "answer-chip pending";
+      chip.textContent = "AI 判断中";
+    } else {
+      const chipClass = turn.answer === "revealed" ? "unknown" : turn.answer;
+      chip.className = `answer-chip ${chipClass}`;
+      chip.textContent = turn.answerLabel;
+    }
+    item.append(number, copy, chip);
+    elements.historyList.append(item);
+  }
+
+  function renderHistory(turns, pendingAction, scrollToEnd) {
     elements.historyList.replaceChildren();
-    if (!turns.length) {
+    if (!turns.length && !pendingAction) {
       const empty = document.createElement("div");
       empty.className = "empty-history";
       const icon = document.createElement("span");
@@ -536,28 +845,8 @@
       elements.historyList.append(empty);
       return;
     }
-
-    turns.forEach((turn, index) => {
-      const item = document.createElement("article");
-      item.className = "history-item";
-      const number = document.createElement("span");
-      number.className = "history-index";
-      number.textContent = String(index + 1).padStart(2, "0");
-      const copy = document.createElement("div");
-      copy.className = "history-copy";
-      const question = document.createElement("p");
-      question.textContent = turn.kind === "reveal" ? "玩家选择放弃并揭晓汤底" : turn.text;
-      const meta = document.createElement("small");
-      const time = new Date(turn.at).toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit" });
-      meta.textContent = `${turn.kind === "guess" ? "汤底猜测" : turn.kind === "reveal" ? "结束场次" : "真假提问"} · ${time}`;
-      copy.append(question, meta);
-      const chip = document.createElement("span");
-      const chipClass = turn.answer === "revealed" ? "unknown" : turn.answer;
-      chip.className = `answer-chip ${chipClass}`;
-      chip.textContent = turn.answer === "revealed" ? "已揭晓" : turn.answerLabel;
-      item.append(number, copy, chip);
-      elements.historyList.append(item);
-    });
+    turns.forEach((turn, index) => appendHistoryItem(turn, index, false));
+    if (pendingAction) appendHistoryItem(pendingAction, turns.length, true);
     if (scrollToEnd) elements.historyList.scrollTop = elements.historyList.scrollHeight;
   }
 
@@ -580,21 +869,20 @@
   function renderSaveStatus() {
     if (!currentSession) {
       elements.saveStatus.textContent = "等待开局";
-      elements.saveDetail.textContent = "刷新后可从本机恢复；游戏不会主动上传记录。";
+      elements.saveDetail.textContent = "公开进度缓存在本机；问题会发送给 AI 服务判断。";
     } else if (storageInfo.local && storageInfo.opfs) {
-      elements.saveStatus.textContent = "已写入本地状态文件";
-      elements.saveDetail.textContent = "同时保留浏览器恢复副本；请勿写入敏感信息。";
+      elements.saveStatus.textContent = "公开进度已缓存";
+      elements.saveDetail.textContent = "浏览器与站点私有文件均有副本；AI 服务负责验证加密场次。";
     } else if (storageInfo.local) {
-      elements.saveStatus.textContent = "已保存到浏览器";
-      elements.saveDetail.textContent = "此浏览器不支持私有文件增强，可用导出记录备份。";
+      elements.saveStatus.textContent = "已缓存到浏览器";
+      elements.saveDetail.textContent = "可导出含恢复凭据的记录文件作为额外备份。";
     } else if (storageInfo.opfs) {
       elements.saveStatus.textContent = "已写入本地状态文件";
       elements.saveDetail.textContent = "浏览器键值存储不可用，请同时导出备份。";
     } else {
       elements.saveStatus.textContent = storageInfo.error || "仅在当前页面保留";
-      elements.saveDetail.textContent = "请立即导出记录，刷新可能丢失。";
+      elements.saveDetail.textContent = "当前页面仍保留 AI 结果，但刷新后可能无法自动恢复。";
     }
-
     elements.lockChip.className = "lock-chip";
     if (isWritable) {
       elements.lockChip.classList.add("is-owner");
@@ -606,30 +894,40 @@
   }
 
   function updateComposerState() {
-    const canPlay = Boolean(isWritable && !mutationInProgress && currentSession && currentSession.status === "playing");
+    const playing = Boolean(currentSession && currentSession.state.status === "playing");
+    const canPlay = Boolean(isWritable && serverValidated && isOnline && !mutationInProgress && playing && !currentSession.pendingAction);
     const hasText = elements.questionInput.value.trim().length > 0;
     elements.questionInput.disabled = !canPlay;
     elements.askButton.disabled = !canPlay || !hasText;
     elements.guessButton.disabled = !canPlay;
+    elements.askButton.textContent = mutationInProgress && currentSession && currentSession.pendingAction
+      ? "AI 判断中…"
+      : "提交问题 ↗";
     elements.characterCount.textContent = String(elements.questionInput.value.length);
     elements.composer.classList.toggle("is-disabled", !canPlay);
+    elements.submitGuessButton.disabled = !canPlay;
+    elements.guessInput.disabled = !canPlay;
+    elements.startGameButton.disabled = mutationInProgress || !isOnline || !isWritable;
+    elements.startGameButton.textContent = networkState === "creating" ? "AI 准备中…" : "开始游戏";
+    for (const input of elements.domainGrid.querySelectorAll("input")) input.disabled = mutationInProgress;
+    renderNetworkStatus();
   }
 
   function render(scrollToEnd) {
     const hasSession = Boolean(currentSession);
-    const domain = hasSession ? Cases.domainMap.get(currentSession.domainId) : null;
-    const entry = hasSession ? Engine.getCaseForSession(currentSession) : null;
-    const canPlay = Boolean(isWritable && hasSession && currentSession.status === "playing");
-
+    const state = hasSession ? currentSession.state : null;
+    const domain = state ? Catalog.domainMap.get(state.domainId) : null;
+    const playing = Boolean(state && state.status === "playing");
+    const canPlay = Boolean(isWritable && serverValidated && isOnline && !mutationInProgress && playing && !currentSession.pendingAction);
     elements.domainSymbol.textContent = domain ? domain.icon : "?";
     elements.domainName.textContent = domain ? domain.label : "尚未开局";
-    elements.caseCode.textContent = hasSession ? `CASE ${currentSession.sessionId.slice(-6).toUpperCase()}` : "CASE —";
-    elements.surfaceTitle.textContent = domain ? domain.prompt : "选择一个领域，开始第一场科学推理。";
-    elements.surfaceHint.textContent = domain
-      ? "只对题库中已经核实的事实作判断；超出范围或语义含糊时会回答“不清楚”。"
+    elements.caseCode.textContent = state ? `CASE ${state.sessionId.slice(-6).toUpperCase()}` : "CASE —";
+    elements.surfaceTitle.textContent = state ? state.surface.title : "选择一个领域，开始第一场科学推理。";
+    elements.surfaceHint.textContent = state
+      ? (state.surface.hint || "AI 只会回答“是 / 不是 / 不清楚”；请一次提出一个可判断真假的问题。")
       : "汤面只会告诉你对象的大类，真正的答案藏在问答之中。";
-
-    const questionTurns = hasSession ? currentSession.turns.filter((turn) => turn.kind !== "reveal") : [];
+    const turns = hasSession ? currentSession.turns : [];
+    const questionTurns = turns.filter((turn) => turn.kind !== "reveal");
     const yesRecords = hasSession ? currentSession.records.yes : [];
     const noRecords = hasSession ? currentSession.records.no : [];
     const unknownRecords = hasSession ? currentSession.records.unknown : [];
@@ -640,41 +938,41 @@
     elements.yesCount.textContent = `${yesRecords.length} 条`;
     elements.noCount.textContent = `${noRecords.length} 条`;
     elements.unknownCount.textContent = `${unknownRecords.length} 条`;
-    renderHistory(hasSession ? currentSession.turns : [], scrollToEnd);
+    renderHistory(turns, hasSession ? currentSession.pendingAction : null, scrollToEnd);
     renderRecordList(elements.yesRecords, yesRecords, "尚无已确认信息");
     renderRecordList(elements.noRecords, noRecords, "尚无已排除信息");
     renderRecordList(elements.unknownRecords, unknownRecords, "尚无不确定问题");
     renderSuggestionButtons(domain, canPlay);
-
     elements.sessionState.className = "session-state";
-    if (!hasSession) {
+    if (!state) {
       elements.sessionState.innerText = "等待开始";
-    } else if (currentSession.status === "playing") {
+    } else if (state.status === "playing") {
       elements.sessionState.classList.add("is-playing");
-      elements.sessionState.innerText = isWritable ? "推理进行中" : "另一标签页操作中";
+      if (!isWritable) elements.sessionState.innerText = "另一标签页操作中";
+      else if (mutationInProgress) elements.sessionState.innerText = "AI 判断中";
+      else if (!serverValidated || !isOnline) elements.sessionState.innerText = "离线查看";
+      else elements.sessionState.innerText = "推理进行中";
     } else {
       elements.sessionState.classList.add("is-finished");
-      elements.sessionState.innerText = currentSession.status === "solved" ? "已答对" : "已揭晓";
+      elements.sessionState.innerText = state.status === "solved" ? "已答对" : "已揭晓";
     }
     const stateDot = document.createElement("i");
     elements.sessionState.prepend(stateDot);
-
     elements.exportButton.disabled = !hasSession;
-    elements.importButton.disabled = !isWritable;
-    elements.newGameButton.disabled = !isWritable;
+    elements.importButton.disabled = !isWritable || !isOnline || mutationInProgress;
+    elements.newGameButton.disabled = !isWritable || !isOnline || mutationInProgress;
     elements.revealButton.disabled = !canPlay;
-    elements.finishedNewGame.disabled = !isWritable;
+    elements.finishedNewGame.disabled = !isWritable || !isOnline || mutationInProgress;
     updateComposerState();
     renderSaveStatus();
-
-    const finished = hasSession && currentSession.status !== "playing";
+    const finished = Boolean(state && state.status !== "playing");
     elements.finishedPanel.hidden = !finished;
     if (finished) {
-      const solved = currentSession.status === "solved";
+      const solved = state.status === "solved";
       elements.finishedEyebrow.textContent = solved ? "CASE SOLVED" : "CASE REVEALED";
       elements.finishedTitle.textContent = solved ? "回答正确，本场结束" : "汤底已揭晓";
-      elements.answerName.textContent = entry.name;
-      elements.answerReveal.textContent = entry.reveal;
+      elements.answerName.textContent = state.reveal.answerName;
+      elements.answerReveal.textContent = state.reveal.explanation;
     } else {
       elements.answerName.textContent = "";
       elements.answerReveal.textContent = "";
@@ -685,7 +983,7 @@
     elements.rulesButton.addEventListener("click", () => elements.rulesDialog.showModal());
     elements.newGameButton.addEventListener("click", openSetup);
     elements.finishedNewGame.addEventListener("click", openSetup);
-    elements.startGameButton.addEventListener("click", startNewGame);
+    elements.startGameButton.addEventListener("click", () => startNewGame());
     elements.askButton.addEventListener("click", submitQuestion);
     elements.questionInput.addEventListener("input", updateComposerState);
     elements.questionInput.addEventListener("keydown", (event) => {
@@ -695,8 +993,7 @@
       }
     });
     elements.guessButton.addEventListener("click", () => {
-      elements.guessInput.value = "";
-      elements.guessDialog.showModal();
+      if (!elements.guessDialog.open) elements.guessDialog.showModal();
       window.setTimeout(() => elements.guessInput.focus(), 0);
     });
     elements.guessForm.addEventListener("submit", submitGuess);
@@ -704,6 +1001,24 @@
     elements.exportButton.addEventListener("click", downloadRecord);
     elements.importButton.addEventListener("click", () => elements.recordInput.click());
     elements.recordInput.addEventListener("change", () => importRecord(elements.recordInput.files && elements.recordInput.files[0]));
+    elements.retryButton.addEventListener("click", () => {
+      const task = retryTask;
+      if (task && !mutationInProgress) task();
+    });
+    window.addEventListener("offline", () => {
+      isOnline = false;
+      serverValidated = false;
+      setNetwork("offline", "当前离线，只能查看本机缓存；联网后可继续。", currentSession ? () => resumeCurrentSession() : null);
+      render();
+    });
+    window.addEventListener("online", () => {
+      isOnline = true;
+      if (currentSession && isWritable) resumeCurrentSession({ silent: true });
+      else {
+        setNetwork("idle", "", null);
+        render();
+      }
+    });
     window.addEventListener("pagehide", () => {
       isWritable = false;
       const release = releaseLock;
@@ -719,12 +1034,11 @@
     bindEvents();
     renderDomainOptions();
     if (typeof BroadcastChannel === "function") {
-      channel = new BroadcastChannel("apc-science-turtle-soup.v1");
+      channel = new BroadcastChannel("apc-science-turtle-soup.v2");
       channel.addEventListener("message", (event) => {
         if (event.data && event.data.type === "state-updated") reloadReadonlyState();
       });
     }
-
     isWritable = await acquireWriterLock();
     const restored = await StateStore.load();
     if (restored) {
@@ -733,14 +1047,20 @@
       storageInfo.opfs = storageInfo.opfs || restored.source === "opfs";
     }
     render();
-
     if (!isWritable) {
       showToast("同一浏览器的另一标签页正在操作本场游戏；当前页面为只读。", true);
-    } else if (!currentSession) {
-      openSetup();
-    } else {
-      showToast("已从本机恢复上次场次。");
+      return;
     }
+    if (currentSession) {
+      await resumeCurrentSession({ initial: true, silent: true });
+      return;
+    }
+    if (await hasLegacyState()) {
+      setNetwork("error", "检测到旧版 v1 本地记录。它含本地题库种子，与 AI v2 不兼容；旧记录未被修改。", null);
+      showToast("旧版 v1 记录无法直接恢复到 AI v2，原记录仍保留。", true);
+    }
+    if (isOnline) openSetup();
+    else setNetwork("offline", "当前离线，联网后才能创建 AI 场次。", null);
   }
 
   initialize().catch((error) => {
@@ -749,9 +1069,11 @@
     const release = releaseLock;
     releaseLock = null;
     if (release) release();
-    showToast(`${error.message || "游戏初始化失败。"} 页面已切换为只读，请刷新重试。`, true);
     lockMode = "readonly";
     isWritable = false;
+    serverValidated = false;
+    setNetwork("error", `${error.message || "游戏初始化失败。"} 页面已切换为只读，请刷新重试。`, null);
+    showToast(error.message || "游戏初始化失败。", true);
     render();
   });
 })();
