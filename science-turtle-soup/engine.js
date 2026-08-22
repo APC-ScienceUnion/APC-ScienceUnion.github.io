@@ -243,12 +243,22 @@
     if (state.status === "playing" && turns.some((turn) => turn.answer === "correct" || turn.answer === "revealed")) {
       throw new Error("进行中的场次含终局记录。");
     }
+    const records = normalizeRecords(session.records);
+    // Older v2 clients incorrectly treated a failed final guess as a scientific
+    // "no" fact. Remove only those records identified by the corresponding
+    // guess turn; genuine no-answers to player questions remain untouched.
+    const obsoleteGuessRecordIds = new Set(
+      turns
+        .filter((turn) => turn.kind === "guess" && turn.answer === "incorrect")
+        .map((turn) => `${turn.id}:no`)
+    );
+    records.no = records.no.filter((record) => !obsoleteGuessRecordIds.has(record.id));
     return {
       schemaVersion: SCHEMA_VERSION,
       sessionToken: normalizeToken(session.sessionToken),
       state,
       turns,
-      records: normalizeRecords(session.records),
+      records,
       pendingAction
     };
   }
@@ -347,8 +357,6 @@
     let additions = [];
     if (pending.kind === "question" && ["yes", "no", "unknown"].includes(answer)) {
       additions.push({ bucket: answer, id: `${pending.actionId}:${answer}`, text: pending.text });
-    } else if (pending.kind === "guess" && answer === "incorrect") {
-      additions.push({ bucket: "no", id: `${pending.actionId}:no`, text: `不是${pending.text.trim()}` });
     }
     for (const record of additions) {
       if (!records[record.bucket].some((item) => item.text === record.text)) {

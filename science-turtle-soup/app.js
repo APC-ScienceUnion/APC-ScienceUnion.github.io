@@ -744,7 +744,7 @@
     clearPendingRetry();
     mutationInProgress = true;
     const pending = currentSession.pendingAction;
-    setNetwork("sending", "AI 判断中…请稍候，本次输入尚未计入问答。", null);
+    setNetwork("sending", "AI 正在联网核验…请稍候，本次输入尚未计入问答。", null);
     render(true);
     try {
       if (!(await ensureWriterAccess())) return;
@@ -783,7 +783,7 @@
         showToast("回答正确，本场游戏已结束。");
         window.setTimeout(() => elements.finishedPanel.scrollIntoView({ behavior: "smooth", block: "center" }), 80);
       } else if (pending.kind === "guess") {
-        showToast("还不是正确答案，继续缩小范围吧。");
+        showToast("未匹配到汤底，可尝试规范名、常用名、英文名、缩写、编号、符号或化学式。");
       }
     } catch (error) {
       if (!(await stillOwnWriterAfterNetwork())) return;
