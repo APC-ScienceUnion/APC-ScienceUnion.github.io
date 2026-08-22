@@ -6,7 +6,7 @@
   if (root) root.ScienceSoupApi = api;
 })(typeof globalThis !== "undefined" ? globalThis : this, function buildScienceSoupApi(root) {
   const ENDPOINT = "/api/science-soup";
-  const DEFAULT_TIMEOUT_MS = 32000;
+  const DEFAULT_TIMEOUT_MS = 52000;
 
   class ApiError extends Error {
     constructor(message, options) {

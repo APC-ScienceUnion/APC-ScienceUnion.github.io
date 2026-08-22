@@ -201,7 +201,7 @@ test("错误猜测不揭晓，正确猜测只信服务端终局状态", () => {
   assert.equal(session.state.status, "playing");
   assert.equal(session.turns[0].answer, "incorrect");
   assert.equal(Object.prototype.hasOwnProperty.call(session.state, "reveal"), false);
-  assert.equal(session.records.no[0].text, "不是错误对象");
+  assert.equal(session.records.no.length, 0, "未匹配别名不等于科学命题为假，不能写进‘不是’事实栏");
 
   session = pending(session, "guess", "正确对象", "55555555-5555-4555-8555-555555555555");
   session = Engine.applyServerAction(session, envelope({
@@ -215,6 +215,26 @@ test("错误猜测不揭晓，正确猜测只信服务端终局状态", () => {
   assert.equal(session.state.status, "solved");
   assert.equal(session.turns[1].answer, "correct");
   assert.equal(session.state.reveal.answerName, "终局公开对象");
+});
+
+test("恢复旧 v2 记录时只清除由错误猜测生成的伪 no 事实", () => {
+  const questionId = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
+  const guessId = "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb";
+  let session = pending(newSession(), "question", "它含有氮元素吗？", questionId);
+  session = Engine.applyServerAction(session, envelope({
+    state: { revision: 1, updatedAt: "2026-08-21T00:00:12.000Z" },
+    result: { kind: "question", answer: "no" }
+  }));
+  session = pending(session, "guess", "CO2", guessId);
+  session = Engine.applyServerAction(session, envelope({
+    state: { revision: 2, updatedAt: "2026-08-21T00:00:20.000Z" },
+    result: { kind: "guess", answer: "incorrect" }
+  }));
+  const legacyBundle = Engine.exportSession(session, "2026-08-21T00:02:00.000Z");
+  legacyBundle.records.no.push({ id: `${guessId}:no`, text: "不是CO2" });
+
+  const restored = Engine.importSession(legacyBundle);
+  assert.deepEqual(restored.records.no, [{ id: `${questionId}:no`, text: "它含有氮元素吗？" }]);
 });
 
 test("放弃揭晓由服务端终局状态提供汤底", () => {
@@ -569,6 +589,10 @@ test("AI 前端展示标题、开局限额、隐私说明并按错误码选择�
   assert.match(setup, /每个网络地址每天最多开始3局，上海时间00:00重置/);
   assert.match(setup, /id="startStatus"[^>]*aria-live="polite"/);
   assert.match(index, /问题与猜测会发送至 AI 服务/);
+  assert.match(index, /每个有效问题都会由 DeepSeek Flash 实时联网查证/);
+  assert.match(index, /每局最多提问30次/);
+  assert.match(index, /规范名、常用名、英文名、缩写、编号、符号或化学式/);
+  assert.match(app, /未匹配到汤底，可尝试规范名、常用名、英文名、缩写、编号、符号或化学式/);
   assert.match(app, /error\.code === "DAILY_GAME_LIMIT"/);
   assert.match(app, /error\.code === "START_IN_PROGRESS"/);
   assert.match(app, /scheduleStartRetry\(error, actionId, domainId\)/);
