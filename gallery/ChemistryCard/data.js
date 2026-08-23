@@ -4,7 +4,6 @@
   window.TERM_WIKI = {
     subject: 'chemistry',
     title: '化学名词卡片',
-    eyebrow: 'A.P.C. DISCIPLINE ATLAS · CHEMISTRY',
     subtitle: '从氢出发，沿着化学键与碱金属族向下展开；把元素的性质、发现史和用途放进同一张概念坐标。',
     description: '8 个主题，连接氢及其相互作用、碱金属家族与元素纵向规律。',
     categories: [
@@ -94,7 +93,6 @@
         ]
       }
     ],
-    references: ['格林伍德、厄恩肖：《元素化学》', '北京师范大学、华中师范大学、南京师范大学：《无机化学》第 5 版'],
-    credits: '梦幻校团队项目 · A.P.C.科学联盟'
+    references: ['格林伍德、厄恩肖：《元素化学》', '北京师范大学、华中师范大学、南京师范大学：《无机化学》第 5 版']
   }
 }())

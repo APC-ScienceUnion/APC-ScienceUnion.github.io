@@ -4,7 +4,6 @@
   window.TERM_WIKI = {
     subject: 'geography',
     title: '地理名词卡片',
-    eyebrow: 'A.P.C. DISCIPLINE ATLAS · GEOGRAPHY',
     subtitle: '沿着大气、水圈、岩石圈与地球运动的枝杈，建立一张可以检索、漫游和继续生长的地理概念图谱。',
     description: '25 个名词，分属气象与气候、水文与海洋、地质与地貌、地球与天文四条知识支脉。',
     categories: [
@@ -264,7 +263,6 @@
           { title: '现实切片', text: '2025 年“阿尔文”号深潜器在东太平洋扩张较快的洋中脊观察到海底火山喷发及熔岩覆盖热液喷口周边。' }
         ]
       }
-    ],
-    credits: '梦幻校团队项目 · 原卡制作：时光 · 校对：阿氯 · A.P.C.科学联盟'
+    ]
   }
 }())
