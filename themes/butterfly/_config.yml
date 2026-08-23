@@ -8,6 +8,8 @@ menu:
   文章分类: /categories/ || fas fa-folder-open
   科普画廊||fa-regular fa-images:
     植物卡片: /gallery/PlantCard/ || fa-brands fa-pagelines
+    地理名词卡片: /gallery/GeographyCard/ || fa-solid fa-earth-asia
+    化学名词卡片: /gallery/ChemistryCard/ || fa-solid fa-atom
     Science&三行情书: /gallery/ScienceLetter/ || fa-solid fa-envelope
   在线资源: /link/ || fas fa-link
   联盟游戏||fas fa-gamepad:

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+  <title id="title">化学词卡抽象封面</title>
+  <desc id="description">周期表方格、电子轨道和分子节点组成的抽象化学图景</desc>
+  <defs>
+    <linearGradient id="chem-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#151932"/>
+      <stop offset="0.52" stop-color="#334a91"/>
+      <stop offset="1" stop-color="#8b466f"/>
+    </linearGradient>
+    <radialGradient id="chem-light" cx="0.72" cy="0.42" r="0.66">
+      <stop offset="0" stop-color="#cfdcff" stop-opacity="0.3"/>
+      <stop offset="0.4" stop-color="#778fd2" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#151932" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chem-orbit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#99e3e0"/>
+      <stop offset="0.5" stop-color="#edf0ff"/>
+      <stop offset="1" stop-color="#ef9dc4"/>
+    </linearGradient>
+    <radialGradient id="chem-core" cx="0.35" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.35" stop-color="#b8cef8"/>
+      <stop offset="1" stop-color="#6b7fc7"/>
+    </radialGradient>
+    <filter id="chem-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="chem-round">
+      <rect width="1600" height="900" rx="44"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#chem-round)">
+    <rect width="1600" height="900" fill="url(#chem-bg)"/>
+    <rect width="1600" height="900" fill="url(#chem-light)"/>
+
+    <g stroke="#d8e0ff" stroke-width="1" opacity="0.12">
+      <path d="M0 112h1600M0 224h1600M0 336h1600M0 448h1600M0 560h1600M0 672h1600M0 784h1600"/>
+      <path d="M112 0v900M224 0v900M336 0v900M448 0v900M560 0v900M672 0v900M784 0v900M896 0v900M1008 0v900M1120 0v900M1232 0v900M1344 0v900M1456 0v900"/>
+    </g>
+
+    <g transform="translate(92 116)" stroke="#e5e9ff" stroke-width="2">
+      <g fill="#eef1ff" fill-opacity="0.08">
+        <rect x="0" y="0" width="76" height="76" rx="9"/>
+        <rect x="612" y="0" width="76" height="76" rx="9"/>
+        <rect x="0" y="88" width="76" height="76" rx="9"/>
+        <rect x="88" y="88" width="76" height="76" rx="9"/>
+        <rect x="348" y="88" width="76" height="76" rx="9"/>
+        <rect x="436" y="88" width="76" height="76" rx="9"/>
+        <rect x="524" y="88" width="76" height="76" rx="9"/>
+        <rect x="612" y="88" width="76" height="76" rx="9"/>
+        <rect x="0" y="176" width="76" height="76" rx="9"/>
+        <rect x="88" y="176" width="76" height="76" rx="9"/>
+        <rect x="348" y="176" width="76" height="76" rx="9"/>
+        <rect x="436" y="176" width="76" height="76" rx="9"/>
+        <rect x="524" y="176" width="76" height="76" rx="9"/>
+        <rect x="612" y="176" width="76" height="76" rx="9"/>
+        <rect x="0" y="264" width="76" height="76" rx="9"/>
+        <rect x="88" y="264" width="76" height="76" rx="9"/>
+        <rect x="176" y="264" width="76" height="76" rx="9"/>
+        <rect x="264" y="264" width="76" height="76" rx="9"/>
+        <rect x="348" y="264" width="76" height="76" rx="9"/>
+        <rect x="436" y="264" width="76" height="76" rx="9"/>
+        <rect x="524" y="264" width="76" height="76" rx="9"/>
+        <rect x="612" y="264" width="76" height="76" rx="9"/>
+        <rect x="0" y="352" width="76" height="76" rx="9"/>
+        <rect x="88" y="352" width="76" height="76" rx="9"/>
+        <rect x="176" y="352" width="76" height="76" rx="9"/>
+        <rect x="264" y="352" width="76" height="76" rx="9"/>
+        <rect x="348" y="352" width="76" height="76" rx="9"/>
+        <rect x="436" y="352" width="76" height="76" rx="9"/>
+        <rect x="524" y="352" width="76" height="76" rx="9"/>
+        <rect x="612" y="352" width="76" height="76" rx="9"/>
+      </g>
+      <g fill="none" opacity="0.6">
+        <rect x="0" y="0" width="76" height="76" rx="9"/>
+        <rect x="612" y="0" width="76" height="76" rx="9"/>
+        <rect x="88" y="88" width="76" height="76" rx="9"/>
+        <rect x="436" y="176" width="76" height="76" rx="9"/>
+        <rect x="264" y="264" width="76" height="76" rx="9"/>
+        <rect x="524" y="264" width="76" height="76" rx="9"/>
+        <rect x="176" y="352" width="76" height="76" rx="9"/>
+        <rect x="612" y="352" width="76" height="76" rx="9"/>
+      </g>
+      <g fill="#f2f4ff" opacity="0.55">
+        <circle cx="18" cy="19" r="4"/><circle cx="630" cy="19" r="4"/><circle cx="106" cy="107" r="4"/>
+        <circle cx="454" cy="195" r="4"/><circle cx="282" cy="283" r="4"/><circle cx="542" cy="283" r="4"/>
+        <circle cx="194" cy="371" r="4"/><circle cx="630" cy="371" r="4"/>
+      </g>
+    </g>
+
+    <g transform="translate(1125 404)" fill="none" stroke="url(#chem-orbit)" filter="url(#chem-glow)">
+      <ellipse rx="325" ry="111" stroke-width="5" transform="rotate(7)" opacity="0.78"/>
+      <ellipse rx="325" ry="111" stroke-width="5" transform="rotate(67)" opacity="0.72"/>
+      <ellipse rx="325" ry="111" stroke-width="5" transform="rotate(127)" opacity="0.66"/>
+    </g>
+
+    <g transform="translate(1125 404)" filter="url(#chem-glow)">
+      <circle r="54" fill="url(#chem-core)"/>
+      <circle r="22" fill="#f4f6ff"/>
+      <circle cx="-232" cy="-5" r="15" fill="#9ce3df"/>
+      <circle cx="180" cy="-139" r="14" fill="#f2a5c9"/>
+      <circle cx="102" cy="237" r="16" fill="#e7ebff"/>
+    </g>
+
+    <g fill="none" stroke="#d9dfff" stroke-linecap="round" opacity="0.42">
+      <path d="M773 654 887 600l102 67 106-46 121 74 137-57" stroke-width="4"/>
+      <path d="m887 600-5-119 101-73" stroke-width="3"/>
+      <path d="m989 667-36 113 119 53" stroke-width="3"/>
+      <path d="m1216 695 54 113 129-22" stroke-width="3"/>
+    </g>
+    <g fill="#e8ecff" stroke="#687dc5" stroke-width="5">
+      <circle cx="773" cy="654" r="15"/><circle cx="887" cy="600" r="19"/><circle cx="989" cy="667" r="14"/>
+      <circle cx="1095" cy="621" r="18"/><circle cx="1216" cy="695" r="14"/><circle cx="1353" cy="638" r="18"/>
+      <circle cx="882" cy="481" r="12"/><circle cx="983" cy="408" r="14"/><circle cx="953" cy="780" r="13"/>
+      <circle cx="1072" cy="833" r="17"/><circle cx="1270" cy="808" r="13"/><circle cx="1399" cy="786" r="15"/>
+    </g>
+
+    <path d="M76 769h472" stroke="#edf0ff" stroke-width="2" opacity="0.42"/>
+    <path d="M76 793h286" stroke="#edf0ff" stroke-width="2" opacity="0.2"/>
+    <circle cx="76" cy="769" r="7" fill="#edf0ff" opacity="0.75"/>
+  </g>
+</svg>

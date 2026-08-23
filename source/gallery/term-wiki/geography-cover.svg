@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+  <title id="title">地理词卡抽象封面</title>
+  <desc id="description">层叠地层、等高线与树枝状水系组成的抽象地理景观</desc>
+  <defs>
+    <linearGradient id="geo-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102f2a"/>
+      <stop offset="0.52" stop-color="#1d5949"/>
+      <stop offset="1" stop-color="#b17b4d"/>
+    </linearGradient>
+    <radialGradient id="geo-light" cx="0.18" cy="0.12" r="0.8">
+      <stop offset="0" stop-color="#d8ead5" stop-opacity="0.34"/>
+      <stop offset="0.46" stop-color="#74a785" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#102f2a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="geo-river" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#d8f2e8"/>
+      <stop offset="0.55" stop-color="#8cccbc"/>
+      <stop offset="1" stop-color="#d0ecdf"/>
+    </linearGradient>
+    <linearGradient id="geo-strata-1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#87603e"/>
+      <stop offset="0.55" stop-color="#c39767"/>
+      <stop offset="1" stop-color="#80573b"/>
+    </linearGradient>
+    <linearGradient id="geo-strata-2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4d6b54"/>
+      <stop offset="0.45" stop-color="#7d8b61"/>
+      <stop offset="1" stop-color="#4b604d"/>
+    </linearGradient>
+    <filter id="geo-soft-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="geo-round">
+      <rect width="1600" height="900" rx="44"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#geo-round)">
+    <rect width="1600" height="900" fill="url(#geo-bg)"/>
+    <rect width="1600" height="900" fill="url(#geo-light)"/>
+
+    <g fill="none" stroke="#d6e7d5" stroke-linecap="round" stroke-linejoin="round" opacity="0.28">
+      <path d="M-80 265C101 116 270 81 453 134c169 49 192 180 358 195 177 15 250-120 423-109 138 9 236 110 430 47" stroke-width="4"/>
+      <path d="M-65 317C104 180 276 144 426 190c164 50 204 181 373 196 183 17 279-111 443-95 133 13 230 96 415 56" stroke-width="3"/>
+      <path d="M-39 370c175-119 316-139 462-94 160 48 201 170 365 185 186 17 291-105 452-80 121 19 225 92 397 53" stroke-width="3"/>
+      <path d="M13 420c155-91 287-109 419-68 141 44 187 152 341 171 182 22 303-88 455-55 113 25 222 87 382 51" stroke-width="2.5"/>
+      <path d="M75 470c136-66 247-76 356-42 123 38 178 126 321 150 172 28 300-63 446-25 106 28 211 73 356 48" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(200 78) rotate(-7 340 235)" fill="none" stroke="#e7efe0" opacity="0.42">
+      <path d="M47 305c-83-114-42-226 64-282 113-60 292-42 393 37 113 88 153 242 64 338-83 90-242 115-372 70C85 429 13 371 47 305Z" stroke-width="4"/>
+      <path d="M91 301C25 207 64 120 147 77c91-47 232-32 315 31 91 70 121 189 51 264-65 70-191 88-294 52-88-31-154-77-128-123Z" stroke-width="3"/>
+      <path d="M137 294c-48-71-17-136 47-170 69-36 176-23 238 25 68 52 90 140 38 195-49 51-143 64-220 36-66-24-122-58-103-86Z" stroke-width="3"/>
+      <path d="M184 286c-30-45-10-87 30-108 45-24 114-15 154 16 44 34 58 89 24 125-31 34-93 41-142 24-43-16-78-39-66-57Z" stroke-width="2.5"/>
+      <path d="M230 278c-13-21-5-41 14-51 21-11 53-7 72 8 21 16 28 43 12 59-15 16-44 20-67 11-20-7-36-18-31-27Z" stroke-width="2"/>
+    </g>
+
+    <g fill="none" stroke="url(#geo-river)" stroke-linecap="round" stroke-linejoin="round" filter="url(#geo-soft-glow)">
+      <path d="M1275 37c-24 67-19 119-69 170-43 44-96 42-117 93-22 54 23 94-1 146-22 49-75 58-98 106-29 61 23 105-4 163-28 59-105 72-139 132" stroke-width="13"/>
+      <path d="M1207 207c-49-38-81-63-121-103" stroke-width="7"/>
+      <path d="M1204 210c37-43 74-67 121-90" stroke-width="7"/>
+      <path d="M1088 300c-50-20-92-27-143-23" stroke-width="7"/>
+      <path d="M1088 301c31-50 65-85 108-117" stroke-width="6"/>
+      <path d="M1088 446c-43-27-85-40-132-42" stroke-width="7"/>
+      <path d="M1088 446c46-18 81-44 110-84" stroke-width="6"/>
+      <path d="M989 551c-52-14-96-13-144 2" stroke-width="7"/>
+      <path d="M990 552c33-39 67-65 111-84" stroke-width="6"/>
+      <path d="M988 714c-53-6-103 9-147 43" stroke-width="7"/>
+      <path d="M988 714c45-25 84-58 111-103" stroke-width="6"/>
+      <path d="M1086 104c-24-27-41-51-54-83M1325 120c29-32 49-63 62-100M944 277c-32-25-55-52-70-86M1198 362c36-20 68-48 94-84M845 553c-40-7-77-5-113 8M1100 611c36-32 61-69 75-111" stroke-width="4" opacity="0.82"/>
+    </g>
+
+    <g opacity="0.9">
+      <path d="M0 698c160-37 283-17 423 10 173 34 298 7 445-15 173-26 327-12 486 25 101 24 179 20 246 1v181H0Z" fill="url(#geo-strata-2)"/>
+      <path d="M0 747c157-32 303-9 451 18 159 29 305 2 445-14 172-19 294 2 454 34 92 18 175 11 250-10v125H0Z" fill="url(#geo-strata-1)"/>
+      <path d="M0 813c146-27 284-10 428 16 188 34 326 12 483-3 162-15 279 4 422 31 100 19 188 12 267-9v52H0Z" fill="#5b3f32"/>
+      <path d="M0 698c160-37 283-17 423 10 173 34 298 7 445-15 173-26 327-12 486 25 101 24 179 20 246 1M0 747c157-32 303-9 451 18 159 29 305 2 445-14 172-19 294 2 454 34 92 18 175 11 250-10M0 813c146-27 284-10 428 16 188 34 326 12 483-3 162-15 279 4 422 31 100 19 188 12 267-9" fill="none" stroke="#e4c9a6" stroke-width="2" opacity="0.45"/>
+    </g>
+
+    <g fill="#edf4e8" opacity="0.74">
+      <circle cx="1229" cy="164" r="6"/><circle cx="1090" cy="300" r="7"/><circle cx="1088" cy="446" r="6"/><circle cx="990" cy="552" r="7"/><circle cx="987" cy="714" r="8"/>
+    </g>
+
+    <path d="M53 86h282" stroke="#e8f0e4" stroke-width="2" opacity="0.42"/>
+    <path d="M53 105h166" stroke="#e8f0e4" stroke-width="2" opacity="0.22"/>
+    <circle cx="53" cy="86" r="6" fill="#e8f0e4" opacity="0.72"/>
+  </g>
+</svg>

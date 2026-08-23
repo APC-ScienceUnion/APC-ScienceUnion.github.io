@@ -33,6 +33,9 @@ skip_render:
   - 10th-link/**
   - fwzq/**
   - science-turtle-soup/**
+  - gallery/GeographyCard/**
+  - gallery/ChemistryCard/**
+  - gallery/term-wiki/**
   - netlify/**
   - netlify.toml
   - package.json
@@ -148,6 +151,8 @@ html_minifier:
     - H5Games/**/*.html
     - fwzq/**/*.html
     - science-turtle-soup/**/*.html
+    - gallery/GeographyCard/**/*.html
+    - gallery/ChemistryCard/**/*.html
   
 css_minifier: 
   enable: true 
@@ -156,6 +161,7 @@ css_minifier:
     - H5Games/**/*.css
     - fwzq/**/*.css
     - science-turtle-soup/**/*.css
+    - gallery/term-wiki/**/*.css
 
 js_minifier:
   enable: true 
@@ -167,6 +173,9 @@ js_minifier:
     - H5Games/**/*.js
     - fwzq/**/*.js
     - science-turtle-soup/**/*.js
+    - gallery/GeographyCard/**/*.js
+    - gallery/ChemistryCard/**/*.js
+    - gallery/term-wiki/**/*.js
 
 image_minifier: 
   enable: true 
