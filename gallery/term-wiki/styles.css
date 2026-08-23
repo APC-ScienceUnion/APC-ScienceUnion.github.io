@@ -1,40 +1,98 @@
+html.term-wiki-document {
+  --tw-page: #f4f6f8;
+  --tw-surface: #ffffff;
+  --tw-surface-muted: #edf1f4;
+  --tw-text: #1d242b;
+  --tw-muted: #66717c;
+  --tw-border: #d7dde3;
+  --tw-accent: #286b97;
+  --tw-hover: rgba(40, 107, 151, 0.09);
+  --tw-shadow: 0 16px 44px rgba(28, 39, 49, 0.14);
+  background: var(--tw-page);
+  color-scheme: light;
+}
+
+html.term-wiki-document[data-theme='dark'] {
+  --tw-page: #11161b;
+  --tw-surface: #192027;
+  --tw-surface-muted: #202930;
+  --tw-text: #edf2f5;
+  --tw-muted: #a8b2bc;
+  --tw-border: #35404a;
+  --tw-accent: #6bb6d6;
+  --tw-hover: rgba(107, 182, 214, 0.12);
+  --tw-shadow: 0 18px 48px rgba(0, 0, 0, 0.38);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  html.term-wiki-document[data-theme='auto'] {
+    --tw-page: #11161b;
+    --tw-surface: #192027;
+    --tw-surface-muted: #202930;
+    --tw-text: #edf2f5;
+    --tw-muted: #a8b2bc;
+    --tw-border: #35404a;
+    --tw-accent: #6bb6d6;
+    --tw-hover: rgba(107, 182, 214, 0.12);
+    --tw-shadow: 0 18px 48px rgba(0, 0, 0, 0.38);
+    color-scheme: dark;
+  }
+}
+
+html.term-wiki-document body,
+#body-wrap.term-wiki-shell {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--tw-page);
+  color: var(--tw-text);
+}
+
+#body-wrap.term-wiki-shell #page-header.not-top-img {
+  margin-bottom: 0;
+}
+
 .term-wiki-page {
   width: 100%;
+  min-height: calc(100vh - 60px);
+  min-height: calc(100dvh - 60px);
+  padding: 42px 28px 72px;
+  background: var(--tw-page);
+  color: var(--tw-text);
 }
 
-.term-wiki-lead {
+.term-wiki-page__inner {
+  width: min(1500px, 100%);
+  margin: 0 auto;
+}
+
+.term-wiki-page__title {
   margin: 0 0 28px;
-  color: var(--font-color);
-  font-size: 18px;
-  line-height: 1.85;
-}
-
-.term-wiki-credit {
-  margin: 30px 0 0;
-  padding-top: 20px;
-  border-top: 1px solid var(--hr-border);
-  color: var(--font-color);
-  font-size: 16px;
-  line-height: 1.7;
-  opacity: 0.78;
+  color: var(--tw-text);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 750;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
 }
 
 .term-wiki-noscript {
   margin: 24px 0 0;
   padding: 14px 16px;
   border-left: 4px solid #286b97;
-  background: var(--blockquote-bg);
-  color: var(--font-color);
+  background: var(--tw-surface);
+  color: var(--tw-text);
   font-size: 16px;
 }
 
 .term-wiki {
-  --tw-accent: #286b97;
-  --tw-border: var(--hr-border);
-  --tw-hover: rgba(40, 107, 151, 0.1);
+  --font-color: var(--tw-text);
+  --card-bg: var(--tw-surface);
+  --text-highlight-color: var(--tw-text);
+  --hr-border: var(--tw-border);
+  --blockquote-bg: var(--tw-surface-muted);
   position: relative;
   width: 100%;
-  color: var(--font-color);
+  color: var(--tw-text);
   font-size: 16px;
   line-height: 1.7;
 }
@@ -50,7 +108,10 @@
 }
 
 .term-wiki button {
-  color: var(--font-color);
+  border: 0;
+  background: transparent;
+  color: var(--tw-text);
+  cursor: pointer;
 }
 
 .term-wiki button:focus-visible,
@@ -357,27 +418,67 @@
 
 .term-wiki__cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 22px;
 }
 
-.term-wiki__card {
+.term-wiki button.term-wiki__card {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  min-height: 238px;
-  padding: 20px;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
   border: 1px solid var(--tw-border);
-  border-radius: 8px;
-  background: transparent;
+  border-radius: 10px;
+  background: var(--tw-surface);
   text-align: left;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
-.term-wiki__card:hover,
-.term-wiki__card.is-current {
+.term-wiki button.term-wiki__card:hover,
+.term-wiki button.term-wiki__card.is-current {
   border-color: var(--tw-accent);
-  background: var(--tw-hover);
+  box-shadow: 0 9px 28px rgba(24, 37, 48, 0.12);
+}
+
+html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card:hover,
+html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-current {
+  box-shadow: 0 9px 28px rgba(0, 0, 0, 0.3);
+}
+
+.term-wiki__card-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1587 / 2245;
+  overflow: hidden;
+  border-bottom: 1px solid var(--tw-border);
+  background: var(--tw-surface-muted);
+}
+
+.term-wiki__card-media.is-error::after {
+  position: absolute;
+  inset: 50% 16px auto;
+  color: var(--tw-muted);
+  content: '原卡暂时无法载入';
+  font-size: 16px;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.term-wiki__card-thumbnail {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.term-wiki__card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 18px 18px 16px;
 }
 
 .term-wiki__card-top {
@@ -396,7 +497,7 @@
 .term-wiki__card-heading {
   display: grid;
   gap: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 .term-wiki__card-heading strong {
@@ -410,16 +511,6 @@
   font-size: 16px;
   line-height: 1.45;
   opacity: 0.72;
-}
-
-.term-wiki__card-summary {
-  display: -webkit-box;
-  overflow: hidden;
-  color: var(--font-color);
-  font-size: 16px;
-  line-height: 1.75;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
 }
 
 .term-wiki__card-footer {
@@ -436,8 +527,27 @@
 
 .term-wiki__card-arrow {
   color: var(--tw-accent);
+  font-size: 24px;
+  line-height: 1;
   white-space: nowrap;
   opacity: 1;
+}
+
+@keyframes term-wiki-card-arrow-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.72;
+  }
+  50% {
+    transform: translateX(7px);
+    opacity: 1;
+  }
+}
+
+.term-wiki__card:hover .term-wiki__card-arrow,
+.term-wiki__card:focus-visible .term-wiki__card-arrow {
+  animation: term-wiki-card-arrow-nudge 0.9s ease-in-out infinite;
 }
 
 .term-wiki__empty {
@@ -476,7 +586,7 @@
 .term-wiki__backdrop {
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: 0;
   visibility: hidden;
   background: rgba(0, 0, 0, 0.64);
   opacity: 0;
@@ -492,7 +602,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 1001;
+  z-index: 1;
   display: flex;
   visibility: hidden;
   flex-direction: column;
@@ -504,11 +614,25 @@
   overflow: hidden;
   border: 1px solid var(--tw-border);
   border-radius: 10px;
-  background: var(--card-bg);
-  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.28);
+  background: var(--tw-surface);
+  box-shadow: var(--tw-shadow);
   opacity: 0;
   transform: translate(-50%, -48%) scale(0.985);
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.term-wiki__portal {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  width: auto;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.term-wiki__portal .term-wiki__backdrop,
+.term-wiki__portal .term-wiki__modal {
+  pointer-events: auto;
 }
 
 .term-wiki__modal.is-open {
@@ -594,7 +718,7 @@
   gap: 12px;
   align-items: center;
   padding: 18px 20px 14px;
-  background: rgba(127, 127, 127, 0.07);
+  background: var(--tw-surface-muted);
 }
 
 .term-wiki__page-button {
@@ -930,9 +1054,13 @@ body.term-wiki-scroll-lock {
 }
 
 @media (max-width: 680px) {
-  .term-wiki-lead {
-    margin-bottom: 22px;
-    font-size: 17px;
+  .term-wiki-page {
+    padding: 28px 16px 48px;
+  }
+
+  .term-wiki-page__title {
+    margin-bottom: 20px;
+    font-size: 34px;
   }
 
   .term-wiki__search {
@@ -968,7 +1096,7 @@ body.term-wiki-scroll-lock {
 
   .term-wiki__card {
     min-height: 0;
-    padding: 18px;
+    padding: 0;
   }
 
   .term-wiki__tree-items {
