@@ -3,6 +3,7 @@
 
   window.TERM_WIKI = {
     subject: 'geography',
+    cardAssetBase: '/gallery/GeographyCard/assets/cards',
     title: '地理名词卡片',
     subtitle: '沿着大气、水圈、岩石圈与地球运动的枝杈，建立一张可以检索、漫游和继续生长的地理概念图谱。',
     description: '25 个名词，分属气象与气候、水文与海洋、地质与地貌、地球与天文四条知识支脉。',

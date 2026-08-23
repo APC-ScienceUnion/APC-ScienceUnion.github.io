@@ -3,6 +3,7 @@
 
   window.TERM_WIKI = {
     subject: 'chemistry',
+    cardAssetBase: '/gallery/ChemistryCard/assets/cards',
     title: '化学名词卡片',
     subtitle: '从氢出发，沿着化学键与碱金属族向下展开；把元素的性质、发现史和用途放进同一张概念坐标。',
     description: '8 个主题，连接氢及其相互作用、碱金属家族与元素纵向规律。',
