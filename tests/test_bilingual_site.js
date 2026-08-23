@@ -35,7 +35,10 @@ function readEnglishPosts() {
     .filter(entry => entry.isFile() && entry.name.endsWith('.md'))
     .map(entry => {
       const file = path.join(englishRoot, entry.name);
-      const data = frontMatter.parse(fs.readFileSync(file, 'utf8').replace(/^\uFEFF/u, ''));
+      const source = fs.readFileSync(file, 'utf8')
+        .replace(/^\uFEFF/u, '')
+        .replace(/\r\n?/gu, '\n');
+      const data = frontMatter.parse(source);
       return { file, data };
     });
 }
