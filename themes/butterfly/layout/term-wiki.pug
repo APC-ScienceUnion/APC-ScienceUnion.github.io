@@ -1,18 +1,31 @@
-extends includes/layout.pug
+- var assetVersion = 'term-gallery-20260824-1'
+- var useHeroAsWebBg = false
+- var hideAside = 'hide-aside'
+- var pageType = 'page'
 
-block page_head
-  link(rel='stylesheet' href=url_for('/gallery/term-wiki/styles.css'))
+doctype html
+html(lang=page.lang || config.language data-theme=theme.display_mode class='hide-aside term-wiki-document')
+  head
+    include ./includes/head.pug
+    link(rel='stylesheet' href=url_for('/gallery/term-wiki/styles.css') + '?v=' + assetVersion)
+  body
+    if theme.preloader
+      !=partial('includes/loading/loading', {}, {cache: false})
 
-block content
-  #page.term-wiki-page
-    if page.description
-      p.term-wiki-lead= page.description
-    #term-wiki(data-term-wiki-root data-subject=page.term_wiki_subject)
-    if page.term_wiki_credit
-      p.term-wiki-credit= page.term_wiki_credit
-    noscript
-      p.term-wiki-noscript 此知识页需要 JavaScript 才能使用搜索与词条浏览。
+    !=partial('includes/sidebar', {}, {cache: false})
 
-block page_scripts
-  script(src=url_for(page.term_wiki_data))
-  script(src=url_for('/gallery/term-wiki/app.js?v=original-png-20260824'))
+    #body-wrap.page.term-wiki-shell
+      include ./includes/header/index.pug
+
+      main.term-wiki-page(aria-labelledby='term-wiki-page-title')
+        .term-wiki-page__inner
+          h1#term-wiki-page-title.term-wiki-page__title= page.title
+          #term-wiki(data-term-wiki-root data-subject=page.term_wiki_subject data-asset-version=assetVersion)
+          noscript
+            p.term-wiki-noscript 此知识页需要 JavaScript 才能使用搜索与词条浏览。
+
+    include ./includes/rightside.pug
+    !=partial('includes/third-party/search/index', {}, {cache: false})
+    include ./includes/additional-js.pug
+    script(src=url_for(page.term_wiki_data) + '?v=' + assetVersion)
+    script(src=url_for('/gallery/term-wiki/app.js') + '?v=' + assetVersion)

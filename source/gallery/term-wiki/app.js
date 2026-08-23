@@ -160,7 +160,6 @@
 
     return {
       title: asText(config.title, '学科词卡 Wiki'),
-      subtitle: asText(config.subtitle, '从索引进入，沿概念之间的联系继续探索。'),
       subject: asText(config.subject),
       cardAssetBase,
       categories,
@@ -216,7 +215,6 @@
   }
 
   function initialiseTermWiki () {
-    const config = normaliseConfig(window.TERM_WIKI)
     let root = document.querySelector('[data-term-wiki-root], #term-wiki')
 
     if (!root) {
@@ -226,7 +224,19 @@
       host.appendChild(root)
     }
 
-    const inferredSubject = /化学|chem/i.test(`${config.title} ${config.subtitle}`) ? 'chemistry' : 'geography'
+    const config = normaliseConfig(window.TERM_WIKI)
+    const assetVersion = /^[A-Za-z0-9._-]{1,80}$/.test(root.dataset.assetVersion || '')
+      ? root.dataset.assetVersion
+      : ''
+    if (assetVersion) {
+      config.items.forEach(item => {
+        item.images.forEach(image => {
+          image.src = `${image.src}?v=${encodeURIComponent(assetVersion)}`
+        })
+      })
+    }
+
+    const inferredSubject = /化学|chem/i.test(config.title) ? 'chemistry' : 'geography'
     const subject = ['geography', 'chemistry'].includes(root.dataset.subject)
       ? root.dataset.subject
       : (['geography', 'chemistry'].includes(config.subject) ? config.subject : inferredSubject)
@@ -458,6 +468,22 @@
         card.setAttribute('aria-label', `打开${item.name}词卡原图`)
         if (state.activeId === item.id) card.classList.add('is-current')
 
+        const media = createElement('span', 'term-wiki__card-media')
+        const preview = item.images[0]
+        if (preview) {
+          const thumbnail = document.createElement('img')
+          thumbnail.className = 'term-wiki__card-thumbnail'
+          thumbnail.src = preview.src
+          thumbnail.alt = ''
+          thumbnail.width = 1587
+          thumbnail.height = 2245
+          thumbnail.loading = 'lazy'
+          thumbnail.decoding = 'async'
+          thumbnail.addEventListener('error', () => media.classList.add('is-error'), { once: true })
+          media.appendChild(thumbnail)
+        }
+
+        const content = createElement('span', 'term-wiki__card-content')
         const top = createElement('span', 'term-wiki__card-top')
         top.appendChild(createElement('span', 'term-wiki__card-category', item.categoryName))
 
@@ -469,12 +495,12 @@
           heading.appendChild(english)
         }
 
-        const summary = createElement('span', 'term-wiki__card-summary', item.summary || '打开词卡原图，并查看文字版内容。')
         const footer = createElement('span', 'term-wiki__card-footer')
         footer.appendChild(createElement('span', '', item.volume || `${item.sections.length} 个知识段`))
-        footer.appendChild(createElement('span', 'term-wiki__card-arrow', '查看词卡原图 →'))
+        footer.appendChild(createElement('span', 'term-wiki__card-arrow', '→'))
 
-        card.append(top, heading, summary, footer)
+        content.append(top, heading, footer)
+        card.append(media, content)
         elements.cards.appendChild(card)
       })
 
