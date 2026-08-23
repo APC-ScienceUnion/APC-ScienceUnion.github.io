@@ -107,7 +107,7 @@
         meta: normaliseMeta(rawItem.meta),
         images: cardAssetBase && /^[A-Za-z0-9][A-Za-z0-9-]*$/.test(id)
           ? [1, 2].map(page => ({
-              src: `${cardAssetBase}/${id}-${String(page).padStart(2, '0')}.webp`,
+              src: `${cardAssetBase}/${id}-${String(page).padStart(2, '0')}.png`,
               alt: `${name}词卡第 ${page} 页`
             }))
           : []

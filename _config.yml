@@ -178,14 +178,8 @@ js_minifier:
     - gallery/term-wiki/**/*.js
 
 image_minifier: 
-  enable: true 
-  interlaced: true 
-  multipass: false 
-  optimizationLevel: 2 
-  pngquant: true
-  progressive: true
-  exclude:
-    - gif
+  # Keep committed images byte-for-byte identical in the generated site.
+  enable: false
 
 markdown:
   plugins:

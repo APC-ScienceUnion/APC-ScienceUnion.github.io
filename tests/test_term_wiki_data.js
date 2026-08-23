@@ -46,19 +46,34 @@ function validateWiki (relativePath, expected) {
   const imageRefs = []
   for (const item of wiki.items) {
     for (const page of [1, 2]) {
-      const ref = `${wiki.cardAssetBase}/${item.id}-${String(page).padStart(2, '0')}.webp`
+      const ref = `${wiki.cardAssetBase}/${item.id}-${String(page).padStart(2, '0')}.png`
       const assetPath = path.join(root, 'source', ref.replace(/^\//, ''))
       assert.ok(fs.existsSync(assetPath), `missing term card asset: ${ref}`)
       const bytes = fs.readFileSync(assetPath)
-      assert.equal(bytes.subarray(0, 4).toString('ascii'), 'RIFF', `invalid WebP header: ${ref}`)
-      assert.equal(bytes.subarray(8, 12).toString('ascii'), 'WEBP', `invalid WebP signature: ${ref}`)
+      assert.equal(bytes.subarray(0, 8).toString('hex'), '89504e470d0a1a0a', `invalid PNG signature: ${ref}`)
+      assert.equal(bytes.subarray(12, 16).toString('ascii'), 'IHDR', `missing PNG IHDR: ${ref}`)
+      assert.equal(bytes.readUInt32BE(16), 1587, `unexpected original width: ${ref}`)
+      assert.equal(bytes.readUInt32BE(20), 2245, `unexpected original height: ${ref}`)
+      const chunkTypes = []
+      for (let offset = 8; offset + 12 <= bytes.length;) {
+        const chunkLength = bytes.readUInt32BE(offset)
+        const chunkType = bytes.subarray(offset + 4, offset + 8).toString('ascii')
+        chunkTypes.push(chunkType)
+        offset += 12 + chunkLength
+        if (chunkType === 'IEND') break
+      }
+      assert.ok(chunkTypes.includes('pHYs'), `missing original PNG density metadata: ${ref}`)
+      assert.ok(chunkTypes.includes('iTXt'), `missing original PNG text metadata: ${ref}`)
+      assert.ok(chunkTypes.includes('eXIf'), `missing original PNG EXIF metadata: ${ref}`)
       assert.ok(bytes.length >= 50 * 1024, `term card asset unexpectedly small: ${ref}`)
-      assert.ok(bytes.length <= 1024 * 1024, `term card asset exceeds 1 MiB: ${ref}`)
       imageRefs.push(ref)
     }
   }
   assert.equal(imageRefs.length, expected.items * 2)
   assert.equal(new Set(imageRefs).size, imageRefs.length)
+  const cardDirectory = path.join(root, 'source/gallery', expected.folder, 'assets/cards')
+  assert.equal(fs.readdirSync(cardDirectory).some(name => name.endsWith('.webp')), false,
+    `legacy WebP assets remain in ${expected.folder}`)
   return wiki
 }
 
@@ -102,6 +117,8 @@ assert.match(sharedApp, /fittedRect\.width \* 2/)
 assert.match(sharedApp, /pageShell\.inert = true/)
 assert.match(sharedApp, /focusModalAfterOpen/)
 assert.match(sharedApp, /查看文字版内容/)
+assert.match(sharedApp, /\.png`/)
+assert.doesNotMatch(sharedApp, /\.webp/)
 assert.doesNotMatch(sharedApp, /term-wiki__drawer/)
 assert.doesNotMatch(sharedStyles, /wiki-sitebar|wiki-footer|radial-gradient|backdrop-filter|text-bg-hover/)
 assert.match(sharedStyles, /\.term-wiki__modal/)
