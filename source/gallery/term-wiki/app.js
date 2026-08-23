@@ -258,12 +258,6 @@
 
       <div class="term-wiki__layout">
         <aside class="term-wiki__tree" aria-label="词卡目录">
-          <div class="term-wiki__tree-toolbar">
-            <button type="button" class="term-wiki__tree-collapse" data-action="toggle-tree" aria-expanded="true" aria-controls="term-wiki-tree-content">
-              <span class="term-wiki__tree-collapse-icon" aria-hidden="true">‹</span>
-              <span class="term-wiki__tree-collapse-label">收起目录</span>
-            </button>
-          </div>
           <div class="term-wiki__tree-content" id="term-wiki-tree-content">
             <p class="term-wiki__tree-heading">概念目录</p>
             <div class="term-wiki__tree-list"></div>
@@ -326,12 +320,7 @@
     const elements = {
       search: root.querySelector('.term-wiki__search input'),
       searchClear: root.querySelector('.term-wiki__search-clear'),
-      tree: root.querySelector('.term-wiki__tree'),
-      treeContent: root.querySelector('.term-wiki__tree-content'),
       treeList: root.querySelector('.term-wiki__tree-list'),
-      treeCollapse: root.querySelector('.term-wiki__tree-collapse'),
-      treeCollapseIcon: root.querySelector('.term-wiki__tree-collapse-icon'),
-      treeCollapseLabel: root.querySelector('.term-wiki__tree-collapse-label'),
       count: root.querySelector('.term-wiki__result-count'),
       filters: root.querySelector('.term-wiki__filters'),
       reset: root.querySelector('.term-wiki__reset'),
@@ -370,7 +359,6 @@
       pointerStartedOnImage: false,
       restoreFocusTo: null,
       modalFocusTimer: null,
-      treeCollapsed: false,
       expandedCategories: new Set(config.categories.map(category => category.id)),
       internalHashSession: false
     }
@@ -750,14 +738,6 @@
       state.internalHashSession = false
     }
 
-    function toggleTree () {
-      state.treeCollapsed = !state.treeCollapsed
-      root.classList.toggle('is-tree-collapsed', state.treeCollapsed)
-      elements.treeCollapse.setAttribute('aria-expanded', String(!state.treeCollapsed))
-      elements.treeCollapseIcon.textContent = state.treeCollapsed ? '›' : '‹'
-      elements.treeCollapseLabel.textContent = state.treeCollapsed ? '展开目录' : '收起目录'
-    }
-
     function toggleCategoryBranch (button) {
       const categoryId = button.dataset.treeCategory
       const list = document.getElementById(button.getAttribute('aria-controls'))
@@ -856,9 +836,6 @@
           break
         case 'reset-filters':
           resetFilters()
-          break
-        case 'toggle-tree':
-          toggleTree()
           break
         case 'close-detail':
           hideModal()
@@ -979,7 +956,6 @@
     renderTree()
     renderFilters()
     applyFilters()
-    if (window.matchMedia('(max-width: 760px)').matches) toggleTree()
     syncWithHash()
     root.dataset.ready = 'true'
   }
