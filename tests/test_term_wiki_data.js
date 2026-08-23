@@ -137,6 +137,7 @@ assert.match(wikiLayout, /extends includes\/layout\.pug/)
 assert.match(wikiLayout, /#term-wiki\(data-term-wiki-root/)
 assert.match(wikiLayout, /gallery\/term-wiki\/styles\.css/)
 assert.match(wikiLayout, /gallery\/term-wiki\/app\.js/)
+assert.match(wikiLayout, /app\.js\?v=original-png-20260824/)
 assert.match(baseLayout, /block page_head/)
 assert.match(baseLayout, /block page_scripts/)
 
