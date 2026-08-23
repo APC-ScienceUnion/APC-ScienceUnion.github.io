@@ -153,8 +153,6 @@
     return {
       title: asText(config.title, '学科词卡 Wiki'),
       subtitle: asText(config.subtitle, '从索引进入，沿概念之间的联系继续探索。'),
-      eyebrow: asText(config.eyebrow, 'INTERACTIVE SUBJECT WIKI'),
-      accent: asText(config.accent),
       subject: asText(config.subject),
       categories,
       items
@@ -229,21 +227,14 @@
 
     root.replaceChildren()
     root.innerHTML = `
-      <div class="term-wiki__ambient" aria-hidden="true"></div>
-      <header class="term-wiki__hero">
-        <div class="term-wiki__intro">
-          <p class="term-wiki__eyebrow"></p>
-          <h1 class="term-wiki__title"></h1>
-          <p class="term-wiki__subtitle"></p>
-        </div>
+      <div class="term-wiki__toolbar">
         <label class="term-wiki__search">
           <span class="term-wiki__search-icon" aria-hidden="true">⌕</span>
           <span class="term-wiki__sr-only">搜索词卡</span>
           <input type="search" autocomplete="off" spellcheck="false" placeholder="搜索中文、English 或关键词">
-          <kbd aria-hidden="true">/</kbd>
           <button type="button" class="term-wiki__search-clear" data-action="clear-search" aria-label="清空搜索" hidden>×</button>
         </label>
-      </header>
+      </div>
 
       <div class="term-wiki__layout">
         <aside class="term-wiki__tree" aria-label="词卡目录">
@@ -279,24 +270,20 @@
 
       <div class="term-wiki__backdrop" data-action="close-detail" aria-hidden="true"></div>
       <aside class="term-wiki__drawer" role="dialog" aria-modal="true" aria-labelledby="term-wiki-detail-title" aria-hidden="true">
-        <div class="term-wiki__drawer-handle" aria-hidden="true"></div>
         <div class="term-wiki__drawer-toolbar">
           <button type="button" class="term-wiki__drawer-close" data-action="close-detail" aria-label="关闭详情">×</button>
           <button type="button" class="term-wiki__copy" data-action="copy-link">复制链接</button>
         </div>
         <div class="term-wiki__detail" tabindex="-1"></div>
         <nav class="term-wiki__detail-nav" aria-label="前后词条">
-          <button type="button" data-action="previous-term"><span aria-hidden="true">←</span><span class="term-wiki__nav-copy"><small>上一条</small><strong></strong></span></button>
-          <button type="button" data-action="next-term"><span class="term-wiki__nav-copy"><small>下一条</small><strong></strong></span><span aria-hidden="true">→</span></button>
+          <button type="button" data-action="previous-term"><span aria-hidden="true">←</span><span class="term-wiki__nav-copy"><span>上一条</span><strong></strong></span></button>
+          <button type="button" data-action="next-term"><span class="term-wiki__nav-copy"><span>下一条</span><strong></strong></span><span aria-hidden="true">→</span></button>
         </nav>
       </aside>
       <div class="term-wiki__live term-wiki__sr-only" aria-live="polite" aria-atomic="true"></div>
     `
 
     const elements = {
-      eyebrow: root.querySelector('.term-wiki__eyebrow'),
-      title: root.querySelector('.term-wiki__title'),
-      subtitle: root.querySelector('.term-wiki__subtitle'),
       search: root.querySelector('.term-wiki__search input'),
       searchClear: root.querySelector('.term-wiki__search-clear'),
       tree: root.querySelector('.term-wiki__tree'),
@@ -318,10 +305,6 @@
       next: root.querySelector('[data-action="next-term"]'),
       live: root.querySelector('.term-wiki__live')
     }
-
-    elements.eyebrow.textContent = config.eyebrow
-    elements.title.textContent = config.title
-    elements.subtitle.textContent = config.subtitle
 
     const itemsById = new Map(config.items.map(item => [item.id, item]))
     const categoryCounts = new Map(config.categories.map(category => [category.id, 0]))
@@ -386,7 +369,7 @@
           button.appendChild(createElement('span', 'term-wiki__tree-dot', ''))
           const copy = createElement('span', 'term-wiki__tree-item-copy')
           copy.appendChild(createElement('span', '', item.name))
-          if (item.en) copy.appendChild(createElement('small', '', item.en))
+          if (item.en) copy.appendChild(createElement('span', 'term-wiki__tree-item-en', item.en))
           button.appendChild(copy)
           listItem.appendChild(button)
           list.appendChild(listItem)
@@ -415,7 +398,7 @@
       })
 
       elements.cards.replaceChildren()
-      state.filteredItems.forEach((item, index) => {
+      state.filteredItems.forEach(item => {
         const card = createElement('button', 'term-wiki__card')
         card.type = 'button'
         card.dataset.openTerm = item.id
@@ -424,7 +407,6 @@
         if (state.activeId === item.id) card.classList.add('is-current')
 
         const top = createElement('span', 'term-wiki__card-top')
-        top.appendChild(createElement('span', 'term-wiki__card-number', String(index + 1).padStart(2, '0')))
         top.appendChild(createElement('span', 'term-wiki__card-category', item.categoryName))
 
         const heading = createElement('span', 'term-wiki__card-heading')
@@ -438,7 +420,7 @@
         const summary = createElement('span', 'term-wiki__card-summary', item.summary || '打开词条，查看定义与扩展要点。')
         const footer = createElement('span', 'term-wiki__card-footer')
         footer.appendChild(createElement('span', '', item.volume || `${item.sections.length} 个知识段`))
-        footer.appendChild(createElement('span', 'term-wiki__card-arrow', '↗'))
+        footer.appendChild(createElement('span', 'term-wiki__card-arrow', '查看详情 →'))
 
         card.append(top, heading, summary, footer)
         elements.cards.appendChild(card)
@@ -543,13 +525,12 @@
         elements.detail.appendChild(keywordSection)
       }
 
-      item.sections.forEach((section, index) => {
+      item.sections.forEach(section => {
         const sectionElement = createElement('section', 'term-wiki__section')
-        const sectionNumber = createElement('span', 'term-wiki__section-number', String(index + 1).padStart(2, '0'))
         const sectionBody = createElement('div', 'term-wiki__section-body')
         sectionBody.appendChild(createElement('h3', '', section.title))
         if (section.text) sectionBody.appendChild(createElement('p', '', section.text))
-        sectionElement.append(sectionNumber, sectionBody)
+        sectionElement.appendChild(sectionBody)
         elements.detail.appendChild(sectionElement)
       })
 
@@ -802,6 +783,7 @@
     renderTree()
     renderFilters()
     applyFilters()
+    if (window.matchMedia('(max-width: 760px)').matches) toggleTree()
     syncWithHash()
     root.dataset.ready = 'true'
   }

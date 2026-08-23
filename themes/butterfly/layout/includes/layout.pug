@@ -38,6 +38,7 @@ doctype html
 html(lang=config.language data-theme=theme.display_mode class=htmlRootClass)
   head
     include ./head.pug
+    block page_head
   body
     if theme.preloader
       !=partial('includes/loading/loading', {}, {cache: true})
@@ -97,3 +98,4 @@ html(lang=config.language data-theme=theme.display_mode class=htmlRootClass)
     include ./rightside.pug
     !=partial('includes/third-party/search/index', {}, {cache: true})
     include ./additional-js.pug
+    block page_scripts

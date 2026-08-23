@@ -1,0 +1,18 @@
+extends includes/layout.pug
+
+block page_head
+  link(rel='stylesheet' href=url_for('/gallery/term-wiki/styles.css'))
+
+block content
+  #page.term-wiki-page
+    if page.description
+      p.term-wiki-lead= page.description
+    #term-wiki(data-term-wiki-root data-subject=page.term_wiki_subject)
+    if page.term_wiki_credit
+      p.term-wiki-credit= page.term_wiki_credit
+    noscript
+      p.term-wiki-noscript 此知识页需要 JavaScript 才能使用搜索与词条浏览。
+
+block page_scripts
+  script(src=url_for(page.term_wiki_data))
+  script(src=url_for('/gallery/term-wiki/app.js'))

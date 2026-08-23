@@ -33,8 +33,8 @@ skip_render:
   - 10th-link/**
   - fwzq/**
   - science-turtle-soup/**
-  - gallery/GeographyCard/**
-  - gallery/ChemistryCard/**
+  - gallery/GeographyCard/data.js
+  - gallery/ChemistryCard/data.js
   - gallery/term-wiki/**
   - netlify/**
   - netlify.toml

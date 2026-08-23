@@ -22,6 +22,7 @@ function validateWiki (relativePath, expected) {
   assert.equal(wiki.categories.length, expected.categories)
   assert.ok(wiki.title)
   assert.ok(wiki.subtitle)
+  assert.equal(Object.hasOwn(wiki, 'eyebrow'), false)
 
   const categoryIds = new Set(wiki.categories.map(category => category.id))
   assert.equal(categoryIds.size, wiki.categories.length)
@@ -58,13 +59,32 @@ assert.deepEqual(Array.from(chemistry.items, item => item.name), [
   '氢', '质子酸碱', '氢键', '碱金属', '锂', '钠', '钾', '铷、铯、钫'
 ])
 
-for (const folder of ['GeographyCard', 'ChemistryCard']) {
-  const html = fs.readFileSync(path.join(root, 'source', 'gallery', folder, 'index.html'), 'utf8')
-  assert.match(html, /data-term-wiki-root/)
-  assert.match(html, /data\.js/)
-  assert.match(html, /\/gallery\/term-wiki\/app\.js/)
-  assert.doesNotMatch(html, /canva\.com\/design\//i)
+for (const [folder, subject] of [['GeographyCard', 'geography'], ['ChemistryCard', 'chemistry']]) {
+  const page = fs.readFileSync(path.join(root, 'source', 'gallery', folder, 'index.md'), 'utf8')
+  assert.match(page, /layout: term-wiki/)
+  assert.match(page, /type: term-wiki/)
+  assert.match(page, new RegExp(`term_wiki_subject: ${subject}`))
+  assert.match(page, new RegExp(`term_wiki_data: \/gallery\/${folder}\/data\\.js`))
+  assert.doesNotMatch(page, /<header|<footer|wiki-sitebar|wiki-footer/i)
+  assert.doesNotMatch(page, /canva\.com\/design\//i)
 }
+
+const sharedApp = fs.readFileSync(path.join(root, 'source/gallery/term-wiki/app.js'), 'utf8')
+const sharedStyles = fs.readFileSync(path.join(root, 'source/gallery/term-wiki/styles.css'), 'utf8')
+const wikiLayout = fs.readFileSync(path.join(root, 'themes/butterfly/layout/term-wiki.pug'), 'utf8')
+const baseLayout = fs.readFileSync(path.join(root, 'themes/butterfly/layout/includes/layout.pug'), 'utf8')
+assert.doesNotMatch(sharedApp, /term-wiki__eyebrow|term-wiki__ambient|DISCIPLINE ATLAS|<kbd/)
+assert.doesNotMatch(sharedStyles, /wiki-sitebar|wiki-footer|radial-gradient|backdrop-filter|text-bg-hover/)
+const fixedFontSizes = [...sharedStyles.matchAll(/font-size:\s*(\d+)px/g)].map(match => Number(match[1]))
+assert.ok(fixedFontSizes.length > 0)
+assert.equal(Math.min(...fixedFontSizes), 16)
+assert.doesNotMatch(sharedStyles, /font-size:\s*0\.\d+rem/)
+assert.match(wikiLayout, /extends includes\/layout\.pug/)
+assert.match(wikiLayout, /#term-wiki\(data-term-wiki-root/)
+assert.match(wikiLayout, /gallery\/term-wiki\/styles\.css/)
+assert.match(wikiLayout, /gallery\/term-wiki\/app\.js/)
+assert.match(baseLayout, /block page_head/)
+assert.match(baseLayout, /block page_scripts/)
 
 const plantIndex = fs.readFileSync(path.join(root, 'source/gallery/PlantCard/index.md'), 'utf8')
 const plantRefs = [...plantIndex.matchAll(/!\[\]\((\/gallery\/PlantCard\/assets\/2019\/[^)]+)\)/g)]
