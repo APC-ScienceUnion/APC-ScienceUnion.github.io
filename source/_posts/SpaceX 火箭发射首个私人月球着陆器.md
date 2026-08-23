@@ -4,7 +4,7 @@ date: 2019-02-22 21:09:00
 tags: ['spaceX', '科普', '航空航天','月球']
 categories: '航空航天'
 copyright_author: '一毫秒的永恒'
-cover: https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ied9o53y3jj30i20b1gra.jpg
+cover: /images/SpaceX%20%E7%81%AB%E7%AE%AD%E5%8F%91%E5%B0%84%E9%A6%96%E4%B8%AA%E7%A7%81%E4%BA%BA%E6%9C%88%E7%90%83%E7%9D%80%E9%99%86%E5%99%A8/cover-bceae485f4.jpg
 ---
 
 > 作者：一毫秒的永恒
@@ -15,7 +15,7 @@ cover: https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ied9o53y3jj30i20b1gra.j
 
 &emsp;&emsp;尽管这次任务的主要有效载荷是印度尼西亚的卫星Nusantara Satu，但作为次要有效载荷搭载的小型月球着陆器却抢尽了风头。它不仅成为以色列第一个走出地球轨道的航天器，还是首个私人资助的月球着陆器。
 
-<img src="https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ied9o53y3jj30i20b1gra.jpg" title="月球表面着陆器”Beresheet”的概念图  |  Credit: SpaceIL" />
+<img src="/images/SpaceX%20%E7%81%AB%E7%AE%AD%E5%8F%91%E5%B0%84%E9%A6%96%E4%B8%AA%E7%A7%81%E4%BA%BA%E6%9C%88%E7%90%83%E7%9D%80%E9%99%86%E5%99%A8/cover-bceae485f4.jpg" title="月球表面着陆器”Beresheet”的概念图  |  Credit: SpaceIL" />
 
 <center><font size=2px color=grey>月球表面着陆器”Beresheet”的概念图  |  Credit: SpaceIL</font></center>
 
@@ -25,7 +25,7 @@ cover: https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ied9o53y3jj30i20b1gra.j
 
 &emsp;&emsp;2019年2月20日，SpaceIL的捐赠者西尔万·亚当斯(Sylvan Adams)在佛罗里达州奥兰多的简报会上说：“我们的愿景是向全世界展示以色列最佳的产品。以色列即将成为软着陆月球的第四个国家，这是一件了不起的事情。”
 
-<img src="https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ied9oejcfpj30kn0bk0wn.jpg" title="Beresheet将连续围绕地球运行大约27天，以获得所需的动力" />
+<img src="/images/SpaceX%20%E7%81%AB%E7%AE%AD%E5%8F%91%E5%B0%84%E9%A6%96%E4%B8%AA%E7%A7%81%E4%BA%BA%E6%9C%88%E7%90%83%E7%9D%80%E9%99%86%E5%99%A8/fig-001-c7923b223a.jpg" title="Beresheet将连续围绕地球运行大约27天，以获得所需的动力" />
 
 <center><font size=2px color=grey>Beresheet将连续围绕地球运行大约27天，以获得所需的动力</font></center>
 
@@ -37,7 +37,7 @@ cover: https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ied9o53y3jj30i20b1gra.j
 
 &emsp;&emsp;反射镜并不是Beresheet号上唯一能经受时间考验的有效载荷。SpaceIL还制造了一个时间胶囊，里面装满了关于宇宙飞船的信息和各种以色列纪念品的数字文件。其中包括希伯来圣经、希伯来歌曲、以色列儿童创作的艺术品以及以色列第一位也是唯一一位宇航员伊兰·拉蒙(Ilan Ramon)的照片。在时间胶囊内是一个巨大的数字数据库，被称为“拱形月球图书馆”，是非营利机构拱门任务基金会(Arch Mission Foundation)的一个项目。SpaceIL的联合创始人约纳坦·温特劳布(Yonatan Winetraub)说：“这个图书馆藏有来自世界各地的数百万份文件，包含各种不同的字典和百科全书，里面还有三枚激光蚀刻的硬币。这将是到达月球的信息最密集的人工制品，而且它将在2019年停留在那里，让下一代人可以看到地球上的情况。”
 
-<img src="https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ied9pczejlj30i20a5gpd.jpg" title="这枚小硬币是Beresheet上时间胶囊的一部分，它的表面用激光蚀刻了整本希伯来圣经  |  Credits: Hanneke Weitering/Space.com" />
+<img src="/images/SpaceX%20%E7%81%AB%E7%AE%AD%E5%8F%91%E5%B0%84%E9%A6%96%E4%B8%AA%E7%A7%81%E4%BA%BA%E6%9C%88%E7%90%83%E7%9D%80%E9%99%86%E5%99%A8/fig-002-a0de427d0b.jpg" title="这枚小硬币是Beresheet上时间胶囊的一部分，它的表面用激光蚀刻了整本希伯来圣经  |  Credits: Hanneke Weitering/Space.com" />
 
 <center><font size=2px color=grey>这枚小硬币是Beresheet上时间胶囊的一部分，它的表面用激光蚀刻了整本希伯来圣经  |  Credits: Hanneke Weitering/Space.com</font></center>
 

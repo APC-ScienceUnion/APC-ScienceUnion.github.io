@@ -1,5 +1,7 @@
 - var pageTitle
-- if (is_archive()) pageTitle = fragment_cache('findArchivesTitle', function(){return findArchivesTitle(theme.menu);})
+- const englishPage = page.lang === 'en'
+- const localizedSiteTitle = englishPage && theme.english_site_title ? theme.english_site_title : config.title
+- if (is_archive()) pageTitle = englishPage ? _p('page.archives') : findArchivesTitle(theme.menu)
 - else if (is_tag()) pageTitle = _p('page.tag') + ': ' + page.tag
 - else if (is_category()) pageTitle = _p('page.category') + ': ' + page.category
 - else if (is_month()) pageTitle += ': ' + page.month + '/' + page.year
@@ -7,8 +9,9 @@
 - else if (is_current('/404.html', [strict])) pageTitle = _p('error404')
 - else pageTitle = page.title || config.title || ''
 
-- var isSubtitle = config.subtitle ? ' - ' + config.subtitle : ''
-- var tabTitle = is_home() || !pageTitle ? config.title + isSubtitle : pageTitle + ' | ' + config.title
+- var localizedSubtitle = englishPage && theme.english_site_subtitle ? theme.english_site_subtitle : config.subtitle
+- var isSubtitle = localizedSubtitle ? ' - ' + localizedSubtitle : ''
+- var tabTitle = is_home() || !pageTitle ? localizedSiteTitle + isSubtitle : pageTitle + ' | ' + localizedSiteTitle
 
 - var pageKeywords
 - if (page.keywords) pageKeywords = Array.isArray(page.keywords) ? (page.keywords).join(',') :  ([]).join(',') || page.keywords
@@ -34,6 +37,12 @@ include ./head/Open_Graph.pug
 
 !=favicon_tag(theme.favicon || config.favicon)
 link(rel="canonical" href=urlNoIndex())
+- const bilingual = bilingual_info(page)
+if bilingual.paired
+  link(rel="alternate" hreflang="zh-CN" href=full_url_for(bilingual.zhPath))
+  link(rel="alternate" hreflang="en" href=full_url_for(bilingual.enPath))
+  link(rel="alternate" hreflang="x-default" href=full_url_for(bilingual.zhPath))
+  meta(property="og:locale:alternate" content=englishPage ? 'zh_CN' : 'en_US')
 
 //- 預解析
 !=partial('includes/head/preconnect', {}, {cache: true})
@@ -66,7 +75,7 @@ if theme.blog_title_font &&　theme.blog_title_font.font_link
   link(rel='stylesheet' href=url_for(theme.blog_title_font.font_link) media="print" onload="this.media='all'")
 
 //- global config
-!=partial('includes/head/config', {}, {cache: true})
+!=partial('includes/head/config', {}, {cache: false})
 
 include ./head/config_site.pug
 include ./head/noscript.pug

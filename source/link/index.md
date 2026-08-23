@@ -14,4 +14,4 @@ type: "link"
 如果无法打开页面可以联系站长帮你，A君qq：2681412751
 如果喜欢的话可以给我们一点鼓励和支持↓
 
-![](https://s2.loli.net/2022/03/12/IO6b2cnYSCsfKoW.png)
+![](/link/assets/images/asset-ecf1d2270f.png)

@@ -1,0 +1,393 @@
+{
+  "version": 1,
+  "date": "2026-08-24",
+  "timezone": "Asia/Shanghai",
+  "review_mode": "human-curated",
+  "model": null,
+  "validation_scope": "人工审校输入：date_quote/fact_quote 是编辑从来源中核对的短原文；脚本校验目标月日、HTTPS、来源级别/域名、双源规则与公开快照结构，不把 evidence_note 的中文摘要冒充网页逐字匹配。",
+  "items": [
+    {
+      "label": "1731年",
+      "title": "樱桃月桂毒性实验留下记录",
+      "text": "英国皇家学会档案记载，克伦威尔·莫蒂默用樱桃月桂蒸馏液研究毒性，通过注射和口服等方式观察并记录犬只反应。",
+      "item_sha256": "05723f5758bd9fee15238e8b93d1439c61bd3fc3e9c1f1f4d20259593795ee72",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://makingscience.royalsociety.org/items/clp_11ii_18/paper-some-experiments-concerning-the-poisonous-quality-of-the-simple-water-distilled-distilled-from-the-laurel-cerasus-or-common-laurel-made-upon-dogs-at-toppingo-hall-in-essex-by-cromwell-mortimer",
+          "date_context": "event-date",
+          "date_quote": "Date: 24 August 1731",
+          "fact_quote": "Paper regarding experiments made on poisonous water steeped with cherry laurel at Toppingo [Toppinghoe] Hall in Essex. Mortimer injected the water or fed the water by mouth to dogs of various sizes and ages to observe how the poison affected their bodies during and after death.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "1831年",
+      "title": "亨斯洛写下“贝格尔号”邀请信",
+      "text": "剑桥的亨斯洛写信给达尔文，转达随“贝格尔号”考察南美的邀请；这封信把年轻博物学者带进日后重塑生物学的航程。",
+      "item_sha256": "03ae09ad8bc37b88170bf99844c7136f6e2a6a72047a84c98a44f1d43c6ade8a",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.darwinproject.ac.uk/voyage-beagle",
+          "date_context": "event-date",
+          "date_quote": "Letter from J. S. Henslow, 24 August 1831",
+          "fact_quote": "It was this letter from his friend and former teacher, John Stevens Henslow, Cambridge University Professor of Mineralogy and Botany, that brought the 22-year-old Charles Darwin news of the offer of a place on board the Admiralty surveying vessel HMS Beagle on a voyage to chart the coast of South America.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "1891年",
+      "title": "活动电影装置提交专利申请",
+      "text": "美国国会图书馆记载，爱迪生实验室为活动电影摄影机和观看装置提交专利申请，这套连续胶片方案成为早期活动影像技术的重要节点。",
+      "item_sha256": "60167092c8c1e4930fea05fe01a1fe088fd15aba187eed48179a58d7bfd0476f",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.loc.gov/collections/edison-company-motion-pictures-and-sound-recordings/articles-and-essays/history-of-edison-motion-pictures/origins-of-motion-pictures/",
+          "date_context": "event-date",
+          "date_quote": "A patent for the Kinetograph (the camera) and the Kinetoscope (the viewer) was filed on August 24, 1891.",
+          "fact_quote": "A patent for the Kinetograph (the camera) and the Kinetoscope (the viewer) was filed on August 24, 1891.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "1898年",
+      "title": "细胞生物学家阿尔贝·克洛德出生",
+      "text": "诺贝尔奖资料记载，阿尔贝·克洛德在这一天出生；他后来推动电子显微镜与差速离心用于细胞研究，帮助揭示细胞的结构与功能组织。",
+      "item_sha256": "5816937b71046ac49a2177862e633a12b2a1929dc504cadcb48608ef5fd7da0b",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/prizes/medicine/1974/claude/facts/",
+          "date_context": "event-date",
+          "date_quote": "Born: 24 August 1898, Longlier, Belgium",
+          "fact_quote": "He made use of the newly developed electron microscope, which enabled him to capture images with a level of detail not previously available. Claude also developed methods for separating the various parts of pulverized cells with a centrifuge so they could be better studied.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "1927年",
+      "title": "经济学家马科维茨出生",
+      "text": "经济学家哈里·马科维茨出生；他后来把预期收益与风险纳入组合选择的严格框架，使不确定条件下的资产配置成为可操作的研究对象。",
+      "item_sha256": "f49bb136f886303b522d19620f2c3320507e0b96bd49e73fd1b5931eb44b6fe1",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/laureate/704",
+          "date_context": "event-date",
+          "date_quote": "Born: 24 August 1927, Chicago, IL, USA",
+          "fact_quote": "The theory of portfolio selection was originally normative for investment managers, i.e., a theory for optimal investment of wealth in assets which differ in regard to their expected return and risk.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "1957年",
+      "title": "高能宇宙线空气簇射实验发表",
+      "text": "《Nature》刊出克拉克等人的高能宇宙线空气簇射实验论文，研究大气中由高能宇宙线触发的粒子级联及其可测信号。",
+      "item_sha256": "ee13aca2913aec219f10fab39a258a0ab58e1cf79fd280141c9c5c0ba1b7f340",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nature.com/articles/180353a0",
+          "date_context": "event-date",
+          "date_quote": "Published: 24 August 1957",
+          "fact_quote": "An Experiment on Air Showers Produced by High-Energy Cosmic Rays",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "1961年",
+      "title": "载人登月发射场选址确定",
+      "text": "美国国家航空航天局宣布选择卡纳维拉尔角地区作为载人登月任务的发射地点，随后扩建的设施成为阿波罗工程的重要基础设施。",
+      "item_sha256": "4345c333fb6fe9bcae43a666dcaa596a397ab4b10641706d3c4568ba52cd6bb7",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/wp-content/uploads/2023/04/sp-4012v1.pdf",
+          "date_context": "event-date",
+          "date_quote": "NASA announced on August 24, 1961, that Cape Canaveral had been chosen as the site for manned lunar mission launches.",
+          "fact_quote": "NASA announced on August 24, 1961, that Cape Canaveral had been chosen as the site for manned lunar mission launches.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "1966年",
+      "title": "“月球11号”飞向月球",
+      "text": "苏联“月球11号”在这一天发射，并于8月27日抵达月球轨道；美国国家航空航天局任务名录把它列为成功的月球轨道器任务。",
+      "item_sha256": "0505a33ec37a80baaebe71dbc606102a3f5081bb753d195e58a71d09ba03de46",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://science.nasa.gov/moon/missions/",
+          "date_context": "event-date",
+          "date_quote": "Luna 11 | USSR | Aug. 24, 1966 | Aug. 27, 1966 | Orbiter | Successful",
+          "fact_quote": "Luna 11 | USSR | Aug. 24, 1966 | Aug. 27, 1966 | Orbiter | Successful",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "1978年",
+      "title": "前瞻研究追踪EB病毒与淋巴瘤",
+      "text": "一项乌干达前瞻性研究在《Nature》发表，报告流行病学证据显示，EB病毒结构抗原抗体滴度较高的儿童，日后发生伯基特淋巴瘤的风险更高。",
+      "item_sha256": "39db4a61f1f1e27754aefdbe287998ba4c8ce29bef441df6ad1806432551f047",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nature.com/articles/274756a0",
+          "date_context": "event-date",
+          "date_quote": "Published: 24 August 1978",
+          "fact_quote": "Results from a prospective sero-epidemiological study initiated in Uganda in 1971 indicate that children with high antibody titres to Epstein-Barr virus structural antigens are at high risk of developing Burkitt's lymphoma.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "1978年",
+      "title": "旋转红外干涉仪寻找系外行星",
+      "text": "《Nature》发表罗纳德·布雷斯韦尔的旋转红外干涉仪设想，以相消干涉压低恒星眩光，提出从轨道直接寻找太阳系外行星的新路径。",
+      "item_sha256": "aea8a1b1696e1360d98edfe5fcb5c9fc0c564357651961ad126da8e546b3f307",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nature.com/articles/274780a0",
+          "date_context": "event-date",
+          "date_quote": "Published: 24 August 1978",
+          "fact_quote": "Detecting nonsolar planets by spinning infrared interferometer",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "1989年",
+      "title": "“旅行者2号”掠过海王星",
+      "text": "按美国国家航空航天局当时采用的太平洋夏令时口径，“旅行者2号”在8月24日晚掠过海王星；协调世界时已是25日，十台仪器近距离研究其大气、磁场、环和卫星。",
+      "item_sha256": "c88d4aac66f4e349712e481c6627c03be29d4aabe390a2b2060bd2862644088e",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://science.nasa.gov/missions/voyager-program/voyager-2-enters-final-planetary-encounter/",
+          "date_context": "event-date",
+          "date_quote": "The near-encounter phase of the mission includes Voyager's closest approach to Neptune at 9 p.m. Pacific Daylight Time on Aug. 24, 1989, when the spacecraft passes just 4,850 kilometers (3,000 miles) from the planet's cloud tops.",
+          "fact_quote": "The near-encounter phase of the mission includes Voyager's closest approach to Neptune at 9 p.m. Pacific Daylight Time on Aug. 24, 1989, when the spacecraft passes just 4,850 kilometers (3,000 miles) from the planet's cloud tops.",
+          "evidence_note": ""
+        },
+        {
+          "level": "A",
+          "url": "https://science.nasa.gov/mission/voyager/voyager-2/",
+          "date_context": "timezone-crosscheck",
+          "date_quote": "Voyager 2’s encounter with Neptune capped a 4.3 billion-mile (7 billion-kilometer) journey when, on Aug. 25, 1989, at 03:56 UT, it flew about 2,980 miles (4,800 kilometers) over the cloud tops of the giant planet, the closest of its four flybys.",
+          "fact_quote": "Its 10 instruments were still in working order at the time.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "2000年",
+      "title": "稳定的氩化合物被实验确认",
+      "text": "《Nature》发表氟氢化氩HArF的实验报告；研究者在低温固体氩基质中光解氟化氢，并以同位素引起的红外谱位移确认这种氩化合物。",
+      "item_sha256": "6e8c920763615d4ca1bbb6ee7d985e11cb82b08ba4817560e75d7658292166ed",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nature.com/articles/35022551",
+          "date_context": "event-date",
+          "date_quote": "Published: 24 August 2000",
+          "fact_quote": "Here we report that the photolysis of hydrogen fluoride in a solid argon matrix leads to the formation of argon fluorohydride (HArF), which we have identified by probing the shift in the position of vibrational bands on isotopic substitution using infrared spectroscopy.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "2006年",
+      "title": "冥王星被归入矮行星",
+      "text": "国际天文学联合会通过行星定义决议，把太阳系天体分为行星、矮行星和太阳系小天体；冥王星被列为矮行星及海王星外新类别的原型。",
+      "item_sha256": "b88435ea0186508ab9e82e002cce4b537a980f40f184f25451bd3acebdaebcf9",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.iau.org/IAU/Iau/News/PR2006/iau-2006-general-assembly-resolution-votes.aspx",
+          "date_context": "event-date",
+          "date_quote": "Published on 24 August 2006, Prague",
+          "fact_quote": "Pluto is a \"dwarf planet\" by the above definition and is recognized as the prototype of a new category of trans-Neptunian objects.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "2011年",
+      "title": "基因组重建霍乱全球传播波",
+      "text": "《Nature》发表第七次霍乱大流行的全球基因组分析，揭示疫情由多轮传播扩散，并显示SXT类抗生素耐药元件如何塑造疫情演化。",
+      "item_sha256": "79702999a167b0b082dcec0fd8bca542ac3f04db5b8a460b1a379856d849595b",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nature.com/articles/nature10392",
+          "date_context": "event-date",
+          "date_quote": "Published: 24 August 2011",
+          "fact_quote": "Using this phylogeny, we show here that the seventh pandemic has spread from the Bay of Bengal in at least three independent but overlapping waves with a common ancestor in the 1950s, and identify several transcontinental transmission events. Additionally, we show how the acquisition of the SXT family of antibiotic resistance elements has shaped pandemic spread",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "2016年",
+      "title": "化学家钱永健逝世",
+      "text": "诺贝尔奖资料记载，化学家钱永健在这一天逝世；他阐明并拓展绿色荧光蛋白的发光颜色，使研究者能够同时追踪细胞内不同蛋白和过程。",
+      "item_sha256": "1857a66c2ebde172a2d79b91b4413617b27f138f9e4a2a747d2b4bfe30602d4c",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/nobel_prizes/chemistry/laureates/2008/tsien-facts.html",
+          "date_context": "event-date",
+          "date_quote": "Died: 24 August 2016, Eugene, OR, USA",
+          "fact_quote": "During the 1990s, Roger Y. Tsien elucidated how GFP produces its shimmering light and succeeded in varying the color of the light so that different proteins and multiple, simultaneous biological processes could be tracked.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "2016年",
+      "title": "比邻星b研究结果公布",
+      "text": "欧洲南方天文台宣布发现比邻星的行星候选比邻星b，其最低质量约为地球的1.3倍，轨道周期约11.2天；对应论文同日在《Nature》上线。",
+      "item_sha256": "2c2bfafc074c131a87405af5dfdd2f0ca2f70dc3febf4205c3301903c4bf89b4",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.hq.eso.org/public/news/eso1629/",
+          "date_context": "event-date",
+          "date_quote": "24 August 2016",
+          "fact_quote": "The long-sought world, designated Proxima b, orbits its cool red parent star every 11 days and has a temperature suitable for liquid water to exist on its surface.",
+          "evidence_note": ""
+        },
+        {
+          "level": "A",
+          "url": "https://www.nature.com/articles/nature19106",
+          "date_context": "event-date",
+          "date_quote": "Published: 24 August 2016",
+          "fact_quote": "Here we report observations that reveal the presence of a small planet with a minimum mass of about 1.3 Earth masses orbiting Proxima with a period of approximately 11.2 days at a semi-major-axis distance of around 0.05 astronomical units.",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "2018年",
+      "title": "机器学习加速无铅钙钛矿筛选",
+      "text": "《Nature Communications》发表机器学习筛选无铅杂化钙钛矿的研究；团队从5158种未探索候选中筛出六种具有合适带隙和室温稳定性的结构。",
+      "item_sha256": "2037cbdc107578dca57f2a61f2821a336e6b11769da3fc6c27c574e1d34eb6f9",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nature.com/articles/s41467-018-05761-w",
+          "date_context": "event-date",
+          "date_quote": "Published: 24 August 2018",
+          "fact_quote": "Successfully, six orthorhombic lead-free HOIPs with proper bandgap for solar cells and room temperature thermal stability are screened out from 5158 unexplored HOIPs",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "2020年",
+      "title": "磁趋性细菌展现双重生物矿化",
+      "text": "《The ISME Journal》发表研究，报告一类磁趋性细菌能在细胞内同时形成磁铁矿和无定形碳酸钙颗粒，扩展了微生物矿化的已知范围。",
+      "item_sha256": "b1d4ea95c508a027e9fe888e7edb2a766ce3437e782333a74180b58036280f5b",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nature.com/articles/s41396-020-00747-3",
+          "date_context": "event-date",
+          "date_quote": "Published: 24 August 2020",
+          "fact_quote": "Intracellular amorphous Ca-carbonate and magnetite biomineralization by a magnetotactic bacterium affiliated to the Alphaproteobacteria",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "2023年",
+      "title": "“月船三号”月球车驶上月面",
+      "text": "印度空间研究组织记录，“月船三号”的“普拉吉安”月球车从着陆器驶上月面，随后在南极附近开展月壤元素组成等原位科学实验。",
+      "item_sha256": "ca959de2a6da365e71e6af29959daaf5c1d298b757d6edfad0744b3805dca5c9",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.isro.gov.in/media_isro/pdf/AnnualReport/Annual_Report_2024_25_Eng.pdf",
+          "date_context": "event-date",
+          "date_quote": "On August 24, 2023, the rover descended on the lunar surface.",
+          "fact_quote": "On August 24, 2023, the rover descended on the lunar surface. For over 14 Earth days, in-situ scientific experiments were conducted on the moon, near its south pole",
+          "evidence_note": ""
+        }
+      ]
+    },
+    {
+      "label": "2023年",
+      "title": "太阳微小喷流或为太阳风供料",
+      "text": "欧洲航天局公布“太阳轨道器”极紫外成像结果：太阳外层大气存在持续20至100秒、速度约每秒100公里的微小等离子体喷流，可能为太阳风供料。",
+      "item_sha256": "feadeb97c02fb6f27426faaa8387d4edc4e9edcceea26ce44220874fd2411e91",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_discovers_tiny_jets_that_could_power_the_solar_wind",
+          "date_context": "event-date",
+          "date_quote": "Picoflare jets power the solar wind emerging from a coronal hole on the Sun by L. P. Chitta et al. is published in Science, 24 August 2023.",
+          "fact_quote": "Each jet lasts between 20 and 100 seconds, and expels plasma at around 100 km/s. These jets could be the long-sought-after source of the solar wind.",
+          "evidence_note": ""
+        }
+      ]
+    }
+  ],
+  "public_json_sha256": "6859145af07e7ef8466acac7a8739b4cc528d7a332f5c14ed6680f2fe05b54f3",
+  "poster_sha256": "fab07aa36ee439b85332b5d79d1f13546a54d54d09e310b9b28ca3ecdc1725fd",
+  "poster_bytes": 3241804,
+  "poster_dimensions": {
+    "width": 2160,
+    "height": 9294
+  }
+}

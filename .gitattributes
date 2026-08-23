@@ -1,0 +1,6 @@
+/source/images/** -text
+/source/link/assets/images/** -text
+/themes/butterfly/source/img/site/** -text
+/images/** -text
+/link/assets/images/** -text
+/img/site/** -text

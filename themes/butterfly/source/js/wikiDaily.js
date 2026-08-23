@@ -1,267 +1,351 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // 创建容器
-  const container = document.createElement('div');
-  container.id = 'wiki-picture-container';
-  container.className = 'm-auto max-w-4xl bg-white rounded-lg shadow-md p-5 my-6';
-  
-  // 创建加载提示（与必应 / APOD / 每日新闻 同一套 apc-loading.js）
-  const loading = document.createElement('div');
-  loading.id = 'wiki-loading';
-  loading.innerHTML =
-    typeof window.apcLoadingHtml === 'function'
-      ? window.apcLoadingHtml('正在加载维基百科每日图片…')
-      : '<p style="padding:20px;color:#888;">正在加载维基百科每日图片…</p>';
-  container.appendChild(loading);
-  
-  // 查找占位符并插入容器
-  const placeholder = document.getElementById('wiki-daily-placeholder');
-  if (!placeholder) return;
-  
-  placeholder.parentNode.replaceChild(container, placeholder);
-  
-  // 获取当前日期
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, '0');
-  const day = String(today.getDate()).padStart(2, '0');
-  const dateISO = `${year}-${month}-${day}`;
-  const title = `Template:POTD_protected/${dateISO}`;
-  
-  // 第一步：获取图片文件名
-  fetch(`https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=images&titles=${encodeURIComponent(title)}&origin=*`)
-      .then(response => response.json())
-      .then(data => {
-          if (!data.query || !data.query.pages || data.query.pages.length === 0) {
-              throw new Error('未找到图片信息');
-          }
-          
-          const page = data.query.pages[0];
-          if (!page.images || page.images.length === 0) {
-              throw new Error('未找到当日图片');
-          }
-          
-          const filename = page.images[0].title;
-          
-          // 第二步：获取图片URL
-          return fetch(`https://en.wikipedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&titles=${encodeURIComponent(filename)}&origin=*`)
-              .then(response => response.json())
-              .then(data => {
-                  if (!data.query || !data.query.pages) {
-                      throw new Error('未找到图片URL信息');
-                  }
-                  
-                  const pageId = Object.keys(data.query.pages)[0];
-                  const pageInfo = data.query.pages[pageId];
-                  
-                  if (!pageInfo.imageinfo || pageInfo.imageinfo.length === 0) {
-                      throw new Error('无法获取图片URL');
-                  }
-                  
-                  const imageUrl = pageInfo.imageinfo[0].url;
-                  
-                  // 第三步：获取原始描述文本（修复代理URL）
-                  const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(
-                      `https://en.wikipedia.org/w/index.php?title=${title}&action=raw`
-                  )}`;
-                  
-                  // 创建图片元素
-                  const img = document.createElement('img');
-                  img.src = imageUrl;
-                  img.alt = filename.replace('File:', '');
-                  img.className = 'w-full h-auto rounded-lg shadow-lg transition-transform duration-500 hover:scale-[1.02]';
-                  
-                  // 创建日期显示
-                  const dateDisplay = document.createElement('div');
-                  dateDisplay.className = 'text-xl font-bold text-gray-800 mb-4';
-                  dateDisplay.textContent = `${year}年${month}月${day}日`;
-                  
-                  // 获取描述文本
-                  return fetch(proxyUrl)
-                      .then(response => response.text())
-                      .then(rawText => {
-                          try {
-                              // 解析代理返回的JSON数据
-                              const responseData = JSON.parse(rawText);
-                              const encodedContent = responseData.contents;
-                              
-                              // 正则匹配Base64数据
-                              const base64Regex = /^data:text\/x-wiki;\s*charset=UTF-8;base64,(.+)$/;
-                              const match = encodedContent.match(base64Regex);
-                              
-                              if (!match || !match[1]) {
-                                  // 尝试宽松匹配
-                                  const looseRegex = /^data:.*?;base64,(.+)$/;
-                                  const looseMatch = encodedContent.match(looseRegex);
-                                  
-                                  if (!looseMatch || !looseMatch[1]) {
-                                      throw new Error('未找到有效的Base64数据');
-                                  }
-                                  
-                                  console.warn('使用宽松匹配解析Base64数据');
-                                  var base64Data = looseMatch[1];
-                              } else {
-                                  var base64Data = match[1];
-                              }
-                              
-                              // 解码Base64字符串
-                              const decodedText = atob(base64Data);
-                              console.log(decodedText);
-                              // 提取描述文本
-                              const description = extractDescription(decodedText);
-                              
-                              // 渲染内容
-                              renderContent(container, dateDisplay, img, description);
-                              
-                          } catch (error) {
-                              console.error('解码描述失败:', error);
-                              // 解码失败时，只显示图片和错误信息
-                              showImageWithError(container, dateDisplay, img, '描述解码失败: ' + error.message);
-                          }
-                      })
-                      .catch(error => {
-                          console.error('获取描述失败:', error);
-                          showImageWithError(container, dateDisplay, img, '无法获取描述信息: ' + error.message);
-                      });
-              })
-              .catch(error => {
-                  console.error('获取图片URL失败:', error);
-                  container.innerHTML = `
-                      <div class="bg-red-50 border border-red-200 rounded-lg p-4">
-                          <div class="flex items-center">
-                              <i class="fas fa-exclamation-triangle text-red-500 mr-3"></i>
-                              <p class="text-red-700">无法获取图片URL: ${error.message}</p>
-                          </div>
-                      </div>
-                  `;
-              });
+(function () {
+  'use strict';
+
+  const SNAPSHOT_URL = '/images/daily/daily-images.json';
+  const LOCAL_IMAGE_PREFIX = '/images/daily/';
+  const CACHE_KEY = 'apc-wikipedia-daily-last-success-v1';
+  const IS_ENGLISH_PAGE = /^en(?:-|$)/i.test(String(
+    (document.documentElement && document.documentElement.lang) || ''
+  ));
+  const UI = IS_ENGLISH_PAGE
+    ? {
+        loading: 'Loading the Wikipedia Picture of the Day…',
+        defaultTitle: 'Wikipedia Picture of the Day',
+        snapshotUnavailable: 'Today\'s local snapshot is not available. Please try again later.',
+        localImageUnavailable: 'The local image is not available. Please try again later.',
+        cachedNotice: 'Today\'s snapshot is unavailable. Showing the most recent successful snapshot.',
+        noDescription: 'An English description is not available for this snapshot.',
+      }
+    : {
+        loading: '正在加载维基百科每日图片…',
+        defaultTitle: '维基百科每日图片',
+        snapshotUnavailable: '今日快照暂不可用，请稍后再试。',
+        localImageUnavailable: '本地图片暂不可用，请稍后再试。',
+        cachedNotice: '今日快照暂不可用，正在显示最近一次成功快照。',
+        noDescription: '无描述信息',
+      };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const placeholder = document.getElementById('wiki-daily-placeholder');
+    if (!placeholder) return;
+
+    const container = document.createElement('div');
+    container.id = 'wiki-picture-container';
+    container.className = 'm-auto max-w-4xl bg-white rounded-lg shadow-md p-5 my-6';
+    container.innerHTML =
+      typeof window.apcLoadingHtml === 'function'
+        ? window.apcLoadingHtml(UI.loading)
+        : `<p style="padding:20px;color:#888;">${UI.loading}</p>`;
+    placeholder.parentNode.replaceChild(container, placeholder);
+
+    const cachedEntry = readCachedEntry();
+
+    loadDailySnapshot()
+      .then(function (snapshot) {
+        const entry = getWikipediaEntry(snapshot);
+        if (!entry) throw new Error('每日快照中没有可用的本地维基图片');
+        renderEntry(container, entry, cachedEntry, false);
       })
-      .catch(error => {
-          console.error('获取文件名失败:', error);
-          container.innerHTML = `
-              <div class="bg-red-50 border border-red-200 rounded-lg p-4">
-                  <div class="flex items-center">
-                      <i class="fas fa-exclamation-triangle text-red-500 mr-3"></i>
-                      <p class="text-red-700">无法获取图片信息: ${error.message}</p>
-                  </div>
-              </div>
-          `;
+      .catch(function (error) {
+        console.warn('读取维基百科每日图片本地快照失败:', error);
+        if (cachedEntry) {
+          renderEntry(container, cachedEntry, null, true);
+        } else {
+          renderPlaceholder(container, UI.snapshotUnavailable);
+        }
       });
-});
+  });
 
-// 渲染内容
-function renderContent(container, dateDisplay, img, description) {
-  container.innerHTML = '';
-  
-  const imgContainer = document.createElement('div');
-  imgContainer.className = 'overflow-hidden rounded-lg shadow-lg mb-6';
-  imgContainer.appendChild(img);
-  container.appendChild(imgContainer);
-
-  container.appendChild(dateDisplay);
-  
-  if (description) {
-      const descContainer = document.createElement('div');
-      descContainer.className = 'bg-gray-50 p-4 rounded-lg border border-gray-200';
-      descContainer.innerHTML = convertWikiToHtml(description);
-      container.appendChild(descContainer);
+  function loadDailySnapshot() {
+    if (!window.apcDailyImagesPromise) {
+      window.apcDailyImagesPromise = fetch(SNAPSHOT_URL, {
+        cache: 'no-store',
+        credentials: 'same-origin'
+      }).then(function (response) {
+        if (!response.ok) {
+          throw new Error(`快照请求失败（HTTP ${response.status}）`);
+        }
+        return response.json();
+      });
+    }
+    return window.apcDailyImagesPromise;
   }
-}
 
-// 只显示图片和错误信息的辅助函数
-function showImageWithError(container, dateDisplay, img, errorMessage) {
-  container.innerHTML = '';
-  container.appendChild(dateDisplay);
-  
-  const imgContainer = document.createElement('div');
-  imgContainer.className = 'overflow-hidden rounded-lg shadow-lg mb-6';
-  imgContainer.appendChild(img);
-  container.appendChild(imgContainer);
-  
-  const errorContainer = document.createElement('div');
-  errorContainer.className = 'bg-red-50 border border-red-200 rounded-lg p-4';
-  errorContainer.innerHTML = `
-      <div class="flex items-center">
-          <i class="fas fa-exclamation-triangle text-red-500 mr-3"></i>
-          <p class="text-red-700">${errorMessage}</p>
-      </div>
-  `;
-  container.appendChild(errorContainer);
-}
+  function getWikipediaEntry(snapshot) {
+    if (!snapshot || typeof snapshot !== 'object') return null;
 
-// 从原始文本中提取描述的函数（优化匹配逻辑）
-function extractDescription(rawText) {
-  // 尝试匹配标准格式
-  const startMarker = '" |';
-  const startIndex = rawText.indexOf(startMarker);
-  
-  if (startIndex !== -1) {
-      const descriptionStart = startIndex + startMarker.length;
-      
-      // 查找结束标记
-      const endMarkers = [
-          '\n<div class="potd-recent"',
-          '\n{{flatlist|class=potd-footer',
-          '\n|}<noinclude>',
-          '\n== See also =='
+    const providers =
+      snapshot.providers && typeof snapshot.providers === 'object'
+        ? snapshot.providers
+        : snapshot;
+    const wikipedia = providers.wikipedia;
+    if (!wikipedia || typeof wikipedia !== 'object') return null;
+
+    const candidates = [
+      wikipedia,
+      wikipedia.current,
+      wikipedia.last_success,
+      snapshot.last_success && snapshot.last_success.wikipedia
+    ];
+
+    for (const candidate of candidates) {
+      const entry = normalizeEntry(candidate, snapshot.date);
+      if (entry) return entry;
+    }
+    return null;
+  }
+
+  function normalizeEntry(value, defaultDate) {
+    if (!value || typeof value !== 'object') return null;
+
+    // local_url 是后端快照唯一允许进入 img.src 的字段。即使快照里保留了
+    // source_image_url，也绝不把它用作图片回退地址。
+    const localUrl = normalizeLocalImageUrl(value.local_url);
+    if (!localUrl) return null;
+
+    return {
+      local_url: localUrl,
+      date: firstString(value.date, defaultDate),
+      title: firstString(value.title),
+      description: firstString(value.description),
+      credit: firstString(value.copyright, value.credit),
+      article_url: normalizeHttpUrl(firstString(value.source_page_url, value.article_url))
+    };
+  }
+
+  function normalizeLocalImageUrl(value) {
+    if (typeof value !== 'string' || !value.trim()) return '';
+
+    try {
+      const parsed = new URL(value.trim(), window.location.origin);
+      if (parsed.origin !== window.location.origin) return '';
+      if (!parsed.pathname.startsWith(LOCAL_IMAGE_PREFIX)) return '';
+      return parsed.pathname + parsed.search;
+    } catch (error) {
+      return '';
+    }
+  }
+
+  function normalizeHttpUrl(value) {
+    if (typeof value !== 'string' || !value.trim()) return '';
+    try {
+      const parsed = new URL(value.trim());
+      return parsed.protocol === 'https:' || parsed.protocol === 'http:' ? parsed.href : '';
+    } catch (error) {
+      return '';
+    }
+  }
+
+  function firstString() {
+    for (let index = 0; index < arguments.length; index += 1) {
+      if (typeof arguments[index] === 'string' && arguments[index].trim()) {
+        return arguments[index].trim();
+      }
+    }
+    return '';
+  }
+
+  function englishText(value) {
+    const result = firstString(value);
+    return /[\u3400-\u9fff\uf900-\ufaff]/.test(result) ? '' : result;
+  }
+
+  function readCachedEntry() {
+    try {
+      const raw = window.localStorage && window.localStorage.getItem(CACHE_KEY);
+      return raw ? normalizeEntry(JSON.parse(raw), '') : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function rememberEntry(entry) {
+    try {
+      if (window.localStorage) {
+        window.localStorage.setItem(CACHE_KEY, JSON.stringify(entry));
+      }
+    } catch (error) {
+      // 隐私模式或禁用存储时仍可正常展示当前本地快照。
+    }
+  }
+
+  function renderEntry(container, entry, cachedEntry, isCachedFallback) {
+    const displayTitle = IS_ENGLISH_PAGE
+      ? englishText(entry.title) || UI.defaultTitle
+      : entry.title || UI.defaultTitle;
+    const displayDescription = IS_ENGLISH_PAGE
+      ? englishText(entry.description)
+      : entry.description;
+    const displayCredit = IS_ENGLISH_PAGE ? englishText(entry.credit) : entry.credit;
+    const img = document.createElement('img');
+    img.alt = displayTitle;
+    img.className =
+      'w-full h-auto rounded-lg shadow-lg transition-transform duration-500 hover:scale-[1.02]';
+
+    img.addEventListener(
+      'load',
+      function () {
+        rememberEntry(entry);
+      },
+      { once: true }
+    );
+
+    img.addEventListener(
+      'error',
+      function () {
+        const canUseCache =
+          !isCachedFallback && cachedEntry && cachedEntry.local_url !== entry.local_url;
+
+        if (canUseCache) {
+          renderEntry(container, cachedEntry, null, true);
+        } else {
+          renderPlaceholder(container, UI.localImageUnavailable, entry.date);
+        }
+      },
+      { once: true }
+    );
+
+    // 赋值前已经过同源及 /images/daily/ 前缀校验。
+    img.src = entry.local_url;
+
+    container.innerHTML = '';
+
+    if (isCachedFallback) {
+      const notice = document.createElement('div');
+      notice.className =
+        'bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4 text-amber-800';
+      notice.textContent = UI.cachedNotice;
+      container.appendChild(notice);
+    }
+
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'overflow-hidden rounded-lg shadow-lg mb-6';
+    imageContainer.appendChild(img);
+    container.appendChild(imageContainer);
+
+    const dateDisplay = document.createElement('div');
+    dateDisplay.className = 'text-xl font-bold text-gray-800 mb-4';
+    dateDisplay.textContent = formatDate(entry.date);
+    container.appendChild(dateDisplay);
+
+    if (displayTitle) {
+      const title = document.createElement('div');
+      title.className = 'text-lg font-semibold text-gray-800 mb-3';
+      if (entry.article_url) {
+        const link = document.createElement('a');
+        link.href = entry.article_url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = displayTitle;
+        title.appendChild(link);
+      } else {
+        title.textContent = displayTitle;
+      }
+      container.appendChild(title);
+    }
+
+    if (displayDescription || displayCredit || (IS_ENGLISH_PAGE && entry.description)) {
+      const description = document.createElement('div');
+      description.className = 'bg-gray-50 p-4 rounded-lg border border-gray-200';
+
+      if (displayDescription) {
+        const body = document.createElement('div');
+        body.innerHTML = convertWikiToHtml(displayDescription);
+        description.appendChild(body);
+      } else if (IS_ENGLISH_PAGE && entry.description) {
+        const body = document.createElement('p');
+        body.textContent = UI.noDescription;
+        description.appendChild(body);
+      }
+
+      if (displayCredit) {
+        const credit = document.createElement('p');
+        credit.className = 'text-sm text-gray-500 mt-3';
+        credit.textContent = displayCredit;
+        description.appendChild(credit);
+      }
+      container.appendChild(description);
+    }
+  }
+
+  function renderPlaceholder(container, message, date) {
+    container.innerHTML = '';
+
+    const empty = document.createElement('div');
+    empty.className =
+      'bg-gray-50 border border-gray-200 rounded-lg p-10 text-center text-gray-500';
+    empty.setAttribute('role', 'status');
+
+    const icon = document.createElement('i');
+    icon.className = 'fas fa-image text-3xl mb-3';
+    icon.setAttribute('aria-hidden', 'true');
+    empty.appendChild(icon);
+
+    const text = document.createElement('p');
+    text.textContent = message;
+    empty.appendChild(text);
+    container.appendChild(empty);
+
+    if (date) {
+      const dateDisplay = document.createElement('div');
+      dateDisplay.className = 'text-sm text-gray-500 mt-3';
+      dateDisplay.textContent = formatDate(date);
+      container.appendChild(dateDisplay);
+    }
+  }
+
+  function formatDate(value) {
+    const match = typeof value === 'string' && value.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (match && IS_ENGLISH_PAGE) {
+      const months = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
       ];
-      
-      let endIndex = -1;
-      for (const marker of endMarkers) {
-          const index = rawText.indexOf(marker, descriptionStart);
-          if (index !== -1 && (endIndex === -1 || index < endIndex)) {
-              endIndex = index;
-          }
-      }
-      
-      if (endIndex === -1) {
-          endIndex = rawText.length;
-      }
-      
-      let description = rawText.substring(descriptionStart, endIndex).trim();
-      description = description.replace(/\n{2,}/g, '\n').replace(/^\s+|\s+$/g, '');
-      return description || '无描述信息';
-  }
-  
-  // 尝试替代格式
-  const altStartMarker = '<td class="description">';
-  const altStartIndex = rawText.indexOf(altStartMarker);
-  
-  if (altStartIndex !== -1) {
-      const descriptionStart = altStartIndex + altStartMarker.length;
-      const endMarker = '</td>';
-      const endIndex = rawText.indexOf(endMarker, descriptionStart);
-      
-      if (endIndex !== -1) {
-          return rawText.substring(descriptionStart, endIndex).trim();
-      }
-  }
-  
-  return '无描述信息';
-}
+      return `${months[Number(match[2]) - 1]} ${Number(match[3])}, ${match[1]}`;
+    }
+    if (match) return `${match[1]}年${match[2]}月${match[3]}日`;
 
-// 改进的Wiki标记转HTML函数
-function convertWikiToHtml(wikiText) {
-  if (!wikiText) return '无描述信息';
-  
-  // 替换粗体和斜体
-  let html = wikiText
+    const today = new Date();
+    if (IS_ENGLISH_PAGE) {
+      const months = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+      return `${months[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`;
+    }
+    return `${today.getFullYear()}年${String(today.getMonth() + 1).padStart(2, '0')}月${String(
+      today.getDate()
+    ).padStart(2, '0')}日`;
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  // 快照保存的是维基文本；这里只生成文字格式和百科链接，不生成任何图片标签。
+  function convertWikiToHtml(wikiText) {
+    if (!wikiText) return `<p>${UI.noDescription}</p>`;
+
+    let html = escapeHtml(wikiText.replace(/\{\{.*?\}\}/gs, ''));
+    html = html
       .replace(/'''(.+?)'''/g, '<strong>$1</strong>')
       .replace(/''(.+?)''/g, '<em>$1</em>');
-  
-  // 替换内部链接
-  html = html.replace(/\[\[([^\]|]+)\]\]/g, '<a href="https://en.wikipedia.org/wiki/$1">$1</a>');
-  html = html.replace(/\[\[([^|]+)\|([^\]]+)\]\]/g, '<a href="https://en.wikipedia.org/wiki/$1">$2</a>');
-  
-  // 替换外部链接
-  html = html.replace(/\[([^ ]+) ([^\]]+)\]/g, '<a href="$1">$2</a>');
-  
-  // 替换换行符为<br>，保留段落结构
-  html = html.replace(/\n\n/g, '</p><p>');
-  html = html.replace(/\n/g, '<br>');
-  html = `<p>${html}</p>`;
-  
-  // 移除模板标签和其他不需要的标记
-  html = html.replace(/\{\{.*?\}\}/g, '');
-  
-  return html;
-}    
+
+    html = html.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, function (_, target, label) {
+      const href = `https://en.wikipedia.org/wiki/${encodeURIComponent(target.replace(/ /g, '_'))}`;
+      return `<a href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+    });
+    html = html.replace(/\[\[([^\]|]+)\]\]/g, function (_, target) {
+      const href = `https://en.wikipedia.org/wiki/${encodeURIComponent(target.replace(/ /g, '_'))}`;
+      return `<a href="${href}" target="_blank" rel="noopener noreferrer">${target}</a>`;
+    });
+
+    html = html.replace(/\r?\n\r?\n/g, '</p><p>').replace(/\r?\n/g, '<br>');
+    return `<p>${html}</p>`;
+  }
+})();

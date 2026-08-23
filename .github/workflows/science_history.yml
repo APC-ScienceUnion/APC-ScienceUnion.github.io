@@ -1,50 +1,93 @@
-name: Generate Science History Today
+name: Refresh Science History Snapshot
 
 on:
-  # 手动触发，方便你临时调试
-  workflow_dispatch: {}
-  # 每天定时触发（UTC 时间 00:30，相当于北京时间 08:30），可按需调整
+  workflow_dispatch:
   schedule:
-    - cron: '30 0 * * *'
+    # 10:00 Asia/Shanghai. The generator itself also resolves the date in
+    # Asia/Shanghai, so a runner's UTC locale cannot shift the edition.
+    - cron: "0 2 * * *"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: science-history-snapshot-source
+  cancel-in-progress: false
 
 jobs:
-  build:
+  refresh:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Check out source branch
         uses: actions/checkout@v4
+        with:
+          ref: source
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.12"
 
-      - name: Install Python dependencies
+      - name: Install renderer and source-check dependencies
         run: |
-          pip install --upgrade pip
-          pip install pillow requests
+          npm ci
+          python -m pip install --requirement tools/science_history/requirements.txt
+          sudo apt-get update
+          sudo apt-get install --yes fonts-noto-cjk
 
-      - name: Generate science history poster and JSON (Kimi + Qwen)
+      - name: Research, verify, and render today's snapshot
+        id: generate
         env:
           QWEN_API_KEY: ${{ secrets.QWEN_API_KEY }}
-          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
-        run: |
-          python tools/history_today_poster.py \
-            --header "themes/butterfly/source/img/7D21BA4FCD56603D7436C77D928B3111.jpg"
+        run: python tools/history_today_poster.py
 
-      - name: Commit and push updated assets
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # A failed research/API/render run must never replace the last good pair.
+      # The generator stages all three files before its transactional publish;
+      # this fallback verifies the retained snapshot and makes the reason clear.
+      - name: Keep and verify the last successful snapshot after a failed refresh
+        if: failure() && steps.generate.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "::warning::Today's science-history refresh failed; retaining the last successful local snapshot."
+          python tools/history_today_poster.py --check
+
+      - name: Verify the local snapshot and private source audit
+        if: steps.generate.outcome == 'success'
+        run: npm run science-history:check
+
+      - name: Commit source snapshot
+        id: commit
+        if: steps.generate.outcome == 'success'
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- source/ScienceHistory/science_today.json \
+            source/ScienceHistory/science_today.png \
+            tools/science_history/sources/science_today.sources.json
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Science-history snapshot is already current."
+            exit 0
+          fi
+          git commit -m "chore: refresh science history snapshot"
+          git pull --rebase origin source
+          git push origin HEAD:source
+          echo "changed=true" >> "$GITHUB_OUTPUT"
 
-          # 只提交科学史相关的静态资源
-          git add source/ScienceHistory/science_today.png \
-                  source/ScienceHistory/science_today.json || true
-
-          git commit -m "chore: update science history poster and data" || echo "No changes to commit"
-          git push
+      # Commits made with GITHUB_TOKEN do not start ordinary push workflows.
+      - name: Trigger Pages deployment
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run main.yml --ref source
 
 

@@ -1,0 +1,66 @@
+name: Refresh Daily Image Snapshots
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 09:20 Asia/Shanghai. APOD may still be the previous US calendar day.
+    - cron: "20 1 * * *"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: daily-image-snapshots-source
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source branch
+        uses: actions/checkout@v4
+        with:
+          ref: source
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download original daily image responses
+        env:
+          # The updater safely falls back to NASA's public DEMO_KEY when this
+          # optional repository secret is not configured.
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+        run: python tools/update_daily_images.py
+
+      - name: Verify local bytes and manifest
+        run: python tools/update_daily_images.py --check
+
+      - name: Commit source snapshots
+        id: commit
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- source/images/daily
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Daily snapshots are already current."
+            exit 0
+          fi
+          git commit -m "chore: refresh daily image snapshots"
+          git pull --rebase origin source
+          git push origin HEAD:source
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Pushes made with GITHUB_TOKEN do not start ordinary push workflows.
+      # Dispatch the existing Pages build explicitly after a snapshot commit.
+      - name: Trigger Pages deployment
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run main.yml --ref source

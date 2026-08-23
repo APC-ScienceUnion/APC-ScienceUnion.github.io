@@ -15,7 +15,7 @@ katex: true
 > 作者：silverxz
 审核：phy东西
 
-<img src="https://i1.wp.com/wx4.sinaimg.cn/large/006UcwnJly1ig8gzsdc4lj30cy0iagou.jpg" alt="" />
+<img src="/images/%E4%B8%8B%E5%8D%88%E8%8C%B6%E6%97%B6%E9%97%B4%EF%BC%9AErd%C5%91s%20%E6%A6%82%E7%8E%87%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E7%9E%A5/fig-001-0eb3269b6d.jpg" alt="" />
 <center><font size=2px color=grey>Paul Erdős</font></center>
 <center><font size=2px color=grey>图像来源：zbmath</font></center>
 

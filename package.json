@@ -6,6 +6,23 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "assets:localize": "python tools/localize_external_images.py",
+    "assets:check": "python tools/localize_external_images.py --check",
+    "assets:check-public": "python tools/localize_external_images.py --check-public",
+    "assets:refresh-references": "python tools/localize_external_images.py --refresh-references",
+    "daily-images:update": "python tools/update_daily_images.py",
+    "daily-images:check": "python tools/update_daily_images.py --check",
+    "daily-images:check-public": "python tools/update_daily_images.py --check --public",
+    "daily-widgets:check": "node tests/test_daily_local_images.js && node tests/test_daily_english_widgets.js && node tests/test_science_history_widget.js",
+    "science-history:update": "python tools/history_today_poster.py",
+    "science-history:check": "python -m unittest tests.test_science_history_pipeline && python tools/history_today_poster.py --check",
+    "science-history:check-public": "python tools/history_today_poster.py --check --public public",
+    "homepage:check-public": "node tests/test_home_category_sort.js",
+    "bilingual:fingerprints:update": "node tools/translation_source_fingerprint.js --write",
+    "bilingual:fingerprints:check": "node tools/translation_source_fingerprint.js --check",
+    "bilingual:check": "npm run bilingual:fingerprints:check && node tests/test_bilingual_content.js",
+    "bilingual:check-progress": "node tests/test_bilingual_content.js --allow-incomplete",
+    "bilingual:check-public": "node tests/test_bilingual_site.js",
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
@@ -38,5 +55,8 @@
     "hexo-theme-landscape": "^0.0.3",
     "hexo-wordcount": "^6.0.1",
     "vue-canvas-effect": "0.0.12"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.8.0"
   }
 }

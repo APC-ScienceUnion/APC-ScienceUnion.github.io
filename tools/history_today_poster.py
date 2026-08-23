@@ -1,511 +1,902 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+"""Build the local “科技史上的今天” JSON and long-poster snapshot.
 
-"""
-Science History Today Poster Generator
+Scheduled runs use Qwen's forced web-search/web-extractor mode to *propose*
+events and short source-language excerpts. This program then retrieves every
+URL and applies deterministic gates to the source class, the calendar date,
+and the presence of those excerpts. Those gates are useful evidence checks;
+they are intentionally not described as a substitute for semantic historical
+review.
 
-使用 Gemini 3 API 先生成“科学史上的今天”Markdown 文本，
-再按站点 front-end（news60.js / news60_poster.py）相同视觉风格生成长图。
-
-示例用法：
-  # 使用环境变量 GEMINI_API_KEY，日期默认今天
-  python tools/history_today_poster.py --header https://example.com/header.jpg
-
-  # 指定日期和输出文件
-  python tools/history_today_poster.py --date 2025-11-23 --header header.jpg --out history_2025-11-23.png
-
-依赖: Pillow, requests
-  pip install pillow requests
+A separately reviewed research file can be published with
+``--review-mode human-curated``. Its audit sidecar records that review mode and
+does not pretend its Chinese evidence notes were verbatim webpage matches.
 """
 
 from __future__ import annotations
 
 import argparse
-import datetime as dt
-import io
-import os
-from typing import List
+import concurrent.futures
+import hashlib
+import html
+import ipaddress
 import json
+import os
+import re
+import struct
+import subprocess
+import sys
+import tempfile
+import time
+import unicodedata
+import uuid
+from datetime import date, datetime, timedelta
+from html.parser import HTMLParser
+from pathlib import Path
+from typing import Any, Iterable
+from urllib.parse import urlparse
+from zoneinfo import ZoneInfo
 
-try:
-  from PIL import Image, ImageDraw, ImageFont
-except Exception:
-  raise SystemExit("请先安装 Pillow: pip install pillow")
-
-try:
-  import requests
-except Exception:
-  requests = None
+import requests
 
 
-# 使用阿里云百炼千问3（Qwen3）OpenAI 兼容接口
-QWEN_MODEL = "qwen3-max-preview"
+ROOT = Path(__file__).resolve().parents[1]
+OUTPUT_DIR = ROOT / "source" / "ScienceHistory"
+PUBLIC_JSON = OUTPUT_DIR / "science_today.json"
+PUBLIC_POSTER = OUTPUT_DIR / "science_today.png"
+AUDIT_FILE = ROOT / "tools" / "science_history" / "sources" / "science_today.sources.json"
+RENDERER = ROOT / "tools" / "science_history" / "list_poster.mjs"
+NOBEL_SCRIPT = ROOT / "tools" / "science_history" / "nobel_anniversaries.py"
+TIMEZONE = "Asia/Shanghai"
+FOOTER = ["图像制作：格物社/A.P.C.科学联盟", "灵感赖渊：缪卿九 "]
+DECK = "从观测、实验到公共卫生，用一张图快速回看知识如何生长。"
 QWEN_ENDPOINT = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+QWEN_MODEL = os.environ.get("SCIENCE_HISTORY_MODEL", "qwen3-max")
+USER_AGENT = "APC-Science-History/2.0 (+https://apc-science.cn/)"
+MAX_PAGE_BYTES = 5 * 1024 * 1024
+STRONG_CLAIMS = ("首次", "首个", "第一", "唯一", "最大", "证明", "证实", "治愈", "first", "largest", "only")
+MONTHS = (
+    "january", "february", "march", "april", "may", "june",
+    "july", "august", "september", "october", "november", "december",
+)
+MONTH_ABBR = ("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec")
 
-# 使用 Kimi 模型作为第一阶段问询（与前端保持一致：Kimi → Qwen3 校验）
-KIMI_MODEL = "kimi-k2-0905-preview"
-KIMI_ENDPOINT = "https://api.moonshot.cn/v1/chat/completions"
+# These are source-policy categories, not a claim that every page on a listed
+# host is authoritative. The prompt and audit still record the institution and
+# evidence for per-event review.
+A_HOST_SUFFIXES = {
+    "nobelprize.org", "nasa.gov", "nih.gov", "nlm.nih.gov", "cdc.gov",
+    "si.edu", "loc.gov", "archives.gov", "uspto.gov", "usgs.gov",
+    "noaa.gov", "nist.gov", "energy.gov", "royalsociety.org", "ieee.org",
+    "acm.org", "acs.org", "aps.org", "aip.org", "apa.org", "aeaweb.org",
+    "nationalarchives.gov.uk", "who.int", "unesco.org", "wipo.int",
+    "epo.org", "cern.ch", "esa.int", "eso.org", "iau.org", "isro.gov.in",
+    "darwinproject.ac.uk", "nature.com", "science.org", "pnas.org",
+    "academic.oup.com", "cambridge.org", "springer.com", "link.springer.com",
+    "sciencedirect.com", "thelancet.com", "nejm.org", "bmj.com", "jamanetwork.com",
+    "onlinelibrary.wiley.com", "tandfonline.com", "doi.org",
+    "royalsocietypublishing.org", "journals.aps.org",
+}
+B_HOST_SUFFIXES = {
+    "sciencehistory.org", "hsm.ox.ac.uk", "history.aip.org", "britannica.com",
+    "nationalacademies.org", "computerhistory.org",
+}
+BLOCKED_HOST_SUFFIXES = {
+    "baidu.com", "baike.baidu.com", "sogou.com", "so.com", "360doc.com",
+    "douyin.com", "toutiao.com", "163.com", "sohu.com", "ithome.com",
+    "wikipedia.org", "wikimedia.org", "github.com", "reddit.com",
+}
 
 
-def load_font(size: int, weight: str = "regular") -> ImageFont.FreeTypeFont:
-  """尝试加载常见中文字体，失败则回退到默认字体。"""
-  candidates = [
-    # Noto Sans SC（如项目中有可自行放到运行目录）
-    "NotoSansSC-Regular.otf" if weight == "regular" else "NotoSansSC-Bold.otf",
-    # macOS 常见中文字体
-    "/System/Library/Fonts/PingFang.ttc",
-    "/System/Library/Fonts/STHeiti Light.ttc",
-    # Windows 微软雅黑
-    "C:/Windows/Fonts/msyh.ttc" if weight == "regular" else "C:/Windows/Fonts/msyhbd.ttc",
-  ]
-  for path in candidates:
-    if os.path.exists(path):
-      try:
-        return ImageFont.truetype(path, size)
-      except Exception:
-        continue
-  return ImageFont.load_default()
+class VisibleText(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+        self.hidden = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() in {"script", "style", "noscript", "svg"}:
+            self.hidden += 1
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() in {"script", "style", "noscript", "svg"} and self.hidden:
+            self.hidden -= 1
+
+    def handle_data(self, data: str) -> None:
+        if not self.hidden:
+            self.parts.append(data)
 
 
-def load_header_image(header: str, width: int, height: int) -> Image.Image:
-  """
-  头图加载：支持 URL 或本地路径；失败时使用暖色渐变占位图。
-  采用 cover 模式裁切以适配输出区域。
-  """
-  img: Image.Image | None = None
+def today_shanghai() -> date:
+    return datetime.now(ZoneInfo(TIMEZONE)).date()
 
-  if header:
+
+def parse_date(value: str) -> date:
     try:
-      if header.startswith("http"):
-        if requests is None:
-          raise RuntimeError("缺少 requests，无法下载远程头图")
-        resp = requests.get(header, timeout=20)
-        resp.raise_for_status()
-        img = Image.open(io.BytesIO(resp.content)).convert("RGB")
-      else:
-        img = Image.open(header).convert("RGB")
-    except Exception:
-      img = None
-
-  if img is None:
-    # 创建与 news60 风格一致的暖色渐变头图
-    grad = Image.new("RGB", (width, height), "#f8d77a")
-    draw = ImageDraw.Draw(grad)
-    for y in range(height):
-      ratio = y / float(height)
-      r = int(248 + (243 - 248) * ratio)
-      g = int(215 + (163 - 215) * ratio)
-      b = int(122 + (78 - 122) * ratio)
-      draw.line([(0, y), (width, y)], fill=(r, g, b))
-    return grad
-
-  iw, ih = img.size
-  scale = max(width / iw, height / ih)
-  dw, dh = int(iw * scale), int(ih * scale)
-  img = img.resize((dw, dh), Image.LANCZOS)
-  x = (dw - width) // 2
-  y = (dh - height) // 2
-  return img.crop((x, y, x + width, y + height))
+        return date.fromisoformat(value)
+    except ValueError as exc:
+        raise SystemExit("--date 必须使用 YYYY-MM-DD") from exc
 
 
-def wrap_text(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.FreeTypeFont, max_width: int) -> List[str]:
-  """逐字测量宽度进行换行，确保中英文混排适配。"""
-  lines: List[str] = []
-  buf = ""
-  for ch in text:
-    if draw.textlength(buf + ch, font=font) <= max_width:
-      buf += ch
+def normalized_quote(value: str) -> str:
+    value = unicodedata.normalize("NFKC", html.unescape(str(value))).casefold()
+    return "".join(char for char in value if char.isalnum())
+
+
+def has_month_day(value: str, target: date) -> bool:
+    text = unicodedata.normalize("NFKC", value).casefold()
+    month = target.month
+    day = target.day
+    patterns = [
+        rf"(?<!\d)0?{month}\s*月\s*0?{day}\s*日",
+        rf"(?<!\d)\d{{3,4}}\s*[-/.]\s*0?{month}\s*[-/.]\s*0?{day}(?!\d)",
+        rf"\b{MONTHS[month - 1]}\s+0?{day}(?:st|nd|rd|th)?\b",
+        rf"\b{MONTH_ABBR[month - 1]}\.?\s+0?{day}(?:st|nd|rd|th)?\b",
+        rf"\b0?{day}(?:st|nd|rd|th)?\s+(?:of\s+)?{MONTHS[month - 1]}\b",
+        rf"\b0?{day}\s+{MONTH_ABBR[month - 1]}\.?\b",
+    ]
+    return any(re.search(pattern, text, re.IGNORECASE) for pattern in patterns)
+
+
+def has_event_date(value: str, target: date, event_year: int) -> bool:
+    if not has_month_day(value, target):
+        return False
+    text = unicodedata.normalize("NFKC", value).casefold()
+    year = abs(event_year)
+    if not re.search(rf"(?<!\d){year}(?!\d)", text):
+        return False
+    has_bce_marker = bool(re.search(r"公元前|\bb\.?c\.?e?\.?\b", text))
+    return has_bce_marker if event_year < 0 else not has_bce_marker
+
+
+def has_source_date(value: str, target: date, event_year: int, context: str) -> bool:
+    if context == "event-date":
+        return has_event_date(value, target, event_year)
+    if context == "timezone-crosscheck":
+        return any(
+            has_event_date(value, target + timedelta(days=offset), event_year)
+            for offset in (-1, 1)
+        )
+    return False
+
+
+def hostname_allowed(url: str, level: str) -> bool:
+    parsed = urlparse(url)
+    if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+        return False
+    host = parsed.hostname.lower().rstrip(".")
+    try:
+        address = ipaddress.ip_address(host)
+        if address.is_private or address.is_loopback or address.is_link_local or address.is_reserved:
+            return False
+    except ValueError:
+        pass
+    if host == "localhost" or any(host == item or host.endswith("." + item) for item in BLOCKED_HOST_SUFFIXES):
+        return False
+    if level == "A":
+        if any(host == item or host.endswith("." + item) for item in A_HOST_SUFFIXES):
+            return True
+        labels = host.split(".")
+        return (
+            host.endswith(".gov")
+            or ".gov." in host
+            or host.endswith(".edu")
+            or ".edu." in host
+            or any(part == "ac" for part in labels[-3:-1])
+        )
+    return hostname_allowed(url, "A") or any(
+        host == item or host.endswith("." + item) for item in B_HOST_SUFFIXES
+    )
+
+
+def safe_url(url: str, level: str) -> str:
+    clean = str(url or "").strip()
+    if not hostname_allowed(clean, level):
+        raise ValueError(f"不符合 {level} 级来源域名/URL 门禁")
+    return clean
+
+
+def fetch_page(url: str) -> dict[str, Any]:
+    response = requests.get(
+        url,
+        headers={"User-Agent": USER_AGENT, "Accept": "text/html,application/json,text/plain,application/pdf;q=0.8"},
+        timeout=(20, 60),
+        allow_redirects=True,
+        stream=True,
+    )
+    response.raise_for_status()
+    final_url = response.url
+    # Redirects must not escape to a blocked/private destination. The final
+    # publisher can be different from a DOI resolver, so accept A or B here.
+    if not (hostname_allowed(final_url, "A") or hostname_allowed(final_url, "B")):
+        raise ValueError("来源重定向到不允许的域名")
+    chunks: list[bytes] = []
+    size = 0
+    for chunk in response.iter_content(64 * 1024):
+        if not chunk:
+            continue
+        size += len(chunk)
+        if size > MAX_PAGE_BYTES:
+            raise ValueError("来源页面超过抓取上限")
+        chunks.append(chunk)
+    body = b"".join(chunks)
+    content_type = response.headers.get("content-type", "").lower()
+    if "pdf" in content_type or body.startswith(b"%PDF"):
+        visible = ""
     else:
-      if buf:
-        lines.append(buf)
-      buf = ch
-  if buf:
-    lines.append(buf)
-  return lines
+        encoding = response.encoding or "utf-8"
+        try:
+            decoded = body.decode(encoding, errors="replace")
+        except LookupError:
+            decoded = body.decode("utf-8", errors="replace")
+        if "html" in content_type or "<html" in decoded[:1000].lower():
+            parser = VisibleText()
+            parser.feed(decoded)
+            visible = " ".join(parser.parts)
+        else:
+            visible = decoded
+    return {
+        "url": final_url,
+        "status": response.status_code,
+        "content_type": content_type.split(";", 1)[0],
+        "sha256": hashlib.sha256(body).hexdigest(),
+        "text": re.sub(r"\s+", " ", visible).strip(),
+    }
 
 
-def get_qwen_api_key(cli_key: str | None = None) -> str:
-  """
-  获取 Qwen API Key：
-  优先使用命令行参数 --api-key，其次使用环境变量 QWEN_API_KEY。
-  """
-  key = cli_key or os.environ.get("QWEN_API_KEY")
-  if not key:
-    raise SystemExit("未找到 Qwen API Key，请使用 --api-key 参数或设置环境变量 QWEN_API_KEY")
-  return key
+def read_json(path: Path) -> dict[str, Any]:
+    try:
+        value = json.loads(path.read_text(encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError(f"无法读取 JSON：{path}: {exc}") from exc
+    if not isinstance(value, dict):
+        raise ValueError("顶层 JSON 必须是对象")
+    return value
 
 
-def get_kimi_api_key(cli_key: str | None = None) -> str:
-  """
-  获取 Kimi API Key：
-  优先使用命令行参数 --kimi-key，其次使用环境变量 KIMI_API_KEY。
-  """
-  key = cli_key or os.environ.get("KIMI_API_KEY")
-  if not key:
-    raise SystemExit("未找到 Kimi API Key，请使用 --kimi-key 参数或设置环境变量 KIMI_API_KEY")
-  return key
+def extract_json(text: str) -> dict[str, Any]:
+    clean = text.strip()
+    clean = re.sub(r"^```(?:json)?\s*", "", clean, flags=re.IGNORECASE)
+    clean = re.sub(r"\s*```$", "", clean)
+    try:
+        result = json.loads(clean)
+    except json.JSONDecodeError:
+        start, end = clean.find("{"), clean.rfind("}")
+        if start < 0 or end <= start:
+            raise ValueError("Qwen 没有返回 JSON 对象")
+        result = json.loads(clean[start : end + 1])
+    if not isinstance(result, dict):
+        raise ValueError("Qwen JSON 顶层必须是对象")
+    return result
 
 
-def build_history_prompt(date: dt.date) -> str:
-  """根据目标日期构造“科学史上的今天”提示词。"""
-  iso = date.strftime("%Y-%m-%d")
-  return f"""你是一个精通科学史的、严谨的学者，现在我要求你整理“科学史上的今天”资料，今天是{iso}。请注意，科学史包括自然科学（理学/工学/农学/医学等）与人文社科（哲学/经济学等）。你禁止包括任何娱乐新闻或无关紧要的小事
-
-你的回答必须满足以下要求：
-
-0、关于检索的网页只允许查询权威博物馆的历史资料以及公开的权威百科和网站百科资料、以及权威有名的杂志。
-禁止百度搜狗360等中国百科、抖音、抖音百科、今天头条、360doc个人图书馆、网易、手机搜狐网、华人头条、IT之家、新晚报。
+def run_nobel_candidates(target: date) -> dict[str, Any]:
+    command = [sys.executable, str(NOBEL_SCRIPT), "--month", str(target.month), "--day", str(target.day)]
+    result = subprocess.run(command, check=True, capture_output=True, text=True, encoding="utf-8", timeout=120)
+    return json.loads(result.stdout)
 
 
-1、资料必须是历史上的重大事件。
+def research_prompt(target: date, nobel: dict[str, Any]) -> str:
+    iso = target.isoformat()
+    month_name = MONTHS[target.month - 1].title()
+    return f"""你是严谨的科技史研究编辑。目标是北京时间 {iso}，只研究历史上 {month_name} {target.day} 当天。
 
-2、你的回答必须符合规定日期**当天**实际发生过的历史事件，你必须查阅网络资料验证信息来源真实。
+请强制联网，逐条打开真实来源页面后，提出 20—24 个候选。范围包括自然科学、医学与公共卫生、数学、社会科学、科研仪器、数据库、研究机构和科学制度史；排除纯政治、战争、娱乐、商业和日期传说。不要把申请、公开、授权或演示混为一谈。人物生卒只是补充，最终不得超过三分之一。
 
-3、必须严格按照以下格式返回内容，禁止返回格式之外的任何信息。 每件史实必须在同一行内。
+每个候选至少需要一个 A 级来源：原始论文/专利/档案，Nobel、NASA、NIH、NLM、CDC、Smithsonian、Library of Congress、国家档案，专业学会、大学档案、研究机构、医院、博物馆或实验室正式页面。普通百科、媒体历史日历、搜索摘要、AI摘要不能作为来源。若使用“首次、首个、第一、唯一、最大、证明、治愈”等强断言，必须给第二个独立 A/B 级来源；否则降级措辞。
 
-4、内容必须权威准确，最后只保留最权威最重要的**20**条。
+每个来源必须给 URL，以及来源页面原语言的短摘录 `date_quote` 和 `fact_quote`：`date_quote` 必须逐字包含事件的完整年月日，`fact_quote` 逐字证明核心事实；每段不超过 12 个英文单词或 35 个汉字，不得翻译、改写或只复述搜索摘要。默认 `date_context` 为 `event-date`。只有同一瞬间因 UTC/当地时区跨日且正文明确解释时，辅助来源才可标 `timezone-crosscheck` 并使用相邻一天；每条仍必须至少一条 A 源直接证明目标月日。脚本会重新下载页面并匹配摘录。每条中文 text 为自然的 45—90 个汉字，短、准，不写模板标签。按重要性给 importance 1—5。
 
-```md
+只返回一个 JSON 对象，禁止 Markdown：
+{{"date":"{iso}","timezone":"Asia/Shanghai","items":[{{"label":"YYYY年","title":"短标题","text":"45—90字","category":"science|medicine|social-science|institution|instrument|person","person_event":false,"importance":5,"sources":[{{"url":"https://...","level":"A","authority_type":"official archive","date_context":"event-date","date_quote":"source-language verbatim quote","fact_quote":"source-language verbatim quote"}}]}}]}}
 
-科学史上的今天（{iso}）
-
-1. 年份（如：1101）：事件简要说明
-
-...
-
-15. 年份（如：2005）：事件简要说明
-
-```
-
-5、年份必须**由早到晚**排序。
+Nobel 官方 API 给出的当天人物候选如下；它们仅供发现线索，不能自动视为已核验，也不能主导整期：
+{json.dumps(nobel, ensure_ascii=False, separators=(',', ':'))}
 """
 
 
-def call_qwen_history_today(date: dt.date, qwen_key: str, kimi_key: str) -> str:
-  """
-  调用 Kimi 生成“科学史上的今天”初稿，再用千问 Qwen3（qwen3-max-preview）进行校验与裁剪，
-  返回最终用于绘制长图的 Markdown 文本。
-
-  - 第一步：调用 Kimi（kimi-k2-0905-preview）生成“科学史上的今天（YYYY-MM-DD）”及条目
-    - POST https://api.moonshot.cn/v1/chat/completions
-    - Header: Authorization: Bearer <KIMI_API_KEY>
-    - Body: { "model": "kimi-k2-0905-preview", "messages": [...], "temperature": 0.1 }
-
-  - 第二步：调用 qwen3-max-preview 对 Doubao 返回内容进行审查与筛选
-    - 按照阿里云百炼控制台提供的 qwen3-max OpenAI 兼容接口格式：
-      - POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
-      - Header: Authorization: Bearer <Qwen_API_KEY>
-      - Body: {
-          "model": "qwen3-max-preview",
-          "messages": [...],
-          "temperature": 0.1,
-          "extra_body": { "enable_thinking": true }
-        }
-
-  前端 todayInHistory.js 中的链路也是 Kimi → Qwen3 校验，这里保持一致，方便调试和对齐结果。
-  """
-  if requests is None:
-    raise SystemExit("需要 requests 库以调用 Kimi/Qwen API，请先安装: pip install requests")
-
-  # ---------- Step 1: 调用 Kimi 生成“科学史上的今天”初稿 ----------
-  kimi_prompt = build_history_prompt(date)
-
-  kimi_payload = {
-    "model": KIMI_MODEL,
-    "messages": [
-      {"role": "system", "content": "你是一个精通科学史的、严谨的学者。"},
-      {"role": "user", "content": kimi_prompt},
-    ],
-    "temperature": 0.1,
-  }
-
-  try:
-    km_resp = requests.post(
-      KIMI_ENDPOINT,
-      headers={
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {kimi_key}",
-      },
-      json=kimi_payload,
-      timeout=1800,
-      proxies={},  # 显式禁用系统代理，避免 ProxyError
-    )
-    km_resp.raise_for_status()
-  except Exception as e:
-    raise SystemExit(f"调用 Kimi API 失败: {e}\n响应内容: {km_resp.text[:500] if 'km_resp' in locals() else ''}...");
-
-  km_data = km_resp.json()
-  km_choices = km_data.get("choices") or []
-  if not km_choices:
-    raise SystemExit(f"Kimi 返回内容为空: {km_data}")
-
-  km_message = km_choices[0].get("message") or {}
-  kimi_content = km_message.get("content") or ""
-  if not isinstance(kimi_content, str) or not kimi_content.strip():
-    raise SystemExit(f"Kimi 未返回可用文本: {km_data}")
-
-  # ---------- Step 2: 调用 Qwen3 对 Kimi 返回内容进行校验与裁剪 ----------
-  iso = date.strftime("%Y-%m-%d")
-  qwen_prompt = f"""你是一个精通科学史的、严谨的学者。请检查我收集的资料【{kimi_content}】中的内容是否准确（你必须严格审查日期与事件的真实性）。
-
-- 如果有条目错误，必须直接删除该条目。
-- 检查无误后，保持资料原本的格式（科学史上的今天（{iso}）以及后续内容）返回给我（你需要确保剩下的条目都正确）。
-- 如果所有条目均不正确，你只需要返回原本资料的header（即科学史上的今天（{iso}））。
-- 禁止输出条目原本的序号
-- 禁止输出条目外的内容。"""
-
-  qwen_payload = {
-    "model": QWEN_MODEL,
-    "messages": [
-      {"role": "system", "content": "你是一个精通科学史的、严谨的学者。"},
-      {"role": "user", "content": qwen_prompt},
-    ],
-    # 为了与前端调用保持一致：温度 0.1 + 开启思考，但我们只读取最终回答文本
-    "temperature": 0.1,
-    "extra_body": {
-      "enable_thinking": True,
-    },
-  }
-
-  try:
-    q_resp = requests.post(
-      QWEN_ENDPOINT,
-      headers={
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {qwen_key}",
-      },
-      json=qwen_payload,
-      timeout=1800,  # Qwen 校验也一并放宽到 1800 秒
-      proxies={},    # 显式禁用系统代理
-    )
-    q_resp.raise_for_status()
-  except Exception as e:
-    raise SystemExit(f"调用 Qwen API 失败: {e}\n响应内容: {q_resp.text[:500] if 'q_resp' in locals() else ''}...")
-
-  q_data = q_resp.json()
-  choices = q_data.get("choices") or []
-  if not choices:
-    raise SystemExit(f"Qwen 返回内容为空: {q_data}")
-
-  message = choices[0].get("message") or {}
-  content = message.get("content") or ""
-  if not isinstance(content, str) or not content.strip():
-    raise SystemExit(f"Qwen 未返回可用文本: {q_data}")
-
-  return content
+def call_qwen(target: date, api_key: str) -> dict[str, Any]:
+    payload = {
+        "model": QWEN_MODEL,
+        "messages": [
+            {"role": "system", "content": "你是科技史研究编辑，只输出严格 JSON。"},
+            {"role": "user", "content": research_prompt(target, run_nobel_candidates(target))},
+        ],
+        "temperature": 0.1,
+        "stream": True,
+        "enable_thinking": True,
+        "enable_search": True,
+        "search_options": {
+            "forced_search": True,
+            "enable_source": True,
+            "search_strategy": "agent_max",
+        },
+    }
+    error: Exception | None = None
+    for attempt in range(3):
+        parts: list[str] = []
+        try:
+            with requests.post(
+                QWEN_ENDPOINT,
+                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+                json=payload,
+                timeout=(30, 900),
+                stream=True,
+            ) as response:
+                response.raise_for_status()
+                response.encoding = "utf-8"
+                for raw_line in response.iter_lines(decode_unicode=True):
+                    if not raw_line:
+                        continue
+                    line = str(raw_line).strip()
+                    if not line.startswith("data:"):
+                        continue
+                    data = line[5:].strip()
+                    if data == "[DONE]":
+                        break
+                    chunk = json.loads(data)
+                    for choice in chunk.get("choices") or []:
+                        content = (choice.get("delta") or {}).get("content")
+                        # Do not concatenate reasoning_content: only the final
+                        # answer is a candidate dataset.
+                        if isinstance(content, str):
+                            parts.append(content)
+            if not parts:
+                raise ValueError("Qwen 流式响应没有 final content")
+            return extract_json("".join(parts))
+        except Exception as exc:  # network/API response; retry as one unit
+            error = exc
+            if attempt < 2:
+                time.sleep(3 * (attempt + 1))
+    raise RuntimeError(f"Qwen 联网研究失败：{error}")
 
 
-def parse_items_from_markdown(md: str) -> List[str]:
-  """
-  从大模型返回的 Markdown 中解析出事件条目列表。
-  为保持兼容性，只要形如“序号. 内容”的行都会视作一条事件。
-  """
-  lines = [ln.strip() for ln in md.splitlines()]
-  items: List[str] = []
-  for ln in lines:
-    if not ln:
-      continue
-    # 跳过标题行
-    if ln.startswith("科学史上的今天"):
-      continue
-    # Markdown 代码块标记略过
-    if ln.startswith("```"):
-      continue
-
-    # 只提取以“数字.” 开头的行
-    # 允许有中文全角空格、冒号等，保持整体作为一行文本
-    import re
-
-    m = re.match(r"^(\d+)\.\s*(.+)$", ln)
-    if not m:
-      continue
-    content = m.group(2).strip()
-    if content:
-      # 不再强行切分“年份：”部分，整行用于展示，避免因格式微调导致解析失败
-      items.append(f"{m.group(1)}. {content}")
-
-  if not items:
-    raise SystemExit("未能从大模型返回内容中解析出任何事件条目，请检查返回格式是否符合约定。")
-  return items
+def label_year(label: str) -> int:
+    text = unicodedata.normalize("NFKC", label.strip()).lower()
+    match = re.search(r"\d{1,4}", text)
+    if not match:
+        raise ValueError("label 缺少年份")
+    year = int(match.group())
+    if any(token in text for token in ("公元前", "bc", "bce")):
+        year = -year
+    return year
 
 
-def build_poster_from_items(
-  items: List[str],
-  header: str,
-  target_date: dt.date,
-  width: int = 1080,
-) -> Image.Image:
-  """
-  根据事件条目列表生成长图，版式参考 news60_poster.py，
-  但顶部标题与底部版权 / 免责声明按需求调整。
-  """
-  y, m, d = target_date.year, target_date.month, target_date.day
-  weekday = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"][target_date.weekday()]
-  date_text = f"{y}年{m}月{d}日"
-  title_text = "科学史上的今天"
-
-  margin = 72
-  header_h = int(width * 0.56)
-  content_w = width - margin * 2
-
-  font_item = load_font(36)
-  font_title = load_font(64, "bold")
-  font_title_en = load_font(26)
-  font_date = load_font(36)
-  font_week = load_font(32)
-  font_footer = load_font(26)
-  font_day = load_font(200, "bold")
-
-  dummy = Image.new("RGB", (width, 10), "white")
-  dw = ImageDraw.Draw(dummy)
-  line_h = 56
-  body_h = 0
-  wrapped: List[List[str]] = []
-  for it in items:
-    wl = wrap_text(dw, it, font_item, content_w)
-    wrapped.append(wl)
-    body_h += len(wl) * line_h + 12
-
-  # 英文小标题 + 中文标题 + 日期 + 星期整体高度估算
-  title_block_h = 64 + 26 + 36 + 24 + 32
-
-  # 页脚 5 行 + 上下间距
-  footer_lines = [
-    "图像制作：格物社 / A.P.C.科学联盟",
-    "灵感赖渊：缪卿九",
-    "头图供图：Marianna Armata/Getty Image",
-    "特别鸣谢：Qwen-3-Max、kimi-k2-0905-preview",
-    "免责声明：图片内容由 AI 总结生成，不代表格物社/A.P.C.科学联盟立场",
-  ]
-  footer_h = 36 * len(footer_lines) + 80
-
-  total_h = header_h + 40 + title_block_h + 24 + body_h + footer_h
-
-  canvas = Image.new("RGB", (width, total_h), "white")
-  draw = ImageDraw.Draw(canvas)
-
-  # 头图
-  header_img = load_header_image(header, width, header_h)
-  canvas.paste(header_img, (0, 0))
-
-  # 大日期数字（与前端 JS 一致：靠右对齐）
-  day_text = f"{d:02d}"
-  # 先测量数字宽度，再计算靠右的位置
-  day_width = draw.textlength(day_text, font=font_day)
-  day_x = width - margin - day_width
-  day_y = header_h - 220
-  draw.text(
-    (day_x, day_y),
-    day_text,
-    font=font_day,
-    fill=(255, 255, 255),
-    stroke_width=2,
-    stroke_fill=(0, 0, 0),
-  )
-
-  y_cursor = header_h + 40
-
-  # 英文小标题（可选，保持风格统一）
-  draw.text((margin, y_cursor), "SCIENCE HISTORY TODAY", font=font_title_en, fill=(153, 153, 153))
-  y_cursor += 36
-
-  # 中文大标题
-  draw.text((margin, y_cursor), title_text, font=font_title, fill=(34, 34, 34))
-  y_cursor += 84
-
-  # 日期 + 星期
-  draw.text((margin, y_cursor), date_text, font=font_date, fill=(102, 102, 102))
-  y_cursor += 62
-  draw.text((margin, y_cursor), weekday, font=font_week, fill=(102, 102, 102))
-  y_cursor += 60
-
-  # 分割线
-  draw.line([(margin, y_cursor), (width - margin, y_cursor)], fill=(238, 238, 238), width=2)
-  y_cursor += 64
-
-  # 正文条目
-  for wl in wrapped:
-    for seg in wl:
-      draw.text((margin, y_cursor), seg, font=font_item, fill=(51, 51, 51))
-      y_cursor += line_h
-    y_cursor += 12
-
-  # 页脚
-  y_cursor += 8
-  draw.line([(margin, y_cursor), (width - margin, y_cursor)], fill=(238, 238, 238), width=2)
-  y_cursor += 36
-
-  for line in footer_lines:
-    draw.text((margin, y_cursor), line, font=font_footer, fill=(138, 138, 138))
-    y_cursor += 34
-
-  return canvas
+def is_strong(item: dict[str, Any]) -> bool:
+    content = (str(item.get("title") or "") + " " + str(item.get("text") or "")).casefold()
+    return any(claim in content for claim in STRONG_CLAIMS)
 
 
-def main():
-  parser = argparse.ArgumentParser(description="生成“科学史上的今天”长图（Kimi + Qwen 校验链路）")
-  parser.add_argument("--date", type=str, default="", help="目标日期，格式 YYYY-MM-DD，默认今天")
-  parser.add_argument("--header", type=str, default="", help="头图 URL 或本地路径（可选）")
-  parser.add_argument("--out", type=str, default="", help="输出文件路径，默认 history_YYYY-MM-DD.png")
-  parser.add_argument("--width", type=int, default=1080, help="输出宽度，默认1080")
-  parser.add_argument("--api-key", type=str, default="", help="Qwen API Key（可选，优先级高于环境变量 QWEN_API_KEY）")
-  parser.add_argument("--kimi-key", type=str, default="", help="Kimi API Key（可选，优先级高于环境变量 KIMI_API_KEY）")
+def source_hosts_independent(sources: Iterable[dict[str, Any]]) -> int:
+    known = sorted(A_HOST_SUFFIXES | B_HOST_SUFFIXES, key=len, reverse=True)
+    multi_level = ("ac.uk", "gov.uk", "edu.au", "gov.au", "edu.cn", "ac.cn", "ac.jp", "gc.ca")
 
-  args = parser.parse_args()
+    def institution(source: dict[str, Any]) -> str:
+        url = str(source.get("final_url") or source.get("url") or "")
+        host = (urlparse(url).hostname or "").lower().rstrip(".")
+        for suffix in known:
+            if host == suffix or host.endswith("." + suffix):
+                return suffix
+        labels = host.split(".")
+        if any(host.endswith("." + suffix) or host == suffix for suffix in multi_level):
+            return ".".join(labels[-3:]) if len(labels) >= 3 else host
+        return ".".join(labels[-2:]) if len(labels) >= 2 else host
 
-  # 解析日期
-  if args.date:
+    return len({institution(source) for source in sources if institution(source)})
+
+
+def validate_source_shape(source: Any) -> dict[str, Any]:
+    if not isinstance(source, dict):
+        raise ValueError("source 必须是对象")
+    level = str(source.get("level") or source.get("grade") or "").upper()
+    if level not in {"A", "B"}:
+        raise ValueError("source.level 必须是 A 或 B")
+    url = safe_url(str(source.get("url") or ""), level)
+    return {**source, "level": level, "url": url}
+
+
+def validate_item_shape(raw: Any) -> dict[str, Any]:
+    if not isinstance(raw, dict):
+        raise ValueError("条目必须是对象")
+    label = str(raw.get("label") or "").strip()
+    title = str(raw.get("title") or "").strip()
+    text = str(raw.get("text") or "").strip()
+    if not label or not title or not text:
+        raise ValueError("缺少 label/title/text")
+    year = label_year(label)
+    if len(title) > 60:
+        raise ValueError("title 超过 60 字")
+    if not 45 <= len(text) <= 90:
+        raise ValueError(f"text 应为 45—90 字，实际 {len(text)}")
+    sources = [validate_source_shape(source) for source in raw.get("sources") or []]
+    if not sources or not any(source["level"] == "A" for source in sources):
+        raise ValueError("每条至少需要一个 A 级来源")
+    item = {
+        **raw,
+        "label": label,
+        "title": title,
+        "text": text,
+        "sources": sources,
+        "_year": year,
+        "person_event": (
+            bool(raw.get("person_event"))
+            or str(raw.get("category") or "") == "person"
+            or any(marker in title + text for marker in ("出生", "逝世", "去世"))
+        ),
+        "importance": max(1, min(5, int(raw.get("importance") or 3))),
+    }
+    if is_strong(item) and source_hosts_independent(sources) < 2:
+        raise ValueError("强断言缺少独立第二 A/B 来源")
+    return item
+
+
+def validate_automated_sources(items: list[dict[str, Any]], target: date) -> list[dict[str, Any]]:
+    urls = sorted({source["url"] for item in items for source in item["sources"]})
+    pages: dict[str, dict[str, Any] | Exception] = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+        futures = {executor.submit(fetch_page, url): url for url in urls}
+        for future in concurrent.futures.as_completed(futures):
+            url = futures[future]
+            try:
+                pages[url] = future.result()
+            except Exception as exc:
+                pages[url] = exc
+
+    accepted: list[dict[str, Any]] = []
+    for item in items:
+        validated: list[dict[str, Any]] = []
+        for source in item["sources"]:
+            page = pages[source["url"]]
+            if isinstance(page, Exception) or not page.get("text"):
+                continue
+            date_quote = str(source.get("date_quote") or "").strip()
+            fact_quote = str(source.get("fact_quote") or "").strip()
+            date_context = str(source.get("date_context") or "event-date").strip()
+            if not (8 <= len(normalized_quote(date_quote)) <= 180 and 8 <= len(normalized_quote(fact_quote)) <= 240):
+                continue
+            page_text = normalized_quote(str(page["text"]))
+            if normalized_quote(date_quote) not in page_text or normalized_quote(fact_quote) not in page_text:
+                continue
+            if not has_source_date(date_quote, target, int(item["_year"]), date_context):
+                continue
+            validated.append(
+                {
+                    "level": source["level"],
+                    "url": source["url"],
+                    "final_url": page["url"],
+                    "authority_type": str(source.get("authority_type") or "").strip(),
+                    "date_context": date_context,
+                    "date_quote": date_quote,
+                    "fact_quote": fact_quote,
+                    "retrieved_sha256": page["sha256"],
+                    "content_type": page["content_type"],
+                }
+            )
+        if not any(
+            source["level"] == "A" and source["date_context"] == "event-date"
+            for source in validated
+        ):
+            continue
+        if is_strong(item) and source_hosts_independent(validated) < 2:
+            continue
+        accepted.append({**item, "sources": validated})
+    return accepted
+
+
+def validate_human_sources(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    accepted: list[dict[str, Any]] = []
+    for item in items:
+        sources: list[dict[str, Any]] = []
+        for source in item["sources"]:
+            date_quote = str(source.get("date_quote") or "").strip()
+            fact_quote = str(source.get("fact_quote") or "").strip()
+            date_context = str(source.get("date_context") or "event-date").strip()
+            if not date_quote or not fact_quote:
+                raise ValueError(f"人工审校条目“{item['title']}”的来源缺少逐字 date_quote/fact_quote")
+            if not has_source_date(
+                date_quote,
+                date.fromisoformat(str(item.get("_target_date"))),
+                int(item["_year"]),
+                date_context,
+            ):
+                raise ValueError(f"人工审校条目“{item['title']}”的 date_quote 不含完整事件日期")
+            sources.append(
+                {
+                    "level": source["level"],
+                    "url": source["url"],
+                    "date_context": date_context,
+                    "date_quote": date_quote,
+                    "fact_quote": fact_quote,
+                    "evidence_note": str(source.get("evidence") or "").strip(),
+                }
+            )
+        if not any(
+            source["level"] == "A" and source["date_context"] == "event-date"
+            for source in sources
+        ):
+            raise ValueError(f"人工审校条目“{item['title']}”缺少直接证明目标月日的 A 级来源")
+        accepted.append({**item, "sources": sources})
+    return accepted
+
+
+def curate_items(payload: dict[str, Any], target: date, review_mode: str) -> list[dict[str, Any]]:
+    if payload.get("date") and payload.get("date") != target.isoformat():
+        raise ValueError("候选 JSON 日期与目标日期不一致")
+    if payload.get("timezone") and payload.get("timezone") != TIMEZONE:
+        raise ValueError("候选 JSON 时区必须是 Asia/Shanghai")
+    raw_items = payload.get("items")
+    if not isinstance(raw_items, list):
+        raise ValueError("候选 JSON 缺少 items 数组")
+    shaped: list[dict[str, Any]] = []
+    rejected: list[str] = []
+    for index, raw in enumerate(raw_items):
+        try:
+            shaped.append(validate_item_shape(raw))
+        except Exception as exc:
+            rejected.append(f"#{index + 1}: {exc}")
+    if rejected:
+        print("候选结构门禁剔除：" + "；".join(rejected), file=sys.stderr)
+    for item in shaped:
+        item["_target_date"] = target.isoformat()
+    if review_mode == "human-curated":
+        accepted = validate_human_sources(shaped)
+    else:
+        accepted = validate_automated_sources(shaped, target)
+
+    # Prefer more important candidates before the 20-item cap, then restore
+    # the required chronological presentation order.
+    accepted.sort(key=lambda item: (-item["importance"], item["_year"], item["title"]))
+    accepted = accepted[:20]
+    accepted.sort(key=lambda item: (item["_year"], item["title"]))
+    while len(accepted) >= 15 and sum(bool(item["person_event"]) for item in accepted) > len(accepted) // 3:
+        remove_at = max(index for index, item in enumerate(accepted) if item["person_event"])
+        accepted.pop(remove_at)
+    fingerprints: set[str] = set()
+    unique: list[dict[str, Any]] = []
+    for item in accepted:
+        fingerprint = normalized_quote(item["title"] + item["text"])
+        if fingerprint not in fingerprints:
+            fingerprints.add(fingerprint)
+            unique.append(item)
+    if not unique:
+        raise ValueError("没有条目通过来源与内容门禁；保留上一份快照")
+    if len(unique) < 15:
+        print(f"警告：仅 {len(unique)} 条通过核验，按技能规则以实际条数出图。", file=sys.stderr)
+    return unique
+
+
+def public_payload(target: date, items: list[dict[str, Any]]) -> dict[str, Any]:
+    return {
+        "version": 1,
+        "date": target.isoformat(),
+        "timezone": TIMEZONE,
+        "kicker": "SCIENCE HISTORY",
+        "title": "科技史上的今天",
+        "subtitle": f"{target.year}年{target.month}月{target.day}日（{target.isoformat()}） · {len(items)}条科学坐标",
+        "theme": "history",
+        "deck": DECK,
+        "poster": "/ScienceHistory/science_today.png",
+        "items": [{"label": item["label"], "title": item["title"], "text": item["text"]} for item in items],
+        "footer": FOOTER,
+    }
+
+
+def audit_payload(target: date, items: list[dict[str, Any]], mode: str) -> dict[str, Any]:
+    if mode == "human-curated":
+        validation = (
+            "人工审校输入：date_quote/fact_quote 是编辑从来源中核对的短原文；"
+            "脚本校验目标月日、HTTPS、来源级别/域名、双源规则与公开快照结构，"
+            "不把 evidence_note 的中文摘要冒充网页逐字匹配。"
+        )
+    else:
+        validation = (
+            "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。"
+            "该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。"
+        )
+    return {
+        "version": 1,
+        "date": target.isoformat(),
+        "timezone": TIMEZONE,
+        "review_mode": mode,
+        "model": None if mode == "human-curated" else QWEN_MODEL,
+        "validation_scope": validation,
+        "items": [
+            {
+                "label": item["label"],
+                "title": item["title"],
+                "text": item["text"],
+                "item_sha256": hashlib.sha256(
+                    json.dumps(
+                        {"label": item["label"], "title": item["title"], "text": item["text"]},
+                        ensure_ascii=False,
+                        sort_keys=True,
+                        separators=(",", ":"),
+                    ).encode("utf-8")
+                ).hexdigest(),
+                "strong_claim": is_strong(item),
+                "person_event": bool(item["person_event"]),
+                "sources": item["sources"],
+            }
+            for item in items
+        ],
+    }
+
+
+def write_json(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def png_dimensions(path: Path) -> tuple[int, int]:
+    with path.open("rb") as handle:
+        header = handle.read(24)
+    if len(header) < 24 or header[:8] != b"\x89PNG\r\n\x1a\n" or header[12:16] != b"IHDR":
+        raise ValueError(f"不是有效 PNG：{path}")
+    return struct.unpack(">II", header[16:24])
+
+
+def renderer_environment() -> dict[str, str]:
+    """Let the unmodified skill renderer use an installed Windows browser.
+
+    Puppeteer's normal managed-browser lookup remains authoritative everywhere
+    else.  This fallback only addresses Windows workstations where dependency
+    install scripts were skipped but Chrome or Edge is already available.
+    """
+    environment = os.environ.copy()
+    if os.name != "nt" or environment.get("PUPPETEER_EXECUTABLE_PATH"):
+        return environment
+
+    candidates: list[Path] = []
+    for variable, suffixes in (
+        (
+            "PROGRAMFILES",
+            ("Google/Chrome/Application/chrome.exe", "Microsoft/Edge/Application/msedge.exe"),
+        ),
+        (
+            "PROGRAMFILES(X86)",
+            ("Google/Chrome/Application/chrome.exe", "Microsoft/Edge/Application/msedge.exe"),
+        ),
+        (
+            "LOCALAPPDATA",
+            ("Google/Chrome/Application/chrome.exe", "Microsoft/Edge/Application/msedge.exe"),
+        ),
+    ):
+        base = environment.get(variable)
+        if base:
+            candidates.extend(Path(base) / suffix for suffix in suffixes)
+
+    discovered = next((path for path in candidates if path.is_file()), None)
+    if discovered is None:
+        command = shutil.which("chrome") or shutil.which("msedge")
+        discovered = Path(command) if command else None
+    if discovered is not None:
+        environment["PUPPETEER_EXECUTABLE_PATH"] = str(discovered)
+    return environment
+
+
+def validate_public_json(payload: dict[str, Any]) -> None:
+    required = {"version", "date", "timezone", "kicker", "title", "subtitle", "theme", "deck", "poster", "items", "footer"}
+    if set(payload) != required:
+        raise ValueError(f"公开 JSON 字段不符，缺少/多出：{sorted(set(payload) ^ required)}")
+    date.fromisoformat(str(payload["date"]))
+    if payload["timezone"] != TIMEZONE or payload["title"] != "科技史上的今天" or payload["theme"] != "history":
+        raise ValueError("公开 JSON 的时区、标题或主题不正确")
+    if payload["poster"] != "/ScienceHistory/science_today.png" or payload["footer"] != FOOTER:
+        raise ValueError("公开 JSON 的海报路径或固定署名不正确")
+    items = payload["items"]
+    if not isinstance(items, list) or not 1 <= len(items) <= 20:
+        raise ValueError("公开 JSON items 数量必须为 1—20")
+    years: list[int] = []
+    for item in items:
+        if not isinstance(item, dict) or set(item) != {"label", "title", "text"}:
+            raise ValueError("公开 item 只能包含 label/title/text")
+        years.append(label_year(str(item["label"])))
+        if not 45 <= len(str(item["text"]).strip()) <= 90:
+            raise ValueError("公开 item.text 不在 45—90 字")
+    if years != sorted(years):
+        raise ValueError("公开 items 未按年份升序")
+
+    def strings(value: Any) -> Iterable[str]:
+        if isinstance(value, str):
+            yield value
+        elif isinstance(value, dict):
+            for key, child in value.items():
+                if "source" in str(key).lower() or str(key).lower() in {"url", "citation"}:
+                    raise ValueError("公开 JSON 不得含来源字段")
+                yield from strings(child)
+        elif isinstance(value, list):
+            for child in value:
+                yield from strings(child)
+
+    for value in strings(payload):
+        if re.search(r"(?:https?:)?//", value, re.IGNORECASE):
+            raise ValueError("公开 JSON 不得含外部 URL")
+
+
+def validate_audit(audit: dict[str, Any], public: dict[str, Any], *, require_snapshot_hashes: bool = True) -> None:
+    if audit.get("date") != public["date"] or audit.get("timezone") != TIMEZONE:
+        raise ValueError("来源旁路与公开快照日期/时区不一致")
+    mode = audit.get("review_mode")
+    if mode not in {"human-curated", "automated-retrieval-gates"}:
+        raise ValueError("来源旁路 review_mode 不受支持")
+    target = date.fromisoformat(public["date"])
+    audit_items = audit.get("items")
+    if not isinstance(audit_items, list) or len(audit_items) != len(public["items"]):
+        raise ValueError("来源旁路与公开条目数量不一致")
+    for index, (internal, visible) in enumerate(zip(audit_items, public["items"], strict=True), start=1):
+        if internal.get("label") != visible["label"] or internal.get("title") != visible["title"]:
+            raise ValueError(f"来源旁路第 {index} 条与公开条目不一致")
+        if internal.get("text") != visible["text"]:
+            raise ValueError(f"来源旁路第 {index} 条正文与公开条目不一致")
+        canonical = json.dumps(visible, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        if internal.get("item_sha256") != hashlib.sha256(canonical).hexdigest():
+            raise ValueError(f"来源旁路第 {index} 条摘要哈希不一致")
+        sources = internal.get("sources") or []
+        if not any(str(source.get("level")).upper() == "A" for source in sources if isinstance(source, dict)):
+            raise ValueError(f"来源旁路第 {index} 条缺少 A 级来源")
+        if internal.get("strong_claim") and source_hosts_independent(sources) < 2:
+            raise ValueError(f"来源旁路第 {index} 条强断言缺少独立第二来源")
+        event_year = label_year(str(internal["label"]))
+        for source in sources:
+            normalized = validate_source_shape(source)
+            date_quote = str(normalized.get("date_quote") or "").strip()
+            fact_quote = str(normalized.get("fact_quote") or "").strip()
+            date_context = str(normalized.get("date_context") or "event-date").strip()
+            if not date_quote or not fact_quote or not has_source_date(date_quote, target, event_year, date_context):
+                raise ValueError(f"来源旁路第 {index} 条缺少含完整事件日期的逐字证据")
+            if mode == "automated-retrieval-gates":
+                final_url = str(normalized.get("final_url") or "")
+                if not (hostname_allowed(final_url, "A") or hostname_allowed(final_url, "B")):
+                    raise ValueError(f"来源旁路第 {index} 条 final_url 不符合来源域门禁")
+                if not re.fullmatch(r"[0-9a-f]{64}", str(normalized.get("retrieved_sha256") or "")):
+                    raise ValueError(f"来源旁路第 {index} 条缺少抓取内容哈希")
+        if not any(
+            str(source.get("level") or "").upper() == "A"
+            and str(source.get("date_context") or "event-date") == "event-date"
+            for source in sources
+            if isinstance(source, dict)
+        ):
+            raise ValueError(f"来源旁路第 {index} 条缺少直接证明目标月日的 A 级来源")
+    if require_snapshot_hashes:
+        if not re.fullmatch(r"[0-9a-f]{64}", str(audit.get("public_json_sha256") or "")):
+            raise ValueError("来源旁路缺少公开 JSON 哈希")
+        if not re.fullmatch(r"[0-9a-f]{64}", str(audit.get("poster_sha256") or "")):
+            raise ValueError("来源旁路缺少长图哈希")
+        if not isinstance(audit.get("poster_bytes"), int) or audit["poster_bytes"] <= 0:
+            raise ValueError("来源旁路缺少长图字节数")
+
+
+def check_snapshot(public_dir: Path | None = None) -> None:
+    public = read_json(PUBLIC_JSON)
+    audit = read_json(AUDIT_FILE)
+    validate_public_json(public)
+    validate_audit(audit, public)
+    if audit["public_json_sha256"] != hashlib.sha256(PUBLIC_JSON.read_bytes()).hexdigest():
+        raise ValueError("公开 JSON 与来源旁路记录的哈希不一致")
+    if audit["poster_sha256"] != hashlib.sha256(PUBLIC_POSTER.read_bytes()).hexdigest():
+        raise ValueError("科技史长图与来源旁路记录的哈希不一致")
+    if audit["poster_bytes"] != PUBLIC_POSTER.stat().st_size:
+        raise ValueError("科技史长图字节数与来源旁路不一致")
+    width, height = png_dimensions(PUBLIC_POSTER)
+    if width < 720 or height < 900 or PUBLIC_POSTER.stat().st_size <= 0:
+        raise ValueError("科技史长图尺寸或文件大小异常")
+    if audit.get("poster_dimensions") != {"width": width, "height": height}:
+        raise ValueError("科技史长图尺寸与来源旁路记录不一致")
+    if public_dir is not None:
+        built_json = public_dir / "ScienceHistory" / "science_today.json"
+        built_poster = public_dir / "ScienceHistory" / "science_today.png"
+        if built_json.read_bytes() != PUBLIC_JSON.read_bytes() or built_poster.read_bytes() != PUBLIC_POSTER.read_bytes():
+            raise ValueError("构建产物与 source/ScienceHistory 权威快照字节不一致")
+
+
+def transactional_publish(staged: list[tuple[Path, Path]]) -> None:
+    backups: list[tuple[Path, Path]] = []
+    published: list[Path] = []
     try:
-      target_date = dt.datetime.strptime(args.date, "%Y-%m-%d").date()
-    except ValueError:
-      raise SystemExit("日期格式错误，请使用 YYYY-MM-DD，如 2025-11-23")
-  else:
-    target_date = dt.date.today()
+        for source, destination in staged:
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            if destination.exists():
+                backup = destination.with_name(destination.name + f".backup-{uuid.uuid4().hex}")
+                os.replace(destination, backup)
+                backups.append((backup, destination))
+            os.replace(source, destination)
+            published.append(destination)
+    except Exception:
+        for destination in reversed(published):
+            destination.unlink(missing_ok=True)
+        for backup, destination in reversed(backups):
+            if backup.exists():
+                os.replace(backup, destination)
+        raise
+    else:
+        for backup, _ in backups:
+            try:
+                backup.unlink(missing_ok=True)
+            except OSError:
+                # The new files are already published; a best-effort backup
+                # cleanup must not turn a successful transaction into failure.
+                pass
 
-  qwen_key = get_qwen_api_key(args.api_key or None)
-  kimi_key = get_kimi_api_key(args.kimi_key or None)
 
-  # 通过 Kimi + Qwen 联合生成 Markdown 文本
-  md = call_qwen_history_today(target_date, qwen_key, kimi_key)
+def generate(target: date, input_path: Path | None, review_mode: str) -> None:
+    if input_path is not None:
+        if review_mode != "human-curated":
+            raise ValueError("--input 必须显式搭配 --review-mode human-curated")
+        candidates = read_json(input_path)
+    else:
+        if review_mode == "human-curated":
+            raise ValueError("human-curated 模式必须提供 --input")
+        api_key = os.environ.get("QWEN_API_KEY", "").strip()
+        if not api_key:
+            raise ValueError("缺少 QWEN_API_KEY；不会覆盖上一份成功快照")
+        candidates = call_qwen(target, api_key)
+        review_mode = "automated-retrieval-gates"
 
-  # 解析出事件条目
-  items = parse_items_from_markdown(md)
+    items = curate_items(candidates, target, review_mode)
+    visible = public_payload(target, items)
+    audit = audit_payload(target, items, review_mode)
+    validate_public_json(visible)
+    validate_audit(audit, visible, require_snapshot_hashes=False)
 
-  # 默认输出到 Hexo 静态资源目录：source/ScienceHistory/
-  # 放在根级子目录，避免与主题的 gallery 路由冲突，路径更简单：/ScienceHistory/...
-  default_dir = os.path.join("source", "ScienceHistory")
-  os.makedirs(default_dir, exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    AUDIT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="science-history-", dir=ROOT) as temporary:
+        stage = Path(temporary)
+        stage_json = stage / "science_today.json"
+        stage_poster = stage / "science_today.png"
+        stage_audit = stage / "science_today.sources.json"
+        write_json(stage_json, visible)
+        subprocess.run(
+            [
+                "node", str(RENDERER), "--input", str(stage_json), "--out", str(stage_poster),
+                "--theme", "history", "--min-items", "1",
+            ],
+            check=True,
+            timeout=240,
+            env=renderer_environment(),
+        )
+        width, height = png_dimensions(stage_poster)
+        if width < 720 or height < 900 or stage_poster.stat().st_size <= 0:
+            raise ValueError("渲染结果为空或尺寸异常")
+        audit["public_json_sha256"] = hashlib.sha256(stage_json.read_bytes()).hexdigest()
+        audit["poster_sha256"] = hashlib.sha256(stage_poster.read_bytes()).hexdigest()
+        audit["poster_bytes"] = stage_poster.stat().st_size
+        audit["poster_dimensions"] = {"width": width, "height": height}
+        validate_audit(audit, visible)
+        write_json(stage_audit, audit)
+        transactional_publish(
+            [(stage_poster, PUBLIC_POSTER), (stage_json, PUBLIC_JSON), (stage_audit, AUDIT_FILE)]
+        )
+    check_snapshot()
+    print(f"已发布 {target.isoformat()} 的 {len(items)} 条科技史快照。")
 
-  # 1）清理旧的 PNG（只保留最新一张），防止目录里积累历史长图
-  for name in os.listdir(default_dir):
-    if name.lower().endswith(".png"):
-      try:
-        os.remove(os.path.join(default_dir, name))
-      except OSError:
-        pass
 
-  # 2）输出当日文本到 JSON，供前端静态读取
-  y, m, d = target_date.year, target_date.month, target_date.day
-  weekday = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"][target_date.weekday()]
-  data = {
-    "date": target_date.strftime("%Y-%m-%d"),
-    "date_text": f"{y}年{m}月{d}日",
-    "week": weekday,
-    "title": "科学史上的今天",
-    "items": items,
-  }
-  json_path = os.path.join(default_dir, "science_today.json")
-  with open(json_path, "w", encoding="utf-8") as f:
-    json.dump(data, f, ensure_ascii=False, indent=2)
-
-  # 3）根据条目生成长图，并固定输出为 science_today.png
-  poster = build_poster_from_items(items, args.header, target_date, width=args.width)
-  out = args.out or os.path.join(default_dir, "science_today.png")
-  poster.save(out, format="PNG")
-  print("已生成:", out, "和 JSON:", json_path)
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--date", default="", help="目标日期 YYYY-MM-DD；默认 Asia/Shanghai 当天")
+    parser.add_argument("--input", type=Path, help="已人工审校的研究 JSON")
+    parser.add_argument(
+        "--review-mode", choices=("automated", "human-curated"), default="automated",
+        help="输入审校模式；--input 必须显式使用 human-curated",
+    )
+    parser.add_argument("--check", action="store_true", help="离线检查现有快照")
+    parser.add_argument("--public", type=Path, help="同时检查 Hexo 构建后的 public 目录字节一致")
+    args = parser.parse_args()
+    try:
+        if args.check:
+            check_snapshot(args.public.resolve() if args.public else None)
+            print("科技史本地快照检查通过。")
+            return 0
+        target = parse_date(args.date) if args.date else today_shanghai()
+        generate(target, args.input.resolve() if args.input else None, args.review_mode)
+        return 0
+    except Exception as exc:
+        print(f"科技史快照未更新：{exc}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":
-  main()
-
-
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    raise SystemExit(main())

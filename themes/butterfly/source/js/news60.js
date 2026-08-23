@@ -2,6 +2,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const newsContainers = document.querySelectorAll('[data-news60]');
     if (newsContainers.length === 0) return;
 
+    const isEnglishPage = /^en(?:-|$)/i.test(String(
+      (document.documentElement && document.documentElement.lang) || ''
+    ));
+    if (isEnglishPage) {
+      let chineseArticleUrl = '/2099/12/31/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB/';
+      if (typeof document.querySelector === 'function') {
+        const languageLink = document.querySelector('#language-switch a');
+        const switchTarget = languageLink && typeof languageLink.getAttribute === 'function'
+          ? languageLink.getAttribute('href')
+          : '';
+        if (switchTarget) chineseArticleUrl = switchTarget;
+      }
+      const safeUrl = String(chineseArticleUrl)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+      const englishNotice = `
+        <div role="status" style="margin:16px 0;padding:18px 20px;background:rgba(127,127,127,.08);border-radius:10px;line-height:1.65;color:#555;">
+          <p style="margin:0 0 10px;">The 60-second news feed is currently available only in Chinese, so its Chinese text and poster are not shown on this English page.</p>
+          <a href="${safeUrl}" lang="zh-CN" hreflang="zh-CN">Open the Chinese version of this article</a>
+        </div>`;
+      newsContainers.forEach((container) => {
+        container.innerHTML = englishNotice;
+      });
+      return;
+    }
+
     const newsLoading =
       typeof window.apcLoadingHtml === 'function'
         ? window.apcLoadingHtml('正在加载每日新闻…')

@@ -5,7 +5,7 @@ tags: ['数学', '代数', '科普', '初等代数', '不等式','科普组第8�
 categories: '数学'
 katex: true
 copyright_author: 'delta'
-cover: https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ickpgpo99gj30de07agmz.jpg
+cover: /images/%E7%94%B1%E7%AE%80%E5%85%A5%E7%B9%81%E2%80%94%E2%80%94%E4%BB%A3%E6%95%B0%E5%AD%A6%C2%B7Part1/cover-5540868fdb.jpg
 ---
 
 {% note blue 'fas fa-equals' %}

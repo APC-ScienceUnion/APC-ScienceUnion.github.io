@@ -29,6 +29,8 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - images/daily/daily-images.json
+  - ScienceHistory/**
   - H5Games/**
   - 10th-link/**
   - fwzq/**

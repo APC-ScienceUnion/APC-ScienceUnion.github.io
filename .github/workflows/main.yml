@@ -18,22 +18,42 @@ jobs:
           node-version: "22"
           cache: npm
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Install
+        env:
+          # The Pages build only validates an existing poster; the scheduled
+          # science-history workflow is the one that needs a browser to render.
+          PUPPETEER_SKIP_DOWNLOAD: "true"
         run: |
           sudo apt-get update
           sudo apt-get install nasm -y
+          python -m pip install --requirement tools/science_history/requirements.txt
           npm install -g hexo-cli
           npm install
           npm install hexo-all-minifier --save
           
       - name: Build
         run: |
+          npm run bilingual:check
+          npm run assets:check
+          npm run daily-images:check
+          npm run daily-widgets:check
+          npm run science-history:check
           hexo clean
           git clone https://oauth2:${{ secrets.GITHUB_TOKEN }}@github.com/APC-ScienceUnion/APC-ScienceUnion.github.io.git public -b main --depth=1 
           cd public
           git rm -rf .
           cd ..
           hexo g
+          cp .gitattributes ./public/.gitattributes
+          npm run bilingual:check-public
+          npm run assets:check-public
+          npm run daily-images:check-public
+          npm run science-history:check-public
+          npm run homepage:check-public
           cp -r ./404 ./public
           
       - name: Deploy

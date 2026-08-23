@@ -4,7 +4,7 @@ date: 2019-06-19 19:30:00
 tags: ['GPS', '科普', '天文学','卫星','定位']
 categories: '天文历法'
 copyright_author: '一毫秒的永恒'
-cover: https://i1.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedajxrx58j30b408wacy.jpg
+cover: /images/GPS%20%E7%94%A8%E4%BB%80%E4%B9%88%E9%AD%94%E6%B3%95%E8%AE%A9%E8%B7%AF%E7%97%B4%E4%B8%8D%E5%86%8D%E8%BF%B7%E8%B7%AF%EF%BC%9F/cover-48a07e6b56.jpg
 ---
 
 > 作者：一毫秒的永恒
@@ -27,25 +27,25 @@ cover: https://i1.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedajxrx58j30b408wacy.j
 
 &emsp;&emsp;你询问了几位路人，第一个好心人告诉你：“这里离雅安的直线距离有 122公里。”这是个有用的消息，你可以在地图上以雅安为圆心，以122公里为半径画一个圆，你现在肯定在这个圆上。
 
-<img src="https://i1.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedagtjccfj30km0g0abn.jpg" title="图1" />
+<img src="/images/GPS%20%E7%94%A8%E4%BB%80%E4%B9%88%E9%AD%94%E6%B3%95%E8%AE%A9%E8%B7%AF%E7%97%B4%E4%B8%8D%E5%86%8D%E8%BF%B7%E8%B7%AF%EF%BC%9F/fig-001-a174b23c09.jpg" title="图1" />
 
 <center><font size=2px color=grey>图1</font></center>
 
 &emsp;&emsp;然后第二个好心人说道：“我只知道这里离我的家乡德阳有62 公里。”这样也好办，再以德阳为圆心，以62 公里为半径再画一个圆，这个圆和刚刚第一个圆有两个交点，答案的范围大大缩小了。
 
-<img src="https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedah9s87cj30hs0hgjtw.jpg" title="图2" />
+<img src="/images/GPS%20%E7%94%A8%E4%BB%80%E4%B9%88%E9%AD%94%E6%B3%95%E8%AE%A9%E8%B7%AF%E7%97%B4%E4%B8%8D%E5%86%8D%E8%BF%B7%E8%B7%AF%EF%BC%9F/fig-002-5f66cf9dae.jpg" title="图2" />
 
 <center><font size=2px color=grey>图2</font></center>
 
 &emsp;&emsp;最后第三个好心人也好像卖关子一般说道：“我虽不知道这是哪里，但是我知道这里离遂宁有146 公里。”
 
-<img src="https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedahj19jbj30sg0i2q7m.jpg" title="图3" />
+<img src="/images/GPS%20%E7%94%A8%E4%BB%80%E4%B9%88%E9%AD%94%E6%B3%95%E8%AE%A9%E8%B7%AF%E7%97%B4%E4%B8%8D%E5%86%8D%E8%BF%B7%E8%B7%AF%EF%BC%9F/fig-003-0982b2b9a1.jpg" title="图3" />
 
 <center><font size=2px color=grey>图3</font></center>
 
 &emsp;&emsp;没关系！有了这个数据你再按前面的步骤画一个圆，就能得到答案了，因为这个圆会交于两个点的其中一个，套入中国的地图中就是这样，原来你现在是在成都啊
 
-<img src="https://i0.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedahvcvixj30u00kr4e2.jpg" title="图4" />
+<img src="/images/GPS%20%E7%94%A8%E4%BB%80%E4%B9%88%E9%AD%94%E6%B3%95%E8%AE%A9%E8%B7%AF%E7%97%B4%E4%B8%8D%E5%86%8D%E8%BF%B7%E8%B7%AF%EF%BC%9F/fig-004-7f95741c53.jpg" title="图4" />
 
 <center><font size=2px color=grey>图4</font></center>
 
@@ -55,7 +55,7 @@ cover: https://i1.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedajxrx58j30b408wacy.j
 
 &emsp;&emsp;如果你知道你离天上的卫星A 有1 万公里远，那么你可能在一个半径为1 万公里的巨大的假想球体表面的任何地方。如果你也知道你离B 卫星1.5 万公里，你可以把第一个球体和这个更大的球体重叠。球体相交成一个完美的圆。如果知道到第三颗卫星的距离，你会得到第三个球体。三个球相交于两点，地球球面与其中一点重合，除非你正在天上飞，不然在地球表面的那个点就是你所在的位置。
 
-<img src="https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedaigdrbfj30ku0980ui.jpg" title="3颗卫星测绘出来的“球”与地球共同的交点就是所在的位置。第4颗卫星用来校准和同步时间" />
+<img src="/images/GPS%20%E7%94%A8%E4%BB%80%E4%B9%88%E9%AD%94%E6%B3%95%E8%AE%A9%E8%B7%AF%E7%97%B4%E4%B8%8D%E5%86%8D%E8%BF%B7%E8%B7%AF%EF%BC%9F/fig-005-c7fa835000.jpg" title="3颗卫星测绘出来的“球”与地球共同的交点就是所在的位置。第4颗卫星用来校准和同步时间" />
 
 <center><font size=2px color=grey>3颗卫星测绘出来的“球”与地球共同的交点就是所在的位置。第4颗卫星用来校准和同步时间</font></center>
 
@@ -66,7 +66,7 @@ cover: https://i1.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedajxrx58j30b408wacy.j
 
 &emsp;&emsp;GPS 接收器通过分析卫星广播的导航电文和时间信息，可以将这两种情况计算出来。基本原理就是无线电信号在真空中以光速传播，所以可以通过信号从卫星到接收器的时间差来计算出卫星离接收器的距离。实际上这个过程还是比较复杂的，不过可以举个简单的例子：例如在早上8:00 的时候，卫星传输了一串伪随机码。当卫星信号到达GPS 接收器时，会有一个时间差，用这个时间差乘以光速就是信号传播的距离。如果信号是直线传播的，理想情况下，这就是接收器与卫星之间的距离。
 
-<img src="https://i0.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedaj54bk5j30gs0fwgnt.jpg" title="图中(xi,yi,zi)表示卫星i在t时刻的空间坐标，Vti表示卫星与接收器的时钟差。由以上四个方程即可解算出待测点的坐标x、y、z 和接收机的钟差Vto" />
+<img src="/images/GPS%20%E7%94%A8%E4%BB%80%E4%B9%88%E9%AD%94%E6%B3%95%E8%AE%A9%E8%B7%AF%E7%97%B4%E4%B8%8D%E5%86%8D%E8%BF%B7%E8%B7%AF%EF%BC%9F/fig-006-b0bf304b8a.jpg" title="图中(xi,yi,zi)表示卫星i在t时刻的空间坐标，Vti表示卫星与接收器的时钟差。由以上四个方程即可解算出待测点的坐标x、y、z 和接收机的钟差Vto" />
 
 <center><font size=2px color=grey>图中(xi,yi,zi)表示卫星i在t时刻的空间坐标，Vti表示卫星与接收器的时钟差。由以上四个方程即可解算出待测点的坐标x、y、z 和接收机的钟差Vto</font></center>
 
@@ -78,12 +78,12 @@ cover: https://i1.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedajxrx58j30b408wacy.j
 
 &emsp;&emsp;差分GPS (DGPS) 的原理是在位置已精确测定的已知点上配备一台GPS 监测接收机作为基准站并和用户同时进行GPS 观测，将得到的单点定位的结果与基准站坐标比较，求解出实时差分修正值，以广播或数据链传输方式，将差分修正值传送至附近GPS 用户，以修正其GPS 定位解，提高其局部范围内用户的定位精度。
 
-<img src="https://i1.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedakvqyu0j30ci09egnq.jpg" title="差分定位（或称相对定位），简单来说即通过增加一个参考GPS接收器来提高定位精度  |  Credit:Knowpia" />
+<img src="/images/GPS%20%E7%94%A8%E4%BB%80%E4%B9%88%E9%AD%94%E6%B3%95%E8%AE%A9%E8%B7%AF%E7%97%B4%E4%B8%8D%E5%86%8D%E8%BF%B7%E8%B7%AF%EF%BC%9F/fig-007-25f9723f9d.jpg" title="差分定位（或称相对定位），简单来说即通过增加一个参考GPS接收器来提高定位精度  |  Credit:Knowpia" />
 <center><font size=2px color=grey>差分定位（或称相对定位），简单来说即通过增加一个参考GPS接收器来提高定位精度  |  Credit:Knowpia</font></center>
 
 &emsp;&emsp;而在差分GPS 中，伪距差分是应用最广的一种差分( 所谓伪距，就是GPS 的实际测量过程中，信号在传播过程中受到大气折射等因素的影响，测得的距离并不等于卫星到地面接收机的真正距离，于是把测量距离称之为伪距，GPS 接收机的测量也称为伪距测量。) 这种差分技术能得到米级定位精度；载波相位差分技术( 又称RTK 技术) 精度更高，可使定位精度达到厘米级。大量应用于动态需要高精度位置的领域。
 
-<img src="https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iedalele4rj30u00kmwsd.jpg" title="载波相位差分技术示意图；这种技术能够在野外实时得到厘米级定位精度，它能实时提供观测点的三维坐标，并达到厘米级的高精度" />
+<img src="/images/GPS%20%E7%94%A8%E4%BB%80%E4%B9%88%E9%AD%94%E6%B3%95%E8%AE%A9%E8%B7%AF%E7%97%B4%E4%B8%8D%E5%86%8D%E8%BF%B7%E8%B7%AF%EF%BC%9F/fig-008-fb6d9ab6cf.jpg" title="载波相位差分技术示意图；这种技术能够在野外实时得到厘米级定位精度，它能实时提供观测点的三维坐标，并达到厘米级的高精度" />
 <center><font size=2px color=grey>载波相位差分技术示意图；这种技术能够在野外实时得到厘米级定位精度，它能实时提供观测点的三维坐标，并达到厘米级的高精度</font></center>
 
 &emsp;&emsp;如今，GPS早已深入普通人的生活。目前，GPS仍是全球最重要的卫星导航系统之一，现代终端通常同时使用多个全球导航卫星系统，包括俄罗斯的格洛纳斯系统(GLONASS)、欧盟的伽利略定位系统(Galileo)以及中国的北斗卫星导航系统。随着GPS的成熟应用和各种高科技的飞速发展，车载导航、手机/手表定位、自动驾驶等高科技应用和技术也越来越离不开GPS，GPS就像移动电话和互联网对我们的生活产生的影响一样，人们已经离不开它了。

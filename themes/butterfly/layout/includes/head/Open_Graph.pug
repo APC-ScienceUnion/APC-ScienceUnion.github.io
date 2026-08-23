@@ -4,7 +4,9 @@ if theme.Open_Graph_meta
   - let fb_appId = theme.facebook_comments.app_id || ''
   - let fb_admins = theme.facebook_comments.user_id || ''
 
-  != open_graph({type: contentType, image: metaImage, fb_admins: fb_admins, fb_app_id: fb_appId})
+  - let localizedSiteName = page.lang === 'en' && theme.english_site_title ? theme.english_site_title : config.title
+  - let localizedDescription = page.description || page.excerpt || page.content || (page.lang === 'en' && theme.english_site_description ? theme.english_site_description : config.description)
+  != open_graph({type: contentType, image: metaImage, description: localizedDescription, site_name: localizedSiteName, fb_admins: fb_admins, fb_app_id: fb_appId})
 
 else
   meta(name="description" content=page_description())

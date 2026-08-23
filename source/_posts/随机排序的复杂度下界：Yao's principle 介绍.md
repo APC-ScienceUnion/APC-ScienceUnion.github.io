@@ -4,7 +4,7 @@ date: 2026-05-30 12:00:00
 tags: ['算法','概率论','计算机科学','数学']
 categories: '数学'
 copyright_author: 'silverxz'
-cover: https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ido0nnu90wj31jk0xc7oq.jpg
+cover: /images/%E9%9A%8F%E6%9C%BA%E6%8E%92%E5%BA%8F%E7%9A%84%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8B%E7%95%8C%EF%BC%9AYao%27s%20principle%20%E4%BB%8B%E7%BB%8D/cover-60f1f08704.jpg
 katex: true
 ---
 
@@ -98,7 +98,7 @@ $$
 
 &emsp;&emsp;单单这么说，读者可能意识不到这有什么用。我们再回看石头剪刀布的例子。如果 Alice 只能选择确定性策略，那么 Bob 必胜。正如之前说过的，这里有一个先后顺序，相当于 Bob 可以看着 Alice 出完拳再决定他出什么，自然一定能赢。但如果 Alice 可以采用随机策略，以各 $1/3$ 的概率决定出石头剪刀还是布，那么 Bob 就无法针对了。
 
-<img src="https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1idnxbwh6z9j30xc0m8acv.jpg" alt="剪刀石头布的游戏规则" title="剪刀石头布的游戏规则" />
+<img src="/images/%E9%9A%8F%E6%9C%BA%E6%8E%92%E5%BA%8F%E7%9A%84%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8B%E7%95%8C%EF%BC%9AYao%27s%20principle%20%E4%BB%8B%E7%BB%8D/fig-001-2b693c4c05.jpg" alt="剪刀石头布的游戏规则" title="剪刀石头布的游戏规则" />
 
 &emsp;&emsp;这个例子想必可以让读者领会为什么随机算法可能具有优势。请注意，这里的先后顺序没有变，Bob 也仍然可以预先知道 Alice 的策略。但由于策略本身是随机的，哪怕 Bob 知道“Alice 会在石头剪刀布中等概率选择一个”这件事，他也没有任何办法。
 

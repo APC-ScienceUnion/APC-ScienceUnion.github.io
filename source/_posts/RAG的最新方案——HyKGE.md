@@ -5,11 +5,11 @@ date: 2024-06-20 19:10:50
 tags: ['计算机科学','知识图谱','大型语言模型','检索增强生成','LLM','KGs','RAG','投稿作品']
 categories: '计算机科学'
 copyright_author: 'Thinker'
-cover: https://hips.hearstapps.com/hmg-prod/images/types-of-doctors-1600114658.jpg
+cover: /images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/cover-5901c3162e.jpg
 ---
 # HyKGE框架简介
 
-![论文标题](https://oss.suning.com/mbap/mbapbk/98f96338270d8fd429d38f7374d993d3.png?SDOSSAccessKeyId=42IA0GY51YZ1397N&Expires=1718884489&Signature=N03Z1P%2Bej0Yfj%2BBAFKlI%2B6P912o%3D)
+![论文标题](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-001-36cd72f936.png)
 
 > 本文基于由北京大学计算机学院Xinke Jiang、Ruizhe Zhang、Yongxin Xu、Rihong Qiu等作者共同撰写的论文《<a href="https://arxiv.org/abs/2312.15883">HyKGE: A Hypothesis Knowledge Graph Enhanced Framework for Accurate and Reliable Medical LLMs Responses</a>》。
 
@@ -36,15 +36,15 @@ HyKGE框架通过以下几个关键技术挑战的解决方案，实现了对LLM
 
 ## **用户查询的不完整性**
 HyKGE利用LLMs的零样本能力，通过生成假设性回答（Hypothetical Outputs，HO）增强图谱检索，探索性回答医学知识，并利用命名实体识别模型（NER）在KGs中寻找精准定位关键信息点，即锚点。这一过程帮助我们筛选和剔除了那些由HO分析中可能产生的不准确实体关系，避免LLMs的幻觉现象和LLMs对实体关系的错误认知而影响大模型回答。
-![图片1.png](https://oss.suning.com/mbap/mbapbk/716ff7714c4b6254c4a4060512ead680.png?SDOSSAccessKeyId=42IA0GY51YZ1397N&Expires=1718884542&Signature=DOIFnuQ3cAfQe1xLH%2BMdlGzk4xY%3D)
+![图片1.png](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-002-0640db393f.png)
 
 ## **检索知识的噪声问题**
 检索知识中含有大量噪声，过滤噪声时需要兼顾相关性和多样性。HyKGE采用HO片段重排名机制，通过分片假设性回答和用户问句，去除低密度文本，然后进行知识重排名，过滤噪声知识，保留相关且多样的检索知识。
-![图片2.png](https://oss.suning.com/mbap/mbapbk/99314cda2acb18ebf1644b611bf24ae3.png?SDOSSAccessKeyId=42IA0GY51YZ1397N&Expires=1718884538&Signature=Te0g2QoE3l4Tq6M0g0hkxuhb9Vk%3D)
+![图片2.png](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-003-23f0c48341.png)
 
 # HyKGE整体模型
 
-![图片4.png](https://oss.suning.com/mbap/mbapbk/5ab39425a1d2feba74feccb344bfe872.png?SDOSSAccessKeyId=42IA0GY51YZ1397N&Expires=1718884563&Signature=l%2BAXn3yP04HAaXXYRMiBVYYx2cE%3D)
+![图片4.png](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-004-c04ffb56e2.png)
 
 HyKGE框架的核心思想是在检索前阶段利用LLMs的**零样本**（zero-shot）能力和其丰富的知识来扩展KGs中的探索方向，并通过精心设计的**提示**（prompt）增强LLMs回答的密度和效率。具体来说，HyKGE包含以下几个关键组件：
 
@@ -79,13 +79,13 @@ HyKGE框架的核心思想是在检索前阶段利用LLMs的**零样本**（zero
 
 ## 实验结果
 
-![图片5.png](https://oss.suning.com/mbap/mbapbk/91177030410565cad3807ad22a3e8cab.png?SDOSSAccessKeyId=42IA0GY51YZ1397N&Expires=1718884942&Signature=XXPZigd6l3u25U%2BpLhbNmnFwMWg%3D)
+![图片5.png](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-005-bd19f65389.png)
 
 实验结果表明，HyKGE框架在多个评估指标上表现卓越，它不仅超越了基线模型，也优于现有的其他检索增强生成（RAG）方法。这一成就凸显了HyKGE在提供答案的**准确性**和**可解释性**方面的显著进步。通过案例研究，我们进一步观察到HyKGE在处理复杂医学问题时的一系列优势：它能够有效地生成假设性答案，对这些假设进行验证，纠正可能存在的错误，并最终提供全面且深入的回答。
 
 除此之外，作者还分析了计算效率开销。尽管HyKGE在时间开销上略高于某些方法，但其性能提升证明了额外时间成本的合理性。换句话说，HyKGE所增加的处理时间，换来的是更高的答案质量和更强的系统可靠性，这对于医学领域来说尤其重要，因为在这一领域，准确和可信的信息可以带来生死攸关的差异。
 
-![图片6.png](https://oss.suning.com/mbap/mbapbk/a5a582aae7e247de058bfdea9cc47b59.png?SDOSSAccessKeyId=42IA0GY51YZ1397N&Expires=1718884571&Signature=JYd3cn745sAtXRlAth9VilAe8nA%3D)
+![图片6.png](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-006-265bdf33ac.png)
 
 # 实际应用与未来展望
 HyKGE框架是一个为大型语言模型（LLM）设计的假设知识图谱增强框架，旨在显著增强模型在医疗领域问答任务中的准确性和可靠性。通过在三个不同的医疗问答任务上使用两种LLM-turbo模型进行的广泛实验，作者验证了HyKGE框架的有效性。实验结果令人鼓舞，显示HyKGE不仅显著提升了回答的精确度，还有效减少了模型在处理复杂医疗问题时可能遇到的不确定性。

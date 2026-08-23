@@ -4,7 +4,8 @@ block content
   include ./includes/mixins/post-ui.pug
   .layout-main
     #recent-posts.recent-posts
-      include includes/home/apc-news-box.pug
+      if page.lang !== 'en'
+        include includes/home/apc-news-box.pug
       +postUI
 
 block pagination_after_aside

@@ -19,6 +19,16 @@ menu:
   联萌新闻: /apc-news/ || fas fa-bullhorn
   关于我们: /about/ || fas fa-heart
 
+# English navigation is intentionally limited to content that has an English
+# counterpart. The language icon always remains the rightmost header item.
+menu_en:
+  Articles: /en/ || fas fa-book-open
+  Archives: /en/archives/ || fas fa-archive
+
+english_site_title: APC Science Union · Online Library
+english_site_subtitle: Popular science articles and a library of learning resources
+english_site_description: English-language popular-science articles from APC Science Union.
+
 # 联萌新闻（按 start 年份分页，/apc-news/ 为最新年份）
 apc_news: {}
 
@@ -88,18 +98,18 @@ favicon: img/icon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://yanxuan.nosdn.127.net/f6034ec77971722fca3080793ae3359f.png
+  img: /img/site/asset-0a8b73cc88.png
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN
+index_img: /img/site/asset-ed71296263.jpg
 # https://bing.ioliu.cn/v1/?w=1920&h=1200
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://yanxuan.nosdn.127.net/432fbacb591f9256c9884ed43d05ffa0.png
+default_top_img: /img/site/asset-b01097236e.png
 
 # The banner image of archive page
 archive_img:
@@ -121,18 +131,18 @@ category_img:
 # format:
 #  - category name: xxxxx
 category_per_img:
-  人文历史: https://yanxuan.nosdn.127.net/e5c6eeb0a6ea2dd9a711d592555bf6cb.png
-  生命科学: https://yanxuan.nosdn.127.net/401163c39705a35fef2510b059c8da74.png
-  地球科学: https://yanxuan.nosdn.127.net/9cb0802b8a22911d05e4161107c3fa59.png
-  天文历法: https://pic.rmb.bdstatic.com/bjh/414ea0ba8528d62b232d892168acfe93.jpeg
-  心理学: https://yanxuan.nosdn.127.net/1b99ad4cc38057f08a480c6f2d8c2d55.png
-  物理学: https://yanxuan.nosdn.127.net/478767bc7f7d00d5a8948d878055b4a4.png
-  社会经济: https://yanxuan.nosdn.127.net/e17534d8f164c2fb6ab2424c4068a42f.png
-  航空航天: https://pic.rmb.bdstatic.com/bjh/ed8c6243b317240d5790ae83a89e6419.png
-  计算机科学: https://yanxuan.nosdn.127.net/1b71722722c74013e6717c40afa39af4.png
-  数学: https://i1.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1idfhxybvnuj318g0rsase.jpg
-  联盟活动: https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ib82s7ntu8j30xc0k0k51.jpg
-  化学: https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ib82v3jm41j325s1fv1ky.jpg
+  人文历史: /img/site/asset-917a40a0c0.png
+  生命科学: /img/site/asset-286f88c3aa.png
+  地球科学: /img/site/asset-55bc473ab2.png
+  天文历法: /img/site/asset-39a1e5c458.jpg
+  心理学: /img/site/asset-fed58d8d7b.png
+  物理学: /img/site/asset-e818f3cb8b.png
+  社会经济: /img/site/asset-71e478ebb2.png
+  航空航天: /img/site/asset-7d6540ca69.png
+  计算机科学: /img/site/asset-353a686df3.png
+  数学: /img/site/asset-1d7f31c42a.jpg
+  联盟活动: /img/site/asset-c62cab9c97.jpg
+  化学: /img/site/asset-7bc683e8ce.jpg
 
 cover:
   # display the cover or not (是否顯示文章封面)
@@ -144,7 +154,7 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - https://yanxuan.nosdn.127.net/f6034ec77971722fca3080793ae3359f.png
+    - /img/site/asset-0a8b73cc88.png
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
@@ -155,7 +165,7 @@ error_img:
 error_404:
   enable: true
   subtitle: 'Page Not Found'
-  background: https://yanxuan.nosdn.127.net/05b43f8c98231f291b424cb78d46c93f.png
+  background: /img/site/asset-800fbbdce0.png
 
 post_meta:
   page: # Home Page
@@ -212,7 +222,7 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: https://yanxuan.nosdn.127.net/f1a9eb5f52d07d5772ed06000cd03394.png
+    - img: /img/site/asset-e1f098c844.png
       link: https://afdian.net/@apc-library
       text: 爱发电(点击图片跳转)
 
@@ -417,6 +427,7 @@ footer:
     enable: true
     since: 2016
   custom_text: 格物社 · 在线电子图书馆
+  custom_text_en: APC Science Union · Online Library
   copyright: false # Copyright of theme and framework
 
 # Analysis
@@ -506,7 +517,7 @@ tag_ui: index# 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: 'url(https://yanxuan.nosdn.127.net/ab8e7fb9a56a076169745cbce3dcd56e.png)'
+background: 'url(/img/site/asset-5af1e4fdc8.png)'
 
 # Footer Background
 footer_bg: true
@@ -623,6 +634,8 @@ subtitle:
   # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
   sub: 
       - 在知识的海洋中寻找属于自己的岛屿
+  sub_en:
+      - Find an island of your own in the ocean of knowledge
 
 # 首頁標題下方分類橫條
 home_category_bar:

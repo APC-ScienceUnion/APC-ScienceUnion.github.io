@@ -3,7 +3,7 @@ tags: ['计算机科学','GAN','对抗学习','NF','VAE','变分自编码器','�
 title: 变分推断与生成模型
 date: '2022-08-13 18:06:01'
 categories: '计算机科学'
-cover: https://yanxuan.nosdn.127.net/690ea921fa343b9d40c9bbc3e95f8cc3.png
+cover: /images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/cover-a05312cd2a.png
 copyright_author: 'Thinker'
 katex: true
 ---
@@ -51,7 +51,7 @@ VAE是想要上面求解的$ELBO$​​尽可能地大，它提出了SGVB和重�
 
 VAE的网络架构图如下所示：
 
-<img src="https://yanxuan.nosdn.127.net/4eb4b7ba0ca6d984ca1344da0f43e942.png" style="zoom:50%;" />
+<img src="/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-001-c11cf20380.png" style="zoom:50%;" />
 
 简单来说，它是输入real data $x$，通过一个生成网络$h,g$生成想要得到的$\mu_x,\sigma_x$：
 $$
@@ -95,7 +95,7 @@ $$
 
 GAN是一个生成器G--generator网络和一个判别器D-discriminator网络构成的：
 
-<img src="https://yanxuan.nosdn.127.net/690ea921fa343b9d40c9bbc3e95f8cc3.png" style="zoom:50%;" />
+<img src="/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/cover-a05312cd2a.png" style="zoom:50%;" />
 
 GAN可以认为是使用的是交叉熵的公式来判别分布的相似的：
 $$
@@ -105,11 +105,11 @@ $$
 
 discriminator就只说：对，错。就是一个二分类网络。
 
-假定 ![[公式]](https://www.zhihu.com/equation?tex=y_1) 为正确样本分布，那么对应的（ ![[公式]](https://www.zhihu.com/equation?tex=1+-+y_1) ）就是生成样本的分布。 ![[公式]](https://www.zhihu.com/equation?tex=D) 表示判别器，则 ![[公式]](https://www.zhihu.com/equation?tex=D%28x_1%29) 表示判别样本为正确的概率， ![[公式]](https://www.zhihu.com/equation?tex=%EF%BC%881+-+D%28x_1%29%29) 则对应着判别为错误样本的概率。
+假定 ![[公式]](/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-002-3c2fdd5f0a.svg) 为正确样本分布，那么对应的（ ![[公式]](/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-003-179a49bad1.svg) ）就是生成样本的分布。 ![[公式]](/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-004-f19010f0cb.svg) 表示判别器，则 ![[公式]](/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-005-e9c9eeb208.svg) 表示判别样本为正确的概率， ![[公式]](/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-006-6683672c42.svg) 则对应着判别为错误样本的概率。
 
 因此用交叉熵来实现它就是：
 
-![img](https://pic4.zhimg.com/80/v2-a69772e79f153fd05748d4d1f4b0caef_1440w.jpg)
+![img](/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-007-8dac80dda0.png)
 
 这里设生成器生成的样本$\hat{x}$~$G(z)$，$z$是服从于投入生成器中的噪声的分布。$x$​是真实的样本点。
 
@@ -163,15 +163,15 @@ G^* =argmax_G \sum_{i=1}^m \log P_G	(x^i)
 $$
 这里有几个数学公式：**线性变换之后的体积**等于**转换矩阵的行列式**
 
-![[公式]](https://www.zhihu.com/equation?tex=y%3Df%28x%29%5C%5C+p%28y%29%3Dp%28f%5E%7B-1%7D%28y%29%29+%5Ccdot+%5Cleft%7C+%5Cdet%28J+%28f%5E%7B-1%7D%28x%29%29%29+%5Cright%7C+%5C%5C+%5Clog+p%28y%29%3D%5Clog+p%28f%5E%7B-1%7D%28y%29%29+%2B+%5Clog+%5Cleft%7C+%5Cdet%28J+%28f%5E%7B-1%7D%28x%29%29%29+%5Cright%7C+)
+![[公式]](/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-008-df2423aa51.svg)
 
-也就是说，行列式可以被认为是变换 ![[公式]](https://www.zhihu.com/equation?tex=y%3Df%28x%29) 的**局部线性体积变化率**
+也就是说，行列式可以被认为是变换 ![[公式]](/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-009-910c778dd4.svg) 的**局部线性体积变化率**
 
 **NF的输入与输出的size必须相同**，这是与其他俩个不一样的，因为其他几个都是可以随意输入的。
 
 然后假设它是一系列的Flow网络组成
 
-<img src="https://yanxuan.nosdn.127.net/9285896772cfd53daf0198d127c0ed11.png" style="zoom:50%;" />
+<img src="/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-010-3f07e23844.png" style="zoom:50%;" />
 
 因此对原网络进行修改：
 $$
@@ -185,7 +185,7 @@ $$
 
 **1. Coupling Layer**: -- > 用在NICE 和 Real NVP里面的
 
-<img src="https://yanxuan.nosdn.127.net/daf504484d6d28bb2190c83603860ba1.png" style="zoom:40%;" />
+<img src="/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-011-6b46afc9f2.png" style="zoom:40%;" />
 
 它让前**1：d**的直接从z->x，而后边的**d+1:D**的就要通过前边的数据经过F和H网络求解$\beta_{d+1:D}$和$\gamma_{d+1:D}$，经过线性叠加：
 $$
@@ -193,7 +193,7 @@ x_{d+1:D} = \beta_{d+1:D} \times z_{d+1:D}  + \gamma_{d+1:D}
 $$
 而经过coupling layer后的贾克比矩阵就称为了一个三角矩阵：
 
-​													`<img src="https://gitee.com/thinker-jiang/markdown_pic/raw/master/markdown/20211024211939.png" style="zoom:50%;" />
+​													`<img src="/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-012-b6ee1f3571.png" style="zoom:50%;" />
 
 因为上面的是直接copy过去的，就是1：1；而右下角的对角线上的值（D>i>d+1）就是$\beta_i$值
 
@@ -205,7 +205,7 @@ $$
 
 因此必须要交错的去处理它，每一个网络随机选取d项，且d的大小也需要不一样，这样stacking起来后才会有效果。
 
-<img src="https://yanxuan.nosdn.127.net/27cc85c539216ea3bde0a311946d7bca.png" style="zoom:50%;" />
+<img src="/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-013-7ceeea5a3b.png" style="zoom:50%;" />
 
 
 
@@ -215,7 +215,7 @@ $$
 
 假设是在处理图像，因此是有3个channels的，RGB三个通道嘛。用到的一维卷积就是一个3x3的矩阵$W$:
 
-![](https://gitee.com/thinker-jiang/markdown_pic/raw/master/markdown/20211024212852.png)
+![](/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-014-9feae554c5.png)
 
 通过一维卷积后，size是不会发生变化的，而这个$W$矩阵其实就是$det(J_G)$:
 $$
@@ -236,7 +236,7 @@ $$
 
 只要W是好求解的，那么结果也就很好求解：
 
-<img src="https://yanxuan.nosdn.127.net/5730eab1fc07ca30294728bd9a46616e.png" style="zoom:50%;" />
+<img src="/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-015-d0b9e0319d.png" style="zoom:50%;" />
 
 因此结果就是，对角线上的W矩阵相乘：
 $$

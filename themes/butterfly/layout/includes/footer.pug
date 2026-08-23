@@ -13,5 +13,6 @@
       span.footer-separator |
       span= _p('footer.theme') + ' '
       a(href='https://github.com/jerryc127/hexo-theme-butterfly')= 'Butterfly'
-  if theme.footer.custom_text
-    .footer_custom_text!=`${theme.footer.custom_text}`
+  - const localizedFooterText = page.lang === 'en' && theme.footer.custom_text_en ? theme.footer.custom_text_en : theme.footer.custom_text
+  if localizedFooterText
+    .footer_custom_text!=`${localizedFooterText}`
