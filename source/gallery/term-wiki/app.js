@@ -70,8 +70,9 @@
       const textValue = Array.isArray(section.text || section.content)
         ? uniqueTexts(section.text || section.content).join('\n')
         : asText(section.text || section.content)
+      const hasExplicitTitle = Object.prototype.hasOwnProperty.call(section, 'title') || Object.prototype.hasOwnProperty.call(section, 'heading')
       return {
-        title: asText(section.title || section.heading, `要点 ${index + 1}`),
+        title: hasExplicitTitle ? asText(section.title || section.heading) : `要点 ${index + 1}`,
         text: textValue
       }
     }).filter(section => section && (section.title || section.text))
@@ -108,7 +109,7 @@
         images: cardAssetBase && /^[A-Za-z0-9][A-Za-z0-9-]*$/.test(id)
           ? [1, 2].map(page => ({
               src: `${cardAssetBase}/${id}-${String(page).padStart(2, '0')}.png`,
-              alt: `${name}词卡第 ${page} 页`
+              alt: `${name}，第 ${page} 页`
             }))
           : []
       }
@@ -295,16 +296,14 @@
             <span class="term-wiki__page-status" aria-live="polite"></span>
           </div>
           <div class="term-wiki__modal-actions">
-            <button type="button" class="term-wiki__zoom" data-action="toggle-image-zoom" aria-pressed="false">放大 2×</button>
-            <button type="button" class="term-wiki__copy" data-action="copy-link">复制链接</button>
             <button type="button" class="term-wiki__modal-close" data-action="close-detail" aria-label="关闭词卡">×</button>
           </div>
         </header>
         <div class="term-wiki__viewer">
           <button type="button" class="term-wiki__page-button term-wiki__page-button--previous" data-action="previous-card-page" aria-label="查看上一页词卡"><span aria-hidden="true">‹</span></button>
           <figure class="term-wiki__figure">
-            <div class="term-wiki__image-frame is-loading">
-              <img class="term-wiki__card-image" alt="" decoding="async">
+            <div class="term-wiki__image-frame is-loading" data-action="toggle-image-zoom">
+              <img class="term-wiki__card-image" alt="" decoding="async" draggable="false" role="button" tabindex="0" data-action="toggle-image-zoom">
               <p class="term-wiki__image-loading">正在载入原卡……</p>
               <p class="term-wiki__image-error" role="alert" hidden>图片暂时无法载入。你仍可展开下方的文字版内容。</p>
             </div>
@@ -312,8 +311,8 @@
           </figure>
           <button type="button" class="term-wiki__page-button term-wiki__page-button--next" data-action="next-card-page" aria-label="查看下一页词卡"><span aria-hidden="true">›</span></button>
         </div>
-        <details class="term-wiki__transcript">
-          <summary>查看文字版内容</summary>
+        <details class="term-wiki__transcript" open>
+          <summary>文字版内容</summary>
           <div class="term-wiki__detail"></div>
         </details>
         <nav class="term-wiki__detail-nav" aria-label="前后词条">
@@ -342,8 +341,6 @@
       modal: root.querySelector('.term-wiki__modal'),
       modalTitle: root.querySelector('#term-wiki-modal-title'),
       modalClose: root.querySelector('.term-wiki__modal-close'),
-      zoom: root.querySelector('.term-wiki__zoom'),
-      copy: root.querySelector('[data-action="copy-link"]'),
       pageStatus: root.querySelector('.term-wiki__page-status'),
       previousPage: root.querySelector('[data-action="previous-card-page"]'),
       nextPage: root.querySelector('[data-action="next-card-page"]'),
@@ -369,6 +366,8 @@
       activeId: '',
       activePage: 0,
       imageZoomed: false,
+      suppressImageClick: false,
+      pointerStartedOnImage: false,
       restoreFocusTo: null,
       modalFocusTimer: null,
       treeCollapsed: false,
@@ -376,11 +375,19 @@
       internalHashSession: false
     }
 
+    const swipe = {
+      pointerId: null,
+      startX: 0,
+      startY: 0,
+      currentX: 0,
+      currentY: 0
+    }
+
     const previousPortal = document.querySelector('.term-wiki__portal')
     if (previousPortal) previousPortal.remove()
     const overlayPortal = createElement('div', 'term-wiki term-wiki__portal')
     overlayPortal.dataset.subject = subject
-    overlayPortal.append(elements.backdrop, elements.modal)
+    overlayPortal.append(elements.backdrop, elements.modal, elements.live)
     document.body.appendChild(overlayPortal)
     elements.modal.inert = true
     const pageShell = document.getElementById('body-wrap')
@@ -575,11 +582,11 @@
       elements.imageFrame.classList.remove('is-zoomed')
       elements.cardImage.style.removeProperty('--tw-zoom-width')
       elements.cardImage.style.removeProperty('--tw-zoom-height')
-      elements.zoom.setAttribute('aria-pressed', 'false')
-      elements.zoom.textContent = '放大 2×'
+      elements.cardImage.setAttribute('aria-pressed', 'false')
+      elements.cardImage.setAttribute('aria-label', image ? `点击放大${item.name}第 ${page + 1} 页` : `${item.name}暂无图像`)
 
       elements.pageStatus.textContent = total ? `第 ${page + 1} / ${total} 页` : '暂无原卡图像'
-      elements.imageCaption.textContent = total ? `${item.name}原卡视觉版 · 第 ${page + 1} / ${total} 页` : ''
+      elements.imageCaption.textContent = total ? item.name : ''
       elements.previousPage.disabled = page <= 0
       elements.nextPage.disabled = page >= total - 1
       elements.imageError.hidden = true
@@ -587,7 +594,6 @@
       elements.imageFrame.classList.add('is-loading')
       elements.cardImage.removeAttribute('src')
       elements.cardImage.alt = image ? image.alt : ''
-      elements.zoom.disabled = !image
       delete elements.cardImage.dataset.source
 
       if (!image) {
@@ -601,7 +607,6 @@
       elements.cardImage.onload = () => {
         if (elements.cardImage.dataset.source !== image.src) return
         elements.imageFrame.classList.remove('is-loading')
-        elements.zoom.disabled = false
         const nextImage = item.images[page + 1]
         if (nextImage) {
           const preload = new Image()
@@ -613,7 +618,6 @@
         elements.imageFrame.classList.remove('is-loading')
         elements.imageFrame.classList.add('is-error')
         elements.imageError.hidden = false
-        elements.zoom.disabled = true
       }
       elements.cardImage.src = image.src
     }
@@ -621,45 +625,17 @@
     function renderDetail (item) {
       elements.detail.replaceChildren()
       elements.modalTitle.textContent = item.name
-      elements.transcript.open = false
+      elements.transcript.open = true
       state.activePage = 0
 
-      const header = createElement('header', 'term-wiki__detail-header')
-      const tags = createElement('div', 'term-wiki__detail-tags')
-      tags.appendChild(createElement('span', '', item.categoryName))
-      if (item.volume) tags.appendChild(createElement('span', '', item.volume))
-      header.appendChild(tags)
-
-      const title = createElement('h3', '', item.name)
-      header.appendChild(title)
-
-      if (item.en) {
-        const english = createElement('p', 'term-wiki__detail-en', item.en)
-        english.lang = 'en'
-        header.appendChild(english)
-      }
-      if (item.summary) header.appendChild(createElement('p', 'term-wiki__detail-summary', item.summary))
-      elements.detail.appendChild(header)
-
-      appendDefinitionList(elements.detail, item.meta)
-
-      if (item.keywords.length) {
-        const keywordSection = createElement('section', 'term-wiki__keyword-section')
-        keywordSection.appendChild(createElement('h3', '', '关联关键词'))
-        const keywordList = createElement('ul', 'term-wiki__keywords')
-        item.keywords.forEach(keyword => {
-          const listItem = document.createElement('li')
-          listItem.textContent = keyword
-          keywordList.appendChild(listItem)
-        })
-        keywordSection.appendChild(keywordList)
-        elements.detail.appendChild(keywordSection)
+      if (item.summary) {
+        elements.detail.appendChild(createElement('p', 'term-wiki__transcript-intro', item.summary))
       }
 
       item.sections.forEach(section => {
         const sectionElement = createElement('section', 'term-wiki__section')
         const sectionBody = createElement('div', 'term-wiki__section-body')
-        sectionBody.appendChild(createElement('h3', '', section.title))
+        if (section.title) sectionBody.appendChild(createElement('h3', '', section.title))
         if (section.text) sectionBody.appendChild(createElement('p', '', section.text))
         sectionElement.appendChild(sectionBody)
         elements.detail.appendChild(sectionElement)
@@ -683,6 +659,7 @@
       previousName.textContent = previousItem ? previousItem.name : '已经是第一条'
       nextName.textContent = nextItem ? nextItem.name : '已经是最后一条'
       elements.detail.scrollTop = 0
+      elements.modal.scrollTop = 0
       renderCardPage(item)
     }
 
@@ -773,44 +750,6 @@
       state.internalHashSession = false
     }
 
-    async function copyActiveLink () {
-      if (!state.activeId) return
-      const link = buildTermUrl(state.activeId).href
-      let copied = false
-
-      if (navigator.clipboard && window.isSecureContext) {
-        try {
-          await navigator.clipboard.writeText(link)
-          copied = true
-        } catch (error) {
-          copied = false
-        }
-      }
-
-      if (!copied) {
-        const helper = document.createElement('textarea')
-        helper.value = link
-        helper.setAttribute('readonly', '')
-        helper.className = 'term-wiki__copy-helper'
-        document.body.appendChild(helper)
-        helper.select()
-        try {
-          copied = document.execCommand('copy')
-        } catch (error) {
-          copied = false
-        }
-        helper.remove()
-      }
-
-      announce(copied ? '词条链接已复制' : '复制失败，请从地址栏复制当前链接')
-      const copyButton = elements.copy
-      if (copyButton) {
-        const originalText = copyButton.textContent
-        copyButton.textContent = copied ? '已复制' : '请手动复制'
-        window.setTimeout(() => { copyButton.textContent = originalText }, 1600)
-      }
-    }
-
     function toggleTree () {
       state.treeCollapsed = !state.treeCollapsed
       root.classList.toggle('is-tree-collapsed', state.treeCollapsed)
@@ -862,10 +801,33 @@
       }
       state.imageZoomed = willZoom
       elements.imageFrame.classList.toggle('is-zoomed', willZoom)
-      elements.zoom.setAttribute('aria-pressed', String(state.imageZoomed))
-      elements.zoom.textContent = state.imageZoomed ? '还原大小' : '放大 2×'
+      elements.cardImage.setAttribute('aria-pressed', String(state.imageZoomed))
+      elements.cardImage.setAttribute('aria-label', `${willZoom ? '点击还原' : '点击放大'}${itemsById.get(state.activeId)?.name || '词卡'}第 ${state.activePage + 1} 页`)
       elements.imageFrame.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-      announce(state.imageZoomed ? '词卡图像已放大两倍，可滚动查看' : '词卡图像已恢复适合窗口大小')
+      announce(state.imageZoomed ? '词卡图像已放大，可滚动查看' : '词卡图像已恢复适合窗口大小')
+    }
+
+    function resetSwipe () {
+      swipe.pointerId = null
+      elements.imageFrame.classList.remove('is-swiping')
+    }
+
+    function finishSwipe (event) {
+      if (swipe.pointerId !== event.pointerId) return
+      swipe.currentX = event.clientX
+      swipe.currentY = event.clientY
+      const deltaX = swipe.currentX - swipe.startX
+      const deltaY = swipe.currentY - swipe.startY
+      const threshold = Math.min(84, Math.max(48, elements.imageFrame.clientWidth * 0.14))
+      const moved = Math.hypot(deltaX, deltaY) >= 8
+      const changedPage = !state.imageZoomed && Math.abs(deltaX) >= threshold && Math.abs(deltaX) > Math.abs(deltaY) * 1.15
+      resetSwipe()
+      if (moved) state.suppressImageClick = true
+      if (changedPage) moveCardPage(deltaX > 0 ? 'previous' : 'next')
+      window.setTimeout(() => {
+        state.suppressImageClick = false
+        state.pointerStartedOnImage = false
+      }, 0)
     }
 
     function handleWikiClick (event) {
@@ -901,9 +863,6 @@
         case 'close-detail':
           hideModal()
           break
-        case 'copy-link':
-          copyActiveLink()
-          break
         case 'previous-term':
           moveDetail('previous')
           break
@@ -917,6 +876,8 @@
           moveCardPage('next')
           break
         case 'toggle-image-zoom':
+          if (state.suppressImageClick) break
+          if (!state.imageZoomed && target === elements.imageFrame && !state.pointerStartedOnImage) break
           toggleImageZoom()
           break
       }
@@ -924,6 +885,37 @@
 
     root.addEventListener('click', handleWikiClick)
     overlayPortal.addEventListener('click', handleWikiClick)
+
+    elements.imageFrame.addEventListener('pointerdown', event => {
+      if (state.imageZoomed || !state.activeId || event.button !== 0) return
+      state.pointerStartedOnImage = event.target === elements.cardImage
+      swipe.pointerId = event.pointerId
+      swipe.startX = swipe.currentX = event.clientX
+      swipe.startY = swipe.currentY = event.clientY
+      elements.imageFrame.classList.add('is-swiping')
+      try {
+        elements.imageFrame.setPointerCapture?.(event.pointerId)
+      } catch (error) {
+        // Synthetic events and older WebViews may not expose an active pointer capture.
+      }
+    })
+    elements.imageFrame.addEventListener('pointermove', event => {
+      if (swipe.pointerId !== event.pointerId) return
+      swipe.currentX = event.clientX
+      swipe.currentY = event.clientY
+      if (Math.abs(swipe.currentX - swipe.startX) > Math.abs(swipe.currentY - swipe.startY)) event.preventDefault()
+    })
+    elements.imageFrame.addEventListener('pointerup', finishSwipe)
+    elements.imageFrame.addEventListener('pointercancel', () => {
+      resetSwipe()
+      state.pointerStartedOnImage = false
+    })
+    elements.cardImage.addEventListener('dragstart', event => event.preventDefault())
+    elements.cardImage.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return
+      event.preventDefault()
+      toggleImageZoom()
+    })
 
     elements.search.addEventListener('input', event => {
       state.query = event.target.value.trim()

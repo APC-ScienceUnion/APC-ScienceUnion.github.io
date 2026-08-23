@@ -1,6 +1,7 @@
 'use strict'
 
 const assert = require('node:assert/strict')
+const crypto = require('node:crypto')
 const fs = require('node:fs')
 const path = require('node:path')
 const vm = require('node:vm')
@@ -37,9 +38,8 @@ function validateWiki (relativePath, expected) {
     assert.ok(categoryIds.has(item.category), `unknown category: ${item.category}`)
     assert.ok(item.name)
     assert.ok(item.en)
-    assert.ok(item.summary.length >= 16)
     assert.ok(Array.isArray(item.sections) && item.sections.length >= 2)
-    assert.ok(item.sections.every(section => section.title && section.text.length >= 16))
+    assert.ok(item.sections.every(section => typeof section.title === 'string' && typeof section.text === 'string' && section.text.trim().length > 0))
   }
 
   assert.doesNotMatch(source, /canva\.com\/design\//i)
@@ -85,12 +85,25 @@ const chemistry = validateWiki('source/gallery/ChemistryCard/data.js', {
   subject: 'chemistry', folder: 'ChemistryCard', items: 8, categories: 3
 })
 
+function transcriptDigest (wiki) {
+  const transcript = wiki.items.map(({ id, name, en, volume, summary, sections }) => ({
+    id, name, en, volume, summary, sections
+  }))
+  return crypto.createHash('sha256').update(JSON.stringify(transcript)).digest('hex')
+}
+
+// These digests lock the image-verified transcripts so later summary edits cannot silently
+// replace the wording printed on the original cards.
+assert.equal(transcriptDigest(geography), '8b819cf9ab2fe5f4375e2561220b0bcd4023513fdbce7683e83dcfad297ce4e6')
+assert.equal(transcriptDigest(chemistry), '7e2b6badda013cdcbd7b282960949cdf5d06617694116ce0816e1d3b5134c851')
+assert.equal(geography.items.some(item => item.sections.some(section => /^(图片说明|图片来源|图示标注)$/.test(section.title))), false)
+
 assert.equal(geography.items.filter(item => item.category === 'atmosphere').length, 7)
 assert.equal(geography.items.filter(item => item.category === 'hydrology').length, 7)
 assert.equal(geography.items.filter(item => item.category === 'geology').length, 9)
 assert.equal(geography.items.filter(item => item.category === 'earth-space').length, 2)
 assert.deepEqual(Array.from(chemistry.items, item => item.name), [
-  '氢', '质子酸碱', '氢键', '碱金属', '锂', '钠', '钾', '铷、铯、钫'
+  '氢', '质子酸碱', '氢键', '碱金属', '锂', '钠', '钾', '铷，铯，钫'
 ])
 
 for (const [folder, subject] of [['GeographyCard', 'geography'], ['ChemistryCard', 'chemistry']]) {
@@ -117,11 +130,23 @@ assert.match(sharedApp, /term-wiki__card-arrow', '→'/)
 assert.match(sharedApp, /previous-card-page/)
 assert.match(sharedApp, /next-card-page/)
 assert.match(sharedApp, /toggle-image-zoom/)
+assert.match(sharedApp, /term-wiki__image-frame is-loading" data-action="toggle-image-zoom"/)
 assert.match(sharedApp, /--tw-zoom-width/)
 assert.match(sharedApp, /fittedRect\.width \* 2/)
+assert.match(sharedApp, /pointerdown/)
+assert.match(sharedApp, /pointermove/)
+assert.match(sharedApp, /finishSwipe/)
+assert.match(sharedApp, /swipe\.currentX = event\.clientX/)
+assert.match(sharedApp, /Math\.hypot\(deltaX, deltaY\) >= 8/)
+assert.match(sharedApp, /!state\.imageZoomed && target === elements\.imageFrame && !state\.pointerStartedOnImage/)
+assert.match(sharedApp, /overlayPortal\.append\(elements\.backdrop, elements\.modal, elements\.live\)/)
 assert.match(sharedApp, /pageShell\.inert = true/)
 assert.match(sharedApp, /focusModalAfterOpen/)
-assert.match(sharedApp, /查看文字版内容/)
+assert.match(sharedApp, /<details class="term-wiki__transcript" open>/)
+assert.match(sharedApp, /<summary>文字版内容<\/summary>/)
+assert.doesNotMatch(sharedApp, /复制链接|copyActiveLink|data-action="copy-link"/)
+assert.doesNotMatch(sharedApp, /放大 2×|还原大小/)
+assert.doesNotMatch(sharedApp, /原卡视觉版/)
 assert.match(sharedApp, /\.png`/)
 assert.doesNotMatch(sharedApp, /\.webp/)
 assert.doesNotMatch(sharedApp, /term-wiki__drawer/)
@@ -147,7 +172,7 @@ assert.match(wikiLayout, /include \.\/includes\/header\/index\.pug/)
 assert.match(wikiLayout, /#term-wiki\(data-term-wiki-root/)
 assert.match(wikiLayout, /gallery\/term-wiki\/styles\.css/)
 assert.match(wikiLayout, /gallery\/term-wiki\/app\.js/)
-assert.match(wikiLayout, /term-gallery-20260824-1/)
+assert.match(wikiLayout, /term-gallery-20260824-3/)
 assert.match(wikiLayout, /page\.term_wiki_data\) \+ '\?v='/)
 assert.doesNotMatch(wikiLayout, /#page|term-wiki-credit|includes\/footer/)
 
