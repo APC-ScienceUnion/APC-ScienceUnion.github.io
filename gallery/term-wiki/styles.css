@@ -1,0 +1,1553 @@
+.term-wiki-page {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: #17211f;
+  background: #f3f5ef;
+  font-family: "Noto Sans SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.term-wiki-page[data-subject="chemistry"] {
+  color: #171d30;
+  background: #f2f3f8;
+}
+
+.term-wiki-page,
+.term-wiki-page * {
+  box-sizing: border-box;
+}
+
+.wiki-skip-link {
+  position: fixed;
+  z-index: 13000;
+  top: 10px;
+  left: 14px;
+  padding: 8px 13px;
+  border-radius: 8px;
+  color: #fff;
+  background: #173f3c;
+  font-size: 0.82rem;
+  text-decoration: none;
+  transform: translateY(-150%);
+  transition: transform 160ms ease;
+}
+
+.wiki-skip-link:focus {
+  transform: translateY(0);
+}
+
+.wiki-sitebar {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1480px, calc(100% - 40px));
+  min-height: 72px;
+  margin: 0 auto;
+}
+
+.wiki-brand {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+.wiki-brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(38, 115, 93, 0.28);
+  border-radius: 50%;
+  color: #26735d;
+  background: rgba(255, 255, 255, 0.58);
+  font-size: 0.67rem;
+  letter-spacing: 0.08em;
+}
+
+.term-wiki-page[data-subject="chemistry"] .wiki-brand-mark {
+  border-color: rgba(61, 87, 166, 0.28);
+  color: #3d57a6;
+}
+
+.wiki-sitebar-nav {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.wiki-sitebar-nav a {
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #66716e;
+  font-size: 0.76rem;
+  text-decoration: none;
+}
+
+.term-wiki-page[data-subject="chemistry"] .wiki-sitebar-nav a {
+  color: #676d81;
+}
+
+.wiki-sitebar-nav a:hover,
+.wiki-sitebar-nav a[aria-current="page"] {
+  color: #174c3f;
+  background: rgba(38, 115, 93, 0.1);
+}
+
+.term-wiki-page[data-subject="chemistry"] .wiki-sitebar-nav a:hover,
+.term-wiki-page[data-subject="chemistry"] .wiki-sitebar-nav a[aria-current="page"] {
+  color: #263a7b;
+  background: rgba(61, 87, 166, 0.1);
+}
+
+.term-wiki-page > .term-wiki {
+  width: min(1480px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.wiki-footer {
+  display: flex;
+  gap: 16px 32px;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1480px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 24px 0 36px;
+  border-top: 1px solid rgba(30, 55, 49, 0.14);
+  color: #66716e;
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+
+.term-wiki-page[data-subject="chemistry"] .wiki-footer {
+  border-color: rgba(44, 55, 104, 0.14);
+  color: #676d81;
+}
+
+.wiki-footer p {
+  margin: 0;
+}
+
+.wiki-noscript {
+  width: min(1480px, calc(100% - 40px));
+  margin: 0 auto 24px;
+  padding: 14px 17px;
+  border: 1px solid #b67745;
+  border-radius: 10px;
+  color: #74401f;
+  background: #fff7e9;
+  font-size: 0.82rem;
+}
+
+.term-wiki {
+  --tw-accent: #26735d;
+  --tw-accent-strong: #174c3f;
+  --tw-accent-soft: rgba(38, 115, 93, 0.12);
+  --tw-secondary: #9a6338;
+  --tw-ink: #17211f;
+  --tw-muted: #66716e;
+  --tw-line: rgba(30, 55, 49, 0.14);
+  --tw-surface: rgba(255, 255, 252, 0.92);
+  --tw-surface-solid: #fffefb;
+  --tw-canvas: #f3f5ef;
+  --tw-shadow: 0 18px 50px rgba(31, 53, 47, 0.1);
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 68vh;
+  color: var(--tw-ink);
+  font-family: "Noto Sans SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+}
+
+.term-wiki[data-subject="chemistry"] {
+  --tw-accent: #3d57a6;
+  --tw-accent-strong: #263a7b;
+  --tw-accent-soft: rgba(61, 87, 166, 0.12);
+  --tw-secondary: #aa4e78;
+  --tw-ink: #171d30;
+  --tw-muted: #676d81;
+  --tw-line: rgba(44, 55, 104, 0.14);
+  --tw-canvas: #f2f3f8;
+  --tw-shadow: 0 18px 50px rgba(37, 48, 96, 0.11);
+}
+
+.term-wiki,
+.term-wiki * {
+  box-sizing: border-box;
+}
+
+.term-wiki button,
+.term-wiki input {
+  font: inherit;
+}
+
+.term-wiki button {
+  color: inherit;
+}
+
+.term-wiki :where(h1, h2, h3, p, dl, dd, ul) {
+  margin: 0;
+}
+
+.term-wiki :where(ul) {
+  padding: 0;
+  list-style: none;
+}
+
+.term-wiki [hidden] {
+  display: none !important;
+}
+
+.term-wiki__sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.term-wiki__copy-helper {
+  position: fixed;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.term-wiki__ambient {
+  position: absolute;
+  z-index: -1;
+  inset: -24px;
+  overflow: hidden;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 8% 10%, var(--tw-accent-soft), transparent 30%),
+    radial-gradient(circle at 92% 28%, rgba(154, 99, 56, 0.1), transparent 26%),
+    var(--tw-canvas);
+}
+
+.term-wiki[data-subject="chemistry"] .term-wiki__ambient {
+  background:
+    radial-gradient(circle at 12% 12%, var(--tw-accent-soft), transparent 30%),
+    radial-gradient(circle at 88% 25%, rgba(170, 78, 120, 0.1), transparent 28%),
+    var(--tw-canvas);
+}
+
+.term-wiki__hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 410px);
+  gap: 32px;
+  align-items: end;
+  overflow: hidden;
+  min-height: 250px;
+  padding: clamp(30px, 5vw, 64px);
+  border: 1px solid var(--tw-line);
+  border-radius: 28px;
+  background: var(--tw-surface);
+  box-shadow: var(--tw-shadow);
+}
+
+.term-wiki__hero::before,
+.term-wiki__hero::after {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.term-wiki__hero::before {
+  right: -70px;
+  top: -105px;
+  width: 330px;
+  height: 330px;
+  border: 1px solid var(--tw-line);
+  border-radius: 46% 54% 61% 39% / 45% 39% 61% 55%;
+  box-shadow:
+    0 0 0 22px rgba(38, 115, 93, 0.035),
+    0 0 0 48px rgba(38, 115, 93, 0.025),
+    0 0 0 76px rgba(38, 115, 93, 0.018);
+  transform: rotate(18deg);
+}
+
+.term-wiki__hero::after {
+  right: 9%;
+  bottom: -58px;
+  width: 260px;
+  height: 130px;
+  border: solid var(--tw-secondary);
+  border-width: 1px 0 0;
+  border-radius: 50%;
+  opacity: 0.2;
+  transform: rotate(-12deg);
+}
+
+.term-wiki[data-subject="chemistry"] .term-wiki__hero::before {
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 20px rgba(61, 87, 166, 0.035),
+    0 0 0 50px rgba(61, 87, 166, 0.025),
+    0 0 0 84px rgba(61, 87, 166, 0.018);
+  transform: rotate(-24deg) scaleY(0.55);
+}
+
+.term-wiki[data-subject="chemistry"] .term-wiki__hero::after {
+  right: 7%;
+  bottom: -70px;
+  width: 300px;
+  height: 180px;
+  border: 0;
+  border-radius: 0;
+  background-image:
+    linear-gradient(var(--tw-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--tw-line) 1px, transparent 1px);
+  background-size: 30px 30px;
+  transform: perspective(240px) rotateX(58deg) rotateZ(-6deg);
+}
+
+.term-wiki__intro,
+.term-wiki__search {
+  position: relative;
+  z-index: 1;
+}
+
+.term-wiki__eyebrow {
+  margin-bottom: 14px !important;
+  color: var(--tw-accent);
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.19em;
+}
+
+.term-wiki__title {
+  margin: 0 !important;
+  max-width: 780px;
+  color: var(--tw-ink) !important;
+  font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+  font-size: clamp(2rem, 5vw, 4.25rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.045em;
+  line-height: 1.08 !important;
+}
+
+.term-wiki__subtitle {
+  max-width: 680px;
+  margin-top: 16px !important;
+  color: var(--tw-muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+}
+
+.term-wiki__search {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 56px;
+  padding: 8px 10px 8px 17px;
+  border: 1px solid var(--tw-line);
+  border-radius: 18px;
+  background: var(--tw-surface-solid);
+  box-shadow: 0 12px 34px rgba(31, 53, 47, 0.08);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.term-wiki__search:focus-within {
+  border-color: var(--tw-accent);
+  box-shadow: 0 0 0 4px var(--tw-accent-soft), 0 14px 34px rgba(31, 53, 47, 0.09);
+  transform: translateY(-1px);
+}
+
+.term-wiki__search-icon {
+  color: var(--tw-accent);
+  font-size: 1.5rem;
+  line-height: 1;
+  transform: rotate(-18deg);
+}
+
+.term-wiki__search input {
+  width: 100%;
+  min-width: 0;
+  padding: 4px 0;
+  border: 0 !important;
+  outline: 0 !important;
+  color: var(--tw-ink);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.term-wiki__search input::placeholder {
+  color: color-mix(in srgb, var(--tw-muted) 78%, transparent);
+}
+
+.term-wiki__search kbd {
+  min-width: 27px;
+  padding: 2px 7px;
+  border: 1px solid var(--tw-line);
+  border-bottom-width: 2px;
+  border-radius: 7px;
+  color: var(--tw-muted);
+  background: var(--tw-canvas);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.term-wiki__search-clear {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: var(--tw-muted) !important;
+  background: transparent;
+  cursor: pointer;
+}
+
+.term-wiki__search-clear:hover {
+  color: var(--tw-ink) !important;
+  background: var(--tw-accent-soft);
+}
+
+.term-wiki__layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 262px) minmax(0, 1fr);
+  gap: clamp(22px, 3vw, 38px);
+  align-items: start;
+  padding: clamp(28px, 4vw, 52px) 0 50px;
+  transition: grid-template-columns 220ms ease;
+}
+
+.term-wiki.is-tree-collapsed .term-wiki__layout {
+  grid-template-columns: 56px minmax(0, 1fr);
+}
+
+.term-wiki__tree {
+  position: sticky;
+  top: 84px;
+  overflow: hidden;
+  max-height: calc(100vh - 112px);
+  border: 1px solid var(--tw-line);
+  border-radius: 20px;
+  background: var(--tw-surface);
+  box-shadow: 0 12px 38px rgba(31, 53, 47, 0.07);
+}
+
+.term-wiki__tree-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 51px;
+  padding: 8px;
+  border-bottom: 1px solid var(--tw-line);
+}
+
+.term-wiki__tree-collapse {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 34px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 10px;
+  color: var(--tw-muted) !important;
+  background: transparent;
+  cursor: pointer;
+}
+
+.term-wiki__tree-collapse:hover {
+  color: var(--tw-accent) !important;
+  background: var(--tw-accent-soft);
+}
+
+.term-wiki__tree-collapse-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.term-wiki__tree-collapse-label {
+  font-size: 0.78rem;
+}
+
+.term-wiki__tree-content {
+  overflow: auto;
+  max-height: calc(100vh - 165px);
+  padding: 14px 12px 18px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--tw-line) transparent;
+}
+
+.term-wiki.is-tree-collapsed .term-wiki__tree-toolbar {
+  justify-content: center;
+}
+
+.term-wiki.is-tree-collapsed .term-wiki__tree-collapse {
+  padding: 0;
+}
+
+.term-wiki.is-tree-collapsed .term-wiki__tree-collapse-label,
+.term-wiki.is-tree-collapsed .term-wiki__tree-content {
+  display: none;
+}
+
+.term-wiki__tree-heading {
+  padding: 0 8px 10px;
+  color: var(--tw-muted);
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.term-wiki__category-button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.term-wiki__count-badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 25px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  color: var(--tw-muted);
+  background: rgba(98, 113, 108, 0.09);
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.term-wiki__tree-all,
+.term-wiki__tree-filter {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 9px;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 0.85rem;
+}
+
+.term-wiki__tree-all {
+  margin-bottom: 8px;
+}
+
+.term-wiki__tree-all:hover,
+.term-wiki__tree-filter:hover,
+.term-wiki__tree-all.is-active,
+.term-wiki__tree-filter.is-active {
+  color: var(--tw-accent) !important;
+  background: var(--tw-accent-soft);
+}
+
+.term-wiki__tree-all.is-active,
+.term-wiki__tree-filter.is-active {
+  font-weight: 700;
+}
+
+.term-wiki__tree-all.is-active .term-wiki__count-badge,
+.term-wiki__tree-filter.is-active .term-wiki__count-badge {
+  color: var(--tw-accent-strong);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.term-wiki__tree-branch {
+  padding: 8px 0;
+  border-top: 1px solid var(--tw-line);
+}
+
+.term-wiki__tree-branch-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px;
+  gap: 3px;
+  align-items: center;
+}
+
+.term-wiki__branch-toggle {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  color: var(--tw-muted) !important;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.term-wiki__branch-toggle:hover {
+  color: var(--tw-accent) !important;
+  background: var(--tw-accent-soft);
+}
+
+.term-wiki__tree-items {
+  padding: 2px 0 3px 13px !important;
+}
+
+.term-wiki__tree-item {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  width: 100%;
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 9px;
+  color: var(--tw-muted) !important;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.term-wiki__tree-item:hover,
+.term-wiki__tree-item.is-current {
+  color: var(--tw-ink) !important;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.term-wiki__tree-dot {
+  width: 6px;
+  height: 6px;
+  margin-top: 8px;
+  border: 1px solid var(--tw-accent);
+  border-radius: 50%;
+}
+
+.term-wiki__tree-item.is-current .term-wiki__tree-dot {
+  background: var(--tw-accent);
+  box-shadow: 0 0 0 3px var(--tw-accent-soft);
+}
+
+.term-wiki__tree-item-copy {
+  display: grid;
+  min-width: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.term-wiki__tree-item-copy > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.term-wiki__tree-item-copy small {
+  overflow: hidden;
+  margin-top: 1px;
+  color: var(--tw-muted);
+  font-size: 0.66rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.term-wiki__index {
+  min-width: 0;
+}
+
+.term-wiki__index-header {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 23px;
+}
+
+.term-wiki__result-count {
+  margin-bottom: 12px !important;
+  color: var(--tw-muted);
+  font-size: 0.8rem;
+}
+
+.term-wiki__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.term-wiki__filter-chip {
+  min-height: 35px;
+  padding: 6px 7px 6px 12px;
+  border: 1px solid var(--tw-line);
+  border-radius: 999px;
+  color: var(--tw-muted) !important;
+  background: rgba(255, 255, 255, 0.62);
+  font-size: 0.77rem;
+}
+
+.term-wiki__filter-chip:hover,
+.term-wiki__filter-chip.is-active {
+  border-color: color-mix(in srgb, var(--tw-accent) 50%, transparent);
+  color: var(--tw-accent-strong) !important;
+  background: var(--tw-accent-soft);
+}
+
+.term-wiki__filter-chip.is-active {
+  font-weight: 700;
+}
+
+.term-wiki__filter-chip.is-active .term-wiki__count-badge {
+  color: var(--tw-accent-strong);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.term-wiki__reset {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 10px;
+  color: var(--tw-accent) !important;
+  background: transparent;
+  font-size: 0.76rem;
+  cursor: pointer;
+}
+
+.term-wiki__reset:hover {
+  background: var(--tw-accent-soft);
+}
+
+.term-wiki__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 225px), 1fr));
+  gap: 15px;
+}
+
+.term-wiki__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 235px;
+  padding: 18px;
+  border: 1px solid var(--tw-line);
+  border-radius: 18px;
+  color: var(--tw-ink) !important;
+  background:
+    radial-gradient(circle at 110% -10%, var(--tw-accent-soft), transparent 42%),
+    var(--tw-surface-solid);
+  box-shadow: 0 8px 25px rgba(31, 53, 47, 0.045);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.term-wiki[data-subject="chemistry"] .term-wiki__card {
+  background:
+    linear-gradient(90deg, transparent 96%, rgba(61, 87, 166, 0.035) 96%),
+    linear-gradient(transparent 96%, rgba(61, 87, 166, 0.035) 96%),
+    var(--tw-surface-solid);
+  background-size: 100% 100%, 100% 34px, auto;
+}
+
+.term-wiki__card::before {
+  position: absolute;
+  top: 0;
+  left: 18px;
+  width: 44px;
+  height: 3px;
+  border-radius: 0 0 4px 4px;
+  background: var(--tw-accent);
+  content: "";
+  transition: width 180ms ease;
+}
+
+.term-wiki__card:hover,
+.term-wiki__card.is-current {
+  border-color: color-mix(in srgb, var(--tw-accent) 45%, transparent);
+  box-shadow: 0 15px 38px rgba(31, 53, 47, 0.1);
+  transform: translateY(-3px);
+}
+
+.term-wiki__card:hover::before,
+.term-wiki__card.is-current::before {
+  width: calc(100% - 36px);
+}
+
+.term-wiki__card-top,
+.term-wiki__card-footer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.term-wiki__card-number {
+  color: var(--tw-accent);
+  font-size: 0.69rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+}
+
+.term-wiki__card-category {
+  overflow: hidden;
+  max-width: 70%;
+  color: var(--tw-muted);
+  font-size: 0.67rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.term-wiki__card-heading {
+  display: grid;
+  margin-top: 20px;
+}
+
+.term-wiki__card-heading strong {
+  font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+  font-size: 1.38rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.term-wiki__card-heading > span {
+  overflow: hidden;
+  margin-top: 3px;
+  color: var(--tw-muted);
+  font-family: ui-serif, Georgia, serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.term-wiki__card-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 14px;
+  color: var(--tw-muted);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.term-wiki__card-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--tw-muted);
+  font-size: 0.67rem;
+}
+
+.term-wiki__card-arrow {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border: 1px solid var(--tw-line);
+  border-radius: 50%;
+  color: var(--tw-accent);
+  font-size: 0.9rem;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.term-wiki__card:hover .term-wiki__card-arrow {
+  color: white;
+  background: var(--tw-accent);
+  transform: rotate(45deg);
+}
+
+.term-wiki__empty {
+  padding: clamp(50px, 9vw, 100px) 24px;
+  border: 1px dashed var(--tw-line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.45);
+  text-align: center;
+}
+
+.term-wiki__empty-mark {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 18px;
+  border: 1px solid var(--tw-line);
+  border-radius: 50%;
+  color: var(--tw-accent);
+  font-family: ui-serif, Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.term-wiki__empty h2 {
+  color: var(--tw-ink) !important;
+  font-size: 1.2rem !important;
+}
+
+.term-wiki__empty p {
+  margin-top: 8px !important;
+  color: var(--tw-muted);
+  font-size: 0.82rem;
+}
+
+.term-wiki__empty button {
+  margin-top: 18px;
+  padding: 8px 15px;
+  border: 1px solid var(--tw-accent);
+  border-radius: 999px;
+  color: var(--tw-accent) !important;
+  background: transparent;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.term-wiki__empty button:hover {
+  color: white !important;
+  background: var(--tw-accent);
+}
+
+.term-wiki__backdrop {
+  position: fixed;
+  z-index: 11990;
+  inset: 0;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(11, 19, 17, 0.42);
+  backdrop-filter: blur(5px);
+  pointer-events: none;
+  transition: opacity 260ms ease, visibility 0s linear 260ms;
+}
+
+.term-wiki__backdrop.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.term-wiki__drawer {
+  position: fixed;
+  z-index: 12000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  width: min(490px, calc(100vw - 28px));
+  padding: max(14px, env(safe-area-inset-top)) 0 max(12px, env(safe-area-inset-bottom));
+  border-left: 1px solid var(--tw-line);
+  background: var(--tw-surface-solid);
+  box-shadow: -30px 0 80px rgba(15, 28, 25, 0.19);
+  transform: translateX(104%);
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 300ms;
+}
+
+.term-wiki__drawer.is-open {
+  visibility: visible;
+  transform: translateX(0);
+  transition-delay: 0s;
+}
+
+.term-wiki__drawer-handle {
+  display: none;
+}
+
+.term-wiki__drawer-toolbar {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 20px 12px;
+  border-bottom: 1px solid var(--tw-line);
+}
+
+.term-wiki__drawer-close,
+.term-wiki__copy {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.term-wiki__drawer-close {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 50%;
+  color: var(--tw-ink) !important;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.term-wiki__drawer-close:hover {
+  background: var(--tw-accent-soft);
+}
+
+.term-wiki__copy {
+  padding: 7px 11px;
+  border-radius: 9px;
+  color: var(--tw-accent) !important;
+  font-size: 0.76rem;
+}
+
+.term-wiki__copy:hover {
+  background: var(--tw-accent-soft);
+}
+
+.term-wiki__detail {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 36px clamp(24px, 5vw, 46px) 50px;
+  outline: none;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--tw-line) transparent;
+}
+
+.term-wiki__detail-header {
+  padding-bottom: 30px;
+}
+
+.term-wiki__detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 17px;
+}
+
+.term-wiki__detail-tags span {
+  padding: 4px 9px;
+  border: 1px solid color-mix(in srgb, var(--tw-accent) 28%, transparent);
+  border-radius: 999px;
+  color: var(--tw-accent);
+  background: var(--tw-accent-soft);
+  font-size: 0.68rem;
+}
+
+.term-wiki__detail h2 {
+  margin: 0 !important;
+  color: var(--tw-ink) !important;
+  font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+  font-size: clamp(2rem, 7vw, 3.25rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.05em;
+  line-height: 1.15 !important;
+}
+
+.term-wiki__detail h2:focus {
+  outline: none;
+}
+
+.term-wiki__detail-en {
+  margin-top: 7px !important;
+  color: var(--tw-accent);
+  font-family: ui-serif, Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.term-wiki__detail-summary {
+  margin-top: 24px !important;
+  color: var(--tw-muted);
+  font-family: "Noto Serif SC", "Songti SC", SimSun, serif;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.term-wiki__meta {
+  display: grid;
+  grid-template-columns: minmax(72px, 0.32fr) minmax(0, 1fr);
+  margin: 0 0 34px !important;
+  border-top: 1px solid var(--tw-line);
+}
+
+.term-wiki__meta dt,
+.term-wiki__meta dd {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--tw-line);
+  font-size: 0.76rem;
+}
+
+.term-wiki__meta dt {
+  color: var(--tw-muted);
+}
+
+.term-wiki__meta dd {
+  margin: 0 !important;
+  color: var(--tw-ink);
+  text-align: right;
+}
+
+.term-wiki__meta dd.term-wiki__meta-wide {
+  grid-column: 1 / -1;
+  text-align: left;
+}
+
+.term-wiki__keyword-section,
+.term-wiki__section {
+  padding: 26px 0;
+  border-top: 1px solid var(--tw-line);
+}
+
+.term-wiki__keyword-section h3,
+.term-wiki__section h3 {
+  margin: 0 !important;
+  color: var(--tw-ink) !important;
+  font-size: 0.93rem !important;
+  font-weight: 710 !important;
+  line-height: 1.5 !important;
+}
+
+.term-wiki__keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 13px !important;
+}
+
+.term-wiki__keywords li {
+  padding: 5px 9px;
+  border-radius: 7px;
+  color: var(--tw-muted);
+  background: var(--tw-canvas);
+  font-size: 0.7rem;
+}
+
+.term-wiki__section {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 14px;
+}
+
+.term-wiki__section-number {
+  color: var(--tw-accent);
+  font-size: 0.67rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 740;
+  letter-spacing: 0.08em;
+}
+
+.term-wiki__section-body p {
+  margin-top: 10px !important;
+  color: var(--tw-muted);
+  font-size: 0.84rem;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+.term-wiki__detail-placeholder {
+  padding: 26px 0;
+  border-top: 1px solid var(--tw-line);
+  color: var(--tw-muted);
+  font-size: 0.82rem;
+}
+
+.term-wiki__detail-nav {
+  display: grid;
+  flex: 0 0 auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1px solid var(--tw-line);
+  background: var(--tw-line);
+}
+
+.term-wiki__detail-nav button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+  min-height: 74px;
+  padding: 12px 17px;
+  border: 0;
+  color: var(--tw-ink) !important;
+  background: var(--tw-surface-solid);
+  text-align: left;
+  cursor: pointer;
+}
+
+.term-wiki__detail-nav button:last-child {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.term-wiki__detail-nav button:hover:not(:disabled) {
+  color: var(--tw-accent) !important;
+  background: var(--tw-canvas);
+}
+
+.term-wiki__detail-nav button:disabled {
+  color: var(--tw-muted) !important;
+  cursor: default;
+  opacity: 0.48;
+}
+
+.term-wiki__nav-copy {
+  display: grid;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.term-wiki__nav-copy small {
+  color: var(--tw-muted);
+  font-size: 0.63rem;
+}
+
+.term-wiki__nav-copy strong {
+  overflow: hidden;
+  font-size: 0.74rem;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.term-wiki :where(button, input):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--tw-accent) 44%, transparent) !important;
+  outline-offset: 3px !important;
+}
+
+body.term-wiki-scroll-lock {
+  overflow: hidden;
+}
+
+html[data-theme="dark"] .term-wiki,
+[data-theme="dark"] .term-wiki {
+  --tw-ink: #eef4f1;
+  --tw-muted: #a8b3af;
+  --tw-line: rgba(226, 240, 234, 0.13);
+  --tw-surface: rgba(25, 34, 32, 0.94);
+  --tw-surface-solid: #19221f;
+  --tw-canvas: #121917;
+  --tw-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+@media (prefers-color-scheme: dark) {
+  .term-wiki-page {
+    color: #eef4f1;
+    background: #121917;
+  }
+
+  .term-wiki-page[data-subject="chemistry"] {
+    color: #f0f1f8;
+    background: #12141f;
+  }
+
+  .wiki-brand-mark {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .wiki-sitebar-nav a,
+  .term-wiki-page[data-subject="chemistry"] .wiki-sitebar-nav a,
+  .wiki-footer,
+  .term-wiki-page[data-subject="chemistry"] .wiki-footer {
+    color: #a8b3af;
+  }
+
+  .wiki-footer,
+  .term-wiki-page[data-subject="chemistry"] .wiki-footer {
+    border-color: rgba(226, 240, 234, 0.13);
+  }
+
+  .wiki-sitebar-nav a:hover,
+  .wiki-sitebar-nav a[aria-current="page"] {
+    color: #84c8ae;
+    background: rgba(80, 170, 139, 0.12);
+  }
+
+  .term-wiki-page[data-subject="chemistry"] .wiki-sitebar-nav a:hover,
+  .term-wiki-page[data-subject="chemistry"] .wiki-sitebar-nav a[aria-current="page"] {
+    color: #9cb3ff;
+    background: rgba(109, 137, 225, 0.13);
+  }
+
+  .term-wiki {
+    --tw-ink: #eef4f1;
+    --tw-muted: #a8b3af;
+    --tw-line: rgba(226, 240, 234, 0.13);
+    --tw-surface: rgba(25, 34, 32, 0.94);
+    --tw-surface-solid: #19221f;
+    --tw-canvas: #121917;
+    --tw-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  }
+
+  .term-wiki[data-subject="chemistry"] {
+    --tw-ink: #f0f1f8;
+    --tw-muted: #a9aec2;
+    --tw-line: rgba(229, 232, 249, 0.13);
+    --tw-surface: rgba(26, 29, 45, 0.94);
+    --tw-surface-solid: #1a1d2d;
+    --tw-canvas: #12141f;
+  }
+
+  .term-wiki__filter-chip,
+  .term-wiki__empty,
+  .term-wiki__tree-item:hover,
+  .term-wiki__tree-item.is-current {
+    background-color: rgba(255, 255, 255, 0.045);
+  }
+}
+
+html[data-theme="dark"] .term-wiki[data-subject="chemistry"],
+[data-theme="dark"] .term-wiki[data-subject="chemistry"] {
+  --tw-ink: #f0f1f8;
+  --tw-muted: #a9aec2;
+  --tw-line: rgba(229, 232, 249, 0.13);
+  --tw-surface: rgba(26, 29, 45, 0.94);
+  --tw-surface-solid: #1a1d2d;
+  --tw-canvas: #12141f;
+}
+
+html[data-theme="dark"] .term-wiki__filter-chip,
+html[data-theme="dark"] .term-wiki__empty,
+html[data-theme="dark"] .term-wiki__tree-item:hover,
+html[data-theme="dark"] .term-wiki__tree-item.is-current,
+[data-theme="dark"] .term-wiki__filter-chip,
+[data-theme="dark"] .term-wiki__empty,
+[data-theme="dark"] .term-wiki__tree-item:hover,
+[data-theme="dark"] .term-wiki__tree-item.is-current {
+  background-color: rgba(255, 255, 255, 0.045);
+}
+
+@media (max-width: 980px) {
+  .term-wiki__hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .term-wiki__search {
+    max-width: 620px;
+  }
+
+  .term-wiki__layout,
+  .term-wiki.is-tree-collapsed .term-wiki__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .term-wiki__tree {
+    position: relative;
+    top: auto;
+    max-height: none;
+  }
+
+  .term-wiki__tree-content {
+    max-height: min(48vh, 430px);
+  }
+
+  .term-wiki.is-tree-collapsed .term-wiki__tree {
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .wiki-sitebar {
+    width: min(calc(100% - 24px), 1480px);
+    min-height: 64px;
+  }
+
+  .wiki-brand > span:last-child {
+    display: none;
+  }
+
+  .wiki-sitebar-nav {
+    overflow-x: auto;
+    max-width: calc(100vw - 78px);
+    scrollbar-width: none;
+  }
+
+  .wiki-sitebar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .wiki-sitebar-nav a {
+    flex: 0 0 auto;
+  }
+
+  .term-wiki-page > .term-wiki,
+  .wiki-footer,
+  .wiki-noscript {
+    width: min(calc(100% - 24px), 1480px);
+  }
+
+  .wiki-footer {
+    display: block;
+    padding-bottom: max(28px, env(safe-area-inset-bottom));
+  }
+
+  .wiki-footer p + p {
+    margin-top: 8px;
+  }
+
+  .term-wiki__ambient {
+    inset: -12px;
+    border-radius: 24px;
+  }
+
+  .term-wiki__hero {
+    gap: 25px;
+    padding: 29px 21px 24px;
+    border-radius: 22px;
+  }
+
+  .term-wiki__title {
+    font-size: clamp(2rem, 11vw, 3rem) !important;
+  }
+
+  .term-wiki__search {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    min-height: 52px;
+  }
+
+  .term-wiki__search kbd {
+    display: none;
+  }
+
+  .term-wiki__layout {
+    gap: 20px;
+    padding-top: 23px;
+  }
+
+  .term-wiki__index-header {
+    display: block;
+  }
+
+  .term-wiki__reset {
+    margin-top: 11px;
+  }
+
+  .term-wiki__filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: -12px;
+    padding: 2px 12px 6px 0;
+    scrollbar-width: none;
+  }
+
+  .term-wiki__filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .term-wiki__filter-chip {
+    flex: 0 0 auto;
+  }
+
+  .term-wiki__cards {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr));
+  }
+
+  .term-wiki__card {
+    min-height: 215px;
+  }
+
+  .term-wiki__drawer {
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: min(88svh, 780px);
+    max-width: none;
+    padding-top: 8px;
+    border-top: 1px solid var(--tw-line);
+    border-left: 0;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -28px 80px rgba(15, 28, 25, 0.2);
+    transform: translateY(104%);
+  }
+
+  .term-wiki__drawer.is-open {
+    transform: translateY(0);
+  }
+
+  .term-wiki__drawer-handle {
+    display: block;
+    flex: 0 0 auto;
+    width: 43px;
+    height: 4px;
+    margin: 0 auto 6px;
+    border-radius: 999px;
+    background: var(--tw-line);
+  }
+
+  .term-wiki__drawer-toolbar {
+    padding-top: 0;
+  }
+
+  .term-wiki__detail {
+    padding-top: 26px;
+  }
+}
+
+@media (max-width: 520px) {
+  .term-wiki__hero::before {
+    right: -150px;
+  }
+
+  .term-wiki__tree-content {
+    max-height: 52vh;
+  }
+
+  .term-wiki__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .term-wiki__card {
+    min-height: 205px;
+  }
+
+  .term-wiki__drawer {
+    height: 100svh;
+    border-radius: 0;
+  }
+
+  .term-wiki__drawer-handle {
+    visibility: hidden;
+  }
+
+  .term-wiki__detail-nav button {
+    min-height: 68px;
+    padding-inline: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .term-wiki *,
+  .term-wiki *::before,
+  .term-wiki *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}
+
+@media print {
+  .term-wiki__search,
+  .term-wiki__tree,
+  .term-wiki__filters,
+  .term-wiki__reset,
+  .term-wiki__backdrop,
+  .term-wiki__drawer {
+    display: none !important;
+  }
+
+  .term-wiki__layout,
+  .term-wiki.is-tree-collapsed .term-wiki__layout {
+    display: block;
+  }
+
+  .term-wiki__card {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+}
