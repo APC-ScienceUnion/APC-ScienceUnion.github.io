@@ -92,11 +92,15 @@ function transcriptDigest (wiki) {
   return crypto.createHash('sha256').update(JSON.stringify(transcript)).digest('hex')
 }
 
-// These digests lock the image-verified transcripts so later summary edits cannot silently
-// replace the wording printed on the original cards.
-assert.equal(transcriptDigest(geography), '8b819cf9ab2fe5f4375e2561220b0bcd4023513fdbce7683e83dcfad297ce4e6')
+// These digests lock the image-verified knowledge transcripts so later edits cannot silently
+// replace the wording printed on the original cards. Image captions and source credits stay
+// on the cards themselves and are intentionally omitted from the text transcript.
+assert.equal(transcriptDigest(geography), 'a0ebeeb38bb0140cc5293e8cf330c597d852c3c9e3bf607d9ca64086c364f77f')
 assert.equal(transcriptDigest(chemistry), '7e2b6badda013cdcbd7b282960949cdf5d06617694116ce0816e1d3b5134c851')
-assert.equal(geography.items.some(item => item.sections.some(section => /^(图片说明|图片来源|图示标注)$/.test(section.title))), false)
+const visualSourceTitle = /^(图片说明|图片来源|图注|图像来源|照片来源|图源|图示标注)$/
+const visualSourceLine = /(^|\n)\s*(?:图片(?:来源|参考自)|图像来源|照片来源|图源|制图)(?=[:：\s\u4e00-\u9fffA-Za-z0-9])/
+assert.equal(geography.items.some(item => item.sections.some(section => visualSourceTitle.test(section.title.trim()))), false)
+assert.equal(geography.items.some(item => item.sections.some(section => visualSourceLine.test(section.text))), false)
 
 assert.equal(geography.items.filter(item => item.category === 'atmosphere').length, 7)
 assert.equal(geography.items.filter(item => item.category === 'hydrology').length, 7)
@@ -172,7 +176,7 @@ assert.match(wikiLayout, /include \.\/includes\/header\/index\.pug/)
 assert.match(wikiLayout, /#term-wiki\(data-term-wiki-root/)
 assert.match(wikiLayout, /gallery\/term-wiki\/styles\.css/)
 assert.match(wikiLayout, /gallery\/term-wiki\/app\.js/)
-assert.match(wikiLayout, /term-gallery-20260824-3/)
+assert.match(wikiLayout, /term-gallery-20260824-4/)
 assert.match(wikiLayout, /page\.term_wiki_data\) \+ '\?v='/)
 assert.doesNotMatch(wikiLayout, /#page|term-wiki-credit|includes\/footer/)
 
