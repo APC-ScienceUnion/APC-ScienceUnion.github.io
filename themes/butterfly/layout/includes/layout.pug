@@ -1,6 +1,10 @@
 - var htmlClassHideAside = theme.aside.enable && theme.aside.hide ? 'hide-aside' : ''
 - var hideAside = !theme.aside.enable || page.aside === false ? 'hide-aside' : ''
 - var pageType = is_post() ? 'post' : 'page'
+//- Keep inline CSS URLs unquoted and encode the characters that CSS forbids in
+//- an unquoted url(). This also avoids HTML minifiers turning &quot; into part of
+//- the actual image URL.
+- var css_url_for = function(value) { return String(url_for(value)).replace(/[\x00-\x20"'()\\\x7F]/g, function(character) { return '%' + character.charCodeAt(0).toString(16).padStart(2, '0').toUpperCase() }) }
 //- 文章 / 標籤 / 分類 / 歸檔 / 獨立頁：有圖片路徑頂圖時，改為整頁 #web_bg 底層，不再用 header 大橫幅（與 header/index.pug 同步判斷）
 - var useHeroAsWebBg = false
 - var pageHeroForBg = false
@@ -46,12 +50,12 @@ html(lang=page.lang || config.language data-theme=theme.display_mode class=htmlR
     if theme.background
       - var webBgMerged = ''
       if useHeroAsWebBg
-        - var heroLayer = `url("${url_for(pageHeroForBg)}")`
+        - var heroLayer = `url(${css_url_for(pageHeroForBg)})`
         - webBgMerged = `background: ${heroLayer} center/cover no-repeat fixed, ${theme.background} center/cover no-repeat fixed;`
       else if !theme.disable_top_img && (theme.index_img !== false)
         //- 與首頁一致：頂圖層 + theme.background（未啟用「頂圖作全頁底」時）
         - var hmIdx = theme.index_img || theme.default_top_img
-        - var layerIdx = hmIdx && hmIdx.indexOf('/') !== -1 ? `url("${url_for(hmIdx)}")` : hmIdx
+        - var layerIdx = hmIdx && hmIdx.indexOf('/') !== -1 ? `url(${css_url_for(hmIdx)})` : hmIdx
         - webBgMerged = `background: ${layerIdx} center/cover no-repeat fixed, ${theme.background} center/cover no-repeat fixed;`
       #web_bg(style=webBgMerged ? webBgMerged : false)
       
@@ -87,7 +91,7 @@ html(lang=page.lang || config.language data-theme=theme.display_mode class=htmlR
           if (footerBg === true)
             - var footer_bg = bg_img
           else
-            - var footer_bg = theme.footer_bg.indexOf('/') !== -1 ? `background-image: url("${url_for(footerBg)}")` : `background: ${footerBg}`
+            - var footer_bg = theme.footer_bg.indexOf('/') !== -1 ? `background-image: url(${css_url_for(footerBg)})` : `background: ${footerBg}`
         else
           - var footer_bg = ''
 

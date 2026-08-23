@@ -23,7 +23,7 @@ else if !theme.disable_top_img && page.top_img !== false
     - var top_img = page.top_img || theme.default_top_img
 
   if top_img !== false
-    - var imgSource = top_img && top_img.indexOf('/') !== -1 ? `background-image: url("${url_for(top_img)}")` : `background:${top_img}`
+    - var imgSource = top_img && top_img.indexOf('/') !== -1 ? `background-image: url(${css_url_for(top_img)})` : `background:${top_img}`
     - var bg_img = top_img ? imgSource : ''
     //- 首頁頂圖改由 #web_bg 與全站背景合併，頭部僅保留標題區
     if is_home()

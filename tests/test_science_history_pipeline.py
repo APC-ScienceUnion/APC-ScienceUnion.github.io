@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import importlib.util
 import json
 import tempfile
@@ -21,6 +22,18 @@ def text_of_length(prefix: str, length: int = 52) -> str:
 
 
 class ScienceHistoryPipelineTests(unittest.TestCase):
+    def test_public_json_hash_is_independent_of_checkout_newlines(self) -> None:
+        payload = {
+            "version": 1,
+            "title": "科技史上的今天",
+            "items": [{"label": "2026", "title": "测试", "text": "内容"}],
+        }
+        canonical = MODULE.canonical_json_bytes(payload)
+        windows_checkout = canonical.replace(b"\n", b"\r\n")
+
+        self.assertNotEqual(hashlib.sha256(canonical).hexdigest(), hashlib.sha256(windows_checkout).hexdigest())
+        self.assertEqual(MODULE.canonical_json_sha256(payload), hashlib.sha256(canonical).hexdigest())
+
     def automated_item(self, *, strong: bool = False, sources: list[dict] | None = None) -> dict:
         return {
             "label": "1969年",

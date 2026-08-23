@@ -115,6 +115,11 @@ function assertLocalStaticImages(page) {
 
   for (const candidate of candidates) {
     if (/^(?:data:|blob:)/iu.test(candidate)) continue;
+    assert.doesNotMatch(
+      candidate,
+      /^(["']).*\1$/su,
+      `Image URL contains nested quote characters after HTML/CSS minification: ${candidate} in ${page.file}`
+    );
     const target = new URL(candidate, page.url);
     assert.equal(target.origin, siteUrl.origin, `English page loads an external image: ${candidate} in ${page.file}`);
     assert.ok(isFile(generatedFile(target)), `English page references a missing local image: ${candidate} in ${page.file}`);
