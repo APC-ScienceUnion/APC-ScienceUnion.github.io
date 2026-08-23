@@ -79,6 +79,8 @@
 
   function normaliseConfig (rawConfig) {
     const config = rawConfig && typeof rawConfig === 'object' ? rawConfig : {}
+    const rawAssetBase = asText(config.cardAssetBase).replace(/\/+$/g, '')
+    const cardAssetBase = /^\/[A-Za-z0-9/_-]+$/.test(rawAssetBase) ? rawAssetBase : ''
     const seenIds = new Set()
     const rawItems = Array.isArray(config.items) ? config.items : []
 
@@ -102,7 +104,13 @@
         summary: asText(rawItem.summary || rawItem.description),
         sections: normaliseSections(rawItem.sections),
         keywords: normaliseKeywords(rawItem.keywords),
-        meta: normaliseMeta(rawItem.meta)
+        meta: normaliseMeta(rawItem.meta),
+        images: cardAssetBase && /^[A-Za-z0-9][A-Za-z0-9-]*$/.test(id)
+          ? [1, 2].map(page => ({
+              src: `${cardAssetBase}/${id}-${String(page).padStart(2, '0')}.webp`,
+              alt: `${name}词卡第 ${page} 页`
+            }))
+          : []
       }
       return item
     }).filter(Boolean)
@@ -154,6 +162,7 @@
       title: asText(config.title, '学科词卡 Wiki'),
       subtitle: asText(config.subtitle, '从索引进入，沿概念之间的联系继续探索。'),
       subject: asText(config.subject),
+      cardAssetBase,
       categories,
       items
     }
@@ -269,17 +278,39 @@
       </div>
 
       <div class="term-wiki__backdrop" data-action="close-detail" aria-hidden="true"></div>
-      <aside class="term-wiki__drawer" role="dialog" aria-modal="true" aria-labelledby="term-wiki-detail-title" aria-hidden="true">
-        <div class="term-wiki__drawer-toolbar">
-          <button type="button" class="term-wiki__drawer-close" data-action="close-detail" aria-label="关闭详情">×</button>
-          <button type="button" class="term-wiki__copy" data-action="copy-link">复制链接</button>
+      <section class="term-wiki__modal" role="dialog" aria-modal="true" aria-labelledby="term-wiki-modal-title" aria-hidden="true">
+        <header class="term-wiki__modal-toolbar">
+          <div class="term-wiki__modal-heading">
+            <h2 id="term-wiki-modal-title" tabindex="-1">词卡原图</h2>
+            <span class="term-wiki__page-status" aria-live="polite"></span>
+          </div>
+          <div class="term-wiki__modal-actions">
+            <button type="button" class="term-wiki__zoom" data-action="toggle-image-zoom" aria-pressed="false">放大 2×</button>
+            <button type="button" class="term-wiki__copy" data-action="copy-link">复制链接</button>
+            <button type="button" class="term-wiki__modal-close" data-action="close-detail" aria-label="关闭词卡">×</button>
+          </div>
+        </header>
+        <div class="term-wiki__viewer">
+          <button type="button" class="term-wiki__page-button term-wiki__page-button--previous" data-action="previous-card-page" aria-label="查看上一页词卡"><span aria-hidden="true">‹</span></button>
+          <figure class="term-wiki__figure">
+            <div class="term-wiki__image-frame is-loading">
+              <img class="term-wiki__card-image" alt="" decoding="async">
+              <p class="term-wiki__image-loading">正在载入原卡……</p>
+              <p class="term-wiki__image-error" role="alert" hidden>图片暂时无法载入。你仍可展开下方的文字版内容。</p>
+            </div>
+            <figcaption class="term-wiki__image-caption"></figcaption>
+          </figure>
+          <button type="button" class="term-wiki__page-button term-wiki__page-button--next" data-action="next-card-page" aria-label="查看下一页词卡"><span aria-hidden="true">›</span></button>
         </div>
-        <div class="term-wiki__detail" tabindex="-1"></div>
+        <details class="term-wiki__transcript">
+          <summary>查看文字版内容</summary>
+          <div class="term-wiki__detail"></div>
+        </details>
         <nav class="term-wiki__detail-nav" aria-label="前后词条">
           <button type="button" data-action="previous-term"><span aria-hidden="true">←</span><span class="term-wiki__nav-copy"><span>上一条</span><strong></strong></span></button>
           <button type="button" data-action="next-term"><span class="term-wiki__nav-copy"><span>下一条</span><strong></strong></span><span aria-hidden="true">→</span></button>
         </nav>
-      </aside>
+      </section>
       <div class="term-wiki__live term-wiki__sr-only" aria-live="polite" aria-atomic="true"></div>
     `
 
@@ -298,8 +329,19 @@
       cards: root.querySelector('.term-wiki__cards'),
       empty: root.querySelector('.term-wiki__empty'),
       backdrop: root.querySelector('.term-wiki__backdrop'),
-      drawer: root.querySelector('.term-wiki__drawer'),
-      drawerClose: root.querySelector('.term-wiki__drawer-close'),
+      modal: root.querySelector('.term-wiki__modal'),
+      modalTitle: root.querySelector('#term-wiki-modal-title'),
+      modalClose: root.querySelector('.term-wiki__modal-close'),
+      zoom: root.querySelector('.term-wiki__zoom'),
+      copy: root.querySelector('[data-action="copy-link"]'),
+      pageStatus: root.querySelector('.term-wiki__page-status'),
+      previousPage: root.querySelector('[data-action="previous-card-page"]'),
+      nextPage: root.querySelector('[data-action="next-card-page"]'),
+      imageFrame: root.querySelector('.term-wiki__image-frame'),
+      cardImage: root.querySelector('.term-wiki__card-image'),
+      imageError: root.querySelector('.term-wiki__image-error'),
+      imageCaption: root.querySelector('.term-wiki__image-caption'),
+      transcript: root.querySelector('.term-wiki__transcript'),
       detail: root.querySelector('.term-wiki__detail'),
       previous: root.querySelector('[data-action="previous-term"]'),
       next: root.querySelector('[data-action="next-term"]'),
@@ -315,13 +357,23 @@
       category: ALL_CATEGORIES,
       filteredItems: [...config.items],
       activeId: '',
+      activePage: 0,
+      imageZoomed: false,
       restoreFocusTo: null,
+      modalFocusTimer: null,
       treeCollapsed: false,
       expandedCategories: new Set(config.categories.map(category => category.id)),
       internalHashSession: false
     }
 
-    elements.drawer.inert = true
+    const previousPortal = document.querySelector('.term-wiki__portal')
+    if (previousPortal) previousPortal.remove()
+    const overlayPortal = createElement('div', 'term-wiki term-wiki__portal')
+    overlayPortal.dataset.subject = subject
+    overlayPortal.append(elements.backdrop, elements.modal)
+    document.body.appendChild(overlayPortal)
+    elements.modal.inert = true
+    const pageShell = document.getElementById('body-wrap')
 
     function announce (message) {
       elements.live.textContent = ''
@@ -403,7 +455,7 @@
         card.type = 'button'
         card.dataset.openTerm = item.id
         card.setAttribute('aria-haspopup', 'dialog')
-        card.setAttribute('aria-label', `查看${item.name}详情`)
+        card.setAttribute('aria-label', `打开${item.name}词卡原图`)
         if (state.activeId === item.id) card.classList.add('is-current')
 
         const top = createElement('span', 'term-wiki__card-top')
@@ -417,10 +469,10 @@
           heading.appendChild(english)
         }
 
-        const summary = createElement('span', 'term-wiki__card-summary', item.summary || '打开词条，查看定义与扩展要点。')
+        const summary = createElement('span', 'term-wiki__card-summary', item.summary || '打开词卡原图，并查看文字版内容。')
         const footer = createElement('span', 'term-wiki__card-footer')
         footer.appendChild(createElement('span', '', item.volume || `${item.sections.length} 个知识段`))
-        footer.appendChild(createElement('span', 'term-wiki__card-arrow', '查看详情 →'))
+        footer.appendChild(createElement('span', 'term-wiki__card-arrow', '查看词卡原图 →'))
 
         card.append(top, heading, summary, footer)
         elements.cards.appendChild(card)
@@ -488,8 +540,63 @@
       return filteredIndex >= 0 ? state.filteredItems : config.items
     }
 
+    function renderCardPage (item) {
+      const total = item.images.length
+      const page = Math.min(Math.max(state.activePage, 0), Math.max(total - 1, 0))
+      const image = item.images[page]
+      state.activePage = page
+      state.imageZoomed = false
+      elements.imageFrame.classList.remove('is-zoomed')
+      elements.cardImage.style.removeProperty('--tw-zoom-width')
+      elements.cardImage.style.removeProperty('--tw-zoom-height')
+      elements.zoom.setAttribute('aria-pressed', 'false')
+      elements.zoom.textContent = '放大 2×'
+
+      elements.pageStatus.textContent = total ? `第 ${page + 1} / ${total} 页` : '暂无原卡图像'
+      elements.imageCaption.textContent = total ? `${item.name}原卡视觉版 · 第 ${page + 1} / ${total} 页` : ''
+      elements.previousPage.disabled = page <= 0
+      elements.nextPage.disabled = page >= total - 1
+      elements.imageError.hidden = true
+      elements.imageFrame.classList.remove('is-error')
+      elements.imageFrame.classList.add('is-loading')
+      elements.cardImage.removeAttribute('src')
+      elements.cardImage.alt = image ? image.alt : ''
+      elements.zoom.disabled = !image
+      delete elements.cardImage.dataset.source
+
+      if (!image) {
+        elements.imageFrame.classList.remove('is-loading')
+        elements.imageFrame.classList.add('is-error')
+        elements.imageError.hidden = false
+        return
+      }
+
+      elements.cardImage.dataset.source = image.src
+      elements.cardImage.onload = () => {
+        if (elements.cardImage.dataset.source !== image.src) return
+        elements.imageFrame.classList.remove('is-loading')
+        elements.zoom.disabled = false
+        const nextImage = item.images[page + 1]
+        if (nextImage) {
+          const preload = new Image()
+          preload.src = nextImage.src
+        }
+      }
+      elements.cardImage.onerror = () => {
+        if (elements.cardImage.dataset.source !== image.src) return
+        elements.imageFrame.classList.remove('is-loading')
+        elements.imageFrame.classList.add('is-error')
+        elements.imageError.hidden = false
+        elements.zoom.disabled = true
+      }
+      elements.cardImage.src = image.src
+    }
+
     function renderDetail (item) {
       elements.detail.replaceChildren()
+      elements.modalTitle.textContent = item.name
+      elements.transcript.open = false
+      state.activePage = 0
 
       const header = createElement('header', 'term-wiki__detail-header')
       const tags = createElement('div', 'term-wiki__detail-tags')
@@ -497,9 +604,7 @@
       if (item.volume) tags.appendChild(createElement('span', '', item.volume))
       header.appendChild(tags)
 
-      const title = createElement('h2', '', item.name)
-      title.id = 'term-wiki-detail-title'
-      title.tabIndex = -1
+      const title = createElement('h3', '', item.name)
       header.appendChild(title)
 
       if (item.en) {
@@ -552,6 +657,7 @@
       previousName.textContent = previousItem ? previousItem.name : '已经是第一条'
       nextName.textContent = nextItem ? nextItem.name : '已经是最后一条'
       elements.detail.scrollTop = 0
+      renderCardPage(item)
     }
 
     function writeTermHash (id) {
@@ -564,13 +670,23 @@
       }
     }
 
-    function showDrawer () {
-      elements.drawer.classList.add('is-open')
-      elements.drawer.setAttribute('aria-hidden', 'false')
-      elements.drawer.inert = false
+    function showModal () {
+      if (pageShell) pageShell.inert = true
+      elements.modal.classList.add('is-open')
+      elements.modal.setAttribute('aria-hidden', 'false')
+      elements.modal.inert = false
       elements.backdrop.classList.add('is-open')
       elements.backdrop.setAttribute('aria-hidden', 'false')
       document.body.classList.add('term-wiki-scroll-lock')
+    }
+
+    function focusModalAfterOpen () {
+      if (state.modalFocusTimer !== null) window.clearTimeout(state.modalFocusTimer)
+      state.modalFocusTimer = window.setTimeout(() => {
+        state.modalFocusTimer = null
+        if (!state.activeId || !elements.modal.classList.contains('is-open')) return
+        elements.modalTitle.focus({ preventScroll: true })
+      }, 220)
     }
 
     function openTerm (id, options = {}) {
@@ -585,26 +701,31 @@
       state.activeId = id
       renderDetail(item)
       updateCurrentTermMarkers()
-      showDrawer()
+      showModal()
       if (options.updateHash !== false) writeTermHash(id)
 
       if (options.focus !== false) {
-        window.requestAnimationFrame(() => {
-          const title = elements.detail.querySelector('#term-wiki-detail-title')
-          if (title) title.focus({ preventScroll: true })
-        })
+        focusModalAfterOpen()
       }
     }
 
-    function hideDrawer (options = {}) {
+    function hideModal (options = {}) {
       if (!state.activeId) return
+      if (state.modalFocusTimer !== null) {
+        window.clearTimeout(state.modalFocusTimer)
+        state.modalFocusTimer = null
+      }
       state.activeId = ''
-      elements.drawer.classList.remove('is-open')
-      elements.drawer.setAttribute('aria-hidden', 'true')
-      elements.drawer.inert = true
+      state.activePage = 0
+      elements.cardImage.removeAttribute('src')
+      delete elements.cardImage.dataset.source
+      elements.modal.classList.remove('is-open')
+      elements.modal.setAttribute('aria-hidden', 'true')
+      elements.modal.inert = true
       elements.backdrop.classList.remove('is-open')
       elements.backdrop.setAttribute('aria-hidden', 'true')
       document.body.classList.remove('term-wiki-scroll-lock')
+      if (pageShell) pageShell.inert = false
       updateCurrentTermMarkers()
 
       if (options.updateHash !== false && getHashTermId(itemsById)) clearTermHash()
@@ -619,9 +740,9 @@
     function syncWithHash () {
       const id = getHashTermId(itemsById)
       if (id) {
-        openTerm(id, { updateHash: false, focus: false, rememberFocus: false })
+        openTerm(id, { updateHash: false, rememberFocus: false })
       } else {
-        hideDrawer({ updateHash: false, restoreFocus: false })
+        hideModal({ updateHash: false })
       }
       state.internalHashSession = false
     }
@@ -656,7 +777,7 @@
       }
 
       announce(copied ? '词条链接已复制' : '复制失败，请从地址栏复制当前链接')
-      const copyButton = root.querySelector('[data-action="copy-link"]')
+      const copyButton = elements.copy
       if (copyButton) {
         const originalText = copyButton.textContent
         copyButton.textContent = copied ? '已复制' : '请手动复制'
@@ -691,9 +812,39 @@
       if (targetId) openTerm(targetId, { updateHash: true, rememberFocus: false })
     }
 
-    root.addEventListener('click', event => {
+    function moveCardPage (direction) {
+      const item = itemsById.get(state.activeId)
+      if (!item || !item.images.length) return
+      const nextPage = state.activePage + (direction === 'previous' ? -1 : 1)
+      if (nextPage < 0 || nextPage >= item.images.length) return
+      state.activePage = nextPage
+      renderCardPage(item)
+      announce(`${item.name}，第 ${nextPage + 1} 页，共 ${item.images.length} 页`)
+    }
+
+    function toggleImageZoom () {
+      if (!state.activeId || elements.imageFrame.classList.contains('is-error')) return
+      const willZoom = !state.imageZoomed
+      if (willZoom) {
+        const fittedRect = elements.cardImage.getBoundingClientRect()
+        if (!fittedRect.width || !fittedRect.height) return
+        elements.cardImage.style.setProperty('--tw-zoom-width', `${Math.round(fittedRect.width * 2)}px`)
+        elements.cardImage.style.setProperty('--tw-zoom-height', `${Math.round(fittedRect.height * 2)}px`)
+      } else {
+        elements.cardImage.style.removeProperty('--tw-zoom-width')
+        elements.cardImage.style.removeProperty('--tw-zoom-height')
+      }
+      state.imageZoomed = willZoom
+      elements.imageFrame.classList.toggle('is-zoomed', willZoom)
+      elements.zoom.setAttribute('aria-pressed', String(state.imageZoomed))
+      elements.zoom.textContent = state.imageZoomed ? '还原大小' : '放大 2×'
+      elements.imageFrame.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+      announce(state.imageZoomed ? '词卡图像已放大两倍，可滚动查看' : '词卡图像已恢复适合窗口大小')
+    }
+
+    function handleWikiClick (event) {
       const target = event.target instanceof Element ? event.target.closest('button, [data-action]') : null
-      if (!target || !root.contains(target)) return
+      if (!target || (!root.contains(target) && !overlayPortal.contains(target))) return
 
       if (target.dataset.category) {
         setCategory(target.dataset.category)
@@ -722,7 +873,7 @@
           toggleTree()
           break
         case 'close-detail':
-          hideDrawer()
+          hideModal()
           break
         case 'copy-link':
           copyActiveLink()
@@ -733,8 +884,20 @@
         case 'next-term':
           moveDetail('next')
           break
+        case 'previous-card-page':
+          moveCardPage('previous')
+          break
+        case 'next-card-page':
+          moveCardPage('next')
+          break
+        case 'toggle-image-zoom':
+          toggleImageZoom()
+          break
       }
-    })
+    }
+
+    root.addEventListener('click', handleWikiClick)
+    overlayPortal.addEventListener('click', handleWikiClick)
 
     elements.search.addEventListener('input', event => {
       state.query = event.target.value.trim()
@@ -745,7 +908,7 @@
       if (event.key === 'Escape') {
         if (state.activeId) {
           event.preventDefault()
-          hideDrawer()
+          hideModal()
         } else if (document.activeElement === elements.search && elements.search.value) {
           event.preventDefault()
           state.query = ''
@@ -755,20 +918,29 @@
         return
       }
 
-      if ((event.key === '/' && !isTypingTarget(event.target)) || ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k')) {
+      if (!state.activeId && ((event.key === '/' && !isTypingTarget(event.target)) || ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k'))) {
         event.preventDefault()
         elements.search.focus()
         elements.search.select()
         return
       }
 
+      if (state.activeId && !isTypingTarget(event.target) && (event.key === 'ArrowLeft' || event.key === 'ArrowRight')) {
+        event.preventDefault()
+        moveCardPage(event.key === 'ArrowLeft' ? 'previous' : 'next')
+        return
+      }
+
       if (event.key === 'Tab' && state.activeId) {
-        const focusable = [...elements.drawer.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+        const focusable = [...elements.modal.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), summary, [tabindex]:not([tabindex="-1"])')]
           .filter(element => !element.hidden && element.getClientRects().length)
         if (!focusable.length) return
         const first = focusable[0]
         const last = focusable[focusable.length - 1]
-        if (event.shiftKey && document.activeElement === first) {
+        if (!elements.modal.contains(document.activeElement)) {
+          event.preventDefault()
+          ;(event.shiftKey ? last : first).focus()
+        } else if (event.shiftKey && document.activeElement === first) {
           event.preventDefault()
           last.focus()
         } else if (!event.shiftKey && document.activeElement === last) {
@@ -779,6 +951,12 @@
     })
 
     window.addEventListener('hashchange', syncWithHash)
+    document.addEventListener('pjax:send', () => {
+      if (state.modalFocusTimer !== null) window.clearTimeout(state.modalFocusTimer)
+      document.body.classList.remove('term-wiki-scroll-lock')
+      if (pageShell) pageShell.inert = false
+      overlayPortal.remove()
+    }, { once: true })
 
     renderTree()
     renderFilters()

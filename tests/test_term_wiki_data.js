@@ -22,6 +22,7 @@ function validateWiki (relativePath, expected) {
   assert.equal(wiki.categories.length, expected.categories)
   assert.ok(wiki.title)
   assert.ok(wiki.subtitle)
+  assert.equal(wiki.cardAssetBase, `/gallery/${expected.folder}/assets/cards`)
   assert.equal(Object.hasOwn(wiki, 'eyebrow'), false)
 
   const categoryIds = new Set(wiki.categories.map(category => category.id))
@@ -41,14 +42,31 @@ function validateWiki (relativePath, expected) {
   }
 
   assert.doesNotMatch(source, /canva\.com\/design\//i)
+
+  const imageRefs = []
+  for (const item of wiki.items) {
+    for (const page of [1, 2]) {
+      const ref = `${wiki.cardAssetBase}/${item.id}-${String(page).padStart(2, '0')}.webp`
+      const assetPath = path.join(root, 'source', ref.replace(/^\//, ''))
+      assert.ok(fs.existsSync(assetPath), `missing term card asset: ${ref}`)
+      const bytes = fs.readFileSync(assetPath)
+      assert.equal(bytes.subarray(0, 4).toString('ascii'), 'RIFF', `invalid WebP header: ${ref}`)
+      assert.equal(bytes.subarray(8, 12).toString('ascii'), 'WEBP', `invalid WebP signature: ${ref}`)
+      assert.ok(bytes.length >= 50 * 1024, `term card asset unexpectedly small: ${ref}`)
+      assert.ok(bytes.length <= 1024 * 1024, `term card asset exceeds 1 MiB: ${ref}`)
+      imageRefs.push(ref)
+    }
+  }
+  assert.equal(imageRefs.length, expected.items * 2)
+  assert.equal(new Set(imageRefs).size, imageRefs.length)
   return wiki
 }
 
 const geography = validateWiki('source/gallery/GeographyCard/data.js', {
-  subject: 'geography', items: 25, categories: 4
+  subject: 'geography', folder: 'GeographyCard', items: 25, categories: 4
 })
 const chemistry = validateWiki('source/gallery/ChemistryCard/data.js', {
-  subject: 'chemistry', items: 8, categories: 3
+  subject: 'chemistry', folder: 'ChemistryCard', items: 8, categories: 3
 })
 
 assert.equal(geography.items.filter(item => item.category === 'atmosphere').length, 7)
@@ -74,7 +92,26 @@ const sharedStyles = fs.readFileSync(path.join(root, 'source/gallery/term-wiki/s
 const wikiLayout = fs.readFileSync(path.join(root, 'themes/butterfly/layout/term-wiki.pug'), 'utf8')
 const baseLayout = fs.readFileSync(path.join(root, 'themes/butterfly/layout/includes/layout.pug'), 'utf8')
 assert.doesNotMatch(sharedApp, /term-wiki__eyebrow|term-wiki__ambient|DISCIPLINE ATLAS|<kbd/)
+assert.match(sharedApp, /term-wiki__modal/)
+assert.match(sharedApp, /term-wiki__card-image/)
+assert.match(sharedApp, /previous-card-page/)
+assert.match(sharedApp, /next-card-page/)
+assert.match(sharedApp, /toggle-image-zoom/)
+assert.match(sharedApp, /--tw-zoom-width/)
+assert.match(sharedApp, /fittedRect\.width \* 2/)
+assert.match(sharedApp, /pageShell\.inert = true/)
+assert.match(sharedApp, /focusModalAfterOpen/)
+assert.match(sharedApp, /查看文字版内容/)
+assert.doesNotMatch(sharedApp, /term-wiki__drawer/)
 assert.doesNotMatch(sharedStyles, /wiki-sitebar|wiki-footer|radial-gradient|backdrop-filter|text-bg-hover/)
+assert.match(sharedStyles, /\.term-wiki__modal/)
+assert.match(sharedStyles, /\.term-wiki__viewer/)
+assert.match(sharedStyles, /\.term-wiki__card-image/)
+assert.match(sharedStyles, /\.term-wiki__image-frame\.is-zoomed/)
+assert.match(sharedStyles, /justify-content:\s*flex-start/)
+assert.match(sharedStyles, /width:\s*var\(--tw-zoom-width\)/)
+assert.doesNotMatch(sharedStyles, /height:\s*200%/)
+assert.doesNotMatch(sharedStyles, /\.term-wiki__drawer/)
 const fixedFontSizes = [...sharedStyles.matchAll(/font-size:\s*(\d+)px/g)].map(match => Number(match[1]))
 assert.ok(fixedFontSizes.length > 0)
 assert.equal(Math.min(...fixedFontSizes), 16)
