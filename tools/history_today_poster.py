@@ -627,6 +627,21 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def canonical_json_bytes(payload: dict[str, Any]) -> bytes:
+    """Serialize JSON deterministically without platform newline conversion.
+
+    ``Path.write_text`` translates ``\n`` to CRLF on Windows, while GitHub
+    Actions checks the repository out with LF.  Snapshot integrity should
+    therefore bind the parsed JSON document, not the workstation's newline
+    convention.  Binary poster files remain byte-for-byte hashed below.
+    """
+    return (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+
+
+def canonical_json_sha256(payload: dict[str, Any]) -> str:
+    return hashlib.sha256(canonical_json_bytes(payload)).hexdigest()
+
+
 def png_dimensions(path: Path) -> tuple[int, int]:
     with path.open("rb") as handle:
         header = handle.read(24)
@@ -771,7 +786,7 @@ def check_snapshot(public_dir: Path | None = None) -> None:
     audit = read_json(AUDIT_FILE)
     validate_public_json(public)
     validate_audit(audit, public)
-    if audit["public_json_sha256"] != hashlib.sha256(PUBLIC_JSON.read_bytes()).hexdigest():
+    if audit["public_json_sha256"] != canonical_json_sha256(public):
         raise ValueError("公开 JSON 与来源旁路记录的哈希不一致")
     if audit["poster_sha256"] != hashlib.sha256(PUBLIC_POSTER.read_bytes()).hexdigest():
         raise ValueError("科技史长图与来源旁路记录的哈希不一致")
@@ -858,7 +873,7 @@ def generate(target: date, input_path: Path | None, review_mode: str) -> None:
         width, height = png_dimensions(stage_poster)
         if width < 720 or height < 900 or stage_poster.stat().st_size <= 0:
             raise ValueError("渲染结果为空或尺寸异常")
-        audit["public_json_sha256"] = hashlib.sha256(stage_json.read_bytes()).hexdigest()
+        audit["public_json_sha256"] = canonical_json_sha256(visible)
         audit["poster_sha256"] = hashlib.sha256(stage_poster.read_bytes()).hexdigest()
         audit["poster_bytes"] = stage_poster.stat().st_size
         audit["poster_dimensions"] = {"width": width, "height": height}
