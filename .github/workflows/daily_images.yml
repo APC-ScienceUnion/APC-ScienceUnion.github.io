@@ -11,7 +11,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: daily-image-snapshots-source
+  group: source-snapshot-writers
   cancel-in-progress: false
 
 jobs:

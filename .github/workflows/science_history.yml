@@ -2,17 +2,29 @@ name: Refresh Science History Snapshot
 
 on:
   workflow_dispatch:
-  schedule:
-    # 10:00 Asia/Shanghai. The generator itself also resolves the date in
-    # Asia/Shanghai, so a runner's UTC locale cannot shift the edition.
-    - cron: "0 2 * * *"
+    inputs:
+      payload_b64:
+        description: "AstrBot candidate JSON encoded as base64; leave empty for the manual Qwen fallback"
+        required: false
+        default: ""
+        type: string
+      delivery_id:
+        description: "YYYY-MM-DD:sha256(canonical candidate JSON)"
+        required: false
+        default: ""
+        type: string
+      allow_revision:
+        description: "Explicitly allow a different same-day draft (manual correction only)"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
   actions: write
 
 concurrency:
-  group: science-history-snapshot-source
+  group: source-snapshot-writers
   cancel-in-progress: false
 
 jobs:
@@ -36,7 +48,21 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Decode and authenticate AstrBot candidate
+        id: ingest
+        if: inputs.payload_b64 != ''
+        env:
+          SCIENCE_HISTORY_PAYLOAD_B64: ${{ inputs.payload_b64 }}
+          SCIENCE_HISTORY_DELIVERY_ID: ${{ inputs.delivery_id }}
+          SCIENCE_HISTORY_ALLOW_REVISION: ${{ inputs.allow_revision }}
+        run: >-
+          python tools/dispatch_science_history.py
+          --decode-env
+          --output "${{ runner.temp }}/astrbot-science-history.json"
+          --current-json source/ScienceHistory/science_today.json
+
       - name: Install renderer and source-check dependencies
+        if: inputs.payload_b64 == '' || steps.ingest.outputs.changed == 'true'
         run: |
           npm ci
           python -m pip install --requirement tools/science_history/requirements.txt
@@ -45,9 +71,21 @@ jobs:
 
       - name: Research, verify, and render today's snapshot
         id: generate
+        if: inputs.payload_b64 == '' || steps.ingest.outputs.changed == 'true'
         env:
           QWEN_API_KEY: ${{ secrets.QWEN_API_KEY }}
-        run: python tools/history_today_poster.py
+          SCIENCE_HISTORY_DELIVERY_ID: ${{ inputs.delivery_id }}
+        shell: bash
+        run: |
+          if [[ -n "${SCIENCE_HISTORY_DELIVERY_ID}" ]]; then
+            export SCIENCE_HISTORY_PRODUCER="astrbot:science-history-today"
+            python tools/history_today_poster.py \
+              --date "${{ steps.ingest.outputs.date }}" \
+              --input "${{ runner.temp }}/astrbot-science-history.json" \
+              --review-mode automated-retrieval-gates
+          else
+            python tools/history_today_poster.py
+          fi
 
       # A failed research/API/render run must never replace the last good pair.
       # The generator stages all three files before its transactional publish;

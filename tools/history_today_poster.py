@@ -9,8 +9,9 @@ they are intentionally not described as a substitute for semantic historical
 review.
 
 A separately reviewed research file can be published with
-``--review-mode human-curated``. Its audit sidecar records that review mode and
-does not pretend its Chinese evidence notes were verbatim webpage matches.
+``--review-mode human-curated``. An AstrBot draft can instead use
+``--review-mode automated-retrieval-gates``; GitHub then retrieves every source
+again and matches the supplied source-language excerpts before it publishes.
 """
 
 from __future__ import annotations
@@ -23,6 +24,7 @@ import ipaddress
 import json
 import os
 import re
+import shutil
 import struct
 import subprocess
 import sys
@@ -593,12 +595,20 @@ def audit_payload(target: date, items: list[dict[str, Any]], mode: str) -> dict[
             "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。"
             "该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。"
         )
-    return {
+    producer = os.environ.get("SCIENCE_HISTORY_PRODUCER", "").strip()
+    if not producer:
+        producer = "human-curated" if mode == "human-curated" else "github-qwen"
+    delivery_id = os.environ.get("SCIENCE_HISTORY_DELIVERY_ID", "").strip()
+    if delivery_id and not re.fullmatch(rf"{re.escape(target.isoformat())}:[0-9a-f]{{64}}", delivery_id):
+        raise ValueError("SCIENCE_HISTORY_DELIVERY_ID 格式或日期不正确")
+
+    payload = {
         "version": 1,
         "date": target.isoformat(),
         "timezone": TIMEZONE,
         "review_mode": mode,
-        "model": None if mode == "human-curated" else QWEN_MODEL,
+        "producer": producer,
+        "model": QWEN_MODEL if producer == "github-qwen" else None,
         "validation_scope": validation,
         "items": [
             {
@@ -620,6 +630,9 @@ def audit_payload(target: date, items: list[dict[str, Any]], mode: str) -> dict[
             for item in items
         ],
     }
+    if delivery_id:
+        payload["delivery_id"] = delivery_id
+    return payload
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -835,12 +848,14 @@ def transactional_publish(staged: list[tuple[Path, Path]]) -> None:
 
 def generate(target: date, input_path: Path | None, review_mode: str) -> None:
     if input_path is not None:
-        if review_mode != "human-curated":
-            raise ValueError("--input 必须显式搭配 --review-mode human-curated")
+        if review_mode not in {"human-curated", "automated-retrieval-gates"}:
+            raise ValueError(
+                "--input 必须显式搭配 --review-mode human-curated 或 automated-retrieval-gates"
+            )
         candidates = read_json(input_path)
     else:
-        if review_mode == "human-curated":
-            raise ValueError("human-curated 模式必须提供 --input")
+        if review_mode != "automated":
+            raise ValueError("外部输入审校模式必须提供 --input")
         api_key = os.environ.get("QWEN_API_KEY", "").strip()
         if not api_key:
             raise ValueError("缺少 QWEN_API_KEY；不会覆盖上一份成功快照")
@@ -891,8 +906,10 @@ def main() -> int:
     parser.add_argument("--date", default="", help="目标日期 YYYY-MM-DD；默认 Asia/Shanghai 当天")
     parser.add_argument("--input", type=Path, help="已人工审校的研究 JSON")
     parser.add_argument(
-        "--review-mode", choices=("automated", "human-curated"), default="automated",
-        help="输入审校模式；--input 必须显式使用 human-curated",
+        "--review-mode",
+        choices=("automated", "automated-retrieval-gates", "human-curated"),
+        default="automated",
+        help="输入审校模式；AstrBot 外部稿使用 automated-retrieval-gates",
     )
     parser.add_argument("--check", action="store_true", help="离线检查现有快照")
     parser.add_argument("--public", type=Path, help="同时检查 Hexo 构建后的 public 目录字节一致")

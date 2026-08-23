@@ -15,7 +15,7 @@
     "daily-images:check-public": "python tools/update_daily_images.py --check --public",
     "daily-widgets:check": "node tests/test_daily_local_images.js && node tests/test_daily_english_widgets.js && node tests/test_science_history_widget.js",
     "science-history:update": "python tools/history_today_poster.py",
-    "science-history:check": "python -m unittest tests.test_science_history_pipeline && python tools/history_today_poster.py --check",
+    "science-history:check": "python -m unittest tests.test_science_history_pipeline tests.test_science_history_dispatch && python tools/history_today_poster.py --check",
     "science-history:check-public": "python tools/history_today_poster.py --check --public public",
     "homepage:check-public": "node tests/test_home_category_sort.js",
     "bilingual:fingerprints:update": "node tools/translation_source_fingerprint.js --write",
