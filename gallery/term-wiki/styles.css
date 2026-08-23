@@ -207,32 +207,6 @@ html.term-wiki-document body,
   border-right: 1px solid var(--tw-border);
 }
 
-.term-wiki__tree-toolbar {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 12px;
-}
-
-.term-wiki__tree-collapse {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 40px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  color: var(--tw-accent) !important;
-  font-size: 16px;
-}
-
-.term-wiki__tree-collapse:hover {
-  background: var(--tw-hover);
-}
-
-.term-wiki__tree-collapse-icon {
-  font-size: 21px;
-  line-height: 1;
-}
-
 .term-wiki__tree-heading {
   margin: 0 0 12px;
   color: var(--text-highlight-color);
@@ -309,6 +283,10 @@ html.term-wiki-document body,
   padding: 3px 0 2px 10px;
 }
 
+.term-wiki__tree-items[hidden] {
+  display: none;
+}
+
 .term-wiki__tree-item {
   display: flex;
   align-items: flex-start;
@@ -354,14 +332,6 @@ html.term-wiki-document body,
   text-overflow: ellipsis;
   white-space: nowrap;
   opacity: 0.65;
-}
-
-.term-wiki.is-tree-collapsed .term-wiki__layout {
-  grid-template-columns: 120px minmax(0, 1fr);
-}
-
-.term-wiki.is-tree-collapsed .term-wiki__tree-content {
-  display: none;
 }
 
 .term-wiki__index {
@@ -1032,8 +1002,7 @@ body.term-wiki-scroll-lock {
 }
 
 @media (max-width: 900px) {
-  .term-wiki__layout,
-  .term-wiki.is-tree-collapsed .term-wiki__layout {
+  .term-wiki__layout {
     grid-template-columns: 1fr;
     gap: 22px;
   }
@@ -1045,11 +1014,6 @@ body.term-wiki-scroll-lock {
     overflow: visible;
     border-right: 0;
     border-bottom: 1px solid var(--tw-border);
-  }
-
-  .term-wiki__tree-toolbar {
-    justify-content: flex-start;
-    margin-bottom: 8px;
   }
 
   .term-wiki__tree-items {
