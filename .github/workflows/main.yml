@@ -48,6 +48,10 @@ jobs:
           git rm -rf .
           cd ..
           hexo g
+          # Copy committed static images verbatim before integrity checks. This
+          # also covers asset directories whose names contain glob metacharacters.
+          mkdir -p public/images
+          cp -a source/images/. public/images/
           cp .gitattributes ./public/.gitattributes
           npm run bilingual:check-public
           npm run assets:check-public
