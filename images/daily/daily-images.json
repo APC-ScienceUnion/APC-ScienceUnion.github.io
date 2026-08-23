@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-23T17:07:25+00:00",
+  "providers": {
+    "bing": {
+      "date": "2026-08-24",
+      "title": "布鲁克林大桥，纽约市，美国",
+      "headline": "跨越历史",
+      "description": "",
+      "copyright": "布鲁克林大桥，纽约市，美国 (© shayes17/Getty Images)",
+      "source_page_url": "https://www.bing.com/search?q=%E5%B8%83%E9%B2%81%E5%85%8B%E6%9E%97%E5%A4%A7%E6%A1%A5&form=hpcapt&mkt=zh-cn",
+      "source_image_url": "https://www.bing.com/th?id=OHR.BKBridge_ZH-CN3870511222_UHD.jpg",
+      "fetched_url": "https://www.bing.com/th?id=OHR.BKBridge_ZH-CN3870511222_UHD.jpg",
+      "mime": "image/jpeg",
+      "local_url": "/images/daily/bing-2026-08-24-7bffc15adbcc.jpg",
+      "image_path": "/images/daily/bing-2026-08-24-7bffc15adbcc.jpg",
+      "bytes": 3638222,
+      "sha256": "7bffc15adbccb9c1b8a4f44a801bbf05bd6043dc72dcf340039129ae22fcc15a"
+    },
+    "apod": {
+      "date": "2026-08-22",
+      "title": "Mostly Perseids",
+      "description": "Recorded the night of August 12-13, images from four dedicated meteor-monitoring cameras at an astronomical observatory in Czechia were aligned and combined to create this all-night, all-sky view. On that night, the total count came to 1,706 meteors. And since that coincided with the peak activity of the 2026 Perseid Meteor Shower, most are perseids. Their overwhelming numbers make them easy to spot. Quite convincingly, perseid trails all trace back to a single radiant on the sky at the upper right, a region in the annual shower's eponymous constellation Perseus. But meteors belonging to other much less active showers can also revealed by finding their radiants too. For example, seen crossing the perseid trails are meteors from a shower whose radiant lies in Cygnus, known as Kappa Cygnids. The antihelion complex, a general region near Aquarius and opposite the Sun in the sky, is also identifiable as a weak source for meteors.",
+      "explanation_en": "Recorded the night of August 12-13, images from four dedicated meteor-monitoring cameras at an astronomical observatory in Czechia were aligned and combined to create this all-night, all-sky view. On that night, the total count came to 1,706 meteors. And since that coincided with the peak activity of the 2026 Perseid Meteor Shower, most are perseids. Their overwhelming numbers make them easy to spot. Quite convincingly, perseid trails all trace back to a single radiant on the sky at the upper right, a region in the annual shower's eponymous constellation Perseus. But meteors belonging to other much less active showers can also revealed by finding their radiants too. For example, seen crossing the perseid trails are meteors from a shower whose radiant lies in Cygnus, known as Kappa Cygnids. The antihelion complex, a general region near Aquarius and opposite the Sun in the sky, is also identifiable as a weak source for meteors.",
+      "copyright": "Valašské Meziříčí Observatory",
+      "media_type": "image",
+      "source_page_url": "https://apod.nasa.gov/apod/ap260822.html",
+      "source_image_url": "https://apod.nasa.gov/apod/image/2608/allsky_CEMeNt_Aug12-13final_pretty_8bit.jpg",
+      "fetched_url": "https://apod.nasa.gov/apod/image/2608/allsky_CEMeNt_Aug12-13final_pretty_8bit.jpg",
+      "mime": "image/jpeg",
+      "local_url": "/images/daily/apod-2026-08-22-bc245696c02e.jpg",
+      "image_path": "/images/daily/apod-2026-08-22-bc245696c02e.jpg",
+      "bytes": 2973701,
+      "sha256": "bc245696c02ecf62b95adcde0f3e08a0ca615f054013a9c9baa549e7277bf0f1"
+    },
+    "wikipedia": {
+      "date": "2026-08-24",
+      "title": "Caucasus, Ingushetia, Ингушские боевые и смотровые башни, горы Кавказа",
+      "description": "The Erzi medieval complex, circa 16th century, in its entirety. Fortified Ingush military towers of Erzi, in Armkhi Valley, Ingushetia, Central Caucasus. The height of the towers is around 29 metres (95 ft). Erzi, Republic of Ingushetia.",
+      "copyright": "Vyacheslav Argenberg · http://www.vascoplanet.com/ · CC BY 4.0",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Caucasus,_Ingushetia,_%D0%98%D0%BD%D0%B3%D1%83%D1%88%D1%81%D0%BA%D0%B8%D0%B5_%D0%B1%D0%BE%D0%B5%D0%B2%D1%8B%D0%B5_%D0%B8_%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%BE%D0%B2%D1%8B%D0%B5_%D0%B1%D0%B0%D1%88%D0%BD%D0%B8,_%D0%B3%D0%BE%D1%80%D1%8B_%D0%9A%D0%B0%D0%B2%D0%BA%D0%B0%D0%B7%D0%B0.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Caucasus,_Ingushetia,_%D0%98%D0%BD%D0%B3%D1%83%D1%88%D1%81%D0%BA%D0%B8%D0%B5_%D0%B1%D0%BE%D0%B5%D0%B2%D1%8B%D0%B5_%D0%B8_%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%BE%D0%B2%D1%8B%D0%B5_%D0%B1%D0%B0%D1%88%D0%BD%D0%B8,_%D0%B3%D0%BE%D1%80%D1%8B_%D0%9A%D0%B0%D0%B2%D0%BA%D0%B0%D0%B7%D0%B0.jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Caucasus%2C_Ingushetia%2C_%D0%98%D0%BD%D0%B3%D1%83%D1%88%D1%81%D0%BA%D0%B8%D0%B5_%D0%B1%D0%BE%D0%B5%D0%B2%D1%8B%D0%B5_%D0%B8_%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%BE%D0%B2%D1%8B%D0%B5_%D0%B1%D0%B0%D1%88%D0%BD%D0%B8%2C_%D0%B3%D0%BE%D1%80%D1%8B_%D0%9A%D0%B0%D0%B2%D0%BA%D0%B0%D0%B7%D0%B0.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Caucasus%2C_Ingushetia%2C_%D0%98%D0%BD%D0%B3%D1%83%D1%88%D1%81%D0%BA%D0%B8%D0%B5_%D0%B1%D0%BE%D0%B5%D0%B2%D1%8B%D0%B5_%D0%B8_%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%BE%D0%B2%D1%8B%D0%B5_%D0%B1%D0%B0%D1%88%D0%BD%D0%B8%2C_%D0%B3%D0%BE%D1%80%D1%8B_%D0%9A%D0%B0%D0%B2%D0%BA%D0%B0%D0%B7%D0%B0.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "mime": "image/jpeg",
+      "local_url": "/images/daily/wikipedia-2026-08-24-010ef8d65e4e.jpg",
+      "image_path": "/images/daily/wikipedia-2026-08-24-010ef8d65e4e.jpg",
+      "bytes": 19377772,
+      "sha256": "010ef8d65e4eea8a14d8489e14eae501c5981195f9180976815ec7b507e95d36"
+    }
+  }
+}

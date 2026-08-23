@@ -1,83 +1,28 @@
-document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelectorAll("[data-today-in-history]");if(t.length===0)return;const e=typeof window.apcLoadingHtml==="function"?window.apcLoadingHtml("正在加载科学史上的今天…"):'<p style="padding:20px;color:#888;">正在加载科学史上的今天…</p>';t.forEach(t=>{t.innerHTML=e});renderScienceHistoryFromStatic(t)});function renderScienceHistoryFromStatic(c){let t="/";try{if(window.KEEP&&window.KEEP.hexo_config&&window.KEEP.hexo_config.root){t=window.KEEP.hexo_config.root}else if(window.CONFIG&&window.CONFIG.root){t=window.CONFIG.root}}catch(t){}if(!t)t="/";if(!t.endsWith("/"))t+="/";const e=t+"ScienceHistory/science_today.json?_="+Date.now();const l=t+"ScienceHistory/science_today.png";fetch(e).then(t=>{if(!t.ok)throw new Error(`JSON 加载失败: ${t.status}`);return t.text()}).then(e=>{let t;try{t=JSON.parse(e)}catch(t){throw new Error(`JSON 解析失败: ${t.message}，响应前 80 字符: ${e.slice(0,80)}`)}const o=t.title||"科学史上的今天";const n=t.date_text||"";const i=t.week||"";const s=Array.isArray(t.items)?t.items:[];const r=s.length?s.map(t=>`
-            <li style="padding:6px 0;border-bottom:1px solid #eee;line-height:1.7;">
-              ${t}
-            </li>
-          `).join(""):'<div style="padding:16px;color:#6b7280;">今天暂无记录</div>';const a=`
-        <div style="max-width:900px;margin:16px auto;padding:18px 20px;background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(149,157,165,0.2);">
-          <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:10px;">
-            <div>
-              <h2 style="margin:0;font-size:22px;color:#111827;">${o}</h2>
-              <div style="margin-top:4px;color:#6b7280;font-size:14px;">${n} ${i}</div>
-            </div>
-          </div>
-          <ol style="list-style:none;padding:0;margin:0;">${r}</ol>
-        </div>
-      `;c.forEach(t=>{t.innerHTML=a;const e=document.createElement("div");e.style.marginTop="18px";const o=new Image;o.src=l;o.alt="科学史上的今天 长图";o.style.width="100%";o.style.borderRadius="8px";o.style.boxShadow="0 6px 24px rgba(0,0,0,.08)";e.appendChild(o);t.appendChild(e)})}).catch(t=>{const e=`
-        <div style="color:#b91c1c;padding:15px;background:#fee2e2;border-left:4px solid #ef4444;border-radius:8px;">
-          加载科学史上的今天失败: ${t.message}
-        </div>
-      `;c.forEach(t=>t.innerHTML=e)})}function parseScienceHistoryItems(t){const e=t.split("\n").map(t=>t.trim());const o=[];const n=/^(\d+)\.\s*(.+)$/;for(const i of e){if(!i)continue;if(i.startsWith("```"))continue;if(i.startsWith("科学史上的今天"))continue;const s=i.match(n);if(s&&s[2]){o.push(s[2].trim())}}return o}function generateScienceHistoryPoster({headerUrl:A="",dateText:M,weekText:N,titleText:P,items:I,year:j,month:L,day:O}){return new Promise(async(o,e)=>{try{const l=1080;const n=72;const d=Math.round(l*.56);const r=document.createElement("canvas");r.width=l;r.height=10;const a=r.getContext("2d");const c={date:'500 36px "Noto Sans SC","Microsoft YaHei",sans-serif',week:'400 32px "Noto Sans SC","Microsoft YaHei",sans-serif',titleEn:'600 26px "Noto Sans SC","Microsoft YaHei",sans-serif',title:'700 64px "Noto Sans SC","Microsoft YaHei",sans-serif',item:'400 36px "Noto Sans SC","Microsoft YaHei",sans-serif',footer:'400 26px "Noto Sans SC","Microsoft YaHei",sans-serif',dayBadge:'800 200px "Noto Sans SC","Microsoft YaHei",sans-serif'};const p=l-n*2;function s(e,t,o){const n=t.split("");let i="";const s=[];for(let t=0;t<n.length;t++){const r=i+n[t];const a=e.measureText(r).width;if(a>o&&i){s.push(i);i=n[t]}else{i=r}}if(i)s.push(i);return s}a.font=c.item;const f=56;let i=0;const h=I.map((t,e)=>{const o=`${e+1}. `;const n=s(a,o+t,p);i+=n.length*f+12;return n});const y=64+26+36+24+32;const g=["图像制作：格物社 / A.P.C.科学联盟","灵感赖渊：缪卿九","头图供图：Marianna Armata/Getty Image","特别鸣谢：Qwen-3-Max、kimi-k2-0905-preview","免责声明：图片内容由 AI 总结生成，不代表格物社/A.P.C.科学联盟立场"];const m=36*g.length+80;const x=d+40+y+24+i+m;const w=document.createElement("canvas");w.width=l;w.height=x;const u=w.getContext("2d");u.fillStyle="#ffffff";u.fillRect(0,0,l,x);const S=document.createElement("canvas");S.width=l;S.height=d;const b=S.getContext("2d");const v=async()=>{if(!A){const e=b.createLinearGradient(0,0,l,d);e.addColorStop(0,"#f8d77a");e.addColorStop(1,"#f3a34e");b.fillStyle=e;b.fillRect(0,0,l,d);return}try{const t=await loadImage(A);const o=t.width,n=t.height;const i=Math.max(l/o,d/n);const s=o*i,r=n*i;const a=(l-s)/2;const c=(d-r)/2;b.drawImage(t,a,c,s,r)}catch(t){const e=b.createLinearGradient(0,0,l,d);e.addColorStop(0,"#f8d77a");e.addColorStop(1,"#f3a34e");b.fillStyle=e;b.fillRect(0,0,l,d)}};await v();u.drawImage(S,0,0,l,d,0,0,l,d);let e=d+80;const E=O<10?"0"+O:""+O;u.font=c.dayBadge;u.fillStyle="#ffffff";u.strokeStyle="rgba(0,0,0,.25)";u.lineWidth=4;const $=u.measureText(E);const T=$.width;const C=l-n-T;const H=d-40;u.strokeText(E,C,H);u.fillText(E,C,H);u.fillStyle="#222222";u.font=c.title;u.fillText(P,n,e);e+=64;u.fillStyle="#666666";u.font=c.date;u.fillText(M,n,e);e+=42;u.font=c.week;u.fillText(N,n,e);e+=40;u.strokeStyle="#eeeeee";u.lineWidth=2;u.beginPath();u.moveTo(n,e);u.lineTo(l-n,e);u.stroke();e+=64;u.fillStyle="#333333";u.font=c.item;h.forEach(t=>{t.forEach(t=>{u.fillText(t,n,e);e+=f});e+=12});e+=8;u.strokeStyle="#eeeeee";u.beginPath();u.moveTo(n,e);u.lineTo(l-n,e);u.stroke();e+=36;u.fillStyle="#8a8a8a";u.font=c.footer;g.forEach(t=>{u.fillText(t,n,e);e+=34});const k=`history_today_${j}-${L}-${O}.png`;let t="";try{t=w.toDataURL("image/png")}catch(t){}o({dataUrl:t,fileName:k,canvas:w})}catch(t){e(t)}})}function renderScienceHistoryPoster(a){if(!a||!a.length)return;const o=a[0];const r=o.getAttribute("data-qwen-key")||"";const t=o.getAttribute("data-kimi-key")||"";const c=o.getAttribute("data-history-header")||"";if(!t||!r){try{console.error("[ScienceHistory] 缺少必要的 API Key：",{hasKimi:!!t,hasQwen:!!r})}catch(t){}return}const e=new Date;const l=e.getFullYear();const d=e.getMonth()+1;const p=e.getDate();const f=`${l}-${String(d).padStart(2,"0")}-${String(p).padStart(2,"0")}`;const n=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];const h=n[e.getDay()];const y=`${l}年${d}月${p}日`;const s=t=>String(t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");function g(t){if(!t)t="（今日未检索到符合条件的科学史重大事件。）";const e=String(t).split("\n");if(e.length&&e[0].trim().startsWith("```")){e.shift()}while(e.length&&e[e.length-1].trim().startsWith("```")){e.pop()}const o=e.join("\n").trim();const n=s(o);const i=`
-      <div style="max-width:900px;margin:16px auto;padding:18px 20px;background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(149,157,165,0.2);">
-        <div style="display:flex;align-items:center;justify-content:flex-start;margin-bottom:10px;">
-          <h2 style="margin:0;font-size:20px;color:#111827;">科学史上的今天 - ${f}</h2>
-        </div>
-        <div style="margin-top:4px;color:#374151;line-height:1.8;white-space:pre-wrap;font-size:0.97rem;">
-          ${n}
-        </div>
-      </div>
-    `;a.forEach(t=>{t.innerHTML=i})}const m=`scienceHistoryToday_${f}`;let i=null;try{if(typeof window!=="undefined"&&window.localStorage){const S=localStorage.getItem(m);if(S)i=JSON.parse(S)}}catch(t){i=null}if(i&&typeof i==="object"){const b=Array.isArray(i.items)?i.items:[];const v=typeof i.content==="string"?i.content:"";if(b.length){const E=b;const $=E.map(t=>`
-        <li style="padding:8px 0;border-bottom:1px solid #eee;line-height:1.7;">
-          ${t}
-        </li>
-      `).join("")||'<div style="padding:16px;color:#6b7280;">今天暂无记录</div>';const T=`
-        <div style="max-width:900px;margin:16px auto;padding:18px 20px;background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(149,157,165,0.2);">
-          <div style="display:flex;align-items:center;justify-content:flex-start;margin-bottom:10px;">
-            <h2 style="margin:0;font-size:20px;color:#111827;">科学史上的今天 - ${f}</h2>
-          </div>
-          <ol style="list-style:none;padding:0;margin:0;">${$}</ol>
-        </div>
-      `;a.forEach(t=>{t.innerHTML=T});generateScienceHistoryPoster({headerUrl:c,dateText:y,weekText:h,titleText:"科学史上的今天",items:E,year:l,month:d,day:p}).then(({dataUrl:i,canvas:s})=>{a.forEach(t=>{const e=document.createElement("div");e.style.marginTop="18px";let o;if(i){const n=document.createElement("img");n.src=i;n.alt="科学史上的今天 长图";o=n}else{o=s}o.style.width="100%";o.style.borderRadius="8px";o.style.boxShadow="0 6px 24px rgba(0,0,0,.08)";e.appendChild(o);t.appendChild(e)})}).catch(t=>{const e=document.createElement("div");e.style.marginTop="10px";e.style.color="#b91c1c";e.style.padding="10px 12px";e.style.background="#fee2e2";e.style.borderLeft="4px solid #ef4444";e.style.borderRadius="8px";e.textContent=`科学史上的今天长图生成失败：${t.message}`;a.forEach(t=>t.appendChild(e.cloneNode(true)))});return}if(v){g(v);return}}const x=`我要求你整理“科学史上的今天”资料，今天是${f}。请注意，科学史包括自然科学（理学/工学/农学/医学等）与人文社科（哲学/经济学等）。你禁止包括任何娱乐新闻或无关紧要的小事。
-
-你的回答必须满足以下要求：
-0、关于检索的网页只允许查询权威博物馆的历史资料以及公开的权威百科和网站百科资料、以及权威有名的杂志。
-禁止百度搜狗360等中国百科、抖音、抖音百科、今天头条、360doc个人图书馆、网易、手机搜狐网、华人头条、IT之家、新晚报。
-
-
-1、资料必须是历史上的重大事件。
-
-2、你的回答必须符合规定日期**当天**实际发生过的历史事件，你必须查阅网络资料验证信息来源真实。
-
-3、必须严格按照以下格式返回内容，禁止返回格式之外的任何信息。 每件史实必须在同一行内。
-
-4、内容必须权威准确，最后只保留最权威最重要的**20**条
-
-\`\`\`md
-
-科学史上的今天（${f}）
-
-1. 年份（如：1101）：事件简要说明
-
-...
-
-15. 年份（如：2005）：事件简要说明
-
-\`\`\`
-
-5、年份必须**由早到晚**排序。`;const w="https://api.moonshot.cn/v1/chat/completions";const u="https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions";fetch(w,{method:"POST",headers:{"Content-Type":"application/json",Authorization:`Bearer ${t}`},body:JSON.stringify({model:"kimi-k2-0905-preview",messages:[{role:"system",content:"你是一个精通科学史的、严谨的学者。"},{role:"user",content:x}],temperature:.1})}).then(t=>{if(!t.ok)throw new Error(`Kimi API 错误: ${t.status}`);return t.json()}).then(t=>{try{console.debug("[ScienceHistory][Kimi] raw response:",t)}catch(t){}const e=t&&t.choices||[];if(!e.length)throw new Error("Kimi 未返回候选结果");const o=e[0].message||{};const n=typeof o.content==="string"?o.content:Array.isArray(o.content)?o.content.map(t=>t.text||"").join(""):"";if(!n.trim())throw new Error("Kimi 返回文本为空");try{console.debug("[ScienceHistory][Kimi] message.content:",n)}catch(t){}const i=`你是一个精通科学史的、严谨的学者。请检查我收集的资料【${n}】中的内容是否准确（你必须严格审查日期与事件的真实性）。
-
-- 如果有条目错误，必须直接删除该条目。
-- 检查无误后，保持资料原本的格式（科学史上的今天（${f}）以及后续内容）返回给我（你需要确保剩下的条目都正确）
-- 如果所有条目均不正确，你只需要返回原本资料的header（即科学史上的今天（${f}））
-- 禁止输出条目原本的序号
-- 禁止输出条目外的内容。`;const s={model:"qwen3-max-preview",messages:[{role:"system",content:"你是一个精通科学史的、严谨的学者"},{role:"user",content:i}],temperature:.1,extra_body:{enable_thinking:true}};return fetch(u,{method:"POST",headers:{"Content-Type":"application/json",Authorization:`Bearer ${r}`},body:JSON.stringify(s)})}).then(t=>{if(!t.ok)throw new Error(`Qwen3 API 错误: ${t.status}`);return t.json()}).then(t=>{try{console.debug("[ScienceHistory][Qwen3] raw response:",t)}catch(t){}const e=t&&t.choices||[];if(!e.length)throw new Error("Qwen3 未返回候选结果");const o=e[0].message||{};const n=typeof o.content==="string"?o.content:"";try{console.debug("[ScienceHistory][Qwen3] message.content:",n)}catch(t){}if(!n.trim())throw new Error("Qwen3 返回文本为空");const i=parseScienceHistoryItems(n);try{if(typeof window!=="undefined"&&window.localStorage){localStorage.setItem(m,JSON.stringify({items:i,content:n}))}}catch(t){}if(!i.length){try{console.warn("[ScienceHistory][Qwen3] 本日无可解析条目，直接展示模型原文。")}catch(t){}g(n);return}const s=i.map(t=>`
-        <li style="padding:8px 0;border-bottom:1px solid #eee;line-height:1.7;">
-          ${t}
-        </li>
-      `).join("")||'<div style="padding:16px;color:#6b7280;">今天暂无记录</div>';const r=`
-        <div style="max-width:900px;margin:16px auto;padding:18px 20px;background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(149,157,165,0.2);">
-          <div style="display:flex;align-items:center;justify-content:flex-start;margin-bottom:10px;">
-            <h2 style="margin:0;font-size:20px;color:#111827;">科学史上的今天 - ${f}</h2>
-          </div>
-          <ol style="list-style:none;padding:0;margin:0;">${s}</ol>
-        </div>
-      `;a.forEach(t=>{t.innerHTML=r});return generateScienceHistoryPoster({headerUrl:c,dateText:y,weekText:h,titleText:"科学史上的今天",items:i,year:l,month:d,day:p})}).then(({dataUrl:i,canvas:s})=>{a.forEach(t=>{const e=document.createElement("div");e.style.marginTop="18px";let o;if(i){const n=document.createElement("img");n.src=i;n.alt="科学史上的今天 长图";o=n}else{o=s}o.style.width="100%";o.style.borderRadius="8px";o.style.boxShadow="0 6px 24px rgba(0,0,0,.08)";e.appendChild(o);t.appendChild(e)})}).catch(t=>{const e=document.createElement("div");e.style.marginTop="10px";e.style.color="#b91c1c";e.style.padding="10px 12px";e.style.background="#fee2e2";e.style.borderLeft="4px solid #ef4444";e.style.borderRadius="8px";e.textContent=`科学史上的今天长图生成失败：${t.message}`;o.appendChild(e)})}
+(()=>{"use strict";const n="[data-today-in-history]";const s="ScienceHistory/science_today.json";const o="ScienceHistory/science_today.png";const r="apcScienceHistorySnapshot:v2";const a=24;const c=t=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");function l(t,e="",r=260){const n=typeof t==="string"?t.replace(/[\u0000-\u001f\u007f]+/g," ").replace(/\s+/g," ").trim():"";return(n||e).slice(0,r)}function i(){let t="/";try{if(window.KEEP&&window.KEEP.hexo_config&&window.KEEP.hexo_config.root){t=window.KEEP.hexo_config.root}else if(window.CONFIG&&window.CONFIG.root){t=window.CONFIG.root}}catch(t){}t=String(t||"/").trim();if(!t.startsWith("/")||t.startsWith("//")||t.includes("\\")||/(?:^|\/)\.\.(?:\/|$)/.test(t)||/%(?:2e|2f|5c)/i.test(t)||/[?#\u0000-\u001f\u007f]/.test(t))return"/";return t.endsWith("/")?t:`${t}/`}function d(t,e){const r=String(t||"").replace(/^\/+/,"");return`${e}${r}`.replace(/\/{2,}/g,"/")}function u(t,e){let r=typeof t==="string"?t.trim():"";if(!r)return d(o,e);if(r.startsWith("//")||/^[a-z][a-z\d+.-]*:/i.test(r)||r.includes("\\")||/(?:^|\/)\.\.(?:\/|$)/.test(r)||/%(?:2e|2f|5c)/i.test(r)||/[?#\u0000-\u001f\u007f]/.test(r)||!/\.(?:png|jpe?g|webp|avif)$/i.test(r))return d(o,e);r=r.replace(/^\/+/,"");const n=e.replace(/^\/+|\/+$/g,"");if(n&&r.startsWith(`${n}/`))return`/${r}`;return d(r,e)}function p(t){const e=String(t||"").trim();if(!e.startsWith("/")||e.startsWith("//")||e.includes("\\")||/(?:^|\/)\.\.(?:\/|$)/.test(e)||/[\u0000-\u001f\u007f]/.test(e))return"/2099/12/31/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB/";return e}function f(t){if(typeof t==="string"){const n=l(t,"",320);if(!n)return null;const o=n.match(/^(\d{3,4}年?)\s*[：:—-]?\s*(.*)$/);return{label:o?o[1]:"",title:"",text:o&&o[2]?o[2]:n}}if(!t||typeof t!=="object")return null;const e=l(t.label||t.year,"",24);const r=l(t.title,"",100);const n=l(t.text||t.description,"",320);if(!e&&!r&&!n)return null;return{label:e,title:r,text:n}}function g(t,e){if(!t||typeof t!=="object"||!Array.isArray(t.items)){throw new Error("Invalid science-history snapshot")}const r=t.items.slice(0,a).map(f).filter(Boolean);if(!r.length)throw new Error("Science-history snapshot contains no verified items");const n=l(t.subtitle,[l(t.date_text,"",40),l(t.week,"",20)].filter(Boolean).join(" "),160);const o=l(t.date||t.generated_for||t.snapshot_date,"",32);const i=n.match(/\b\d{4}-\d{2}-\d{2}\b/);const s=/^\d{4}-\d{2}-\d{2}$/.test(o)?o:i?i[0]:"";return{version:Number.isFinite(Number(t.version))?Number(t.version):1,date:s,kicker:l(t.kicker,"SCIENCE HISTORY",60),title:l(t.title,"科技史上的今天",80),subtitle:n,deck:l(t.deck,"",260),poster:u(t.poster||t.poster_url||t.image||t.image_url||t.local_url,e),items:r}}function h(){return`
+      <div role="status" aria-live="polite" style="margin:16px 0;padding:18px 20px;border-radius:12px;background:rgba(127,127,127,.08);color:var(--font-color,#555);">
+        正在加载今日科技史快照…
+      </div>`}function y(){return`
+      <div role="status" style="margin:16px 0;padding:18px 20px;border-left:4px solid #d97706;border-radius:10px;background:rgba(217,119,6,.1);color:var(--font-color,#555);line-height:1.7;">
+        <strong>今日科技史快照暂时无法加载。</strong><br>
+        定时任务会保留最近一次成功生成的文件；请稍后刷新页面。
+      </div>`}function x(){let t="/2099/12/31/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB/";try{const e=document.querySelector("#language-switch a");if(e&&typeof e.getAttribute==="function"){t=p(e.getAttribute("href"))}}catch(t){}return`
+      <div role="status" style="margin:16px 0;padding:18px 20px;background:rgba(127,127,127,.08);border-radius:10px;line-height:1.65;color:var(--font-color,#555);">
+        <p style="margin:0 0 10px;">Today's science-history data is currently available only in Chinese. The Chinese text and poster are not embedded here because an editorially reviewed English edition is not yet available.</p>
+        <a href="${c(t)}" lang="zh-CN" hreflang="zh-CN">Open the Chinese version of this article</a>
+      </div>`}function b(t,e){const r=e?`<div role="status" style="margin:0 0 14px;padding:10px 12px;border-radius:8px;background:rgba(217,119,6,.1);color:var(--font-color,#555);">本站快照暂时不可用，正在展示浏览器中最近一次成功保存的内容。</div>`:"";const n=t.date?`本站每日快照 · ${c(t.date)}`:"本站每日快照";const o=t.items.map(t=>{const e=[t.label?`<span style="display:inline-block;margin-right:8px;color:#b45309;font-weight:700;">${c(t.label)}</span>`:"",t.title?`<strong>${c(t.title)}</strong>`:""].join("");return`
+        <li style="padding:12px 0;border-bottom:1px solid rgba(127,127,127,.18);line-height:1.75;">
+          ${e?`<div>${e}</div>`:""}
+          ${t.text?`<div${e?' style="margin-top:3px;"':""}>${c(t.text)}</div>`:""}
+        </li>`}).join("");const i=t.date?`?v=${encodeURIComponent(t.date)}`:"";return`
+      ${r}
+      <section style="max-width:900px;margin:16px auto;padding:20px;background:var(--card-bg,#fff);border-radius:12px;box-shadow:0 8px 24px rgba(149,157,165,.18);color:var(--font-color,#333);">
+        <div style="font-size:12px;letter-spacing:.12em;color:#b45309;font-weight:700;">${c(t.kicker)}</div>
+        <h2 style="margin:6px 0 0;font-size:24px;color:var(--font-color,#222);">${c(t.title)}</h2>
+        ${t.subtitle?`<div style="margin-top:5px;color:var(--font-color,#666);opacity:.76;font-size:14px;">${c(t.subtitle)}</div>`:""}
+        ${t.deck?`<p style="margin:12px 0 4px;line-height:1.7;">${c(t.deck)}</p>`:""}
+        <ol style="list-style:none;padding:0;margin:12px 0 0;">${o}</ol>
+        <div style="margin-top:12px;font-size:12px;opacity:.62;">${n}</div>
+      </section>
+      <figure data-science-history-poster-wrap style="max-width:900px;margin:18px auto 0;">
+        <img data-science-history-poster src="${c(t.poster+i)}" alt="${c(t.title)}长图" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.08);">
+      </figure>`}function m(t){if(!t||typeof t.querySelector!=="function")return;const e=t.querySelector("[data-science-history-poster]");if(!e||typeof e.addEventListener!=="function")return;e.addEventListener("error",()=>{const t=typeof e.closest==="function"?e.closest("[data-science-history-poster-wrap]"):null;if(t){t.innerHTML='<div role="status" style="padding:14px;border-radius:8px;background:rgba(127,127,127,.08);color:var(--font-color,#666);">今日长图快照暂时不可用，已保留上方经核验的文字记录。</div>'}},{once:true})}function v(t,e,r){const n=b(e,r);t.forEach(t=>{t.innerHTML=n;m(t)})}function w(t){try{if(!window.localStorage)return null;const e=window.localStorage.getItem(r);return e?g(JSON.parse(e),t):null}catch(t){return null}}function $(t){try{if(window.localStorage)window.localStorage.setItem(r,JSON.stringify(t))}catch(t){}}async function E(e,r){try{const t=await fetch(d(s,r),{cache:"no-cache",credentials:"same-origin",headers:{Accept:"application/json"}});if(!t.ok)throw new Error(`Snapshot request failed (${t.status})`);const n=await t.text();const o=g(JSON.parse(n),r);$(o);v(e,o,false)}catch(t){const i=w(r);if(i){v(e,i,true)}else{e.forEach(t=>{t.innerHTML=y()})}try{console.error("[ScienceHistory] Local snapshot unavailable.",t)}catch(t){}}}function t(){const t=Array.from(document.querySelectorAll(n));if(!t.length)return;const e=String(document.documentElement&&document.documentElement.lang||"");if(/^en(?:-|$)/i.test(e)){const r=x();t.forEach(t=>{t.innerHTML=r});return}t.forEach(t=>{t.innerHTML=h()});E(t,i())}document.addEventListener("DOMContentLoaded",t)})();
