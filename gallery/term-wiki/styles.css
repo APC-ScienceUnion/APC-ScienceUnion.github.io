@@ -611,7 +611,8 @@ html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-
   height: min(94dvh, 1020px);
   max-height: calc(100vh - 24px);
   max-height: calc(100dvh - 24px);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   border: 1px solid var(--tw-border);
   border-radius: 10px;
   background: var(--tw-surface);
@@ -642,6 +643,9 @@ html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-
 }
 
 .term-wiki__modal-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -650,6 +654,7 @@ html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-
   min-height: 72px;
   padding: 10px 20px;
   border-bottom: 1px solid var(--tw-border);
+  background: var(--tw-surface);
 }
 
 .term-wiki__modal-heading {
@@ -680,9 +685,7 @@ html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-
   gap: 8px;
 }
 
-.term-wiki__modal-close,
-.term-wiki__zoom,
-.term-wiki__copy {
+.term-wiki__modal-close {
   min-height: 44px;
   border-radius: 6px;
   font-size: 16px;
@@ -694,27 +697,17 @@ html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-
   line-height: 1;
 }
 
-.term-wiki__copy {
-  padding: 8px 14px;
-  color: var(--tw-accent) !important;
-}
-
-.term-wiki__zoom {
-  padding: 8px 14px;
-  color: var(--tw-accent) !important;
-}
-
-.term-wiki__modal-close:hover,
-.term-wiki__zoom:hover,
-.term-wiki__copy:hover {
+.term-wiki__modal-close:hover {
   background: var(--tw-hover);
 }
 
 .term-wiki__viewer {
   display: grid;
   grid-template-columns: 56px minmax(0, 1fr) 56px;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   min-height: 0;
+  height: min(66vh, 700px);
+  height: min(66dvh, 700px);
   gap: 12px;
   align-items: center;
   padding: 18px 20px 14px;
@@ -763,12 +756,21 @@ html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
 }
 
 .term-wiki__image-frame.is-zoomed {
   align-items: flex-start;
   justify-content: flex-start;
   overflow: auto;
+  cursor: default;
+  touch-action: auto;
+}
+
+.term-wiki__image-frame.is-swiping {
+  cursor: grabbing;
 }
 
 .term-wiki__card-image {
@@ -783,6 +785,9 @@ html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-
   object-fit: contain;
   opacity: 1;
   transition: opacity 0.16s ease;
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .term-wiki__image-frame.is-loading .term-wiki__card-image,
@@ -797,6 +802,7 @@ html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-
   max-width: none;
   max-height: none;
   margin: 0;
+  cursor: zoom-out;
 }
 
 .term-wiki__image-loading,
@@ -846,9 +852,7 @@ html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-
 }
 
 .term-wiki__transcript[open] .term-wiki__detail {
-  max-height: min(38vh, 420px);
-  max-height: min(38dvh, 420px);
-  overflow-y: auto;
+  overflow: visible;
 }
 
 .term-wiki__detail {
@@ -856,6 +860,14 @@ html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-
   color: var(--font-color);
   font-size: 17px;
   line-height: 1.8;
+}
+
+.term-wiki__transcript-intro {
+  margin: 14px 0 0;
+  color: var(--font-color);
+  font-size: 17px;
+  line-height: 1.85;
+  white-space: pre-line;
 }
 
 .term-wiki__detail-header {
@@ -1015,12 +1027,6 @@ html.term-wiki-document[data-theme='dark'] .term-wiki button.term-wiki__card.is-
   white-space: nowrap;
 }
 
-.term-wiki__copy-helper {
-  position: fixed;
-  left: -9999px;
-  top: 0;
-}
-
 body.term-wiki-scroll-lock {
   overflow: hidden;
 }
@@ -1123,6 +1129,9 @@ body.term-wiki-scroll-lock {
 
   .term-wiki__viewer {
     grid-template-columns: 44px minmax(0, 1fr) 44px;
+    height: 58vh;
+    height: 58dvh;
+    min-height: 420px;
     gap: 4px;
     padding: 10px 6px 8px;
   }
