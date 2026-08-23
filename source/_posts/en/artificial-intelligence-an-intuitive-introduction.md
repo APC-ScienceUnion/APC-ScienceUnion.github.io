@@ -4,20 +4,20 @@ title: Artificial Intelligence — An Intuitive Introduction
 date: 2019-08-25 09:09:00
 lang: en
 translation_key: "人工智能(AI) 通俗演义"
-translation_source_sha256: "b07ed0a91ea90f2ffb60d15f5a47b15bd4c92907a3a1336eedd0b92d9c120951"
+translation_source_sha256: "667e36450d57ea00fe4708f9b4468aec110887f5a6f3eed4f2e13772daab6a38"
 permalink: en/2019/08/25/artificial-intelligence-an-intuitive-introduction/
 aside: false
 comments: false
 tags: []
 categories: []
 copyright_author: '面皮(Mepy)'
-cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/cover-77aa732b51.jpg
+cover: /images/artificial-intelligence-intuitive-introduction/cover-77aa732b51.jpg
 ---
 
 > Author: 面皮 (Mepy)  
 > Reviewer: 东达
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/cover-77aa732b51.jpg" title="Left: people who know nothing about AI think it will take over the world. Right: my AI neural network identifies a cat as a dog." />
+<img src="/images/artificial-intelligence-intuitive-introduction/cover-77aa732b51.jpg" title="Left: people who know nothing about AI think it will take over the world. Right: my AI neural network identifies a cat as a dog." />
 
 <center><font size=2px color=grey>Left: people who know nothing about AI think it will take over the world. Right: my AI neural network identifies a cat as a dog.</font></center>
 
@@ -29,7 +29,7 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;First, a person receives an image through the eyes—the two crooked handwritten digits shown on the right, for example. Neurons then carry that visual information to the brain's processing centers. Finally, the brain assigns meaning to the image.
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-001-d592ef6d0a.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-001-d592ef6d0a.jpg" />
 
 &emsp;&emsp;In short, a human reads a digit in three stages: input, processing, and output.
 
@@ -41,7 +41,7 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;To make the example easier, we will reduce the task to deciding whether a handwritten image shows the digit “4.”
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-001-d592ef6d0a.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-001-d592ef6d0a.jpg" />
 
 &emsp;&emsp;At a glance, we feel certain that the image on the left is a 4 and the image on the right is not. Put in terms of probability, our brain might judge the left image to be 99% likely to show a 4 and the right image to be 100% certain not to show one.
 
@@ -49,7 +49,7 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;We will need a little mathematics to do that, but nothing too intimidating.
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-002-482596e6e5.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-002-482596e6e5.jpg" />
 <center><font size=2px color=grey>In this example, the image is identified as the digit 4 with 100% probability.</font></center>
 
 &emsp;&emsp;How should the probability function P(X) be calculated? A computer will not work it out by itself; it needs an algorithm. We therefore have to design a mathematical method.
@@ -60,7 +60,7 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;Write those 784 numbers vertically in a fixed order to form a 784-dimensional vector X. X now represents the image, and each number is one component of the vector. We write the nth component as X[n]. Different images produce different X values, while identical images produce identical X values, so all 784 components must appear in the formula related to P(X).
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-003-a2937df871.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-003-a2937df871.jpg" />
 
 &emsp;&emsp;The equation most familiar to most people is probably a linear equation in one variable. A pair of linear equations is not much harder: solve them simultaneously. In school, functions are likewise introduced through linear functions of one variable. Linear form seems to make a problem simpler and clearer, so we will write P(X) as a linear function of 784 variables.
 
@@ -68,13 +68,13 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;Start with the one-variable function y = w·x + b. Here x is multiplied by a coefficient w before the constant b is added. The 784-variable version follows the same pattern. Each component X[n] of the vector X is multiplied by its own coefficient Wn, and the constant b is added at the end.
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-004-2a60904c54.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-004-2a60904c54.jpg" />
 
 &emsp;&emsp;It still looks fairly complicated.
 
 &emsp;&emsp;Different X vectors represent different images, and their differences include the order of their components—the locations of the dark pixels in the photograph. The 784 values of W therefore cannot all be the same. If they were, the position of each component of X would not matter, because every component would be multiplied by the same W and produce the same probability. W must therefore also have 784 components. For convenience, we write them vertically as a 784-dimensional vector W and express the multiplication of each W component by the corresponding X component as a dot product.
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-005-6d1641e5ab.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-005-6d1641e5ab.jpg" />
 
 &emsp;&emsp;We now have a formula for P(X), but it is not yet complete.
 
@@ -82,8 +82,8 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;A probability must be a number in [0,1]. It can be neither negative nor greater than 1. Our linear function of 784 variables, however, can return essentially any value. Let us rename it Z(X), so Z(X) = W·X + b. We then wrap Z(X) in an activation function g(Z), which forces its output into the interval from 0 to 1. The function used here is the sigmoid function.
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-006-fbc64a3d65.jpg" />
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-007-cf5411035b.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-006-fbc64a3d65.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-007-cf5411035b.jpg" />
 
 &emsp;&emsp;This gives us the probability function P(X): feed it an image, and it returns the probability that the image shows a 4.
 

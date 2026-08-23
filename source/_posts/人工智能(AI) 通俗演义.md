@@ -4,13 +4,13 @@ date: 2019-08-25 09:09:00
 tags: ['计算机科学', '科普', '计算机','人工智能','AI']
 categories: '计算机科学'
 copyright_author: '面皮(Mepy)'
-cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/cover-77aa732b51.jpg
+cover: /images/artificial-intelligence-intuitive-introduction/cover-77aa732b51.jpg
 ---
 
 > 作者：面皮(Mepy)
 > 审核：东达
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/cover-77aa732b51.jpg" title="左：对AI 一窍不通的人认为AI 会控制世界；右：我的AI 神经网络[把猫识别为狗]" />
+<img src="/images/artificial-intelligence-intuitive-introduction/cover-77aa732b51.jpg" title="左：对AI 一窍不通的人认为AI 会控制世界；右：我的AI 神经网络[把猫识别为狗]" />
 
 <center><font size=2px color=grey>左：对AI 一窍不通的人认为AI 会控制世界；右：我的AI 神经网络[把猫识别为狗]</font></center>
 
@@ -22,7 +22,7 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;首先，人类通过眼睛来获取图像，也就是右边的两个歪歪扭扭的手写数字的图像；然后，神经元将得到的手写数字图像传送到大脑神经中枢进行处理；最后，大脑得到了与手写数字图像相对应的意义。
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-001-d592ef6d0a.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-001-d592ef6d0a.jpg" />
 
 &emsp;&emsp;综上所述，人类阅读数字是经历了三个步骤(输入-处理-输出)的。
 
@@ -34,7 +34,7 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;为了便于理解，我们把例子简化为：判断一幅手写数字图像是不是“4
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-001-d592ef6d0a.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-001-d592ef6d0a.jpg" />
 
 &emsp;&emsp;。我们一看，就觉得左图肯定是“4”，右图肯定不是“4”。这也就是说， 我们的大脑在进行处理后， 认为：左图99%是 “4” ，而右图 100% 不是“4”。
 
@@ -42,7 +42,7 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;为此，我们要引入一点点数学。但请放心，它并不会让你觉得过于困扰。
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-002-482596e6e5.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-002-482596e6e5.jpg" />
 <center><font size=2px color=grey>这个例子表明，该图像100% 是数字4</font></center>
 
 &emsp;&emsp;那么，概率函数P(X)要怎么去计算呢？电脑可不会自己去计算，你必须把算法丢给它，它才会去算。为此，我们要设计一个数学方法。
@@ -53,7 +53,7 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;我们把这784个数字按一定顺序竖着来写，形成一个784维向量X。这个时候，X就表示了这个图像，其中每一个数字都可称为X的一个分量，第n个分量用X[n]来表示。由于不同的图像对应不同的X，相同的图像对应相同的X，所以X的784个数字分量都必须被包含在与P(X)有关的数学公式里面。
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-003-a2937df871.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-003-a2937df871.jpg" />
 
 &emsp;&emsp;人类最熟练的方程，一定是一元一次方程。二元一次方程组也不难，联立就能解。初中学习函数，也是从一元一次函数开始。这大概可以说明，一次的形式使得问题更简单明了。所以我们要将P(X)写成一个784元一次的函数。
 
@@ -61,13 +61,13 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;我们先看一元一次函数y = w·x + b，其中x乘上了一个系数W，然后加上了常数b。那么784元可能只是在一元的基础上仿写了一下。向量X的每一个分量X[n]，都乘上自己的系数Wn，最后再加上常数b。
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-004-2a60904c54.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-004-2a60904c54.jpg" />
 
 &emsp;&emsp;但看起来还是相当复杂啊。
 
 &emsp;&emsp;因为不同的X对应不同的图像，X的不同也包括了顺序的不同(照片上的黑点位置不同)，所以我们用的784个W应该要不一样。如果W一样，那么X的每一个分量的位置就不重要了，因为第几个分量都乘的同一个W，就会算出同样的概率。因此，系数W也应是784元的。为了方便起见，我们也仿照向量X，竖着来写W，表示成784维向量W，并把W的第n个分量与X的第n个分量相乘写成向量相乘的形式。
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-005-6d1641e5ab.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-005-6d1641e5ab.jpg" />
 
 &emsp;&emsp;至此，我们就得到了P(X)的数学公式，然而这个公式尚未完善。
 
@@ -75,8 +75,8 @@ cover: /images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97
 
 &emsp;&emsp;我们知道，概率一定是[0,1]之间的一个小数，不可能是负值，也不可能比1大。而我们的784元一次函数P(X)输出的值不一定是一个在[0,1]之间的小数，而可以是“天花乱坠天马行空随心所欲漫无边际”的。我们不妨先把这个P(X)改写成Z(X)，也就是Z(X) = W·X + b。然后，我们再在Z(X)外面套一个激活函数g(Z)，把Z(X)强行压缩到0和1之间。这里使用的g(Z)是sigmoid函数。
 
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-006-fbc64a3d65.jpg" />
-<img src="/images/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%28AI%29%20%E9%80%9A%E4%BF%97%E6%BC%94%E4%B9%89/fig-007-cf5411035b.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-006-fbc64a3d65.jpg" />
+<img src="/images/artificial-intelligence-intuitive-introduction/fig-007-cf5411035b.jpg" />
 
 &emsp;&emsp;这样，我们得到了概率函数P(X)，可以通过输入一张图片，输出这张图片是否为4的概率。
 
