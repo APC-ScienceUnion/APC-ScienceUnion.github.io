@@ -6,7 +6,7 @@ lang: en
 translation_key: "【金融危机(三)】载满黄金梦的土地：法国密西西比泡沫"
 translation_source_sha256: "a6570bf63f3dfa3922201565fe48b7a85b2bf45db0a1b968fa81f521e5e0ad99"
 permalink: en/2020/12/20/french-mississippi-bubble/
-aside: false
+aside: true
 comments: false
 cover: '/images/%E3%80%90%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA(%E4%B8%89)%E3%80%91%E8%BD%BD%E6%BB%A1%E9%BB%84%E9%87%91%E6%A2%A6%E7%9A%84%E5%9C%9F%E5%9C%B0%EF%BC%9A%E6%B3%95%E5%9B%BD%E5%AF%86%E8%A5%BF%E8%A5%BF%E6%AF%94%E6%B3%A1%E6%B2%AB/cover-412ca4b6a4.jpg'
 copyright_author: '自控力'

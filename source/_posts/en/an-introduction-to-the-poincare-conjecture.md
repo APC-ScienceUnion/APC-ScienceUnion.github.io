@@ -6,7 +6,7 @@ lang: en
 translation_key: '浅谈庞加莱猜想（附注释）'
 translation_source_sha256: "9191cbb74b59d346cb0a5b223f6e250d77e75bd209b5cad0d93d01b32df0a7ba"
 permalink: en/2020/06/09/an-introduction-to-the-poincare-conjecture/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

@@ -6,7 +6,7 @@ lang: en
 translation_key: "今天地球不流浪——如何用3个优雅的步骤摧毁地球"
 translation_source_sha256: "d8ec4b4285c719dc8631f5eda1fd8c104c2a6280fbf4d4d429bdb4a4d13154ec"
 permalink: en/2019/02/12/how-to-destroy-earth-in-three-elegant-steps/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

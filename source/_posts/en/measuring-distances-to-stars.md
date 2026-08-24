@@ -6,7 +6,7 @@ lang: en
 translation_key: "我们是如何测量恒星的距离的？"
 translation_source_sha256: "4582e9b115db8902c2eb7d9cc9085d720f8da27cac0b221ee032346a4b69103c"
 permalink: en/2019/07/31/measuring-distances-to-stars/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

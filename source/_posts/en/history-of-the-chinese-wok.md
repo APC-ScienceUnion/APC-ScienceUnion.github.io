@@ -6,7 +6,7 @@ lang: en
 translation_key: "炒锅的神奇发展史：从起源到唐宋"
 translation_source_sha256: "357cdfbc12740c3715e0c083db9452ae4c2a4c175c3f56b886eec1c24c32a1e9"
 permalink: en/2020/02/14/history-of-the-chinese-wok/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

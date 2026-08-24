@@ -6,7 +6,7 @@ lang: en
 translation_key: "水下考古学家在罗马海战中发现了令人惊讶的文物"
 translation_source_sha256: "052d5087faf9834c7ed57c4285a92ba0b669e25c0360ddcb363552cc3a79f129"
 permalink: en/2019/02/19/artifacts-from-a-roman-naval-battle/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

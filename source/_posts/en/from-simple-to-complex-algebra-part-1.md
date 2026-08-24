@@ -6,7 +6,7 @@ lang: en
 translation_key: "由简入繁——代数学·Part1"
 translation_source_sha256: "46fd744886e103374e6ee92cdede977ecefc588a1c48636babcfe55e77deda12"
 permalink: en/2019/12/28/from-simple-to-complex-algebra-part-1/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

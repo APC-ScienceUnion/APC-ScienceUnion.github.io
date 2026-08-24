@@ -6,7 +6,7 @@ lang: en
 translation_key: "草地上为什么会长出蘑菇怪圈？"
 translation_source_sha256: "9bdca7943d727eadab3632812795ca4287676d4a8a4b8802323cdf8858378cfc"
 permalink: en/2026/07/20/why-mushroom-rings-grow-in-grass/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

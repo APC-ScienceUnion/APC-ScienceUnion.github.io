@@ -6,7 +6,7 @@ lang: en
 translation_key: "从中国现代建筑与古为新传承文化的角度，浅谈中国桥梁"
 translation_source_sha256: "ec431285d108a7716db076f47ad973e98c339a59045b50a70ab0acbe74340aef"
 permalink: en/2023/06/23/chinese-bridges-modern-architecture-and-tradition/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

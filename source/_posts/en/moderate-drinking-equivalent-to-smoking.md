@@ -6,7 +6,7 @@ lang: en
 translation_key: "你知道吗~ 适量饮酒也相当于吸烟！"
 translation_source_sha256: "cb517ca1b004db07d2a31e15706222d3c6c55a1b21bc1908a42b5156c5422c54"
 permalink: en/2019/03/29/moderate-drinking-equivalent-to-smoking/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

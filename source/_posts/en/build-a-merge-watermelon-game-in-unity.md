@@ -6,7 +6,7 @@ lang: en
 translation_key: "用Unity简单实现合成大西瓜"
 translation_source_sha256: "df3d5985468c60f7fbba7fb3acf99a19162078e0e56f4c4c02b3ea4f43b0966e"
 permalink: en/2021/01/31/build-a-merge-watermelon-game-in-unity/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

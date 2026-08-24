@@ -6,7 +6,7 @@ lang: en
 translation_key: "简历网站？"
 translation_source_sha256: "f808c385b6f39b713a43125986190882c198de44f57bd48f468c335e7d8e9aeb"
 permalink: en/2023/04/02/build-personal-website-without-code/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

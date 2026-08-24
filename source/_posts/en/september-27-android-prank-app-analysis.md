@@ -6,7 +6,7 @@ lang: en
 translation_key: "「9.27 音频流氓软件」深度剖析"
 translation_source_sha256: "56269cfffc65d33911c7397cdd8c19049953804d67e5d91a8c1fdd996c6f086a"
 permalink: en/2019/09/28/september-27-android-prank-app-analysis/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

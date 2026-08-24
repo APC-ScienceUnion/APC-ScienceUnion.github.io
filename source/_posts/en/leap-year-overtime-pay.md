@@ -6,7 +6,7 @@ lang: en
 translation_key: "闰年加班有工资吗？"
 translation_source_sha256: "f33fb401b1afe8d5271fd0dff882f03efc8b9f715c4c5328ca49566ab6925016"
 permalink: en/2020/01/30/leap-year-overtime-pay/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

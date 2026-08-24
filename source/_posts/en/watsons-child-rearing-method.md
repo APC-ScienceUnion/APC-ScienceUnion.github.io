@@ -6,7 +6,7 @@ lang: en
 translation_key: "推广华生育人法？非坏即傻！"
 translation_source_sha256: "9dee70f974b4e8b90b8d1af12265d916132808265f95bd026a43abba5eadd27a"
 permalink: en/2019/05/25/watsons-child-rearing-method/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

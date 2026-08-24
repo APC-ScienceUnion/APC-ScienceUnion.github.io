@@ -6,7 +6,7 @@ lang: en
 translation_key: "如何改变世界，实现人生价值"
 translation_source_sha256: "8e6f91ec4429ae75d6766f1f8c5170f2862d2a9e1bf111dfd01780055a7f771d"
 permalink: en/2020/11/15/how-to-change-the-world-and-realize-your-lifes-value/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

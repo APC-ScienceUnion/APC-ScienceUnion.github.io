@@ -6,7 +6,7 @@ lang: en
 translation_key: "在家也可做：蛋白质的双缩脲反应"
 translation_source_sha256: "e5d30823864244a0ed77bbe663c45332fb1bb3883d87376fffe72280c8c65509"
 permalink: en/2020/11/18/protein-biuret-reaction-at-home/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

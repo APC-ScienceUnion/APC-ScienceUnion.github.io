@@ -6,7 +6,7 @@ lang: en
 translation_key: "RAG的最新方案——HyKGE"
 translation_source_sha256: "664c8cd5a2e52ee800bd1fa357fc1c5ed3c189ea04f653f16cf780e5a147c365"
 permalink: en/2024/06/20/hykge-a-new-rag-framework/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

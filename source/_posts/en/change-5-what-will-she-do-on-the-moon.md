@@ -6,7 +6,7 @@ lang: en
 translation_key: "嫦娥奔月，这次她要做什么？"
 translation_source_sha256: "f1fd7d80d85e7bfaa464b80b56d01e8e5663d7ccc97f695b105b3ee7876eca6d"
 permalink: en/2020/11/30/change-5-what-will-she-do-on-the-moon/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

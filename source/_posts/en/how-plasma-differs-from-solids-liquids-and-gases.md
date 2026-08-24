@@ -6,7 +6,7 @@ lang: en
 translation_key: "等离子态与常规的固-液-气态有什么不同？"
 translation_source_sha256: "2f5c78fa90bb1217588d514ced086292b0fb306304b581e8661b3596d1770ca1"
 permalink: en/2019/12/08/how-plasma-differs-from-solids-liquids-and-gases/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

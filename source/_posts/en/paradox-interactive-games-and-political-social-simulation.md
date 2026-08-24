@@ -6,7 +6,7 @@ lang: en
 translation_key: "“P社”--游戏宇宙与（政治）社会模拟"
 translation_source_sha256: "ff44208c68acad0ddd11ea9167b26e5d0c74bd2a9dc1cb0a4e760c0dd17095c4"
 permalink: en/2022/05/17/paradox-interactive-games-and-political-social-simulation/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

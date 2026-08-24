@@ -6,6 +6,21 @@ const searchXmlGenerator = require('hexo-generator-search/lib/xml_generator');
 
 const ENGLISH_PREFIX = 'en/';
 
+const CATEGORY_TRANSLATIONS = Object.freeze({
+  '天文历法': { name: 'Astronomy & Calendars', slug: 'astronomy-calendars' },
+  '生命科学': { name: 'Life Sciences', slug: 'life-sciences' },
+  '数学': { name: 'Mathematics', slug: 'mathematics' },
+  '计算机科学': { name: 'Computer Science', slug: 'computer-science' },
+  '人文历史': { name: 'Humanities & History', slug: 'humanities-history' },
+  '物理学': { name: 'Physics', slug: 'physics' },
+  '社会经济': { name: 'Society & Economics', slug: 'society-economics' },
+  '航空航天': { name: 'Aerospace', slug: 'aerospace' },
+  '化学': { name: 'Chemistry', slug: 'chemistry' },
+  '地球科学': { name: 'Earth Science', slug: 'earth-science' },
+  '心理学': { name: 'Psychology', slug: 'psychology' },
+  '联盟活动': { name: 'APC Activities', slug: 'apc-activities' }
+});
+
 function collectionData(collection) {
   if (!collection) return [];
   if (Array.isArray(collection)) return collection;
@@ -41,6 +56,48 @@ function postsForLanguage(ctx, posts, english) {
   return postQuery(ctx, collectionData(posts).filter(post => isEnglish(post) === english));
 }
 
+function categoryNames(post) {
+  return collectionData(post && post.categories)
+    .map(category => String(category && category.name ? category.name : category || '').trim())
+    .filter(Boolean);
+}
+
+function englishCategoryData(posts) {
+  const allPosts = collectionData(posts);
+  const englishByKey = new Map(
+    allPosts
+      .filter(isEnglish)
+      .map(post => [String(post.translation_key || ''), post])
+      .filter(([key]) => key)
+  );
+  const groups = new Map(
+    Object.entries(CATEGORY_TRANSLATIONS).map(([key, localized]) => [
+      key,
+      { key, name: localized.name, slug: localized.slug, path: `/en/categories/${localized.slug}/`, posts: [] }
+    ])
+  );
+
+  allPosts.filter(post => !isEnglish(post)).forEach(chinesePost => {
+    const key = String(chinesePost.translation_key || chinesePost.slug || '');
+    const englishPost = englishByKey.get(key);
+    if (!englishPost) return;
+    categoryNames(chinesePost).forEach(category => {
+      const group = groups.get(category);
+      if (group) group.posts.push(englishPost);
+    });
+  });
+
+  return [...groups.values()]
+    .filter(group => group.posts.length)
+    .map(group => ({ ...group, length: group.posts.length }))
+    .sort((left, right) => right.length - left.length || left.name.localeCompare(right.name, 'en'));
+}
+
+hexo.extend.helper.register('bilingual_categories', function bilingualCategories() {
+  return englishCategoryData(hexo.locals.get('posts'))
+    .map(({ posts, ...category }) => category);
+});
+
 function pairedPostInfo(page) {
   const posts = collectionData(hexo.locals.get('posts'));
   const english = isEnglish(page);
@@ -68,6 +125,35 @@ function pairedPostInfo(page) {
   }
 
   const currentPath = cleanPublicPath(page.path);
+
+  if (page.__englishCategories || (!english && currentPath === '/categories/')) {
+    return {
+      language: english ? 'en' : 'zh-CN',
+      targetLanguage: english ? 'zh-CN' : 'en',
+      switchPath: english ? '/categories/' : '/en/categories/',
+      zhPath: '/categories/',
+      enPath: '/en/categories/',
+      paired: true
+    };
+  }
+
+  const categoryKey = String(page.category_key || page.category || '');
+  const localizedCategory = CATEGORY_TRANSLATIONS[categoryKey];
+  if (localizedCategory && page.category) {
+    const paginationMatch = currentPath.match(/\/page\/\d+\/$/u);
+    const paginationSuffix = paginationMatch ? paginationMatch[0].replace(/^\//u, '') : '';
+    const zhPath = `/categories/${categoryKey}/${paginationSuffix}`;
+    const enPath = `/en/categories/${localizedCategory.slug}/${paginationSuffix}`;
+    return {
+      language: english ? 'en' : 'zh-CN',
+      targetLanguage: english ? 'zh-CN' : 'en',
+      switchPath: english ? zhPath : enPath,
+      zhPath,
+      enPath,
+      paired: true
+    };
+  }
+
   const isEnglishIndex = english && Boolean(page.__index);
   const isChineseIndex = !english && Boolean(page.__index);
 
@@ -153,7 +239,7 @@ function bilingualIndexGenerator(locals) {
       data: {
         __index: true,
         lang: english ? 'en' : 'zh-CN',
-        aside: english ? false : undefined
+        aside: true
       }
     });
   };
@@ -181,7 +267,7 @@ function generateArchives(ctx, posts, archiveDir, language) {
       data: Object.assign({
         archive: true,
         lang: language,
-        aside: language === 'en' ? false : undefined
+        aside: true
       }, options)
     }));
   };
@@ -258,12 +344,47 @@ function bilingualSearchGenerator(locals) {
   return outputs;
 }
 
+function bilingualEnglishCategoryGenerator(locals) {
+  const categoryDir = this.config.category_dir || 'categories';
+  const perPage = this.config.category_generator.per_page || this.config.per_page || 10;
+  const paginationDir = this.config.pagination_dir || 'page';
+  const categories = englishCategoryData(locals.posts);
+  const routes = [{
+    path: `${ENGLISH_PREFIX}${categoryDir}/`,
+    layout: ['en-categories', 'page'],
+    data: {
+      title: 'Categories',
+      lang: 'en',
+      aside: true,
+      __englishCategories: true
+    }
+  }];
+
+  categories.forEach(category => {
+    const posts = postQuery(this, category.posts).sort('-date');
+    routes.push(...pagination(`${ENGLISH_PREFIX}${categoryDir}/${category.slug}/`, posts, {
+      perPage,
+      layout: ['category', 'archive', 'index'],
+      format: `${paginationDir}/%d/`,
+      data: {
+        category: category.name,
+        category_key: category.key,
+        lang: 'en',
+        aside: true,
+        __englishCategory: true
+      }
+    }));
+  });
+  return routes;
+}
+
 // External generators are loaded before project scripts, so registering the
 // same names here deliberately replaces their mixed-language implementations.
 hexo.extend.generator.register('post', bilingualPostGenerator);
 hexo.extend.generator.register('index', bilingualIndexGenerator);
 hexo.extend.generator.register('archive', bilingualArchiveGenerator);
 hexo.extend.generator.register('xml', bilingualSearchGenerator);
+hexo.extend.generator.register('bilingual-english-categories', bilingualEnglishCategoryGenerator);
 
 hexo.extend.filter.register('template_locals', function filterSitePostsByLanguage(locals) {
   const english = isEnglish(locals.page);

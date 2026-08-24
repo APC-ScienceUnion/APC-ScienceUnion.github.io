@@ -6,7 +6,7 @@ lang: en
 translation_key: "Hilbert第十问题的硬科普（四）：基本概念、证明框架"
 translation_source_sha256: "0f847d13acf7ce09f0fe27fccdc2f10881c1fb45fdaf37504f78d8a0077c926d"
 permalink: en/2025/09/02/hilberts-tenth-problem-part-4/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

@@ -6,7 +6,7 @@ lang: en
 translation_key: "五分钟了解免疫｜抗体如何以变应变？"
 translation_source_sha256: "f0456fb88727d7dc4638c1281430ab0f1075fce9489e4ccffe4404fda7f298ed"
 permalink: en/2019/08/26/how-antibodies-adapt/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

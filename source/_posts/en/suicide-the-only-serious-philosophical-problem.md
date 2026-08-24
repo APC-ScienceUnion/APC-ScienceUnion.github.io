@@ -6,7 +6,7 @@ lang: en
 translation_key: "自杀：唯一严肃的哲学问题"
 translation_source_sha256: "39e03d251553ea1fd4a03f9cb2a53e70542ab00596bbeaa042d8d4b9f45e7df4"
 permalink: en/2019/03/10/suicide-the-only-serious-philosophical-problem/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

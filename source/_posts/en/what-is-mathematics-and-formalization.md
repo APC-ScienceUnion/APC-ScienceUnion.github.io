@@ -6,7 +6,7 @@ lang: en
 translation_key: "先问「是什么」：数学与形式化数学浅讲"
 translation_source_sha256: "8ef4b95be4e0b4bbedee611607e44e908c1bc19f3c8ce5cd0c81cb00e1c7782e"
 permalink: en/2026/04/03/what-is-mathematics-and-formalization/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

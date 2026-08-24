@@ -6,7 +6,7 @@ lang: en
 translation_key: "酷酷的粒子家族"
 translation_source_sha256: "45baa57a90757dca78ee3b1ddc72fac029dfc67a9fc72c487355b49a7a7cb65f"
 permalink: en/2019/03/09/the-particle-family/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

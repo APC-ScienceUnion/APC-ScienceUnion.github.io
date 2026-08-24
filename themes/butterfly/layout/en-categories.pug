@@ -1,0 +1,19 @@
+extends includes/layout.pug
+
+block content
+  - var categoryItems = bilingual_categories()
+  #categories
+    .article-sort-title= page.title + ' - ' + categoryItems.length
+    .article-sort
+      each cat in categoryItems
+        - var catIcon = theme.category_per_img && theme.category_per_img[cat.key]
+        - var hasCover = !!catIcon
+        .article-sort-item(class=!hasCover ? 'no-article-cover' : '')
+          if hasCover
+            a.article-sort-item-img(href=url_for(cat.path) title=cat.name)
+              img(src=catIcon alt=cat.name onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'`)
+          .article-sort-item-info
+            .article-sort-item-time
+              i.far.fa-file-alt
+              span #{cat.length} #{_p('aside.articles')}
+            a.article-sort-item-title(href=url_for(cat.path) title=cat.name)= cat.name

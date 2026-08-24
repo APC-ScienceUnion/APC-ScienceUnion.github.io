@@ -6,7 +6,7 @@ lang: en
 translation_key: "蛋白质的翻译"
 translation_source_sha256: "2c4dd6c2de94f57750f5f93c2084928ff8454ac7785edc357f2993ff29650b96"
 permalink: en/2021/07/16/protein-translation/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

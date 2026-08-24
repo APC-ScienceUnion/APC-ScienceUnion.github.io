@@ -8,7 +8,7 @@ translation_source_sha256: "0513512c7b221c20778988a187c7b64fb5e7afd64315cf4f6fdc
 permalink: en/2021/03/12/development-of-the-human-brain/
 cover: '/images/%E4%BA%BA%E8%84%91%E7%9A%84%E5%8F%91%E8%82%B2%E2%80%94%E2%80%94%E5%AE%87%E5%AE%99%E4%B8%AD%E6%9C%80%E7%A5%9E%E5%A5%87%E7%89%A9%E4%BD%93%E7%9A%84%E5%BB%BA%E9%80%A0%E5%8F%B2/cover-5156d35732.png'
 copyright_author: '阿白特尔'
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

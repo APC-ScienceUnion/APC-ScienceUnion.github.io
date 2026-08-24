@@ -6,7 +6,7 @@ lang: en
 translation_key: "我们为什么要烧开水发电？"
 translation_source_sha256: "7c2e4ad9a12233c00e7f7287a292417f2253bbef519aaacd8afd3c992dc8e322"
 permalink: en/2026/03/21/why-we-boil-water-to-generate-electricity/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

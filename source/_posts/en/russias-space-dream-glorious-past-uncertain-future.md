@@ -6,7 +6,7 @@ lang: en
 translation_key: "俄罗斯的航天梦——辉煌的历史，未知的未来"
 translation_source_sha256: "2614d22bb7a13c94d9d193134c08f3e2126441b4e6fc4aff12bbd72eb32f4e37"
 permalink: en/2021/07/19/russias-space-dream-glorious-past-uncertain-future/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

@@ -6,7 +6,7 @@ lang: en
 translation_key: "鼠疫科普"
 translation_source_sha256: "943e69d076cd2c08f9c8e9098a916de88c63ec0f0a0960d69de7f7c0c6cd0ef4"
 permalink: en/2019/11/30/plague-explained/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

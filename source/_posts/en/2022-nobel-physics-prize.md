@@ -6,7 +6,7 @@ lang: en
 translation_key: "2022诺贝尔物理学奖成果介绍"
 translation_source_sha256: "3be0e87a02d97851fdc19435eceee9097293e8afc1d92835b45464ccf30d0a27"
 permalink: en/2022/10/04/2022-nobel-physics-prize/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

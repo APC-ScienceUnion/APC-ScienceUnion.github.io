@@ -6,7 +6,7 @@ lang: en
 translation_key: "2022诺贝尔生理或医学奖成果介绍"
 translation_source_sha256: "00ff08466b89355c3b595b277aa7b88aff79e571937e7e520e48dab801a237af"
 permalink: en/2022/10/03/2022-nobel-physiology-medicine-prize/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

@@ -6,7 +6,7 @@ lang: en
 translation_key: "硼、沙子、切尔诺贝利"
 translation_source_sha256: "5fc954923777d2a6c14ab27755666cac936617f0b90d7e4396510a518a4a3bc7"
 permalink: en/2019/06/01/boron-sand-chernobyl/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

@@ -6,7 +6,7 @@ lang: en
 translation_key: "印度登月失败——月球南极着陆前路漫漫，我们仍需求索"
 translation_source_sha256: "c2b2f81f5304ae9d06cd72ac3c47c7aae3bd7e809e42b4c994a90a0701969d74"
 permalink: en/2019/09/08/india-chandrayaan-2-landing-failure/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

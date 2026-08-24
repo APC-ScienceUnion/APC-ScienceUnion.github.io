@@ -6,7 +6,7 @@ lang: en
 translation_key: "令人惊叹的太阳耀斑动画"
 translation_source_sha256: "a96be53147cb3bcb952c010389f0d791fb1f4f4b69d435da5d818a36224bae26"
 permalink: en/2019/01/24/solar-flare-animation/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

@@ -6,7 +6,7 @@ lang: en
 translation_key: "在预测的末尾——回望《走向21世纪的生物学——未来生物学（1991~2020年）预测》"
 translation_source_sha256: "bae6ca4b3f9297fc40941a8a132c3d6148a0ba0e0d312f145bf496a9a1e32ca9"
 permalink: en/2020/03/18/looking-back-at-biologys-1991-to-2020-forecast/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

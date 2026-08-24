@@ -210,7 +210,7 @@ for (const english of englishPosts) {
 
   assert.equal(english.data.lang, 'en', `${english.name}: lang must be en`);
   assert.equal(english.data.layout, 'post', `${english.name}: layout must be post`);
-  assert.equal(english.data.aside, false, `${english.name}: aside must be false`);
+  assert.equal(english.data.aside, true, `${english.name}: aside must be true so English pages retain the full site layout`);
   assert.equal(english.data.comments, false, `${english.name}: comments must be false`);
   assert.deepEqual(english.data.tags || [], [], `${english.name}: English taxonomy must not reuse Chinese tags`);
   assert.deepEqual(english.data.categories || [], [], `${english.name}: English taxonomy must not reuse Chinese categories`);

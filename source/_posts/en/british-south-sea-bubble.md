@@ -6,7 +6,7 @@ lang: en
 translation_key: "【金融危机(四)】腐败与欺诈之海：英国南海泡沫"
 translation_source_sha256: "9957b4b59a03a51564f5f3642bce3fb2825948cf5895b6ba5f24af7e01317a9b"
 permalink: en/2021/02/22/british-south-sea-bubble/
-aside: false
+aside: true
 comments: false
 cover: '/images/%E3%80%90%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA(%E5%9B%9B)%E3%80%91%E8%85%90%E8%B4%A5%E4%B8%8E%E6%AC%BA%E8%AF%88%E4%B9%8B%E6%B5%B7%EF%BC%9A%E8%8B%B1%E5%9B%BD%E5%8D%97%E6%B5%B7%E6%B3%A1%E6%B2%AB/cover-359cc09cb6.png'
 copyright_author: '自控力'

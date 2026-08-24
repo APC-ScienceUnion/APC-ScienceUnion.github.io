@@ -6,7 +6,7 @@ lang: en
 translation_key: "2025世界读书日·科普书单"
 translation_source_sha256: "27899ee8d7dd2fee3b113b115ef5a1feb1b6a2b23843750d46446d3bf454eccf"
 permalink: en/2025/04/26/2025-world-book-day-science-reading-list/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

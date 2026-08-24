@@ -1,4 +1,22 @@
 if theme.aside.card_categories.enable
-  if site.categories.length
+  if page.lang === 'en'
+    - var englishCategories = bilingual_categories()
+    - var englishCategoryLimit = theme.aside.card_categories.limit === 0 ? 0 : theme.aside.card_categories.limit || 8
+    if englishCategoryLimit > 0
+      - englishCategories = englishCategories.slice(0, englishCategoryLimit)
+    if englishCategories.length
+      .card-widget.card-categories
+        .item-headline
+          i.fas.fa-folder-open
+          span= _p('aside.card_categories')
+          a.card-more-btn(href=url_for('/en/categories/') title=_p('aside.more_button'))
+            i.fas.fa-angle-right
+        ul#aside-cat-list.card-category-list
+          each cat in englishCategories
+            li.card-category-list-item
+              a.card-category-list-link(href=url_for(cat.path))
+                span.card-category-list-name= cat.name
+                span.card-category-list-count= cat.length
+  else if site.categories.length
     .card-widget.card-categories
       !=aside_categories({ limit: theme.aside.card_categories.limit === 0 ? 0 : theme.aside.card_categories.limit || 8, expand: theme.aside.card_categories.expand, orderby: 'length', order: -1 })

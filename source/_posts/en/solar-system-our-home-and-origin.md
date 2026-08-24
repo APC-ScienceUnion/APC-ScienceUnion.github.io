@@ -6,7 +6,7 @@ lang: en
 translation_key: "太阳系：我们的栖身之所、我们的起源"
 translation_source_sha256: "4a4b5c20c28bd39be383dbcb0162dd9c23fb13a5353343328a8d69d237a291cc"
 permalink: en/2019/11/09/solar-system-our-home-and-origin/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

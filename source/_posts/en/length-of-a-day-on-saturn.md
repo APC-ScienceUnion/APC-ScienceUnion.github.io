@@ -6,7 +6,7 @@ lang: en
 translation_key: "土星的一天有多长？科学家终于有准确的了解啦！"
 translation_source_sha256: "6b1f6f07a328a6bfa2e6d2a2c5f9ccb90b91b3c30cf80abc330096317caed7b7"
 permalink: en/2019/01/20/length-of-a-day-on-saturn/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

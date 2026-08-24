@@ -6,7 +6,7 @@ lang: en
 translation_key: "文化与消费社会｜①奶茶和球鞋我全都要！"
 translation_source_sha256: "95edf6bbc60b4639ee8913d24f59de6967b8886015328ba9628bbe73f418d613"
 permalink: en/2021/08/16/culture-and-consumer-society-milk-tea-and-sneakers/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

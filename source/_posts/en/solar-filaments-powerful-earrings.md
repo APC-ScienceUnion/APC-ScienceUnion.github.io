@@ -6,7 +6,7 @@ lang: en
 translation_key: "威力巨大的太阳“耳环”：太阳暗条"
 translation_source_sha256: "8572d97d1478825ae04e9d416c2ba8e6e4c4cb0e18c1eee02a802e8631615a70"
 permalink: en/2021/02/15/solar-filaments-powerful-earrings/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

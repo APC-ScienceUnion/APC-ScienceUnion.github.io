@@ -6,7 +6,7 @@ lang: en
 translation_key: "记忆中的时空轨迹"
 translation_source_sha256: "8c4026824516f41939580bab0655825ef6382b97f44a12c8fe35c70ae92f3aed"
 permalink: en/2021/05/19/spatiotemporal-trajectories-in-memory/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

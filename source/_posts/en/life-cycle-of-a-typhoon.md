@@ -6,7 +6,7 @@ lang: en
 translation_key: "台风的一生"
 translation_source_sha256: "ab0f376b38f99130a5e1296189a8a4fde82ecce7fb87d9abae42027d8b5c2f9c"
 permalink: en/2019/08/22/life-cycle-of-a-typhoon/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

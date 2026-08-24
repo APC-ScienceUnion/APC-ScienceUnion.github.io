@@ -8,7 +8,7 @@ translation_source_sha256: "752677e24ec34135fc5e9b2d9f6bd4e5cfe49ce4429a380bbc1d
 permalink: en/2020/05/01/introduction-to-the-gibbs-phenomenon/
 cover: /images/%E5%90%89%E5%B8%83%E6%96%AF%E7%8E%B0%E8%B1%A1%E7%AE%80%E4%BB%8B/cover-2c936f8dd2.jpg
 copyright_author: 'phy东西'
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

@@ -6,7 +6,7 @@ lang: en
 translation_key: "月之背面～都有啥？"
 translation_source_sha256: "24caa85e84af16e4674da08301cd0925fe3ea42fcacbee97459f0ebce820129f"
 permalink: en/2019/04/27/whats-on-the-far-side-of-the-moon/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

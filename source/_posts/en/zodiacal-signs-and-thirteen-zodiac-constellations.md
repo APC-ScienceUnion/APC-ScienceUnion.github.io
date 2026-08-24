@@ -6,7 +6,7 @@ lang: en
 translation_key: "星宫与黄道十三星座"
 translation_source_sha256: "db7cd38b6771767f65d7ca3a61bc45ef50a4df6552facaa952e8d468793f9225"
 permalink: en/2020/04/25/zodiacal-signs-and-thirteen-zodiac-constellations/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

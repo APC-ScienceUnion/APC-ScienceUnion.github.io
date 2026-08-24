@@ -6,7 +6,7 @@ lang: en
 translation_key: "为何所有8位及以上的数都可以变为等式？——硅基-沉默整数平衡化定理及其证明简明介绍"
 translation_source_sha256: "3631ff353060fb1b1ee8d8229e29cb7fcb1c8845eb7bb3e5ad38daa2d7f8184e"
 permalink: en/2026/07/18/why-every-number-with-eight-or-more-digits-can-become-an-equation/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

@@ -6,7 +6,7 @@ lang: en
 translation_key: "恒星综述——恒星研究基础"
 translation_source_sha256: "a81bf17688200b85825e2d78283d0625531a12ac6c5f4b4a27eab00efa810416"
 permalink: en/2023/01/31/stellar-astronomy-fundamentals/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

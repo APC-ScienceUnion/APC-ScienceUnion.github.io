@@ -6,7 +6,7 @@ lang: en
 translation_key: "正常的大便为什么是黄褐色的？"
 translation_source_sha256: "76522349d4c5e0060972c9584548a384cf5004934145662d2f2ab6246b1f2b0c"
 permalink: en/2026/08/09/why-is-healthy-poop-yellowish-brown/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

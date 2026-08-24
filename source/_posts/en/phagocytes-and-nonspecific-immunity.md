@@ -6,7 +6,7 @@ lang: en
 translation_key: "五分钟了解免疫｜非特异性免疫之吞噬细胞"
 translation_source_sha256: "7c2b8a291d90d8934aa014cb861fcda3dd9f956224a6870e3f99bc431caf04c5"
 permalink: en/2019/10/13/phagocytes-and-nonspecific-immunity/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

@@ -6,7 +6,7 @@ lang: en
 translation_key: "早期希腊哲学"
 translation_source_sha256: "6eaf6b7ceb1c289330d19cec19f5da0478b184d4b7b9c25df0e18286af4ac0d9"
 permalink: en/2022/02/20/early-greek-philosophy/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

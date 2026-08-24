@@ -6,7 +6,7 @@ lang: en
 translation_key: "新型冠状病毒2019-nCoV"
 translation_source_sha256: "d4b7656aa5b1a0724a7e158608638822cbd082786692c8c5e03e73ae379dcdbd"
 permalink: en/2020/01/31/novel-coronavirus-2019-ncov/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

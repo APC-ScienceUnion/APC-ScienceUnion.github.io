@@ -6,7 +6,7 @@ lang: en
 translation_key: "即将发布的重大科学成果：EHT将发布有史以来第一张黑洞的照片"
 translation_source_sha256: "ebf556f7e35f1afda829d84b6d4660535f05cbe39cd99f6d2d416f7ce4ea7601"
 permalink: en/2019/04/09/eht-first-black-hole-image/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

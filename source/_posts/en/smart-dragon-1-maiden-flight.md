@@ -6,7 +6,7 @@ lang: en
 translation_key: "“捷龙一号”首飞成功的背后——18个月风雨兼程"
 translation_source_sha256: "41fa96afd1b9e16590c5342c5fffb18b178f38a1b6808059395e2e88a66d0c02"
 permalink: en/2019/08/27/smart-dragon-1-maiden-flight/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

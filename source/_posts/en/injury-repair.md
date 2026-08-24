@@ -6,7 +6,7 @@ lang: en
 translation_key: "什么是损伤修复？"
 translation_source_sha256: "ddc2a3e37f793cc592c6122e68c33ada938e9a439a492906da29409dc5c2bc01"
 permalink: en/2019/11/02/injury-repair/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

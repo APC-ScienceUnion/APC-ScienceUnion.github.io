@@ -6,7 +6,7 @@ lang: en
 translation_key: "上帝创造，林奈整理！他为生物带来秩序"
 translation_source_sha256: "ab21e81979d55099dfb9e66ef09218dd28ad55047a21ac96bf32ac774911e791"
 permalink: en/2020/11/28/linnaeus-brought-order-to-biology/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

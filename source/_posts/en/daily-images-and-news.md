@@ -6,7 +6,7 @@ lang: en
 translation_key: "每日新闻"
 translation_source_sha256: "6717a9921f32649d0996520ad0bec209738f0c9875bf51864ed01890799bdadd"
 permalink: en/2099/12/31/daily-images-and-news/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

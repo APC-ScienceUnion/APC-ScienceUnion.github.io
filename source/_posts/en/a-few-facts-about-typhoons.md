@@ -6,7 +6,7 @@ lang: en
 translation_key: "关于台风的小知识"
 translation_source_sha256: "476d45a1861c2f263098c61ebcea42452f71eba3f31e87a8c52fbb86b9a756b0"
 permalink: en/2019/08/19/a-few-facts-about-typhoons/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

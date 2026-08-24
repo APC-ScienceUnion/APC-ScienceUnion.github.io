@@ -6,7 +6,7 @@ lang: en
 translation_key: "冰箱里的水是竖着放还是横着放冷的快"
 translation_source_sha256: "617ca8c1054e83c2759789d0bfb78b771b86c60ed734dd1e43416b93a2c9d21e"
 permalink: en/2026/05/17/does-water-chill-faster-upright-or-sideways/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

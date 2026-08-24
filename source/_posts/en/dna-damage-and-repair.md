@@ -6,7 +6,7 @@ lang: en
 translation_key: "DNA损伤和损伤修复"
 translation_source_sha256: "ab660aebd7ca9dd26a7f408c71c658f11b53896e9d632aade380575d52d68094"
 permalink: en/2020/12/15/dna-damage-and-repair/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

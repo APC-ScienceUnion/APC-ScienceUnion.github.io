@@ -6,7 +6,7 @@ lang: en
 translation_key: "浅谈年月日：天文学里的时间差异"
 translation_source_sha256: "6924b2dcce65010ad384e00d9755fbfff4264637fec582c62bcdbe65be2c8750"
 permalink: en/2019/10/03/astronomical-differences-between-years-months-and-days/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

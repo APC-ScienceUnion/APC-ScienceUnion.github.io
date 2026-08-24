@@ -13,6 +13,20 @@ const englishRoot = path.join(postRoot, 'en');
 const publicRoot = path.join(root, 'public');
 const config = yaml.load(fs.readFileSync(path.join(root, '_config.yml'), 'utf8'));
 const siteUrl = new URL(config.url);
+const categoryTranslations = Object.freeze({
+  '天文历法': { name: 'Astronomy & Calendars', slug: 'astronomy-calendars' },
+  '生命科学': { name: 'Life Sciences', slug: 'life-sciences' },
+  '数学': { name: 'Mathematics', slug: 'mathematics' },
+  '计算机科学': { name: 'Computer Science', slug: 'computer-science' },
+  '人文历史': { name: 'Humanities & History', slug: 'humanities-history' },
+  '物理学': { name: 'Physics', slug: 'physics' },
+  '社会经济': { name: 'Society & Economics', slug: 'society-economics' },
+  '航空航天': { name: 'Aerospace', slug: 'aerospace' },
+  '化学': { name: 'Chemistry', slug: 'chemistry' },
+  '地球科学': { name: 'Earth Science', slug: 'earth-science' },
+  '心理学': { name: 'Psychology', slug: 'psychology' },
+  '联盟活动': { name: 'APC Activities', slug: 'apc-activities' }
+});
 
 function isFile(file) {
   try {
@@ -47,6 +61,18 @@ function sourcePostCount() {
   return fs.readdirSync(postRoot, { withFileTypes: true })
     .filter(entry => entry.isFile() && entry.name.endsWith('.md'))
     .length;
+}
+
+function readChinesePosts() {
+  return fs.readdirSync(postRoot, { withFileTypes: true })
+    .filter(entry => entry.isFile() && entry.name.endsWith('.md'))
+    .map(entry => {
+      const file = path.join(postRoot, entry.name);
+      const source = fs.readFileSync(file, 'utf8')
+        .replace(/^\uFEFF/u, '')
+        .replace(/\r\n?/gu, '\n');
+      return { key: entry.name.replace(/\.md$/u, ''), data: frontMatter.parse(source) };
+    });
 }
 
 function absoluteUrl(value, base = siteUrl) {
@@ -89,6 +115,36 @@ function assertHeaderSwitch(page, expectedTarget, expectedLanguage) {
   assert.equal(page.$('#menus').children().last().attr('id'), 'language-switch', `language switch is not the rightmost header item in ${page.file}`);
   assert.equal(switches.find('i.fa-language').length, 1, `language switch icon is missing in ${page.file}`);
   assert.equal(switches.text().trim(), '', `language switch must remain icon-only in ${page.file}`);
+}
+
+function assertVisibleAside(page) {
+  assert.equal(page.$('#aside-content').length, 1, `missing sidebar in ${page.file}`);
+  assert.equal(page.$('#content-inner.hide-aside').length, 0, `sidebar is disabled in ${page.file}`);
+  assert.ok(page.$('#aside-content .card-widget').length >= 1, `sidebar contains no widgets in ${page.file}`);
+}
+
+function assertEnglishRecentPosts(page, englishArticlePaths) {
+  const links = page.$('#aside-content .card-recent-post a[href]')
+    .map((_index, element) => page.$(element).attr('href'))
+    .get();
+  assert.ok(links.length > 0, `English recent-post card is empty in ${page.file}`);
+  for (const href of links) {
+    const target = new URL(href, page.url);
+    assert.equal(target.origin, siteUrl.origin, `English recent-post link left the site in ${page.file}`);
+    assert.ok(englishArticlePaths.has(target.pathname), `English recent-post card leaked a non-English article in ${page.file}: ${target.pathname}`);
+  }
+}
+
+function categoryItems(page, selector) {
+  return page.$(selector).map((_index, element) => {
+    const item = page.$(element);
+    const countText = item.find('.home-category-bar-item-count, .card-category-list-count').first().text();
+    return {
+      name: item.find('.home-category-bar-item-name, .card-category-list-name').first().text().trim(),
+      count: Number((countText.match(/\d+/u) || ['0'])[0]),
+      path: new URL(item.is('a') ? item.attr('href') : item.find('a[href]').first().attr('href'), page.url).pathname
+    };
+  }).get();
 }
 
 function assertLocalStaticImages(page) {
@@ -183,6 +239,34 @@ const englishPosts = readEnglishPosts();
 const expectedPairCount = sourcePostCount();
 assert.equal(englishPosts.length, expectedPairCount, `expected all ${expectedPairCount} English source posts before public verification`);
 const pairedChinesePaths = new Set();
+const englishByKey = new Map(englishPosts.map(post => [String(post.data.translation_key), post]));
+const englishArticlePaths = new Set(englishPosts.map(post => new URL(`/${post.data.permalink}`, siteUrl).pathname));
+const expectedCategoryMembers = new Map(
+  Object.keys(categoryTranslations).map(category => [category, new Set()])
+);
+for (const chinesePost of readChinesePosts()) {
+  const englishPost = englishByKey.get(chinesePost.key);
+  if (!englishPost) continue;
+  const categories = Array.isArray(chinesePost.data.categories)
+    ? chinesePost.data.categories
+    : chinesePost.data.categories
+      ? [chinesePost.data.categories]
+      : [];
+  for (const value of categories) {
+    const category = Array.isArray(value) ? value[0] : value;
+    assert.ok(expectedCategoryMembers.has(category), `missing English category mapping for ${category}`);
+    expectedCategoryMembers.get(category).add(new URL(`/${englishPost.data.permalink}`, siteUrl).pathname);
+  }
+}
+const expectedCategories = Object.entries(categoryTranslations)
+  .map(([key, localized]) => ({
+    key,
+    name: localized.name,
+    count: expectedCategoryMembers.get(key).size,
+    path: `/en/categories/${localized.slug}/`
+  }))
+  .filter(category => category.count > 0)
+  .sort((left, right) => right.count - left.count || left.name.localeCompare(right.name, 'en'));
 
 for (const post of englishPosts) {
   const permalink = String(post.data.permalink || '');
@@ -201,6 +285,7 @@ for (const post of englishPosts) {
   assert.equal(defaultAlternate, chineseAlternate, `x-default must point to Chinese in ${englishPage.file}`);
   assertHeaderSwitch(englishPage, chineseAlternate, 'zh-CN');
   assertLocalStaticImages(englishPage);
+  assertVisibleAside(englishPage);
 
   const chinesePage = loadPage(chineseAlternate);
   assert.equal(chinesePage.$('html').attr('lang'), 'zh-CN', `wrong html lang in ${chinesePage.file}`);
@@ -239,12 +324,108 @@ for (const chinesePath of chineseIndexRoutes) {
 }
 
 assert.ok(!/[\p{Script=Han}]/u.test(englishHome.$('meta[name="description"]').attr('content') || ''), 'English home has a Chinese meta description');
-englishHome.$('.menus_items a[href]').each((_index, element) => {
-  const target = new URL(englishHome.$(element).attr('href'), englishHome.url);
-  assert.ok(target.pathname.startsWith('/en/'), `English navigation exposes an untranslated route: ${target.pathname}`);
-});
+assertVisibleAside(englishHome);
+assertEnglishRecentPosts(englishHome, englishArticlePaths);
+
+const expectedTopMenu = [
+  { name: 'Articles', href: '/en/' },
+  { name: 'Archives', href: '/en/archives/' },
+  { name: 'Categories', href: '/en/categories/' },
+  { name: 'Science Galleries', href: 'javascript:void(0);' },
+  { name: 'Online Resources', href: '/link/' },
+  { name: 'APC Games', href: 'javascript:void(0);' },
+  { name: 'APC News', href: '/apc-news/' },
+  { name: 'About Us', href: '/about/' }
+];
+const actualTopMenu = englishHome.$('#menus > .menus_items > .menus_item').map((_index, element) => {
+  const anchor = englishHome.$(element).find('> a').first();
+  return { name: anchor.text().replace(/\s+/gu, ' ').trim(), href: anchor.attr('href') };
+}).get();
+assert.deepEqual(actualTopMenu, expectedTopMenu, 'English desktop header is incomplete or out of order');
+assert.ok(actualTopMenu.every(item => !/[\p{Script=Han}]/u.test(item.name)), 'English desktop header contains Chinese labels');
+const actualMobileMenu = englishHome.$('#sidebar-menus .menus_items > .menus_item').map((_index, element) => {
+  const anchor = englishHome.$(element).find('> a').first();
+  return { name: anchor.text().replace(/\s+/gu, ' ').trim(), href: anchor.attr('href') };
+}).get();
+assert.deepEqual(actualMobileMenu, expectedTopMenu, 'English mobile menu is incomplete or out of order');
+for (const { href } of actualTopMenu.filter(item => !item.href.startsWith('javascript:'))) {
+  assert.ok(isFile(generatedFile(href)), `English header points to a missing page: ${href}`);
+}
+
+const expectedSubmenu = [
+  { name: 'Plant Cards', href: '/gallery/PlantCard/' },
+  { name: 'Geography Cards', href: '/gallery/GeographyCard/' },
+  { name: 'Chemistry Cards', href: '/gallery/ChemistryCard/' },
+  { name: 'Science Love Letters', href: '/gallery/ScienceLetter/' },
+  { name: 'Anti-Gomoku', href: '/fwzq/' },
+  { name: 'Trial of Xuan', href: '/H5Games/XuanXueTestH5/' },
+  { name: 'Science Turtle Soup', href: '/science-turtle-soup/' }
+];
+const actualSubmenu = englishHome.$('#menus > .menus_items .menus_item_child a[href]').map((_index, element) => ({
+  name: englishHome.$(element).text().replace(/\s+/gu, ' ').trim(),
+  href: englishHome.$(element).attr('href')
+})).get();
+assert.deepEqual(actualSubmenu, expectedSubmenu, 'English header submenus are incomplete or point to unexpected routes');
+for (const { href } of actualSubmenu) {
+  assert.ok(isFile(generatedFile(href)), `English header points to a missing shared page: ${href}`);
+}
+
+const actualHomeCategories = categoryItems(englishHome, '#home-category-bar .home-category-bar-item');
+const expectedHomeCategories = expectedCategories.map(({ name, count, path: categoryPath }) => ({ name, count, path: categoryPath }));
+assert.deepEqual(actualHomeCategories, expectedHomeCategories, 'English home category navigation does not match the paired articles');
+assert.equal(
+  new URL(englishHome.$('#home-category-bar .home-category-bar-more').attr('href'), englishHome.url).pathname,
+  '/en/categories/',
+  'English home category navigation has the wrong all-categories route'
+);
+const actualSidebarCategories = categoryItems(englishHome, '#aside-cat-list > .card-category-list-item');
+assert.deepEqual(actualSidebarCategories, expectedHomeCategories.slice(0, 6), 'English sidebar category card is wrong or leaked Chinese taxonomy');
 assert.ok(englishHomePaths.every(route => route.startsWith('/en/')), 'English home contains a Chinese article route');
 assert.equal(new Set(englishHomePaths).size, expectedPairCount, `English home pagination does not expose exactly ${expectedPairCount} English articles`);
+
+assertIndexPair('/categories/', '/en/categories/');
+const englishCategoryOverview = loadPage('/en/categories/');
+assertVisibleAside(englishCategoryOverview);
+assertEnglishRecentPosts(englishCategoryOverview, englishArticlePaths);
+assertLocalStaticImages(englishCategoryOverview);
+const overviewCategories = englishCategoryOverview.$('#categories .article-sort-item').map((_index, element) => {
+  const item = englishCategoryOverview.$(element);
+  const anchor = item.find('a.article-sort-item-title').first();
+  const countText = item.find('.article-sort-item-time').text();
+  return {
+    name: anchor.text().trim(),
+    count: Number((countText.match(/\d+/u) || ['0'])[0]),
+    path: new URL(anchor.attr('href'), englishCategoryOverview.url).pathname
+  };
+}).get();
+assert.deepEqual(overviewCategories, expectedHomeCategories, 'English category overview does not match the home navigation');
+
+for (const category of expectedCategories) {
+  const englishDirectory = path.join(publicRoot, 'en', 'categories', categoryTranslations[category.key].slug);
+  const chineseDirectory = path.join(publicRoot, 'categories', category.key);
+  const englishFiles = paginatedFiles(englishDirectory);
+  const chineseFiles = paginatedFiles(chineseDirectory);
+  assert.equal(englishFiles.length, chineseFiles.length, `category pagination differs for ${category.name}`);
+
+  const actualArticlePaths = collectArticlePaths(englishFiles, 'a.article-sort-item-title');
+  assert.equal(new Set(actualArticlePaths).size, actualArticlePaths.length, `English category repeats articles: ${category.name}`);
+  assert.deepEqual(
+    [...new Set(actualArticlePaths)].sort(),
+    [...expectedCategoryMembers.get(category.key)].sort(),
+    `English category membership is wrong: ${category.name}`
+  );
+
+  for (const englishFile of englishFiles) {
+    const route = publicRoute(englishFile);
+    const paginationMatch = route.match(/\/page\/\d+\/$/u);
+    const suffix = paginationMatch ? paginationMatch[0] : '/';
+    const chineseRoute = `/categories/${category.key}${suffix}`;
+    assertIndexPair(chineseRoute, route);
+    const englishCategoryPage = loadPage(route);
+    assertVisibleAside(englishCategoryPage);
+    assertEnglishRecentPosts(englishCategoryPage, englishArticlePaths);
+  }
+}
 
 const chineseHomePaths = collectArticlePaths(
   paginatedFiles(publicRoot),

@@ -6,7 +6,7 @@ lang: en
 translation_key: '有能够测量分子横截面积的标尺吗？'
 translation_source_sha256: "dba515c81eafebcaa9f6ec179b5fc5c615203f0468f054cfcec370f65b078b03"
 permalink: en/2021/04/24/measuring-molecular-cross-sectional-area/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

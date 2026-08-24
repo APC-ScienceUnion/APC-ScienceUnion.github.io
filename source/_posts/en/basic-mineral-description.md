@@ -6,7 +6,7 @@ lang: en
 translation_key: "基础的矿物描述用语——该如何读懂一块石头？"
 translation_source_sha256: "086661ff2f538d6a32945de40c30e1dba3699fa19b0edd6168b245a7bcb226b3"
 permalink: en/2022/02/14/basic-mineral-description/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

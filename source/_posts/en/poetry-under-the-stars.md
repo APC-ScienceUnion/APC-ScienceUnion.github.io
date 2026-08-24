@@ -6,7 +6,7 @@ lang: en
 translation_key: "诗意星空"
 translation_source_sha256: "f4ae194325b188d580622d9a16e499309ae224341d5a8e108b774b20dc93c9f6"
 permalink: en/2019/09/25/poetry-under-the-stars/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

@@ -8,7 +8,7 @@ translation_source_sha256: "c4914034b243f2561056e65952e9042fcf444cdab6bb06fb9916
 permalink: en/2025/07/13/hilberts-tenth-problem-part-three-a-history-concluded/
 cover: '/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-001-d4db078819.png'
 copyright_author: 'silverxz'
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

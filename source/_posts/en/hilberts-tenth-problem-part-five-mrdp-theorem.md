@@ -6,7 +6,7 @@ lang: en
 translation_key: "Hilbert第十问题的硬科普（五）：MRDP定理"
 translation_source_sha256: "2e3fc978051c7d3aa520e389aebe8aaee87b3fb466c27947cc1bb520b4dfb020"
 permalink: en/2025/10/26/hilberts-tenth-problem-part-five-mrdp-theorem/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

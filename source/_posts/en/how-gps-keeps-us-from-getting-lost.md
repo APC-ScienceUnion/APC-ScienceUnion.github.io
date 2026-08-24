@@ -6,7 +6,7 @@ lang: en
 translation_key: "GPS 用什么魔法让路痴不再迷路？"
 translation_source_sha256: "0c9a209eef00e03bf4c136a3b0415dad15ac9ab020254a062bdd4da6ffa40ea7"
 permalink: en/2019/06/19/how-gps-keeps-us-from-getting-lost/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

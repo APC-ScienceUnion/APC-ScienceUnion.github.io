@@ -6,7 +6,7 @@ lang: en
 translation_key: "斯金纳的箱子是怎么一回事？"
 translation_source_sha256: "6a740dd0b30a9e079cbc1f55bdeba750369930b76abd0f5d9da21bc76c7356cc"
 permalink: en/2020/08/22/how-does-a-skinner-box-work/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

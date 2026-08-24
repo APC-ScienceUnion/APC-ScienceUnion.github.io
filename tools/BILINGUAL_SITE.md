@@ -10,7 +10,7 @@ layout: post
 lang: en
 translation_key: "Exact Chinese source filename without .md"
 permalink: en/YYYY/MM/DD/ascii-kebab-slug/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []
@@ -22,9 +22,12 @@ natural-language text inside formulas. English posts reuse the existing local
 images; never duplicate or transform the image files.
 
 `scripts/bilingual.js` separates the Chinese and English home, archive,
-pagination, previous/next links, and search indexes. The header language icon
-pairs posts by `translation_key`; Chinese source filenames and URLs remain
-unchanged.
+pagination, previous/next links, categories, and search indexes. English posts
+keep empty taxonomy fields so Hexo does not double-count the Chinese terms;
+their category cards and `/en/categories/` pages inherit the paired Chinese
+post's category through `translation_key` and display the configured English
+name. The header language icon pairs posts by `translation_key`; Chinese source
+filenames and URLs remain unchanged.
 
 Before deployment, run:
 

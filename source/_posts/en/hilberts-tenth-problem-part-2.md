@@ -6,7 +6,7 @@ lang: en
 translation_key: "Hilbert第十问题的硬科普（二）：一段历史（上）"
 translation_source_sha256: "cf81320872337ec9f9090483eb0e5cf07f10863c806916e75d50b58dd1e76294"
 permalink: en/2025/03/04/hilberts-tenth-problem-part-2/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

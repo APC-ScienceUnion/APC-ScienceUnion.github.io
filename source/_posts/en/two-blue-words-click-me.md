@@ -6,7 +6,7 @@ lang: en
 translation_key: "两个蓝字引发的灾难——点我"
 translation_source_sha256: "be01875499eff5bed8afcb54d8f267f67aff43fd33de1bc088edeab6eb5f720f"
 permalink: en/2020/09/21/two-blue-words-click-me/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

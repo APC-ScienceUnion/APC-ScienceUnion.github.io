@@ -6,7 +6,7 @@ lang: en
 translation_key: 'Hilbert第十问题的硬科普（一）引论'
 translation_source_sha256: "9118c51645479e648d3aaf6d16a1d4d319e38fde4f6fc24e3268cb46cd1c7655"
 permalink: en/2025/02/22/hilberts-tenth-problem-part-1-introduction/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

@@ -6,7 +6,7 @@ lang: en
 translation_key: "中国传统哲学的简明讲稿"
 translation_source_sha256: "b66937af94733d745b3349c61a5527ca8f348535f67e80e22060aff6930500db"
 permalink: en/2022/05/13/a-brief-lecture-on-traditional-chinese-philosophy/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

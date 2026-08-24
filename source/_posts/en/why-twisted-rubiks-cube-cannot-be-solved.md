@@ -6,7 +6,7 @@ lang: en
 translation_key: "转角的魔方为何不能复原"
 translation_source_sha256: "f96b0af990cda97c568ea4c1d6de3336ff2acb3b7baf15e8bd636ee80fbf0df1"
 permalink: en/2019/09/06/why-twisted-rubiks-cube-cannot-be-solved/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

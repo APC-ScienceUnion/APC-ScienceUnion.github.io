@@ -8,7 +8,7 @@ translation_source_sha256: "1123546cc318a4e38240e355585a946453ad63b549b03dd996f5
 permalink: en/2021/03/25/south-sea-bubble-part-two-corruption-and-fraud/
 cover: '/images/%E3%80%90%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA(%E4%BA%94)%E3%80%91%E8%85%90%E8%B4%A5%E4%B8%8E%E6%AC%BA%E8%AF%88%E4%B9%8B%E6%B5%B7%EF%BC%9A%E8%8B%B1%E5%9B%BD%E5%8D%97%E6%B5%B7%E6%B3%A1%E6%B2%AB%EF%BC%88%E4%BA%8C%EF%BC%89/cover-03b5af94cf.png'
 copyright_author: '自控力'
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

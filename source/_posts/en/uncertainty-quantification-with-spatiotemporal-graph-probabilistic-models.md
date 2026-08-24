@@ -9,7 +9,7 @@ permalink: en/2023/08/22/uncertainty-quantification-with-spatiotemporal-graph-pr
 cover: '/images/%E5%9F%BA%E4%BA%8E%E6%97%B6%E7%A9%BA%E5%9B%BE%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E8%A1%A1%E9%87%8F/fig-001-d4db078819.png'
 copyright_author: '张逸仙'
 katex: true
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

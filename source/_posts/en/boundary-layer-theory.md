@@ -6,7 +6,7 @@ lang: en
 translation_key: "边界层理论"
 translation_source_sha256: "ce74655c9176033c7ab022c484975ddad9326edd512acf199b20fefbcc83939a"
 permalink: en/2023/02/12/boundary-layer-theory/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

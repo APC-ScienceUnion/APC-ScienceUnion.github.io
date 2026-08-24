@@ -6,7 +6,7 @@ lang: en
 translation_key: "拯救"
 translation_source_sha256: "dfe47abbe8ce6500235be541d5fb26a8fc66c71171c71f11faaccc44a1478fb2"
 permalink: en/2019/04/12/salvation/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

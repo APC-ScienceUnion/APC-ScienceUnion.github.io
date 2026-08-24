@@ -6,7 +6,7 @@ lang: en
 translation_key: "深空天体表简介"
 translation_source_sha256: "b2d076aa896a40a47993f0ea5e6449fb139a5cfdb234e726b69a08a3be1a976d"
 permalink: en/2020/03/22/deep-sky-object-catalogues/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

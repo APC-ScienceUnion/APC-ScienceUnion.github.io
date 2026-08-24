@@ -6,7 +6,7 @@ lang: en
 translation_key: "从化学看自然科学中的理论"
 translation_source_sha256: "aa15823e4f9a89a08771a2d03ec65f3b262f97e0cbca478533bca3e1fe38a51c"
 permalink: en/2019/07/22/theory-in-natural-science-through-chemistry/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

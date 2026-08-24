@@ -8,7 +8,7 @@ translation_source_sha256: "ad24d32c436c18effdde37cffb7ddde4eeb39a9627b1ad0fc98a
 permalink: en/2020/10/25/frances-mississippi-bubble-land-laden-with-dreams-of-gold/
 cover: '/images/%E3%80%90%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA(%E4%BA%8C)%E3%80%91%E8%BD%BD%E6%BB%A1%E9%BB%84%E9%87%91%E6%A2%A6%E7%9A%84%E5%9C%9F%E5%9C%B0%EF%BC%9A%E6%B3%95%E5%9B%BD%E5%AF%86%E8%A5%BF%E8%A5%BF%E6%AF%94%E6%B3%A1%E6%B2%AB/cover-b53e25a1d2.jpg'
 copyright_author: '自控力'
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

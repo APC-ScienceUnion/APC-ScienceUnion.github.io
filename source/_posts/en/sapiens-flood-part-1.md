@@ -6,7 +6,7 @@ lang: en
 translation_key: "人类简史科普·智人洪水（上）"
 translation_source_sha256: "76433691aedc6810f4a20a9bf6b4906dc654bd4ee1d01c3b74b7b4a2e1914b38"
 permalink: en/2020/02/22/sapiens-flood-part-1/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

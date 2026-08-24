@@ -6,7 +6,7 @@ lang: en
 translation_key: "初等数论入门方法"
 translation_source_sha256: "667e984252757d1306606719e1d15a33eaeeea85d12cc4ce01037bce247b003d"
 permalink: en/2020/06/20/introductory-methods-in-elementary-number-theory/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

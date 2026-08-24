@@ -6,7 +6,7 @@ lang: en
 translation_key: "什么样的论证是合理的？"
 translation_source_sha256: "f9a7da27e7862355b186fae99beeb2f4316fe7c28aa18db3b1dec5b0b071d0d8"
 permalink: en/2021/05/19/what-makes-an-argument-valid/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

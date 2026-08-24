@@ -6,7 +6,7 @@ lang: en
 translation_key: "简述荧光蛋白研究史及其发光机理"
 translation_source_sha256: "9da84003a3b50beaf3b4da43d9cf67b071313959afdf0647d46b479690eca70c"
 permalink: en/2022/03/05/fluorescent-protein-research-history-and-fluorescence-mechanisms/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

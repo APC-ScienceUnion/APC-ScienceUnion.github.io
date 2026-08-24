@@ -6,7 +6,7 @@ lang: en
 translation_key: "人类简史·认知革命"
 translation_source_sha256: "82e507e1ee98cc554b07483852c8ef2ea498c494e51dbdc04169b0df220921d8"
 permalink: en/2019/12/22/sapiens-cognitive-revolution/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []

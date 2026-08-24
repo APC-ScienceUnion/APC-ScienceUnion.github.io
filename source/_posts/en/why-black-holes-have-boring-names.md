@@ -6,7 +6,7 @@ lang: en
 translation_key: "黑洞这么有趣，为什么名字这么无趣？"
 translation_source_sha256: "eb3adf273044304917d50e7b1c9511a34a9b3fa07bb11089ea52c363913ba69f"
 permalink: en/2019/04/18/why-black-holes-have-boring-names/
-aside: false
+aside: true
 comments: false
 tags: []
 categories: []
