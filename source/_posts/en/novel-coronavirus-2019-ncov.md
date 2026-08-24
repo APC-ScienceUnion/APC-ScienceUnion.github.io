@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Novel Coronavirus 2019-nCoV"
+title: "Novel Coronavirus (2019-nCoV)"
 date: '2020-01-31 18:18:00'
 lang: en
 translation_key: "新型冠状病毒2019-nCoV"

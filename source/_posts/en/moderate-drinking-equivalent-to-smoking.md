@@ -14,7 +14,7 @@ copyright_author: '一毫秒的永恒'
 cover: /images/%E4%BD%A0%E7%9F%A5%E9%81%93%E5%90%97~%20%E9%80%82%E9%87%8F%E9%A5%AE%E9%85%92%E4%B9%9F%E7%9B%B8%E5%BD%93%E4%BA%8E%E5%90%B8%E7%83%9F%EF%BC%81/cover-6a747fd6ee.jpg
 ---
 
-> Author: 一毫秒的永恒
+> Author: A Millisecond of Eternity
 
 &emsp;&emsp;A British study found that the additional cancer risk associated with drinking one bottle of wine per week was roughly equivalent to smoking 5 cigarettes per week for men and 10 for women. The researchers used data from nonsmokers and compared the risks with an epidemiological model.
 

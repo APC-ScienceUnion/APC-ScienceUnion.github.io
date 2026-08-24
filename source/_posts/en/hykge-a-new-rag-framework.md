@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'HyKGE: A New RAG Framework'
+title: 'HyKGE: Knowledge-Graph-Enhanced RAG for Medical LLMs'
 date: 2024-06-20 19:10:50
 lang: en
 translation_key: "RAG的最新方案——HyKGE"
@@ -19,7 +19,7 @@ cover: /images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%9
 
 > This article draws on “<a href="https://arxiv.org/abs/2312.15883">HyKGE: A Hypothesis Knowledge Graph Enhanced Framework for Accurate and Reliable Medical LLMs Responses</a>,” by Xinke Jiang, Ruizhe Zhang, Yongxin Xu, Rihong Qiu, and other researchers at Peking University's School of Computer Science.
 
-HyKGE is a recent approach to combining **knowledge graphs** (KGs) with **retrieval-augmented generation** (RAG). It pairs the deep semantic understanding and knowledge-generation abilities of **large language models** (LLMs) with the rich, structured information stored in knowledge graphs. The result can make medical-information retrieval more efficient while keeping answers accurate. This work opens another path for medical LLMs and offers useful lessons for applying large language models and knowledge graphs in a wider range of settings.
+HyKGE is a recent approach to combining **knowledge graphs** (KGs) with **retrieval-augmented generation** (RAG). It pairs the semantic understanding and generative abilities of **large language models** (LLMs) with the rich, structured information stored in knowledge graphs. The result can make medical-information retrieval more efficient while keeping answers accurate. This work opens another path for medical LLMs and offers useful lessons for applying large language models and knowledge graphs in a wider range of settings.
 
 # RAG's Technical Challenges—and HyKGE's Answers
 

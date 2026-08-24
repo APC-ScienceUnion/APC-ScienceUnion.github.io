@@ -15,7 +15,7 @@ copyright_author: 'Star Life'
 ---
 
 > Author: Star Life
-Reviewer: 阿白特尔
+Reviewer: Abaiter
 
 &emsp;&emsp;Under good conditions, a glance at the night sky reveals a vault full of stars. To understand these celestial objects, people observe and measure them, then use the resulting data in theoretical calculations. The branch of astronomy devoted to observing stars, planets, deep-sky objects, and other bodies in the universe and obtaining the quantities needed for those calculations is called astrometry. Today, let us look at how astronomers measure the distances to stars.
 

@@ -14,7 +14,7 @@ copyright_author: '一毫秒的永恒'
 cover: /images/%E5%8D%B0%E5%BA%A6%E7%99%BB%E6%9C%88%E5%A4%B1%E8%B4%A5%E2%80%94%E2%80%94%E6%9C%88%E7%90%83%E5%8D%97%E6%9E%81%E7%9D%80%E9%99%86%E5%89%8D%E8%B7%AF%E6%BC%AB%E6%BC%AB%EF%BC%8C%E6%88%91%E4%BB%AC%E4%BB%8D%E9%9C%80%E6%B1%82%E7%B4%A2/cover-d62b2315ea.jpg
 ---
 
-> Author: 一毫秒的永恒
+> Author: A Millisecond of Eternity
 
 <img src="/images/%E5%8D%B0%E5%BA%A6%E7%99%BB%E6%9C%88%E5%A4%B1%E8%B4%A5%E2%80%94%E2%80%94%E6%9C%88%E7%90%83%E5%8D%97%E6%9E%81%E7%9D%80%E9%99%86%E5%89%8D%E8%B7%AF%E6%BC%AB%E6%BC%AB%EF%BC%8C%E6%88%91%E4%BB%AC%E4%BB%8D%E9%9C%80%E6%B1%82%E7%B4%A2/cover-d62b2315ea.jpg" title="If everything had gone to plan, India's Pragyan rover would have emerged from the Vikram lander, as shown, and spent 14 Earth days exploring the Moon | credit: ISRO" />
 
@@ -28,7 +28,7 @@ cover: /images/%E5%8D%B0%E5%BA%A6%E7%99%BB%E6%9C%88%E5%A4%B1%E8%B4%A5%E2%80%94%E
 
 <center><font size=2px color=grey>Comparison of Vikram's planned and actual trajectories, showing that the lander descended too quickly in its final moments | credit: ISRO</font></center>
 
-&emsp;&emsp;The plan called for Vikram to be traveling at 331 km/h when it reached an altitude of 5 kilometers, then slow to 100 km/h as it descended. ISRO's published data, however, showed that at an altitude of 1.09 kilometers, its horizontal velocity was still 176 km/h and its vertical velocity 215 km/h. When the signal vanished, Vikram was about 1 kilometer off course horizontally from its target landing site. Without a program to brake the lander, a crash seemed inevitable. What caused the landing failure remained unknown.
+&emsp;&emsp;The plan called for Vikram to be traveling at 331 km/h when it reached an altitude of 5 kilometers, then slow to 100 km/h as it descended. ISRO's published data, however, showed that at an altitude of 1.09 kilometers, its horizontal velocity was still 176 km/h and its vertical velocity 215 km/h. When the signal vanished, Vikram was about 1 kilometer off course horizontally from its target landing site. Without corrective software to brake the lander, a crash seemed inevitable. What caused the landing failure remained unknown.
 
 <img src="/images/%E5%8D%B0%E5%BA%A6%E7%99%BB%E6%9C%88%E5%A4%B1%E8%B4%A5%E2%80%94%E2%80%94%E6%9C%88%E7%90%83%E5%8D%97%E6%9E%81%E7%9D%80%E9%99%86%E5%89%8D%E8%B7%AF%E6%BC%AB%E6%BC%AB%EF%BC%8C%E6%88%91%E4%BB%AC%E4%BB%8D%E9%9C%80%E6%B1%82%E7%B4%A2/fig-002-2cf6766c82.jpg" title="Prime Minister Modi speaks with ISRO chairman K. Sivan after witnessing the loss of contact with Vikram at ISRO | credit: ISRO" />
 

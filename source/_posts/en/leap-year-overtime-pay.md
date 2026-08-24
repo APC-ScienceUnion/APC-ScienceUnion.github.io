@@ -14,8 +14,8 @@ cover: /images/%E9%97%B0%E5%B9%B4%E5%8A%A0%E7%8F%AD%E6%9C%89%E5%B7%A5%E8%B5%84%E
 copyright_author: '斎藤信'
 ---
 
-> Author: 斎藤信
-Reviewer: 白烟
+> Author: Saito Shin
+Reviewer: Baiyan
 
 &emsp;&emsp;If my math is right, this article will be put on public display for your judgment on Lunar New Year's Day (or sometime afterward). Happy New Year, everyone! Posting on New Year's Day is no easy task. I'm not asking for triple pay (or any pay at all); all I ask is that you give it a careful read. If you could give it the usual like-comment-favorite combo (scratch that) and share it, even better!
 

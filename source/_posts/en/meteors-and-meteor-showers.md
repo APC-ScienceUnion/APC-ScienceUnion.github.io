@@ -68,7 +68,7 @@ Reviewed by: Situ Mo
 
 &emsp;&emsp;Meteors behave in the same way. The dust particles in a single meteor shower travel in roughly parallel directions, so the meteors appear to emerge from one point in the sky. This **radiant** is likewise only a “**perspective vanishing point**” seen by the observer, not the place where the meteors truly originate. **A meteor shower is usually named after the constellation in which its radiant lies.**
 
-&emsp;&emsp;More formally, in English, the Latin name of the constellation containing the radiant takes the suffix **-id** or **-ids**, meaning “a group of meteors from that constellation.” For example:
+&emsp;&emsp;In formal English naming, the Latin name of the constellation containing the radiant takes the suffix **-id** or **-ids**, meaning “a group of meteors from that constellation.” For example:
 
 - Radiant in Perseus → Perseids → Perseid meteor shower
 - Radiant in Leo → Leonids → Leonid meteor shower

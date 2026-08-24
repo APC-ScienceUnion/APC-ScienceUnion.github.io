@@ -114,18 +114,18 @@ With book formats in mind, we can turn to **printed sheets** and **page count**.
 
 $$\text{Number of printed sheets} = \frac{\text{main-text pages} + \text{supplementary pages} + \text{blank pages}}{\text{format divisor}}$$
 
-In publishing terminology, one **leaf** has two **pages**, with consecutive page numbers on its two sides: an odd number on the recto and an even number on the verso. Before looking at the elements within a page, we need to distinguish three concepts: **format**, **page layout**, and **type area**.
+In publishing terminology, one **leaf** has two **pages**, with consecutive page numbers on its two sides: an odd number on the recto and an even number on the verso. Before looking at the elements within a page, we need to distinguish three concepts: **typographic design**, **page layout**, and **type area**.
 
-- Format means **the complete typesetting scheme for a book or periodical**. It covers the arrangement, typeface, and type size of the main text, headings, figures, tables, running heads, notes, and page numbers; the dimensions of the type area, including lines per page, characters per line, and line spacing; the punctuation style; and the use of heading illustrations, tailpieces, fillers, and other elements.
+- Typographic design means **the complete typesetting scheme for a book or periodical**. It covers the arrangement, typeface, and type size of the main text, headings, figures, tables, running heads, notes, and page numbers; the dimensions of the type area, including lines per page, characters per line, and line spacing; the punctuation style; and the use of heading illustrations, tailpieces, fillers, and other elements.
 - Page layout is the **overall arrangement of content on each page** of a publication, including text, figures, tables, and the surrounding blank space.
-- The type area is the **portion of a page occupied by text, figures, and tables**, excluding the surrounding margins. Thoughtful decisions about format, page layout, and type area make a book more attractive, readable, and comfortable to use.
+- The type area is the **portion of a page occupied by text, figures, and tables**, excluding the surrounding margins. Thoughtful decisions about typographic design, page layout, and type area make a book more attractive, readable, and comfortable to use.
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/fig-005-087dab9b22.png" width=450 />
 
 As the illustration shows, a page includes not only the type area but also the **running head**, **page number**, **head margin**, and **foot margin**.
 
 - A running head is a line of text printed above the type area to help readers navigate the book. It generally contains the title of a part, chapter, or section, along with the page number. The running head on an odd-numbered right-hand page is usually lower in the hierarchy than the one on an even-numbered left-hand page. For example, the left-hand page may carry the book title, while the right-hand page carries the chapter title.
-- A page number can appear by itself **below the type area**, in the foot margin, or **above the type area**, in the running-head position, but odd page numbers must be on the left and even page numbers on the right.
+- A page number can appear by itself **below the type area**, in the foot margin, or **above the type area**, in the running-head position. In a conventionally bound left-to-right book, odd-numbered pages appear on the right and even-numbered pages on the left.
 - The head and foot margins are the blank spaces above and below the type area, respectively. The head margin is generally larger. These spaces improve the appearance of the page, leave room for binding, and give readers space for notes.
 
 In addition to the main text, a book may contain **part-title or chapter-opening pages**. A part-title page is a single page placed at the beginning of a major division, such as a part or chapter, and carries its title. The reverse is usually blank. These pages clarify the book's organization and help readers find their way through it, so they require their own design.

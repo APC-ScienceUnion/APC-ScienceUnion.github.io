@@ -15,7 +15,7 @@ copyright_author: '时光'
 ---
 
 # How to Get Color Right
-> Author: 时光
+> Author: Shiguang
 
 <div>&emsp;&emsp;How do you get color right? Did that question send your mind somewhere naughty? No—this is a perfectly respectable science article. So let me show you a picture with some color in it. Entirely innocent, see? The cute little object below is a color wheel. It will be the star of this article, so take a moment to remember its shape.</div>
 <img src="/images/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%90%9E%E9%A2%9C%E8%89%B2%EF%BC%9F/fig-001-83c65555fa.png" width=300/>
@@ -51,7 +51,7 @@ copyright_author: '时光'
 
 <div>&emsp;&emsp;If a monochromatic palette feels clean, open, and harmonious, our next scheme is much livelier. Any guesses? Type yours in the group chat.</div>
 
-<div>&emsp;&emsp;The answer is a complementary, or contrasting, color scheme. Complementary colors create a forceful clash. They sit at opposite ends of the color wheel, so their warm–cool qualities—and the feelings they suggest—pull in opposite directions as well. Put them side by side, and the tension is hard to miss. Handled well, it can look spectacular.</div>
+<div>&emsp;&emsp;The answer is a complementary, or contrasting, color scheme. Complementary colors create a strong contrast. They sit at opposite ends of the color wheel, so their warm–cool qualities—and the feelings they suggest—pull in opposite directions as well. Put them side by side, and the tension is hard to miss. Handled well, it can look spectacular.</div>
 
 <div>&emsp;&emsp;UI designers often use complementary colors to draw attention to important information. Painters can use the same tension to guide the viewer's eye directly to a chosen focal point. The drawback is clear too: too many competing contrasts quickly become dizzying and chaotic.</div>
 

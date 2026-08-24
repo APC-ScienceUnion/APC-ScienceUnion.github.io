@@ -16,7 +16,7 @@ copyright_author: 'Delta'
 
 > Author: Delta
 
-&emsp;&emsp;Note: “introductory methods” here means methods used at the introductory level of elementary number theory, not ways to begin studying the subject. I am clarifying that distinction up front to avoid ambiguity.
+&emsp;&emsp;Note: “introductory methods” here means techniques used in an introductory treatment of elementary number theory, not advice on how to begin studying the subject. I am clarifying the distinction up front to avoid ambiguity.
 
 &emsp;&emsp;Before we begin, let me ask a question:
 

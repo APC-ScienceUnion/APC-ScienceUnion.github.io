@@ -50,7 +50,7 @@ Reviewed by: Dongda
 - Body segments √
 - Symmetry √
 
-<div>&emsp;&emsp;We cannot directly reconstruct the hard covering of an organism that lived hundreds of millions of years ago, but the fossil itself provides several clues. Bones and exoskeletons fossilize more readily than soft tissues, which usually disappear almost completely. This also helps explain why mollusk fossils are rare. The sheer number of specimens that have survived suggests that the preserved structures were skeletal, and their outward form identifies them as exoskeletons rather than endoskeletons.</div>
+<div>&emsp;&emsp;We cannot directly reconstruct the hard covering of an organism that lived hundreds of millions of years ago, but the fossil itself provides several clues. Bones and exoskeletons fossilize more readily than soft tissues, which usually disappear almost completely. This also helps explain why fossils of soft-bodied animals are rare. The sheer number of specimens that have survived suggests that the preserved structures were skeletal, and their outward form identifies them as exoskeletons rather than endoskeletons.</div>
 
 <div>&emsp;&emsp;Once we identify the organism as an arthropod, the layer that contained it and the other fossils found there indicate that it was marine. With no obvious structures for swimming or maintaining buoyancy, it most likely lived on the seafloor.</div>
 

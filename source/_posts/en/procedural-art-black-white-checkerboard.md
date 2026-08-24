@@ -17,7 +17,7 @@ copyright_author: '时光'
 > Author: Shiguang
 Reviewed by: Dongda
 
-<div>&emsp;&emsp;Many readers probably first encountered “procedural art” in an elementary-school information technology class, when a textbook introduced the fascinating program Turtle Graphics. Think back: how did we make the little turtle move? The answer was code. In 1996, Seymour Papert and Wally Feurzig invented Logo, a language designed to teach children programming, and we used it to direct a turtle around the screen as it drew. As technology has evolved, however, Logo has gradually faded from view, and mainstream approaches to drawing have changed as well.</div>
+<div>&emsp;&emsp;Many readers probably first encountered “procedural art” in an elementary-school information technology class, when a textbook introduced the fascinating program Turtle Graphics. Think back: how did we make the little turtle move? The answer was code. In 1996, Seymour Papert and Wally Feurzeig invented Logo, a language designed to teach children programming, and we used it to direct a turtle around the screen as it drew. As technology has evolved, however, Logo has gradually faded from view, and mainstream approaches to drawing have changed as well.</div>
 
 <div>&emsp;&emsp;This article shows how to use a shader language—called simply Shader below—to draw a 3*3 checkerboard. I use UE4 for the demonstration. If you are interested, try the algorithm presented here in Unity or on an online rendering site such as ShaderToy.</div>
 
@@ -35,7 +35,7 @@ Reviewed by: Dongda
 <br><img src="/images/%E7%A8%8B%E5%BA%8F%E7%BB%98%E7%94%BB%E2%80%94%E2%80%94%E7%94%A8%E4%BB%A3%E7%A0%81%E7%94%BB%E4%B8%80%E4%B8%AA%E9%BB%91%E7%99%BD%E6%A3%8B%E7%9B%98%E6%A0%BC/fig-002-025f6e5a1e.png"/>
 
 # Working Through the Math
-<div>&emsp;&emsp;Our data is now perfectly continuous. To produce distinct checkerboard squares, we need to turn that continuous data into discrete “steps.” We can do this with the Floor function, which rounds each coordinate down. This gives us one segment of data, but we need three rows and three columns. Multiplying by 3 produces three segments, as shown below:</div>
+<div>&emsp;&emsp;Our data now varies continuously. To produce distinct checkerboard squares, we need to turn that continuous data into discrete “steps.” We can do this with the Floor function, which rounds each coordinate down. This gives us one segment of data, but we need three rows and three columns. Multiplying by 3 produces three segments, as shown below:</div>
  
 <br><img src="/images/%E7%A8%8B%E5%BA%8F%E7%BB%98%E7%94%BB%E2%80%94%E2%80%94%E7%94%A8%E4%BB%A3%E7%A0%81%E7%94%BB%E4%B8%80%E4%B8%AA%E9%BB%91%E7%99%BD%E6%A3%8B%E7%9B%98%E6%A0%BC/fig-003-2a637f2e97.png"/>
 

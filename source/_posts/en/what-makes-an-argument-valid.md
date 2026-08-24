@@ -44,7 +44,7 @@ copyright_author: '涛声'
 
 &emsp;&emsp;We generally consider a view false when it conflicts with objective fact. Many views, however, cannot be reached simply by observing facts: “It will rain on this date next year.” (We cannot know because of the limits of time.) **The air in the United States is sweet.** (We cannot know because of the limits of space.) **God exists.** (The concept itself is difficult to determine.) We need to make extensive use of **inference** to construct **arguments**.
 
-&emsp;&emsp;For example, air is almost never sweet, so the air in the United States is almost certainly not sweet. (In northern Boston in 1919, though, the air really was sweet.) We need an art of reasoning that helps us make judgments like this.
+&emsp;&emsp;For example, air is almost never sweet, so the air in the United States is almost certainly not sweet. (In Boston’s North End in 1919, though, the air really was sweet.) We need an art of reasoning that helps us make judgments like this.
 
 &emsp;&emsp;Let us learn the art of **inference**! Remember the intelligence mentioned above? Now it is time to use it. Do not worry; after all, I do not have any either.
 

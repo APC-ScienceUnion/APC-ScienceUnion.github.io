@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Five-Minute Immunology: Phagocytes and Nonspecific Immunity'
+title: 'Five-Minute Immunology: Phagocytes and Innate Immunity'
 date: 2019-10-13 12:14:00
 lang: en
 translation_key: "五分钟了解免疫｜非特异性免疫之吞噬细胞"
@@ -14,12 +14,12 @@ copyright_author: '绿水青山'
 cover: /images/%E4%BA%94%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E5%85%8D%E7%96%AB%EF%BD%9C%E9%9D%9E%E7%89%B9%E5%BC%82%E6%80%A7%E5%85%8D%E7%96%AB%E4%B9%8B%E5%90%9E%E5%99%AC%E7%BB%86%E8%83%9E/cover-86e367b09b.jpg
 ---
 
-> Author: 绿水青山  
-> Reviewer: 未名
+> Author: Lüshui Qingshan
+> Reviewer: Weiming
 
-&emsp;&emsp;Previously, we looked at several mechanisms of specific immunity. This time, we turn to nonspecific immunity.
+&emsp;&emsp;Previously, we looked at several mechanisms of adaptive immunity. This time, we turn to innate immunity.
 
-&emsp;&emsp;Nonspecific immunity is provided by the body's physical barriers, immune cells such as phagocytes, and antimicrobial substances in body fluids. Here, we will examine the mechanisms by which phagocytes engulf and kill pathogens.
+&emsp;&emsp;Innate immunity is provided by the body's physical barriers, immune cells such as phagocytes, and antimicrobial substances in body fluids. Here, we will examine the mechanisms by which phagocytes engulf and kill pathogens.
 
 &emsp;&emsp;The process begins with chemotaxis: a phagocyte moves in a particular direction, from an area with a low concentration of chemoattractants toward one with a higher concentration. These chemical signals include certain components of the complement system and substances secreted by other immune cells.
 

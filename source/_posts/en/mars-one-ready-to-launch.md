@@ -14,8 +14,8 @@ copyright_author: '白書'
 cover: /images/%E7%81%AB%E6%98%9F%E4%B8%80%E5%8F%B7%EF%BC%8C%E5%87%86%E5%A4%87%E5%90%AF%E8%88%AA%EF%BC%81/cover-18a7aecb5f.jpg
 ---
 
-> Author: 白書
-> Reviewers: 蜗牛; 一毫秒的永恒
+> Author: Baishu
+> Reviewers: Woniu; A Millisecond of Eternity
 Note: “Mars One” was later officially renamed “Tianwen-1.” It successfully completed the three major phases of Mars exploration: orbiting, landing, and roving.
 
 &emsp;&emsp;On October 11, 019, the China Aerospace Science and Technology Corporation posted photographs of China's second Mars probe on its official Weibo account. The images gave the public its first look at the finished spacecraft, which was scheduled for launch the following year.

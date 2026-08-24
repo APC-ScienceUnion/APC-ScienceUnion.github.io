@@ -70,6 +70,6 @@ Reviewed by: Baiyan
 
 <img src="/images/%E7%94%A8Unity%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/fig-008-5b514b839a.png" />
 
-# Conclu&nbsp; sion
+# Conclusion
 
 &emsp;&emsp;That is the basic approach. In roughly 200 lines, this *Merge Watermelon* remake already reproduces most of the original game's features. It still needs a loss condition, which could use a trigger and a timer in `FixedUpdate` (~~I was too lazy, and besides, I never lose anyway~~), as well as some “exciting” sound effects (heavy sarcasm). Even then, it does not feel quite as good as the original~

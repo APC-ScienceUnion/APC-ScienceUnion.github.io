@@ -15,8 +15,8 @@ copyright_author: '极地冰川'
 ---
 
 # Fluorescent Proteins: A Brief History and How They Work
-> Author: 极地冰川
-Reviewed by: 未名
+> Author: Polar Glacier
+Reviewed by: Weiming
 
 ## Abstract
 <div>&emsp;&emsp;Green fluorescent protein (GFP), discovered and isolated from the jellyfish Aequorea victoria in 1962, and the red fluorescent protein drFP583, discovered in 1999 in corals of the genus Discosoma, have become widely used tools throughout biological research. They are nontoxic, emit strong fluorescence when excited by specific wavelengths of light, have low molecular weights, are easy to incorporate into vectors, and can be expressed in many organisms. These properties have made fluorescent proteins useful across a broad range of fields, and researchers now have many varieties to choose from.</div>
@@ -60,7 +60,7 @@ Reviewed by: 未名
 
 
 ### Structure of Red Fluorescent Protein (DsRed)
-<div>&emsp;&emsp;DsRed consists of 225 amino-acid residues and has a relative molecular mass of approximately 25.9 kDa. Although this coral protein shares only about 23% primary-sequence identity with GFP from Aequorea victoria, the two proteins have highly similar three-dimensional structures. Like GFP, DsRed forms a β-barrel.</div>
+<div>&emsp;&emsp;DsRed consists of 225 amino-acid residues and has a molecular mass of approximately 25.9 kDa. Although this coral protein shares only about 23% primary-sequence identity with GFP from Aequorea victoria, the two proteins have highly similar three-dimensional structures. Like GFP, DsRed forms a β-barrel.</div>
 
 <img src="/images/%E7%AE%80%E8%BF%B0%E8%8D%A7%E5%85%89%E8%9B%8B%E7%99%BD%E7%A0%94%E7%A9%B6%E5%8F%B2%E5%8F%8A%E5%85%B6%E5%8F%91%E5%85%89%E6%9C%BA%E7%90%86/fig-005-35c92213ad.png"/>
 <center><font size=2px color=grey>Figure 5. Secondary structure of DsRed, shown as a tetramer[8]</font></center>
@@ -96,12 +96,12 @@ Reviewed by: 未名
 
 <div>&emsp;&emsp;Crystallographic analysis shows that the Tyr66 phenolic hydroxyl is neutral in the ground state. Electrostatic repulsion from the Glu222 carboxyl group, together with hydrogen bonds involving the bound water molecule Wat304 and the side-chain oxygen of Ser205, maintains this state. The interaction between Glu222 and Ser65 provides further stabilization.</div>
 
-<div>&emsp;&emsp;Upon excitation, Glu222 transfers a negative charge to the chromophore's phenolic hydroxyl through the hydrogen-bond network formed with Wat304 and Ser205, while the hydroxyl loses its proton. In most cases, the charged chromophore undergoes photoisomerization and emits light at 504 nm as it returns to the ground state, after which it becomes neutral again.</div>
+<div>&emsp;&emsp;Upon excitation, the chromophore's phenolic hydroxyl transfers its proton to Glu222 through the hydrogen-bond network formed by Wat304 and Ser205. In most cases, the resulting anionic chromophore undergoes photoisomerization and emits light at 504 nm as it returns to the ground state, after which it becomes neutral again.</div>
 
 <img src="/images/%E7%AE%80%E8%BF%B0%E8%8D%A7%E5%85%89%E8%9B%8B%E7%99%BD%E7%A0%94%E7%A9%B6%E5%8F%B2%E5%8F%8A%E5%85%B6%E5%8F%91%E5%85%89%E6%9C%BA%E7%90%86/fig-010-6f8637bff1.png"/>
 <center><font size=2px color=grey>Figure 10. Model of the GFP fluorescence mechanism[12]</font></center>
 
-<div>&emsp;&emsp;In a minority of cases, changes in the hydrogen-bond network stabilize the chromophore in its ionic form. The His148 side chain forms a hydrogen bond with the Tyr66 phenolic oxygen (Oη), while Wat304 interacts with Tyr66 Oη and the side-chain oxygens of Thr203 and Ser205. At the same time, the hydrogen bond between Glu222 and Ser205 breaks, and the carboxyl oxygen of Glu222 may undergo cis–trans isomerization.</div>
+<div>&emsp;&emsp;In a minority of cases, changes in the hydrogen-bond network stabilize the chromophore in its ionic form. The His148 side chain forms a hydrogen bond with the Tyr66 phenolic oxygen (Oη), while Wat304 interacts with Tyr66 Oη and the side-chain oxygens of Thr203 and Ser205. At the same time, the hydrogen bond between Glu222 and Ser205 breaks, and the carboxyl group of Glu222 may undergo cis–trans isomerization.</div>
 
 <img src="/images/%E7%AE%80%E8%BF%B0%E8%8D%A7%E5%85%89%E8%9B%8B%E7%99%BD%E7%A0%94%E7%A9%B6%E5%8F%B2%E5%8F%8A%E5%85%B6%E5%8F%91%E5%85%89%E6%9C%BA%E7%90%86/fig-011-40483ef020.png"/>
 <center><font size=2px color=grey>Figure 11. Chromophore conformations in different GFP states[12]</font></center>

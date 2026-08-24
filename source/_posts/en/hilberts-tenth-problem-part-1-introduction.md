@@ -16,7 +16,7 @@ copyright_author: 'silverxz'
 
 > Author: silverxz
 
-&emsp;&emsp;People have a peculiar fascination with mathematical conjectures and the stories of how they were solved. Goldbach's conjecture and Chen Jingrun, Fermat's Last Theorem and Wiles, the theory of solutions by radicals and the work of Abel and Galois: such examples have found their way into elementary education. Children may not even understand what these problems say, yet they enjoy stories in which a legendary figure resolves a long-standing conjecture, much as they enjoy tales of heroes and dragons. This is probably how Hilbert's name first reached the wider public:
+&emsp;&emsp;People have a peculiar fascination with mathematical conjectures and the stories of how they were solved. Goldbach's conjecture and Chen Jingrun, Fermat's Last Theorem and Wiles, the theory of solvability by radicals and the work of Abel and Galois: such examples have found their way into elementary education. Children may not even understand what these problems say, yet they enjoy stories in which a legendary figure resolves a long-standing conjecture, much as they enjoy tales of heroes and dragons. This is probably how Hilbert's name first reached the wider public:
 
 &emsp;&emsp;**David Hilbert** (1862-1943) was the most celebrated mathematician of his era. In 1900, Hilbert assembled **23** mathematical problems that were then unresolved. Some were sharply defined (Problem 8, for example, is the *Riemann hypothesis*), while others were not individual questions at all, but research programs or even small fields containing many questions. They later acquired a standard collective name: **Hilbert's 23 problems**.
 

@@ -16,7 +16,7 @@ copyright_author: '自控力'
 
 > Author: Zikongli
 
-&emsp;&emsp;Today we meet the world's deadliest animal, No. 1: Homo sapiens. Around 150,000 years ago—or 200,000 years ago, according to some accounts—Homo sapiens began the Cognitive Revolution. They then expanded rapidly from the African grasslands across Eurasia, wiping out most of their fellow species in the genus Homo along the way. Some of those populations' DNA did manage to hitch a ride on the fast-moving Homo sapiens express. People across Eurasia today generally carry a small amount of Neanderthal DNA.
+&emsp;&emsp;Today, meet the world's deadliest animal—No. 1: Homo sapiens. Around 150,000 years ago—or 200,000 years ago, according to some accounts—Homo sapiens began the Cognitive Revolution. They then expanded rapidly from the African grasslands across Eurasia, wiping out most of their fellow species in the genus Homo along the way. Some of those populations' DNA did manage to hitch a ride on the fast-moving Homo sapiens express. People across Eurasia today generally carry a small amount of Neanderthal DNA.
 
 <img src="/images/%E4%BA%BA%E7%B1%BB%E7%AE%80%E5%8F%B2%E7%A7%91%E6%99%AE%C2%B7%E6%99%BA%E4%BA%BA%E6%B4%AA%E6%B0%B4%EF%BC%88%E4%B8%8A%EF%BC%89/fig-002-0ec7edfdcf.jpg" alt="" />
 

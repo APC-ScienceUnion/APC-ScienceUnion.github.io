@@ -18,7 +18,7 @@ katex: true
 > Author: silverxz
 Proofreader: Acidmoon
 
-&emsp;&emsp;This article proves that Diophantine sets are equivalent to recursively enumerable sets.
+&emsp;&emsp;In this article, we will prove that the Diophantine sets are exactly the recursively enumerable sets.
 
 &emsp;&emsp;We have already noted that the direction from Diophantine sets to recursively enumerable sets is fairly straightforward. Let $S$ be a Diophantine set with corresponding Diophantine equation $D(x_1,...,x_n,y_1,...,y_m)=0$. For $(a_1,...,a_n)\in \mathbb{N}^n$, we need only have a Turing machine $M$ systematically try every possible $y_1,...,y_m$ to see whether $D(a_1,...,a_n,y_1,...,y_m)=0$ holds. If $(a_1,...,a_n)\in S$, the machine will eventually halt. The candidates must, of course, be enumerated in a way that guarantees every possible solution will be reached in finite time.
 

@@ -18,9 +18,9 @@ categories: []
 
 Reviewer: Baiyan
 
-&emsp;&emsp;Before we begin, here is a question: why compress a file? Unsure of the answer, you put the question aside and decide to download something. You open NetEase Cloud Music, find several songs you love in the daily recommendations, and excitedly decide to claim them for your own. The download menu offers lossless, high, and standard quality. Naturally, you want to treat your ears well, so you choose lossless, only for the app to ask you to buy a membership. Outraged, you... choose high quality instead.
+&emsp;&emsp;Before we begin, here is a question: why compress a file? Unsure of the answer, you put the question aside and decide to download something. You open NetEase Cloud Music, find several songs you love in the daily recommendations, and excitedly decide to claim them for your own. The download menu offers three settings: Highest, Very High, and Standard. Naturally, you want to treat your ears well, so you choose Highest, only for the app to ask you to buy a membership. Outraged, you... choose Very High instead.
 
-&emsp;&emsp;Now the original question comes back to you. Is the high-quality version simply a compressed form of the lossless one? After all, its file is smaller. The answer is yes. It may not sound quite as nice as the lossless version, but it takes up less disk space and is easier to transmit. Compression is therefore important for audio. Of course, it can also tempt people into paying for a membership...
+&emsp;&emsp;Now the original question comes back to you. Is the file at Very High simply a compressed version of the one at Highest? After all, it is smaller. The answer is yes. It may not sound quite as good as the Highest version, but it takes up less disk space and is easier to transmit. Compression is therefore important for audio. Of course, it can also tempt people into paying for a membership...
 
 &emsp;&emsp;But enough of that digression. Let us look at the basic approaches to audio compression, beginning with the formula for file size:
 

@@ -30,7 +30,7 @@ copyright_author: '栗小白'
   - **Apparent brightness** measures the <font color="red">**energy flux**</font> received from a star at Earth—the amount of energy arriving per unit area per unit time.
 
 - Relationship
-You could work this out with your toes: apparent brightness must depend on **how bright the star really is**—its luminosity—and on its **distance** from us. How does distance enter the picture? Through yet another **inverse-square law**. The diagram below makes the relationship easy to see.
+You could figure this out in your sleep: apparent brightness must depend on **how bright the star really is**—its luminosity—and on its **distance** from us. How does distance enter the picture? Through yet another **inverse-square law**. The diagram below makes the relationship easy to see.
 
 <img src="/images/%E6%81%92%E6%98%9F%E7%BB%BC%E8%BF%B0%E2%80%94%E2%80%94%E6%81%92%E6%98%9F%E7%A0%94%E7%A9%B6%E5%9F%BA%E7%A1%80/fig-001-0f96c26ac7.png" width="500" alt="image.png" title="image.png" />
 <center><font size=2px color=grey>How apparent brightness varies with distance</font></center>

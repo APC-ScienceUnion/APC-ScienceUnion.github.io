@@ -14,10 +14,10 @@ copyright_author: 'phy东西'
 cover: /images/%E9%AD%94%E6%96%B9%E7%9B%B2%E6%8B%A7%E6%B5%85%E8%B0%88/cover-b4d3392c74.jpg
 ---
 
-> Author: phy东西
-> Reviewer: 丛雨
+> Author: phy Dongxi
+> Reviewer: Congyu
 
-&emsp;&emsp;To most noncubers and beginners, solving a cube blindfolded looks like an extraordinary feat, so it has always attracted plenty of attention. I have even been asked, “Hey, can you do that thing where you solve a Rubik's Cube with your eyes closed?” Blindfolded solving is not as mysterious as it seems, however. This article explains the basic idea without going too deeply into any particular method. I am not an expert blindfolded solver, so I will inevitably leave some things out; I hope readers will bear with me.
+&emsp;&emsp;To most noncubers and beginners, solving a cube blindfolded looks like an extraordinary feat, so it has always attracted plenty of attention. I have even been asked, “Hey, can you do that thing where you solve a Rubik's Cube with your eyes closed?” Blindfolded solving is not as mysterious as it seems, however. This article explains the basic idea without going too deeply into any particular method. I am not an expert blindfolded solver, so I may miss a few details; please treat this as an overview.
 
 &emsp;&emsp;Every algorithm in this article can be entered in the Moves field at https://alg.cubing.net/ for a demonstration. Be sure to distinguish Chinese punctuation from English punctuation when typing. We will begin with two pieces of notation: [A:B] and [A,B]. [A:B] means performing A, then B, and finally the inverse of A; A is also called the setup. [A,B] is a commutator: perform A and B in order, followed by their inverses in the same order. For a fuller treatment of commutators, see a group theory textbook.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'No Wandering Earth Today: How to Destroy the Planet in Three Elegant Steps'
+title: 'Forget The Wandering Earth: How to Destroy the Planet in Three Elegant Steps'
 date: 2019-02-12 12:00:00
 lang: en
 translation_key: "今天地球不流浪——如何用3个优雅的步骤摧毁地球"

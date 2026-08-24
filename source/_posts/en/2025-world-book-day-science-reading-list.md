@@ -14,7 +14,7 @@ copyright_author: 'A.P.C.科学联盟'
 cover: /images/2025%E4%B8%96%E7%95%8C%E8%AF%BB%E4%B9%A6%E6%97%A5%C2%B7%E7%A7%91%E6%99%AE%E4%B9%A6%E5%8D%95/cover-7fd022cff4.png
 ---
 
-This April, with spring in full swing, we celebrated the 30th World Book Day. Books can be beacons when we venture into the unknown. A's call for popular science book recommendations brought in a trove of excellent titles, and this is the reading list our community put together.
+This April, with spring in full swing, we celebrated the 30th World Book Day. Books can be beacons when we venture into the unknown. A-kun's call for popular science book recommendations brought in a trove of excellent titles, and this is the reading list our community put together.
 
 <img src="/images/2025%E4%B8%96%E7%95%8C%E8%AF%BB%E4%B9%A6%E6%97%A5%C2%B7%E7%A7%91%E6%99%AE%E4%B9%A6%E5%8D%95/cover-7fd022cff4.png" width=400 alt="Event poster"/>
 

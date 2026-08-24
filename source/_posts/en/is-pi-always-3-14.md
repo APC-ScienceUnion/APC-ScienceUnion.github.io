@@ -16,7 +16,7 @@ katex: true
 ---
 
 > Author: $\Delta\delta Delta$
-Reviewer: 白烟
+Reviewer: Baiyan
 
 &emsp;&emsp;Years ago, a science fiction story titled “Pythagoras: 2.013” took the internet by storm, and people still remember it today. One passage near the end invites the reader to speculate:
 

@@ -48,7 +48,7 @@ copyright_author: '约翰史密斯'
 
 - Magnetism: This one is self-explanatory.
 
-- Optical activity: Does a thin section rotate the plane of polarized light? If so, what is the period of rotation?
+- Optical activity: Does a thin section rotate the plane of polarized light? If so, by how much?
 
 - Fluorescence: Does it glow under ultraviolet light or at a particular wavelength?
 

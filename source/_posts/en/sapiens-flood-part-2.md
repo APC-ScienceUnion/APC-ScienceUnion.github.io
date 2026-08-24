@@ -14,7 +14,7 @@ cover: '/images/%E4%BA%BA%E7%B1%BB%E7%AE%80%E5%8F%B2%E7%A7%91%E6%99%AE%E2%80%94%
 copyright_author: '自控力'
 ---
 
-> Author: Self-Control
+> Author: Zikongli
 Reviewer: Guanfu Juntian
 
 &emsp;&emsp;P.S. First, an apology. In the article from two issues ago, “[The Sapiens Flood, Part I](http://mp.weixin.qq.com/s?__biz=MzU2Njc3MTM4Ng==&mid=2247485151&idx=1&sn=d0a39ddd8c8444809ed47fa643da38e4&chksm=fca62d0acbd1a41c241cf7e0ae96c5413a1590b4cb87c17d28bdbbd01fc2f785eca221ccb120&scene=21#wechat_redirect),” I missed an error. Homo sapiens left Africa about 70,000 years ago, but I wrote that it happened when the species first appeared, 150,000 years ago. That date is itself uncertain: estimates of 160,000 or 200,000 years also appear, partly because some classifications treat Neanderthals as early Homo sapiens. Here, we will follow the view taken in the book. Fortunately, a friend on Qzone caught the mistake. My apologies.

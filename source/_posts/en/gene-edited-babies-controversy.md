@@ -22,7 +22,7 @@ categories: []
 
 &emsp;&emsp;Practical questions that He Jiankui and other genome-editing researchers cannot avoid.
 
-&emsp;&emsp;In late November, reports that twin babies had been born after their genes were edited to make them resistant to HIV caused an uproar. The announcement also ignited fierce debate over CRISPR experiments, the laws governing them, and the ethical questions they raise.<br>Responses ranged from opposition to neutrality and support. At the Second International Summit on Human Genome Editing, held a few days later, the organizing committee described the experiment as “unexpected and deeply disturbing.” Life-science researchers had mixed reactions, but most believed the work had been undertaken prematurely and questioned both its legality and its safety. Nature recently made six unresolved questions about He Jiankui and the gene-edited babies its lead story. Let us take a closer look at them.
+&emsp;&emsp;In late November, reports that twin babies had been born after their genes were edited to make them resistant to HIV caused an uproar. The announcement also ignited fierce debate over CRISPR experiments, the laws governing them, and the ethical questions they raise.<br>Responses ranged from opposition to neutrality and support. At the Second International Summit on Human Genome Editing, held a few days later, the organizing committee described the experiment as “unexpected and deeply disturbing.” Life-science researchers had mixed reactions, but most believed the work had been undertaken prematurely and questioned both its legality and its safety. A recent Nature feature framed the controversy around six questions that remained unresolved. Let us take a closer look at them.
 
 # 1. Is He Jiankui in trouble?
 
@@ -34,7 +34,7 @@ categories: []
 
 # 2. How can the accuracy and authenticity of He Jiankui’s claims be established?
 
-&emsp;&emsp;Many scientists said that verifying He Jiankui’s claims would require detailed comparisons of the babies’ genomes with their parents’ genomes to determine what edits had been made. The identities of the babies and their parents were kept strictly confidential. Together with China’s stringent rules on human genetic resources, that confidentiality gave He grounds to withhold the experimental data and made an independent investigation impossible.
+&emsp;&emsp;Many scientists said that verifying He Jiankui’s claims would require detailed comparisons of the babies’ genomes with their parents’ genomes to determine what edits had been made. The identities of the babies and their parents were kept strictly confidential. Combined with China’s stringent rules on human genetic resources, that confidentiality allowed He to withhold the experimental data and made an independent investigation impossible.
 
 &emsp;&emsp;He Jiankui said that his team could provide anonymized samples and open its laboratory data, invite other researchers to join the investigation, and submit the raw data for independent review.
 

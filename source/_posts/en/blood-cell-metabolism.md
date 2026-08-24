@@ -18,7 +18,7 @@ categories: []
 
 Reviewer: Weiming
 
-&emsp;&emsp;Blood is a fluid tissue that circulates through the human cardiovascular system. It consists mainly of plasma, blood cells, and platelets, and its primary role is to transport substances through the body. Red blood cells carry materials in the blood, while white blood cells defend against foreign invaders. Platelets are fragments shed by megakaryocytes in the bone marrow and are essential for hemostasis. This article describes the metabolism of all three components.
+&emsp;&emsp;Blood is a fluid tissue that circulates through the human cardiovascular system. It consists mainly of plasma, blood cells, and platelets, and its primary role is to transport substances through the body. Red blood cells carry materials in the blood, while white blood cells defend against foreign invaders. Platelets are fragments shed by megakaryocytes in the bone marrow and are essential for hemostasis. This article describes the metabolism of red blood cells, white blood cells, and platelets.
 
 # Red blood cell metabolism
 

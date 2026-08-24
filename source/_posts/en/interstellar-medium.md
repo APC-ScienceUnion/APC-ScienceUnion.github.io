@@ -15,11 +15,11 @@ copyright_author: '栗小白'
 ---
 
 # What Is the Interstellar Medium?
-> Author: 栗小白
-Reviewer: 时光
+> Author: Li Xiaobai
+Reviewer: Shiguang
 
 # Introduction
-Our universe contains more than stars and planets. Interstellar space is permeated by matter of extremely low density, far thinner than the best vacuum we can create on Earth. This material, known as the interstellar medium, occupies the vast space between planetary systems.
+Our universe contains more than stars and planets. Interstellar space is permeated by matter of extremely low density, far thinner than the best vacuum we can create on Earth. This material, known as the interstellar medium, fills the vast reaches between planetary systems.
 
 # The Interstellar Medium
 

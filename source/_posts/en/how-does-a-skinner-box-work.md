@@ -17,7 +17,7 @@ copyright_author: '清流'
 > Author: Qingliu
 Reviewer: Yuandao
 
-&emsp;&emsp;Skinner may be unfamiliar to many readers, but Pavlov is likely a household name. Pavlov was a Soviet physiologist, psychologist, and physician. He founded the theory of higher nervous activity, pioneered the physiology of higher nervous activity, and developed the theory of conditioned reflexes. He was also one of the figures outside traditional psychology who most profoundly influenced the field's development, and he received the Nobel Prize in Physiology or Medicine. (That really is a lot of titles.)
+&emsp;&emsp;Skinner may be unfamiliar to many readers, but Pavlov is likely a household name. Pavlov was a Soviet physiologist, psychologist, and physician. He established the theory of higher nervous activity, pioneered its experimental study, and developed the theory of conditioned reflexes. Though he worked outside psychology proper, few people influenced the field more profoundly; he also received the Nobel Prize in Physiology or Medicine. (That really is a lot of titles.)
 
 <img src="/images/%E6%96%AF%E9%87%91%E7%BA%B3%E7%9A%84%E7%AE%B1%E5%AD%90%E6%98%AF%E6%80%8E%E4%B9%88%E4%B8%80%E5%9B%9E%E4%BA%8B%EF%BC%9F/fig-004-a6b7b1da66.png" alt="" />
 

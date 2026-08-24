@@ -14,12 +14,12 @@ copyright_author: '神州'
 cover: /images/%E4%BA%94%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E5%85%8D%E7%96%AB%EF%BD%9C%E6%8A%97%E4%BD%93%E5%A6%82%E4%BD%95%E4%BB%A5%E5%8F%98%E5%BA%94%E5%8F%98%EF%BC%9F/cover-70b106b377.jpg
 ---
 
-> Author: 神州  
-> Reviewer: 东达
+> Author: Shenzhou
+> Reviewer: Dongda
 
 &emsp;&emsp;We know that evolution results from the combined effects of genetic mutation and natural selection. If we ask which living things mutate fastest, bacteria and viruses are obvious candidates. Here I am using Schrödinger's much-debated idea that life “feeds on negative entropy”; there is still no universally accepted definition of life, but that is not our subject. The status of viruses as living things also remains disputed. Bacteria and viruses are small, reproduce quickly, and in some cases carry genetic material that is structurally unstable. Most of them also cause disease in plants and animals, so we continually develop drugs to destroy them.
 
-&emsp;&emsp;Yet the rapid reproduction and high mutation rates of some bacteria and viruses allow drug-resistant individuals or strains to survive the selection pressure and quickly escape the effects of a treatment. That troublesome ability is precisely why antibiotic use now has to be restricted. Over the long course of evolution, however, animals have developed countermeasures to prevent pathogens from harming them. Together, these mechanisms form the immune system. Its power means that we do not have to compete with pathogens at the cost of our own lives. If we had to match their rates of reproduction and evolution directly, the outcome would be brutal.
+&emsp;&emsp;Yet the rapid reproduction and high mutation rates of some bacteria and viruses allow drug-resistant individuals or strains to survive the selection pressure and quickly escape the effects of a treatment. That troublesome ability is precisely why antibiotic use must now be restricted. Over the long course of evolution, however, animals have developed countermeasures against pathogens. Together, these mechanisms form the immune system. Its power means that we do not have to compete with pathogens at the cost of our own lives. If we had to match their rates of reproduction and evolution directly, the outcome would be brutal.
 
 &emsp;&emsp;How, then, does the immune system let an individual respond without being sacrificed so that the larger population can survive?
 

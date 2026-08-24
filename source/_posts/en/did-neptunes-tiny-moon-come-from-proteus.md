@@ -32,9 +32,9 @@ cover: /images/%E6%B5%B7%E7%8E%8B%E6%98%9F%E7%9A%84%E5%B0%8F%E5%8D%AB%E6%98%9F%E
 
 &emsp;&emsp;Images taken by Voyager 2 in 1989 support this idea. They show a vast impact crater on Proteus, nearly large enough to have shattered the moon. “In 1989, we thought the huge depression must simply be a crater,” Showalter said. “With Hubble, we now know that a small piece of Proteus was left behind—the object we know today as Hippocamp.” The moons' orbits are now 7,500 miles (about 12,070 kilometers) apart.
 
-<img src="/images/%E6%B5%B7%E7%8E%8B%E6%98%9F%E7%9A%84%E5%B0%8F%E5%8D%AB%E6%98%9F%EF%BC%8C%E5%85%B6%E5%AE%9E%E6%9D%A5%E8%87%AA%E6%B5%B7%E5%8D%AB%E5%85%AB%EF%BC%9F/fig-001-fdc7867ac6.jpg" title="Observations of Hippocamp (inside the white square). The Hubble Space Telescope took the images in sequence in a. 2004, b. 2005, c. 2009, and d. 2016." />
+<img src="/images/%E6%B5%B7%E7%8E%8B%E6%98%9F%E7%9A%84%E5%B0%8F%E5%8D%AB%E6%98%9F%EF%BC%8C%E5%85%B6%E5%AE%9E%E6%9D%A5%E8%87%AA%E6%B5%B7%E5%8D%AB%E5%85%AB%EF%BC%9F/fig-001-fdc7867ac6.jpg" title="Observations of Hippocamp (inside the white square). The Hubble Space Telescope took the images in sequence: (a) 2004, (b) 2005, (c) 2009, and (d) 2016." />
 
-<center><font size=2px color=grey>Observations of Hippocamp (inside the white square). The Hubble Space Telescope took the images in sequence in a. 2004, b. 2005, c. 2009, and d. 2016.</font></center>
+<center><font size=2px color=grey>Observations of Hippocamp (inside the white square). The Hubble Space Telescope took the images in sequence: (a) 2004, (b) 2005, (c) 2009, and (d) 2016.</font></center>
 
 &emsp;&emsp;The history of Neptune's moon system has been both violent and complicated. Billions of years ago, Neptune captured its large moon Triton from the Kuiper Belt, a densely populated, disk-shaped region beyond Neptune's orbit filled with icy and rocky bodies. Triton's gravity disrupted Neptune's original family of moons before it settled into a relatively stable circular orbit. Debris from the shattered moons then came back together to form a second generation. Later comet impacts continued to break those moons apart and may have created Hippocamp, a possible third-generation moon.
 

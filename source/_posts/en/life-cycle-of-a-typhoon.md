@@ -14,7 +14,7 @@ copyright_author: '阿白特尔'
 cover: /images/%E5%8F%B0%E9%A3%8E%E7%9A%84%E4%B8%80%E7%94%9F/cover-d7d37896c0.jpg
 ---
 
-> Author: 阿白特尔
+> Author: Abaiter
 
 &emsp;&emsp;Everything has a life cycle, and a typhoon is no exception. This article follows a typhoon from birth through growth and maturity to its eventual demise.
 
@@ -48,7 +48,7 @@ cover: /images/%E5%8F%B0%E9%A3%8E%E7%9A%84%E4%B8%80%E7%94%9F/cover-d7d37896c0.jp
 
 &emsp;&emsp;Air flows into a typhoon from every direction at low levels. If the surrounding air is very dry, the storm may run short of moisture. Without enough water vapor to condense and release the heat that powers its engine, the typhoon cannot intensify rapidly.
 
-&emsp;&emsp;5. Consolidation rate
+&emsp;&emsp;5. How quickly the circulation consolidates
 
 &emsp;&emsp;A developing typhoon sometimes forms with more than one center. If the incipient storm has multiple centers, they must consolidate quickly before the system can become very intense. Otherwise, the competing centers fight among themselves, and the internal conflict keeps the storm as a whole weak. When most of these five conditions are favorable, the storm may develop into a super typhoon and reach full maturity.
 

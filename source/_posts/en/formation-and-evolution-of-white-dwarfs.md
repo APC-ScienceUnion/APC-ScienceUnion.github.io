@@ -14,8 +14,8 @@ cover: /images/%E7%99%BD%E7%9F%AE%E6%98%9F%E7%9A%84%E5%BD%A2%E6%88%90%E4%B8%8E%E
 copyright_author: '丛雨'
 ---
 
-> Author: 丛雨  
-> Reviewer: 円岛
+> Author: Congyu
+> Reviewer: Yuandao
 
 &emsp;&emsp;Sirius is the brightest star in Earth's night sky, and we can see it every winter. In 1844, German astronomer and mathematician Friedrich Bessel calculated that Sirius must be a binary system with a companion about as massive as the Sun. The companion was so faint that it remained unseen for years. It was finally photographed in 1862, shining with only one-thousandth the brightness of Sirius. Astronomers later obtained its spectrum and began to recognize a new class of object: the white dwarf.
 
@@ -46,7 +46,7 @@ copyright_author: '丛雨'
 
 # Accretion and Eruptions
 
-&emsp;&emsp;If a white dwarf is part of a close binary system, its companion may expand late in life until it fills its Roche lobe. Matter from the companion then flows through the first Lagrange point and onto the white dwarf. What happens next depends strongly on the accretion rate. If the rate is too low, the accumulated hydrogen undergoes runaway fusion on the white dwarf's surface. The resulting nova ejects the accreted material, and the cycle may repeat as a recurrent nova. If the rate is too high, the hydrogen-rich envelope expands rapidly and the white dwarf instead becomes an asymptotic giant once again.
+&emsp;&emsp;If a white dwarf is part of a close binary system, its companion may expand late in life until it fills its Roche lobe. Matter from the companion then flows through the first Lagrange point and onto the white dwarf. What happens next depends strongly on the accretion rate. If the rate is too low, the accumulated hydrogen undergoes runaway fusion on the white dwarf's surface. The resulting nova ejects the accreted material, and the cycle may repeat as a recurrent nova. If the rate is too high, the hydrogen-rich envelope expands rapidly and the white dwarf instead becomes an asymptotic giant branch star once again.
 
 <img src="/images/%E7%99%BD%E7%9F%AE%E6%98%9F%E7%9A%84%E5%BD%A2%E6%88%90%E4%B8%8E%E6%BC%94%E5%8C%96/fig-004-7abeea6638.jpg" width=550/>
 <center><font size=2px color=grey>A white dwarf accreting matter from its companion in a close binary system</font></center>

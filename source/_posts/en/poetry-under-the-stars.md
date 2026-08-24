@@ -14,7 +14,7 @@ cover: /images/%E8%AF%97%E6%84%8F%E6%98%9F%E7%A9%BA/cover-9edaf65a4d.jpg
 copyright_author: '丛雨'
 ---
 
-> Author: 丛雨
+> Author: Congyu
 
 &emsp;&emsp;Across the ages, the Sun, Moon, and stars have stirred the imagination and inspired poets and writers. Let us explore the poetry in the night sky—and the night sky in poetry.
 

@@ -27,7 +27,7 @@ Proofreader: Shiguang
 
 &emsp;&emsp;For an equation with rational coefficients, we can put the coefficients over a common denominator, multiply both sides, and clear the denominator to obtain an equation with integer coefficients, such as <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8A%EF%BC%89/fig-002-99674c89d6.png" alt="" />. This operation does not change the solutions. The problem therefore becomes **the existence of integer solutions to polynomial equations with integer coefficients**. Diophantus was the first to make this a major object of study, so such equations are called **Diophantine equations**.
 
-&emsp;&emsp;A note on terminology: the Chinese original consistently uses the standard Chinese name for “Diophantine equation” rather than mixing English and Chinese. I also admit that I keep mistyping *Diophantine*; a hybrid expression would look as odd as writing “Turing machine” half in each language.
+&emsp;&emsp;A note on terminology: I will keep writing *Diophantine equation* in full rather than resorting to an ungainly abbreviation. Admittedly, that means I must stop mistyping *Diophantine*—but mathematical prose has standards, and “Turing contraption” would look just as ridiculous.
 
 &emsp;&emsp;I have not looked into why Diophantus studied integer solutions. Perhaps Pythagorean triples inspired him; perhaps he simply found them interesting. He was an early algebraist whom some call the “father of algebra,” and even the plain title of his work, *Arithmetica*, marks him as a foundational figure. It brings to mind Euclid's *Elements* and Newton's *Mathematical Principles of Natural Philosophy*, among other straightforward titles. Diophantus may not have needed any special reason to ask whether integer solutions exist; he studied many other subjects as well. Mathematics itself is an art pursued out of interest.
 
@@ -97,7 +97,7 @@ Proofreader: Shiguang
 
 &emsp;&emsp;The question, then, was: **Did these two concepts really capture computability?** This is a philosophical and necessarily subjective issue. We are trying to define computation itself, so whether a proposed definition agrees with our intuitive idea of computation cannot be proved.
 
-&emsp;&emsp;Church answered yes. He held that every computational process a human could perform could also be carried out in the lambda calculus. This view is called **Church's thesis**. (In Chinese, *thesis* is conventionally rendered with a word that can also mean “topic”; here it means a claim or hypothesis.) Gödel disagreed and remained skeptical, believing that more evidence was needed.
+&emsp;&emsp;Church answered yes. He held that every computational process a human could perform could also be carried out in the lambda calculus. This view is called **Church's thesis**—here *thesis* means a proposed claim or hypothesis, not the paper one files to graduate. Gödel disagreed and remained skeptical, believing that more evidence was needed.
 
 &emsp;&emsp;Turing settled the matter. At roughly the same time, he published his most important paper, ***On Computable Numbers***, and proposed his own characterization of computation: the **Turing machine**. Crucially, the construction begins entirely from a human point of view. It abstracts a person's scratch paper into a one-dimensional tape, and the person's attention and actions into the machine's internal states. The reasoning appears in Section 9 of the paper, which Soare recommends to every student of computability theory.
 
@@ -118,4 +118,3 @@ Proofreader: Shiguang
 &emsp;&emsp;On Computable Numbers, With An Application To The Entscheidungsproblem, Alan Turing
 
 &emsp;&emsp;Turing Computability Theory and Applications, Robert I. Soare
-

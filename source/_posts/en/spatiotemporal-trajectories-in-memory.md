@@ -66,7 +66,7 @@ Reviewed by: 食野
 
 <div>&emsp;&emsp;Over the course of evolution, organisms—including humans—have developed several biological clocks to help keep track of time. The brain's timers differ not only in the timescales they measure, but also in the phenomena to which they are tuned. Some are set by external processes. The circadian clock, for instance, is tuned to the waxing and waning of daylight and helps organisms adapt to the daily cycle. [8]</div>
 
-<div>&emsp;&emsp;Other forms of timing are set by more internal phenomena. Time cells in the hippocampus, for example, form a domino-like chain of signals that precisely tracks intervals of up to ten seconds. Yet few known mechanisms operate on the timescales the brain uses to record experiences and memories, which may last from seconds to minutes or hours. [7]</div>
+<div>&emsp;&emsp;Other forms of timing are set by internal processes. Time cells in the hippocampus, for example, form a domino-like chain of signals that precisely tracks intervals of up to ten seconds. Yet few known mechanisms operate on the timescales the brain uses to record experiences and memories, which may last from seconds to minutes or hours. [7]</div>
 
 <div>&emsp;&emsp;In 2016, doctoral student Jørgen Sugar joined Norway's Kavli project and conducted a new series of experiments to test the hypothesis that the LEC network encodes episodic time. In one experiment, a rat encountered a broad sequence of experiences and choices. As it visited a series of open environments, it was free to run around, explore, and chase pieces of chocolate.</div>
 

@@ -17,7 +17,7 @@ copyright_author: 'silverxz'
 > Author: silverxz
 Proofreader: Shiguang
 
-&emsp;&emsp;We now turn to the proof itself. This is not the original proof, but Matiyasevich's greatly simplified version from his book *Hilbert's Tenth Problem*, so its approach differs somewhat from the historical route described earlier. We will simplify parts of the argument further and skip details that are laborious but add no new ideas. The exposition often works backward: it starts from a result, asks what tools are needed to prove it, and then supplies those tools one by one. I will also use ordinary language to build an intuitive picture of the proof and explain its motivation. That approach is better suited to a popular introduction.
+&emsp;&emsp;We now turn to the proof itself. This is not the original proof, but Matiyasevich's greatly simplified version from his book *Hilbert's Tenth Problem*, so its approach differs somewhat from the historical route described earlier. We will simplify parts of the argument further and skip details that are laborious but add no new ideas. The exposition often works backward: it starts from a result, asks what tools are needed to prove it, and then supplies those tools one by one. I will also use ordinary language to build an intuitive picture of the proof and explain its motivation, an approach better suited to a popular introduction.
 
 # What is Hilbert's Tenth Problem?
 
@@ -140,4 +140,3 @@ Proofreader: Shiguang
 &emsp;&emsp;By the same reasoning, we can discuss recursive and recursively enumerable subsets of <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E3%80%81%E8%AF%81%E6%98%8E%E6%A1%86%E6%9E%B6/fig-036-6d7e584eef.png" alt="" />. How they are encoded as subsets of <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E3%80%81%E8%AF%81%E6%98%8E%E6%A1%86%E6%9E%B6/fig-033-713e769dc6.png" alt="" /> is immaterial, provided the encoding is computable. We will give one concrete encoding later.
 
 &emsp;&emsp;This completes the necessary preliminaries. In the next article, we prove the MRDP theorem.
-

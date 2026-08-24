@@ -20,7 +20,7 @@ copyright_author: '赖渊'
 
 &emsp;&emsp;Of all the tools in the kitchen, the wok is king: if it is not frying, it is braising. Three days to master an electric cooker, three years for the ladle, ten years to hone a cleaver, and a lifetime at the iron wok.<br> Food goes in, wine is poured, and the whole village waits to be served. The fire starts, the spatula rises, and one wok can feed two tables. The dishes arrive, chopsticks are laid out, and friends and family tuck in.<br> Today, almost every Chinese household has a pitch-black wok. As its Chinese name suggests, its main purpose is stir-frying. Stir-frying is arguably the dominant technique in Chinese cooking today. From ordinary roadside restaurants to five-star hotels, most dishes are prepared either by stir-frying or by some variation on it. The emergence of stir-frying 1,500 years ago laid the foundation for the defining character of later Chinese cuisine, and the technique now satisfies countless hungry diners.
 
-&emsp;&emsp;As the saying goes, “A wok is forever; one will be passed down through the ages.” So just how far back does its history go?
+&emsp;&emsp;As the saying goes, “A good wok lasts forever, handed down from one generation to the next.” So just how far back does its history go?
 
 &emsp;&emsp;We must begin with the wok's elder brother, the iron pot. Both are made of iron, but one came first: the iron pot was the first-generation product, and the wok appeared only after that product was improved and upgraded. It is therefore only fair to call the iron pot the elder brother. Its own history begins with a distant relative, the bronze pot. Bronze vessels were the first metal objects that humans used on a large scale; only after people made bronze pots did the very idea of a pot take shape.
 
@@ -42,7 +42,7 @@ copyright_author: '赖渊'
 
 <center><font size=2px color=grey>*Qimin Yaoshu* (*Essential Techniques for the Common People*)</font></center>
 
-&emsp;&emsp;Hey, hey, put down the brick and let us talk this through. I do not know the exact date, but a book from the Northern Wei, sponsored and published by the Northern Wei Publishing House and written by the famous agricultural expert Jia Sixie, contains—somewhere in the *Chrysanthemum Treas—* sorry, the *Qimin Yaoshu*—a recipe that has gone down in history, survived to this day, become a household name, earned worldwide fame, and become known to all:
+&emsp;&emsp;Hey, hey, put down the brick and let us talk this through. I do not know the exact date, but a book from the Northern Wei—commissioned, naturally, by the Northern Wei Publishing House and written by the famous agricultural expert Jia Sixie—contains, somewhere in the *Chrysanthemum Treas—* sorry, the *Qimin Yaoshu*, a recipe that has gone down in history, survived to this day, become a household name, earned worldwide fame, and become known to all:
 
 &emsp;&emsp;It is!!!!
 

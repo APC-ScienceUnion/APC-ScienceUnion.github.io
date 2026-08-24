@@ -13,7 +13,7 @@ categories: []
 copyright_author: '一毫秒的永恒'
 cover: /images/%E5%8D%83%E8%BD%BD%E9%9A%BE%E9%80%A2%E7%9A%84%E8%A7%82%E6%B5%8B%E8%89%AF%E6%9C%BA%E2%80%94%E2%80%942029%E5%B9%B4%E5%B0%86%E4%B8%8E%E5%9C%B0%E7%90%83%E3%80%8C%E6%93%A6%E8%82%A9%E8%80%8C%E8%BF%87%E3%80%8D%E7%9A%84%E5%B0%8F%E8%A1%8C%E6%98%9F%E9%98%BF%E6%B3%A2%E8%8F%B2%E6%96%AF/cover-22a2ba2705.jpg
 ---
-> Author: 一毫秒的永恒
+> Author: A Millisecond of Eternity
 
 <img src="/images/千载难逢的观测良机——2029年将与地球「擦肩而过」的小行星阿波菲斯/640.gif" title="Near-Earth asteroid Apophis (yellow orbit) will pass Earth in 2029, coming closer than some artificial satellites (blue dots). The purple line marks the orbit of the International Space Station. | Credit: NASA/JPL-Caltech" />
 

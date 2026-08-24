@@ -14,7 +14,7 @@ copyright_author: '一毫秒的永恒'
 cover: /images/%E4%BA%BA%E7%B1%BB%E9%A6%96%E6%AC%A1%E6%8E%A2%E6%B5%8B%E5%88%B0%E4%BA%86%E7%81%AB%E6%98%9F%E9%9C%87/cover-e36022bec5.jpg
 ---
 
-> Author: 一毫秒的永恒
+> Author: A Millisecond of Eternity
 
 &emsp;&emsp;In the early hours of April 24, 019, a magnitude 6.3 earthquake struck Medog County in Nyingchi, Tibet. The shaking was widely felt across the surrounding area, but fortunately, very few people lived within 50 kilometers of the epicenter, and no casualties were reported.
 

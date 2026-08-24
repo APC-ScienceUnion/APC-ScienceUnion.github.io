@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ask “What Is It?” First: A Brief Introduction to Mathematics and Formal Mathematics"
+title: "Start by Asking “What Is It?”: A Brief Introduction to Mathematics and Formal Mathematics"
 date: 2026-04-03 12:00:00
 lang: en
 translation_key: "先问「是什么」：数学与形式化数学浅讲"
@@ -229,7 +229,7 @@ $$
 
 &emsp;&emsp;Our claims above repeatedly included a condition: “within a formal system.” ***Within a formal system***, every definition is clear. ***Within a formal system***, proofs are never vague or ambiguous, and their correctness can always be checked mechanically. The definitions and rules of inference inside the system are just symbols and need no natural language at all. But what about the definition of the formal system itself?
 
-&emsp;&emsp;We have not given a formal definition of a formal system, but it is reasonable to expect that such a definition cannot dispense with natural language altogether. Borrowing the literal wording of Wittgenstein’s “the limits of language mean the limits of my world,” we must use something to define it. Without natural language, we have no tools with which to “discuss” or “define” anything.
+&emsp;&emsp;We have not given a formal definition of a formal system, but it is reasonable to expect that such a definition cannot dispense with natural language altogether. Borrowing the literal sense of Wittgenstein’s “the limits of language mean the limits of my world,” we must use something to define it. Without natural language, we have no tools with which to “discuss” or “define” anything.
 
 &emsp;&emsp;Of course, one can use a formal system to define a formal system, and this is in fact done. But that merely pushes the problem up one level rather than solving it. How was the other formal system used in the definition itself defined? At the end of the regress, we must still use some natural language and naive mathematics. When we say “$1$ symbol,” for example, we have already used natural language as well as the naive mathematical concept of the natural number $1$.
 

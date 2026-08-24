@@ -37,7 +37,7 @@ Reviewer: Weiming
 
 <img src="/images/%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98%E4%B8%96%E7%95%8C%EF%BC%8C%E5%AE%9E%E7%8E%B0%E4%BA%BA%E7%94%9F%E4%BB%B7%E5%80%BC/fig-002-d96c77d8af.png" />
 
-&emsp;&emsp;Expression is admittedly not my strong suit, and this is a huge question. So far, I have only a rough framework. I hope to keep improving it.
+&emsp;&emsp;Writing is not exactly my strong suit, and this is an enormous question. So far, all I have is a rough framework. I hope to keep refining it.
 
 &emsp;&emsp;This is the most important idea at the center of my thinking right now, and I wanted to share it. I have not fixed the typos in the mind map; please be aware of them, and accept my sincere apologies if they get in the way.
 

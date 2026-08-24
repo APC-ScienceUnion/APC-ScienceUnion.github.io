@@ -29,7 +29,7 @@ cover: /images/%E7%94%B1%E7%AE%80%E5%85%A5%E7%B9%81%E2%80%94%E2%80%94%E4%BB%A3%E
 
 # Origins
 
-&emsp;&emsp;Diophantus, a Greek mathematician of the third century BCE, is widely regarded as the father of algebra, while al-Khwarizmi, a mathematician of the medieval Arab world, is credited with founding the subject itself. Chinese students often make fun of al-Khwarizmi because of how his name sounds in Chinese.
+&emsp;&emsp;Diophantus, a Greek mathematician of the third century CE, is widely regarded as the father of algebra, while al-Khwarizmi, a mathematician of the medieval Arab world, is credited with founding the subject itself. Chinese students often make fun of al-Khwarizmi because of how his name sounds in Chinese.
 
 &emsp;&emsp;That ill-judged teasing has not exactly made al-Khwarizmi famous. Only a small minority have heard of him. Diophantus, by contrast, is widely known for the elementary math-contest puzzle on his tombstone and for Diophantine equations.
 

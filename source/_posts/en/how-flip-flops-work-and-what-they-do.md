@@ -15,8 +15,8 @@ copyright_author: '浮槎'
 ---
 
 # Flip-Flops: How They Work and What They Do
-> Author: 浮槎
-Reviewed by: 时光
+> Author: Fucha
+Reviewed by: Shiguang
 
 &emsp;&emsp;Sooner or later, any explanation of how computers work must introduce one electronic device: the flip-flop. A flip-flop consists mainly of two vacuum tubes, with current flowing through one tube at a time. It has four terminals: two receive external pulses, and two deliver output pulses. The moment an external pulse arrives, the flip-flop “flips.” The tube that was conducting switches off, and current begins flowing through the other one. As the two tubes exchange roles, the flip-flop produces an output pulse.
 

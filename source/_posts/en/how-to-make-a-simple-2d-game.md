@@ -55,7 +55,7 @@ Reviewed by: Yuandao
 
 &emsp;&emsp;My rough plan went like this: the protagonist talks to several NPCs, buys a weapon at a shop, then uses it to defeat the final boss. (Yes, you may accuse me of having no imagination. What kind of plot is that...?) Even that simple idea requires dialogue, shop, item, and combat systems. Once the concept told us which features we needed, we could begin coding them.
 
-&emsp;&emsp;Any feature can be implemented in several ways, but we should aim for the best one. That makes object-oriented programming important in game development. Items placed in inventory slots, for example, share methods for retrieving their names, descriptions, and so on. We can collect those common methods in an IItem interface. Use interfaces whenever they make sense, along with suitable design patterns.
+&emsp;&emsp;There is rarely only one way to implement a feature, but some designs hold up better than others. That is why object-oriented programming matters in game development. Items placed in inventory slots, for example, share methods for retrieving their names, descriptions, and so on. We can collect those common methods in an IItem interface. Use interfaces whenever they make sense, along with suitable design patterns.
 
 &emsp;&emsp;Then you need art. If you cannot draw, Unity's Asset Store offers plenty of free material. Still, your best move may be to stay on good terms with the talented artists around you. (Collapses.)
 

@@ -50,11 +50,11 @@ Whether we are working with a VAE, GAN, or NF, one inequality is especially impo
   $$\log(p_\theta(x)) - D_{KL}(q_\phi(z|x)||p_\theta(z|x)) = E_{q_{\phi}(z|x)}[\log(p_{\theta}(x|z))] - D_{KL}(q_{\phi}(z|x)||p_{\theta}(z))$$
   Because our objective is to make $D_{KL}(q_\phi(z|x)||p_\theta(z|x))$​ as close to 0 as possible, we obtain the equation from the paper:
   $$\log(p_\theta(x)) ≥ E_{q_{\phi}(z|x)}[\log(p_{\theta}(x|z))] - D_{KL}(q_{\phi}(z|x)||p_{\theta}(z)) = -F (x)$$
-  This formula captures the key idea of **variational inference**. Here, $F$ is called the **ELBO** bound.
+  This formula captures the key idea of **variational inference**. Here, $F$ is referred to as the **ELBO**.
 
 # VAE (Variational Autoencoder)
 
-A VAE seeks to maximize the $ELBO$​​ derived above. It introduces SGVB and the reparameterization method.
+A VAE seeks to maximize the $ELBO$​​ derived above. It does so using SGVB and the reparameterization trick.
 
 The VAE architecture is shown below:
 
@@ -155,7 +155,7 @@ When JSD is 0, $p_{data}$​ and $p_g$ are considered equal and can no longer be
 
 A normalizing flow is another kind of generative network. It is based on the change-of-variables theorem.
 
-Suppose the generative network is still G, $z$ is a standard normal distribution—the latent variable—and x is the real data.
+Suppose the generative network is still G, $z$ is the latent variable with a standard normal distribution, and x is the real data.
 $$
 Z->Generator...->x
 $$
@@ -241,7 +241,7 @@ J_f = \left(                 % left parenthesis
 \end{equation}
 $$
 
-As long as W is easy to solve, the result is easy to calculate:
+As long as W is easy to work with, the result is easy to calculate:
 
 <img src="/images/Variational%20Inference%20%E4%B8%8E%20GAN%2C%20NF%2CVAE/fig-015-d0b9e0319d.png" style="zoom:50%;" />
 

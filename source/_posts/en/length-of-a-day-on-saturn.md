@@ -14,7 +14,7 @@ copyright_author: '一毫秒的永恒'
 cover: /images/%E5%9C%9F%E6%98%9F%E7%9A%84%E4%B8%80%E5%A4%A9%E6%9C%89%E5%A4%9A%E9%95%BF%EF%BC%9F%E7%A7%91%E5%AD%A6%E5%AE%B6%E7%BB%88%E4%BA%8E%E6%9C%89%E5%87%86%E7%A1%AE%E7%9A%84%E4%BA%86%E8%A7%A3%E5%95%A6%EF%BC%81/cover-cd07ca3b31.jpg
 ---
 
-> Author: 一毫秒的永恒
+> Author: A Millisecond of Eternity
 
 <img src="/images/%E5%9C%9F%E6%98%9F%E7%9A%84%E4%B8%80%E5%A4%A9%E6%9C%89%E5%A4%9A%E9%95%BF%EF%BC%9F%E7%A7%91%E5%AD%A6%E5%AE%B6%E7%BB%88%E4%BA%8E%E6%9C%89%E5%87%86%E7%A1%AE%E7%9A%84%E4%BA%86%E8%A7%A3%E5%95%A6%EF%BC%81/cover-cd07ca3b31.jpg" title="Image source and credit: NASA/JPL-Caltech/Space Science Institute" />
 <center><font size=2px color=grey>NASA's Cassini spacecraft captured this view of Saturn's northern hemisphere as it approached summer solstice in 2016. A Saturnian year lasts 29 Earth years; according to the latest analysis of Cassini data, a day lasts just 10:33:38.</font></center>
@@ -22,7 +22,7 @@ cover: /images/%E5%9C%9F%E6%98%9F%E7%9A%84%E4%B8%80%E5%A4%A9%E6%9C%89%E5%A4%9A%E
 
 &emsp;&emsp;Using new data from NASA's Cassini spacecraft, researchers believe they have solved a long-standing mystery in solar system science: how long a day lasts on Saturn. The answer is 10 hours, 33 minutes, and 38 seconds. Planetary scientists spent decades trying to pin down that number because the rotating gas giant has no fixed surface to track and its unusual magnetic field masks its rotation rate.
 
-&emsp;&emsp;The answer, as it turns out, was hidden in Saturn's rings.
+&emsp;&emsp;As it turns out, the answer was hidden in Saturn's rings.
 
 &emsp;&emsp;While Cassini orbited Saturn, its instruments examined the planet's icy, rocky rings in unprecedented detail. Christopher Mankovich, then a graduate student in astronomy and astrophysics at the University of California, Santa Cruz, used those data to study wave patterns within the rings. His work showed that the rings respond to Saturn's own oscillations, much as a seismometer records vibrations from an earthquake. Oscillations inside Saturn cause extremely small, periodic shifts in the distribution of its mass, making the surrounding gravitational field fluctuate. The rings also respond to Saturn's magnetic field. Mankovich explained that particles throughout the rings feel these oscillations in the gravitational field. At certain locations, the oscillations nudge ring particles at just the right moment, allowing energy to build gradually in their orbits. That energy is then carried away as observable waves.
 

@@ -60,7 +60,7 @@ cover: /images/GPS%20%E7%94%A8%E4%BB%80%E4%B9%88%E9%AD%94%E6%B3%95%E8%AE%A9%E8%B
 
 &emsp;&emsp;Back to GPS. The same method works in three dimensions, except that our two-dimensional “circles” become three-dimensional “spheres.” The underlying idea hardly changes. Imagine each radius in the example extending in every direction, turning each circle into a sphere.
 
-&emsp;&emsp;If you know you are 10,000 kilometers from Satellite A, you could be anywhere on an enormous imaginary sphere with a radius of 10,000 kilometers. Learn that you are also 15,000 kilometers from Satellite B, and you can overlap the first sphere with a larger one. The two intersect in a perfect circle. Your distance from a third satellite adds a third sphere. All three spheres meet at two points, one of them on Earth's surface. Unless you happen to be flying, that surface point is where you are.
+&emsp;&emsp;If you know you are 10,000 kilometers from Satellite A, you could be anywhere on an enormous imaginary sphere with a radius of 10,000 kilometers. Learn that you are also 15,000 kilometers from Satellite B, and you can overlap the first sphere with a larger one. The two intersect in a circle. Your distance from a third satellite adds a third sphere. All three spheres meet at two points, one of them on Earth's surface. Unless you happen to be flying, that surface point is where you are.
 
 <img src="/images/GPS%20%E7%94%A8%E4%BB%80%E4%B9%88%E9%AD%94%E6%B3%95%E8%AE%A9%E8%B7%AF%E7%97%B4%E4%B8%8D%E5%86%8D%E8%BF%B7%E8%B7%AF%EF%BC%9F/fig-005-c7fa835000.jpg" title="The common intersection of Earth and the “spheres” measured from three satellites is your position. A fourth satellite calibrates and synchronizes time." />
 

@@ -14,7 +14,7 @@ copyright_author: '一毫秒的永恒'
 cover: /images/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9C%BA%E9%81%87%E5%8F%B7%EF%BC%81%E5%91%8A%E5%88%AB%E7%81%AB%E6%98%9F%E6%8E%A2%E6%B5%8B%E8%BD%A6%E5%85%88%E9%A9%B1/cover-6112785e79.jpg
 ---
 
-> Author: 一毫秒的永恒
+> Author: A Millisecond of Eternity
 
 &emsp;&emsp;A record-setting NASA mission on Mars has come to an end. One of the longest-running and most successful feats in interplanetary exploration, the Opportunity rover mission concluded after nearly fifteen years on the Martian surface. Its legacy laid the groundwork for NASA's return to Mars.
 
@@ -26,7 +26,7 @@ cover: /images/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9C%BA%E9%81%87%E5%8F%B7%EF%BC%81%E
 
 &emsp;&emsp;Thomas Zurbuchen, associate administrator of NASA's Science Mission Directorate, said, "For more than a decade, Opportunity has been an icon in the field of planetary exploration, teaching us about Mars' ancient past as a potentially habitable planet, and revealing uncharted Martian landscapes." He continued, "Whatever loss we feel now must be tempered with the knowledge that the legacy of Opportunity continues—both on the surface of Mars with the Curiosity rover and InSight lander—and in the clean rooms of JPL."
 
-<img src="/images/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9C%BA%E9%81%87%E5%8F%B7%EF%BC%81%E5%91%8A%E5%88%AB%E7%81%AB%E6%98%9F%E6%8E%A2%E6%B5%8B%E8%BD%A6%E5%85%88%E9%A9%B1/fig-001-4a2171ff60.jpg" title="Opportunity's principal investigator, Steve Squyres, points during a presentation at a peculiar rock discovered by the rover on January 8, 2014 and named Pinnacle Island. The image on the left was taken by Opportunity on December 26, 2013. The rover on the right is Curiosity, the first nuclear-powered Mars rover. | Credit: NASA/JPL" />
+<img src="/images/%E5%86%8D%E8%A7%81%EF%BC%8C%E6%9C%BA%E9%81%87%E5%8F%B7%EF%BC%81%E5%91%8A%E5%88%AB%E7%81%AB%E6%98%9F%E6%8E%A2%E6%B5%8B%E8%BD%A6%E5%85%88%E9%A9%B1/fig-001-4a2171ff60.jpg" title="During a presentation, Opportunity's principal investigator, Steve Squyres, points to a peculiar rock discovered by the rover on January 8, 2014 and named Pinnacle Island. The image on the left was taken by Opportunity on December 26, 2013. The rover on the right is Curiosity, the first nuclear-powered Mars rover. | Credit: NASA/JPL" />
 
 <center><font size=2px color=grey>During a presentation, Opportunity principal investigator Steve Squyres points to a strange rock that the rover found on January 8, 2014, named "Pinnacle Island." The image on the left side of the screen was taken by Opportunity on December 26, 2013. The rover on the right is Curiosity, the first nuclear-powered Mars rover. | Credit: NASA/JPL</font></center>
 

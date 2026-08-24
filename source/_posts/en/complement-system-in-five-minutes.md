@@ -15,9 +15,9 @@ cover: /images/%E4%BA%94%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E5%85%8D%E7%96%AB%E
 ---
 
 > Author: 神州
-> Reviewer: 一毫秒的永恒
+> Reviewer: A Millisecond of Eternity
 
-&emsp;&emsp;In “Immunity in Five Minutes: How Do Antibodies Adapt?”, we caught a glimpse of a few of the immune system’s many mechanisms. Now let’s take a closer look at another part of that system.
+&emsp;&emsp;In “Five-Minute Immunology: How Do Antibodies Adapt?”, we caught a glimpse of a few of the immune system’s many mechanisms. Now let’s take a closer look at another part of that system.
 
 &emsp;&emsp;Last time, we saw how important antibodies are to immunity. But antibodies cannot do every job on their own. They usually bind to antigens, neutralizing their toxicity or keeping them from attaching to cells. Antibodies can also clump antigens together so that phagocytes can engulf them. Against an intact pathogen such as a bacterium, however, binding to antigens on its membrane does not kill the whole cell outright. That job calls for help from another part of the immune system: the complement system.
 

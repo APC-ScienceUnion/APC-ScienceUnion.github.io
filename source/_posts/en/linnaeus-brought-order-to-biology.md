@@ -54,7 +54,7 @@ Biology consultant and reviewer: Kuicao
 
 <center><font size=2px color=grey>Sara</font></center>
 
-&emsp;&emsp;Linnaeus's academic career took off in the Netherlands. At twenty-eight, he obtained a medical doctorate in about a week (yes, he bought it cheaply), and *Systema Naturae* was published that same year. During his travels, he met and corresponded with many botanists and examined collections of rare specimens. In 1737, he wrote *Genera Plantarum*. The young Linnaeus took the Netherlands and other countries by storm. Before turning thirty, he had made a name for himself everywhere except home.
+&emsp;&emsp;Linnaeus's academic career took off in the Netherlands. At twenty-eight, he obtained a medical doctorate in about a week (yes, essentially bought on the cheap), and *Systema Naturae* was published that same year. During his travels, he met and corresponded with many botanists and examined collections of rare specimens. In 1737, he wrote *Genera Plantarum*. The young Linnaeus took the Netherlands and other countries by storm. Before turning thirty, he had made a name for himself everywhere except home.
 
 # Professor Linnaeus
 

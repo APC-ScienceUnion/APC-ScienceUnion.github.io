@@ -49,7 +49,7 @@ Reviewed by: Guanfu · Juntian
 
 &emsp;&emsp;Everything above assumes a liquid containing only one substance. What happens if we add a solute to it, using water as our example?
 
-## That night, I lost my purity
+## The Night I Lost My Purity
 
 &emsp;&emsp;The water, that is. Adding a solute makes it impure. Nothing scandalous here; the experiment simply happened at night.
 
@@ -100,4 +100,3 @@ Show[ListPlot[data], Plot[fit[x], {x, 0, 0.9}, PlotStyle -> {Red, Thick},AxesLab
 <img src="/images/%E6%9C%89%E8%83%BD%E5%A4%9F%E6%B5%8B%E9%87%8F%E5%88%86%E5%AD%90%E6%A8%AA%E6%88%AA%E9%9D%A2%E7%A7%AF%E7%9A%84%E6%A0%87%E5%B0%BA%E5%90%97%EF%BC%9F/fig-010-8c55ff41f7.png" alt="" />
 
 &emsp;&emsp;Published values for the cross-sectional area of an n-butanol molecule lie between <img src="/images/%E6%9C%89%E8%83%BD%E5%A4%9F%E6%B5%8B%E9%87%8F%E5%88%86%E5%AD%90%E6%A8%AA%E6%88%AA%E9%9D%A2%E7%A7%AF%E7%9A%84%E6%A0%87%E5%B0%BA%E5%90%97%EF%BC%9F/fig-011-71d8bac963.png" alt="" />, so the error is small.
-

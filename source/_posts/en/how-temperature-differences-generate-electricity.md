@@ -20,7 +20,7 @@ Can we generate electricity without “boiling water,” using only a temperatur
 {% endnote %}
 
 > Author: ST  
-> Reviewer: 时光
+> Reviewer: Shiguang
 
 &emsp;&emsp;People often reduce power generation to “boiling water”: heat water, use the steam to turn a turbine, and convert that mechanical energy into electricity. The clearest example is **fossil-fuel power generation**, which burns coal, natural gas, oil, or another fuel to heat the water. **Nuclear, geothermal, biomass,** and even **waste-to-energy** plants often follow the same basic route. **Wind turbines, photovoltaic cells, hydropower,** and **fuel cells**, by contrast, do not “boil water” at all.
 
@@ -34,7 +34,7 @@ Can we generate electricity without “boiling water,” using only a temperatur
 
 &emsp;&emsp;Does this basic mechanism have a practical use? Absolutely. In the 1820s, German physicist Thomas Johann Seebeck found that a nearby compass needle moved when two different metals formed a closed circuit whose two junctions were held at different temperatures. Seebeck did not realize that current was flowing, but we now know that the thermal gradient produced an electromotive force. We call this phenomenon the **Seebeck effect**. For power generation, we naturally want as much voltage as possible, and that voltage depends on the size of the thermal gradient. How do we measure the relationship?
 
-&emsp;&emsp;To describe a material's **thermoelectric capability**—specifically, its Seebeck effect—we define the **Seebeck coefficient S** as $S=-\frac{\Delta V}{\Delta T}$. In plain terms, it tells us **how much voltage the material produces for each degree of temperature difference between its hot and cold ends**. For two materials, the measured voltage depends approximately on the difference between their Seebeck coefficients: $V \propto (S_A-S_B)\Delta T$.
+&emsp;&emsp;To describe a material's **thermoelectric response**—specifically, its Seebeck effect—we define the **Seebeck coefficient S** as $S=-\frac{\Delta V}{\Delta T}$. In plain terms, it tells us **how much voltage the material produces for each degree of temperature difference between its hot and cold ends**. For two materials, the measured voltage depends approximately on the difference between their Seebeck coefficients: $V \propto (S_A-S_B)\Delta T$.
 
 <img src="/images/热与电的相互转化（1）——温差是怎么发电的呢？/fig1.png" alt="Figure 1[3]. A: an electric potential difference can produce a thermal gradient—the inverse of the Seebeck effect, known as the Peltier effect. B: diagram of the Seebeck effect. C: a power-generation module based on the Seebeck effect." title="Figure 1[3]. A: an electric potential difference can produce a thermal gradient—the inverse of the Seebeck effect, known as the Peltier effect. B: diagram of the Seebeck effect. C: a power-generation module based on the Seebeck effect." />
 <center><font size=2px color=grey>Figure 1[3]. A: an electric potential difference can produce a thermal gradient—the inverse of the Seebeck effect, known as the Peltier effect. B: diagram of the Seebeck effect. C: a power-generation module based on the Seebeck effect.</font></center>

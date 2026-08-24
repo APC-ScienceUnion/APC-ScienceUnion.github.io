@@ -14,8 +14,8 @@ cover: /images/%E6%81%92%E6%98%9F%E4%B8%8D%E2%80%9C%E6%81%92%E2%80%9D%E2%80%94%E
 copyright_author: '丛雨'
 ---
 
-> Author: 丛雨
-Reviewer: 白烟
+> Author: Congyu
+Reviewer: Baiyan
 
 &emsp;&emsp;With excellent eyesight, you might pick out more than 2,500 stars on a clear, dark night. Across the entire celestial sphere, nearly 6,000 are visible to the naked eye. Ancient observers noticed that, unlike the five planets Mercury, Venus, Mars, Jupiter, and Saturn, most celestial objects seemed to keep the same positions forever. That apparent permanence gave us the Chinese word for star, which literally means “constant star.” We now know that stars only look fixed: they are so distant that their motion across the celestial sphere is hard to detect. This article introduces three ways their positions shift against the celestial background:
 
@@ -40,7 +40,7 @@ Reviewer: 白烟
 &emsp;&emsp;Parallax measures more than stars beyond the Solar System; it also works for objects inside it. During a transit of Venus, for example, observers at two places on Earth see Venus at different points on the Sun's disk. From that difference, they can calculate Venus's distance and orbital radius. Even the Sun shows parallax when viewed from different parts of Earth. With Earth's radius as the baseline, solar parallax is approximately 8.8″.
 
 # Proper Motion
-&emsp;&emsp;The Sun is one among hundreds of billions in the Milky Way. Suppose a star's velocity relative to the Sun is v. We can resolve it into two perpendicular components: radial velocity v_r and tangential velocity v_t. The tangential component points in the direction we see the star move, while proper motion μ describes the size of that apparent movement, usually in arcseconds per year.
+&emsp;&emsp;The Sun is one of hundreds of billions of stars in the Milky Way. Suppose a star's velocity relative to the Sun is v. We can resolve it into two perpendicular components: radial velocity v_r and tangential velocity v_t. The tangential component points in the direction we see the star move, while proper motion μ describes the size of that apparent movement, usually in arcseconds per year.
 
 <img src="/images/%E6%81%92%E6%98%9F%E4%B8%8D%E2%80%9C%E6%81%92%E2%80%9D%E2%80%94%E2%80%94%E7%AE%80%E8%B0%88%E6%81%92%E6%98%9F%E7%9A%84%E8%BF%90%E5%8A%A8%E5%92%8C%E4%BD%8D%E7%BD%AE%E5%8F%98%E5%8C%96/fig-003-dfc72c8587.png" width=400/>
 <center><font size=2px color=grey>A star’s space velocity and proper motion</font></center>

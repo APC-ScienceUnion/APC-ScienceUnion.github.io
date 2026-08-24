@@ -19,8 +19,8 @@ copyright_author: '神州'
 {% endnote %}
 
 
-> Author: 神州  
-> Reviewers: 未名 and Thinker
+> Author: Shenzhou
+> Reviewers: Weiming and Thinker
 
 # Introduction
 
@@ -32,14 +32,14 @@ copyright_author: '神州'
 <center><font size=2px color=grey><i>Yersinia pestis</i></font></center>
 <center><font size=2px color=grey>Credit: Rocky Mountain Laboratories, NIAID, NIH</font></center>
 
-&emsp;&emsp;Its principal reservoirs are rodents, including marmots, the animals often loosely called “groundhogs” in everyday Chinese.
+&emsp;&emsp;The bacterium's principal reservoirs are rodents, including marmots, the animals often loosely called “groundhogs” in everyday Chinese.
 
 <img src="/images/%E9%BC%A0%E7%96%AB%E7%A7%91%E6%99%AE/fig-002-9747dfdc7b.jpg"/>
 <center><font size=2px color=grey>The “screaming marmot” meme</font></center>
 
 &emsp;&emsp;In China, marmots are found mainly on the Qinghai–Tibet Plateau and the grasslands of Inner Mongolia, making these areas important natural plague foci. For a time, marmots became popular online, and their awkwardly cute appearance made many people eager to approach them. Most, however, did not recognize the risk of infectious disease.
 
-&emsp;&emsp;Some people assume that they are safe as long as a marmot does not bite them. That is not true. Plague is extremely dangerous and highly contagious. Its main route of transmission is not a rodent attack, but the movement of fleas from an infected rodent to a new host after feeding. Skinning and butchering rodents can also bring a person into direct contact with *Yersinia pestis* and cause infection. Humans generally have little resistance to plague, and the great majority of people invaded by the pathogen become ill.
+&emsp;&emsp;Some people assume that they are safe as long as a marmot does not bite them. That is not true. Plague is extremely dangerous and highly contagious. Its main route of transmission is not a rodent attack, but the movement of fleas from an infected rodent to a new host after feeding. Skinning and butchering rodents can also bring a person into direct contact with *Yersinia pestis* and cause infection. Humans generally have little resistance to plague, and the great majority of people infected with the pathogen develop the disease.
 
 &emsp;&emsp;Symptoms differ according to the part of the body the bacterium infects. The main primary forms are bubonic, pneumonic, and septicemic plague. Less common forms include ocular, cutaneous, and meningeal plague.
 

@@ -14,10 +14,10 @@ copyright_author: '绿水青山'
 cover: /images/%E4%BB%80%E4%B9%88%E6%98%AF%E6%8D%9F%E4%BC%A4%E4%BF%AE%E5%A4%8D%EF%BC%9F/cover-1df0822697.jpg
 ---
 
-> Author: 绿水青山
-> Reviewers: 食野; 未名
+> Author: Lüshui Qingshan
+> Reviewers: Shiye; Weiming
 
-&emsp;&emsp;Throughout our lives, we are constantly exposed to influences from the surrounding environment. The body first tries to adapt, but an excessively strong stimulus can cause injury. This article looks at how the body repairs that damage.
+&emsp;&emsp;Throughout our lives, the body is constantly exposed to environmental stressors. It first tries to adapt, but an excessively strong stimulus can cause injury. This article looks at how the body repairs that damage.
 
 &emsp;&emsp;An injury is the destruction or loss of some of the body's cells and tissues. Repair is the process of replacing and restoring what has been lost. It generally takes one of two forms: regeneration or fibrous repair. During regeneration, cells of the same type divide at the injured site to restore the tissue's original function. This is usually the more complete form of repair and may restore function fully. In fibrous repair, fibrous connective tissue replaces the damaged tissue, leaving a scar and only partially restoring function.
 

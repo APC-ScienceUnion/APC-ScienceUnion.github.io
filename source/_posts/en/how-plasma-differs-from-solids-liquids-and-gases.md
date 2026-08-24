@@ -14,8 +14,8 @@ copyright_author: '阿白特尔'
 cover: /images/%E7%AD%89%E7%A6%BB%E5%AD%90%E6%80%81%E4%B8%8E%E5%B8%B8%E8%A7%84%E7%9A%84%E5%9B%BA-%E6%B6%B2-%E6%B0%94%E6%80%81%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%EF%BC%9F/cover-8ad02c8eae.jpg
 ---
 
-> Author: 阿白特尔
-Reviewed by: 一毫秒的永恒
+> Author: Abaiter
+Reviewed by: A Millisecond of Eternity
 
 &emsp;&emsp;The three states of matter that usually come to mind are solid, liquid, and gas. In a solid, particles vibrate randomly but remain confined near fixed positions, giving the material a fixed volume and shape. As their random thermal motion gains kinetic energy, the particles eventually break free of those positions and begin to flow. They no longer stay in one place, yet attraction from neighboring particles still keeps them together. The result is the familiar liquid: a material with a relatively fixed volume but no fixed shape. Raise the temperature again, and thermal motion becomes strong enough for the particles to overcome nearly all their mutual attraction and spread freely. The material is now a gas, with neither fixed volume nor fixed shape. At heart, these three states differ in how far thermal motion has overcome—or disrupted—the interactions among their particles.
 
@@ -23,7 +23,7 @@ Reviewed by: 一毫秒的永恒
 
 <img src="/images/%E7%AD%89%E7%A6%BB%E5%AD%90%E6%80%81%E4%B8%8E%E5%B8%B8%E8%A7%84%E7%9A%84%E5%9B%BA-%E6%B6%B2-%E6%B0%94%E6%80%81%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%EF%BC%9F/fig-001-f176904152.jpg" />
 
-&emsp;&emsp;This is one way to make plasma: thermal ionization. Heat drives electrons into ever more vigorous motion until they escape their atoms. The resulting plasma is often in thermal equilibrium, with electrons and ions at the same temperature. Plasma in the Sun and in nuclear-fusion reactors forms this way and is in thermal equilibrium. Lightning and fluorescent tubes create plasma differently, through electrical discharge. Electrons emitted by an electrode collide with gas atoms and knock out more electrons, producing electron–ion pairs. Because a discharge gives kinetic energy only to the electrons, the electron temperature in this plasma is much higher than the ion temperature.
+&emsp;&emsp;One way to create plasma is through thermal ionization. Heat drives electrons into ever more vigorous motion until they escape their atoms. The resulting plasma is often in thermal equilibrium, with electrons and ions at the same temperature. Plasma in the Sun and in nuclear-fusion reactors forms this way and is in thermal equilibrium. Lightning and fluorescent tubes create plasma differently, through electrical discharge. Electrons emitted by an electrode collide with gas atoms and knock out more electrons, producing electron–ion pairs. Because a discharge gives kinetic energy only to the electrons, the electron temperature in this plasma is much higher than the ion temperature.
 
 &emsp;&emsp;Now that we have seen how plasma forms, let us look at two of its unusual collective effects—effects ordinary matter does not have. The first is plasma oscillation. A plasma contains vast numbers of positive and negative charges. By Coulomb's law, every charge continually feels forces from all the others: like charges repel, and unlike charges attract. Yet a plasma has roughly equal amounts of positive and negative charge, so the attractive and repulsive forces approximately balance and the particles remain in statistical equilibrium. Disturb all charges of one kind away from their equilibrium positions, however, and that balance breaks.
 

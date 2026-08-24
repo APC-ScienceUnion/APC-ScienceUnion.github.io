@@ -17,7 +17,7 @@ copyright_author: '神州'
 > Author: Shenzhou
 Reviewed by: Shiye
 
-&emsp;&emsp;The immune system has all kinds of ways to repel all kinds of pathogens. But pathogens have tricks of their own. By escaping the immune system's attacks and pursuit, they can survive inside the body until an opportunity to spread appears. This is immune evasion.
+&emsp;&emsp;The immune system has an arsenal of defenses against pathogens. But pathogens have tricks of their own. By evading immune attack and surveillance, they can survive inside the body until an opportunity to spread appears. This is immune evasion.
 
 &emsp;&emsp;Viruses, bacteria, and parasites do not all pull off that escape in the same way.
 
