@@ -15,7 +15,6 @@ menu:
   联盟游戏||fas fa-gamepad:
     反五子棋: /fwzq/ || fas fa-chess-board
     玄之试炼: /H5Games/XuanXueTestH5/ || fas fa-dice-d20
-    科学海龟汤: /science-turtle-soup/ || fas fa-flask
   联萌新闻: /apc-news/ || fas fa-bullhorn
   关于我们: /about/ || fas fa-heart
 
@@ -23,7 +22,6 @@ menu:
 # archives, and categories use English routes; auxiliary tools keep their
 # existing shared route until those standalone pages receive translations.
 menu_en:
-  Articles: /en/ || fas fa-book-open
   Archives: /en/archives/ || fas fa-archive
   Categories: /en/categories/ || fas fa-folder-open
   Science Galleries||fa-regular fa-images:
@@ -35,7 +33,6 @@ menu_en:
   APC Games||fas fa-gamepad:
     Anti-Gomoku: /fwzq/ || fas fa-chess-board
     Trial of Xuan: /H5Games/XuanXueTestH5/ || fas fa-dice-d20
-    Science Turtle Soup: /science-turtle-soup/ || fas fa-flask
   APC News: /apc-news/ || fas fa-bullhorn
   About Us: /about/ || fas fa-heart
 

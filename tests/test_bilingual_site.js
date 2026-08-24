@@ -328,7 +328,6 @@ assertVisibleAside(englishHome);
 assertEnglishRecentPosts(englishHome, englishArticlePaths);
 
 const expectedTopMenu = [
-  { name: 'Articles', href: '/en/' },
   { name: 'Archives', href: '/en/archives/' },
   { name: 'Categories', href: '/en/categories/' },
   { name: 'Science Galleries', href: 'javascript:void(0);' },
@@ -358,8 +357,7 @@ const expectedSubmenu = [
   { name: 'Chemistry Cards', href: '/gallery/ChemistryCard/' },
   { name: 'Science Love Letters', href: '/gallery/ScienceLetter/' },
   { name: 'Anti-Gomoku', href: '/fwzq/' },
-  { name: 'Trial of Xuan', href: '/H5Games/XuanXueTestH5/' },
-  { name: 'Science Turtle Soup', href: '/science-turtle-soup/' }
+  { name: 'Trial of Xuan', href: '/H5Games/XuanXueTestH5/' }
 ];
 const actualSubmenu = englishHome.$('#menus > .menus_items .menus_item_child a[href]').map((_index, element) => ({
   name: englishHome.$(element).text().replace(/\s+/gu, ' ').trim(),
