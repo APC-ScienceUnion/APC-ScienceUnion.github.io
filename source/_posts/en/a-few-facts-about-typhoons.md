@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Few Facts About Typhoons
+title: A Short Guide to Typhoons
 date: 2019-08-19 09:09:00
 lang: en
 translation_key: "关于台风的小知识"
@@ -16,67 +16,66 @@ cover: /images/%E5%85%B3%E4%BA%8E%E5%8F%B0%E9%A3%8E%E7%9A%84%E5%B0%8F%E7%9F%A5%E
 
 > Author: Guanfu · Juntian
 
-&emsp;&emsp;Every summer and autumn, the northwestern Pacific near China produces many violent storms known as typhoons. Some dissipate over the sea, while others make landfall and bring fierce winds and torrential rain. Where do these typhoons come from, where do they go, and why do they affect China so profoundly? Today, I will offer a brief introduction to typhoons.
+&emsp;&emsp;Every summer and fall, violent storms known as typhoons form over the northwestern Pacific near China. Some dissipate at sea, while others make landfall with fierce winds and torrential rain. Where do typhoons come from? Where do they go? And why do they have such a powerful effect on China? Here is a short introduction.
 
-&emsp;&emsp;What is a typhoon? In essence, a typhoon is a tropical cyclone: as the name suggests, a vortex formed by rotating tropical air. Tropical cyclones can be divided by wind strength into tropical storms, severe tropical storms, typhoons, and other categories.
+&emsp;&emsp;What exactly is a typhoon? It is a type of tropical cyclone: a rotating storm system that forms in the tropics. Tropical cyclones are classified by wind strength into tropical storms, severe tropical storms, typhoons, and other categories.
 
 # How Does a Typhoon Form?
 
-&emsp;&emsp;Three conditions are required for a typhoon to form.
+&emsp;&emsp;A typhoon needs three conditions to form.
 
-&emsp;&emsp;The first is moisture: the ocean provides an inexhaustible supply of water vapor.
+&emsp;&emsp;The first is moisture. The ocean provides a steady supply of water vapor.
 
-&emsp;&emsp;The second is heat. Water vapor can rise only when summer sunlight is strong. Over a tropical ocean, direct sunlight heats the sea surface to about 26.5°C or higher. At this temperature, seawater readily evaporates into water vapor. As evaporation accelerates and the vapor rises, surface pressure falls. Air from every direction—at relatively high pressure—flows toward the center—at relatively low pressure—forming a tropical low-pressure center. Warm, moist air continues to rise, while surrounding air flows toward the low, creating wind.
+&emsp;&emsp;The second is heat. Strong summer sunlight allows water vapor to rise. Over a tropical ocean, direct sunlight warms the sea surface to about 26.5°C or higher, a temperature at which seawater readily evaporates. As evaporation accelerates and the water vapor rises, surface pressure falls. Air under relatively high pressure flows in from all directions toward the area of relatively low pressure, forming a tropical low-pressure center. Warm, moist air keeps rising, and the surrounding air flows toward the low, creating wind.
 
-&emsp;&emsp;How, then, do the typhoon's eye and spiral shape form? This brings us to the third condition: dynamics.
+&emsp;&emsp;How do the eye and spiral shape of a typhoon develop? That brings us to the third condition: atmospheric dynamics.
 
-&emsp;&emsp;The rising warm air climbs higher, cools, and condenses, releasing heat in the process. Pressure falls still further. As air converges on the low-pressure center, the Coriolis force gradually turns it into a rotating circulation. In the Northern Hemisphere, cyclones converge counterclockwise toward the center; in the Southern Hemisphere, they converge clockwise. As the typhoon strengthens, a ring-shaped wall of intense convective clouds forms near its center. Conservation of angular momentum, descending air, and other factors gradually reduce cloud cover and wind speed in the central region, producing the typhoon's eye.
+&emsp;&emsp;As warm air rises, it cools and condenses, releasing heat along the way. The pressure drops still further. Air converging on the low-pressure center is gradually turned by the Coriolis force, creating a rotating circulation. In the Northern Hemisphere, cyclones spiral counterclockwise toward the center; in the Southern Hemisphere, they spiral clockwise. As the typhoon strengthens, a ring-shaped wall of powerful convective clouds forms near the center. Conservation of angular momentum, descending air, and other factors gradually reduce the cloud cover and wind speed at the center, producing the eye.
 
-&emsp;&emsp;A typhoon begins as a tropical depression. From the initial low-pressure circulation to a maximum sustained wind near the center at Force 8 generally takes about two days. A slowly developing depression needs three or four days; a fast one, only a few hours. During the development stage, the typhoon continually absorbs energy, its central pressure falls, and its wind speed rises. After landfall, surface friction and an inadequate energy supply gradually weaken the typhoon until it disappears. This process constitutes a typhoon's life cycle.
+&emsp;&emsp;A typhoon begins as a tropical depression. It generally takes about two days for an initial low-pressure circulation to develop maximum sustained winds near the center at Force 8. A slow-developing depression may need three or four days, while a fast one can take only a few hours. As the storm develops, it continually absorbs energy, its central pressure drops, and its wind speed rises. After landfall, surface friction and a dwindling energy supply gradually weaken it until it disappears. That is the basic life cycle of a typhoon.
 
-# How Large Is a Typhoon?
+# How Big Is a Typhoon?
 
-&emsp;&emsp;Horizontally, a typhoon consists, from the center outward, of the eye region, eyewall region, and spiral rainbands—in other words, an inner, middle, and outer ring.
+&emsp;&emsp;Viewed horizontally, a typhoon has three main regions moving outward from its center: the eye, the eyewall, and the spiral rainbands. These form the inner, middle, and outer rings.
 
 &emsp;&emsp;1. The inner ring is the eye
 
-&emsp;&emsp;The circular or elliptical eye lies at the typhoon's center. Because the centrifugal force generated by the cyclone pulls air away from the center, winds in the eye are actually the weakest in the storm. It is the typhoon's “haven of peace,” with a radius of about 5–30 kilometers.
+&emsp;&emsp;The circular or elliptical eye lies at the center of the typhoon. Because the cyclone's centrifugal force pulls air away from the center, the eye actually has the storm's weakest winds. It is the typhoon's “haven of peace,” with a radius of about 5–30 kilometers.
 
 &emsp;&emsp;2. The middle ring is the eyewall
 
-&emsp;&emsp;Conditions here are severe. Convection, wind, and rain are at their strongest and most destructive, and the typhoon's devastating winds and downpours are concentrated in this region. Its radius is generally tens to more than one hundred kilometers.
+&emsp;&emsp;Conditions here are severe. Convection, wind, and rain are strongest and most destructive in the eyewall; this is where the typhoon's devastating winds and downpours are concentrated. Its radius generally ranges from tens of kilometers to more than one hundred.
 
 &emsp;&emsp;3. The outer ring contains the spiral rainbands
 
-&emsp;&emsp;The typhoon's influence gradually weakens here. The radius can reach several hundred or even more than a thousand kilometers. Vertically, a typhoon is generally about 12–18 kilometers high.
+&emsp;&emsp;The typhoon's effects gradually weaken in this region. Its radius can extend several hundred or even more than a thousand kilometers. From bottom to top, a typhoon is generally about 12–18 kilometers high.
 
 # Where Does the Name “Typhoon” Come From?
 
-&emsp;&emsp;Is a “typhoon” a wind that blows from Taiwan?
+&emsp;&emsp;Does “typhoon” mean a wind that blows from Taiwan?
 
-&emsp;&emsp;No. The prevailing view is that the English word “typhoon” may be a transliteration of the Cantonese Chinese pronunciation “toi fong,” which later entered Mandarin vocabulary. There are many explanations, however, for how the Cantonese word itself arose.
+&emsp;&emsp;No. The prevailing view is that the English word “typhoon” may come from a transliteration of the Cantonese pronunciation “toi fong,” which later entered Mandarin. There are many theories, however, about where the Cantonese term itself came from.
 
 # Why Are There No Typhoons at the Equator or the Poles?
 
-&emsp;&emsp;Even when the equatorial region has enough moisture and heat, the Coriolis force there is too weak. Air can rise, but the Coriolis force is insufficient to turn the flow into a vortex.
+&emsp;&emsp;The equatorial region may have enough moisture and heat, but the Coriolis force there is too weak. Air can rise, yet the Coriolis force is not strong enough to turn the flow into a vortex.
 
-&emsp;&emsp;At the poles, the seawater is too cold and not enough evaporates. A typhoon can arise only through the combined action of moisture, heat, and dynamic conditions.
+&emsp;&emsp;At the poles, seawater is too cold to produce enough evaporation. Typhoons can form only where moisture, heat, and the right dynamic conditions act together.
 
 # Why Does a Typhoon Move Toward Land after It Forms?
 
-&emsp;&emsp;The secret is the subtropical high. A typhoon lies below it and is steered forward by the airflow along its edge.
+&emsp;&emsp;The answer lies in the subtropical high. A typhoon sits below it and is steered forward by air flowing along its edge.
 
 # Why Does a Typhoon Always Bring Wind and Rain When It Makes Landfall?
 
-&emsp;&emsp;Most of China has either a subtropical monsoon climate or a temperate continental climate. The South China Sea summer monsoon acts like a pump, carrying warm, moist air from the ocean toward land. When a moving typhoon encounters that monsoon, it gathers up this warm, moist air. The typhoon itself was also born over a tropical ocean and is rich in water vapor, so it brings a great deal of typhoon rain when it reaches land.
+&emsp;&emsp;Most of China has either a subtropical monsoon climate or a temperate continental climate. The South China Sea summer monsoon acts like a pump, carrying warm, moist air from the ocean toward the land. When a moving typhoon meets the monsoon, it draws in that air. The typhoon was itself born over a tropical ocean and already contains abundant water vapor, so it brings heavy rain when it reaches land.
 
-&emsp;&emsp;A typhoon also produces rain while it is over the ocean; we simply pay less attention to it there. After landfall, the storm no longer receives moisture from the ocean and is also affected by surface friction. Once wind and rain have released its energy, it gradually disappears.
+&emsp;&emsp;Typhoons also produce rain over the ocean; we simply pay less attention to it there. After landfall, the storm loses its supply of ocean moisture and encounters friction from the ground. As wind and rain release its energy, the typhoon gradually fades away.
 
 # The Dangers of Typhoons
 
-&emsp;&emsp;A typhoon is a typical form of hazardous weather. It can bring destructive winds, extreme rainfall, storm surges, and a series of other disasters that severely affect human production and daily life. Fierce winds possess enormous destructive power: they can destroy homes, buildings, and elevated facilities and sever power and communications lines. Extreme rainfall frequently causes flooding and readily triggers debris flows, landslides, and other geological disasters. Storm surges can overturn vessels at sea, breach seawalls, and send seawater flooding inland. Every year, landfalling typhoons cause major economic losses in China.
+&emsp;&emsp;Typhoons are a classic form of hazardous weather. They can bring destructive winds, extreme rainfall, storm surges, and other disasters that seriously disrupt work and daily life. Fierce winds can destroy homes, other buildings, and elevated structures, as well as sever power and communications lines. Extreme rainfall often causes flooding and can trigger debris flows, landslides, and other geological disasters. Storm surges can overturn vessels at sea, breach seawalls, and drive seawater inland. Every year, landfalling typhoons cause major economic losses in China.
 
-&emsp;&emsp;Typhoons can also bring abundant rainfall, however, easing the midsummer drought in the middle and lower reaches of the Yangtze River to some extent and temporarily relieving extreme heat.
+&emsp;&emsp;Typhoons can also bring welcome rain, however, easing the midsummer drought in the middle and lower reaches of the Yangtze River to some extent and temporarily breaking the extreme heat.
 
-&emsp;&emsp;Satellite technology can now monitor typhoons effectively, but observation and warnings alone are far from enough. When a typhoon approaches, close doors and windows securely, prepare supplies, avoid going outside wherever possible, and stay away from hazardous objects such as billboards and large trees.
-
+&emsp;&emsp;Satellite technology now allows us to monitor typhoons effectively, but observation and warnings are not enough on their own. When a typhoon approaches, shut doors and windows securely, stock up on supplies, avoid going outside whenever possible, and keep away from hazards such as billboards and large trees.

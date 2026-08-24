@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HyKGE—a New Framework for RAG
+title: 'HyKGE: A New RAG Framework'
 date: 2024-06-20 19:10:50
 lang: en
 translation_key: "RAG的最新方案——HyKGE"
@@ -13,87 +13,87 @@ categories: []
 copyright_author: 'Thinker'
 cover: /images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/cover-5901c3162e.jpg
 ---
-# Introducing the HyKGE Framework
+# Introducing HyKGE
 
 ![Paper title](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-001-36cd72f936.png)
 
-> This article is based on “<a href="https://arxiv.org/abs/2312.15883">HyKGE: A Hypothesis Knowledge Graph Enhanced Framework for Accurate and Reliable Medical LLMs Responses</a>,” a paper coauthored by Xinke Jiang, Ruizhe Zhang, Yongxin Xu, Rihong Qiu, and other researchers at Peking University's School of Computer Science.
+> This article draws on “<a href="https://arxiv.org/abs/2312.15883">HyKGE: A Hypothesis Knowledge Graph Enhanced Framework for Accurate and Reliable Medical LLMs Responses</a>,” by Xinke Jiang, Ruizhe Zhang, Yongxin Xu, Rihong Qiu, and other researchers at Peking University's School of Computer Science.
 
-HyKGE represents a recent advance in combining **knowledge graphs** (KGs) with **retrieval-augmented generation** (RAG). It draws on the deep semantic understanding and knowledge-generation capabilities of **large language models** (LLMs) while making use of the rich structured information in knowledge graphs. In this way, HyKGE can substantially improve the efficiency of medical-information retrieval while ensuring that its answers are accurate. This breakthrough opens up new possibilities for medical LLMs and offers valuable lessons for applying large language models and knowledge graphs to a wider range of use cases.
+HyKGE is a recent approach to combining **knowledge graphs** (KGs) with **retrieval-augmented generation** (RAG). It pairs the deep semantic understanding and knowledge-generation abilities of **large language models** (LLMs) with the rich, structured information stored in knowledge graphs. The result can make medical-information retrieval more efficient while keeping answers accurate. This work opens another path for medical LLMs and offers useful lessons for applying large language models and knowledge graphs in a wider range of settings.
 
-# Technical Challenges in RAG and HyKGE's Solutions
+# RAG's Technical Challenges—and HyKGE's Answers
 
-Traditional retrieval-augmented generation (RAG) has several main shortcomings:
+Traditional retrieval-augmented generation (RAG) has several major limitations:
 
 - **A single level of retrieval granularity**
-    - Documents are usually retrieved as whole documents or paragraphs, making retrieval relatively coarse-grained;
+    - Systems usually retrieve whole documents or paragraphs, so the results are relatively coarse-grained;
 
 - **Limited global semantic understanding**
-    - Keyword-based document matching overlooks deeper semantic relationships between documents;
+    - Keyword-based matching misses deeper semantic relationships among documents;
 
 - **No reasoning capability**
-    - Document databases cannot perform complex queries and reasoning.
+    - Document databases cannot handle complex queries and reasoning.
 
-HyKGE addresses these problems by drawing on the complementary strengths of LLMs and KGs. Large language models (LLMs) are known for their extensive general knowledge and powerful language-processing abilities, but their domain-specific knowledge can be inaccurate or unreliable. Knowledge graphs (KGs), meanwhile, are valued for their structure and accuracy but cannot process natural language. HyKGE was designed to combine these complementary strengths. It uses a domain knowledge graph as its retrieval source, providing gains at multiple levels of granularity, including entity information, relationships between entities, and reasoning paths.
+HyKGE tackles these problems by combining the complementary strengths of LLMs and KGs. Large language models bring broad general knowledge and powerful language-processing abilities, but their domain-specific knowledge may be inaccurate or unreliable. Knowledge graphs are structured and precise, but they cannot process natural language. HyKGE puts the two together. Using a specialized knowledge graph as its retrieval source, it supplies information at several levels of granularity: entities, relationships between entities, and reasoning paths.
 
 # Core Features of the HyKGE Framework
 
-HyKGE significantly improves LLM performance by addressing several key technical challenges:
+HyKGE improves LLM performance by addressing several key technical challenges:
 
 ## **Incomplete User Queries**
-HyKGE uses the zero-shot capabilities of LLMs to enhance graph retrieval by generating hypothetical outputs (HOs), provisionally answering medical questions, and applying a named entity recognition model (NER) to find the relevant key information points—anchors—in KGs. This process helps filter out inaccurate entity relationships that may arise in HO analysis, preventing LLM hallucinations and mistaken understandings of entity relationships from affecting the model's final answer.
+HyKGE uses an LLM's zero-shot ability to generate hypothetical outputs (HOs), explore possible answers to a medical question, and improve graph retrieval. A named entity recognition model (NER) then locates the relevant information points, or anchors, in the KGs. This process filters out inaccurate entity relationships that HO analysis may introduce, preventing hallucinations and mistaken relationships from distorting the model's final answer.
 ![Figure 1.png](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-002-0640db393f.png)
 
 ## **Noise in Retrieved Knowledge**
-Retrieved knowledge contains substantial noise, and filtering it requires a balance between relevance and diversity. HyKGE uses an HO-fragment reranking mechanism. It segments the hypothetical output and the user's question, removes low-density text, and then reranks the knowledge to filter out noise while retaining retrieved knowledge that is both relevant and diverse.
+Retrieved knowledge contains plenty of noise, and removing it means balancing relevance against diversity. HyKGE uses an HO-fragment reranking mechanism: it breaks the hypothetical output and user query into segments, removes low-density text, then reranks the knowledge. Noise is filtered out while relevant, diverse results remain.
 ![Figure 2.png](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-003-23f0c48341.png)
 
-# The Complete HyKGE Model
+# The HyKGE Model
 
 ![Figure 4.png](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-004-c04ffb56e2.png)
 
-The central idea behind HyKGE is to use the **zero-shot** capabilities and rich knowledge of LLMs during the pre-retrieval stage to broaden the directions explored in KGs. Carefully designed **prompts** then increase the density and efficiency of LLM answers. More specifically, HyKGE consists of the following key components:
+HyKGE's central idea is to use an LLM's **zero-shot** ability and broad knowledge before retrieval to expand the possible directions explored in KGs. Carefully designed **prompts** then make the model's responses denser and more efficient. The framework contains four key components:
 
 - **Hypothesis Output Module**
-This module uses LLMs to generate hypothetical outputs that compensate for incomplete user queries.
+This module asks LLMs to generate hypothetical outputs that compensate for incomplete user queries.
 
 - **Named Entity Recognition Module**
-This module extracts medical entities from the hypothetical output and the user's query.
+This module extracts medical entities from both the hypothetical output and the user's query.
 
 - **Knowledge Graph Retrieval Module**
-This module uses the extracted entities as anchors to search for reasoning chains in the knowledge graph.
+This module treats the extracted entities as anchors and searches the knowledge graph for reasoning chains.
 
 - **HO Fragment Granularity-aware Rerank Module**
-During the post-retrieval stage, this module uses fragments of the hypothetical output together with the user's query to rerank and filter the retrieved knowledge, balancing diversity against relevance.
+After retrieval, this module uses fragments of the hypothetical output and the user's query to rerank and filter the retrieved knowledge while balancing diversity and relevance.
 
 # Experiments and Evaluation
 
 - **Datasets**
-The authors tested the framework on three Chinese medical question-answering datasets—MMCU-Medical, CMB-Exam, and CMB-Clin—which cover single-choice questions, multiple-choice questions, and open-ended medical questions.
+The authors tested the framework on three Chinese medical question-answering datasets: MMCU-Medical, CMB-Exam, and CMB-Clin. Together, they cover single-choice, multiple-choice, and open-ended medical questions.
 
 - **Knowledge Graphs**
-The system combines open-source medical knowledge graphs including CMeKG, CPubMed-KG, and Disease-KG. They contain entities and relationships for diseases, drugs, symptoms, and diagnostic and treatment techniques. The combined knowledge graph (KG) contains 1,288,721 entities and 3,569,427 relationships.
+The system combines open-source medical knowledge graphs including CMeKG, CPubMed-KG, and Disease-KG. These graphs contain entities and relationships covering diseases, drugs, symptoms, and diagnostic and treatment techniques. The merged knowledge graph (KG) contains 1,288,721 entities and 3,569,427 relationships.
 
 - **Baseline Models**
-The study selected two general-purpose large models, GPT 3.5 and Baichuan 13B-Chat, as baselines.
+The study used two general-purpose large models, GPT 3.5 and Baichuan 13B-Chat, as baselines.
 
 - **Comparison Methods**
-HyKGE was compared with eight other models, including KGRAG, QE, CoN, CoK, KALMV, KG-GPT, and SuRe.
+The comparison covered eight other models, including KGRAG, QE, CoN, CoK, KALMV, KG-GPT, and SuRe.
 
 - **Evaluation Metrics**
-The study used metrics including Exact Match (EM), Partial Correct Rate (PCR), Artificial Correlation Judgement (ACJ), Perplexity (PPL), ROUGE-Recall (ROUGE-R), and BLEU-4.
+The evaluation used Exact Match (EM), Partial Correct Rate (PCR), Artificial Correlation Judgement (ACJ), Perplexity (PPL), ROUGE-Recall (ROUGE-R), BLEU-4, and other metrics.
 
 ## Results
 
 ![Figure 5.png](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-005-bd19f65389.png)
 
-The results show that HyKGE performs strongly across multiple evaluation metrics, surpassing both the baseline models and other existing retrieval-augmented generation (RAG) methods. This performance highlights HyKGE's marked improvement in the **accuracy** and **explainability** of its answers. Case studies reveal further advantages when HyKGE handles complex medical questions: it can generate hypothetical answers effectively, verify those hypotheses, correct potential errors, and ultimately provide comprehensive, in-depth responses.
+The results show strong performance across several metrics. HyKGE outperforms both the baselines and other existing retrieval-augmented generation (RAG) methods, demonstrating clear gains in answer **accuracy** and **explainability**. Case studies show further advantages on complex medical questions: HyKGE can generate hypothetical answers, check them, correct possible errors, and ultimately provide comprehensive, in-depth responses.
 
-The authors also analyzed computational overhead. Although HyKGE takes slightly more time than some methods, its performance gains justify the additional cost. In other words, HyKGE trades extra processing time for higher-quality answers and a more reliable system. This matters especially in medicine, where accurate, trustworthy information can make a life-or-death difference.
+The authors also measured computational overhead. HyKGE takes slightly longer than some methods, but its performance gains justify the extra cost. In short, more processing time buys higher-quality answers and a more reliable system. That tradeoff matters especially in medicine, where accurate, trustworthy information can mean the difference between life and death.
 
 ![Figure 6.png](/images/RAG%E7%9A%84%E6%9C%80%E6%96%B0%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94HyKGE/fig-006-265bdf33ac.png)
 
 # Practical Applications and Future Directions
-HyKGE is a hypothesis knowledge graph–enhanced framework for large language models (LLMs), designed to improve the accuracy and reliability of question answering in medicine. The authors validated the framework through extensive experiments with two LLM-turbo models on three different medical question-answering tasks. The encouraging results show that HyKGE not only improves answer accuracy substantially but also reduces the uncertainty models may encounter when handling complex medical questions.
+HyKGE is a hypothesis knowledge graph–enhanced framework designed to make medical question answering by large language models (LLMs) more accurate and reliable. The authors tested it extensively with two LLM-turbo models on three different medical question-answering tasks. The results suggest that HyKGE both improves answer accuracy and reduces the uncertainty models may encounter on complex medical questions.
 
-Despite HyKGE's strong results, dynamically optimizing fragment granularity during the post-retrieval stage remains an important direction for future research. We look forward to continued progress in this technology and to more precise information services for medical professionals and patients.
+Despite these results, dynamically optimizing fragment granularity after retrieval remains an important direction for future research. Further progress could provide medical professionals and patients with more precise information services.

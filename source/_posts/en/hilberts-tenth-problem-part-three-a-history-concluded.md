@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Hilbert''s Tenth Problem, Part III: A History (Conclusion)'
+title: 'Hilbert''s Tenth Problem, Part III: The Road to a Solution'
 date: '2025-07-13 12:17:00'
 lang: en
 translation_key: "Hilbert第十问题的硬科普（三）：一段历史（下）"
@@ -17,19 +17,19 @@ categories: []
 > Author: silverxz
 Proofreader: Shiguang
 
-&emsp;&emsp;Many years later, when Hilbert's Tenth Problem had finally been laid to rest, Martin Davis would surely remember that distant afternoon when his teacher said, “Hilbert's Tenth Problem begs for a proof of unsolvability.”
+&emsp;&emsp;Many years later, when Hilbert's Tenth Problem had finally been laid to rest, Martin Davis would surely remember that distant afternoon when his teacher said, “Hilbert's Tenth Problem begs for an unsolvability proof.”
 
-&emsp;&emsp;We have already seen how **Gödel, Turing, and others shattered the completeness, consistency, and decidability sought by Hilbert's program**. Hilbert's Tenth Problem is simply one special case of the decision problem. The negative answer to that broader question transformed almost all optimism about Hilbert's Tenth Problem into pessimism within a decade.
+&emsp;&emsp;We have already seen how **Gödel, Turing, and others shattered the completeness, consistency, and decidability sought by Hilbert's program**. Hilbert's Tenth Problem is simply a special case of the decision problem. The negative answer to that broader question transformed almost all optimism about Hilbert's Tenth Problem into pessimism within a decade.
 
-&emsp;&emsp;Emil Post was one of the founders of computability theory, but fortune rarely favored him. At twelve he lost his left arm in a car accident, which led him to abandon astronomy for mathematics. He earned his doctorate at twenty-three and went to Princeton for postdoctoral study, only to develop manic illness that limited him to three hours of research a day. While at Princeton, he came close to discovering Gödel's incompleteness theorem a decade before Gödel, but withheld publication because he thought the analysis needed further development. At fifty-seven, he died of a heart attack brought on by electroconvulsive treatment for depression. With a little more luck, his name might now loom much larger in history.
+&emsp;&emsp;Emil Post was one of the founders of computability theory, but fortune rarely favored him. At twelve, he lost his left arm in a car accident, which led him to abandon astronomy for mathematics. He earned his doctorate at twenty-three and went to Princeton for postdoctoral study, only to develop a manic illness that limited him to three hours of research a day. While at Princeton, he came close to discovering Gödel's incompleteness theorem a decade before Gödel, but withheld publication because he thought the analysis needed further development. At fifty-seven, he died of a heart attack brought on by electroconvulsive treatment for depression. With a little more luck, his name might now loom much larger in history.
 
-&emsp;&emsp;Back to our story. In 1944, forty-four years after Hilbert posed the problem, Post—then chair of mathematics at the City College of New York—offered his view of Hilbert's Tenth Problem: **“Hilbert's Tenth Problem begs for a proof of unsolvability.”**
+&emsp;&emsp;Back to our story. In 1944, forty-four years after Hilbert posed the problem, Post—then chair of mathematics at the City College of New York—offered his view of Hilbert's Tenth Problem: **“Hilbert's Tenth Problem begs for an unsolvability proof.”**
 
 &emsp;&emsp;Perhaps it was only an offhand opinion. Post could not have known that, in a sense, this very remark would lead to the problem's solution. Martin Davis, then an undergraduate at the City College of New York, heard him say it. That moment launched Davis's work on Hilbert's Tenth Problem and made him one of the central figures in this story.
 
 # Davis: Diophantine Sets
 
-&emsp;&emsp;In retrospect, the first key step toward resolving Hilbert's Tenth Problem was to introduce the concept of a **Diophantine set** and recognize its importance. A Diophantine set is tied to the solvability of Diophantine equations and is a subset of the natural numbers, so it can be studied with the tools of computability theory. Put simply: **If some Diophantine set can be shown to be undecidable, Hilbert's Tenth Problem must be unsolvable.**
+&emsp;&emsp;In retrospect, the first key step toward resolving Hilbert's Tenth Problem was to introduce the concept of a **Diophantine set** and recognize its importance. A Diophantine set is tied to the solvability of Diophantine equations. Because it is a subset of the natural numbers, it can be studied with the tools of computability theory. Put simply: **If some Diophantine set can be shown to be undecidable, Hilbert's Tenth Problem must be unsolvable.**
 
 &emsp;&emsp;The mathematics here is not yet too difficult, and even readers interested only in the history may wish to see what a Diophantine set is. We will therefore insert a short mathematical interlude, which may also be skipped:
 
@@ -37,7 +37,7 @@ Proofreader: Shiguang
 
 &emsp;&emsp;A Diophantine set is a set <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-004-acfeae4e28.png" alt="" /> of ordered n-tuples of natural numbers. It must satisfy the following condition: there is a Diophantine equation <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-005-9569450a05.png" alt="" /> such that <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-006-227371264f.png" alt="" /> has a solution.
 
-&emsp;&emsp;A brief clarification. The order of the quantifiers matters: once the Diophantine equation D has been chosen, it is fixed, and the same D must be used for every <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-007-732e6989f5.png" alt="" /> . Meanwhile, <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-008-f65207bb33.png" alt="" /> is the m-variable Diophantine equation obtained by replacing the variables <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-003-e6edff0636.png" alt="" /> with the constants <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-009-7ef7239436.png" alt="" /> .
+&emsp;&emsp;A brief clarification: the order of the quantifiers matters. Once the Diophantine equation D has been chosen, it is fixed, and the same D must be used for every <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-007-732e6989f5.png" alt="" /> . Meanwhile, <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-008-f65207bb33.png" alt="" /> is the m-variable Diophantine equation obtained by replacing the variables <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-003-e6edff0636.png" alt="" /> with the constants <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-009-7ef7239436.png" alt="" /> .
 
 &emsp;&emsp;At first sight, the point of this construction may be obscure. The key is that D is a subset of the natural numbers, which means that tools from computability theory can be brought to bear on it.
 
@@ -47,7 +47,7 @@ Proofreader: Shiguang
 
 &emsp;&emsp;The contrapositive is equally important: if we can find an undecidable Diophantine set S, then no such M′ exists, and Hilbert's Tenth Problem is unsolvable. Decidability of sets was already familiar territory in computability theory, with a rich supply of approaches and tools. That is why Diophantine sets mattered so much—though this is admittedly clearer in hindsight.
 
-&emsp;&emsp;Davis was the first to make progress from the direction of Diophantine sets—hopefully our mathematical detour has not made the reader forget him. After college he pursued a doctorate under Alonzo Church, studying the hyperarithmetic hierarchy, an extension of Kleene's work on the arithmetic hierarchy. It was a fresh, unexplored field: interesting and virtually certain to yield results. A researcher could hardly ask for a better topic.
+&emsp;&emsp;Davis was the first to make progress through Diophantine sets—hopefully our mathematical detour has not made the reader forget him. After college, he pursued a doctorate under Alonzo Church, studying the hyperarithmetic hierarchy, an extension of Kleene's work on the arithmetic hierarchy. It was a fresh, unexplored field: interesting and virtually certain to yield results. A researcher could hardly ask for a better topic.
 
 &emsp;&emsp;Yet Davis was torn. Hilbert's Tenth Problem was irresistible. He knew he was unlikely to make headway on something so difficult, but he could not stop thinking about it. In the end he pursued both subjects, and his dissertation covered both the hyperarithmetic hierarchy and Hilbert's Tenth Problem.
 
@@ -79,7 +79,7 @@ Proofreader: Shiguang
 
 &emsp;&emsp;Tarski was a major figure whose work left a deep mark across many branches of mathematics. Readers may have heard of the famous Banach–Tarski paradox: assuming the axiom of choice, a ball can be “cut” into a finite number of pieces and reassembled into two balls, each the same size as the original. That is the attention-grabbing version; the mathematical statement is more precise. Yet it was merely one result Tarski produced in 1924, at the age of twenty-three.
 
-&emsp;&emsp;Returning to the story, Tarski asked his student Julia Robinson to prove his conjecture that Diophantine equations could not express exponential functions. Robinson's life had been marked by hardship: she lost her mother as a child, suffered poor health, and at eighteen lost her father to suicide amid financial difficulty. None of this could obscure her mathematical talent. She is the second principal figure in our story.
+&emsp;&emsp;Returning to the story, Tarski asked his student Julia Robinson to prove his conjecture that Diophantine equations could not express exponential functions. Robinson's life had been marked by hardship: she lost her mother as a child, suffered poor health, and at eighteen lost her father to suicide amid financial difficulty. None of this could obscure her mathematical talent. She is the second central figure in our story.
 
 &emsp;&emsp;Even a great mathematician does not conjecture correctly every time—the collapse of Hilbert's program has already shown us that. Tarski's conjecture was also false, so Robinson naturally could not prove it. After her attempts failed, she reversed the question: might Diophantine equations actually be able to represent exponentiation? She made the bold conjecture: <strong>Could every exponential Diophantine equation be equivalent to an ordinary Diophantine equation?</strong> An exponential Diophantine equation permits variables in exponents, as in <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-022-34d1d3bd94.png" alt="" /> .
 
@@ -87,7 +87,7 @@ Proofreader: Shiguang
 
 &emsp;&emsp;Robinson pursued the conjecture and published her findings in 1952. Although she did not prove it, she showed how exponential Diophantine equations could express binomial coefficients, factorials, and primes, demonstrating their remarkable expressive power. She then found a sufficient condition under which an exponential Diophantine equation could be represented by an ordinary Diophantine equation. This condition later became known as the **J. R. hypothesis**. At the time, this work was chiefly an exploration of Diophantine sets and equations, with no obvious direct connection to Hilbert's Tenth Problem. Perhaps no one yet realized how important it would become.
 
-&emsp;&emsp;One might expect Davis and Robinson to meet, combine their results, and solve Hilbert's Tenth Problem together. They did meet, at the 1950 International Congress of Mathematicians in Cambridge, shortly before Robinson published her paper, and exchanged accounts of their work. Robinson explained that she was seeking Diophantine definitions for particular sets, especially those connected with exponentiation, and described the J. R. hypothesis. Davis immediately said that he did not think her approach would go far. Privately, Robinson thought much the same of his—perhaps a case of scholars underestimating one another. Davis later called his verdict “surely one of the especially stupid things I have said in my life.”
+&emsp;&emsp;One might expect Davis and Robinson to meet, combine their results, and solve Hilbert's Tenth Problem together. They did meet at the 1950 International Congress of Mathematicians in Cambridge, shortly before Robinson published her paper, and exchanged accounts of their work. Robinson explained that she was seeking Diophantine definitions for particular sets, especially those connected with exponentiation, and described the J. R. hypothesis. Davis immediately said that he did not think her approach would go far. Privately, Robinson thought much the same of his—perhaps a case of scholars underestimating one another. Davis later called his verdict “surely one of the especially stupid things I have said in my life.”
 
 # Davis, Putnam, and Robinson: Collaboration
 
@@ -103,7 +103,7 @@ Proofreader: Shiguang
 
 &emsp;&emsp;What they did not expect was Robinson's breakthrough on the second condition. She ingeniously modified and extended their proof, using number-theoretic techniques to bypass that conjecture altogether. Her command of number theory was evidently formidable. An interesting detail is that she had long been married to Raphael Robinson, the very teacher who had once taught her number theory.
 
-&emsp;&emsp;Once Robinson had bypassed the second conjecture, they had in fact proved: **Every recursively enumerable set is exponential Diophantine**. The three published the result jointly in 1961. Their collaboration made each reassess the other. Davis had thought Robinson's approach a dead end, only to discover that her machinery was indispensable and that she was an exceptional mathematician. Robinson had likewise doubted the promise of Davis's ideas, but his work changed her mind. In her own words, ***“I am very pleased, surprised, and impressed with your results on Hilbert's Tenth Problem.”***
+&emsp;&emsp;Once Robinson had bypassed the second conjecture, they had in fact proved: **Every recursively enumerable set is exponential Diophantine**. The three published the result jointly in 1961. Their collaboration made each of them reassess the other. Davis had thought Robinson's approach a dead end, only to discover that her machinery was indispensable and that she was an exceptional mathematician. Robinson had likewise doubted the promise of Davis's ideas, but his work changed her mind. In her own words, ***“I am very pleased, surprised, and impressed with your results on Hilbert's Tenth Problem.”***
 
 &emsp;&emsp;Let us take stock. To prove Hilbert's Tenth Problem unsolvable, it is enough to prove that Diophantine sets are exactly the recursively enumerable sets. By the result just obtained, this is equivalent to proving that Diophantine sets are exactly the exponential Diophantine sets. Robinson's earlier work supplied a sufficient condition: the J. R. hypothesis. In short: **Proving the J. R. hypothesis would prove Hilbert's Tenth Problem unsolvable.** Research on Hilbert's Tenth Problem had entered a new phase.
 
@@ -119,13 +119,13 @@ Proofreader: Shiguang
 
 &emsp;&emsp;In 1968, Davis obtained a modest new result. Robinson's response reveals how pessimistic she had become: “I am glad to see your result. My faith in the J. R. hypothesis has not returned, but for the first time I can see how it might be proved. Your method may indeed work, though it seems to require infinitely much luck.” When a mathematician who studies decidability appeals to “infinitely much” luck, it is plainly a tactful way of expressing no confidence at all.
 
-&emsp;&emsp;During these years Davis often lectured on Hilbert's Tenth Problem. When asked what came next, he may have smiled inwardly and deflected with a joke: “I believe the J. R. hypothesis will be proved by a clever young Russian.”
+&emsp;&emsp;During these years, Davis often lectured on Hilbert's Tenth Problem. When asked what came next, he may have smiled ruefully to himself and deflected with a joke: “I believe the J. R. hypothesis will be proved by a clever young Russian.”
 
 &emsp;&emsp;There may have been two reasons for the remark. Soviet education had a reputation for producing youthful prodigies, a tradition that to some extent continues in Russia and China. At the same time, the Cold War left Soviet scholarship relatively isolated. Mathematics enjoyed more exchange than most fields, but communication remained difficult, and Americans such as Davis rarely spoke with Soviet colleagues. Saying that a Soviet would prove it may simply have been a wistful hope for an unforeseen miracle.
 
 &emsp;&emsp;Yet Hilbert's Tenth Problem had not gone unnoticed in Soviet mathematics. Let us turn the clock back.
 
-&emsp;&emsp;At seventeen, Yuri Matiyasevich won an IMO gold medal and, in the same year—1964—entered Leningrad State University without the usual examinations. He was nearly the archetype of a “young prodigy.” Perhaps Davis had developed a gift for prophecy amid his frustrations, because Matiyasevich is the final key figure in this story.
+&emsp;&emsp;At seventeen, Yuri Matiyasevich won an IMO gold medal and, in the same year—1964—entered Leningrad State University without the usual examinations. He was nearly the archetype of a “young prodigy.” Perhaps Davis had acquired a gift for prophecy amid his frustrations, because Matiyasevich is the final key figure in this story.
 
 &emsp;&emsp;By his second year, Matiyasevich had already produced results in mathematical logic substantial enough to present at the 1966 International Congress of Mathematicians. Sergei Maslov then suggested that he study Hilbert's Tenth Problem: “Try to prove that no algorithm can decide whether a Diophantine equation has a solution. The question has a name—Hilbert's Tenth Problem—but you need not worry about that.”
 
@@ -167,7 +167,7 @@ Proofreader: Shiguang
 
 &emsp;&emsp;But false proofs are more common than correct ones. Matiyasevich had once already believed he had solved Hilbert's Tenth Problem when he had not, an embarrassment he would never forget. However excited he must have been, he forced himself to remain calm, checked the entire proof with exceptional care, and asked those around him to examine it. No one found an error.
 
-&emsp;&emsp;At last, on January 29, he presented the result publicly. Colleagues of Robinson attended, and news quickly reached her, Davis, and the wider mathematical world. We can finally say: seventy years after it was posed, Hilbert's Tenth Problem had been proved unsolvable.
+&emsp;&emsp;At last, on January 29, he presented the result publicly. Some of Robinson's colleagues attended, and news quickly reached her, Davis, and the wider mathematical world. We can finally say: seventy years after it was posed, Hilbert's Tenth Problem had been proved unsolvable.
 
 # Epilogue
 
@@ -179,7 +179,7 @@ Proofreader: Shiguang
 
 > MRDP theorem (Matiyasevich–Robinson–Davis–Putnam): the recursively enumerable sets are exactly the Diophantine sets.
 
-&emsp;&emsp;Matiyasevich is the only one of the four still alive. He later studied questions related to the four-color theorem and the Riemann <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-024-831bd22ee6.png" alt="" /> function. Although he produced no result on the same scale, he never left mathematics and, at the age of seventy-six, was still submitting single-author papers last year.
+&emsp;&emsp;Matiyasevich is the only one of the four still alive. He later studied questions related to the four-color theorem and the Riemann <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E4%B8%80%E6%AE%B5%E5%8E%86%E5%8F%B2%EF%BC%88%E4%B8%8B%EF%BC%89/fig-024-831bd22ee6.png" alt="" /> function. Although he produced no result on the same scale, he never left mathematics and, at the age of seventy-six, was still submitting papers as a sole author last year.
 
 &emsp;&emsp;Putnam may seem the least prominent figure in this story because he was, in a sense, making a guest appearance from another stage. He was primarily a philosopher, and his collaboration with Davis was one of his relatively few mathematical contributions. His work in philosophy, however, was highly influential.
 

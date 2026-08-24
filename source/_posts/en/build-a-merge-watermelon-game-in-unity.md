@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Building a Merge Watermelon Game in Unity"
+title: "How to Build a Merge Watermelon Game in Unity"
 date: '2021-01-31 11:30:00'
 lang: en
 translation_key: "用Unity简单实现合成大西瓜"
@@ -18,58 +18,58 @@ copyright_author: '时光（逸仙工作室）'
 
 Reviewed by: Baiyan
 
-&emsp;&emsp;A game called *Merge Watermelon* recently swept through Qzone. After getting hooked, players jokingly began calling themselves “watermelon people.” Memes, parody images, and Watermelon bots soon followed, along with spin-offs such as *Liver-Saving Merge Watermelon*, *Merge Tiny Grapes*, and *Merge a Great Nation*...... This article looks at how to build a *Merge Watermelon* game in Unity.
+&emsp;&emsp;A game called *Merge Watermelon* recently took over Qzone. Once everyone was hooked, players started jokingly calling themselves “watermelon people.” Memes, parody images, Watermelon bots, and spin-offs soon followed, including *Liver-Saving Merge Watermelon*, *Merge Tiny Grapes*, and *Merge a Great Nation*.... Here is how to build your own version in Unity.
 
-# Step 1: Gathering assets
+# Step 1: Gather the assets
 
-&emsp;&emsp;The assets, or textures, determine what the fruit looks like. Replace them with other elements—say, breasts (ahem), Polandballs, or something similar—and you can make parody versions such as *Merge a Great Nation*.
+&emsp;&emsp;The image assets, or textures, determine how the fruit looks. Swap them out for something else, perhaps boobs (ahem), Polandballs, or any similar set of images, and the same game becomes a parody such as *Merge a Great Nation*.
 
-&emsp;&emsp;To keep things simple (actually, because I cannot draw), I drew a few balls to represent the fruit:
+&emsp;&emsp;To keep things simple, and definitely not because I cannot draw, I used a few colored balls for the fruit:
 
 <img src="/images/%E7%94%A8Unity%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/fig-002-7887747208.png" />
 
-&emsp;&emsp;From left to right, they represent a grape, a little cutie, an orange, a lemon, a kiwifruit, a tomato, half a watermelon, and a whole watermelon. The rule is that two fruits of the same level merge into a fruit one level higher. You win once you create the watermelon.
+&emsp;&emsp;From left to right, they represent a grape, a little cutie, an orange, a lemon, a kiwifruit, a tomato, half a watermelon, and a whole watermelon. Two pieces of fruit at the same level merge into one at the next level. Make the whole watermelon and you win.
 
-&emsp;&emsp;I left out intermediate fruits such as coconuts and potatoes from the merge chain. The principle is the same, so there was no need to draw them~~ (All right, I was simply being lazy.~~)
+&emsp;&emsp;I left intermediate fruit such as coconuts and potatoes out of the merge chain. They all work the same way, so there was no reason to draw them~~ (Fine, I was just being lazy.~~)
 
 # Step 2: UI
 
-&emsp;&emsp;I designed a simple UI:
+&emsp;&emsp;I put together a simple UI:
 
 <img src="/images/%E7%94%A8Unity%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/fig-003-5a3067160b.png" />
 
-&emsp;&emsp;The UI has three main parts. The first is the white image at the top, which displays the fruit that will appear next. The second is the score in the upper-left corner, which tracks the points earned by merging fruit. The third consists of the left, right, and bottom boundaries. Each has a collider to keep fruit from falling out of the screen.
+&emsp;&emsp;The UI has three main parts. The white image at the top shows which fruit will appear next. The score in the upper-left tracks the points earned from merges. Finally, colliders on the left, right, and bottom edges keep the fruit from falling off the screen.
 
-&emsp;&emsp;With these two parts ready, we can start planning the program.
+&emsp;&emsp;With the assets and UI ready, we can plan the code.
 
-# Step 3: Programming and implementation
+# Step 3: Write the game logic
 
-&emsp;&emsp;The basic idea is to give every fruit a 2D rigidbody and a 2D circle collider, then instantiate the corresponding “next fruit” at the x-coordinate where the mouse is clicked. When two fruits collide, they are destroyed, a higher-level fruit is created, and the score increases.
+&emsp;&emsp;The basic idea is straightforward. Give each fruit a 2D Rigidbody and a 2D Circle Collider, then instantiate the corresponding “next fruit” at the x-coordinate of the mouse click. When two matching pieces of fruit collide, destroy them, create the next fruit in the chain, and increase the score.
 
-&emsp;&emsp;First, we need to instantiate the next fruit at the mouse pointer's x-coordinate. Because fruit objects will be destroyed, we cannot instantiate the original object directly; otherwise, once that source object is destroyed, we can no longer create new instances from it. The solution is to make a copy of the source object and perform all instantiation and destruction on those copies.
+&emsp;&emsp;First, instantiate the next fruit at the mouse pointer's x-coordinate. Because fruit objects are later destroyed, we cannot work directly on the source object. Once it disappeared, there would be nothing left from which to create another instance. Instead, keep the source object intact and instantiate copies that the game can safely destroy.
 
 <img src="/images/%E7%94%A8Unity%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/fig-004-2e925de4a0.png" />
 
 <img src="/images/%E7%94%A8Unity%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/fig-005-e334ac6ad6.png" />
 
-&emsp;&emsp;As the two images show, the objects marked with the `public` access modifier are the original fruit objects, while the implicitly declared objects below them are the corresponding copies. After a mouse click, the program uses the random number it has generated to select a fruit and instantiates it at the mouse pointer's world-space x-coordinate. Here, `5.0f` is a fixed y-coordinate, which makes the fruit fall from the top of the screen.
+&emsp;&emsp;In the two images above, the objects marked with the `public` access modifier are the original fruit objects; the implicitly declared objects below them hold the corresponding copies. When the player clicks, the program uses a previously generated random number to choose a fruit and instantiates it at the mouse pointer's world-space x-coordinate. The fixed y-coordinate, `5.0f`, makes the fruit drop from the top of the screen.
 
-&emsp;&emsp;Next, we make two identical colliding fruits disappear, “merge” them into the next fruit, and award points. Here is the grape as an example:
+&emsp;&emsp;Next, make two matching pieces of fruit disappear, “merge” them into the next fruit, and award points. The grape provides a simple example:
 
 <img src="/images/%E7%94%A8Unity%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/fig-006-d6d2351024.png" />
 
-&emsp;&emsp;Four things happen here: the collision Boolean is set to `true`, 10 points are added to the score, the collision position is recorded, and the two colliding objects are destroyed.
+&emsp;&emsp;This code performs four operations: it sets the collision Boolean to `true`, adds 10 points to the score, records the collision position, and destroys both colliding objects.
 
-&emsp;&emsp;You may notice that I do not create the next-level object inside the collision event. Both colliding fruits have colliders, so this method is actually called twice, once by each fruit. If we instantiated the next-level fruit directly inside this method, we would get two fruits pressed together. They would merge immediately and rush straight to the end of the chain: the watermelon.
+&emsp;&emsp;Notice that I do not create the next-level object inside the collision event. Both pieces of fruit have colliders, so each one calls this method and the code runs twice. Instantiating the next fruit here would therefore create two copies in the same place. They would immediately merge again and race straight to the end of the chain: the watermelon.
 
-&emsp;&emsp;Instead, I use a Boolean flag. Another class checks it in `LateUpdate` and instantiates the next-level fruit there, which prevents two copies from being created:
+&emsp;&emsp;Instead, I set a Boolean flag. Another class checks that flag in `LateUpdate` and creates the next-level fruit there, preventing the duplicate:
 
 <img src="/images/%E7%94%A8Unity%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/fig-007-3793bfeb2c.png" />
 
-&emsp;&emsp;The last step is to generate the random “next fruit.” This is straightforward: use a random number to choose one.
+&emsp;&emsp;The last step is choosing the random “next fruit.” A random number does the job:
 
 <img src="/images/%E7%94%A8Unity%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/fig-008-5b514b839a.png" />
 
 # Conclu&nbsp; sion
 
-&emsp;&emsp;Those are the basic ideas. This roughly 200-line remake of *Merge Watermelon* can already reproduce most of the original game's features. It still lacks a loss condition (which could be implemented with a trigger plus timing in `FixedUpdate` (~~I was too lazy; besides, I never lose anyway~~)) and some “exciting” sound effects (heavy sarcasm), and it still does not feel quite as good as the original~
+&emsp;&emsp;That is the basic approach. In roughly 200 lines, this *Merge Watermelon* remake already reproduces most of the original game's features. It still needs a loss condition, which could use a trigger and a timer in `FixedUpdate` (~~I was too lazy, and besides, I never lose anyway~~), as well as some “exciting” sound effects (heavy sarcasm). Even then, it does not feel quite as good as the original~

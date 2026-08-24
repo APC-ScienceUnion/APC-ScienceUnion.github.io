@@ -20,115 +20,115 @@ Reviewed by: Mei Shida
 
 # Publishing and Editing
 
-**Publishing**, more fully “**publishing activity**,” is the professional practice of selecting, editing, reproducing, and disseminating works to the public. It covers a complex series of processes that take a work from its original manuscript to the final publication, with the purpose of conveying valuable information to readers.
+**Publishing**, or more fully “**publishing activity**,” is the professional practice of selecting, editing, reproducing, and distributing works to the public. It encompasses the many steps that take a work from raw manuscript to finished publication, with the goal of bringing worthwhile information to readers.
 
-**Editing** has a dual identity. As a verb, it means **the process of organizing and refining source material or an existing work**. As a noun, it refers to a professional who organizes, records, collects, arranges, compiles, and reviews intellectual products and other documents before making them available to the public—for example, a **publishing-house editor**. Editing is an important part of publishing and a prerequisite for reproducing and distributing a publication. Its primary purpose is to produce the publication's intellectual and cultural content. It is a professional form of intellectual production involving the planning, organization, review, selection, and refinement of works.
+In Chinese, the word for **editing** can refer both to **the process of organizing and refining source material or an existing work** and to the professional who does that work, such as a **book editor** at a publishing house. Editors organize, record, collect, arrange, compile, and review intellectual works and other documents before presenting them to the public. Editing is an essential part of publishing and must happen before a publication can be reproduced and distributed. Its primary purpose is to shape a work's intellectual and cultural content through planning, organization, review, selection, and revision.
 
 {% note orange 'fas fa-lightbulb' %}
 **An Editor's Responsibilities**
 
 An editor's responsibilities fall mainly into three areas:
-1. **Guaranteeing the quality of a book—setting the floor**
-This is the basic requirement of editorial work. An editor must review a manuscript rigorously, looking for errors, omissions, or unreasonable content. The editor ensures that the book meets political, ideological, scientific, and factual standards, prevents elementary mistakes, and gives readers accurate and reliable information.
-2. **Improving the book—raising the ceiling**
-Beyond guaranteeing basic quality, an editor should apply professional judgment to explore and refine a work in depth. Optimizing its structure, polishing its language, and strengthening its logic can make the content more engaging and readable, help the author express ideas more effectively, improve the book's overall quality and value, and make it more competitive in the market.
+1. **Protecting basic quality (setting the floor)**
+This is the foundation of editorial work. An editor must read a manuscript rigorously, looking for errors, omissions, and passages that do not make sense. The editor ensures that the book meets political, ideological, scientific, and factual standards, catches basic mistakes, and gives readers accurate, reliable information.
+2. **Making the book better (raising the ceiling)**
+Beyond protecting basic quality, an editor should use professional judgment to develop and refine the work. Improving the structure, polishing the prose, and strengthening the logic can make a book more engaging and readable, help the author express ideas more clearly, and increase the book's overall quality, value, and market appeal.
 3. **Ensuring timely publication**
-While maintaining quality, an editor must organize the schedule sensibly so that the book can be published and distributed on time. This requires strong time-management and coordination skills, as well as close cooperation with the author, typesetters, printer, and other parties. The editor must avoid extending the production cycle through delays in their own work and meet the expectations of readers and the market.
+Without sacrificing quality, an editor must manage the schedule so that the book can be published and distributed on time. This requires strong time-management and coordination skills, along with close cooperation with the author, typesetters, printer, and everyone else involved. Editors must keep their own work from delaying production while meeting the expectations of readers and the market.
 {% endnote %}
 
 # The Publishing Process
 
 Publishing a book generally involves the following stages:
 
-Topic design --> Three-review system --> Editorial processing --> Release for typesetting --> Three proofreadings and one final read --> ISBN application --> Quality inspection and print authorization --> Marketing and distribution --> Reprinting and new editions
+Title planning --> Three-stage review --> Manuscript editing --> Handoff for typesetting --> Three rounds of proofreading and a final read-through --> ISBN application --> Quality inspection and print authorization --> Marketing and distribution --> Reprints and new editions
 
-1. **Topic design**
-This is the starting point of book publishing and principally includes gathering information, planning a topic, submitting a project proposal, and soliciting a manuscript. An editor collects information through multiple channels, learns about market demand, industry developments, and reader preferences, and combines this knowledge with the publishing house's position and direction to plan a title with market potential and cultural value. The editor must also communicate with the author, establish the writing requirements and publication plan, and lay the groundwork for the editorial work that follows.
+1. **Title planning**
+This is where book publishing begins. It includes gathering information, developing a concept, submitting a project proposal, and commissioning a manuscript. Editors research market demand, industry trends, and reader preferences through multiple channels, then combine that knowledge with the publishing house's focus and strategy to plan a title with both market potential and cultural value. They also work with the author to establish writing requirements and a publication schedule, laying the groundwork for the editorial work ahead.
 
-2. **Three reviews**
-The initial review is the responsibility of the commissioning editor, who reads the complete manuscript, determines whether it meets the topic requirements, and examines its content quality, structural coherence, language, and other fundamentals. The second review is generally conducted by the deputy head of the editorial department. Building on the initial review, it examines the manuscript more deeply, with particular attention to political, ideological, and academic issues, and ensures that the manuscript has substantial publication value. The final review is the responsibility of senior leaders such as the editor-in-chief and president, who evaluate the manuscript as a whole and make the final decision on publication.
+2. **Three-stage review**
+The responsible editor conducts the initial review, reading the entire manuscript to determine whether it fulfills the project brief and assessing its content, structure, language, and other fundamentals. A deputy head of the editorial department generally conducts the second review. Building on the first, this stage examines the manuscript more deeply, with particular attention to political, ideological, and academic issues, and determines whether it has sufficient value for publication. Senior leaders such as the editor-in-chief or publishing-house president conduct the final review, evaluating the manuscript as a whole and deciding whether it will be published.
 
 3. **Editorial processing**
-After the manuscript passes all three reviews, an editor must process and organize it, including formulating and carrying out an editorial plan. This stage requires meticulous correction and revision: standardizing the language, adjusting the structure, supplying missing content, and bringing the manuscript up to publication standard.
+After the manuscript passes all three reviews, the editor develops and carries out a detailed editing plan. This stage calls for careful revision: standardizing the language, adjusting the structure, filling gaps in the content, and bringing the manuscript up to publication standard.
 
-4. **Release for typesetting and handoff**
-Once editorial processing is complete, the manuscript enters the typesetting and handoff stage. The editor communicates with the typesetter to determine the page design—including typeface, type size, and line spacing—and ensures that the typesetting suits the book's overall style and normal reading habits. The editor then sends the prepared manuscript for typesetting, reviews the resulting proofs, and promptly corrects any problems introduced during composition.
+4. **Handoff for typesetting**
+Once editing is complete, the manuscript moves into typesetting. The editor works with the typesetter to determine the page design, including the typeface, type size, and line spacing, and makes sure the layout suits the book's style and is comfortable to read. The editor then hands off the prepared manuscript, reviews the resulting proofs, and promptly corrects any problems introduced during typesetting.
 
-5. **Three proofreadings and one final read**
-This is the proofreading stage of book production and consists principally of the first proof, second proof, third proof, and a complete read-through. The first proof chiefly checks the correctness of the typesetting, text, and punctuation. The second focuses more closely on continuity, logic, and structural coherence. The third makes a still more detailed check to ensure that every problem has been resolved. Finally, the entire manuscript is read through once more after the third proof to ensure that its content quality meets publication requirements.
+5. **Three rounds of proofreading and a final read-through**
+The first round chiefly checks the typesetting, text, and punctuation. The second pays closer attention to continuity, logic, and structure. The third is an even more detailed check intended to ensure that every outstanding problem has been resolved. Afterward, the entire book receives one final read-through to confirm that it meets publication standards.
 
 6. **ISBN application**
-An ISBN is a book's unique identifier. The editor must apply to the national press and publication authority for a number and prepare the associated copyright materials, including information about the author and a content summary. This step is essential to the book's lawful publication and sale.
+An ISBN is a book's unique identifier. The editor must apply for one through the national press and publication authority and prepare the necessary copyright materials, including author information and a summary of the book. This step is essential for lawful publication and sale.
 
 7. **Quality inspection / print authorization**
-Before printing, the typeset book must undergo a quality inspection covering the cover, body text, and other components. Only when the inspection confirms that the book can be printed without problems and that print quality will meet the relevant standards can the formal instruction to print be issued.
+Before printing, the typeset book undergoes a quality inspection covering the cover, body text, and other components. The formal print order can be issued only after the inspection confirms that the files are ready and the finished product will meet the relevant quality standards.
 
 8. **Sales and marketing**
-After publication, the editor works with marketing staff to develop sales and marketing strategies. The book may be promoted through channels such as book fairs, publicity events, and social media to raise awareness and sales.
+After publication, the editor works with marketing staff to develop a sales and promotion strategy. This may include book fairs, publicity events, social media, and other channels that can build awareness and sales.
 
 9. **Reprinting / new editions**
-The editor assesses whether to reprint or issue a new edition according to the book's sales and market demand. If readers respond well and demand remains strong, the editor consults with the author and arranges a reprint or new edition to meet that demand.
+Based on sales and market demand, the editor decides whether to reprint the book or prepare a new edition. If readers respond well and demand remains strong, the editor consults with the author and makes the necessary arrangements.
 
 # What Parts Make Up a Book?
 
-A published book has several external and internal components. The external components include Cover 1 (front cover), Cover 4 (back cover), the spine, Cover 2 (inside front cover), Cover 3 (inside back cover), the dust jacket, belly band, and flaps. Internal components include the title page (inner cover), copyright page (edition-record page), preface and foreword, contents, and main text.
+A finished book consists of several exterior and interior components. The exterior includes Cover 1 (front cover), Cover 4 (back cover), the spine, Cover 2 (inside front cover), Cover 3 (inside back cover), the dust jacket, belly band, and cover flaps. Inside are the title page (inner cover), copyright or edition-record page, preface and foreword, table of contents, and main text.
 
 - **External components**
-    - **Cover 1** (front cover) is the book's outer face. It generally bears the title, author's name, publisher, and other information, attracts readers, and protects the book;
-    - **Cover 4** (back cover) generally contains a synopsis, author biography, publication information, barcode, and similar material;
-    - The **spine** bears the title, author's name, and publisher's name so that readers can find the book on a shelf;
+    - **Cover 1** (front cover) is the book's outer face. It generally carries the title, author's name, publisher, and other information; it both attracts readers and protects the book;
+    - **Cover 4** (back cover) generally carries a synopsis, author biography, publication information, barcode, and similar material;
+    - The **spine** carries the title, author's name, and publisher's name so readers can find the book on a shelf;
     - **Cover 2** (inside front cover) and **Cover 3** (inside back cover) are generally white, although they may carry information related to the book;
     - A **dust jacket** wraps around the front and back covers and protects them;
-    - A **belly band** is a strip of paper wrapped around the middle of a book. It usually carries promotional copy or highlights from the content to attract more readers;
-    - A **flap** is the part of the front or back cover folded inward along the opening side and can carry an author photograph, biography, or similar information.
+    - A **belly band** is a strip of paper wrapped around the middle of a book. It usually carries promotional copy or content highlights intended to catch a reader's attention;
+    - A **flap** is the portion of the front or back cover folded inward along the fore edge. It may carry an author photograph, biography, or similar information.
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/fig-001-e9406d6948.png" width=400 />
 
 - **Internal components**
-    - The **title page** (book-title page/inner cover) follows the front cover and generally bears the title, author information, publisher, and publication date. It is the formal beginning of the book;
-    - The **copyright page** (edition-record page) follows the title page and helps readers understand the book's publication history, including the ISBN, edition, and impression;
-    - A **preface and foreword** appear before the main text and evaluate the book or its author. They are generally written by a scholar, specialist, or the author and provide readers with guidance and background;
-    - The **contents** outline the complete book, listing chapter titles and page numbers so readers can browse and locate material quickly;
-    - The **main text** is the book's core and carries the author's principal content, ideas, and arguments.
+    - The **title page** (book-title page/inner cover) follows the front cover and generally carries the title, author information, publisher, and publication date. It marks the formal beginning of the book;
+    - The **copyright page** (edition-record page) follows the title page and records the book's publication details, including its ISBN, edition, and impression;
+    - The **preface and foreword** appear before the main text and discuss the book or its author. Usually written by a scholar, specialist, or the author, they provide background and guidance for readers;
+    - The **table of contents** outlines the book, listing chapter titles and page numbers so readers can scan it and find material quickly;
+    - The **main text** is the heart of the book, containing the author's principal material, ideas, and arguments.
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/fig-002-35146fafcf.png" width=400 />
 
-Other relevant concepts include **CIP data**, **editions and impressions**, and **barcodes**. CIP—Cataloguing in Publication—is the bibliographic data prepared for a book before publication and filed with the national press and publication authority. An edition identifies a version of a book, while an impression counts the number of times that version has been printed. A barcode is a pattern of black bars and white spaces used to manage and sell books. Publications in China currently use two categories of barcode: the **Chinese Standard Book Number barcode**, which includes book, electronic-publication, and audiovisual-product barcodes, and the **Chinese Standard Serial Number barcode**.
+Other relevant concepts include **CIP data**, **editions and impressions**, and **barcodes**. CIP, or Cataloging in Publication, is the bibliographic data prepared for a book before publication and filed with the national press and publication authority. An edition identifies a version of a book, while an impression counts how many times that version has been printed. A barcode is a pattern of black bars and white spaces used in book management and sales. Publications in China currently use two categories: the **Chinese Standard Book Number barcode**, which includes barcodes for books, electronic publications, and audiovisual products, and the **Chinese Standard Serial Number barcode**.
 
->- An **edition** identifies a version of a book. The first publication is called the “**first edition**” or “**original edition**.” A substantially revised work that is reset and published again becomes the “**second edition**.” A further revised and reset publication becomes the “**third edition**,” and so on. Changing only the cover or replacing isolated corrections does not change the edition, only the impression.
->- An **impression** counts the repeated printings of the same book. Beginning with the first printing of the first edition, every reprint must be added cumulatively on the edition-record page. If the first edition was printed three times, a reprint following revision should be recorded as the **fourth printing of the second edition**.
+>- An **edition** identifies a version of a book. The initial publication is called the “**first edition**” or “**original edition**.” A substantially revised work that is typeset and published again becomes the “**second edition**.” Another revision and republication produces the “**third edition**,” and so on. Changing only the cover or making a few corrections does not create a new edition; it changes only the impression.
+>- An **impression** counts successive printings of the same book. Beginning with the first printing of the first edition, each reprint is numbered cumulatively on the edition-record page. If the first edition was printed three times, the first printing after a revision should be recorded as the **fourth printing of the second edition**.
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/fig-003-74994342a8.png" alt="CIP data from An Introduction to Middle-School Micro-Lesson Teaching" width=300 />
 
 # Page Design and Typesetting
 
-Designing a book's format is a complex and exacting process. It involves the full sheet and format, printed sheets and page count, format design, page and type area, running heads and page numbers, leaves and pages, head and foot margins, chapter-opening pages, the binding edge, and the trim edges.
+Designing and typesetting a book is a complex, exacting process. It involves full sheets and book formats, printed sheets and page counts, the overall design, page layout and type area, running heads and page numbers, leaves and pages, head and foot margins, part-title pages, binding edges, and trim edges.
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/fig-004-73e8279409.png" alt="Book formats" />
 
-Let us first consider the **full sheet** and **book format**. A full sheet is a flat sheet of printing paper manufactured to a specified length and width. Common dimensions include 787 mm × 1092 mm, 880 mm × 1230 mm, and 850 mm × 1168 mm. “Format” is the publishing term for a book or periodical's finished page size and indicates how many portions are cut from a full sheet of printing paper. We often hear that a book is 16mo or 8mo. Common formats include 8mo, 16mo, 32mo, and 64mo, with both portrait and landscape variants; their relative sizes appear above. Different formats suit different kinds of book. The 16mo format is often used for academic works and magazines, while 32mo is more common for novels and general-interest reading.
+Let us begin with the **full sheet** and **book format**. A full sheet is a flat piece of printing paper manufactured to specified dimensions. Common sizes include 787 mm × 1092 mm, 880 mm × 1230 mm, and 850 mm × 1168 mm. In publishing, “format” describes the finished page size of a book or periodical and indicates how many leaves are cut from a full sheet. A book may be described as 16mo or 8mo, for example. Common formats include 8mo, 16mo, 32mo, and 64mo, each available in portrait and landscape orientations; the illustration above shows their relative sizes. Different formats suit different kinds of books. The 16mo format is often used for academic works and magazines, while 32mo is more common for novels and general-interest books.
 
-> If these sizes still feel abstract, think back to buying book covers in primary school. The larger covers made for exercise books fit 16mo, while the smaller covers made for textbooks and notebooks fit 32mo.
+> If those sizes still seem abstract, think back to buying protective book covers in elementary school. The larger ones made for workbooks fit 16mo books, while the smaller ones made for textbooks and notebooks fit 32mo.
 
-Now that we understand book formats, we can turn to **printed sheets** and **page count**. A printed sheet is a unit for **measuring the length of a publication**. Printing a full sheet once—on one side—counts as one printed sheet; printing both sides counts as two. Printed sheets are closely related to format and pagination. In a 32mo book, one printed sheet corresponds to 32 numbered pages. In the same way, one printed sheet in a 64mo book corresponds to 64 numbered pages.
+With book formats in mind, we can turn to **printed sheets** and **page count**. A printed sheet is a unit for **measuring the length of a publication**. Printing one side of a full sheet counts as one printed sheet; printing both sides counts as two. The number of printed sheets is closely tied to format and pagination. In a 32mo book, one printed sheet corresponds to 32 numbered pages; in a 64mo book, it corresponds to 64.
 
 $$\text{Number of printed sheets} = \frac{\text{main-text pages} + \text{supplementary pages} + \text{blank pages}}{\text{format divisor}}$$
 
-In publishing terminology, one **leaf** has two **pages**, with adjacent page numbers on its two sides: an odd number on the recto and an even number on the verso. We can now look at what appears within a page, but must first distinguish three concepts: **format**, **page layout**, and **type area**.
+In publishing terminology, one **leaf** has two **pages**, with consecutive page numbers on its two sides: an odd number on the recto and an even number on the verso. Before looking at the elements within a page, we need to distinguish three concepts: **format**, **page layout**, and **type area**.
 
-- Format means **the complete typesetting scheme for a book or periodical**. It includes the arrangement, typeface, and type size of the main text, headings, figures, tables, running heads, notes, and page numbers; the size of the type area—lines per page, characters per line, and line spacing; the punctuation style; and whether the book contains heading illustrations, tailpieces, fillers, and other elements.
+- Format means **the complete typesetting scheme for a book or periodical**. It covers the arrangement, typeface, and type size of the main text, headings, figures, tables, running heads, notes, and page numbers; the dimensions of the type area, including lines per page, characters per line, and line spacing; the punctuation style; and the use of heading illustrations, tailpieces, fillers, and other elements.
 - Page layout is the **overall arrangement of content on each page** of a publication, including text, figures, tables, and the surrounding blank space.
-- The type area is the **part of a publication printed with text, figures, and tables**, excluding the surrounding margins. A well-designed format, page layout, and type area improve a book's appearance and readability and make readers more comfortable.
+- The type area is the **portion of a page occupied by text, figures, and tables**, excluding the surrounding margins. Thoughtful decisions about format, page layout, and type area make a book more attractive, readable, and comfortable to use.
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/fig-005-087dab9b22.png" width=450 />
 
-As the image shows, a page contains not only the type area but also the **running head**, **page number**, **head margin**, and **foot margin**.
+As the illustration shows, a page includes not only the type area but also the **running head**, **page number**, **head margin**, and **foot margin**.
 
-- A running head is a line of text printed above the type area to help readers browse and find material. It generally contains the title of the part, chapter, or section and the page number. Ordinarily, the running head on an odd-numbered right-hand page is lower in the hierarchy than the running head on an even-numbered left-hand page. For example, the even-page running head may carry the book title, while the odd-page running head carries the chapter title.
+- A running head is a line of text printed above the type area to help readers navigate the book. It generally contains the title of a part, chapter, or section, along with the page number. The running head on an odd-numbered right-hand page is usually lower in the hierarchy than the one on an even-numbered left-hand page. For example, the left-hand page may carry the book title, while the right-hand page carries the chapter title.
 - A page number can appear by itself **below the type area**, in the foot margin, or **above the type area**, in the running-head position, but odd page numbers must be on the left and even page numbers on the right.
-- The head and foot margins are the blank spaces above and below the type area respectively. The head margin is generally larger than the foot. These spaces make the page more attractive, facilitate binding, and leave readers room to record what they learn.
+- The head and foot margins are the blank spaces above and below the type area, respectively. The head margin is generally larger. These spaces improve the appearance of the page, leave room for binding, and give readers space for notes.
 
-In addition to its main text, a book may contain **part-title or chapter-opening pages**. A part-title page is a single page inserted between the major divisions of the main text—for example, between parts or chapters—and bears the name of the part, division, or chapter. Its reverse is usually blank. Such pages help readers locate and browse the content quickly, strengthen the book's organization, and require their own design.
+In addition to the main text, a book may contain **part-title or chapter-opening pages**. A part-title page is a single page placed at the beginning of a major division, such as a part or chapter, and carries its title. The reverse is usually blank. These pages clarify the book's organization and help readers find their way through it, so they require their own design.
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/cover-4c77ed2388.png" />
 
@@ -138,9 +138,9 @@ Once the page design and typesetting are complete, the book can enter the printi
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/fig-006-75b9680976.png" width=400 />
 
-On the left and right sides of the type area are the **binding edge** and **trim edge**. The binding edge is the side on which the book or periodical is bound, by perfect binding or another method. The other three sides that must be trimmed smooth are the trim edges: the **head**, **tail**, and **fore edge**. Page numbers are generally placed on the trim-edge side to make them easy to find while leafing through the book.
+To either side of the type area are the **binding edge** and **trim edge**. The binding edge is the side on which the book or periodical is bound, whether by perfect binding or another method. The other three sides are trimmed smooth and known as the **head**, **tail**, and **fore edge**. Page numbers are generally placed toward the trim edge so readers can find them easily while flipping through the book.
 
-Printing a book begins with choosing the paper. Paper comes in different types, generally distinguished by its weight in grams per square meter. Common printing papers include:
+Printing a book begins with choosing the paper. Papers are generally classified by type and basis weight in grams per square meter. Common choices include:
 
 1. **Coated paper**
     - 250g is generally used for major perfect-bound books of more than 10 printed sheets
@@ -150,25 +150,25 @@ Printing a book begins with choosing the paper. Paper comes in different types, 
 2. Offset paper for the body text: 58g, 60g, 70g, or 80g.
 3. Kraft paper for covers: generally used for examination-paper covers.
 
-After choosing the paper, we must consider the form of binding. Binding methods include **saddle stitching**, generally used for booklets of fewer than 100 pages and fastened with staples; perfect binding, in which glue is applied and may crack after a long time; exposed-spine sewn binding, whose back shows rows of thread joining small gatherings of paper and which allows even a thick book to lie flat; and hardcover binding, which uses a complex process to make the book more attractive.
+After choosing the paper, we need to select a binding. Common methods include **saddle stitching**, which fastens booklets of fewer than 100 pages with staples; perfect binding, which uses glue that may crack with age; exposed-spine sewn binding, in which visible rows of thread join small gatherings of paper and allow even a thick book to lie flat; and hardcover binding, a more complex process that produces an attractive, durable book.
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/fig-007-c8e26b7fb7.png" alt="Different binding methods" />
 
-We must also consider how the book will be printed. Color options include four-color CMYK printing—cyan, magenta, yellow, and black. Books may be printed in black only; in two colors or spot colors, which requires two passes through the press; or in four colors, which requires four passes and is expensive.
+We must also decide how the book will be printed. Color options include four-color CMYK printing: cyan, magenta, yellow, and black. A book may use black only; two colors or spot colors, requiring two passes through the press; or all four colors, requiring four passes at a considerably higher cost.
 
-At this point, the book is ready to be published, but several finishing steps can make it even better:
+At this point, the book is ready for publication, but several finishing processes can add a final polish:
 
-- **Lamination**: a plastic film is applied to the surface of the printed material to protect the book. The manufacturer uses adhesive, heat, and pressure to bond the film to the print surface, producing a paper-and-plastic composite. Lamination is generally divided into **gloss** and **matte** finishes, although new processes such as soft-touch film have appeared in recent years. Gloss film produces a bright, vivid surface; matte film reduces reflection and gives the product a more elegant appearance.
-> Paper lighter than 128g is unsuitable for lamination, which is generally used on paper heavier than 200g.
+- **Lamination**: a plastic film is applied to the printed surface to protect the book. Adhesive, heat, and pressure bond the film to the paper, creating a paper-and-plastic composite. The two standard finishes are **gloss** and **matte**, although newer options such as soft-touch film have appeared in recent years. Gloss film creates a bright, vivid surface, while matte film reduces reflections and gives the product a more understated appearance.
+> Paper lighter than 128g is unsuitable for lamination, which is generally reserved for paper heavier than 200g.
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/fig-008-0a0b305d6d.png" width=350 />
 
-- **Shrink-wrapping**: packaging equipment places plastic film around the book, and a high-temperature shrink machine then contracts it to create a complete seal that protects the book.
+- **Shrink-wrapping**: packaging equipment encloses the book in plastic film, which then contracts under heat to form a protective seal.
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/fig-009-c453d68fc6.png" width=400 />
 
-- **Varnish and UV**: varnish is a liquid coating applied to printed material to increase gloss, wear resistance, and water resistance. Water-based varnish, which has excellent environmental properties, is generally used in China. UV refers to a class of inks cured by ultraviolet light that can create many artistic effects on a printed surface. Spot UV is usually applied after lamination.
+- **Varnish and UV**: varnish is a liquid coating applied to printed material to add gloss, wear resistance, and water resistance. Water-based varnish, favored for its environmental performance, is commonly used in China. UV inks cure under ultraviolet light and can create a variety of effects on a printed surface. Spot UV is usually applied after lamination.
 
 <img src="/images/%E7%BC%96%E8%BE%91%E5%87%BA%E7%89%88%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/fig-010-1b1a45d166.png" alt="UV printing" width=350 />
 
-Many other colorful printing processes are available, including foil stamping, gravure printing, and letterpress printing, but a detailed discussion lies beyond the scope of this article.
+Many other printing processes are available, including foil stamping, gravure, and letterpress, but a detailed discussion is beyond the scope of this article.

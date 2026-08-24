@@ -97,9 +97,10 @@ hexo.extend.helper.register('apc_md', function (content) {
 
 
 /** 活动状态：构建时 moment() 为生成时刻；页面加载后由 apc-news-status.js 按访客本地日期刷新 */
-hexo.extend.helper.register('apc_status', function (start, end) {
+hexo.extend.helper.register('apc_status', function (start, end, language) {
 
   const now = moment()
+  const english = String(language || '').toLowerCase().startsWith('en')
 
   const startDate = moment(start).startOf('day')
 
@@ -109,28 +110,36 @@ hexo.extend.helper.register('apc_status', function (start, end) {
 
   if (now.isBefore(startDate)) {
 
-    return { text: '筹备中', class: 'status-upcoming' }
+    return { text: english ? 'Upcoming' : '筹备中', class: 'status-upcoming' }
 
   }
 
   if (now.isAfter(endDate)) {
 
-    return { text: '已结束', class: 'status-ended' }
+    return { text: english ? 'Ended' : '已结束', class: 'status-ended' }
 
   }
 
-  return { text: '进行中', class: 'status-ongoing' }
+  return { text: english ? 'Ongoing' : '进行中', class: 'status-ongoing' }
 })
 
-hexo.extend.helper.register('apc_news_year_url', function (year, years) {
-  if (!years || !years.length) return this.url_for('/apc-news/')
-  if (+year === +years[0]) return this.url_for('/apc-news/')
-  return this.url_for('/apc-news/' + year + '/')
+hexo.extend.helper.register('apc_news_year_url', function (year, years, language) {
+  const prefix = String(language || '').toLowerCase().startsWith('en') ? '/en/apc-news/' : '/apc-news/'
+  if (!years || !years.length) return this.url_for(prefix)
+  if (+year === +years[0]) return this.url_for(prefix)
+  return this.url_for(prefix + year + '/')
+})
+
+hexo.extend.helper.register('apc_news_month_label', function (value, language) {
+  const english = String(language || '').toLowerCase().startsWith('en')
+  return moment(value).locale(english ? 'en' : 'zh-cn').format(english ? 'MMMM YYYY' : 'YYYY年MM月')
 })
 
 /** 返回当前进行中的联萌新闻（按 start 倒序） */
-hexo.extend.helper.register('apc_ongoing_news', function () {
-  const items = (this.site.data.apc_news || []).slice()
+hexo.extend.helper.register('apc_ongoing_news', function (language) {
+  const english = String(language || '').toLowerCase().startsWith('en')
+  const dataKey = english ? 'apc_news_en' : 'apc_news'
+  const items = (this.site.data[dataKey] || []).slice()
   const now = moment()
 
   return items.filter(function (item) {

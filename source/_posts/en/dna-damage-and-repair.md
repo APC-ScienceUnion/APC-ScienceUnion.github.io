@@ -17,62 +17,62 @@ copyright_author: '神州'
 > Author: Shenzhou
 Reviewer: Shiye
 
-&emsp;&emsp;The faithful inheritance of DNA is essential to the relative stability of a species. Yet factors inside and outside the body act on DNA continuously, making changes to an organism's DNA unavoidable. The balance between fidelity and change maintains species stability while providing the basis for evolution and the diversity of life.
+&emsp;&emsp;Faithful DNA inheritance helps keep a species relatively stable. At the same time, DNA is constantly exposed to influences from inside and outside the body, so some change is inevitable. The balance between stability and change preserves a species while also providing the raw material for evolution and the diversity of life.
 
-&emsp;&emsp;DNA damage takes many forms, including base loss, damage to base structure, pyrimidine-dimer formation, single- and double-strand breaks, and DNA cross-linking.
+&emsp;&emsp;DNA damage comes in many forms, including the loss or chemical alteration of bases, pyrimidine dimers, single- and double-strand breaks, and DNA cross-links.
 
 <img src="/images/DNA%E6%8D%9F%E4%BC%A4%E5%92%8C%E6%8D%9F%E4%BC%A4%E4%BF%AE%E5%A4%8D/fig-002-ac08950642.jpg" />
 
 # Damage to Base Structure
 
-&emsp;&emsp;Damage to bases and sugar groups is caused mainly by nitrous-acid-induced base deamination and the oxidative modification of DNA bases, including pyrimidines, by oxidizing agents. Bases containing amino groups can also undergo deamination and thereby be converted into other bases; C, for example, can become U.
+&emsp;&emsp;Bases and sugar groups can be damaged in several ways. Nitrous acid can deaminate bases, while oxidizing agents can chemically modify DNA bases, including pyrimidines. Deamination may convert one base into another; for example, C can become U.
 
-&emsp;&emsp;When DNA is heated or its pH changes, the glycosidic bond between a base and ribose can be hydrolyzed, causing the base to be lost or detached.
+&emsp;&emsp;Heat or a change in pH can hydrolyze the glycosidic bond between a base and the DNA sugar, causing the base to detach.
 
 # Base Mismatches
 
-&emsp;&emsp;Base mismatches, as well as the deletion or insertion of segments, can occur during DNA replication. Although the proofreading function of DNA polymerase promptly corrects most mismatches as they arise, a very small number remain, at a mismatch rate of about 10-10. Segment deletions or insertions generally occur in short repeated sequences when the number of copies increases during DNA replication. Huntington's disease is one such case. Patients carry more copies of CAG in the huntingtin gene than other people: a healthy person has no more than 38 copies, while a patient may have 39 or more.
+&emsp;&emsp;DNA replication can introduce base mismatches as well as insertions and deletions. DNA polymerase catches most mismatches through proofreading, but a tiny fraction remain, at a rate of about 10⁻¹⁰. Insertions and deletions often occur in short repetitive sequences when extra copies are made during replication. Huntington's disease is one example. Most people have no more than 38 CAG repeats in the huntingtin gene, while an affected person may have 39 or more.
 
-&emsp;&emsp;The addition of base analogs or base-modifying agents can also change the properties of bases and consequently produce incorrect pairing in a DNA sequence.
+&emsp;&emsp;Base analogs and base-modifying agents can also alter a base's chemical properties and cause incorrect pairing in the DNA sequence.
 
 # DNA Cross-Linking
 
-&emsp;&emsp;Absorption of short-wavelength ultraviolet radiation can cause two adjacent thymine bases on one strand to form a covalently linked thymine dimer, also known as an intrastrand DNA cross-link. Short-wavelength ultraviolet radiation can similarly cause other pyrimidines to form dimers, such as CT or CC dimers. Dimer formation can then bend and kink the DNA, interfering with transcription or replication.
+&emsp;&emsp;When DNA absorbs short-wavelength ultraviolet radiation, two neighboring thymine bases on the same strand can become covalently linked, forming a thymine dimer, or intrastrand cross-link. Other neighboring pyrimidines can form similar dimers, including CT and CC dimers. These lesions bend and kink the DNA, disrupting transcription and replication.
 
 # DNA Breaks
 
-&emsp;&emsp;DNA breaks are generally caused by ionizing radiation, though they can also result from damage to the pentose structure or from damaged and detached bases. A single-strand break can usually be repaired quickly with the complementary strand as a template. A double-strand break is far less likely to be repaired and requires recombinational repair, which has a high probability of producing chromosomal aberrations.
+&emsp;&emsp;Ionizing radiation is a common cause of DNA breaks, although damage to the pentose sugar or to the bases can also produce them. A single-strand break can usually be repaired quickly by using the complementary strand as a template. A double-strand break is much harder to repair. It may require recombinational repair and carries a substantial risk of chromosomal abnormalities.
 
-&emsp;&emsp;Many factors can induce DNA damage, broadly divided into internal and external factors. The main internal factors are reactive metabolites produced by the body and base mismatches during DNA replication. External factors usually include radiation, viral infection, and toxic chemicals. The two categories are not entirely separate, however, because an external factor often triggers an internal one, which then damages DNA. The outcome of DNA damage depends on both the extent of the damage and the cell's ability to repair it. Cells also have many DNA-repair pathways, including direct repair, excision repair, recombinational repair, and translesion synthesis, which can address the forms of damage described above. One type of damage is not necessarily repaired through only one pathway, nor does any one pathway participate in the repair of only one kind of DNA damage.
+&emsp;&emsp;The causes of DNA damage can be divided broadly into internal and external factors. Internal causes include reactive metabolites and mistakes made during DNA replication. External causes include radiation, viral infection, and toxic chemicals. The two groups overlap: an outside exposure may trigger a process inside the cell that then damages DNA. The outcome depends on both the severity of the damage and the cell's capacity to repair it. Cells use several repair pathways, including direct repair, excision repair, recombinational repair, and translesion synthesis. A given lesion may be handled by more than one pathway, and a single pathway may address several kinds of damage.
 
 <img src="/images/DNA%E6%8D%9F%E4%BC%A4%E5%92%8C%E6%8D%9F%E4%BC%A4%E4%BF%AE%E5%A4%8D/fig-003-276e7e075a.jpg" />
 
 # Photoreactivation
 
-&emsp;&emsp;Photoreactivation generally repairs pyrimidine dimers and is also known as their direct repair. Organisms contain an enzyme called DNA photolyase, which recognizes pyrimidine dimers on a DNA strand. When excited by visible light at 400 nm, it separates a dimer into its original monomeric nucleotides.
+&emsp;&emsp;Photoreactivation is a form of direct repair that usually targets pyrimidine dimers. An enzyme called DNA photolyase recognizes a dimer in the DNA strand. When activated by visible light at 400 nm, the enzyme splits the dimer back into its original nucleotide monomers.
 
 # Excision Repair
 
-&emsp;&emsp;Base excision repair generally depends on DNA glycosylase. The glycosylase recognizes a damaged base in a strand and removes it by hydrolysis, producing an abasic site. At the 5′ end of that site, an AP endonuclease cleaves the phosphodiester bond. The other complementary strand is then used as a template for repair, and DNA ligase finally reconnects the strand at the nick, restoring the DNA's normal structure.
+&emsp;&emsp;Base excision repair usually begins with a DNA glycosylase. The enzyme recognizes a damaged base and removes it by hydrolysis, leaving an abasic site. An AP endonuclease then cuts the phosphodiester bond on the 5′ side of that site. The complementary strand provides the template for replacement DNA, and DNA ligase seals the remaining nick to restore the strand.
 
-&emsp;&emsp;Another special mechanism addresses base mismatches. Its central problem is distinguishing the mismatched daughter strand from the parental strand. In bacterial DNA, methylation is an important marker. The parental strand is usually highly methylated, whereas the newly synthesized daughter strand has not yet been methylated. The repair system uses this difference to distinguish them.
+&emsp;&emsp;Mismatch repair faces a different problem: how can the cell tell the faulty daughter strand from the parental strand? In bacteria, methylation provides an important clue. The parental strand is usually highly methylated, while the newly synthesized daughter strand has not yet received those marks. The repair machinery uses this difference to identify the strand that needs correction.
 
-&emsp;&emsp;A further form of excision repair deals with alterations to the DNA double helix: nucleotide excision repair. Unlike base excision repair, it does not recognize a particular lesion. Instead, it detects the distortion that the damage causes in the DNA helix, cuts the strand on both sides of the distorted region, and removes the damaged single-stranded nucleotides. Finally, it uses the other strand as a template to synthesize new DNA, fill the gap, and complete the repair.
+&emsp;&emsp;Nucleotide excision repair handles damage that distorts the DNA double helix. Unlike base excision repair, it does not need to recognize a particular chemical lesion. Instead, it detects the change in the helix's shape, cuts the damaged strand on both sides, and removes a short stretch of nucleotides. The intact strand then serves as a template for new DNA, which fills the gap and completes the repair.
 
 # Recombinational Repair
 
-&emsp;&emsp;Severe DNA damage requires more complex repair; a double-strand break, for example, is an extremely serious lesion. Because no complementary strand is available, the sequence information needed for repair cannot be obtained directly. Double-strand breaks can be repaired by homologous recombination or nonhomologous end joining.
+&emsp;&emsp;Severe damage calls for more complex repair. A double-strand break, for example, leaves no intact complementary strand at the break from which the missing sequence can be copied directly. Cells repair these breaks through either homologous recombination or nonhomologous end joining.
 
-&emsp;&emsp;Homologous recombination repair uses an identical sequence shared by the two DNA duplexes participating in recombination, helping ensure that the newly generated sequence is correct. In Escherichia coli, the RecA protein plays the central role. It recognizes and binds DNA strands, associates with damaged DNA, identifies a sister strand with the same sequence, unwinds it, and aligns it with the damaged DNA. The intact strands then serve as repair templates. Other enzymes resolve the crossover and restore the original structure.
+&emsp;&emsp;Homologous recombination uses a matching sequence shared by two DNA duplexes, allowing the repaired sequence to be copied accurately. In Escherichia coli, the RecA protein plays the central role. RecA binds the damaged DNA, finds a sister DNA molecule with the same sequence, unwinds it, and aligns it with the broken strands. The intact DNA serves as a template, and other enzymes later resolve the crossover and restore the original structure.
 
-&emsp;&emsp;Nonhomologous end joining is one way mammalian cells repair double-strand DNA breaks. It requires little or no sequence homology, so the repaired DNA may differ from the original. Mammals have enormous genomes, however, so the error may not occur in an essential gene, allowing the damaged cell to survive.
+&emsp;&emsp;Mammalian cells can also repair double-strand breaks through nonhomologous end joining. This pathway requires little sequence homology, so the repaired DNA may not exactly match the original. Because mammalian genomes are so large, however, an error may fall outside an essential gene, allowing the damaged cell to survive.
 
-&emsp;&emsp;This process can also be regarded as a form of physiological genetic recombination. One example, mentioned previously, is recombination in the immune system, including rearrangement of the receptor genes of B and T lymphocytes and of immunoglobulin genes.
+&emsp;&emsp;The same process can serve as a normal form of genetic recombination. As discussed previously, the immune system uses it to rearrange B- and T-cell receptor genes and immunoglobulin genes.
 
 # Translesion DNA Synthesis
 
-&emsp;&emsp;There is one more special response to DNA damage. When the damage is too severe, or replication has already begun, the repair system may be unable to work effectively. The cell can then induce one or more emergency pathways that first replicate past the damaged site and attempt to repair it afterward.
+&emsp;&emsp;When damage is too severe, or when replication has already reached the lesion, the normal repair machinery may not be able to act in time. The cell can then activate one or more emergency pathways that copy past the damaged site first and deal with it afterward.
 
-&emsp;&emsp;Defects in DNA-damage repair often cause disease. Xeroderma pigmentosum (XP), for example, results from cells' inability to perform nucleotide excision repair, which makes epidermal cells exceptionally prone to mutation. Patients are therefore more susceptible than other people to skin cancer, melanoma, and related diseases. Genetic disorders such as Cockayne syndrome and trichothiodystrophy are also caused by problems in genes of the nucleotide excision repair system.
+&emsp;&emsp;Failures in DNA repair can cause many diseases. In xeroderma pigmentosum (XP), cells cannot perform nucleotide excision repair, leaving skin cells exceptionally prone to mutation. People with XP therefore face a much higher risk of skin cancer, melanoma, and related diseases. Defects in genes involved in nucleotide excision repair also cause inherited disorders such as Cockayne syndrome and trichothiodystrophy.
 
-&emsp;&emsp;DNA damage is generally regarded as harmful, but the effects of damage repair are usually considered twofold. On the one hand, it can introduce mutations into DNA and provide a basis for biological evolution. On the other, it may obstruct DNA replication or transcription and, in severe cases, cause cell death.
+&emsp;&emsp;DNA damage is generally harmful, but its consequences run in two directions. Mutations can provide the variation on which evolution acts. At the same time, damage can obstruct DNA replication or transcription and, when severe, kill the cell.

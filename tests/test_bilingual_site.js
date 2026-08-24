@@ -13,6 +13,8 @@ const englishRoot = path.join(postRoot, 'en');
 const publicRoot = path.join(root, 'public');
 const config = yaml.load(fs.readFileSync(path.join(root, '_config.yml'), 'utf8'));
 const siteUrl = new URL(config.url);
+const chineseNewsData = yaml.load(fs.readFileSync(path.join(root, 'source', '_data', 'apc_news.yml'), 'utf8'));
+const englishNewsData = yaml.load(fs.readFileSync(path.join(root, 'source', '_data', 'apc_news_en.yml'), 'utf8'));
 const categoryTranslations = Object.freeze({
   '天文历法': { name: 'Astronomy & Calendars', slug: 'astronomy-calendars' },
   '生命科学': { name: 'Life Sciences', slug: 'life-sciences' },
@@ -333,24 +335,9 @@ const expectedTopMenu = [
   { name: 'Science Galleries', href: 'javascript:void(0);' },
   { name: 'Online Resources', href: '/link/' },
   { name: 'APC Games', href: 'javascript:void(0);' },
-  { name: 'APC News', href: '/apc-news/' },
-  { name: 'About Us', href: '/about/' }
+  { name: 'APC News', href: '/en/apc-news/' },
+  { name: 'About Us', href: '/en/about/' }
 ];
-const actualTopMenu = englishHome.$('#menus > .menus_items > .menus_item').map((_index, element) => {
-  const anchor = englishHome.$(element).find('> a').first();
-  return { name: anchor.text().replace(/\s+/gu, ' ').trim(), href: anchor.attr('href') };
-}).get();
-assert.deepEqual(actualTopMenu, expectedTopMenu, 'English desktop header is incomplete or out of order');
-assert.ok(actualTopMenu.every(item => !/[\p{Script=Han}]/u.test(item.name)), 'English desktop header contains Chinese labels');
-const actualMobileMenu = englishHome.$('#sidebar-menus .menus_items > .menus_item').map((_index, element) => {
-  const anchor = englishHome.$(element).find('> a').first();
-  return { name: anchor.text().replace(/\s+/gu, ' ').trim(), href: anchor.attr('href') };
-}).get();
-assert.deepEqual(actualMobileMenu, expectedTopMenu, 'English mobile menu is incomplete or out of order');
-for (const { href } of actualTopMenu.filter(item => !item.href.startsWith('javascript:'))) {
-  assert.ok(isFile(generatedFile(href)), `English header points to a missing page: ${href}`);
-}
-
 const expectedSubmenu = [
   { name: 'Plant Cards', href: '/gallery/PlantCard/' },
   { name: 'Geography Cards', href: '/gallery/GeographyCard/' },
@@ -359,13 +346,121 @@ const expectedSubmenu = [
   { name: 'Anti-Gomoku', href: '/fwzq/' },
   { name: 'Trial of Xuan', href: '/H5Games/XuanXueTestH5/' }
 ];
-const actualSubmenu = englishHome.$('#menus > .menus_items .menus_item_child a[href]').map((_index, element) => ({
-  name: englishHome.$(element).text().replace(/\s+/gu, ' ').trim(),
-  href: englishHome.$(element).attr('href')
-})).get();
-assert.deepEqual(actualSubmenu, expectedSubmenu, 'English header submenus are incomplete or point to unexpected routes');
-for (const { href } of actualSubmenu) {
-  assert.ok(isFile(generatedFile(href)), `English header points to a missing shared page: ${href}`);
+
+function readMenu(page, selector) {
+  return page.$(selector).map((_index, element) => {
+    const anchor = page.$(element).find('> a').first();
+    return { name: anchor.text().replace(/\s+/gu, ' ').trim(), href: anchor.attr('href') };
+  }).get();
+}
+
+function assertEnglishHeader(page) {
+  const actualTopMenu = readMenu(page, '#menus > .menus_items > .menus_item');
+  assert.deepEqual(actualTopMenu, expectedTopMenu, `English desktop header is incomplete or out of order in ${page.file}`);
+  assert.ok(actualTopMenu.every(item => !/[\p{Script=Han}]/u.test(item.name)), `English desktop header contains Chinese labels in ${page.file}`);
+  const actualMobileMenu = readMenu(page, '#sidebar-menus .menus_items > .menus_item');
+  assert.deepEqual(actualMobileMenu, expectedTopMenu, `English mobile menu is incomplete or out of order in ${page.file}`);
+  for (const { href } of actualTopMenu.filter(item => !item.href.startsWith('javascript:'))) {
+    assert.ok(isFile(generatedFile(href)), `English header points to a missing page: ${href}`);
+  }
+
+  const actualSubmenu = page.$('#menus > .menus_items .menus_item_child a[href]').map((_index, element) => ({
+    name: page.$(element).text().replace(/\s+/gu, ' ').trim(),
+    href: page.$(element).attr('href')
+  })).get();
+  assert.deepEqual(actualSubmenu, expectedSubmenu, `English header submenus are incomplete or point to unexpected routes in ${page.file}`);
+  for (const { href } of actualSubmenu) {
+    assert.ok(isFile(generatedFile(href)), `English header points to a missing shared page: ${href}`);
+  }
+}
+
+assertEnglishHeader(englishHome);
+
+assertIndexPair('/about/', '/en/about/');
+const englishAboutPage = loadPage('/en/about/');
+assertEnglishHeader(englishAboutPage);
+assertVisibleAside(englishAboutPage);
+assertEnglishRecentPosts(englishAboutPage, englishArticlePaths);
+assertLocalStaticImages(englishAboutPage);
+assert.match(englishAboutPage.$('#article-container').text(), /Who we are/u, 'English About page has no translated content');
+
+function newsYear(value) {
+  if (value instanceof Date) return value.getUTCFullYear();
+  return Number(String(value || '').slice(0, 4));
+}
+
+const newsYears = [...new Set(chineseNewsData.map(item => newsYear(item.start)))].sort((left, right) => right - left);
+assert.equal(englishNewsData.length, chineseNewsData.length, 'English APC News data is incomplete');
+
+function newsYearRoute(year, language) {
+  const prefix = language === 'en' ? '/en/apc-news/' : '/apc-news/';
+  return year === newsYears[0] ? prefix : `${prefix}${year}/`;
+}
+
+function assertNewsYearPagination(page, currentYear, language) {
+  const currentIndex = newsYears.indexOf(currentYear);
+  assert.ok(currentIndex >= 0, `unknown APC News year ${currentYear}`);
+  const yearTitle = year => language === 'en' ? String(year) : `${year}年`;
+  const pagers = page.$('nav.apc-news-year-pagination');
+  assert.equal(pagers.length, 2, `expected top and bottom APC News year pagination in ${page.file}`);
+
+  pagers.each((_pagerIndex, pagerElement) => {
+    const pager = page.$(pagerElement);
+    const yearItems = pager.find('.page-number:not(.prev):not(.next)');
+    assert.equal(yearItems.length, newsYears.length, `APC News year list is incomplete in ${page.file}`);
+    yearItems.each((index, element) => {
+      const item = page.$(element);
+      const year = newsYears[index];
+      assert.equal(item.text().trim(), String(year), `APC News year labels are out of order in ${page.file}`);
+      if (year === currentYear) {
+        assert.ok(item.is('span.current'), `current APC News year is not marked in ${page.file}`);
+        assert.equal(item.attr('href'), undefined, `current APC News year must not be a link in ${page.file}`);
+      } else {
+        assert.ok(item.is('a'), `non-current APC News year is not a link in ${page.file}`);
+        assert.equal(new URL(item.attr('href'), page.url).pathname, newsYearRoute(year, language));
+      }
+    });
+
+    const previous = pager.find('a.page-number.prev');
+    const next = pager.find('a.page-number.next');
+    if (currentIndex === 0) {
+      assert.equal(previous.length, 0, `newest APC News year has an unexpected previous link in ${page.file}`);
+    } else {
+      assert.equal(previous.length, 1, `APC News previous-year link is missing in ${page.file}`);
+      assert.equal(new URL(previous.attr('href'), page.url).pathname, newsYearRoute(newsYears[currentIndex - 1], language));
+      assert.equal(previous.attr('title'), yearTitle(newsYears[currentIndex - 1]));
+    }
+    if (currentIndex === newsYears.length - 1) {
+      assert.equal(next.length, 0, `oldest APC News year has an unexpected next link in ${page.file}`);
+    } else {
+      assert.equal(next.length, 1, `APC News next-year link is missing in ${page.file}`);
+      assert.equal(new URL(next.attr('href'), page.url).pathname, newsYearRoute(newsYears[currentIndex + 1], language));
+      assert.equal(next.attr('title'), yearTitle(newsYears[currentIndex + 1]));
+    }
+  });
+}
+
+for (const year of newsYears) {
+  const chineseRoute = newsYearRoute(year, 'zh-CN');
+  const englishRoute = newsYearRoute(year, 'en');
+  assertIndexPair(chineseRoute, englishRoute);
+  const chineseNewsPage = loadPage(chineseRoute);
+  const englishNewsPage = loadPage(englishRoute);
+  assertEnglishHeader(englishNewsPage);
+  assertNewsYearPagination(chineseNewsPage, year, 'zh-CN');
+  assertNewsYearPagination(englishNewsPage, year, 'en');
+  assertVisibleAside(englishNewsPage);
+  assertEnglishRecentPosts(englishNewsPage, englishArticlePaths);
+  assertLocalStaticImages(englishNewsPage);
+  const expectedTitles = englishNewsData
+    .filter(item => newsYear(item.start) === year)
+    .sort((left, right) => new Date(right.start) - new Date(left.start))
+    .map(item => String(item.title).trim());
+  const actualTitles = englishNewsPage.$('#apc-news h3.article-sort-item-title')
+    .map((_index, element) => englishNewsPage.$(element).text().trim())
+    .get();
+  assert.deepEqual(actualTitles, expectedTitles, `English APC News entries are missing or out of order for ${year}`);
+  assert.doesNotMatch(englishNewsPage.$('#apc-news').text(), /[\p{Script=Han}]/u, `English APC News page contains Chinese text for ${year}`);
 }
 
 const actualHomeCategories = categoryItems(englishHome, '#home-category-bar .home-category-bar-item');

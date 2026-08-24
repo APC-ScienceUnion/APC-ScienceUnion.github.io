@@ -15,21 +15,21 @@ copyright_author: 'nobelprize'
 ---
 
 
-# Entangled States—from Theory to Technology
+# Entangled States: From Theory to Technology
 
-Alain Aspect, John Clauser, and Anton Zeilinger conducted groundbreaking experiments using entangled quantum states. In such states, two particles behave as a single unit even when separated. Their results cleared the way for new technologies based on quantum information.
+Alain Aspect, John Clauser, and Anton Zeilinger conducted pioneering experiments with entangled quantum states. In these states, two particles behave as a single unit even when separated. Their results opened the way to new technologies based on quantum information.
 
-The once-ineffable effects of quantum mechanics are beginning to find practical applications. They are now the subject of a major research field that includes quantum computers, quantum networks, and secure quantum-encrypted communication.
+Effects of quantum mechanics that once seemed impossible to describe are now finding practical uses. They have become the focus of a major research field encompassing quantum computers, quantum networks, and secure communication through quantum encryption.
 
-A key to this progress is the way quantum mechanics allows two or more particles to exist in what is known as an entangled state. What happens to one particle in an entangled pair determines what happens to the other, even when the two are far apart.
+One key to this progress is a feature of quantum mechanics that allows two or more particles to share what is known as an entangled state. What happens to one particle in an entangled pair determines what happens to the other, even when they are far apart.
 
-For a long time, scientists debated whether this correlation arose because the particles in an entangled pair contained hidden variables—instructions telling them which result to produce in an experiment. In the 1960s, John Stewart Bell formulated the mathematical inequality that bears his name. It showed that if hidden variables existed, the correlations among the results of many measurements could never exceed a certain value. Quantum mechanics, however, predicted that a particular kind of experiment would violate Bell's inequality and produce stronger correlations than would otherwise be possible.
+For a long time, scientists debated whether this correlation arose because the particles in an entangled pair carried hidden variables: instructions telling them which result to produce in an experiment. In the 1960s, John Stewart Bell formulated the mathematical inequality that now bears his name. It showed that if hidden variables existed, correlations among the results of many measurements could never exceed a certain value. Quantum mechanics, however, predicted that a particular kind of experiment would violate Bell's inequality and produce stronger correlations than hidden-variable theories allowed.
 
-John Clauser developed John Bell's ideas into a practical experiment. His measurements clearly violated Bell's inequality, supporting quantum mechanics. This meant that quantum mechanics could not be replaced by a theory based on hidden variables.
+John Clauser turned John Bell's ideas into a practical experiment. His measurements clearly violated Bell's inequality, supporting quantum mechanics. The result showed that quantum mechanics could not be replaced by a theory based on hidden variables.
 
-Some loopholes remained after John Clauser's experiment. Alain Aspect refined the setup to close an important one. He could switch the measurement settings after an entangled pair had left its source, so the settings in place when the particles were emitted could not affect the outcome.
+Some loopholes remained after John Clauser's experiment. Alain Aspect refined the setup and closed an important one. He could switch the measurement settings after an entangled pair had left its source, ensuring that the settings in place when the particles were emitted could not affect the outcome.
 
-Using sophisticated instruments and a series of experiments, Anton Zeilinger began working with entangled quantum states. His group also demonstrated a phenomenon known as quantum teleportation, which makes it possible to transfer a quantum state from one particle to another across a distance.
+Using precise instruments in a series of experiments, Anton Zeilinger began putting entangled quantum states to use. His group also demonstrated a phenomenon known as quantum teleportation, which makes it possible to transfer a quantum state from one particle to another over a distance.
 
 “It has become increasingly clear that a new kind of quantum technology is emerging. We can see that the laureates' work with entangled states is of great importance, even beyond the fundamental questions about the interpretation of quantum mechanics,” said Anders Irbäck, Chair of the Nobel Committee for Physics.
 

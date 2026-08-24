@@ -2,11 +2,18 @@
  * 联萌新闻：在浏览器端按 start/end 刷新活动状态（静态站构建时写入的状态会过期）
  */
 (function () {
-  var STATUS = {
-    upcoming: { text: '筹备中', className: 'status-upcoming' },
-    ongoing: { text: '进行中', className: 'status-ongoing' },
-    ended: { text: '已结束', className: 'status-ended' }
-  }
+  var english = String(document.documentElement.lang || '').toLowerCase().indexOf('en') === 0
+  var STATUS = english
+    ? {
+        upcoming: { text: 'Upcoming', className: 'status-upcoming' },
+        ongoing: { text: 'Ongoing', className: 'status-ongoing' },
+        ended: { text: 'Ended', className: 'status-ended' }
+      }
+    : {
+        upcoming: { text: '筹备中', className: 'status-upcoming' },
+        ongoing: { text: '进行中', className: 'status-ongoing' },
+        ended: { text: '已结束', className: 'status-ended' }
+      }
 
   function parseDay (value) {
     if (!value) return null

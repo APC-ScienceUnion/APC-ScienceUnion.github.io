@@ -19,8 +19,7 @@ menu:
   关于我们: /about/ || fas fa-heart
 
 # English navigation mirrors the complete Chinese header. Article listings,
-# archives, and categories use English routes; auxiliary tools keep their
-# existing shared route until those standalone pages receive translations.
+# archives, categories, APC News, and About use dedicated English routes.
 menu_en:
   Archives: /en/archives/ || fas fa-archive
   Categories: /en/categories/ || fas fa-folder-open
@@ -33,8 +32,8 @@ menu_en:
   APC Games||fas fa-gamepad:
     Anti-Gomoku: /fwzq/ || fas fa-chess-board
     Trial of Xuan: /H5Games/XuanXueTestH5/ || fas fa-dice-d20
-  APC News: /apc-news/ || fas fa-bullhorn
-  About Us: /about/ || fas fa-heart
+  APC News: /en/apc-news/ || fas fa-bullhorn
+  About Us: /en/about/ || fas fa-heart
 
 english_site_title: APC Science Union · Online Library
 english_site_subtitle: Popular science articles and a library of learning resources

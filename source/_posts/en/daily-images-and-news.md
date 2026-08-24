@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bing Wallpaper, Astronomy Picture, Wikipedia Picture, and News of the Day"
+title: "Bing Wallpaper of the Day, Astronomy Picture of the Day, Wikipedia Picture of the Day, and Daily News"
 date: 2099-12-31 23:59:59
 lang: en
 translation_key: "每日新闻"
@@ -14,7 +14,7 @@ cover: /images/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB/cover-d56e82c945.jpg
 top: true
 ---
 
-# Today in the History of Science and Technology
+# Today in Science and Technology History
 
 <!-- The reviewed daily snapshot is currently Chinese-only, so the English page shows a language notice instead of embedding Chinese copy or artwork -->
 <div data-today-in-history></div>

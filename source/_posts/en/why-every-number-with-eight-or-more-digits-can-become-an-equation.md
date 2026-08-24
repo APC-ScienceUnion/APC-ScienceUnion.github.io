@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why Can Every Number with Eight or More Digits Become an Equation?
+title: 'Why Every Number with Eight or More Digits Can Be Turned into an Equation: A Brief Introduction to the Silicon–Silence Balance Integer Theorem and Its Proof'
 date: 2026-07-18 12:00:00
 lang: en
 translation_key: "为何所有8位及以上的数都可以变为等式？——硅基-沉默整数平衡化定理及其证明简明介绍"
@@ -21,33 +21,33 @@ Can the digit string 1145141919810 be turned into an equation? Astonishingly, ev
 
 > Author: 硅基·飙尘葆光
 
-# A Brief Introduction to the Silicon–Silence Balance Integer Theorem and Its Proof
+# The Silicon–Silence Balance Integer Theorem: A Brief Introduction and Proof
 
-&emsp;&emsp;In daily life, sophon interference from the Trisolarans often disrupts the numbers we try to transmit. Humanity has therefore developed many ways to disguise digit strings and thwart this evil plan. One method inserts arithmetic operators into a string until it becomes a true equation. For example, “114514” can be written as $1=-1+(4+5-1)/4$, while “1919810” becomes $(1\times 9+1)\times(9-8)=10$. A sophon sees only expressions whose value is **True**, allowing the hidden numbers to escape surveillance and interference.
+&emsp;&emsp;In everyday life, sophon interference from the Trisolarans often disrupts the numbers we try to transmit. Humanity has therefore devised many ways to disguise digit strings and thwart this evil plan. One method inserts arithmetic operators into a string until it becomes a true equation. For example, “114514” can be written as $1=-1+(4+5-1)/4$, while “1919810” becomes $(1\times 9+1)\times(9-8)=10$. A sophon sees only expressions whose value is **True**, allowing the hidden numbers to escape surveillance and interference.
 
 <img src="/images/为何所有8位及以上的数都可以变为等式？/fig1.png" alt="" />
 
 <img src="/images/为何所有8位及以上的数都可以变为等式？/fig2.png" alt="" />
 
-&emsp;&emsp;One question, however, has long haunted the devotees of this method like a nightmare, denying their souls rest by day or night and tormenting them as though for eternity in hell:
+&emsp;&emsp;One question, however, has long haunted devotees of this method like a nightmare, denying their souls rest by day or night and tormenting them as though for eternity in hell:
 
 &emsp;&emsp;**Can we always insert arithmetic operators and an equals sign into any number we wish to transmit and obtain a true equation?**
 
 <img src="/images/为何所有8位及以上的数都可以变为等式？/fig3.png" alt="" />
 
-&emsp;&emsp;If you are a sophon, the following should be easy to notice:
+&emsp;&emsp;If you happen to be a sophon, the following should be easy to notice:
 
 > **In base ten, addition, subtraction, multiplication, division, parentheses, and an equals sign can always be inserted into any integer with eight or more digits to form a true equation.**
 
-&emsp;&emsp;In reality, we are *Homo sapiens*, not sophons, so understanding why still requires a step-by-step analysis.
+&emsp;&emsp;In reality, we are *Homo sapiens* rather than sophons, so understanding why still requires a step-by-step analysis.
 
-&emsp;&emsp;Repeatedly writing “insert arithmetic operators and an equals sign to form a true equation” would be cumbersome. To make the discussion precise, let us establish the following definitions:
+&emsp;&emsp;Repeating “insert arithmetic operators and an equals sign to form a true equation” every time would be cumbersome. To make the discussion precise, let us establish the following definitions:
 
-1. Treat any n-digit integer a as an n-digit string with no leading zero. An operation that inserts members of a specified set of arithmetic operators into the string will be called an “**operator insertion**.” The value of the resulting expression is an “**insertion value**.” All obtainable insertion values form the “**insertion-value set**,” abbreviated **$\mathrm{Val}(a)$**.
+1. Treat any n-digit integer a as an n-digit string with no leading zero. The operation of inserting members of a specified set of arithmetic operators into the string will be called an “**operator insertion**.” The value of the resulting expression is an “**insertion value**.” All obtainable insertion values form the “**insertion-value set**,” abbreviated **$\mathrm{Val}(a)$**.
 
 2. The set of permitted operators will be called the “**operator set**.” Here it is $\{+,-,\times,/\}$: **addition, subtraction, multiplication, and division**, abbreviated **$S$**. If changes in the usual order of operations are permitted, parentheses may also be inserted. (For convenient notation and to avoid confusing symbols, when the two digits ab are treated as one unit, we write **$a\_b$**.)
 
-3. An operation that divides a digit string into parts and inserts operators so that all parts have the same insertion value, thereby forming an equation, will be called “**balancing**.” A string that can be balanced is “**balanceable**.” The set of all such strings is the “**balanceable set**,” abbreviated $E$. The remaining strings form the “**unbalanceable set**.”
+3. The operation of dividing a digit string into parts and inserting operators so that all parts have the same insertion value, thereby forming an equation, will be called “**balancing**.” A string that can be balanced is “**balanceable**.” The set of all such strings is the “**balanceable set**,” abbreviated $E$. The remaining strings form the “**unbalanceable set**.”
 
 <img src="/images/为何所有8位及以上的数都可以变为等式？/fig4.gif" alt="" />
 
@@ -55,13 +55,13 @@ Can the digit string 1145141919810 be turned into an equation? Astonishingly, ev
 
 > Given the operator set **S**, and allowing the order of operations to be changed, is every n-digit string balanceable? ($n \in \mathbb{N}^+$, with $n \geq 2$.)
 
-&emsp;&emsp;Begin with short strings, such as numbers of three digits or fewer. Their information content is too low to interest either sophons or us, and the conclusions are not very exciting. A one-digit string is meaningless for this purpose. Among two-digit strings, only multiples of 11 can take an equals sign between their digits. Three digits offer more to discuss, but simple counterexamples such as 125 and 113 cannot be made into equations. At least for lengths two and three, then, operators and an equals sign cannot always form an equation. Not every n-digit string is balanceable.
+&emsp;&emsp;Let us begin with short strings, such as numbers of three digits or fewer. Their information content is too low to interest either sophons or us, and the conclusions are not very exciting. A one-digit string is meaningless for this purpose. Among two-digit strings, only multiples of 11 can take an equals sign between their digits. Three digits offer more to discuss, but simple counterexamples such as 125 and 113 cannot be made into equations. At least for lengths two and three, then, operators and an equals sign cannot always form an equation. Not every n-digit string is balanceable.
 
 &emsp;&emsp;The problem therefore becomes one of finding a lower bound on the length that guarantees balanceability:
 
 > Given the operator set S and allowing changes in the order of operations, does there exist an **N** such that every n-digit string is balanceable whenever $n \geq N$? If so, what is N? ($n \in \mathbb{N}^+$, with $n \geq 2$.)
 
-&emsp;&emsp;The sophon's answer has already spoiled the fact that N exists, and intuition tells us that sufficiently long strings ought to be balanceable: the more digits there are, the more likely two separated parts are to share an insertion value. History teaches us that both sophons and intuition can deceive, however, so a more rigorous argument is still needed to establish existence.
+&emsp;&emsp;The sophon's answer has already spoiled the fact that N exists, and intuition tells us that sufficiently long strings ought to be balanceable: the more digits there are, the more likely two separated parts are to share an insertion value. History teaches us, however, that both sophons and intuition can deceive, so a more rigorous argument is still needed to establish existence.
 
 &emsp;&emsp;First, define one more concept:
 
@@ -71,7 +71,7 @@ Can the digit string 1145141919810 be turned into an equation? Astonishingly, ev
 
 <img src="/images/为何所有8位及以上的数都可以变为等式？/fig5.gif" alt="" />
 
-&emsp;&emsp;Next, intuition suggests that **once the length n is sufficiently large, every n-digit string should be zeroable**. We can prove this by constructing a particular insertion procedure. If a sufficiently long string contains a 0, or two consecutive identical substrings, multiplication and subtraction quickly reduce it to zero. The general case to consider is therefore a string containing neither 0 nor two identical adjacent substrings.
+&emsp;&emsp;Next, intuition suggests that **once the length n is sufficiently large, every n-digit string should be zeroable**. We can prove this by constructing a specific insertion procedure. If a sufficiently long string contains a 0, or two consecutive identical substrings, multiplication and subtraction quickly reduce it to zero. The general case to consider is therefore a string containing neither 0 nor two identical adjacent substrings.
 
 &emsp;&emsp;Pair the digits of the original string and subtract the two members of each pair. Their absolute differences—implemented with addition, subtraction, and parentheses—form a new string. Call the largest digit in a string its **upper bound**. The upper bound of the new string is always at least 1 smaller than that of the original. Without loss of generality, assume that the original upper bound is 9. After eight rounds, the upper bound is 1. A sufficiently long original string has therefore been transformed, through operator insertion, into either an all-1 string or a string containing 0, both of which reduce easily to zero. Strictly speaking, pairing every digit at each round requires n to be a power of 2. For any sufficiently long string whose length exceeds such a power, however, the surplus digits can undergo separate rounds of subtraction and absolute value until the total length is a power of 2. This does not interfere with the shrinking upper bound. **Any sufficiently long digit string can therefore be reduced to one on which the zeroing procedure works.**
 
@@ -81,7 +81,7 @@ Can the digit string 1145141919810 be turned into an equation? Astonishingly, ev
 
 &emsp;&emsp;Finally, if $n \geq 2N'$, the string can plainly be divided into the form “$0=0$.” **There must therefore be an N such that every n-digit string is balanceable for $n \geq N$, with $N \leq 2^{10}$—that is, $2N'$.**
 
-&emsp;&emsp;We have proved that N exists and lies between **4** and **1024**. In principle, checking every string of lengths 4 through 1024 would reveal its exact value. Unfortunately, only a sophon would accept the computational cost. To reach the answer, we need tighter bounds that make verification less expensive.
+&emsp;&emsp;We have proved that N exists and lies between **4** and **1024**. In principle, checking every string with a length from 4 through 1024 would reveal its exact value. Unfortunately, only a sophon would accept the computational cost. To reach the answer, we need tighter bounds that make verification less expensive.
 
 &emsp;&emsp;We can begin by investigating the maximum length $N'$ of a nonzeroable string. By upward propagation of $\mathrm{Re}_{0}$, if a string a is zeroable, every superstring $s1\_a\_s2$ containing it is zeroable. This immediately suggests a **sieve** for finding every nonzeroable string and hence the maximum length among them. Beginning with $10$, test each string in natural-number order for zeroability. As soon as a zeroable string is found, exclude every later superstring that contains it. This procedure guarantees that all proper substrings of any string requiring an individual test are nonzeroable. We call such a string a “**prime zeroable string**.” Plainly, **every zeroable string contains a prime zeroable string**. Within a given range, testing the tiny number of prime zeroable strings—rather than the overwhelming majority of all strings—sieves out every zeroable string. What remains is the nonzeroable set we seek.
 
@@ -89,9 +89,9 @@ Can the digit string 1145141919810 be turned into an equation? Astonishingly, ev
 
 <img src="/images/为何所有8位及以上的数都可以变为等式？/fig7.gif" alt="" />
 
-&emsp;&emsp;It is also clear that nonzeroable strings such as 8985898 are themselves unbalanceable. A balanceable string admits an equals sign that makes an equation true. Replace that sign with subtraction and put the expressions on both sides in parentheses, and the result must be 0. Every balanceable string is therefore zeroable. Some zeroable strings, such as 1204, are nevertheless unbalanceable, so **the balanceable set is a proper subset of the zeroable set**. Equivalently, **the nonzeroable set is a proper subset of the unbalanceable set**. Because 8985898 belongs to the nonzeroable set, it also belongs to the unbalanceable set and provides a seven-digit example. **The only remaining task is to check whether strings from eight through fifteen digits contain an unbalanceable example of greater length.**
+&emsp;&emsp;It is also clear that nonzeroable strings such as 8985898 are themselves unbalanceable. A balanceable string admits an equals sign that makes an equation true. Replace that sign with subtraction and enclose the expressions on both sides in parentheses, and the result must be 0. Every balanceable string is therefore zeroable. Some zeroable strings, such as 1204, are nevertheless unbalanceable, so **the balanceable set is a proper subset of the zeroable set**. Equivalently, **the nonzeroable set is a proper subset of the unbalanceable set**. Because 8985898 belongs to the nonzeroable set, it also belongs to the unbalanceable set and provides a seven-digit example. **The only remaining task is to check whether strings from eight through fifteen digits contain an unbalanceable example of greater length.**
 
-&emsp;&emsp;We have worked hard to shrink the range, yet it still contains numbers on the scale of hundreds of quadrillions and remains difficult to process. The sophon watching us has already supplied the answer: “Every one of those hundreds of quadrillions of strings is balanceable.” We should trust our own intelligence first, however, rather than rely too heavily on data from Trisolaris.
+&emsp;&emsp;We have worked hard to shrink the range, yet it still contains numbers on the scale of hundreds of quadrillions and remains difficult to process. The sophon watching us has already supplied the answer: “Every one of those hundreds of quadrillions of strings is balanceable.” We should trust our own intelligence first, though, rather than rely too heavily on data from Trisolaris.
 
 &emsp;&emsp;Fortunately, an obvious pattern comes to the rescue:
 
@@ -115,6 +115,6 @@ Can the digit string 1145141919810 be turned into an equation? Astonishingly, ev
 
 > In base ten, addition, subtraction, multiplication, division, parentheses, and equals signs can always be inserted into any integer with eight or more digits to form a true equation.
 
-&emsp;&emsp;An arduous literature search failed to find an earlier result of this kind. Until a predecessor's version turns up, let us provisionally call this neat result the **Silicon–Silence Balance Integer Theorem** in honor of the two idle minds who posed and solved the problem.
+&emsp;&emsp;An arduous literature search failed to turn up an earlier result of this kind. Until a predecessor's version emerges, let us provisionally call this neat result the **Silicon–Silence Balance Integer Theorem** in honor of the two idle minds who posed and solved the problem.
 
 &emsp;&emsp;At last, we can transmit numerical information through equations without losing sleep, provided the number has at least eight digits or is not one of the 18,198 strongly unbalanceable strings. After all, why would a sophon suspect that an eternally true statement such as “$3-5+0=-2\times 3+4$” conceals an unspeakable secret?

@@ -17,61 +17,61 @@ copyright_author: '时光'
 > Author: Shiguang
 Reviewed by: Yuandao
 
-# Preface
+# Introduction
 
-&emsp;&emsp;This article records some of my thinking and development work while I was building a simple 2D side-scrolling platformer for an assessment at my university's studio (yes, really). If game development interests you and you would like to become a developer, it may offer some useful pointers. If you already develop games, you are welcome to get in touch and compare notes :D!
+&emsp;&emsp;This article is a record of the ideas and development work behind a simple 2D side-scrolling platformer I built for an assessment at my school's studio (yes, really). If game development interests you—or if you hope to become a game developer—you may find something useful here. Already making games? Feel free to get in touch and compare notes :D!
 
-# Choosing an engine
+# Choosing a Game Engine
 
-&emsp;&emsp;When you decide to make a game, the first consideration is the game engine. In other words: which engine should I use? Two mainstream choices are Unity and Unreal Engine 4 (UE4), each with its own strengths and weaknesses. Unity's 3D rendering, for example, is not as strong as UE4's, but Unity offers many plug-ins that can make development more efficient.
+&emsp;&emsp;Once you decide to make a game, your first big choice is the engine. Which one should you use? Two mainstream options are Unity and Unreal Engine 4 (UE4), and each has advantages and drawbacks. Unity's 3D rendering, for example, is weaker than UE4's, but its many plug-ins can speed up development.
 
 <img src="/images/%E5%A6%82%E4%BD%95%E5%88%B6%E9%80%A0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%842D%E6%B8%B8%E6%88%8F%EF%BC%9F/fig-002-6b68f472cb.jpg" />
 
-&emsp;&emsp;Because this article concerns a 2D game, I think Unity is the better choice. (The real reason is that my university studio required it for the assessment.) When you hear “Unity,” however, you may think first of a hit electronic track by TheFatRat rather than a game engine. Here are a few games made with Unity to make the name feel less unfamiliar.
+&emsp;&emsp;For the 2D game in this article, I think Unity is the better choice. (The real reason: my school's studio required Unity for the assessment.) Of course, “Unity” may make you think of TheFatRat's electronic hit before it makes you think of an engine. A few examples should make its game-development side feel more familiar.
 
-&emsp;&emsp;Many excellent 2D games were developed in Unity, including *DEEMO*, *Plague Inc.*, *Hollow Knight*, *Gris*, *Ori and the Will of the Wisps*, and *Lobotomy Corporation*. Unity also suits relatively lightweight 3D games such as *Monument Valley*, *The Room*, *Outer Wilds*, *The Almost Gone*, and *Kerbal Space Program*.
+&emsp;&emsp;Many excellent 2D games were made with Unity, including *DEEMO*, *Plague Inc.*, *Hollow Knight*, *Gris*, *Ori and the Will of the Wisps*, and *Lobotomy Corporation*. It also works for relatively lightweight 3D games such as *Monument Valley*, *The Room*, *Outer Wilds*, *The Almost Gone*, and *Kerbal Space Program*.
 
-&emsp;&emsp;(Every game just mentioned is great fun XD! Give them a try if any catch your interest.)
+&emsp;&emsp;(Every game on that list is great fun XD! Try whichever ones catch your eye.)
 
-&emsp;&emsp;(*Arknights* was also made with Unity! An attempt to recruit another believer.)
+&emsp;&emsp;(*Arknights* was made with Unity too! Consider this my attempt to recruit another believer.)
 
 <img src="/images/%E5%A6%82%E4%BD%95%E5%88%B6%E9%80%A0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%842D%E6%B8%B8%E6%88%8F%EF%BC%9F/fig-003-992f028a75.png" />
 
 <img src="/images/%E5%A6%82%E4%BD%95%E5%88%B6%E9%80%A0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%842D%E6%B8%B8%E6%88%8F%EF%BC%9F/fig-004-7924b340dc.png" />
 
-&emsp;&emsp;Once you have chosen an engine, what comes next? Download Unity from its official website, of course (obviously)! Unity is completely free to download and install. I recommend choosing “Download through Hub” (the green option in Figure 4). Unity Hub makes it easy to manage projects and licenses. If a project refuses to open, an expired license may be the reason; reactivate it manually. The Hub also lets you install several versions of Unity and switch among them. Bear in mind that some features from newer editor versions may not work in older ones.
+&emsp;&emsp;Engine chosen—what next? Download Unity from the official website, obviously! It is free to download and install. I recommend “Download through Hub,” the green option in Figure 4. Unity Hub keeps projects and licenses easy to manage. If a project will not open, the license may have expired; simply reactivate it by hand. The Hub also lets you install several Unity versions and switch among them, though features from a newer editor may not work in an older one.
 
 <img src="/images/%E5%A6%82%E4%BD%95%E5%88%B6%E9%80%A0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%842D%E6%B8%B8%E6%88%8F%EF%BC%9F/fig-005-eb48f60586.jpg" />
 
 <img src="/images/%E5%A6%82%E4%BD%95%E5%88%B6%E9%80%A0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%842D%E6%B8%B8%E6%88%8F%EF%BC%9F/fig-006-3d0ca4a7aa.png" />
 
-&emsp;&emsp;After installing Unity, you will need another important program: Visual Studio (VS). VS is where you write the code, since a game's features have to be implemented through scripts. Unity scripts can be written in C# or JS; I recommend C# for reasons explained below. Anyone with some experience in Java can pick up C# fairly quickly because the two languages have similar syntax.
+&emsp;&emsp;Once Unity is installed, you need one more important program: Visual Studio (VS). That is where you will write the code, since scripts bring all those fancy game features to life. Unity scripts can use C# or JS; I recommend C#, for reasons I will explain later. If you already know some Java, C# should come fairly quickly because the syntax is similar.
 
-&emsp;&emsp;That completes the engine choice and basic setup. We can move on to development.
+&emsp;&emsp;With the engine chosen and the basic setup complete, we can start developing the game.
 
-# Development process
+# Development Process
 
-&emsp;&emsp;A side-scrolling platformer needs two basic elements: a map system and a character-control system. From there, we can ask what else to add. The game might have a story and tense combat; the answer depends on what kind of game you want to make.
+&emsp;&emsp;A side-scrolling platformer needs two things from the outset: a map system and character controls. From there, the question is what else you want to add. A story? Tense combat? Everything depends on the kind of game you want to make.
 
-&emsp;&emsp;My broad plan was this: after speaking with several NPCs, the protagonist would buy a weapon from a shop and use it to defeat the game's final boss. (You may fairly complain that I have no imagination. What kind of plot is that...?) This plan called for dialogue, shop, item, and combat systems. Once the design established which features we needed, we could start writing code.
+&emsp;&emsp;My rough plan went like this: the protagonist talks to several NPCs, buys a weapon at a shop, then uses it to defeat the final boss. (Yes, you may accuse me of having no imagination. What kind of plot is that...?) Even that simple idea requires dialogue, shop, item, and combat systems. Once the concept told us which features we needed, we could begin coding them.
 
-&emsp;&emsp;There are many ways to implement a feature, but we should try to choose the best one. Object-oriented programming is therefore important in game development. Items that fit into inventory slots, for example, share methods such as retrieving a name or a description of their use. We can define these common methods in an IItem interface. Use interfaces where practical and choose appropriate design patterns.
+&emsp;&emsp;Any feature can be implemented in several ways, but we should aim for the best one. That makes object-oriented programming important in game development. Items placed in inventory slots, for example, share methods for retrieving their names, descriptions, and so on. We can collect those common methods in an IItem interface. Use interfaces whenever they make sense, along with suitable design patterns.
 
-&emsp;&emsp;Next, you need an artist's help. If you cannot draw, Unity's Asset Store has many free resources. Still, it pays to stay on good terms with the talented artists around you. (Collapses.)
+&emsp;&emsp;Then you need art. If you cannot draw, Unity's Asset Store offers plenty of free material. Still, your best move may be to stay on good terms with the talented artists around you. (Collapses.)
 
 <img src="/images/%E5%A6%82%E4%BD%95%E5%88%B6%E9%80%A0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%842D%E6%B8%B8%E6%88%8F%EF%BC%9F/fig-007-26f423df41.png" />
 
-# Technical difficulties
+# Technical Difficulties
 
-&emsp;&emsp;Technical trouble is normal when writing code; there is a reason people say ten minutes of coding means two hours of debugging. What can you do when a script defeats you and no one is available to ask? Baidu can help, but it carries too many ads, and some methods I tested were poor. When I searched for a character-movement script, several examples had serious problems.
+&emsp;&emsp;Running into technical trouble is part of writing code. “Ten minutes coding, two hours debugging” became a saying for a reason. But what do you do when a script has beaten you and there is nobody to ask? Baidu can be useful, though it has too many ads, and some solutions I tried were not very good. I once tested several character-movement scripts I found there, and every one had major problems.
 
-&emsp;&emsp;More importantly, most examples you find while searching online are written in C#. That is why I recommended C# rather than JS as the scripting language above.
+&emsp;&emsp;More importantly, nearly all the examples you find online are written in C#. That is why I recommended it over JS earlier.
 
-&emsp;&emsp;Here is a better website to try, though you can also search Google directly:
+&emsp;&emsp;Here is a better site to try, or you can simply search Google:
 
 - Stack Overflow: https://stackoverflow.com/
 
-&emsp;&emsp;You can also look for answers on YouTube. A few good game-development channels are:
+&emsp;&emsp;YouTube is another place to look for answers. Some good game-development channels include:
 
 - Brackeys (covers a very wide range of topics)
 
@@ -79,11 +79,11 @@ Reviewed by: Yuandao
 
 - Code&nbsp;Monkey (plenty of material on C# programming)
 
-&emsp;&emsp;Telegram has a fairly active Unity technical discussion group where you can ask any question. English only. Telegram link: t.me/unityThreeD
+&emsp;&emsp;There is also a fairly active Unity technical group on Telegram where you can ask anything, though the group is English-only. Telegram link: t.me/unityThreeD
 
 <img src="/images/%E5%A6%82%E4%BD%95%E5%88%B6%E9%80%A0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%842D%E6%B8%B8%E6%88%8F%EF%BC%9F/fig-008-5c411657a1.png" />
 
-&emsp;&emsp;For readers who cannot access sites outside mainland China:
+&emsp;&emsp;For readers unable to access sites outside mainland China:
 
 - Bilibili — M_Studio:
 
@@ -112,4 +112,3 @@ Reviewed by: Yuandao
 - https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/
 
 <img src="/images/%E5%A6%82%E4%BD%95%E5%88%B6%E9%80%A0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%842D%E6%B8%B8%E6%88%8F%EF%BC%9F/fig-009-62fdcab81d.png" />
-

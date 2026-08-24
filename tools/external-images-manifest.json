@@ -413,6 +413,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -427,6 +431,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -443,6 +451,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -457,6 +469,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -473,6 +489,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -487,6 +507,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -503,6 +527,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -517,6 +545,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -533,6 +565,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -547,6 +583,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -563,6 +603,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -577,6 +621,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -593,6 +641,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -607,6 +659,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -623,6 +679,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -637,6 +697,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 5
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 5
         }
       ]
@@ -653,6 +717,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -667,6 +735,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -683,6 +755,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -697,6 +773,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -713,6 +793,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -727,6 +811,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 4
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 4
         }
       ]
@@ -743,6 +831,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -757,6 +849,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -773,6 +869,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -787,6 +887,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -803,6 +907,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -817,6 +925,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -833,6 +945,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -847,6 +963,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -863,6 +983,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -877,6 +1001,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -893,6 +1021,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -907,6 +1039,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -923,6 +1059,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -937,6 +1077,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -953,6 +1097,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -967,6 +1115,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -983,6 +1135,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 25
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 25
         }
       ]
     },
@@ -997,6 +1153,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1013,6 +1173,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1027,6 +1191,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1043,6 +1211,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1057,6 +1229,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1073,6 +1249,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1087,6 +1267,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1103,6 +1287,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1117,6 +1305,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1133,6 +1325,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1147,6 +1343,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1163,6 +1363,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1177,6 +1381,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1193,6 +1401,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1207,6 +1419,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1223,6 +1439,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1237,6 +1457,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1253,6 +1477,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1267,6 +1495,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1283,6 +1515,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1297,6 +1533,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1313,6 +1553,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1327,6 +1571,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1343,6 +1591,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1357,6 +1609,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1373,6 +1629,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1387,6 +1647,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1403,6 +1667,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1417,6 +1685,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1433,6 +1705,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1447,6 +1723,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1463,6 +1743,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1477,6 +1761,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1493,6 +1781,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1507,6 +1799,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1523,6 +1819,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1537,6 +1837,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1553,6 +1857,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1567,6 +1875,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1583,6 +1895,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1597,6 +1913,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1613,6 +1933,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1627,6 +1951,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 4
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 4
         }
       ]
@@ -1643,6 +1971,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 15
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 15
         }
       ]
     },
@@ -1657,6 +1989,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1673,6 +2009,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1687,6 +2027,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1703,6 +2047,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1717,6 +2065,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1733,6 +2085,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1747,6 +2103,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 3
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 3
         }
       ]
@@ -1763,6 +2123,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1777,6 +2141,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1793,6 +2161,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1807,6 +2179,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 3
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 3
         }
       ]
@@ -1823,6 +2199,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1837,6 +2217,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1853,6 +2237,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 1
         }
       ]
     },
@@ -1867,6 +2255,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1883,6 +2275,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1897,6 +2293,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 2
         }
       ]
@@ -1913,6 +2313,10 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
         }
       ]
     },
@@ -1927,6 +2331,10 @@
       "references": [
         {
           "file": "source/_data/apc_news.yml",
+          "count": 1
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
           "count": 1
         }
       ]
@@ -1943,6 +2351,162 @@
         {
           "file": "source/_data/apc_news.yml",
           "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "source_url": "https://i0.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ieddv6f55mj30iw0c642w.jpg",
+      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1ieddv6f55mj30iw0c642w.jpg",
+      "local_path": "source/images/artificial-intelligence-intuitive-introduction/cover-77aa732b51.jpg",
+      "public_path": "/images/artificial-intelligence-intuitive-introduction/cover-77aa732b51.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 172212,
+      "sha256": "195b23226bfef38ca6aa691dacf01889a23ff7a22e1f2d492c145bc46bac434d",
+      "references": [
+        {
+          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
+          "count": 2
+        },
+        {
+          "file": "source/_posts/人工智能(AI) 通俗演义.md",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "source_url": "https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ieddwibiegj30e606a0sw.jpg",
+      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1ieddwibiegj30e606a0sw.jpg",
+      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-001-d592ef6d0a.jpg",
+      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-001-d592ef6d0a.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 16397,
+      "sha256": "d7eead32addc40964d4a1cb4e4f407b2a916cb913a7a2542ac865cf8fc31c6ce",
+      "references": [
+        {
+          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
+          "count": 2
+        },
+        {
+          "file": "source/_posts/人工智能(AI) 通俗演义.md",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "source_url": "https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ieddyj6c0wj30ix070my8.jpg",
+      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1ieddyj6c0wj30ix070my8.jpg",
+      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-002-482596e6e5.jpg",
+      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-002-482596e6e5.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 49810,
+      "sha256": "c33ae72a061cc60649a16232cd65ac11f00972e4903b8c5ad74a58a85fe8a437",
+      "references": [
+        {
+          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
+          "count": 1
+        },
+        {
+          "file": "source/_posts/人工智能(AI) 通俗演义.md",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source_url": "https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iede0dalimj303105caa2.jpg",
+      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1iede0dalimj303105caa2.jpg",
+      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-003-a2937df871.jpg",
+      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-003-a2937df871.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 10600,
+      "sha256": "bc8f48c3edcd735a912e7cbf54e084f0a2deea9212437ae95d34457193fec5da",
+      "references": [
+        {
+          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
+          "count": 1
+        },
+        {
+          "file": "source/_posts/人工智能(AI) 通俗演义.md",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source_url": "https://i0.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iede0rqmecj30b100jgli.jpg",
+      "fetched_url": "https://wx1.sinaimg.cn/large/006UcwnJgy1iede0rqmecj30b100jgli.jpg",
+      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-004-2a60904c54.jpg",
+      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-004-2a60904c54.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 6681,
+      "sha256": "8dbd1166c7a867426fd93e4d1d55008dd2980229284e0a41861c96f987a2dc59",
+      "references": [
+        {
+          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
+          "count": 1
+        },
+        {
+          "file": "source/_posts/人工智能(AI) 通俗演义.md",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source_url": "https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iede1k226yj30az03bmxd.jpg",
+      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1iede1k226yj30az03bmxd.jpg",
+      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-005-6d1641e5ab.jpg",
+      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-005-6d1641e5ab.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 18076,
+      "sha256": "3842dddc09414db7483b1d4250906ff1ea66891ef99b99fbba43eb1e26eff17b",
+      "references": [
+        {
+          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
+          "count": 1
+        },
+        {
+          "file": "source/_posts/人工智能(AI) 通俗演义.md",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source_url": "https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iede1zt4nxj3079028749.jpg",
+      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1iede1zt4nxj3079028749.jpg",
+      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-006-fbc64a3d65.jpg",
+      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-006-fbc64a3d65.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 9444,
+      "sha256": "eb2e4dde5038803fc902bf431227b441c7fb0c38edcbe64cd80aac9b1762dd88",
+      "references": [
+        {
+          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
+          "count": 1
+        },
+        {
+          "file": "source/_posts/人工智能(AI) 通俗演义.md",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source_url": "https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iede2aw034j30u009emyv.jpg",
+      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1iede2aw034j30u009emyv.jpg",
+      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-007-cf5411035b.jpg",
+      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-007-cf5411035b.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 73372,
+      "sha256": "9789224d6b9992113d16769083d20cc3f0113b5b00612ca15084e4c18cb384b4",
+      "references": [
+        {
+          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
+          "count": 1
+        },
+        {
+          "file": "source/_posts/人工智能(AI) 通俗演义.md",
+          "count": 1
         }
       ]
     },
@@ -3272,158 +3836,6 @@
         },
         {
           "file": "source/_posts/五分钟了解免疫｜非特异性免疫之吞噬细胞.md",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "source_url": "https://i0.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ieddv6f55mj30iw0c642w.jpg",
-      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1ieddv6f55mj30iw0c642w.jpg",
-      "local_path": "source/images/artificial-intelligence-intuitive-introduction/cover-77aa732b51.jpg",
-      "public_path": "/images/artificial-intelligence-intuitive-introduction/cover-77aa732b51.jpg",
-      "mime_type": "image/jpeg",
-      "bytes": 172212,
-      "sha256": "195b23226bfef38ca6aa691dacf01889a23ff7a22e1f2d492c145bc46bac434d",
-      "references": [
-        {
-          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
-          "count": 2
-        },
-        {
-          "file": "source/_posts/人工智能(AI) 通俗演义.md",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "source_url": "https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ieddwibiegj30e606a0sw.jpg",
-      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1ieddwibiegj30e606a0sw.jpg",
-      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-001-d592ef6d0a.jpg",
-      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-001-d592ef6d0a.jpg",
-      "mime_type": "image/jpeg",
-      "bytes": 16397,
-      "sha256": "d7eead32addc40964d4a1cb4e4f407b2a916cb913a7a2542ac865cf8fc31c6ce",
-      "references": [
-        {
-          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
-          "count": 2
-        },
-        {
-          "file": "source/_posts/人工智能(AI) 通俗演义.md",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "source_url": "https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1ieddyj6c0wj30ix070my8.jpg",
-      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1ieddyj6c0wj30ix070my8.jpg",
-      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-002-482596e6e5.jpg",
-      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-002-482596e6e5.jpg",
-      "mime_type": "image/jpeg",
-      "bytes": 49810,
-      "sha256": "c33ae72a061cc60649a16232cd65ac11f00972e4903b8c5ad74a58a85fe8a437",
-      "references": [
-        {
-          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
-          "count": 1
-        },
-        {
-          "file": "source/_posts/人工智能(AI) 通俗演义.md",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "source_url": "https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iede0dalimj303105caa2.jpg",
-      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1iede0dalimj303105caa2.jpg",
-      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-003-a2937df871.jpg",
-      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-003-a2937df871.jpg",
-      "mime_type": "image/jpeg",
-      "bytes": 10600,
-      "sha256": "bc8f48c3edcd735a912e7cbf54e084f0a2deea9212437ae95d34457193fec5da",
-      "references": [
-        {
-          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
-          "count": 1
-        },
-        {
-          "file": "source/_posts/人工智能(AI) 通俗演义.md",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "source_url": "https://i0.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iede0rqmecj30b100jgli.jpg",
-      "fetched_url": "https://wx1.sinaimg.cn/large/006UcwnJgy1iede0rqmecj30b100jgli.jpg",
-      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-004-2a60904c54.jpg",
-      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-004-2a60904c54.jpg",
-      "mime_type": "image/jpeg",
-      "bytes": 6681,
-      "sha256": "8dbd1166c7a867426fd93e4d1d55008dd2980229284e0a41861c96f987a2dc59",
-      "references": [
-        {
-          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
-          "count": 1
-        },
-        {
-          "file": "source/_posts/人工智能(AI) 通俗演义.md",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "source_url": "https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iede1k226yj30az03bmxd.jpg",
-      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1iede1k226yj30az03bmxd.jpg",
-      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-005-6d1641e5ab.jpg",
-      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-005-6d1641e5ab.jpg",
-      "mime_type": "image/jpeg",
-      "bytes": 18076,
-      "sha256": "3842dddc09414db7483b1d4250906ff1ea66891ef99b99fbba43eb1e26eff17b",
-      "references": [
-        {
-          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
-          "count": 1
-        },
-        {
-          "file": "source/_posts/人工智能(AI) 通俗演义.md",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "source_url": "https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iede1zt4nxj3079028749.jpg",
-      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1iede1zt4nxj3079028749.jpg",
-      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-006-fbc64a3d65.jpg",
-      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-006-fbc64a3d65.jpg",
-      "mime_type": "image/jpeg",
-      "bytes": 9444,
-      "sha256": "eb2e4dde5038803fc902bf431227b441c7fb0c38edcbe64cd80aac9b1762dd88",
-      "references": [
-        {
-          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
-          "count": 1
-        },
-        {
-          "file": "source/_posts/人工智能(AI) 通俗演义.md",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "source_url": "https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iede2aw034j30u009emyv.jpg",
-      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1iede2aw034j30u009emyv.jpg",
-      "local_path": "source/images/artificial-intelligence-intuitive-introduction/fig-007-cf5411035b.jpg",
-      "public_path": "/images/artificial-intelligence-intuitive-introduction/fig-007-cf5411035b.jpg",
-      "mime_type": "image/jpeg",
-      "bytes": 73372,
-      "sha256": "9789224d6b9992113d16769083d20cc3f0113b5b00612ca15084e4c18cb384b4",
-      "references": [
-        {
-          "file": "source/_posts/en/artificial-intelligence-an-intuitive-introduction.md",
-          "count": 1
-        },
-        {
-          "file": "source/_posts/人工智能(AI) 通俗演义.md",
           "count": 1
         }
       ]
@@ -11078,6 +11490,7 @@
     "source/images/2022诺贝尔生理或医学奖成果介绍",
     "source/images/2025世界读书日·科普书单",
     "source/images/apc-news",
+    "source/images/artificial-intelligence-intuitive-introduction",
     "source/images/GPS 用什么魔法让路痴不再迷路？",
     "source/images/RAG的最新方案——HyKGE",
     "source/images/SpaceX 火箭发射首个私人月球着陆器",
@@ -11091,7 +11504,6 @@
     "source/images/五分钟了解免疫｜抗体如何以变应变？",
     "source/images/五分钟了解免疫｜补体系统",
     "source/images/五分钟了解免疫｜非特异性免疫之吞噬细胞",
-    "source/images/artificial-intelligence-intuitive-introduction",
     "source/images/人类简史·认知革命",
     "source/images/人类首次探测到了火星震",
     "source/images/什么是损伤修复？",

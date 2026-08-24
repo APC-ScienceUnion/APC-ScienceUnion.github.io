@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Cambrian Explosion and Representative Early Life
+title: The Cambrian Explosion and Early Life
 date: '2021-08-20 17:15:34'
 lang: en
 translation_key: "生命大爆发和早期的代表性生物"
@@ -14,19 +14,19 @@ cover: /images/%E7%94%9F%E5%91%BD%E5%A4%A7%E7%88%86%E5%8F%91%E5%92%8C%E6%97%A9%E
 copyright_author: '约翰史密斯'
 ---
 
-# The Cambrian Explosion and Representative Early Life
+# The Cambrian Explosion and Early Life
 > Author: John Smith
 Reviewed by: Dongda
 
-# A Few Words Before We Begin
+# Before we begin
 
-<div>&emsp;&emsp;As its name suggests, paleontology studies life from its earliest origins through to the recent past. Geologists have divided Earth's history into many units according to the order of rock strata and the fossils they contain. Much as biology classifies species into kingdom, phylum, class, order, family, genus, and species, the geologic time scale is divided into eons, eras, periods, epochs, ages, and chrons. Every smaller unit belongs within a larger one. The relationship is like that of the Zhìdé era name (583–587), which belongs to the Chen dynasty, itself part of the Northern and Southern Dynasties. Broadly speaking, units larger than a period span too much time, while smaller units are too fine-grained for our purposes. Familiar names such as the Jurassic, Triassic, and Cretaceous are all periods.</div>
+<div>&emsp;&emsp;Paleontology, as its name suggests, studies life from its earliest origins to the recent past. Geologists divide Earth's history into units based on the sequence of rock layers and the fossils found in them. Just as biology classifies organisms by kingdom, phylum, class, order, family, genus, and species, the geologic time scale is divided into eons, eras, periods, epochs, ages, and chrons. Each smaller unit belongs to a larger one. The relationship resembles that of the Zhìdé era name (583–587), which belongs to the Chen dynasty, itself part of the Northern and Southern Dynasties. Units larger than a period cover too much time for our purposes, while smaller units are more detailed than we need. The familiar Jurassic, Triassic, and Cretaceous are all periods.</div>
 
-<div>&emsp;&emsp;The word “Cambrian” originally came from studies of a rock stratum in Cambria, Wales. A Japanese scholar later represented its sounds with the Chinese characters 寒 (kan), 武 (bu), and 纪 (ki)—kanbuki—and the term then entered Chinese. Unlike the names of other periods that were translated according to their meaning—for example, the Cretaceous was named after accumulations of chalk—this term is purely phonetic and does not derive its meaning from the Chinese characters.</div>
+<div>&emsp;&emsp;The name “Cambrian” came from a rock stratum studied in Cambria, Wales. A Japanese scholar later rendered the sound with the Chinese characters 寒 (kan), 武 (bu), and 纪 (ki), forming kanbuki, and the term subsequently entered Chinese. Other period names were translated by meaning; the Cretaceous, for example, was named for deposits of chalk. The Chinese name for the Cambrian is purely phonetic, and the individual characters do not define the period.</div>
 
-# Main Text
+# The Cambrian explosion
 
-<div>&emsp;&emsp;As the title suggests, we focus on the Cambrian because the period is distinguished by an explosion of life. Before the Cambrian, life consisted mainly of algae and bacteria, along with a very small number of invertebrates. We can study this early life only through the relatively few surviving fossils and microfossils (Figures 1 and 2).</div>
+<div>&emsp;&emsp;The Cambrian stands out for its explosion of life. Before the period began, life consisted mainly of algae and bacteria, with only a very small number of invertebrates. Our knowledge of these earlier organisms comes from the relatively few fossils and microfossils that survive (Figures 1 and 2).</div>
 
 <img src="/images/%E7%94%9F%E5%91%BD%E5%A4%A7%E7%88%86%E5%8F%91%E5%92%8C%E6%97%A9%E6%9C%9F%E7%9A%84%E4%BB%A3%E8%A1%A8%E6%80%A7%E7%94%9F%E7%89%A9/fig-001-acf004cac7.png" width=400/>
 <center><font size=2px color=grey>Figure 1: Graptolite</font></center>
@@ -34,15 +34,15 @@ Reviewed by: Dongda
 <img src="/images/%E7%94%9F%E5%91%BD%E5%A4%A7%E7%88%86%E5%8F%91%E5%92%8C%E6%97%A9%E6%9C%9F%E7%9A%84%E4%BB%A3%E8%A1%A8%E6%80%A7%E7%94%9F%E7%89%A9/fig-002-20b16664a7.png" width=400/>
 <center><font size=2px color=grey>Figure 2: Algae</font></center>
 
-<div>&emsp;&emsp;During the Cambrian, large numbers of marine invertebrates appeared, with levels of complexity far beyond those of earlier organisms. Consider one of our old friends: the trilobite.</div>
-<div>&emsp;&emsp;Trilobites are probably among the best-known and most ancient forms of life. As arthropods, their bodies were covered by segmented, calcified exoskeletons, giving them an unusually high rate of fossilization. Trilobites are among the most frequently unearthed fossils from this period. On the one hand, however, this may be because their calcified shells helped them fossilize. Algae clearly do not leave fossils as readily as trilobites.</div>
+<div>&emsp;&emsp;Large numbers of marine invertebrates appeared during the Cambrian, many far more complex than earlier organisms. One familiar example is the trilobite.</div>
+<div>&emsp;&emsp;Trilobites are among the best-known ancient organisms. These arthropods had segmented, calcified exoskeletons, so they fossilized unusually well and are among the most common fossils recovered from the period. That abundance may tell us as much about preservation as it does about the Cambrian ecosystem: calcified shells leave fossils much more readily than algae do.</div>
 
-<div>&emsp;&emsp;When we study the fossil of an organism, what do we hope to learn?</div>
-<div>&emsp;&emsp;First, we want to understand what makes it distinctive. Might it actually be an organism we already know? How should it be classified? How did it behave when it was alive? What environment did it inhabit? Did it live in symbiosis with other organisms? What did it eat? To begin answering these questions, let us first look at a classic arthropod.</div>
+<div>&emsp;&emsp;What can we hope to learn from an organism's fossil?</div>
+<div>&emsp;&emsp;We first look for its distinctive features. Is it actually an organism we already recognize? How should we classify it? How did it live, what environment did it occupy, did it have symbiotic partners, and what did it eat? We can begin answering those questions by examining a classic arthropod.</div>
 
 <img src="/images/%E7%94%9F%E5%91%BD%E5%A4%A7%E7%88%86%E5%8F%91%E5%92%8C%E6%97%A9%E6%9C%9F%E7%9A%84%E4%BB%A3%E8%A1%A8%E6%80%A7%E7%94%9F%E7%89%A9/fig-003-fea6586125.png"/>
 
-<div>&emsp;&emsp;Its body is divided into a head, thorax, and abdomen; it has many segments, paired symmetrical appendages, and a hard outer covering.</div>
+<div>&emsp;&emsp;Its body has a head, thorax, and abdomen, along with numerous segments, paired symmetrical appendages, and a hard outer covering.</div>
 
 <img src="/images/%E7%94%9F%E5%91%BD%E5%A4%A7%E7%88%86%E5%8F%91%E5%92%8C%E6%97%A9%E6%9C%9F%E7%9A%84%E4%BB%A3%E8%A1%A8%E6%80%A7%E7%94%9F%E7%89%A9/fig-004-80f92ed95a.png"/>
 
@@ -50,11 +50,11 @@ Reviewed by: Dongda
 - Body segments √
 - Symmetry √
 
-<div>&emsp;&emsp;We clearly cannot reconstruct the hard shell of an organism from hundreds of millions of years ago, but several approaches allow us to infer what it was like. Start with the fact that we have its fossil. Hard bones and exoskeletons fossilize more readily, while soft tissue almost entirely disappears. This also explains why mollusk fossils are rare. The survival of large numbers of fossils like these to the present day further suggests that the structures were skeletal. Because they do not look like endoskeletons, we can still conclude that they were exoskeletons.</div>
+<div>&emsp;&emsp;We cannot directly reconstruct the hard covering of an organism that lived hundreds of millions of years ago, but the fossil itself provides several clues. Bones and exoskeletons fossilize more readily than soft tissues, which usually disappear almost completely. This also helps explain why mollusk fossils are rare. The sheer number of specimens that have survived suggests that the preserved structures were skeletal, and their outward form identifies them as exoskeletons rather than endoskeletons.</div>
 
-<div>&emsp;&emsp;Once we have concluded that the organism was an arthropod, the stratum in which its fossils were excavated and the other fossils found in that stratum allow us to infer that it was a marine arthropod. Because it had no obvious swimming or buoyancy organs, we believe it lived on the seafloor.</div>
+<div>&emsp;&emsp;Once we identify the organism as an arthropod, the layer that contained it and the other fossils found there indicate that it was marine. With no obvious structures for swimming or maintaining buoyancy, it most likely lived on the seafloor.</div>
 
-<div>&emsp;&emsp;What, then, were its habits? Was it a predator, or did it merely filter nutrients from sand and seawater? At this point, we can examine other fossils that have been discovered:</div>
+<div>&emsp;&emsp;How did it feed? Was it a predator, or did it filter nutrients from sand and seawater? Other fossils offer some evidence:</div>
 
 <img src="/images/%E7%94%9F%E5%91%BD%E5%A4%A7%E7%88%86%E5%8F%91%E5%92%8C%E6%97%A9%E6%9C%9F%E7%9A%84%E4%BB%A3%E8%A1%A8%E6%80%A7%E7%94%9F%E7%89%A9/fig-005-1a5c475ea4.png"/>
 <center><font size=2px color=grey>Figure 3</font></center>
@@ -62,11 +62,10 @@ Reviewed by: Dongda
 <img src="/images/%E7%94%9F%E5%91%BD%E5%A4%A7%E7%88%86%E5%8F%91%E5%92%8C%E6%97%A9%E6%9C%9F%E7%9A%84%E4%BB%A3%E8%A1%A8%E6%80%A7%E7%94%9F%E7%89%A9/fig-006-bfc021c5ca.png"/>
 <center><font size=2px color=grey>Figure 4</font></center>
 
-<div>&emsp;&emsp;In Figure 3, we see a fossil of a trilobite attached to another organism. The enlarged area of the pattern shows a clear boundary, which we can take to indicate that they were two separate organisms. Now consider the fossil in Figure 4. Within the impression left by the larger trilobite, we can clearly see the trace of a smaller organism. Both specimens suggest that trilobites—or at least some species of trilobite—were predators.</div>
+<div>&emsp;&emsp;Figure 3 shows a trilobite fossil attached to another organism. The enlarged area has a clear boundary, indicating that the two impressions came from separate organisms. In Figure 4, the impression of a smaller organism is plainly visible within that of the larger trilobite. Together, the specimens suggest that trilobites, or at least some trilobite species, were predators.</div>
 
-<div>&emsp;&emsp;These observations represent only a preliminary analysis of the fossils. A competent paleontologist studies different kinds of fossils from an organism to build a complete picture of the species. In the vast flow of history, every living thing will eventually become part of the past. Studying that past can therefore guide us toward a better future.</div>
+<div>&emsp;&emsp;This is only a preliminary reading of the evidence. A paleontologist examines many kinds of fossils from the same organism to develop a fuller picture of the species. Every living thing eventually becomes part of the past, and studying that past can help us understand what lies ahead.</div>
 
-# Image Sources
+# Image sources
 https://www.fossilguy.com/species/invert/trilo/utah/agnostid_trilobite_fossil3b.jpg
 http://www.evolution-biologique.org/echelle-du-temps/echelle-des-temps-geologiques/ordovicien/la-locomotion-des-trilobites.html
-

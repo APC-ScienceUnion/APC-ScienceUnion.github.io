@@ -17,38 +17,38 @@ cover: /images/%E4%BB%80%E4%B9%88%E6%98%AF%E6%8D%9F%E4%BC%A4%E4%BF%AE%E5%A4%8D%E
 > Author: 绿水青山
 > Reviewers: 食野; 未名
 
-&emsp;&emsp;Throughout our lives, we are inevitably affected by things in the surrounding environment. The body naturally responds by first trying to adapt. If a stimulus is too strong, however, the body may be injured. Today we will look at how the body repairs that damage.
+&emsp;&emsp;Throughout our lives, we are constantly exposed to influences from the surrounding environment. The body first tries to adapt, but an excessively strong stimulus can cause injury. This article looks at how the body repairs that damage.
 
-&emsp;&emsp;An injury is the destruction or loss of some of the body's cells and tissues; repair is the process of mending and restoring what is missing. Repair generally takes one of two forms: regeneration or fibrous repair. In regeneration, cells of the same type divide at the injured site and restore the tissue's original function. This form of repair is usually more complete and can restore all function. Fibrous repair uses fibrous connective tissue. It produces a scar and does not completely restore function.
+&emsp;&emsp;An injury is the destruction or loss of some of the body's cells and tissues. Repair is the process of replacing and restoring what has been lost. It generally takes one of two forms: regeneration or fibrous repair. During regeneration, cells of the same type divide at the injured site to restore the tissue's original function. This is usually the more complete form of repair and may restore function fully. In fibrous repair, fibrous connective tissue replaces the damaged tissue, leaving a scar and only partially restoring function.
 
-&emsp;&emsp;The body's regenerative capacity has several general characteristics. Tissues that are frequently injured or continually renewed regenerate more readily than other tissues, and less differentiated cells regenerate more readily than highly differentiated ones. Regenerative capacity also varies with an organism's evolutionary path and species. Salamanders, geckos, many plants, and other organisms have especially strong regenerative abilities.
+&emsp;&emsp;The body's capacity for regeneration follows several broad patterns. Tissues that are frequently injured or continually renewed regenerate more readily than other tissues, and less differentiated cells regenerate more readily than highly differentiated cells. Regenerative capacity also varies among species and with evolutionary history. Salamanders, geckos, and many plants, for example, have especially strong regenerative abilities.
 
-&emsp;&emsp;Tissue regeneration can be broadly divided into complete and incomplete regeneration. In complete regeneration, the repaired tissue functions much as it did before. In incomplete regeneration, fibrous connective tissue replaces the original tissue. The cells used for repair differ from those in the original tissue, some function is lost, and a scar forms.
+&emsp;&emsp;Tissue regeneration can be broadly classified as complete or incomplete. After complete regeneration, the repaired tissue functions much as it did before the injury. In incomplete regeneration, fibrous connective tissue replaces the original tissue. Because the repair uses a different cell type, some function is lost and a scar forms.
 
-&emsp;&emsp;Different tissues and different parts of the body generally regenerate in different ways after injury. Let us consider several examples.
+&emsp;&emsp;Different tissues and parts of the body regenerate differently after injury. The following are several examples.
 
 # Epithelial tissue
 
-&emsp;&emsp;The cells in epithelial tissue are labile cells. Because they divide frequently, they have a strong capacity for regeneration. Their ability to regenerate also depends on surrounding connective tissue and other factors. If the connective tissue remains intact, complete regeneration is likely and the original function can be restored relatively well. If that connective tissue is destroyed and can no longer provide its supporting framework, the body instead undertakes fibrous repair. Fibrous repair is often incomplete and cannot restore the original function.
+&emsp;&emsp;Epithelial cells are labile cells: they divide frequently and therefore regenerate readily. Their regenerative capacity also depends on the surrounding connective tissue. If that tissue remains intact, complete regeneration is likely and the epithelium can recover its original function. If the connective tissue is destroyed and can no longer provide a supporting framework, the body instead relies on fibrous repair. That repair is generally incomplete and does not restore the tissue's original function.
 
 # Fibroblasts
 
-&emsp;&emsp;Connective tissue repair relies mainly on fibroblasts. When tissue is injured, these cells are activated and increase in number. They begin producing large amounts of collagen and other "supporting materials," gradually filling the damaged area. The newly formed structures then stabilize, cellular activity declines, and relatively dense fibrous tissue develops to complete the repair.
+&emsp;&emsp;Connective tissue repair depends mainly on fibroblasts. After an injury, these cells become active and proliferate. They produce large amounts of collagen and other “supporting materials,” gradually filling the damaged area. As the new tissue stabilizes, cellular activity declines and the tissue becomes denser, completing the repair.
 
 # Blood vessels
 
-&emsp;&emsp;Blood-vessel regeneration can be divided into the regeneration of small and large vessels. Small vessels such as capillaries generally regenerate by sprouting and joining surrounding vessels to form a network, and the repair is usually complete. Large vessels have more difficulty regenerating completely. Severe damage may require surgical suturing before their function can be restored.
+&emsp;&emsp;Small and large blood vessels regenerate differently. Small vessels such as capillaries usually form sprouts that join nearby vessels into a network, resulting in complete repair. Large vessels are much less likely to regenerate fully. Severe damage may require surgical suturing to restore their function.
 
-&emsp;&emsp;Now that we have a general picture of how several tissues regenerate, let us examine what happens after an ordinary injury, using a common wound as an example.
+&emsp;&emsp;With that overview of tissue regeneration, we can now follow the repair of an ordinary wound.
 
 <img src="/images/%E4%BB%80%E4%B9%88%E6%98%AF%E6%8D%9F%E4%BC%A4%E4%BF%AE%E5%A4%8D%EF%BC%9F/fig-001-279f713d84.jpg" />
 
-&emsp;&emsp;Immediately after tissue is damaged, severed blood vessels bleed. The blood mixes with exudate and detached epithelial cells around the wound and coagulates into a scab. The scab adheres to the wound surface, so forcibly tearing it off may enlarge the wound, expose it to the air again, and increase the risk of infection.
+&emsp;&emsp;Immediately after tissue is damaged, severed blood vessels begin to bleed. The blood mixes with exudate and shed epithelial cells around the wound, then coagulates to form a scab. Because the scab adheres to the wound surface, pulling it off can enlarge the wound, expose it to the air again, and increase the risk of infection.
 
 <img src="/images/%E4%BB%80%E4%B9%88%E6%98%AF%E6%8D%9F%E4%BC%A4%E4%BF%AE%E5%A4%8D%EF%BC%9F/fig-002-31be7f7481.jpg" />
 
-&emsp;&emsp;Granulation tissue then begins to fill and surround the wound. This tissue is rich in newly formed capillaries and immune cells, which help remove pathogens and suppress infection. Because granulation tissue contains so many capillaries, the wound bleeds very easily at this stage.
+&emsp;&emsp;Granulation tissue then begins to fill and cover the wound. Rich in newly formed capillaries and immune cells, it helps clear pathogens and control infection. The abundance of capillaries also means that the wound bleeds very easily at this stage.
 
 <img src="/images/%E4%BB%80%E4%B9%88%E6%98%AF%E6%8D%9F%E4%BC%A4%E4%BF%AE%E5%A4%8D%EF%BC%9F/fig-003-cf1873c6a1.jpg" />
 
-&emsp;&emsp;In the next stage, fibroblasts inside the wound begin forming scar tissue, which contracts and reduces the wound. Finally, epithelial cells cover the tissue again, completing the repair process.
+&emsp;&emsp;During the next stage, fibroblasts within the wound begin to form scar tissue. The scar contracts, drawing the wound closed. Finally, epithelial cells cover the tissue again and complete the repair process.

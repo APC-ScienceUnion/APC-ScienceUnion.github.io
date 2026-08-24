@@ -6,12 +6,12 @@
 
 const moment = require('moment')
 
-hexo.extend.generator.register('apc-news', function (locals) {
-  const all = (locals.data.apc_news || []).slice().sort(function (a, b) {
+function buildRoutes (items, english) {
+  const all = (items || []).slice().sort(function (a, b) {
     return new Date(b.start) - new Date(a.start)
   })
 
-  if (!all.length) return
+  if (!all.length) return []
 
   const byYear = {}
   all.forEach(function (item) {
@@ -23,15 +23,19 @@ hexo.extend.generator.register('apc-news', function (locals) {
   const years = Object.keys(byYear).sort(function (a, b) { return b - a })
   const latestYear = years[0]
   const routes = []
+  const basePath = english ? 'en/apc-news' : 'apc-news'
 
   years.forEach(function (year, idx) {
     const yearNum = +year
     routes.push({
-      path: year === latestYear ? 'apc-news/index.html' : `apc-news/${year}/index.html`,
+      path: year === latestYear ? `${basePath}/index.html` : `${basePath}/${year}/index.html`,
       layout: ['page'],
       data: {
         type: 'apc-news',
-        title: '联萌新闻',
+        title: english ? 'APC News' : '联萌新闻',
+        lang: english ? 'en' : 'zh-CN',
+        aside: true,
+        __apcNews: true,
         date: new Date(`${year}-06-09`),
         posts: byYear[year],
         apc_news_year: yearNum,
@@ -43,4 +47,11 @@ hexo.extend.generator.register('apc-news', function (locals) {
   })
 
   return routes
+}
+
+hexo.extend.generator.register('apc-news', function (locals) {
+  return [].concat(
+    buildRoutes(locals.data.apc_news, false),
+    buildRoutes(locals.data.apc_news_en, true)
+  )
 })

@@ -126,6 +126,36 @@ function pairedPostInfo(page) {
 
   const currentPath = cleanPublicPath(page.path);
 
+  const staticPair = [
+    { zhPath: '/about/', enPath: '/en/about/' }
+  ].find(pair => pair.zhPath === currentPath || pair.enPath === currentPath);
+
+  if (staticPair) {
+    return {
+      language: english ? 'en' : 'zh-CN',
+      targetLanguage: english ? 'zh-CN' : 'en',
+      switchPath: english ? staticPair.zhPath : staticPair.enPath,
+      zhPath: staticPair.zhPath,
+      enPath: staticPair.enPath,
+      paired: true
+    };
+  }
+
+  if (/^\/(?:en\/)?apc-news(?:\/\d{4})?\/$/u.test(currentPath)) {
+    const zhPath = currentPath.replace(/^\/en(?=\/)/u, '');
+    const enPath = currentPath.startsWith('/en/')
+      ? currentPath
+      : `/en${currentPath}`;
+    return {
+      language: english ? 'en' : 'zh-CN',
+      targetLanguage: english ? 'zh-CN' : 'en',
+      switchPath: english ? zhPath : enPath,
+      zhPath,
+      enPath,
+      paired: true
+    };
+  }
+
   if (page.__englishCategories || (!english && currentPath === '/categories/')) {
     return {
       language: english ? 'en' : 'zh-CN',

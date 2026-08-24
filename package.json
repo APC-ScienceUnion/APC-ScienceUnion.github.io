@@ -20,7 +20,7 @@
     "homepage:check-public": "node tests/test_home_category_sort.js",
     "bilingual:fingerprints:update": "node tools/translation_source_fingerprint.js --write",
     "bilingual:fingerprints:check": "node tools/translation_source_fingerprint.js --check",
-    "bilingual:check": "npm run bilingual:fingerprints:check && node tests/test_bilingual_content.js",
+    "bilingual:check": "npm run bilingual:fingerprints:check && node tests/test_bilingual_content.js && node tests/test_bilingual_pages.js",
     "bilingual:check-progress": "node tests/test_bilingual_content.js --allow-incomplete",
     "bilingual:check-public": "node tests/test_bilingual_site.js",
     "build": "hexo generate",

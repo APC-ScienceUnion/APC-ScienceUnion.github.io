@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Rigorous Introduction to Hilbert's Tenth Problem (IV): Basic Concepts and Proof Framework"
+title: "Hilbert's Tenth Problem, Part IV: Basic Concepts and Proof Strategy"
 date: '2025-09-02 12:23:00'
 lang: en
 translation_key: "Hilbert第十问题的硬科普（四）：基本概念、证明框架"
@@ -17,7 +17,7 @@ copyright_author: 'silverxz'
 > Author: silverxz
 Proofreader: Shiguang
 
-&emsp;&emsp;We now turn to the proof itself. This is not the original proof, but Matiyasevich's greatly simplified version from his book *Hilbert's Tenth Problem*, so its route differs somewhat from the history described earlier. We will simplify parts of the argument further and skip details that are laborious without adding new ideas. The exposition often works backward: it starts from a result, asks what tools are needed to prove it, and then supplies those tools one by one. I will also use ordinary language to give an intuitive account of the proof and explain its motivation. That approach is better suited to a popular introduction.
+&emsp;&emsp;We now turn to the proof itself. This is not the original proof, but Matiyasevich's greatly simplified version from his book *Hilbert's Tenth Problem*, so its approach differs somewhat from the historical route described earlier. We will simplify parts of the argument further and skip details that are laborious but add no new ideas. The exposition often works backward: it starts from a result, asks what tools are needed to prove it, and then supplies those tools one by one. I will also use ordinary language to build an intuitive picture of the proof and explain its motivation. That approach is better suited to a popular introduction.
 
 # What is Hilbert's Tenth Problem?
 
@@ -25,9 +25,9 @@ Proofreader: Shiguang
 
 &emsp;&emsp;A Diophantine equation is a multivariable polynomial equation with integer coefficients, written as <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E3%80%81%E8%AF%81%E6%98%8E%E6%A1%86%E6%9E%B6/fig-002-09633b24f4.png" alt="" />. When its variables are known or irrelevant to the discussion, we abbreviate it as D.
 
-&emsp;&emsp;We want to know whether this equation has an integer solution. For a given D, the yes-or-no question is an individual instance, whose information is completely determined by the polynomial D itself.
+&emsp;&emsp;We want to know whether this equation has an integer solution. For a given D, that yes-or-no question is an individual instance, completely determined by the polynomial D itself.
 
-&emsp;&emsp;Every Diophantine equation determines one such instance. Taken together, these instances form a decision problem: does an algorithm—a Turing machine M—exist such that, for every Diophantine equation D, M gives the correct answer to the corresponding instance, namely whether D has an integer solution?
+&emsp;&emsp;Every Diophantine equation determines one such instance. Taken together, these instances form a decision problem: does there exist an algorithm—a Turing machine M—that, for every Diophantine equation D, correctly determines whether D has an integer solution?
 
 &emsp;&emsp;This is Hilbert's Tenth Problem. Our goal is to prove that no such algorithm exists.
 
@@ -35,11 +35,11 @@ Proofreader: Shiguang
 
 > MRDP theorem: the Diophantine sets are exactly the recursively enumerable sets.
 
-&emsp;&emsp;As is well known—if it is not, there is a short discussion of recursive sets below that you can try to follow—some recursively enumerable sets are undecidable. The MRDP theorem then gives undecidable Diophantine sets, hence families of Diophantine equations for which the existence of integer solutions is undecidable. If solvability cannot be decided even for one such family, it certainly cannot be decided for all Diophantine equations. Hilbert's Tenth Problem is therefore unsolvable.
+&emsp;&emsp;As is well known—and if it is not, there is a short discussion of recursive sets below that you can try to follow—some recursively enumerable sets are undecidable. The MRDP theorem then gives us undecidable Diophantine sets, and hence families of Diophantine equations for which the existence of integer solutions is undecidable. If solvability cannot be decided even for one such family, it certainly cannot be decided for all Diophantine equations. Hilbert's Tenth Problem is therefore unsolvable.
 
-&emsp;&emsp;This article first presents some elementary properties of Diophantine equations and explains the relevant concepts in more detail. The next article will prove the MRDP theorem by using Diophantine relations to simulate the operation of a Turing machine. To keep that article to a reasonable length, however, we will have to assume that “exponentiation is Diophantine.” A proof may appear in the article after that—or it may never materialize. The plan, then, is to finish the proof of Hilbert's Tenth Problem over the next two or three articles. Let us begin.
+&emsp;&emsp;This article first presents some elementary properties of Diophantine equations and explains the relevant concepts in more detail. The next article will prove the MRDP theorem by using Diophantine relations to simulate a Turing machine's operation. To keep that article to a reasonable length, however, we will have to assume that “exponentiation is Diophantine.” A proof may appear in the article after that—or it may never materialize. The plan, then, is to finish the proof of Hilbert's Tenth Problem over the next two or three articles. Let us begin.
 
-# Two important observations: systems of equations and natural-number solutions
+# Two Important Observations: Systems of Equations and Natural-Number Solutions
 
 &emsp;&emsp;The first important observation is that solvability of a system of Diophantine equations is equivalent to solvability of a single Diophantine equation.
 
@@ -47,7 +47,7 @@ Proofreader: Shiguang
 
 <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E3%80%81%E8%AF%81%E6%98%8E%E6%A1%86%E6%9E%B6/fig-004-fdfbc2441b.png" alt="" />
 
-&emsp;&emsp;Expanding the left-hand side above plainly produces another multivariable polynomial with integer coefficients, so the result is still a Diophantine equation. This observation lets us safely “stack” Diophantine equations into systems: in the end, they can always be combined into one.
+&emsp;&emsp;Expanding the left-hand side above plainly produces another multivariable polynomial with integer coefficients, so the result is still a Diophantine equation. This observation lets us safely “stack” Diophantine equations into systems: in the end, we can always mold them into a single equation.
 
 &emsp;&emsp;The second important observation is that **deciding whether an integer solution exists is equivalent to deciding whether a natural-number solution exists**. (Here, natural numbers include 0.)
 
@@ -125,7 +125,7 @@ Proofreader: Shiguang
 
 &emsp;&emsp;We will use two kinds of encoding: encoding in a general, unspecified sense, and particular encoding schemes.
 
-&emsp;&emsp;When stating Hilbert's Tenth Problem, for example, we take a Diophantine equation D as input to a Turing machine. D must therefore be encoded in a form that the machine can receive. Asking whether the set of all solvable Diophantine equations is recursive likewise requires encoding each equation as a natural number. This is encoding in the general sense: we have not specified how it works. Perhaps the coefficient and degree of every term are entered in some format; perhaps something else is done. Nothing has been fixed.
+&emsp;&emsp;When stating Hilbert's Tenth Problem, for example, we take a Diophantine equation D as input to a Turing machine. D must therefore be encoded in a form that the machine can receive. Asking whether the set of all solvable Diophantine equations is recursive likewise requires encoding each equation as a natural number. This is encoding in the general sense: we have not specified how it works. Perhaps the coefficient and degree of every term are entered in some format; perhaps we use another method. Nothing has been fixed.
 
 &emsp;&emsp;Why leave this unspecified? Could Hilbert's Tenth Problem be solvable under one encoding of Diophantine equations but unsolvable under another?
 
@@ -140,6 +140,4 @@ Proofreader: Shiguang
 &emsp;&emsp;By the same reasoning, we can discuss recursive and recursively enumerable subsets of <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E3%80%81%E8%AF%81%E6%98%8E%E6%A1%86%E6%9E%B6/fig-036-6d7e584eef.png" alt="" />. How they are encoded as subsets of <img src="/images/Hilbert%E7%AC%AC%E5%8D%81%E9%97%AE%E9%A2%98%E7%9A%84%E7%A1%AC%E7%A7%91%E6%99%AE%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E3%80%81%E8%AF%81%E6%98%8E%E6%A1%86%E6%9E%B6/fig-033-713e769dc6.png" alt="" /> is immaterial, provided the encoding is computable. We will give one concrete encoding later.
 
 &emsp;&emsp;This completes the necessary preliminaries. In the next article, we prove the MRDP theorem.
-
-
 

@@ -20,9 +20,9 @@ katex: true
 
 # Problem Statement
 
-&emsp;&emsp;The water-filling theorem solves a fundamental problem in information theory: how to allocate power among AWGN channels so as to maximize total capacity. Suppose there are $K$ parallel AWGN channels with mutually independent noise powers $σ^2_1,σ^2_2,··· ,σ^2_K$. Given a total power constraint $P$, find the allocation that maximizes the combined capacity of the $K$ channels.
+&emsp;&emsp;The water-filling theorem solves a fundamental problem in information theory: how should power be allocated across AWGN channels to maximize their total capacity? Suppose there are $K$ parallel AWGN channels with mutually independent noise processes and noise powers $σ^2_1,σ^2_2,··· ,σ^2_K$. Given a total power budget $P$, we seek the allocation that maximizes the combined capacity of the $K$ channels.
 
-&emsp;&emsp;Written as an optimization problem:
+&emsp;&emsp;As an optimization problem, this becomes:
 
 $$\begin{aligned}
 &\max_{p_1, \dots , p_K}\sum^{K}_{k=1} \log_2 \left(1 + \frac{p_k}{\sigma ^2_k}\right)\\
@@ -31,25 +31,25 @@ $$\begin{aligned}
 
 # An Intuitive Proof
 
-&emsp;&emsp;This section gives a derivation that is comparatively easy to understand.
+&emsp;&emsp;We begin with a relatively intuitive derivation.
 
-&emsp;&emsp;It may seem sufficient to assign all available power to the best channel—the one with the least noise. But channel capacity is $C_k = \log_2 (1 + p_k / σ^2_k)$, whose rate of increase falls as power rises. This suggests that each new increment of power should go to whichever channel currently offers the greatest increase in capacity.
+&emsp;&emsp;At first, it may seem best to assign all available power to the channel with the least noise. But a channel's capacity is $C_k = \log_2 (1 + p_k / σ^2_k)$, so the marginal gain in capacity decreases as its allocated power increases. Each additional increment of power should therefore go to the channel that currently provides the largest marginal gain.
 
 &emsp;&emsp;Assume an initial allocation $p^{(0)}_1 ,p^{(0)}_2 , \dots ,p^{(0)}_K$ satisfying:
 
 $$\sum^K_{k = 1}p^{(0)}_k < P, \ \ \  p^{(0)}_{k} \ge 0, \ \ \  k = 1, 2, \dots , K$$
 
-&emsp;&emsp;Clearly, $p^{(0)}_1 = p^{(0)}_2 = \dots = p^{(0)}_K = 0$ is a valid initialization. Let a positive quantity $(P - \sum^K_{k=1}p^{(0)}_k) \ge \delta > 0$ represent the next increment of power to allocate. If the amount $\delta$ is assigned to channel $k$, its capacity increases by:
+&emsp;&emsp;Clearly, $p^{(0)}_1 = p^{(0)}_2 = \dots = p^{(0)}_K = 0$ is a valid starting point. Let a positive quantity $(P - \sum^K_{k=1}p^{(0)}_k) \ge \delta > 0$ be the next increment of power to allocate. Assigning $\delta$ to channel $k$ increases its capacity by:
 
 $$\Delta C = \log_2 \left( 1 + \frac{p^{(0)}_k + \delta}{\sigma^2_k}\right) - \log_2 \left(1 + \frac{p^{(0)}_k}{\sigma^2_k}\right) = \log_2 \left(1 + \frac{\delta}{p^{(0)}_k + \sigma^2_k}\right)\tag{2.1}$$
 
-&emsp;&emsp;The power should plainly go to the channel with the smallest $p^{(0)}_k + \sigma^2_k$. If $\delta$ is made arbitrarily small at every step, then once all the power has been allocated, the active channels will share a constant value of $\sigma^2_k +p_k$. The poorer channels, whose noise power $σ^2_k$ exceeds that constant, receive no power. Thus:
+&emsp;&emsp;The increment should plainly go to the channel with the smallest $p^{(0)}_k + \sigma^2_k$. If $\delta$ is made arbitrarily small at each step, then once all the power has been allocated, every active channel will have the same value of $\sigma^2_k +p_k$. Channels whose noise power $σ^2_k$ exceeds this level receive no power. Thus:
 
 $$p_k = \max \{0, p^* - \sigma^2_k\}\tag{2.2}$$
 
 &emsp;&emsp;Here $p^⋆$ is chosen so that $\sum^K_{k = 1}p_k = P$.
 
-&emsp;&emsp;For any allocation in which $p_i + \sigma^2_i > p_j + \sigma^2_j$, set $\delta = \min\{p_i, (p_i + \sigma^2_i - p_j - \sigma^2_j)/2\}$. Starting from $p^{(0)}_i = p_i - \delta, p^{(0)}_j = p_j$, our earlier argument shows that assigning $\delta$ to channel $j$ yields more capacity than assigning it to channel $i$. After reallocation, either $p_i + \sigma^2_i = p_j + \sigma^2_j$ or $p_i = 0$; in the latter case, $\sigma_i^2 \ge p_j + \sigma^2_j$.
+&emsp;&emsp;Consider any allocation for which $p_i + \sigma^2_i > p_j + \sigma^2_j$, and set $\delta = \min\{p_i, (p_i + \sigma^2_i - p_j - \sigma^2_j)/2\}$. Beginning with $p^{(0)}_i = p_i - \delta, p^{(0)}_j = p_j$, the argument above shows that assigning $\delta$ to channel $j$ produces more capacity than assigning it to channel $i$. After this reallocation, either $p_i + \sigma^2_i = p_j + \sigma^2_j$ or $p_i = 0$; in the latter case, $\sigma_i^2 \ge p_j + \sigma^2_j$.
 
 # A Rigorous Proof
 &emsp;&emsp;Rewrite $(1.1)$ as:
@@ -59,7 +59,7 @@ $$\begin{aligned}&\min_{p_1, \dots, p_K} - \sum^K_{k = 1}\ln\left( 1 + \frac{p_k
 &-p_k \le 0, \ \ \  k = 1, 2, \dots, K
 \end{aligned}\tag{3.1}$$
 
-&emsp;&emsp;$−\ln(·)$ is convex, so the objective function is convex. It is likewise straightforward to show that the feasible region $(p_1, p_2, \dots, p_K)\in \mathcal{P}$ is convex. The problem is therefore a convex optimization problem, with Lagrangian:
+&emsp;&emsp;Because $−\ln(·)$ is convex, the objective function is convex. The feasible region $(p_1, p_2, \dots, p_K)\in \mathcal{P}$ is also readily shown to be convex. This is therefore a convex optimization problem, whose Lagrangian is:
 
 $$ \begin{aligned}
 &\mathcal{L}(p_1, p_2, \dots, p_K; \lambda_0, \lambda_1, \dots, \lambda_K) \\ 
@@ -95,7 +95,7 @@ $$\lambda_k = \lambda_0 - \frac{1}{\sigma^2_k + p_k} = \lambda_0 - \frac{1}{\sig
 
 $$\lambda_K \ge \lambda_{K-1} \ge \dots \ge \lambda_k > 0, \ \ \ p_K = p_{K-1} = \dots = p_k = 0 \tag{3.7}$$
 
-&emsp;&emsp;This is precisely the result described above. For good channels ($λ_k = 0$), the allocated powers $p_k$ satisfy $p_k +σ^2_k = 1/\lambda_0$, a constant. Poor channels receive no power ($\lambda_k > 0$; note that $(3.7)$ shows that if a channel with noise power $\sigma_k$ is poor, then every channel with still greater noise power is poor as well). Allocation continues in this fashion until all power has been assigned. The quantity $1 / \lambda_0$ is the $p^⋆$ used above.
+&emsp;&emsp;This is exactly the result obtained above. For active channels ($λ_k = 0$), the allocated powers $p_k$ satisfy $p_k +σ^2_k = 1/\lambda_0$, a constant. Inactive channels receive no power ($\lambda_k > 0$; equation $(3.7)$ shows that if a channel with noise power $\sigma_k$ is inactive, every channel with still greater noise power is inactive as well). Power is allocated in this way until the entire budget has been used. The quantity $1 / \lambda_0$ is the $p^⋆$ introduced above.
 
 # Water-Filling for Continuous Parallel Channels
 &emsp;&emsp;For colored noise $σ^2 (f)$ in a transform domain such as the frequency domain, the water-filling problem can be written:
@@ -122,7 +122,7 @@ $$\lambda_1 (f)p(f) = 0, \ \ \ f_l\le f \le f_h \tag{4.3f}$$
 
 &emsp;&emsp;Here $\delta p(f)$ is the variation of $p(f)$.
 
-&emsp;&emsp;When $\lambda_1 (f) > 0$—analogous to a “poor channel” above—$p(f) ≡ 0$, and hence $\delta p(f) = 0$. Conversely, when $p(f) > 0$, $\lambda_1 (f) ≡ 0$, analogous to a “good channel,” and $p(f) = \frac{1}{\lambda} − σ^2 (f)$. Therefore:
+&emsp;&emsp;When $\lambda_1 (f) > 0$, corresponding to an inactive channel above, $p(f) ≡ 0$, and hence $\delta p(f) = 0$. Conversely, when $p(f) > 0$, $\lambda_1 (f) ≡ 0$, corresponding to an active channel, and $p(f) = \frac{1}{\lambda} − σ^2 (f)$. Therefore:
 
 $$p(f) = \max \{0,p^* - \sigma^2 (f)\}\tag{4.4}$$
 
@@ -130,6 +130,6 @@ $$p(f) = \max \{0,p^* - \sigma^2 (f)\}\tag{4.4}$$
 
 $$\int^{f_h}_{f_l} p(f)\mathrm{d}f = P\tag{4.5}$$
 
-&emsp;&emsp;Why is this called “water-filling”? Imagine $σ^2 (f)$ as the bottom of a bowl and the power as water poured into it. Wherever power is assigned, the combined noise and signal power reaches the same flat “water level.” Noise that rises above the waterline marks a channel too poor to receive any power.
+&emsp;&emsp;Why is this called “water-filling”? Picture $σ^2 (f)$ as the bottom of a bowl and the available power as water poured into it. Wherever power is allocated, the sum of the noise and signal power rises to the same flat “water level.” Any noise floor above that level represents a channel that receives no power.
  
 <img src="/images/%E6%B3%A8%E6%B0%B4%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/cover-6a7cf8999c.png" alt="Illustration of water-filling" title="Illustration of water-filling" />
