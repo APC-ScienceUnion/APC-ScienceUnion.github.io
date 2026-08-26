@@ -1,14 +1,21 @@
 # Bilingual site maintenance
 
-Every top-level Markdown file in `source/_posts/` must have one English partner in
-`source/_posts/en/`.
+Posts are grouped by the Chinese article category at
+`source/_posts/<Chinese category>/`. Chinese and English Markdown files live
+side by side in that category directory. English posts are identified by their
+`lang: en` front matter, never by a special directory name.
+
+Every Chinese Markdown post below `source/_posts/` must have one English partner
+in the same category directory. The `section` segment in `new_post_name` keeps
+the physical category directory out of the post slug and taxonomy; new posts
+without an explicit section go to `未分类`.
 
 English front matter must include:
 
 ```yaml
 layout: post
 lang: en
-translation_key: "Exact Chinese source filename without .md"
+translation_key: "Exact Chinese source basename without .md"
 permalink: en/YYYY/MM/DD/ascii-kebab-slug/
 aside: true
 comments: false
@@ -31,8 +38,9 @@ pagination, previous/next links, categories, and search indexes. English posts
 keep empty taxonomy fields so Hexo does not double-count the Chinese terms;
 their category cards and `/en/categories/` pages inherit the paired Chinese
 post's category through `translation_key` and display the configured English
-name. The header language icon pairs posts by `translation_key`; Chinese source
-filenames and URLs remain unchanged.
+name. The header language icon pairs English `translation_key` values with the
+Chinese source basename, so physical category directories do not affect pairing;
+Chinese source filenames and URLs remain unchanged.
 
 Standalone bilingual content currently includes `/about/` ↔ `/en/about/` and
 all yearly APC News routes under `/apc-news/` ↔ `/en/apc-news/`. The English

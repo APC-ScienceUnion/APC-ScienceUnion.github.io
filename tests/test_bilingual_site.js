@@ -9,7 +9,6 @@ const yaml = require('js-yaml');
 
 const root = path.resolve(__dirname, '..');
 const postRoot = path.join(root, 'source', '_posts');
-const englishRoot = path.join(postRoot, 'en');
 const publicRoot = path.join(root, 'public');
 const config = yaml.load(fs.readFileSync(path.join(root, '_config.yml'), 'utf8'));
 const siteUrl = new URL(config.url);
@@ -46,35 +45,43 @@ function isDirectory(directory) {
   }
 }
 
-function readEnglishPosts() {
-  return fs.readdirSync(englishRoot, { withFileTypes: true })
-    .filter(entry => entry.isFile() && entry.name.endsWith('.md'))
-    .map(entry => {
-      const file = path.join(englishRoot, entry.name);
-      const source = fs.readFileSync(file, 'utf8')
-        .replace(/^\uFEFF/u, '')
-        .replace(/\r\n?/gu, '\n');
-      const data = frontMatter.parse(source);
-      return { file, data };
-    });
+function markdownFiles(directory) {
+  if (!isDirectory(directory)) return [];
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
+    const full = path.join(directory, entry.name);
+    if (entry.isDirectory()) return markdownFiles(full);
+    return entry.isFile() && entry.name.endsWith('.md') ? [full] : [];
+  });
 }
 
-function sourcePostCount() {
-  return fs.readdirSync(postRoot, { withFileTypes: true })
-    .filter(entry => entry.isFile() && entry.name.endsWith('.md'))
-    .length;
+function readSourcePosts() {
+  return markdownFiles(postRoot).map(file => {
+    const source = fs.readFileSync(file, 'utf8')
+      .replace(/^\uFEFF/u, '')
+      .replace(/\r\n?/gu, '\n');
+    return {
+      file,
+      key: path.basename(file, path.extname(file)),
+      data: frontMatter.parse(source)
+    };
+  });
+}
+
+function isEnglish(post) {
+  const language = String(post && post.data ? post.data.lang || '' : '').toLowerCase();
+  return language === 'en' || language.startsWith('en-');
+}
+
+function readEnglishPosts() {
+  return readSourcePosts().filter(isEnglish);
 }
 
 function readChinesePosts() {
-  return fs.readdirSync(postRoot, { withFileTypes: true })
-    .filter(entry => entry.isFile() && entry.name.endsWith('.md'))
-    .map(entry => {
-      const file = path.join(postRoot, entry.name);
-      const source = fs.readFileSync(file, 'utf8')
-        .replace(/^\uFEFF/u, '')
-        .replace(/\r\n?/gu, '\n');
-      return { key: entry.name.replace(/\.md$/u, ''), data: frontMatter.parse(source) };
-    });
+  return readSourcePosts().filter(post => !isEnglish(post));
+}
+
+function sourcePostCount() {
+  return readChinesePosts().length;
 }
 
 function absoluteUrl(value, base = siteUrl) {

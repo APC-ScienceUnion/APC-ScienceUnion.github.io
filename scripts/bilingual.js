@@ -31,9 +31,21 @@ function collectionData(collection) {
 
 function isEnglish(item) {
   if (!item) return false;
-  const language = String(item.lang || item.language || '').toLowerCase();
-  const source = String(item.source || '').replace(/\\/g, '/');
-  return language === 'en' || language.startsWith('en-') || source.startsWith('_posts/en/');
+  const language = String(item.lang || '').toLowerCase();
+  return language === 'en' || language.startsWith('en-');
+}
+
+function sourceBasename(item) {
+  const source = String(item && item.source ? item.source : '').replace(/\\/g, '/');
+  const basename = source.slice(source.lastIndexOf('/') + 1);
+  return basename.replace(/\.[^.]*$/u, '');
+}
+
+function pairingKey(item) {
+  if (!item) return '';
+  return isEnglish(item)
+    ? String(item.translation_key || '').trim()
+    : sourceBasename(item);
 }
 
 function cleanPublicPath(value) {
@@ -67,7 +79,7 @@ function englishCategoryData(posts) {
   const englishByKey = new Map(
     allPosts
       .filter(isEnglish)
-      .map(post => [String(post.translation_key || ''), post])
+      .map(post => [pairingKey(post), post])
       .filter(([key]) => key)
   );
   const groups = new Map(
@@ -78,7 +90,7 @@ function englishCategoryData(posts) {
   );
 
   allPosts.filter(post => !isEnglish(post)).forEach(chinesePost => {
-    const key = String(chinesePost.translation_key || chinesePost.slug || '');
+    const key = pairingKey(chinesePost);
     const englishPost = englishByKey.get(key);
     if (!englishPost) return;
     categoryNames(chinesePost).forEach(category => {
@@ -101,14 +113,14 @@ hexo.extend.helper.register('bilingual_categories', function bilingualCategories
 function pairedPostInfo(page) {
   const posts = collectionData(hexo.locals.get('posts'));
   const english = isEnglish(page);
-  const key = String(page.translation_key || (!english && page.slug) || '');
+  const key = pairingKey(page);
   const isArticle = Boolean(page.__post || page.layout === 'post');
   let chinesePost;
   let englishPost;
 
   if (isArticle && key) {
-    chinesePost = posts.find(post => !isEnglish(post) && String(post.translation_key || post.slug) === key);
-    englishPost = posts.find(post => isEnglish(post) && String(post.translation_key || '') === key);
+    chinesePost = posts.find(post => !isEnglish(post) && pairingKey(post) === key);
+    englishPost = posts.find(post => isEnglish(post) && pairingKey(post) === key);
   }
 
   if (chinesePost && englishPost) {

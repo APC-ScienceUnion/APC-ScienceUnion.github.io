@@ -2,7 +2,7 @@
 """Convert local LaTeX article (1.tex + ref.bib) to a Hexo Butterfly post.
 
 默认读取：C:\\Users\\10849\\Downloads\\tex\\1.tex
-输出：source/_posts/先问「是什么」：数学与形式化数学浅讲.md
+输出：source/_posts/数学/先问「是什么」：数学与形式化数学浅讲.md
 
 日后若新增 tex 文件，可复制本脚本并改 TEX_PATH、OUT_PATH、FIG_NAMES、REF_ENTRIES。
 运行：在仓库根目录执行  python tools/tex_article_to_hexo_post.py
@@ -14,7 +14,13 @@ import textwrap
 from pathlib import Path
 
 TEX_PATH = Path(r"C:\Users\10849\Downloads\tex\1.tex")
-OUT_PATH = Path(__file__).resolve().parents[1] / "source" / "_posts" / "先问「是什么」：数学与形式化数学浅讲.md"
+OUT_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "source"
+    / "_posts"
+    / "数学"
+    / "先问「是什么」：数学与形式化数学浅讲.md"
+)
 
 # TeX \\graphicspath{{figures/}} + includegraphics filename
 FIG_BASE = r"C:\Users\10849\Downloads\tex\figures"

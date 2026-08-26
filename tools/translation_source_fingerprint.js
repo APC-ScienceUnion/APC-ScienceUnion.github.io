@@ -7,7 +7,6 @@ const frontMatter = require('hexo-front-matter');
 
 const root = path.resolve(__dirname, '..');
 const postRoot = path.join(root, 'source', '_posts');
-const englishRoot = path.join(postRoot, 'en');
 const fingerprintField = 'translation_source_sha256';
 
 function usage() {
@@ -61,15 +60,19 @@ function readPost(file) {
   };
 }
 
+function isEnglish(post) {
+  const language = String(post && post.data ? post.data.lang || '' : '').toLowerCase();
+  return language === 'en' || language.startsWith('en-');
+}
+
 function relative(file) {
   return path.relative(root, file).split(path.sep).join('/');
 }
 
 function pairPosts() {
-  const chinesePosts = fs.readdirSync(postRoot, { withFileTypes: true })
-    .filter(entry => entry.isFile() && entry.name.endsWith('.md'))
-    .map(entry => readPost(path.join(postRoot, entry.name)));
-  const englishPosts = markdownFiles(englishRoot).map(readPost);
+  const posts = markdownFiles(postRoot).map(readPost);
+  const chinesePosts = posts.filter(post => !isEnglish(post));
+  const englishPosts = posts.filter(isEnglish);
   const chineseByKey = new Map();
   const englishByKey = new Map();
   const errors = [];
@@ -191,4 +194,3 @@ try {
   console.error(error.message);
   process.exitCode = 1;
 }
-

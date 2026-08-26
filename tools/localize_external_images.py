@@ -2,8 +2,11 @@
 """Download rendered external images and replace their references with local paths.
 
 The site intentionally keeps ``post_asset_folder`` disabled.  Article assets are
-therefore stored under ``source/images/<post name>/`` and referenced from the site
-root.  Other content gets a similarly stable, page-oriented asset directory.
+stored under ``source/images/<Chinese category>/<legacy asset bucket>/`` while
+their public URLs remain ``/images/<legacy asset bucket>/...``.  Chinese and
+English partners share one bucket; the English post inherits both the category
+and bucket from its ``translation_key``.  Other content gets a similarly stable,
+page-oriented asset directory.
 
 Only image *rendering* contexts are migrated.  Ordinary links to source material,
 papers, image attribution pages, scripts, fonts, APIs, and comments are left alone.
@@ -14,8 +17,10 @@ static migration; see ``tools/EXTERNAL_IMAGES.md``.
 from __future__ import annotations
 
 import argparse
+import ast
 import concurrent.futures
 import dataclasses
+import functools
 import hashlib
 import json
 import mimetypes
@@ -38,6 +43,16 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = REPO_ROOT / "source"
 PUBLIC_ROOT = REPO_ROOT / "public"
 MANIFEST_PATH = REPO_ROOT / "tools" / "external-images-manifest.json"
+POST_ROOT = SOURCE_ROOT / "_posts"
+
+UNCATEGORIZED_POST_SECTION = "未分类"
+POST_ASSET_BUCKET_ALIASES = {
+    "人工智能(AI) 通俗演义": "artificial-intelligence-intuitive-introduction",
+    (
+        "为何所有8位及以上的数都可以变为等式？"
+        "——硅基-沉默整数平衡化定理及其证明简明介绍"
+    ): "为何所有8位及以上的数都可以变为等式？",
+}
 
 TEXT_SUFFIXES = {
     ".md",
@@ -108,6 +123,15 @@ class Scope:
     local_dir: Path
     public_dir: str
     numbered: bool
+
+
+@dataclasses.dataclass(frozen=True)
+class PostAssetLocation:
+    """Physical and public asset identity shared by a bilingual post pair."""
+
+    source_key: str
+    category: str
+    bucket: str
 
 
 @dataclasses.dataclass
@@ -386,15 +410,139 @@ def scan_repository() -> tuple[list[Reference], dict[Path, str]]:
     return references, texts
 
 
+def front_matter_fields(file: Path) -> dict[str, str]:
+    """Read the top-level scalar fields needed for post asset routing.
+
+    The localization tool intentionally has no YAML dependency.  Current post
+    routing fields are top-level scalars (or the empty ``[]`` taxonomy used by
+    English posts), so a small front-matter reader is sufficient and keeps the
+    tool usable in a fresh Python environment.
+    """
+
+    text = file.read_text(encoding="utf-8-sig")
+    match = FRONT_MATTER_RE.match(text)
+    if not match:
+        raise RuntimeError(f"post has no readable front matter: {repo_relative(file)}")
+
+    fields: dict[str, str] = {}
+    for line in match.group("body").splitlines():
+        key_match = YAML_KEY_RE.match(line)
+        if not key_match:
+            continue
+        key = key_match.group("key").strip()
+        if key in {"category", "categories", "lang", "translation_key"}:
+            fields[key] = key_match.group("value").strip()
+    return fields
+
+
+def decode_front_matter_value(raw: str | None) -> object | None:
+    """Decode the limited scalar/list syntax used by routing front matter."""
+
+    if raw is None:
+        return None
+    value = raw.strip()
+    if not value or value.lower() in {"null", "none", "~"}:
+        return None
+    try:
+        return ast.literal_eval(value)
+    except (SyntaxError, ValueError):
+        # Plain YAML scalars such as ``lang: en`` are not Python literals.
+        return value
+
+
+def single_post_category(fields: dict[str, str], file: Path) -> str:
+    raw = fields.get("categories", fields.get("category"))
+    decoded = decode_front_matter_value(raw)
+    if decoded is None or decoded == []:
+        return UNCATEGORIZED_POST_SECTION
+    if isinstance(decoded, (list, tuple)):
+        categories = [str(item).strip() for item in decoded if str(item).strip()]
+    else:
+        categories = [str(decoded).strip()]
+    if len(categories) != 1:
+        raise RuntimeError(
+            f"post must have exactly one directory category: {repo_relative(file)}"
+        )
+    return categories[0]
+
+
+def string_front_matter_value(fields: dict[str, str], key: str) -> str:
+    value = decode_front_matter_value(fields.get(key))
+    return "" if value is None else str(value).strip()
+
+
+@functools.lru_cache(maxsize=1)
+def post_asset_locations() -> dict[Path, PostAssetLocation]:
+    """Index every post and resolve English files through ``translation_key``."""
+
+    if not POST_ROOT.is_dir():
+        return {}
+
+    locations: dict[Path, PostAssetLocation] = {}
+    chinese_by_key: dict[str, PostAssetLocation] = {}
+    english_posts: list[tuple[Path, str]] = []
+
+    post_files = sorted(
+        POST_ROOT.rglob("*.md"), key=lambda path: path.as_posix().casefold()
+    )
+    for file in post_files:
+        fields = front_matter_fields(file)
+        language = string_front_matter_value(fields, "lang").lower()
+        translation_key = string_front_matter_value(fields, "translation_key")
+        is_english = language == "en" or language.startswith("en-")
+        if is_english:
+            if not translation_key:
+                raise RuntimeError(
+                    f"English post is missing translation_key: {repo_relative(file)}"
+                )
+            english_posts.append((file.resolve(), translation_key))
+            continue
+
+        source_key = file.stem
+        if source_key in chinese_by_key:
+            raise RuntimeError(f"duplicate Chinese post key: {source_key}")
+        location = PostAssetLocation(
+            source_key=source_key,
+            category=single_post_category(fields, file),
+            bucket=POST_ASSET_BUCKET_ALIASES.get(source_key, source_key),
+        )
+        chinese_by_key[source_key] = location
+        locations[file.resolve()] = location
+
+    for file, translation_key in english_posts:
+        location = chinese_by_key.get(translation_key)
+        if location is None:
+            raise RuntimeError(
+                "English translation_key does not name a Chinese post: "
+                f"{repo_relative(file)} -> {translation_key}"
+            )
+        locations[file] = location
+
+    return locations
+
+
+def post_asset_location(file: Path) -> PostAssetLocation:
+    location = post_asset_locations().get(file.resolve())
+    if location is None:
+        raise RuntimeError(f"post is missing from asset index: {repo_relative(file)}")
+    return location
+
+
+def post_category_names() -> set[str]:
+    return {location.category for location in post_asset_locations().values()}
+
+
 def scope_for(file: Path) -> Scope:
     relative = file.resolve().relative_to(REPO_ROOT).as_posix()
 
     if relative.startswith("source/_posts/"):
-        name = file.stem
+        location = post_asset_location(file)
         return Scope(
-            key=f"post:{name}",
-            local_dir=SOURCE_ROOT / "images" / name,
-            public_dir=f"/images/{name}",
+            key=f"post:{location.source_key}",
+            local_dir=(
+                SOURCE_ROOT / "images" / location.category / location.bucket
+            ),
+            public_dir=f"/images/{location.bucket}",
             numbered=True,
         )
 
@@ -1209,11 +1357,22 @@ def print_audit(references: list[Reference], plans: list[AssetPlan]) -> None:
 
 
 def expected_public_path(local_path: str) -> str | None:
-    if local_path.startswith("source/"):
-        return encode_public_path("/" + local_path.removeprefix("source/"))
+    normalized = local_path.replace("\\", "/")
+    article_image_prefix = "source/images/"
+    if normalized.startswith(article_image_prefix):
+        relative = normalized.removeprefix(article_image_prefix)
+        parts = relative.split("/")
+        # Article images are grouped physically by the Chinese category, but
+        # the published path deliberately omits that organizational layer so
+        # existing links and caches remain valid.  Requiring category/bucket/
+        # file avoids mistaking a legacy flat bucket for a category.
+        if len(parts) >= 3 and parts[0] in post_category_names():
+            return encode_public_path("/images/" + "/".join(parts[1:]))
+    if normalized.startswith("source/"):
+        return encode_public_path("/" + normalized.removeprefix("source/"))
     theme_prefix = "themes/butterfly/source/"
-    if local_path.startswith(theme_prefix):
-        return encode_public_path("/" + local_path.removeprefix(theme_prefix))
+    if normalized.startswith(theme_prefix):
+        return encode_public_path("/" + normalized.removeprefix(theme_prefix))
     return None
 
 

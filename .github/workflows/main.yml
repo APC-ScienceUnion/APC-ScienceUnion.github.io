@@ -41,6 +41,7 @@ jobs:
           
       - name: Build
         run: |
+          npm run content-layout:check
           npm run bilingual:check
           npm run assets:check
           npm run daily-images:check
@@ -52,10 +53,10 @@ jobs:
           git rm -rf .
           cd ..
           hexo g
-          # Copy committed static images verbatim before integrity checks. This
-          # also covers asset directories whose names contain glob metacharacters.
-          mkdir -p public/images
-          cp -a source/images/. public/images/
+          # Publish category-organized source assets at their established flat
+          # /images/<asset-bucket>/ URLs without transforming their bytes.
+          npm run images:publish-categorized
+          npm run images:check-categorized
           cp .gitattributes ./public/.gitattributes
           npm run bilingual:check-public
           npm run assets:check-public

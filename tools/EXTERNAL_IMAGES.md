@@ -39,14 +39,36 @@ so an accidental image optimizer or metadata stripper will fail deployment.
 
 ## Asset layout
 
-- Posts: `source/images/<post filename>/`
+- Posts: `source/images/<Chinese category>/<legacy asset bucket>/`
 - APC news: `source/images/apc-news/`
 - Resource covers: `source/link/assets/images/`
 - Theme artwork: `themes/butterfly/source/img/site/`
 - Daily Bing/APOD/Wikipedia snapshots: `source/images/daily/`
 
-Public references are root-relative, matching this repository's existing
+Chinese and English posts are mixed under `source/_posts/<Chinese category>/`.
+The English post's `translation_key` identifies its Chinese partner, so both
+versions inherit the same physical category and legacy asset bucket. The two
+historical bucket aliases remain stable:
+
+- `人工智能(AI) 通俗演义` uses
+  `artificial-intelligence-intuitive-introduction`.
+- `为何所有8位及以上的数都可以变为等式？——硅基-沉默整数平衡化定理及其证明简明介绍`
+  uses `为何所有8位及以上的数都可以变为等式？`.
+
+The Chang'e 5 post defaults to its full, same-named bucket; its older
+`嫦娥奔月` bucket remains an explicitly referenced supplemental directory.
+
+The category is a repository-only organizational layer. Article assets are
+still published at `/images/<legacy asset bucket>/...`, with no category in the
+URL, so existing article references, inbound links, and caches remain valid.
+APC news and daily snapshots retain their dedicated top-level paths. Public
+references remain root-relative, matching the existing
 `post_asset_folder: false` and `relative_link: false` settings.
+
+The build's asset-publishing step performs this category-to-flat mapping by
+copying the original files. It must not resize, recompress, transcode, optimize,
+or strip metadata; `assets:check-public` verifies the published bytes against
+the manifest afterward.
 
 ## Deliberate exclusions
 

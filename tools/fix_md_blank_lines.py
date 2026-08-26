@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
 """One-off Markdown maintenance helper; keep it outside Hexo's JS script loader."""
 import re
+from pathlib import Path
 
-path = r"f:\github\APC-ScienceUnion.github.io\source\_posts\由简入繁——代数学·Part1.md"
+
+path = (
+    Path(__file__).resolve().parents[1]
+    / "source"
+    / "_posts"
+    / "数学"
+    / "由简入繁——代数学·Part1.md"
+)
 with open(path, "r", encoding="utf-8") as f:
     s = f.read()
 
