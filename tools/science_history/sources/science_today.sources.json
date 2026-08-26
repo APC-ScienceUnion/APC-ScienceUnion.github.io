@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-08-25",
+  "date": "2026-08-26",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,54 +8,170 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1609年",
-      "title": "伽利略向威尼斯演示望远镜",
-      "text": "伽利略在威尼斯向总督和议员展示自制望远镜，数小时航程外的船清晰可辨，当局当场把他在帕多瓦大学的教职改为终身、薪俸加倍。次年他把镜筒转向星空，发现木星卫星与金星位相，天文学翻开新篇。",
-      "item_sha256": "a87aa78577735dbe514856dfae84cc9a16101b722b2707311044e69198e906ff",
+      "label": "1768年",
+      "title": "奋进号启航前往南太平洋",
+      "text": "库克船长指挥皇家海军“奋进号”从普利茅斯启航，同行者包括植物学家班克斯等科学人员。远航以观测1769年金星凌日为核心任务，并考察南太平洋，带回许多陌生植物标本。",
+      "item_sha256": "bf0c899dbda2cebe2dc111c5e52d0e5f3d1fe33f13487a8db6447b7b4bde11a7",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://physicstoday.aip.org/news/galileo-demonstrates-his-first-telescope",
-          "final_url": "https://physicstoday.aip.org/news/galileo-demonstrates-his-first-telescope",
-          "authority_type": "professional society archive",
+          "url": "https://static-prod.lib.princeton.edu/visual_materials/maps/websites/pacific/cook1/cook1.html",
+          "final_url": "https://static-prod.lib.princeton.edu/visual_materials/maps/websites/pacific/cook1/cook1.html",
+          "authority_type": "university archive",
           "date_context": "event-date",
-          "date_quote": "Date in History: 25 August 1609",
-          "fact_quote": "On this day in 1609 Galileo Galilei demonstrated his first telescope to Venetian lawmakers, including Leonardo Donato, the Doge (ruler) of Venice.",
-          "retrieved_sha256": "af367510de797641b72ebec0f5c1951db04ec0d28ab182fd712af940a4bea858",
+          "date_quote": "With marines, scientists, and crew, Endeavour departed from Plymouth, England, on August 26, 1768.",
+          "fact_quote": "Charge (by the Royal Society and the British Admiralty): To view the transit of Venus from Tahiti and then to look for the Southern Continent",
+          "retrieved_sha256": "4dfd2412abb1bfa223d2a4af98952599754b9470fe7b4169cb92ae63ca048d4c",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1981年",
-      "title": "旅行者2号飞掠土星",
-      "text": "美国旅行者2号探测器飞抵土星，最近时距云顶约十万公里，发回土星环细节与多颗卫星的近距离图像，与九个月前到访的旅行者1号一起，大幅刷新了人类对环状行星系统的认识。",
-      "item_sha256": "75c6c71d2f24c356193e107ff2891d5dd247bd338037937ca1a9e43e7f3867b0",
+      "label": "1883年",
+      "title": "喀拉喀托火山剧烈喷发",
+      "text": "印尼巽他海峡的喀拉喀托火山猛烈喷发，26至27日连续大爆炸摧毁岛上大部分地区，引发海啸造成约3.6万人遇难。这次喷发被全球气压计记录到，成为近代最早被系统观测的大规模火山事件之一。",
+      "item_sha256": "641e60b36ce8d6c9540be0225138085c2f1a73e60d981654dea2b14d5f173838",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://science.nasa.gov/mission/voyager/voyager-2",
-          "final_url": "https://science.nasa.gov/mission/voyager/voyager-2/",
-          "authority_type": "space agency archive",
+          "url": "https://www.ncei.noaa.gov/news/day-historic-krakatau-eruption-1883",
+          "final_url": "https://www.ncei.noaa.gov/news/day-historic-krakatau-eruption-1883",
+          "authority_type": "NOAA archive",
           "date_context": "event-date",
-          "date_quote": "Key Dates | July 9, 1979: Jupiter Flyby Aug 25, 1981: Saturn Flyby Jan 24, 1986: Uranus Flyby Aug 25, 1989: Neptune Flyby",
-          "fact_quote": "The closest encounter to Saturn was at 01:21 UT Aug. 26, 1981, at a range of about 63,000 miles (101,000 kilometers).",
-          "retrieved_sha256": "17d2280c92bfd2929091dd9a8aab024e15955182760e3d7c66aad3e6eb76bc73",
+          "date_quote": "On August 26, 1883, a colossal eruption occurred on Krakatau following a series of explosions.",
+          "fact_quote": "the events that began on August 26 would cause the death of approximately 36,000 people",
+          "retrieved_sha256": "def1c1e5e90983cae56f3a2023bbf5215ba3daee0f2edbdfec9cc7315906bd14",
+          "content_type": "text/html"
+        },
+        {
+          "level": "A",
+          "url": "https://www.usgs.gov/publications/krakatau-1883",
+          "final_url": "https://www.usgs.gov/publications/krakatau-1883",
+          "authority_type": "USGS publication",
+          "date_context": "event-date",
+          "date_quote": "During a 23-hour period on August 26 and 17, 1883, more than 4 cubic miles of volcanic debris exploded upward from Krakatau",
+          "fact_quote": "resulting in the death of more than 36,000 people and producing catastrophic devastation",
+          "retrieved_sha256": "c7c025b8e4222980794ff8229b47e346bf7d1f42a605b0c7c786c0cef75128ba",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1906年",
+      "title": "萨宾出生",
+      "text": "口服脊髓灰质炎疫苗的开发者阿尔伯特·萨宾出生。他培育出减毒活病毒株，制成可口服的脊灰疫苗，与索尔克的注射疫苗互补，在20世纪下半叶几乎消灭了这种致残疾病。",
+      "item_sha256": "1741bd68e703febdd1ecf6694e5c9d275aa981b59102efeb88069d784b15c332",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://circulatingnow.nlm.nih.gov/2013/08/26/dr-albert-sabin-a-closer-look",
+          "final_url": "https://circulatingnow.nlm.nih.gov/2013/08/26/dr-albert-sabin-a-closer-look/",
+          "authority_type": "National Library of Medicine archive",
+          "date_context": "event-date",
+          "date_quote": "Dr. Albert Sabin was born today, August 26 in 1906 in Poland",
+          "fact_quote": "best known for developing the oral polio vaccine",
+          "retrieved_sha256": "6ac982c5fffe8f40494a4cb0ddf1ef438d556001cd7d826b7b49933610537d87",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1909年",
+      "title": "孔姆-卡佩尔人骨架出土",
+      "text": "瑞士商人奥托·豪泽在法国多尔多涅的孔姆-卡佩尔岩棚发现一具较完整的人类骨架。它曾被归入欧洲早期现代人化石，后来的碳十四测年则显示，它实际属于约7500年前的中石器时代。",
+      "item_sha256": "4f0ce0b2af73d70d5f672f6f223aff5ffe5aa7642eeacb34123aeab564900015",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://pressbooks.lib.vt.edu/paleoanthropology/chapter/ottohauser",
+          "final_url": "https://pressbooks.lib.vt.edu/paleoanthropology/chapter/ottohauser/",
+          "authority_type": "university pressbook",
+          "date_context": "event-date",
+          "date_quote": "On 26 August 1909, Hauser discovered a human skeleton associated with remains of a shell necklace and Aurignacian tools.",
+          "fact_quote": "on 12 September, they excavated the nearly complete skeleton",
+          "retrieved_sha256": "b7345e3c9dc478b578cb6402bddec4624ced947fc998d25c478a343bd41e2449",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1910年",
+      "title": "威廉·詹姆斯去世",
+      "text": "美国心理学家、哲学家威廉·詹姆斯在纽约州乔科鲁阿的家中去世。他出版《心理学原理》，最早在美国开设心理学课程，推动心理学成为独立学科，并创立机能主义学派，被誉为“美国心理学之父”。",
+      "item_sha256": "75a5e56d722f5bfd639d56a605fc2a822427590fdc40d5282ca16b2b217a7c19",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://link.springer.com/referenceworkentry/10.1007/978-3-319-28099-8_1762-1",
+          "final_url": "https://link.springer.com/rwe/10.1007/978-3-319-28099-8_1762-1",
+          "authority_type": "academic reference work",
+          "date_context": "event-date",
+          "date_quote": "William James was born in New York City on January 11, 1842, and died in Tamworth, New Hampshire, on August 26, 1910",
+          "fact_quote": "William James was born in New York City on January 11, 1842, and died in Tamworth, New Hampshire, on August 26, 1910",
+          "retrieved_sha256": "d631ca014be75d419eaabc0729d5d21b23fa2b366fe1859f037bf8998d17016b",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1918年",
+      "title": "凯瑟琳·约翰逊出生",
+      "text": "NASA数学家凯瑟琳·约翰逊出生。她在兰利研究中心工作33年，为水星、阿波罗等任务手工计算轨道参数，阿波罗11号登月与约翰·格伦绕地飞行都离不开她的计算。",
+      "item_sha256": "4e122bdb881dbc358cd524f827b78a8979b5a49fab2246b13844e290fe6e30c4",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/centers-and-facilities/langley/katherine-johnson-biography",
+          "final_url": "https://www.nasa.gov/centers-and-facilities/langley/katherine-johnson-biography/",
+          "authority_type": "NASA official",
+          "date_context": "event-date",
+          "date_quote": "Born: Aug. 26, 1918",
+          "fact_quote": "she did trajectory analysis for Alan Shepard’s May 1961 mission Freedom 7, America’s first human spaceflight",
+          "retrieved_sha256": "109223cf6865f4295d7f157510aa63457412722d12fdc0d476299c3788c58713",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1939年",
+      "title": "电视直播棒球赛开播",
+      "text": "纽约实验电视台W2XBS直播布鲁克林道奇队与辛辛那提红人队的比赛，大联盟棒球由此登上电视荧幕。当时纽约全市约有400台电视机，这场转播预示着电视体育与大众传播时代的到来。",
+      "item_sha256": "8d9df5cb17f33707174d7587876d6fac131df15c85b7a286735edd69147a2ee3",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://link.springer.com/article/10.1007/s11293-022-09756-3",
+          "final_url": "https://link.springer.com/article/10.1007/s11293-022-09756-3",
+          "authority_type": "peer-reviewed journal",
+          "date_context": "event-date",
+          "date_quote": "the very first televised baseball game on August 26, 1939 falls just before the end of the 1890–1940 sample period",
+          "fact_quote": "the very first televised baseball game on August 26, 1939",
+          "retrieved_sha256": "b6eba5f309b75f07b5a7279b30b58978d8a75d2ff6de506457b4390d83978f6b",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-08-25:a63268f80a3322988f6e15f433cf4e140853e1e225be85841e471a1f05b086d0",
-  "public_json_sha256": "34b07eda20e94b573d503fb700b031a8eb92cf42681f8240d00e4bee8700e34d",
-  "poster_sha256": "7f3d6cfb738e7060e7eaba10835c226c12320c3d2cf4a0c0ad9966aa611837e6",
-  "poster_bytes": 1144344,
+  "delivery_id": "2026-08-26:c9cd075a87c28435273369a4d052da417b3d34e9684d73544a5214ab3cee56bb",
+  "public_json_sha256": "4a3ac9a86a978b40c62803e101eb42675d75a09469d85570efdae0b274bd03ce",
+  "poster_sha256": "3c6e740439ff2bf8ff036d7ec5c29a7c621e3b03be0557496026f4e3bd4f19c0",
+  "poster_bytes": 1828055,
   "poster_dimensions": {
     "width": 2160,
-    "height": 2152
+    "height": 4610
   }
 }
