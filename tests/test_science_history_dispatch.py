@@ -24,7 +24,7 @@ def item(title: str = "测试事件") -> dict:
     return {
         "label": "1969年",
         "title": title,
-        "text": "研究机构在当天公布了可核对的实验结果，并推动后续研究者以更精确的方法理解这一科学现象。",
+        "text": "研究机构在当天公布了可核对的实验结果，并推动后续研究者以更精确的方法理解这一科学现象及其影响。",
         "category": "science",
         "person_event": False,
         "importance": 5,
@@ -66,6 +66,17 @@ class ScienceHistoryDispatchTests(unittest.TestCase):
         with mock.patch.object(MODULE, "today_shanghai", return_value=date(2026, 8, 25)):
             with self.assertRaisesRegex(ValueError, "只接受北京时间当天"):
                 MODULE.validate_payload(candidate)
+
+    def test_repository_shape_preflight_rejects_long_text_and_non_a_domain(self) -> None:
+        candidate = payload()
+        candidate["items"][0]["text"] = "过长" * 50
+        with self.assertRaisesRegex(ValueError, "45—90"):
+            MODULE.validate_repository_shape_gate(candidate)
+
+        candidate = payload()
+        candidate["items"][0]["sources"][0]["url"] = "https://example.com/source"
+        with self.assertRaisesRegex(ValueError, "A 级来源"):
+            MODULE.validate_repository_shape_gate(candidate)
         del candidate["items"][0]["sources"][0]["fact_quote"]
         with mock.patch.object(MODULE, "today_shanghai", return_value=date(2026, 8, 24)):
             with self.assertRaisesRegex(ValueError, "fact_quote"):
@@ -146,6 +157,16 @@ class ScienceHistoryDispatchTests(unittest.TestCase):
         self.assertNotIn(b"secret-token", request.data)
         self.assertEqual(request.get_header("Authorization"), "Bearer secret-token")
         self.assertIn("/actions/workflows/science_history.yml/dispatches", request.full_url)
+
+    def test_wait_for_workflow_rejects_failed_run(self) -> None:
+        failed = {
+            "status": "completed",
+            "conclusion": "failure",
+            "html_url": "https://github.com/APC-ScienceUnion/APC-ScienceUnion.github.io/actions/runs/123",
+        }
+        with mock.patch.object(MODULE, "discover_run", return_value=failed):
+            with self.assertRaisesRegex(RuntimeError, "工作流执行失败"):
+                MODULE.wait_for_workflow("token", MODULE.datetime.now(MODULE.timezone.utc), None, 30)
 
     def test_git_credential_fallback_returns_password_without_logging_command_output(self) -> None:
         completed = mock.Mock(stdout="protocol=https\nhost=github.com\nusername=bot\npassword=secret\n")
