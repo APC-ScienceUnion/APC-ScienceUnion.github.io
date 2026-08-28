@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-08-27",
+  "date": "2026-08-28",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,286 +8,107 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1783年",
-      "title": "氢气球升空",
-      "text": "1783年8月27日，法国化学家雅克·夏尔与罗伯特兄弟在巴黎战神广场放飞世界第一只氢气球，约45分钟后落在25公里外。此后氢气球被称为“夏尔气球”，与热气球并列为早期升空两条路线。",
-      "item_sha256": "f9ed137134c8e16952b38064bea0a9b4fd8e30262e77e4d7b058eab976cc42b8",
-      "strong_claim": true,
+      "label": "1789年",
+      "title": "赫歇尔发现土卫二",
+      "text": "英国天文学家威廉·赫歇尔用新造的大型反射望远镜观测土星，发现了一颗未知卫星，后命名为土卫二。两百年后卡西尼号看到它南极喷出冰晶羽流，使它成为寻找地外生命的热门目标。",
+      "item_sha256": "3e566de83cb7901ac9f1912c9a6acfeb5bf12ce7dd4eea517dedc4aee34c3cdc",
+      "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://airandspace.si.edu/collection-objects/inflation-of-first-hydrogen-balloon-by-j-a-c-charles/nasm_A20000463000",
-          "final_url": "https://airandspace.si.edu/collection-objects/inflation-of-first-hydrogen-balloon-by-j-a-c-charles/nasm_A20000463000",
-          "authority_type": "museum archive",
-          "date_context": "event-date",
-          "date_quote": "Eiffel Tower, on August 27, 1783",
-          "fact_quote": "Inflation of First Hydrogen Balloon, by J. A. C. Charles",
-          "retrieved_sha256": "d864721c6ba389f90a991d0ae65d602ff4c6b8395561d289bfc9edb70fdc3e1f",
-          "content_type": "text/html"
-        },
-        {
-          "level": "B",
-          "url": "https://www.sciencehistory.org/stories/magazine/artificial-clouds-and-inflammable-air-the-science-and-spectacle-of-the-first-balloon-flights-1783",
-          "final_url": "https://www.sciencehistory.org/stories/magazine/artificial-clouds-and-inflammable-air-the-science-and-spectacle-of-the-first-balloon-flights-1783/",
-          "authority_type": "sci-history institution",
-          "date_context": "event-date",
-          "date_quote": "On 27 August 1783, just three months after the Montgolfiers' hot-air demonstration in southern France, the world's first unmanned hydrogen balloon took off from the Champ de Mars",
-          "fact_quote": "the world's first unmanned hydrogen balloon took off from the Champ de Mars",
-          "retrieved_sha256": "677421e5f67d04e0783758d8124b515086137e2f2533cb1acc1385d6175edef6",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1858年",
-      "title": "皮亚诺出生",
-      "text": "意大利数学家朱塞佩·皮亚诺出生。他提出的皮亚诺公理用五条公理严格定义自然数，把算术建立在形式逻辑之上；他创立的符号语言深刻影响数理逻辑与数学基础研究，也推动了后来的国际辅助语运动。",
-      "item_sha256": "d4110a1a9cdd72a159392e324ed26d842f12992f243dbb8aeb6418e1b66754d2",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Peano",
-          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Peano/",
-          "authority_type": "university archive",
-          "date_context": "event-date",
-          "date_quote": "Born: 27 August 1858",
-          "fact_quote": "In 1889 Peano published his famous axioms, called Peano axioms, which defined the natural numbers in terms of sets",
-          "retrieved_sha256": "7a6d7e8a3e9e25289b01378408b4c5bc5c1bd621c73a7f10929294bb379fe9b8",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1874年",
-      "title": "博施出生",
-      "text": "德国化学家卡尔·博施出生。他主持把哈伯的合成氨工艺放大为工业生产，让氮肥得以大规模制造；因发明和开发化学高压方法，他与弗里茨·哈伯共享1931年诺贝尔化学奖。",
-      "item_sha256": "cd7a89c410e57c0b94ab3a5be8558114a243ca8c387944f78b7a581baa6123db",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/189",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/189",
+          "url": "https://science.nasa.gov/saturn/moons/enceladus",
+          "final_url": "https://science.nasa.gov/saturn/moons/enceladus/",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "1874-08-27",
-          "fact_quote": "in recognition of their contributions to the invention and development of chemical high pressure methods",
-          "retrieved_sha256": "dd008836de7e04bcaccf88d21359b5d4b35d9dd8a19a1effd095977a330f18ac",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1883年",
-      "title": "喀拉喀托大爆发",
-      "text": "印度尼西亚巽他海峡的喀拉喀托火山发生史上最猛烈的喷发之一，爆炸声传至数千公里外，海啸夺走数万生命。火山灰进入平流层后全球降温、日落异象持续数年，为火山学留下珍贵观测记录。",
-      "item_sha256": "90f02530bdb009a76b2805ebd15208d207f6e128333fc4ac58f1e9f54d837f32",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.usgs.gov/news/volcano-watch-mixing-magmas-krakatau",
-          "final_url": "https://www.usgs.gov/news/volcano-watch-mixing-magmas-krakatau",
-          "authority_type": "government agency",
-          "date_context": "event-date",
-          "date_quote": "Throughout the early morning of August 27th, 1883",
-          "fact_quote": "The volcanic dust ejected into the stratosphere lingered for years, lowering global temperatures and creating livid sunsets",
-          "retrieved_sha256": "b5b9a9e3722e94676a7b54f31453fd5ea6b1fa91960e35713c1abafcfbe261fe",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1900年",
-      "title": "黄热病蚊媒实验",
-      "text": "在古巴哈瓦那，美国黄热病委员会成员詹姆斯·卡罗尔让吸过病人血的蚊子叮咬自己，数日后染上黄热病，为“黄热病经伊蚊传播”提供关键证据。委员会随后系统验证，哈瓦那靠灭蚊迅速控制疫情。",
-      "item_sha256": "9900b48e27196fa87c5481e6e63b16f844a30cbd7918ae710e6a079079b30b6c",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://elm.umaryland.edu/elm-stories/2024/Rooted-in-History-1891-UMSOM-Alum-at-Center-of-Pivotal-Yellow-Fever-Research.php",
-          "final_url": "https://elm.umaryland.edu/elm-stories/2024/Rooted-in-History-1891-UMSOM-Alum-at-Center-of-Pivotal-Yellow-Fever-Research.php",
-          "authority_type": "university",
-          "date_context": "event-date",
-          "date_quote": "Carroll was the first infected through a mosquito bite on Aug. 27, 1900",
-          "fact_quote": "Carroll was the first infected through a mosquito bite on Aug. 27, 1900",
-          "retrieved_sha256": "57907a18454f6f13706e2bfdf0564eb67063e85601a057eeb16234ac96836db4",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1915年",
-      "title": "拉姆齐出生",
-      "text": "美国物理学家诺曼·拉姆齐出生。他发明的分离振荡场方法大幅提升核磁共振与原子钟精度，氢钟等现代计时装置皆立足这一原理；1989年他获诺贝尔物理学奖，其方法也用于GPS精确授时。",
-      "item_sha256": "52b85968c4b7054e29d4a8f2986579b5fd7958dbdd310979a78ae0593dc0bd09",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/135",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/135",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "1915-08-27",
-          "fact_quote": "for the invention of the separated oscillatory fields method and its use in the hydrogen maser and other atomic clocks",
-          "retrieved_sha256": "8eca736bc5cc050ede160d06a7c4c02ef0dd5edb7c68f8935304be9fea6df002",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1928年",
-      "title": "下村脩出生",
-      "text": "日本化学家下村脩出生。他从水母中分离并阐明绿色荧光蛋白的发光机制，为“给活细胞打上荧光标签”的生物学技术奠基；2008年他与钱永健、马丁·查尔菲共享诺贝尔化学奖。",
-      "item_sha256": "03cfd35a21f9812393b0e736220abf673cd890814cc5084f6233ad5bb7cc123d",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/829",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/829",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "1928-08-27",
-          "fact_quote": "for the discovery and development of the green fluorescent protein, GFP",
-          "retrieved_sha256": "00849e831c11cdbd479bfefceb92d16154ec0ed7746649152b0951b7269d6b86",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1962年",
-      "title": "水手2号启程",
-      "text": "美国在卡纳维拉尔角发射“水手2号”金星探测器，它成为首个成功飞掠其他行星的航天器。12月14日它在距金星约3.5万公里处掠过，测得金星表面酷热且无磁场，改写了对这颗云层行星的认知。",
-      "item_sha256": "ed52955be720cbac17f72150ed4a5b1cc22f3fb4690a6c2edc727945923048e3",
-      "strong_claim": true,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://science.nasa.gov/mission/mariner-2",
-          "final_url": "https://science.nasa.gov/mission/mariner-2/",
-          "authority_type": "government agency",
-          "date_context": "event-date",
-          "date_quote": "Launch Date | Aug. 27, 1962 / 06:53:14 UT",
-          "fact_quote": "NASA's Mariner 2 was humanity's first successful planetary science mission",
-          "retrieved_sha256": "b19a7d24133fc21551c6785d67815a242f7cefe6e090b7a4a9570779b701b945",
+          "date_quote": "spotted Enceladus orbiting Saturn on Aug. 28, 1789",
+          "fact_quote": "British astronomer William Herschel spotted Enceladus orbiting Saturn on Aug. 28, 1789",
+          "retrieved_sha256": "1dcddd8422a91dd340a58f2bcbc2dcbe800b9436100ddd4bfa297ed14de90f94",
           "content_type": "text/html"
         },
         {
           "level": "A",
-          "url": "https://airandspace.si.edu/collection-objects/mariner-2/nasm_A19760027000",
-          "final_url": "https://airandspace.si.edu/collection-objects/mariner-2/nasm_A19760027000",
-          "authority_type": "museum archive",
+          "url": "https://www.esa.int/Science_Exploration/Space_Science/28_August",
+          "final_url": "https://www.esa.int/Science_Exploration/Space_Science/28_August",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Mariner 2 successfully took off on August 27, 1962",
-          "fact_quote": "found that the surface of Venus was indeed very hot; some 800 degrees F",
-          "retrieved_sha256": "96753d60342641012c765c755f3a8f1987673fd4e45f0bd87673ecfc4745e82d",
+          "date_quote": "On 28 August 1789, Sir William Herschel discovered Saturn's moon Enceladus",
+          "fact_quote": "On 28 August 1789, Sir William Herschel discovered Saturn's moon Enceladus",
+          "retrieved_sha256": "e46a0b3fe44eb6be2d86b3400c8ba0011e4191492d53e7f315bb30846c1244be",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1979年",
-      "title": "航天飞机乘员舱开工",
-      "text": "美国宇航局启动航天飞机轨道器乘员舱的长周期制造。作为建造周期最长的部件之一，乘员舱开工标志着首架轨道器全面进入制造阶段，为1981年哥伦比亚号首飞奠定基础。",
-      "item_sha256": "d14f38cebb5dafe2a54e1349044000284d22f3bd69ebfcbd4d60d5facf3e2409",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nasa.gov/reference/the-space-shuttle",
-          "final_url": "https://www.nasa.gov/reference/the-space-shuttle/",
-          "authority_type": "government agency",
-          "date_context": "event-date",
-          "date_quote": "August 27, 1979 Start long lead fabrication of Crew Module",
-          "fact_quote": "The world's first reusable spacecraft launched like a rocket",
-          "retrieved_sha256": "d26ee22239227f913c0b4bf461e335f2e527dff73008d352b957e7097f593f3b",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2011年",
-      "title": "柳叶刀肥胖系列",
-      "text": "《柳叶刀》杂志发表肥胖研究系列论文，美国国立卫生研究院团队提出的能量平衡模型可预测体重随时间的走向，为肥胖干预和体重管理提供量化工具。",
-      "item_sha256": "9e40535ab9b33c19534b5a477f80fb8f2e0a189b15facd3f0550aa7ffab83124",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.niddk.nih.gov/research-funding/at-niddk/labs-branches/laboratory-biological-modeling/integrative-physiology-section/research/body-weight-planner",
-          "final_url": "https://www.niddk.nih.gov/research-funding/at-niddk/labs-branches/laboratory-biological-modeling/integrative-physiology-section/research/body-weight-planner",
-          "authority_type": "government agency",
-          "date_context": "event-date",
-          "date_quote": "This research was published as part of The Lancet Series on Obesity (August 27, 2011)",
-          "fact_quote": "Quantification of the effect of energy imbalance on bodyweight",
-          "retrieved_sha256": "02587f6831f75f7b273e6e4fc24a91afe13a9016765eedc39e56c9273794694e",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2014年",
-      "title": "NIH数据共享新政",
-      "text": "美国国立卫生研究院发布最终版《基因组数据共享政策》，要求受其资助的研究把基因组数据存入公共数据库并规范共享。政策推动科研数据开放，被视为基因组研究制度史上的重要一步。",
-      "item_sha256": "882a71fd087bc439b2f07977cdcfc739973a8add558b5335b9b1c162fa16b44e",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.genome.gov/about-nhgri/Brief-History-Timeline",
-          "final_url": "https://www.genome.gov/about-nhgri/Brief-History-Timeline",
-          "authority_type": "government agency",
-          "date_context": "event-date",
-          "date_quote": "published in the NIH Guide for Grants and Contracts Aug. 27, 2014",
-          "fact_quote": "The National Institutes of Health issues a final NIH Genomic Data Sharing (GDS) policy to promote data sharing",
-          "retrieved_sha256": "2d517d43afc6756b7aa9fb8b032cfe982abccdc7789516c5144e820daef00ede",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2021年",
-      "title": "费舍尔逝世",
-      "text": "瑞士裔美国生物化学家埃德蒙·费舍尔去世。他与埃德温·克雷布斯发现可逆蛋白质磷酸化是重要的生物调控机制，解释许多激素与酶如何被“开关”控制，并获1992年诺贝尔生理学或医学奖。",
-      "item_sha256": "8270706985879bd8e613fd6da680101405c1ebe6d4813f99f097c6519bd108e5",
+      "label": "1878年",
+      "title": "惠普尔诞生",
+      "text": "美国病理学家乔治·惠普尔出生。他在失血实验中发现动物肝脏最能促进血液再生，这一结果被米诺特和墨菲用于恶性贫血的食疗，三人因此共享1934年诺贝尔生理学或医学奖。",
+      "item_sha256": "adc4bd4712782240e2da3c8fae424c65ce0274601f0adbca9bbe8a49fb57d5f6",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/446",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/446",
+          "url": "https://www.nobelprize.org/laureate/326",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1934/whipple/facts/",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "2021-08-27",
-          "fact_quote": "for their discoveries concerning reversible protein phosphorylation as a biological regulatory mechanism",
-          "retrieved_sha256": "d079bae23e5a5793d6e7e092f39b6806f30d40113a6e6a626dc244797fcd3785",
-          "content_type": "application/json"
+          "date_quote": "28 August 1878",
+          "fact_quote": "for their discoveries concerning liver therapy in cases of anaemia",
+          "retrieved_sha256": "2077a9632e845ebaf10d061a5caf993dabb6c6e0741d577f1e148b5549454c64",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1910年",
+      "title": "库普曼斯诞生",
+      "text": "荷兰裔美国经济学家佳林·库普曼斯出生。他把线性规划等运筹学方法引入经济学，研究资源的最优配置，与列昂惕夫共同获得1975年诺贝尔经济学奖。",
+      "item_sha256": "4fa6d2f59cc4084b0792a2037eec45e2a3ccc441551d773a0e88e70b4600fb40",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/laureate/687",
+          "final_url": "https://www.nobelprize.org/prizes/economic-sciences/1975/koopmans/facts/",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "28 August 1910",
+          "fact_quote": "for their contributions to the theory of optimum allocation of resources",
+          "retrieved_sha256": "f5676336be2d16b7723bc5a4d4f16ba5f774ee7d18ddd5c5c67324e8e6f74a05",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1919年",
+      "title": "豪恩斯菲尔德诞生",
+      "text": "英国工程师戈弗雷·豪恩斯菲尔德出生。他从不同角度扫描物体、再用计算机重建图像的想法出发，研制出临床CT扫描仪，与科马克共享1979年诺贝尔生理学或医学奖。",
+      "item_sha256": "a514bcef76cf09199faa6b8c50a577027eb1bea60454e382cf7c3c2e579c4c7e",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/laureate/418",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1979/hounsfield/facts/",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "28 August 1919",
+          "fact_quote": "for the development of computer assisted tomography",
+          "retrieved_sha256": "5c5e3f292264952505590d29aed74325103075e81d8cdcc8ef9ae43f80d982c4",
+          "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-08-27:cae37eb2c950142fb0b3176073cbbe46c8d4192e53702eb7f9b7b96ae657b731",
-  "public_json_sha256": "2a14e60c9de2f8031c37e9996569563d1acf76a5de62235420df994e51c152f2",
-  "poster_sha256": "349a282a1e28e52b8378234ad95f7d12130b7d6720676a50e84286016a716c41",
-  "poster_bytes": 2444219,
+  "delivery_id": "2026-08-28:de2af431fbd4fa370b4f54674ad9149d09786abebc1b039652bfa0031443fa04",
+  "public_json_sha256": "47fb0f2d49519351274381c6de87286eb39c10f6aea482e248e5485f2a5050f7",
+  "poster_sha256": "d8c6a40d2b757299c4e8f49452929e8dcbe093c4202a53aa89b48f8ffb7f701a",
+  "poster_bytes": 1359418,
   "poster_dimensions": {
     "width": 2160,
-    "height": 6968
+    "height": 3034
   }
 }
