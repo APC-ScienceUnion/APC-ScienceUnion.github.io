@@ -22,6 +22,7 @@
     "science-history:check": "python -m unittest tests.test_science_history_pipeline tests.test_science_history_dispatch && python tools/history_today_poster.py --check",
     "science-history:check-public": "python tools/history_today_poster.py --check --public public",
     "homepage:check-public": "node tests/test_home_category_sort.js",
+    "honor-hall:check": "node tests/test_honor_hall.js",
     "bilingual:fingerprints:update": "node tools/translation_source_fingerprint.js --write",
     "bilingual:fingerprints:check": "node tools/translation_source_fingerprint.js --check",
     "bilingual:check": "npm run bilingual:fingerprints:check && node tests/test_bilingual_content.js && node tests/test_bilingual_pages.js",

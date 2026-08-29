@@ -44,6 +44,7 @@ jobs:
         run: |
           npm run content-layout:check
           npm run bilingual:check
+          npm run honor-hall:check
           npm run assets:check
           npm run daily-images:check
           npm run daily-widgets:check

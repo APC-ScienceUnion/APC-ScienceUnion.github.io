@@ -3,7 +3,7 @@ title: About APC Science Union
 date: 2022-03-12 22:17:49
 lang: en
 translation_key: page:about
-translation_source_sha256: 5054d1947a3c596d7ee36d81bde8fb63a9c988086e32ecc53b03d0d05699c5b2
+translation_source_sha256: fd6b0bc8640e89dc48f0ba8e9e5e0a8cfc1707bec996aaac0a39f78d2b8645b7
 permalink: en/about/
 aside: true
 ---
@@ -20,6 +20,8 @@ We are building an online library together with members across the Union. It bri
 
 APC Science Union was founded on July 5, 2016. Over the years, it has developed an active community, a substantial collection of learning resources, and a membership with experience in many academic fields. It is a place where people can study, exchange ideas, and make friends through a shared interest in science.
 
+## Working groups
+
 We currently have four working groups: Science Communication, Recruitment, Operations, and Publishing. Each supports science communication in a different way. If your interests or skills match one of these roles, you are welcome to apply. **All four groups offer paid assignments.**
 
 1. **Science Communication Team:** The main writing team. Its members create engaging science content across a wide range of subjects. We welcome anyone who enjoys explaining science and would like to become a regular contributor.
@@ -30,6 +32,90 @@ We currently have four working groups: Science Communication, Recruitment, Opera
 To apply for full membership in Gewu Society / APC Science Union, first join our recruitment group on QQ: **1027526691**.
 
 Every summer, the Recruitment Team runs a large entrance challenge in that group. Anyone looking for a challenge is welcome to take part. The group also hosts other Union activities throughout the year, and visitors are welcome.
+
+### Science Communication Team
+
+<div class="flink apc-member-directory" aria-label="Science Communication Team members">
+  <div class="flink-list" role="list">
+    <div class="flink-list-item" role="listitem">
+      <a class="flink-member-card" aria-label="emmm, Team Lead">
+        <div class="flink-item-icon"><img class="no-lightbox" src="/about/assets/members/emmm.jpg" alt="Avatar of emmm"></div>
+        <div class="flink-item-name">emmm</div>
+        <div class="flink-item-desc" title="Team Lead">Team Lead</div>
+      </a>
+    </div>
+    <div class="flink-list-item" role="listitem">
+      <a class="flink-member-card" aria-label="阿氯, Deputy Lead">
+        <div class="flink-item-icon"><img class="no-lightbox" src="/about/assets/members/alv.jpg" alt="Avatar of 阿氯"></div>
+        <div class="flink-item-name">阿氯</div>
+        <div class="flink-item-desc" title="Deputy Lead">Deputy Lead</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+### Recruitment Team
+
+<div class="flink apc-member-directory" aria-label="Recruitment Team members">
+  <div class="flink-list" role="list">
+    <div class="flink-list-item" role="listitem">
+      <a class="flink-member-card" aria-label="TATP, Team Lead">
+        <div class="flink-item-icon"><img class="no-lightbox" src="/about/assets/members/tatp.jpg" alt="Avatar of TATP"></div>
+        <div class="flink-item-name">TATP</div>
+        <div class="flink-item-desc" title="Team Lead">Team Lead</div>
+      </a>
+    </div>
+    <div class="flink-list-item" role="listitem">
+      <a class="flink-member-card" aria-label="紫金, Deputy Lead">
+        <div class="flink-item-icon"><img class="no-lightbox" src="/about/assets/members/zijin.jpg" alt="Avatar of 紫金"></div>
+        <div class="flink-item-name">紫金</div>
+        <div class="flink-item-desc" title="Deputy Lead">Deputy Lead</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+### Operations Team
+
+<div class="flink apc-member-directory" aria-label="Operations Team members">
+  <div class="flink-list" role="list">
+    <div class="flink-list-item" role="listitem">
+      <a class="flink-member-card" aria-label="阿氯, Team Lead">
+        <div class="flink-item-icon"><img class="no-lightbox" src="/about/assets/members/alv.jpg" alt="Avatar of 阿氯"></div>
+        <div class="flink-item-name">阿氯</div>
+        <div class="flink-item-desc" title="Team Lead">Team Lead</div>
+      </a>
+    </div>
+    <div class="flink-list-item" role="listitem">
+      <a class="flink-member-card" aria-label="楚玉, Deputy Lead">
+        <div class="flink-item-icon"><img class="no-lightbox" src="/about/assets/members/chuyu.jpg" alt="Avatar of 楚玉"></div>
+        <div class="flink-item-name">楚玉</div>
+        <div class="flink-item-desc" title="Deputy Lead">Deputy Lead</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+### Publishing Team
+
+<div class="flink apc-member-directory" aria-label="Publishing Team members">
+  <div class="flink-list" role="list">
+    <div class="flink-list-item" role="listitem">
+      <a class="flink-member-card" aria-label="jam, Team Lead">
+        <div class="flink-item-icon"><img class="no-lightbox" src="/about/assets/members/jam.jpg" alt="Avatar of jam"></div>
+        <div class="flink-item-name">jam</div>
+        <div class="flink-item-desc" title="Team Lead">Team Lead</div>
+      </a>
+    </div>
+    <div class="flink-list-item" role="listitem">
+      <a class="flink-member-card" aria-label="时光, Deputy Lead">
+        <div class="flink-item-icon"><img class="no-lightbox" src="/about/assets/members/shiguang.png" alt="Avatar of 时光"></div>
+        <div class="flink-item-name">时光</div>
+        <div class="flink-item-desc" title="Deputy Lead">Deputy Lead</div>
+      </a>
+    </div>
+  </div>
+</div>
 
 ## APC on social media
 

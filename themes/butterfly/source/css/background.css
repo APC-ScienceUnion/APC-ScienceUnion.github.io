@@ -1076,6 +1076,13 @@ html:not(.site-home) #aside-content .card-archives a:hover {
   border-radius: 10px;
 }
 
+/* About-page member cards reuse the resource-card presentation without acting as links. */
+.apc-member-directory .flink-member-card {
+  display: block;
+  height: 100%;
+  cursor: default;
+}
+
 /* 分頁：首頁淺色玻璃鈕；其餘頁跟主題 */
 html.site-home #pagination .pagination a.page-number,
 html.site-home #pagination .pagination span.page-number,
@@ -1511,4 +1518,3 @@ html:not(.site-home) #apc-news .article-sort-item:not(.year) .article-sort-item-
 html:not(.site-home) #apc-news .apc-news-content {
   color: var(--font-color) !important;
 }
-

@@ -39,6 +39,10 @@ skip_render:
   - gallery/GeographyCard/data.js
   - gallery/ChemistryCard/data.js
   - gallery/term-wiki/**
+  - honor-hall/app.js
+  - honor-hall/data.js
+  - honor-hall/styles.css
+  - en/honor-hall/data.js
   - netlify/**
   - netlify.toml
   - package.json
@@ -165,6 +169,7 @@ css_minifier:
     - fwzq/**/*.css
     - science-turtle-soup/**/*.css
     - gallery/term-wiki/**/*.css
+    - honor-hall/**/*.css
 
 js_minifier:
   enable: true 
@@ -179,6 +184,8 @@ js_minifier:
     - gallery/GeographyCard/**/*.js
     - gallery/ChemistryCard/**/*.js
     - gallery/term-wiki/**/*.js
+    - honor-hall/**/*.js
+    - en/honor-hall/**/*.js
 
 image_minifier: 
   # Keep committed images byte-for-byte identical in the generated site.

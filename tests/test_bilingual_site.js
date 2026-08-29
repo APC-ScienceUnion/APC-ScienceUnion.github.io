@@ -338,7 +338,7 @@ assertEnglishRecentPosts(englishHome, englishArticlePaths);
 
 const expectedTopMenu = [
   { name: 'Archives', href: '/en/archives/' },
-  { name: 'Categories', href: '/en/categories/' },
+  { name: 'Hall of Honor', href: '/en/honor-hall/' },
   { name: 'Science Galleries', href: 'javascript:void(0);' },
   { name: 'Online Resources', href: '/link/' },
   { name: 'APC Games', href: 'javascript:void(0);' },
@@ -384,6 +384,7 @@ function assertEnglishHeader(page) {
 assertEnglishHeader(englishHome);
 
 assertIndexPair('/about/', '/en/about/');
+assertIndexPair('/honor-hall/', '/en/honor-hall/');
 const englishAboutPage = loadPage('/en/about/');
 assertEnglishHeader(englishAboutPage);
 assertVisibleAside(englishAboutPage);

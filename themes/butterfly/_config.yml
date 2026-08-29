@@ -5,7 +5,7 @@
 menu:
   时间轴: /archives/ || fas fa-archive
   # 标签: /tags/ || fas fa-tags
-  文章分类: /categories/ || fas fa-folder-open
+  荣誉殿堂: /honor-hall/ || fas fa-award
   科普画廊||fa-regular fa-images:
     植物卡片: /gallery/PlantCard/ || fa-brands fa-pagelines
     地理名词卡片: /gallery/GeographyCard/ || fa-solid fa-earth-asia
@@ -19,10 +19,10 @@ menu:
   关于我们: /about/ || fas fa-heart
 
 # English navigation mirrors the complete Chinese header. Article listings,
-# archives, categories, APC News, and About use dedicated English routes.
+# archives, Hall of Honor, APC News, and About use dedicated English routes.
 menu_en:
   Archives: /en/archives/ || fas fa-archive
-  Categories: /en/categories/ || fas fa-folder-open
+  Hall of Honor: /en/honor-hall/ || fas fa-award
   Science Galleries||fa-regular fa-images:
     Plant Cards: /gallery/PlantCard/ || fa-brands fa-pagelines
     Geography Cards: /gallery/GeographyCard/ || fa-solid fa-earth-asia

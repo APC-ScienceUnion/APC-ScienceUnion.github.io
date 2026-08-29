@@ -79,7 +79,7 @@ assert.equal(englishAbout.permalink, 'en/about/');
 assert.equal(englishAbout.translation_source_sha256, sha256(chineseAboutSource), 'English About page is stale');
 assert.ok(String(englishAbout._content || '').trim().length > 0, 'English About page is empty');
 
-const allowedAboutNames = ['格物社', 'APC科学联盟', 'AIPC没有I'];
+const allowedAboutNames = ['格物社', 'APC科学联盟', 'AIPC没有I', '阿氯', '紫金', '楚玉', '时光'];
 const englishAboutProse = allowedAboutNames.reduce(
   (value, name) => value.split(name).join(''),
   String(englishAbout._content || '')
