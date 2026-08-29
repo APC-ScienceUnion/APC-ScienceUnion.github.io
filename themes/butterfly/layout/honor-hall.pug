@@ -1,31 +1,17 @@
-- var assetVersion = 'honor-hall-20260830-1'
-- var useHeroAsWebBg = false
-- var hideAside = 'hide-aside'
-- var pageType = 'page'
+extends includes/layout.pug
 
-doctype html
-html(lang=page.lang || config.language data-theme=theme.display_mode class='hide-aside honor-hall-document')
-  head
-    include ./includes/head.pug
-    link(rel='stylesheet' href=url_for('/honor-hall/styles.css') + '?v=' + assetVersion)
-  body
-    if theme.preloader
-      !=partial('includes/loading/loading', {}, {cache: false})
+block page_head
+  link(rel='stylesheet' href=url_for('/honor-hall/styles.css') + '?v=honor-hall-20260830-2')
 
-    !=partial('includes/sidebar', {}, {cache: false})
+block content
+  #page
+    if top_img === false
+      h1.page-title= page.title
 
-    #body-wrap.page.honor-hall-shell
-      include ./includes/header/index.pug
+    #honor-hall(data-honor-hall-root data-asset-version='honor-hall-20260830-2')
+    noscript
+      p.honor-hall-noscript= page.lang === 'en' ? 'Certificate search and galleries require JavaScript.' : '荣誉证书查询与画廊需要启用 JavaScript。'
 
-      main.honor-hall-page(aria-labelledby='honor-hall-page-title')
-        .honor-hall-page__inner
-          h1#honor-hall-page-title.honor-hall-page__title= page.title
-          #honor-hall(data-honor-hall-root data-asset-version=assetVersion)
-          noscript
-            p.honor-hall-noscript= page.lang === 'en' ? 'Certificate search and galleries require JavaScript.' : '荣誉证书查询与画廊需要启用 JavaScript。'
-
-    include ./includes/rightside.pug
-    !=partial('includes/third-party/search/index', {}, {cache: false})
-    include ./includes/additional-js.pug
-    script(src=url_for(page.honor_hall_data || '/honor-hall/data.js') + '?v=' + assetVersion)
-    script(src=url_for('/honor-hall/app.js') + '?v=' + assetVersion)
+block page_scripts
+  script(src=url_for(page.honor_hall_data || '/honor-hall/data.js') + '?v=honor-hall-20260830-2')
+  script(src=url_for('/honor-hall/app.js') + '?v=honor-hall-20260830-2')

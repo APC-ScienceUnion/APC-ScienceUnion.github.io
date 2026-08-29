@@ -13,6 +13,8 @@ const chineseDataFile = path.join(sourceRoot, 'honor-hall', 'data.js');
 const englishDataFile = path.join(sourceRoot, 'en', 'honor-hall', 'data.js');
 const chinesePageFile = path.join(sourceRoot, 'honor-hall', 'index.md');
 const englishPageFile = path.join(sourceRoot, 'en', 'honor-hall', 'index.md');
+const layoutFile = path.join(root, 'themes', 'butterfly', 'layout', 'honor-hall.pug');
+const stylesFile = path.join(sourceRoot, 'honor-hall', 'styles.css');
 const originalAssetDigest = 'ae29b10c8af9abdecf031aa3e72acec53b127b276aa9c5ad18d79b724dca38ae';
 
 function normalizedSource(file) {
@@ -146,7 +148,17 @@ assert.equal(englishPage.permalink, 'en/honor-hall/');
 assert.equal(englishPage.honor_hall_data, '/en/honor-hall/data.js');
 assert.equal(englishPage.translation_key, 'page:honor-hall');
 assert.equal(englishPage.translation_source_sha256, sha256(chinesePageSource), 'English Honor Hall page is stale');
-assert.equal(chinesePage.aside, false);
-assert.equal(englishPage.aside, false);
+assert.equal(chinesePage.aside, true, 'Chinese Honor Hall must use the same sidebar layout as regular site pages');
+assert.equal(englishPage.aside, true, 'English Honor Hall must use the same sidebar layout as regular site pages');
+assert.notEqual(chinesePage.top_img, false, 'Chinese Honor Hall must keep the standard page header treatment');
+assert.notEqual(englishPage.top_img, false, 'English Honor Hall must keep the standard page header treatment');
+
+const layoutSource = normalizedSource(layoutFile);
+const stylesSource = normalizedSource(stylesFile);
+assert.match(layoutSource, /^extends includes\/layout\.pug$/mu, 'Honor Hall must inherit the standard Butterfly page shell');
+assert.match(layoutSource, /^  #page$/mu, 'Honor Hall must use the same #page content card as Online Resources and About');
+assert.doesNotMatch(layoutSource, /doctype html|honor-hall-document|honor-hall-shell|honor-hall-page__title/u, 'Honor Hall recreated a standalone site shell');
+assert.doesNotMatch(stylesSource, /honor-hall-document|honor-hall-shell|honor-hall-page(?:__|\s*\{)/u, 'Honor Hall CSS overrides the shared site page layout');
+assert.match(layoutSource, /honor-hall-20260830-2/u, 'Honor Hall asset cache version was not updated');
 
 console.log('Honor Hall check passed: 2 activities, 37 original 2000×1414 PNG certificates, bilingual data, and no public QQ mapping.');
