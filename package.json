@@ -9,7 +9,7 @@
     "content-layout:migrate": "node tools/content_category_layout.js --migrate",
     "content-layout:check": "node tools/content_category_layout.js --check",
     "assets:localize": "python tools/localize_external_images.py",
-    "assets:check": "python tools/localize_external_images.py --check",
+    "assets:check": "python -m unittest tests.test_external_images_localizer && python tools/localize_external_images.py --check",
     "assets:check-public": "python tools/localize_external_images.py --check-public",
     "assets:refresh-references": "python tools/localize_external_images.py --refresh-references",
     "images:publish-categorized": "node tools/publish_categorized_images.js --publish public",

@@ -11455,21 +11455,6 @@
       ]
     },
     {
-      "source_url": "https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN",
-      "fetched_url": "https://www.bing.com/th?id=OHR.BKBridge_ZH-CN3870511222_1920x1080.jpg",
-      "local_path": "themes/butterfly/source/img/site/asset-ed71296263.jpg",
-      "public_path": "/img/site/asset-ed71296263.jpg",
-      "mime_type": "image/jpeg",
-      "bytes": 339783,
-      "sha256": "a1a9fa1e7db0f3b0de03df3e39f7d06db8b270fbebfa552e8456f0a63862c792",
-      "references": [
-        {
-          "file": "themes/butterfly/_config.yml",
-          "count": 1
-        }
-      ]
-    },
-    {
       "source_url": "https://yanxuan.nosdn.127.net/1b99ad4cc38057f08a480c6f2d8c2d55.png",
       "fetched_url": "https://yanxuan.nosdn.127.net/1b99ad4cc38057f08a480c6f2d8c2d55.png",
       "local_path": "themes/butterfly/source/img/site/asset-fed58d8d7b.png",

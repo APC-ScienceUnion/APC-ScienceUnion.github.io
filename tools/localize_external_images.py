@@ -44,6 +44,11 @@ SOURCE_ROOT = REPO_ROOT / "source"
 PUBLIC_ROOT = REPO_ROOT / "public"
 MANIFEST_PATH = REPO_ROOT / "tools" / "external-images-manifest.json"
 POST_ROOT = SOURCE_ROOT / "_posts"
+THEME_CONFIG_PATH = REPO_ROOT / "themes" / "butterfly" / "_config.yml"
+
+BING_DYNAMIC_INDEX_URL = (
+    "https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN"
+)
 
 UNCATEGORIZED_POST_SECTION = "未分类"
 POST_ASSET_BUCKET_ALIASES = {
@@ -181,6 +186,18 @@ def normalize_url_token(token: str) -> str:
     """Trim punctuation that cannot be part of the matched rendering URL."""
 
     return token.rstrip(",;]}")
+
+
+def is_allowed_runtime_image(
+    *, file: Path, yaml_key: str | None, url: str
+) -> bool:
+    """Allow only the homepage's intentional, runtime-resolved Bing image."""
+
+    return (
+        file.resolve() == THEME_CONFIG_PATH.resolve()
+        and yaml_key == "index_img"
+        and url == BING_DYNAMIC_INDEX_URL
+    )
 
 
 def url_has_image_suffix(url: str) -> bool:
@@ -368,6 +385,11 @@ def scan_text(file: Path, text: str) -> list[Reference]:
                 ),
                 require_image_suffix=not key_is_image,
             ):
+                yaml_key = key_match.group("key").strip() if key_match else None
+                if is_allowed_runtime_image(
+                    file=file, yaml_key=yaml_key, url=ref.url
+                ):
+                    continue
                 add(ref)
             offset += len(line)
 

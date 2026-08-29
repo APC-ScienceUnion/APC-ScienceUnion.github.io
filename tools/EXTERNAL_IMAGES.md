@@ -76,6 +76,13 @@ Ordinary links to sources, papers, attribution pages, scripts, fonts, APIs, and
 third-party services are not images rendered by the static site and are not
 rewritten.
 
+The homepage banner is the single runtime-image exception. Only the exact
+`index_img` value in `themes/butterfly/_config.yml` may use
+`https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN`, so
+the provider can redirect visitors to the current Bing image. The same URL in
+another file or YAML key—and any other external image URL—remains subject to the
+normal localization check.
+
 Everything under `source/gallery/` is explicitly excluded. Galleries are curated
 separately and this workflow neither audits nor modifies their image references.
 
