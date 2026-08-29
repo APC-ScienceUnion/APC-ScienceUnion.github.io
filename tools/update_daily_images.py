@@ -21,8 +21,8 @@ import time
 from datetime import date, datetime, timedelta, timezone
 from typing import Any, Callable
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote, urlencode
-from urllib.request import Request, urlopen
+from urllib.parse import parse_qs, quote, urlencode, urljoin, urlsplit
+from urllib.request import HTTPRedirectHandler, Request, build_opener, urlopen
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,16 +42,131 @@ MAX_IMAGE_BYTES = int(os.environ.get("DAILY_IMAGE_MAX_BYTES", 95 * 1024 * 1024))
 RETRIES = max(1, int(os.environ.get("DAILY_IMAGE_RETRIES", "4")))
 TIMEOUT = max(5, int(os.environ.get("DAILY_IMAGE_TIMEOUT", "35")))
 RETENTION = max(1, int(os.environ.get("DAILY_IMAGE_RETENTION", "3")))
+BING_API_ROOT = "https://bing.ee123.net/img/"
+BING_API_HOSTS = frozenset({"bing.ee123.net"})
+BING_IMAGE_HOSTS = frozenset({"cn.bing.com", "www.bing.com"})
+NCKU_APOD_URL = "https://sprite.phys.ncku.edu.tw/astrolab/mirrors/apod/apod.html"
+NCKU_APOD_HOSTS = frozenset({"sprite.phys.ncku.edu.tw"})
+
+_OPENCC_CONVERTER: Any = None
 
 
 class SnapshotError(RuntimeError):
     """A provider response could not safely become a local snapshot."""
 
 
+def validate_provider_url(
+    value: Any, *, allowed_hosts: frozenset[str], label: str
+) -> str:
+    if not isinstance(value, str) or not value:
+        raise SnapshotError(f"{label}: URL is missing")
+    try:
+        parsed = urlsplit(value)
+        port = parsed.port
+    except ValueError as exc:
+        raise SnapshotError(f"{label}: URL is invalid") from exc
+    if (
+        parsed.scheme != "https"
+        or parsed.hostname not in allowed_hosts
+        or port not in {None, 443}
+        or parsed.username is not None
+        or parsed.password is not None
+    ):
+        hosts = ", ".join(sorted(allowed_hosts))
+        raise SnapshotError(
+            f"{label}: URL must use HTTPS on an approved host ({hosts})"
+        )
+    return value
+
+
+class _RestrictedRedirectHandler(HTTPRedirectHandler):
+    def __init__(self, allowed_hosts: frozenset[str], label: str) -> None:
+        super().__init__()
+        self.allowed_hosts = allowed_hosts
+        self.label = label
+
+    def redirect_request(
+        self,
+        req: Request,
+        fp: Any,
+        code: int,
+        msg: str,
+        headers: Any,
+        newurl: str,
+    ) -> Request | None:
+        validate_provider_url(
+            newurl,
+            allowed_hosts=self.allowed_hosts,
+            label=f"{self.label} redirect",
+        )
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 class _TextExtractor(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
         self.parts: list[str] = []
+
+    def handle_data(self, data: str) -> None:
+        self.parts.append(data)
+
+
+class _PlainTextExtractor(HTMLParser):
+    """Drop tags while retaining the boundaries represented by block markup."""
+
+    _BLOCK_TAGS = {
+        "address",
+        "article",
+        "aside",
+        "blockquote",
+        "br",
+        "dd",
+        "div",
+        "dl",
+        "dt",
+        "figcaption",
+        "figure",
+        "footer",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "header",
+        "li",
+        "main",
+        "nav",
+        "ol",
+        "p",
+        "pre",
+        "section",
+        "table",
+        "td",
+        "th",
+        "tr",
+        "ul",
+    }
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+
+    def _separator(self) -> None:
+        if self.parts and not self.parts[-1].endswith(("\n", "\r")):
+            self.parts.append("\n")
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() == "br":
+            self._separator()
+
+    def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() in self._BLOCK_TAGS:
+            self._separator()
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() in self._BLOCK_TAGS:
+            self._separator()
 
     def handle_data(self, data: str) -> None:
         self.parts.append(data)
@@ -69,15 +184,70 @@ def clean_html(value: Any, limit: int = 20_000) -> str:
     return re.sub(r"\s+", " ", text).strip()[:limit]
 
 
+def strip_html_tags(value: Any) -> str:
+    """Remove markup from an API field without rewriting its text."""
+
+    if value is None:
+        return ""
+    source = str(value)
+    parser = _PlainTextExtractor()
+    try:
+        parser.feed(source)
+        parser.close()
+        return "".join(parser.parts).strip("\r\n")
+    except Exception:
+        return html.unescape(re.sub(r"<[^>]*>", "", source))
+
+
+def extracted_html_text(value: Any) -> str:
+    """Turn HTML into readable text without inserting spaces around inline tags."""
+
+    lines = []
+    for line in strip_html_tags(value).splitlines():
+        normalized = re.sub(r"[\t\f\v ]+", " ", line).strip()
+        normalized = re.sub(r" +([,.;:!?，。；：！？])", r"\1", normalized)
+        if normalized:
+            lines.append(normalized)
+    return "\n".join(lines)
+
+
+def ncku_english_explanation(value: Any) -> str:
+    text = extracted_html_text(value)
+    housekeeping = re.search(
+        r"\s+(?:Growing Gallery:|APOD(?:'|’)s main NASA site is moving\b)",
+        text,
+        re.I,
+    )
+    return text[: housekeeping.start()].rstrip() if housekeeping else text
+
+
+def simplified_chinese(value: Any, *, label: str) -> str:
+    global _OPENCC_CONVERTER
+    text = str(value or "").strip()
+    try:
+        if _OPENCC_CONVERTER is None:
+            from opencc import OpenCC
+
+            _OPENCC_CONVERTER = OpenCC("t2s")
+        return str(_OPENCC_CONVERTER.convert(text))
+    except (ImportError, OSError, ValueError) as exc:
+        raise SnapshotError(
+            f"{label}: OpenCC conversion is unavailable; install the daily-image requirements"
+        ) from exc
+
+
 def request_bytes(
     url: str,
     *,
     accept: str,
     label: str,
     max_bytes: int,
+    allowed_redirect_hosts: frozenset[str] | None = None,
 ) -> tuple[bytes, str, str]:
     """Fetch a response without requesting HTTP content compression."""
 
+    if allowed_redirect_hosts is not None:
+        validate_provider_url(url, allowed_hosts=allowed_redirect_hosts, label=label)
     last_error: Exception | None = None
     for attempt in range(1, RETRIES + 1):
         try:
@@ -90,7 +260,14 @@ def request_bytes(
                     # not transparently transformed before being persisted.
                 },
             )
-            with urlopen(request, timeout=TIMEOUT) as response:
+            if allowed_redirect_hosts is None:
+                response_context = urlopen(request, timeout=TIMEOUT)
+            else:
+                opener = build_opener(
+                    _RestrictedRedirectHandler(allowed_redirect_hosts, label)
+                )
+                response_context = opener.open(request, timeout=TIMEOUT)
+            with response_context as response:
                 content_type = response.headers.get("Content-Type", "")
                 declared = response.headers.get("Content-Length")
                 if declared:
@@ -106,7 +283,14 @@ def request_bytes(
                     raise SnapshotError(
                         f"{label}: response is larger than {max_bytes} bytes"
                     )
-                return body, content_type, response.geturl()
+                final_url = response.geturl()
+                if allowed_redirect_hosts is not None:
+                    validate_provider_url(
+                        final_url,
+                        allowed_hosts=allowed_redirect_hosts,
+                        label=f"{label} final URL",
+                    )
+                return body, content_type, final_url
         except (HTTPError, URLError, TimeoutError, OSError, SnapshotError) as exc:
             last_error = exc
             if attempt == RETRIES:
@@ -115,12 +299,18 @@ def request_bytes(
     raise SnapshotError(f"{label}: fetch failed after {RETRIES} attempts: {last_error}")
 
 
-def fetch_json(url: str, *, label: str) -> dict[str, Any]:
-    body, content_type, _ = request_bytes(
+def fetch_json_response(
+    url: str,
+    *,
+    label: str,
+    allowed_redirect_hosts: frozenset[str] | None = None,
+) -> tuple[dict[str, Any], str]:
+    body, content_type, final_url = request_bytes(
         url,
         accept="application/json",
         label=label,
         max_bytes=MAX_JSON_BYTES,
+        allowed_redirect_hosts=allowed_redirect_hosts,
     )
     mime = content_type.split(";", 1)[0].strip().lower()
     if mime not in {"application/json", "text/json", "text/plain", ""} and not mime.endswith(
@@ -133,7 +323,52 @@ def fetch_json(url: str, *, label: str) -> dict[str, Any]:
         raise SnapshotError(f"{label}: invalid JSON response: {exc}") from exc
     if not isinstance(value, dict):
         raise SnapshotError(f"{label}: JSON root is not an object")
-    return value
+    return value, final_url
+
+
+def fetch_json(url: str, *, label: str) -> dict[str, Any]:
+    return fetch_json_response(url, label=label)[0]
+
+
+def fetch_html(
+    url: str,
+    *,
+    label: str,
+    allowed_redirect_hosts: frozenset[str] | None = None,
+) -> tuple[str, str]:
+    body, content_type, final_url = request_bytes(
+        url,
+        accept="text/html,application/xhtml+xml",
+        label=label,
+        max_bytes=MAX_JSON_BYTES,
+        allowed_redirect_hosts=allowed_redirect_hosts,
+    )
+    mime = content_type.split(";", 1)[0].strip().lower()
+    if mime not in {"", "text/html", "application/xhtml+xml", "text/plain"}:
+        raise SnapshotError(f"{label}: expected HTML MIME type, got {mime!r}")
+
+    encodings: list[str] = []
+    header_charset = re.search(r"charset\s*=\s*['\"]?([^;'\"\s]+)", content_type, re.I)
+    if header_charset:
+        encodings.append(header_charset.group(1))
+    meta_charset = re.search(
+        br"<meta\b[^>]*charset\s*=\s*['\"]?([^'\"\s/>]+)",
+        body[:4096],
+        re.I,
+    )
+    if meta_charset:
+        try:
+            encodings.append(meta_charset.group(1).decode("ascii"))
+        except UnicodeDecodeError:
+            pass
+    encodings.extend(("utf-8-sig", "big5", "cp950"))
+    errors: list[str] = []
+    for encoding in dict.fromkeys(encodings):
+        try:
+            return body.decode(encoding), final_url
+        except (LookupError, UnicodeDecodeError) as exc:
+            errors.append(f"{encoding}: {exc}")
+    raise SnapshotError(f"{label}: cannot decode HTML ({'; '.join(errors)})")
 
 
 def sniff_image(body: bytes) -> tuple[str, str] | None:
@@ -201,7 +436,12 @@ def validate_image(body: bytes, content_type: str, *, label: str) -> tuple[str, 
     return actual_mime, extension
 
 
-def download_image(url: str, *, label: str) -> tuple[bytes, str, str, str]:
+def download_image(
+    url: str,
+    *,
+    label: str,
+    allowed_redirect_hosts: frozenset[str] | None = None,
+) -> tuple[bytes, str, str, str]:
     body, content_type, final_url = request_bytes(
         url,
         # Do not negotiate a modern/derived representation: persist whatever
@@ -209,127 +449,268 @@ def download_image(url: str, *, label: str) -> tuple[bytes, str, str, str]:
         accept="*/*",
         label=label,
         max_bytes=MAX_IMAGE_BYTES,
+        allowed_redirect_hosts=allowed_redirect_hosts,
     )
     mime, extension = validate_image(body, content_type, label=label)
     return body, mime, extension, final_url
 
 
-def iso_date(compact: str) -> str:
-    if not re.fullmatch(r"\d{8}", compact):
-        raise SnapshotError(f"invalid provider date {compact!r}")
-    return f"{compact[:4]}-{compact[4:6]}-{compact[6:]}"
+def required_json_text(payload: dict[str, Any], key: str, *, label: str) -> str:
+    value = payload.get(key)
+    if not isinstance(value, str) or not value.strip():
+        raise SnapshotError(f"{label}: missing non-empty {key}")
+    return value
+
+
+def parse_bing_payload(
+    payload: dict[str, Any], *, expected_date: date, api_url: str
+) -> tuple[dict[str, Any], str]:
+    if str(payload.get("status")) != "200":
+        raise SnapshotError(f"Bing metadata: API status is {payload.get('status')!r}")
+    raw_date = required_json_text(payload, "date", label="Bing metadata")
+    try:
+        response_date = datetime.strptime(raw_date, "%Y/%m/%d").date()
+    except ValueError as exc:
+        raise SnapshotError(f"Bing metadata: invalid date {raw_date!r}") from exc
+    if response_date != expected_date:
+        raise SnapshotError(
+            f"Bing metadata: requested {expected_date.isoformat()} but API returned "
+            f"{response_date.isoformat()}"
+        )
+
+    image_url = required_json_text(payload, "imgurl", label="Bing metadata")
+    parsed_image = urlsplit(image_url)
+    if parsed_image.scheme != "https" or parsed_image.hostname not in BING_IMAGE_HOSTS:
+        raise SnapshotError(
+            "Bing metadata: imgurl must use HTTPS on an approved Bing image host"
+        )
+    # These four fields are intentionally neither summarized nor embellished.
+    title = required_json_text(payload, "imgtitle", label="Bing metadata")
+    subtitle = required_json_text(payload, "imgshow", label="Bing metadata")
+    detail = required_json_text(payload, "imgdetail", label="Bing metadata")
+    copyright_text = required_json_text(payload, "imgcopyright", label="Bing metadata")
+    metadata = {
+        "date": response_date.isoformat(),
+        "title": title,
+        "headline": title,
+        "subtitle": subtitle,
+        "description": strip_html_tags(detail),
+        "copyright": copyright_text,
+        "source_page_url": api_url,
+        "source_image_url": image_url,
+    }
+    return metadata, image_url
 
 
 def bing_snapshot() -> tuple[dict[str, Any], bytes, str]:
-    api_url = "https://www.bing.com/HPImageArchive.aspx?" + urlencode(
-        {"format": "js", "idx": "0", "n": "1", "mkt": "zh-CN"}
+    expected_date = datetime.now(SHANGHAI).date()
+    api_url = BING_API_ROOT + "?" + urlencode(
+        {
+            "date": expected_date.strftime("%Y%m%d"),
+            "size": "1920x1080",
+            "imgtype": "jpg",
+            "type": "json",
+        }
     )
-    payload = fetch_json(api_url, label="Bing metadata")
-    images = payload.get("images")
-    if not isinstance(images, list) or not images or not isinstance(images[0], dict):
-        raise SnapshotError("Bing metadata: no image entry")
-    item = images[0]
-    snapshot_date = iso_date(str(item.get("enddate") or item.get("startdate") or ""))
-    urlbase = str(item.get("urlbase") or "")
-    api_path = str(item.get("url") or "")
-    candidates: list[str] = []
-    if urlbase.startswith("/"):
-        candidates.append(f"https://www.bing.com{urlbase}_UHD.jpg")
-    if api_path.startswith("/"):
-        candidates.append(f"https://www.bing.com{api_path}")
-    if not candidates:
-        raise SnapshotError("Bing metadata: no usable image URL")
-
-    errors: list[str] = []
-    for candidate in dict.fromkeys(candidates):
-        try:
-            body, mime, extension, final_url = download_image(
-                candidate, label="Bing image"
-            )
-            break
-        except SnapshotError as exc:
-            errors.append(str(exc))
-    else:
-        raise SnapshotError("Bing image: " + "; ".join(errors))
-
-    copyright_text = clean_html(item.get("copyright"))
-    subject = re.split(r"\s*\(©", copyright_text, maxsplit=1)[0].strip()
-    metadata = {
-        "date": snapshot_date,
-        "title": subject or clean_html(item.get("title")) or "必应每日壁纸",
-        "headline": clean_html(item.get("title")),
-        "description": "",
-        "copyright": copyright_text,
-        "source_page_url": str(item.get("copyrightlink") or "https://www.bing.com/"),
-        "source_image_url": candidate,
-        "fetched_url": final_url,
-        "mime": mime,
-    }
+    payload, final_api_url = fetch_json_response(
+        api_url,
+        label="Bing metadata",
+        allowed_redirect_hosts=BING_API_HOSTS,
+    )
+    validate_provider_url(
+        final_api_url, allowed_hosts=BING_API_HOSTS, label="Bing metadata final URL"
+    )
+    metadata, image_url = parse_bing_payload(
+        payload, expected_date=expected_date, api_url=final_api_url
+    )
+    body, mime, extension, final_url = download_image(
+        image_url,
+        label="Bing image",
+        allowed_redirect_hosts=BING_IMAGE_HOSTS,
+    )
+    validate_provider_url(
+        final_url, allowed_hosts=BING_IMAGE_HOSTS, label="Bing image final URL"
+    )
+    metadata.update({"fetched_url": final_url, "mime": mime})
     return metadata, body, extension
 
 
-def apod_page_url(snapshot_date: str) -> str:
-    parsed = date.fromisoformat(snapshot_date)
-    return f"https://apod.nasa.gov/apod/ap{parsed:%y%m%d}.html"
+def parse_ncku_apod(page: str, *, page_url: str) -> dict[str, Any]:
+    expected_origin = urlsplit(NCKU_APOD_URL)
+    page_origin = urlsplit(page_url)
+    if (
+        page_origin.scheme != "https"
+        or page_origin.hostname != expected_origin.hostname
+        or page_origin.port not in {None, 443}
+    ):
+        raise SnapshotError("NCKU APOD: page redirected outside the approved HTTPS host")
+
+    date_match = re.search(
+        r"(?P<year>\d{4})\s*年\s*(?P<month>\d{1,2})\s*月\s*(?P<day>\d{1,2})\s*日",
+        page,
+    )
+    if not date_match:
+        raise SnapshotError("NCKU APOD: page date is missing")
+    try:
+        snapshot_day = date(
+            int(date_match.group("year")),
+            int(date_match.group("month")),
+            int(date_match.group("day")),
+        )
+    except ValueError as exc:
+        raise SnapshotError("NCKU APOD: page date is invalid") from exc
+
+    title = ""
+    title_en = ""
+    copyright_text = ""
+    for center_match in re.finditer(r"<center\b[^>]*>(.*?)</center\s*>", page, re.I | re.S):
+        block = center_match.group(1)
+        bolds = list(re.finditer(r"<b\b[^>]*>(.*?)</b\s*>", block, re.I | re.S))
+        credit_index = next(
+            (
+                index
+                for index, item in enumerate(bolds)
+                if re.search(r"(?:影像提供|圖像提供|图像提供)", clean_html(item.group(1)))
+                and re.search(r"(?:版權|版权)", clean_html(item.group(1)))
+            ),
+            None,
+        )
+        if credit_index is None or credit_index == 0:
+            continue
+        title_fragment = bolds[credit_index - 1].group(1)
+        title = extracted_html_text(title_fragment)
+        english_comment = re.search(r"<!--\s*([^<>]*[A-Za-z][^<>]*)\s*-->", title_fragment)
+        if english_comment:
+            title_en = extracted_html_text(english_comment.group(1))
+        copyright_text = extracted_html_text(block[bolds[credit_index].end() :])
+        break
+    if not title:
+        raise SnapshotError("NCKU APOD: title is missing")
+
+    explanation_marker = re.search(r"(?:解說|說明|解说|说明)\s*[：:]", page)
+    if not explanation_marker:
+        raise SnapshotError("NCKU APOD: Chinese explanation marker is missing")
+    remainder = page[explanation_marker.end() :]
+    description_end = re.search(
+        r"<center\b[^>]*>.*?(?:圖庫持續更新|图库持续更新|明日的圖片|明日的图片)",
+        remainder,
+        re.I | re.S,
+    )
+    if not description_end:
+        raise SnapshotError("NCKU APOD: Chinese explanation boundary is missing")
+    description = extracted_html_text(remainder[: description_end.start()])
+    if not description:
+        raise SnapshotError("NCKU APOD: Chinese explanation is empty")
+
+    english_explanation_match = re.search(
+        r"<!--\s*英文原文\s*:\s*Explanation\s*:\s*(.*?)-->", page, re.I | re.S
+    )
+    explanation_en = (
+        ncku_english_explanation(english_explanation_match.group(1))
+        if english_explanation_match
+        else ""
+    )
+
+    tomorrow_match = re.search(r"(?:明日的圖片|明日的图片)\s*[：:]", page)
+    tomorrow = ""
+    if tomorrow_match:
+        tomorrow_tail = page[tomorrow_match.end() :]
+        tomorrow_fragment = re.split(
+            r"<(?:p|hr)\b|</center\s*>", tomorrow_tail, maxsplit=1, flags=re.I
+        )[0]
+        tomorrow = extracted_html_text(tomorrow_fragment)
+    if not tomorrow:
+        raise SnapshotError("NCKU APOD: tomorrow preview is missing")
+
+    expected_media_dirs = {snapshot_day.strftime("%y%m"), snapshot_day.strftime("%Y%m")}
+    media_url = ""
+    for media_match in re.finditer(
+        r"\b(?:href|src)\s*=\s*(['\"])(?P<path>image/(?P<folder>\d{4,6})/[^'\"?#]+)\1",
+        page,
+        re.I,
+    ):
+        if media_match.group("folder") not in expected_media_dirs:
+            continue
+        relative = html.unescape(media_match.group("path"))
+        candidate = urljoin(page_url, relative)
+        candidate_origin = urlsplit(candidate)
+        if (
+            candidate_origin.scheme == "https"
+            and candidate_origin.netloc == page_origin.netloc
+        ):
+            media_url = candidate
+            break
+    if not media_url:
+        raise SnapshotError("NCKU APOD: matching image/YYYYMM/ media link is missing")
+
+    return {
+        "date": snapshot_day.isoformat(),
+        "title": simplified_chinese(title, label="NCKU APOD title"),
+        "title_en": title_en,
+        "description": simplified_chinese(description, label="NCKU APOD explanation"),
+        "explanation_en": explanation_en,
+        "copyright": simplified_chinese(copyright_text, label="NCKU APOD copyright"),
+        "tomorrow": simplified_chinese(tomorrow, label="NCKU APOD tomorrow preview"),
+        "media_type": "image",
+        "source_page_url": page_url,
+        "source_image_url": media_url,
+    }
 
 
 def apod_snapshot() -> tuple[dict[str, Any], bytes, str]:
-    api_key = os.environ.get("NASA_API_KEY", "").strip() or "DEMO_KEY"
-    base_url = "https://api.nasa.gov/planetary/apod"
-    initial = fetch_json(
-        base_url + "?" + urlencode({"api_key": api_key}),
-        label="NASA APOD metadata",
+    page, final_page_url = fetch_html(
+        NCKU_APOD_URL,
+        label="NCKU APOD page",
+        allowed_redirect_hosts=NCKU_APOD_HOSTS,
     )
-    try:
-        base_date = date.fromisoformat(str(initial.get("date")))
-    except ValueError as exc:
-        raise SnapshotError("NASA APOD metadata: invalid date") from exc
+    validate_provider_url(
+        final_page_url, allowed_hosts=NCKU_APOD_HOSTS, label="NCKU APOD page final URL"
+    )
+    metadata = parse_ncku_apod(page, page_url=final_page_url)
+    mirror_date = date.fromisoformat(str(metadata["date"]))
+    shanghai_today = datetime.now(SHANGHAI).date()
+    if mirror_date != shanghai_today:
+        raise SnapshotError(
+            f"NCKU APOD: page date {mirror_date.isoformat()} does not match "
+            f"Asia/Shanghai date {shanghai_today.isoformat()}"
+        )
 
-    lookback = max(0, int(os.environ.get("APOD_IMAGE_LOOKBACK_DAYS", "14")))
-    errors: list[str] = []
-    for offset in range(lookback + 1):
-        if offset == 0:
-            record = initial
-        else:
-            query_date = (base_date - timedelta(days=offset)).isoformat()
-            record = fetch_json(
-                base_url
-                + "?"
-                + urlencode({"api_key": api_key, "date": query_date}),
-                label=f"NASA APOD metadata for {query_date}",
+    # NASA is a consistency check only.  Its text and media URLs are never
+    # mixed with the NCKU page's Chinese copy and media.
+    api_key = os.environ.get("NASA_API_KEY", "").strip() or "DEMO_KEY"
+    try:
+        nasa_record = fetch_json(
+            "https://api.nasa.gov/planetary/apod?" + urlencode({"api_key": api_key}),
+            label="NASA APOD consistency metadata",
+        )
+    except SnapshotError as exc:
+        # The public DEMO_KEY is shared and can be rate-limited.  A complete,
+        # current, internally consistent NCKU page remains authoritative.
+        print(
+            f"WARNING: NASA APOD consistency check unavailable ({exc}); "
+            "continuing with the complete NCKU snapshot",
+            file=sys.stderr,
+        )
+    else:
+        if str(nasa_record.get("date") or "") != metadata["date"]:
+            raise SnapshotError(
+                "NASA APOD consistency check: NASA and NCKU dates do not match"
             )
-        if record.get("media_type") != "image":
-            continue
-        snapshot_date = str(record.get("date") or "")
-        try:
-            date.fromisoformat(snapshot_date)
-        except ValueError:
-            errors.append("invalid APOD date")
-            continue
-        candidates = [str(record.get("hdurl") or ""), str(record.get("url") or "")]
-        for candidate in dict.fromkeys(value for value in candidates if value.startswith("http")):
-            try:
-                body, mime, extension, final_url = download_image(
-                    candidate, label=f"NASA APOD image for {snapshot_date}"
-                )
-                metadata = {
-                    "date": snapshot_date,
-                    "title": clean_html(record.get("title")) or "NASA APOD",
-                    "description": clean_html(record.get("explanation")),
-                    "explanation_en": clean_html(record.get("explanation")),
-                    "copyright": clean_html(record.get("copyright")),
-                    "media_type": "image",
-                    "source_page_url": apod_page_url(snapshot_date),
-                    "source_image_url": candidate,
-                    "fetched_url": final_url,
-                    "mime": mime,
-                }
-                return metadata, body, extension
-            except SnapshotError as exc:
-                errors.append(str(exc))
-    if not errors:
-        errors.append(f"no image in the latest {lookback + 1} APOD entries")
-    raise SnapshotError("NASA APOD: " + "; ".join(errors))
+        if nasa_record.get("media_type") != metadata["media_type"]:
+            raise SnapshotError(
+                "NASA APOD consistency check: NASA and NCKU media types do not match"
+            )
+
+    body, mime, extension, final_url = download_image(
+        str(metadata["source_image_url"]),
+        label=f"NCKU APOD image for {metadata['date']}",
+        allowed_redirect_hosts=NCKU_APOD_HOSTS,
+    )
+    validate_provider_url(
+        final_url, allowed_hosts=NCKU_APOD_HOSTS, label="NCKU APOD image final URL"
+    )
+    metadata.update({"fetched_url": final_url, "mime": mime})
+    return metadata, body, extension
 
 
 def metadata_value(extmetadata: Any, name: str) -> str:
@@ -465,7 +846,9 @@ def load_manifest() -> dict[str, Any]:
     return payload
 
 
-def local_path_from_url(local_url: Any, *, base: Path = ROOT / "source") -> Path:
+def local_path_from_url(local_url: Any, *, base: Path | None = None) -> Path:
+    if base is None:
+        base = ROOT / "source"
     if not isinstance(local_url, str) or not re.fullmatch(
         r"/images/daily/[A-Za-z0-9._-]+", local_url
     ):
@@ -474,10 +857,157 @@ def local_path_from_url(local_url: Any, *, base: Path = ROOT / "source") -> Path
     return base / relative
 
 
-def verify_entry(provider: str, entry: Any, *, base: Path = ROOT / "source") -> list[str]:
+def _manifest_text(
+    provider: str,
+    entry: dict[str, Any],
+    key: str,
+    errors: list[str],
+) -> str:
+    value = entry.get(key)
+    if not isinstance(value, str) or not value.strip():
+        errors.append(f"{provider}: {key} must be a non-empty string")
+        return ""
+    return value
+
+
+def _manifest_provider_url(
+    provider: str,
+    entry: dict[str, Any],
+    key: str,
+    allowed_hosts: frozenset[str],
+    errors: list[str],
+) -> str:
+    value = _manifest_text(provider, entry, key, errors)
+    if not value:
+        return ""
+    try:
+        return validate_provider_url(
+            value,
+            allowed_hosts=allowed_hosts,
+            label=f"{provider} {key}",
+        )
+    except SnapshotError as exc:
+        errors.append(str(exc))
+        return ""
+
+
+def verify_provider_metadata(provider: str, entry: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    snapshot_date = _manifest_text(provider, entry, "date", errors)
+    snapshot_day: date | None = None
+    if snapshot_date:
+        try:
+            snapshot_day = date.fromisoformat(snapshot_date)
+        except ValueError:
+            errors.append(f"{provider}: date must use YYYY-MM-DD")
+
+    if provider == "bing":
+        values = {
+            key: _manifest_text(provider, entry, key, errors)
+            for key in (
+                "title",
+                "headline",
+                "subtitle",
+                "description",
+                "copyright",
+            )
+        }
+        if values["title"] and values["headline"] and values["title"] != values["headline"]:
+            errors.append("bing: title must exactly equal headline/imgtitle")
+        if values["description"] and re.search(
+            r"</?[A-Za-z][^>]*>", values["description"]
+        ):
+            errors.append("bing: description must not contain HTML tags")
+
+        api_url = _manifest_provider_url(
+            provider, entry, "source_page_url", BING_API_HOSTS, errors
+        )
+        if api_url:
+            parsed_api = urlsplit(api_url)
+            if parsed_api.path != "/img/":
+                errors.append("bing: source_page_url must use the /img/ endpoint")
+            query = parse_qs(parsed_api.query, keep_blank_values=True)
+            expected_query = {
+                "size": ["1920x1080"],
+                "imgtype": ["jpg"],
+                "type": ["json"],
+            }
+            for key, expected in expected_query.items():
+                if query.get(key) != expected:
+                    errors.append(f"bing: source_page_url has invalid {key}")
+            if snapshot_day is not None and query.get("date") != [
+                snapshot_day.strftime("%Y%m%d")
+            ]:
+                errors.append("bing: source_page_url date does not match entry date")
+        _manifest_provider_url(
+            provider, entry, "source_image_url", BING_IMAGE_HOSTS, errors
+        )
+        _manifest_provider_url(provider, entry, "fetched_url", BING_IMAGE_HOSTS, errors)
+
+    elif provider == "apod":
+        values = {
+            key: _manifest_text(provider, entry, key, errors)
+            for key in (
+                "title",
+                "title_en",
+                "description",
+                "explanation_en",
+                "tomorrow",
+            )
+        }
+        if entry.get("media_type") != "image":
+            errors.append("apod: media_type must be image")
+        for key in ("title", "description", "tomorrow"):
+            value = values[key]
+            if not value:
+                continue
+            try:
+                if simplified_chinese(value, label=f"apod {key}") != value.strip():
+                    errors.append(f"apod: {key} must be simplified Chinese")
+            except SnapshotError as exc:
+                errors.append(str(exc))
+        for key in ("title", "description"):
+            if values[key] and not re.search(r"[\u3400-\u9fff\uf900-\ufaff]", values[key]):
+                errors.append(f"apod: {key} must contain Chinese text")
+        for key in ("title_en", "explanation_en"):
+            if values[key] and re.search(r"[\u3400-\u9fff\uf900-\ufaff]", values[key]):
+                errors.append(f"apod: {key} must not contain Chinese text")
+        if values["explanation_en"] and re.search(
+            r"(?:Growing Gallery:|APOD(?:'|’)s main NASA site is moving)",
+            values["explanation_en"],
+            re.I,
+        ):
+            errors.append("apod: explanation_en contains mirror housekeeping text")
+
+        page_url = _manifest_provider_url(
+            provider, entry, "source_page_url", NCKU_APOD_HOSTS, errors
+        )
+        if page_url and urlsplit(page_url).path != urlsplit(NCKU_APOD_URL).path:
+            errors.append("apod: source_page_url must use the NCKU current APOD page")
+        for key in ("source_image_url", "fetched_url"):
+            media_url = _manifest_provider_url(
+                provider, entry, key, NCKU_APOD_HOSTS, errors
+            )
+            if not media_url or snapshot_day is None:
+                continue
+            expected_folders = {
+                snapshot_day.strftime("%y%m"),
+                snapshot_day.strftime("%Y%m"),
+            }
+            media_path = urlsplit(media_url).path
+            if not any(f"/image/{folder}/" in media_path for folder in expected_folders):
+                errors.append(f"apod: {key} path does not match the entry month")
+
+    return errors
+
+
+def verify_entry(provider: str, entry: Any, *, base: Path | None = None) -> list[str]:
+    if base is None:
+        base = ROOT / "source"
     errors: list[str] = []
     if not isinstance(entry, dict):
         return [f"{provider}: manifest entry is not an object"]
+    errors.extend(verify_provider_metadata(provider, entry))
     try:
         path = local_path_from_url(entry.get("local_url"), base=base)
     except SnapshotError as exc:
@@ -564,6 +1094,9 @@ def update() -> int:
         try:
             metadata, body, extension = fetchers[provider]()
             entry = build_entry(provider, metadata, body, extension)
+            metadata_errors = verify_provider_metadata(provider, entry)
+            if metadata_errors:
+                raise SnapshotError("; ".join(metadata_errors))
             target = local_path_from_url(entry["local_url"])
             if target.exists():
                 if target.read_bytes() != body:

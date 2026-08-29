@@ -59,12 +59,23 @@ document.addEventListener('DOMContentLoaded', () => {
     return '';
   }
 
-  function stripHtml(value) {
+  function plainText(value) {
     const source = text(value);
     if (!source) return '';
-    const holder = document.createElement('div');
-    holder.innerHTML = source;
-    return (holder.textContent || holder.innerText || '').replace(/\s+/g, ' ').trim();
+    return source
+      .replace(/\r\n?/g, '\n')
+      .replace(/[\t\f\v ]+/g, ' ')
+      .replace(/ *\n */g, '\n')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+  }
+
+  function paragraphs(value) {
+    return plainText(value)
+      .split(/\n+/)
+      .filter(Boolean)
+      .map((paragraph) => `<p style="margin:0 0 8px;">${esc(paragraph)}</p>`)
+      .join('');
   }
 
   function englishText(value) {
@@ -112,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
       local_url: localUrl,
       title: firstText(raw && raw.headline, raw && raw.title, meta.headline, meta.title),
       show: firstText(raw && raw.subtitle, raw && raw.show, raw && raw.imgshow, meta.subtitle, meta.show),
-      detail: stripHtml(firstText(
+      detail: plainText(firstText(
         raw && raw.description,
         raw && raw.detail,
         raw && raw.imgdetail,
@@ -200,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (data.title) html += `<h2 style="margin:16px 0 8px;">${esc(data.title)}</h2>`;
     if (data.show) html += `<p style="opacity:.92;margin:0 0 8px;">${esc(data.show)}</p>`;
-    if (data.detail) html += `<div class="bing-api-detail" style="line-height:1.65;margin:8px 0;">${esc(data.detail)}</div>`;
+    if (data.detail) html += `<div class="bing-api-detail" style="line-height:1.65;margin:8px 0;">${paragraphs(data.detail)}</div>`;
     if (data.copyright) html += `<p style="font-size:.9em;opacity:.85;margin-top:12px;">${esc(data.copyright)}</p>`;
     if (isEnglishPage && !data.title && !data.show && !data.detail && !data.copyright) {
       html += `<p style="color:#666;line-height:1.6;">${ui.metadataUnavailable}</p>`;
@@ -235,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (stale) parts.push(`<p style="font-size:.9em;color:#8a6500;">${ui.staleShort}</p>`);
         if (data.title) parts.push(`<h2>${esc(data.title)}</h2>`);
         if (data.show) parts.push(`<p>${esc(data.show)}</p>`);
-        if (data.detail) parts.push(`<div class="bing-api-detail">${esc(data.detail)}</div>`);
+        if (data.detail) parts.push(`<div class="bing-api-detail">${paragraphs(data.detail)}</div>`);
         if (data.copyright) parts.push(`<p style="font-size:.9em;opacity:.85;">${esc(data.copyright)}</p>`);
         root.innerHTML = parts.length ? parts.join('') : `<p>${ui.noDescription}</p>`;
       })

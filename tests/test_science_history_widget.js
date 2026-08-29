@@ -59,7 +59,6 @@ const validSnapshot = {
   kicker: 'SCIENCE HISTORY',
   title: '科技史上的今天',
   subtitle: '2026年8月24日（2026-08-24） · 2条科学坐标',
-  deck: '从观测、实验到公共卫生，用一张图快速回看知识如何生长。',
   poster: '/ScienceHistory/science_today.png',
   items: [
     { label: '1609年', title: '望远镜观测', text: '一条经核验的科学史记录。' },
@@ -71,7 +70,7 @@ async function main() {
   const source = fs.readFileSync(WIDGET_FILE, 'utf8');
   assert.doesNotMatch(source, /api\.moonshot|dashscope|Kimi|Qwen|toDataURL|createElement\(['"]canvas/i);
   assert.match(source, /ScienceHistory\/science_today\.json/);
-  assert.match(source, /ScienceHistory\/science_today\.png/);
+  assert.doesNotMatch(source, /science_today\.png|data-science-history-poster/i);
 
   const successful = await runWidget({ payload: validSnapshot });
   assert.deepEqual(successful.requests.map(({ url }) => url), ['/ScienceHistory/science_today.json']);
@@ -79,7 +78,7 @@ async function main() {
   assert.equal(successful.requests[0].options.credentials, 'same-origin');
   assert.match(successful.html, /科技史上的今天/);
   assert.match(successful.html, /望远镜观测/);
-  assert.match(successful.html, /src="\/ScienceHistory\/science_today\.png\?v=2026-08-24"/);
+  assert.doesNotMatch(successful.html, /<(?:img|canvas|figure)\b/i);
   assert.equal(successful.storage.size, 1, 'a valid local snapshot should be cached');
 
   const hostile = await runWidget({
@@ -93,7 +92,7 @@ async function main() {
   assert.doesNotMatch(hostile.html, /outside\.example/);
   assert.doesNotMatch(hostile.html, /<script>|<b>unsafe<\/b>|<img src=x/i);
   assert.match(hostile.html, /&lt;script&gt;alert\(1\)&lt;\/script&gt;/);
-  assert.match(hostile.html, /src="\/ScienceHistory\/science_today\.png\?v=2026-08-24"/);
+  assert.doesNotMatch(hostile.html, /<(?:img|canvas|figure)\b/i);
 
   const cached = await runWidget({
     payload: null,
@@ -117,9 +116,9 @@ async function main() {
     },
   });
   assert.deepEqual(legacy.requests.map(({ url }) => url), ['/library/ScienceHistory/science_today.json']);
-  assert.match(legacy.html, /src="\/library\/ScienceHistory\/science_today\.png"/);
   assert.match(legacy.html, /1609年/);
   assert.match(legacy.html, /伽利略展示望远镜/);
+  assert.doesNotMatch(legacy.html, /<(?:img|canvas|figure)\b/i);
 
   console.log('Science-history local snapshot widget tests passed.');
 }

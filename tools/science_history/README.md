@@ -8,10 +8,12 @@
 4. `.github/workflows/science_history.yml` 解码并校验投递哈希，在 GitHub 端重新抓取每个来源、重新绘制长图，然后一次提交 JSON、PNG 和私有来源旁路；
 5. 成功提交后触发既有 Pages 构建。任何接收、来源、渲染或构建失败都会保留上一份成功快照。
 
-机器人只传结构化文本和证据，不传数 MB 的 PNG。GitHub 使用与 AstrBot 完全相同的 `list_poster.mjs` 重绘，因此部署可复现；公开页面仍只读取：
+机器人只传结构化文本和证据，不传数 MB 的 PNG。GitHub 使用与 AstrBot 完全相同的 `list_poster.mjs` 重绘，因此部署可复现。仓库仍保存以下快照文件：
 
 - `source/ScienceHistory/science_today.json`
 - `source/ScienceHistory/science_today.png`
+
+置顶文章只读取 JSON 中的核验文本，不加载或展示 PNG；长图继续保留给 AstrBot 群内发布及归档使用。
 
 来源 URL 只保留在 `sources/science_today.sources.json` 审核旁路，不进入网页 JSON。
 

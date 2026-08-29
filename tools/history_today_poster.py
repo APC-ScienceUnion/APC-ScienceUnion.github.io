@@ -51,7 +51,6 @@ RENDERER = ROOT / "tools" / "science_history" / "list_poster.mjs"
 NOBEL_SCRIPT = ROOT / "tools" / "science_history" / "nobel_anniversaries.py"
 TIMEZONE = "Asia/Shanghai"
 FOOTER = ["图像制作：格物社/A.P.C.科学联盟", "灵感赖渊：缪卿九 "]
-DECK = "从观测、实验到公共卫生，用一张图快速回看知识如何生长。"
 QWEN_ENDPOINT = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
 QWEN_MODEL = os.environ.get("SCIENCE_HISTORY_MODEL", "qwen3-max")
 USER_AGENT = "APC-Science-History/2.0 (+https://apc-science.cn/)"
@@ -576,7 +575,6 @@ def public_payload(target: date, items: list[dict[str, Any]]) -> dict[str, Any]:
         "title": "科技史上的今天",
         "subtitle": f"{target.year}年{target.month}月{target.day}日（{target.isoformat()}） · {len(items)}条科学坐标",
         "theme": "history",
-        "deck": DECK,
         "poster": "/ScienceHistory/science_today.png",
         "items": [{"label": item["label"], "title": item["title"], "text": item["text"]} for item in items],
         "footer": FOOTER,
@@ -703,7 +701,7 @@ def renderer_environment() -> dict[str, str]:
 
 
 def validate_public_json(payload: dict[str, Any]) -> None:
-    required = {"version", "date", "timezone", "kicker", "title", "subtitle", "theme", "deck", "poster", "items", "footer"}
+    required = {"version", "date", "timezone", "kicker", "title", "subtitle", "theme", "poster", "items", "footer"}
     if set(payload) != required:
         raise ValueError(f"公开 JSON 字段不符，缺少/多出：{sorted(set(payload) ^ required)}")
     date.fromisoformat(str(payload["date"]))

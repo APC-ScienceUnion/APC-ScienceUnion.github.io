@@ -121,6 +121,7 @@ class ScienceHistoryPipelineTests(unittest.TestCase):
         public = MODULE.public_payload(date(2026, 8, 24), [item])
         MODULE.validate_public_json(public)
         serialized = json.dumps(public, ensure_ascii=False)
+        self.assertNotIn("deck", public)
         self.assertNotIn("sources", serialized)
         self.assertNotIn("https://", serialized)
 

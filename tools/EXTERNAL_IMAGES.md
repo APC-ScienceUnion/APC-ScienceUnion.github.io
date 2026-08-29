@@ -86,12 +86,16 @@ normal localization check.
 Everything under `source/gallery/` is explicitly excluded. Galleries are curated
 separately and this workflow neither audits nor modifies their image references.
 
-The “每日新闻” widgets for Bing, NASA APOD, and Wikipedia are handled by a
-separate scheduled snapshot workflow. `daily-images:update` downloads the three
-original response bodies without image processing, writes a hashed local index,
-and preserves the previous valid snapshot if a provider is unavailable. The
-browser accepts only same-origin `/images/daily/` paths from that index; source
-image URLs remain provenance metadata and are never image fallbacks.
+The “每日新闻” widgets for Bing, APOD, and Wikipedia are handled by a separate
+scheduled snapshot workflow. Bing text comes verbatim from the AstrBot
+`bing.ee123.net` provider (with markup removed only from `imgdetail`). APOD's
+simplified-Chinese copy and media are extracted together from the current NCKU
+Physics mirror page; NASA is only an optional consistency check and never a
+media fallback. `daily-images:update` downloads the original image response
+bodies without image processing, writes a hashed local index, and preserves the
+previous valid snapshot if a provider is unavailable or stale. The browser
+accepts only same-origin `/images/daily/` paths from that index; source image
+URLs remain provenance metadata and are never image fallbacks.
 
 The daily checks verify byte counts, MIME signatures, SHA-256 digests, and—after
 Hexo generation—the public copies. The scheduled workflow keeps the latest three

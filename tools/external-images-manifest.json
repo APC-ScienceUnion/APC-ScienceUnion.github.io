@@ -7622,25 +7622,6 @@
       ]
     },
     {
-      "source_url": "https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJly1iagz6u6p4pj33402c07wi.jpg",
-      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJly1iagz6u6p4pj33402c07wi.jpg",
-      "local_path": "source/images/未分类/每日新闻/fig-001-7b4c283fc5.jpg",
-      "public_path": "/images/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB/fig-001-7b4c283fc5.jpg",
-      "mime_type": "image/jpeg",
-      "bytes": 2329966,
-      "sha256": "8810bb9780cdefbf787e5111a9a915cc7fa2b34bbaf6257e4b6e025aa7bcc462",
-      "references": [
-        {
-          "file": "source/_posts/未分类/daily-images-and-news.md",
-          "count": 1
-        },
-        {
-          "file": "source/_posts/未分类/每日新闻.md",
-          "count": 1
-        }
-      ]
-    },
-    {
       "source_url": "https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1if1dlq13gbj318g0p01kx.jpg",
       "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJgy1if1dlq13gbj318g0p01kx.jpg",
       "local_path": "source/images/人文历史/水下考古学家在罗马海战中发现了令人惊讶的文物/cover-ad774f5637.jpg",

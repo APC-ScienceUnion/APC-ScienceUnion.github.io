@@ -89,10 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return {
       local_url: safeDailyImage(raw && raw.local_url),
       title: firstText(raw && raw.title, meta.title),
+      title_en: firstText(raw && raw.title_en, meta.title_en),
       date: firstText(raw && raw.date, meta.date),
-      // 后端当前会把 NASA 英文原文同时放进 description；避免页面重复两遍。
+      // 兼容旧快照：若两个字段完全相同，不在中文页重复英文说明。
       description: description === explanationEn ? '' : description,
       explanation_en: explanationEn,
+      tomorrow: firstText(raw && raw.tomorrow, meta.tomorrow),
       copyright: firstText(raw && raw.copyright, meta.copyright),
       media_type: firstText(raw && raw.media_type, meta.media_type) || 'image',
     };
@@ -100,7 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function hasContent(data) {
     return Boolean(data && (
-      data.local_url || data.title || data.description || data.explanation_en || data.copyright
+      data.local_url || data.title || data.title_en || data.description || data.explanation_en
+        || data.tomorrow || data.copyright
     ));
   }
 
@@ -174,7 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function render(box, result) {
     const data = result.data;
-    const displayTitle = isEnglishPage ? englishText(data.title) : data.title;
+    const displayTitle = isEnglishPage
+      ? firstText(englishText(data.title_en), englishText(data.title))
+      : data.title;
     const displayCopyright = isEnglishPage ? englishText(data.copyright) : data.copyright;
     const englishDescription = isEnglishPage
       ? firstText(englishText(data.explanation_en), englishText(data.description))
@@ -209,6 +214,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (displayCopyright) {
       html += `<p style="margin-top:12px;font-size:.9em;color:#666;">${ui.copyright}${esc(displayCopyright)}</p>`;
+    }
+
+    if (!isEnglishPage && data.tomorrow) {
+      html += `<p style="margin-top:12px;font-size:.9em;color:#666;">明日图片预告：${esc(data.tomorrow)}</p>`;
     }
 
     if (!isEnglishPage && data.description && data.explanation_en) {

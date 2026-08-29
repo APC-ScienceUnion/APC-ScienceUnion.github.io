@@ -103,18 +103,39 @@ async function main() {
   assert.match(bing.html, /src="\/images\/daily\/bing\/2026-08-24\.jpg"/);
   assert.match(bing.html, /本地必应标题/);
 
+  const multilineBing = await runWidget(BING_FILE, '[data-bing-wallpaper]', {
+    providers: {
+      bing: {
+        local_url: '/images/daily/bing/2026-08-24.jpg',
+        headline: '多段说明测试',
+        description: '第一段介绍拍摄地点。\n第二段保留 <观测站> 与 A&B。\n第三段介绍自然背景。',
+      },
+    },
+  });
+  const detailMatch = multilineBing.html.match(/<div class="bing-api-detail"[^>]*>([\s\S]*?)<\/div>/);
+  assert.ok(detailMatch, '多段必应说明应生成说明区块');
+  assert.equal((detailMatch[1].match(/<p\b/g) || []).length, 3, '三段说明不得折叠成一段');
+  assert.match(detailMatch[1], /第一段介绍拍摄地点。/);
+  assert.match(detailMatch[1], /第二段保留 &lt;观测站&gt; 与 A&amp;B。/);
+  assert.match(detailMatch[1], /第三段介绍自然背景。/);
+  assert.doesNotMatch(detailMatch[1], /<观测站>|<script|<img/i, '纯文本尖括号不得被解释为 HTML');
+
   const apod = await runWidget(APOD_FILE, '[data-apod]', {
     apod: {
       local_url: '/images/daily/apod/2026-08-23.jpg',
       title: '本地 APOD 标题',
+      title_en: 'Local APOD title',
       description: '中文说明',
       explanation_en: 'English explanation',
+      tomorrow: '明日图片标题',
       media_type: 'image',
     },
   });
   assert.deepEqual(apod.requests.map(({ url }) => url), ['/images/daily/daily-images.json']);
   assert.match(apod.html, /src="\/images\/daily\/apod\/2026-08-23\.jpg"/);
+  assert.match(apod.html, /本地 APOD 标题/);
   assert.match(apod.html, /中文说明/);
+  assert.match(apod.html, /明日图片预告：明日图片标题/);
 
   const englishBing = await runWidget(BING_FILE, '[data-bing-wallpaper]', {
     providers: {
@@ -134,16 +155,19 @@ async function main() {
     providers: {
       apod: {
         local_url: '/images/daily/apod/2026-08-23.jpg',
-        title: 'Mostly Perseids',
+        title: '中文天文图标题',
+        title_en: 'Mostly Perseids',
         date: '2026-08-23',
         description: '中文说明不应出现在英文页面',
         explanation_en: 'English explanation shown once.',
+        tomorrow: '明日中文预告',
         copyright: 'Local Observatory',
       },
     },
   }, { language: 'en-US' });
   assert.match(englishApod.html, /src="\/images\/daily\/apod\/2026-08-23\.jpg"/);
-  assert.doesNotMatch(englishApod.html, /中文说明不应出现在英文页面/);
+  assert.match(englishApod.html, /Mostly Perseids/);
+  assert.doesNotMatch(englishApod.html, /中文天文图标题|中文说明不应出现在英文页面|明日中文预告/);
   assert.match(englishApod.html, /Snapshot date:/);
   assert.equal((englishApod.html.match(/English explanation shown once\./g) || []).length, 1);
 

@@ -3,7 +3,6 @@
 
   const SELECTOR = '[data-today-in-history]';
   const SNAPSHOT_FILE = 'ScienceHistory/science_today.json';
-  const DEFAULT_POSTER_FILE = 'ScienceHistory/science_today.png';
   const CACHE_KEY = 'apcScienceHistorySnapshot:v2';
   const MAX_ITEMS = 24;
 
@@ -47,26 +46,6 @@
   function siteAssetPath(file, root) {
     const relative = String(file || '').replace(/^\/+/, '');
     return `${root}${relative}`.replace(/\/{2,}/g, '/');
-  }
-
-  function safePosterPath(value, root) {
-    let candidate = typeof value === 'string' ? value.trim() : '';
-    if (!candidate) return siteAssetPath(DEFAULT_POSTER_FILE, root);
-
-    if (
-      candidate.startsWith('//')
-      || /^[a-z][a-z\d+.-]*:/i.test(candidate)
-      || candidate.includes('\\')
-      || /(?:^|\/)\.\.(?:\/|$)/.test(candidate)
-      || /%(?:2e|2f|5c)/i.test(candidate)
-      || /[?#\u0000-\u001f\u007f]/.test(candidate)
-      || !/\.(?:png|jpe?g|webp|avif)$/i.test(candidate)
-    ) return siteAssetPath(DEFAULT_POSTER_FILE, root);
-
-    candidate = candidate.replace(/^\/+/, '');
-    const rootPrefix = root.replace(/^\/+|\/+$/g, '');
-    if (rootPrefix && candidate.startsWith(`${rootPrefix}/`)) return `/${candidate}`;
-    return siteAssetPath(candidate, root);
   }
 
   function safeArticleHref(value) {
@@ -126,11 +105,6 @@
       kicker: cleanText(raw.kicker, 'SCIENCE HISTORY', 60),
       title: cleanText(raw.title, '科技史上的今天', 80),
       subtitle,
-      deck: cleanText(raw.deck, '', 260),
-      poster: safePosterPath(
-        raw.poster || raw.poster_url || raw.image || raw.image_url || raw.local_url,
-        root
-      ),
       items,
     };
   }
@@ -161,7 +135,7 @@
 
     return `
       <div role="status" style="margin:16px 0;padding:18px 20px;background:rgba(127,127,127,.08);border-radius:10px;line-height:1.65;color:var(--font-color,#555);">
-        <p style="margin:0 0 10px;">Today's science-history data is currently available only in Chinese. The Chinese text and poster are not embedded here because an editorially reviewed English edition is not yet available.</p>
+        <p style="margin:0 0 10px;">Today's science-history data is currently available only in Chinese. The Chinese text is not embedded here because an editorially reviewed English edition is not yet available.</p>
         <a href="${escapeHtml(chineseArticleUrl)}" lang="zh-CN" hreflang="zh-CN">Open the Chinese version of this article</a>
       </div>`;
   }
@@ -184,42 +158,21 @@
           ${item.text ? `<div${heading ? ' style="margin-top:3px;"' : ''}>${escapeHtml(item.text)}</div>` : ''}
         </li>`;
     }).join('');
-    const version = snapshot.date ? `?v=${encodeURIComponent(snapshot.date)}` : '';
-
     return `
       ${status}
       <section style="max-width:900px;margin:16px auto;padding:20px;background:var(--card-bg,#fff);border-radius:12px;box-shadow:0 8px 24px rgba(149,157,165,.18);color:var(--font-color,#333);">
         <div style="font-size:12px;letter-spacing:.12em;color:#b45309;font-weight:700;">${escapeHtml(snapshot.kicker)}</div>
         <h2 style="margin:6px 0 0;font-size:24px;color:var(--font-color,#222);">${escapeHtml(snapshot.title)}</h2>
         ${snapshot.subtitle ? `<div style="margin-top:5px;color:var(--font-color,#666);opacity:.76;font-size:14px;">${escapeHtml(snapshot.subtitle)}</div>` : ''}
-        ${snapshot.deck ? `<p style="margin:12px 0 4px;line-height:1.7;">${escapeHtml(snapshot.deck)}</p>` : ''}
         <ol style="list-style:none;padding:0;margin:12px 0 0;">${list}</ol>
         <div style="margin-top:12px;font-size:12px;opacity:.62;">${meta}</div>
-      </section>
-      <figure data-science-history-poster-wrap style="max-width:900px;margin:18px auto 0;">
-        <img data-science-history-poster src="${escapeHtml(snapshot.poster + version)}" alt="${escapeHtml(snapshot.title)}长图" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.08);">
-      </figure>`;
-  }
-
-  function attachPosterFallback(container) {
-    if (!container || typeof container.querySelector !== 'function') return;
-    const image = container.querySelector('[data-science-history-poster]');
-    if (!image || typeof image.addEventListener !== 'function') return;
-    image.addEventListener('error', () => {
-      const figure = typeof image.closest === 'function'
-        ? image.closest('[data-science-history-poster-wrap]')
-        : null;
-      if (figure) {
-        figure.innerHTML = '<div role="status" style="padding:14px;border-radius:8px;background:rgba(127,127,127,.08);color:var(--font-color,#666);">今日长图快照暂时不可用，已保留上方经核验的文字记录。</div>';
-      }
-    }, { once: true });
+      </section>`;
   }
 
   function renderSnapshot(containers, snapshot, fromCache) {
     const html = snapshotHtml(snapshot, fromCache);
     containers.forEach((container) => {
       container.innerHTML = html;
-      attachPosterFallback(container);
     });
   }
 

@@ -3,8 +3,12 @@ name: Refresh Daily Image Snapshots
 on:
   workflow_dispatch:
   schedule:
-    # 09:20 Asia/Shanghai. APOD may still be the previous US calendar day.
+    # 09:20 Asia/Shanghai refreshes Bing/Wikipedia early. APOD/NCKU may still
+    # be on the previous date, so the updater safely keeps its last snapshot.
     - cron: "20 1 * * *"
+    # 18:20 Asia/Shanghai gives the NCKU APOD mirror time to publish a page
+    # whose date matches the local calendar and NASA's consistency record.
+    - cron: "20 10 * * *"
 
 permissions:
   contents: write
@@ -30,7 +34,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Download original daily image responses
+      - name: Install daily snapshot dependencies
+        run: python -m pip install --requirement tools/daily_images_requirements.txt
+
+      - name: Download original daily image responses and provider text
         env:
           # The updater safely falls back to NASA's public DEMO_KEY when this
           # optional repository secret is not configured.
@@ -38,7 +45,9 @@ jobs:
         run: python tools/update_daily_images.py
 
       - name: Verify local bytes and manifest
-        run: python tools/update_daily_images.py --check
+        run: |
+          python -m unittest tests.test_daily_image_pipeline
+          python tools/update_daily_images.py --check
 
       - name: Commit source snapshots
         id: commit

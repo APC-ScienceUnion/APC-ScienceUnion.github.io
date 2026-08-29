@@ -35,6 +35,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install nasm -y
           python -m pip install --requirement tools/science_history/requirements.txt
+          python -m pip install --requirement tools/daily_images_requirements.txt
           npm install -g hexo-cli
           npm install
           npm install hexo-all-minifier --save

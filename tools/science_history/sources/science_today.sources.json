@@ -167,11 +167,11 @@
     }
   ],
   "delivery_id": "2026-08-29:eef2c40a1190aaba9974292476caf8c1b05133a2614a4e2a06bce7026abc60d3",
-  "public_json_sha256": "acdebccb3c95d35810baaf5d9a486cb8c0e2a36c91d6dd430b7eec380bffc3e7",
-  "poster_sha256": "60115bc7f8b813cf4dd049192b6d09040a2905e04164aa1121c3efdb70027392",
-  "poster_bytes": 1786884,
+  "public_json_sha256": "1616597202cb4bc51340534f1aa9800b774ee3084691de6566d1298886af858c",
+  "poster_sha256": "a94ebae12e44357b8547365838d3694bba8cba1fdd81cef9a1fbde293ed4ebcb",
+  "poster_bytes": 1758702,
   "poster_dimensions": {
     "width": 2160,
-    "height": 4510
+    "height": 4462
   }
 }
