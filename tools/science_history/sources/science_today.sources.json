@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-08-28",
+  "date": "2026-08-29",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,107 +8,170 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1789年",
-      "title": "赫歇尔发现土卫二",
-      "text": "英国天文学家威廉·赫歇尔用新造的大型反射望远镜观测土星，发现了一颗未知卫星，后命名为土卫二。两百年后卡西尼号看到它南极喷出冰晶羽流，使它成为寻找地外生命的热门目标。",
-      "item_sha256": "3e566de83cb7901ac9f1912c9a6acfeb5bf12ce7dd4eea517dedc4aee34c3cdc",
+      "label": "1904年",
+      "title": "心导管术先驱福斯曼出生",
+      "text": "德国外科医生福斯曼出生。他后来切开自己手臂静脉，把导管送入心脏并拍下X光片，这次自我实验为多种心脏检查铺平道路，1956年他与两位同行共享诺贝尔生理学或医学奖。",
+      "item_sha256": "71ffcc05697aca79c572d5c36267ee6678920d9ec9b615d4ee02304aab02b828",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/prizes/medicine/1956/forssmann/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1956/forssmann/facts/",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "Born: 29 August 1904, Berlin, Germany",
+          "fact_quote": "From the crook of his arm he inserted a thin catheter through a vein into his heart and took an X-ray photo. The experiment paved the way for many types of heart studies.",
+          "retrieved_sha256": "85a2f6bb9c519ec3d62fce480c6351d8db88b0ccab88351afa36647d7af965c8",
+          "content_type": "text/html"
+        },
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/361",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/361",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "1904-08-29",
+          "fact_quote": "for their discoveries concerning heart catheterization and pathological changes in the circulatory system",
+          "retrieved_sha256": "03396cf3172b59455d0172b4f403949684a5361be82067df44c3f7af2ae73461",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1911年",
+      "title": "雅希人伊希走出荒野",
+      "text": "当时被认为是雅希部落最后幸存者的伊希在加州奥罗维尔镇外被狗围住，结束了多年隐居。加州大学人类学家把他接到博物馆，用蜡筒录音保存其语言歌谣，成为美国人类学史上珍贵又饱受争议的一页。",
+      "item_sha256": "083d833e435e3f327f25847afa8da0c4044ea852706b6f683ff919150eb63d4b",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://science.nasa.gov/saturn/moons/enceladus",
-          "final_url": "https://science.nasa.gov/saturn/moons/enceladus/",
-          "authority_type": "official archive",
+          "url": "https://hearstmuseum.berkeley.edu/ishi",
+          "final_url": "https://hearstmuseum.berkeley.edu/ishi/",
+          "authority_type": "university museum official page",
           "date_context": "event-date",
-          "date_quote": "spotted Enceladus orbiting Saturn on Aug. 28, 1789",
-          "fact_quote": "British astronomer William Herschel spotted Enceladus orbiting Saturn on Aug. 28, 1789",
-          "retrieved_sha256": "1dcddd8422a91dd340a58f2bcbc2dcbe800b9436100ddd4bfa297ed14de90f94",
-          "content_type": "text/html"
-        },
-        {
-          "level": "A",
-          "url": "https://www.esa.int/Science_Exploration/Space_Science/28_August",
-          "final_url": "https://www.esa.int/Science_Exploration/Space_Science/28_August",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "On 28 August 1789, Sir William Herschel discovered Saturn's moon Enceladus",
-          "fact_quote": "On 28 August 1789, Sir William Herschel discovered Saturn's moon Enceladus",
-          "retrieved_sha256": "e46a0b3fe44eb6be2d86b3400c8ba0011e4191492d53e7f315bb30846c1244be",
+          "date_quote": "On August 29, 1911, after the death of his family and other remaining Yahi, Ishi was cornered by dogs outside the town of Oroville, CA.",
+          "fact_quote": "Holding Ishi in the local jail, town officials reached out to the Hearst Museum, then known as the University of California Museum of Anthropology.",
+          "retrieved_sha256": "f184dfa2a991654a039a8ceacaa57ea6603fe310f3f4be22d78c42d144d49cd6",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1878年",
-      "title": "惠普尔诞生",
-      "text": "美国病理学家乔治·惠普尔出生。他在失血实验中发现动物肝脏最能促进血液再生，这一结果被米诺特和墨菲用于恶性贫血的食疗，三人因此共享1934年诺贝尔生理学或医学奖。",
-      "item_sha256": "adc4bd4712782240e2da3c8fae424c65ce0274601f0adbca9bbe8a49fb57d5f6",
+      "label": "1943年",
+      "title": "中微子物理学家麦克唐纳出生",
+      "text": "加拿大物理学家麦克唐纳出生。他领导的萨德伯里中微子观测站发现太阳中微子振荡，显示中微子具有质量，为粒子物理带来重要修正，2015年获得诺贝尔物理学奖。",
+      "item_sha256": "b5ef5100594c2adad478730e972cd39cc5ed2d999bab5d39f9669f493957f4cf",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/326",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1934/whipple/facts/",
+          "url": "https://api.nobelprize.org/2.1/laureate/920",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/920",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "28 August 1878",
-          "fact_quote": "for their discoveries concerning liver therapy in cases of anaemia",
-          "retrieved_sha256": "2077a9632e845ebaf10d061a5caf993dabb6c6e0741d577f1e148b5549454c64",
+          "date_quote": "1943-08-29",
+          "fact_quote": "for the discovery of neutrino oscillations, which shows that neutrinos have mass",
+          "retrieved_sha256": "ca0815165a674de3c5954985528e70ea75ed22b26f1d6b48d73e90633fbaf1b1",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1949年",
+      "title": "苏联试爆首枚原子弹",
+      "text": "苏联在哈萨克斯坦塞米巴拉金斯克试验场引爆代号RDS-1的钚原子弹，库尔恰托夫主持的核物理与工程体系由此得到整体验证，冷战进入核军备竞赛新阶段。",
+      "item_sha256": "93bc55c63c84159281011fa1713b76f9a8169aebcc94fc0c16b56d592d5dbedf",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nps.gov/articles/000/b-reactor-history-room-little-joe.htm",
+          "final_url": "https://www.nps.gov/articles/000/b-reactor-history-room-little-joe.htm",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "The successful test of RDS-1, or Little Joe, occurred in a field in modern day Kazakhstan on August 29, 1949.",
+          "fact_quote": "With the help of information provided by spies in Los Alamos, physicist Igor Kurchatov developed the first Soviet atomic bomb.",
+          "retrieved_sha256": "056e842e78c4c86e201fb82fb91a03dab13a7859155b1688095a23e16a983ac8",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1910年",
-      "title": "库普曼斯诞生",
-      "text": "荷兰裔美国经济学家佳林·库普曼斯出生。他把线性规划等运筹学方法引入经济学，研究资源的最优配置，与列昂惕夫共同获得1975年诺贝尔经济学奖。",
-      "item_sha256": "4fa6d2f59cc4084b0792a2037eec45e2a3ccc441551d773a0e88e70b4600fb40",
+      "label": "1965年",
+      "title": "双子座5号安全返航",
+      "text": "双子座5号飞船溅落大西洋，两名宇航员完成近8天轨道飞行，创下当时载人航天时长纪录，验证人体能适应长时间失重，为阿波罗登月铺路。",
+      "item_sha256": "91a91556c277195d251dcfd45cdfa460dde1fe1992be45239da0608c3ed2eb6e",
       "strong_claim": false,
-      "person_event": true,
+      "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/687",
-          "final_url": "https://www.nobelprize.org/prizes/economic-sciences/1975/koopmans/facts/",
+          "url": "https://www.nasa.gov/mission/gemini-v",
+          "final_url": "https://www.nasa.gov/mission/gemini-v/",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "28 August 1910",
-          "fact_quote": "for their contributions to the theory of optimum allocation of resources",
-          "retrieved_sha256": "f5676336be2d16b7723bc5a4d4f16ba5f774ee7d18ddd5c5c67324e8e6f74a05",
+          "date_quote": "Landing Date: Aug. 29, 1965, 7:55:13 EST (12:55:13 UT)",
+          "fact_quote": "The mission demonstrated human ability to adapt to weightlessness over an extended period and then readapt to normal gravity and was considered successful.",
+          "retrieved_sha256": "39de9993c9a7f38d0e491c9137efab2a34fedf1a08c0a422437faa9dffaa5620",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1919年",
-      "title": "豪恩斯菲尔德诞生",
-      "text": "英国工程师戈弗雷·豪恩斯菲尔德出生。他从不同角度扫描物体、再用计算机重建图像的想法出发，研制出临床CT扫描仪，与科马克共享1979年诺贝尔生理学或医学奖。",
-      "item_sha256": "a514bcef76cf09199faa6b8c50a577027eb1bea60454e382cf7c3c2e579c4c7e",
+      "label": "1982年",
+      "title": "合成第109号元素鿏",
+      "text": "德国重离子研究所用铁-58原子核轰击铋-209靶，合成并确认了第109号元素。这一元素以物理学家莉泽·迈特纳命名，中文名为鿏，它极不稳定，是超重元素合成研究的重要里程碑。",
+      "item_sha256": "62db2654257c743fe64b808bfaf7905123bd662ee5182f2308da5e3e4d2cb1ab",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://periodic.lanl.gov/109.shtml",
+          "final_url": "https://periodic.lanl.gov/109.shtml",
+          "authority_type": "national laboratory official page",
+          "date_context": "event-date",
+          "date_quote": "On August 29, 1982, physicists at the Heavy Ion Research Laboratory, Darmstadt, West Germany made and identified element 109 by bombing a target of 209Bi with accelerated nuclei of 58Fe.",
+          "fact_quote": "This experiment demonstrated the feasibility of using fusion techniques as a method of making new, heavy nuclei.",
+          "retrieved_sha256": "162862d87c779d6b8a4c79ad4a4b2f8831323cdd1f3655409061a9aef3e3bf5e",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2018年",
+      "title": "经济学家莫里斯去世",
+      "text": "英国经济学家莫里斯在剑桥去世。他研究信息不对称下的激励机制，阐明税收与契约设计如何在信息不透明时仍能兼顾效率，与维克里分享1996年诺贝尔经济学奖。",
+      "item_sha256": "b469d2a86ead2ace413df598c0279ecb498f6593cf3f8cab0b2ba78f80851391",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/418",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1979/hounsfield/facts/",
+          "url": "https://api.nobelprize.org/2.1/laureate/715",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/715",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "28 August 1919",
-          "fact_quote": "for the development of computer assisted tomography",
-          "retrieved_sha256": "5c5e3f292264952505590d29aed74325103075e81d8cdcc8ef9ae43f80d982c4",
-          "content_type": "text/html"
+          "date_quote": "2018-08-29",
+          "fact_quote": "for their fundamental contributions to the economic theory of incentives under asymmetric information",
+          "retrieved_sha256": "0a0cc94e4a3bd93bcfdca6026c0e1ab2fb0b75c9356980fc8b645960d5ba6cb3",
+          "content_type": "application/json"
         }
       ]
     }
   ],
-  "delivery_id": "2026-08-28:de2af431fbd4fa370b4f54674ad9149d09786abebc1b039652bfa0031443fa04",
-  "public_json_sha256": "47fb0f2d49519351274381c6de87286eb39c10f6aea482e248e5485f2a5050f7",
-  "poster_sha256": "d8c6a40d2b757299c4e8f49452929e8dcbe093c4202a53aa89b48f8ffb7f701a",
-  "poster_bytes": 1359418,
+  "delivery_id": "2026-08-29:eef2c40a1190aaba9974292476caf8c1b05133a2614a4e2a06bce7026abc60d3",
+  "public_json_sha256": "acdebccb3c95d35810baaf5d9a486cb8c0e2a36c91d6dd430b7eec380bffc3e7",
+  "poster_sha256": "60115bc7f8b813cf4dd049192b6d09040a2905e04164aa1121c3efdb70027392",
+  "poster_bytes": 1786884,
   "poster_dimensions": {
     "width": 2160,
-    "height": 3034
+    "height": 4510
   }
 }
