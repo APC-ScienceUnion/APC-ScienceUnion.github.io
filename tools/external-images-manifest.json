@@ -1409,6 +1409,25 @@
       ]
     },
     {
+      "source_url": "https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJly1igl7plskguj30mq0gq0tt.jpg",
+      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJly1igl7plskguj30mq0gq0tt.jpg",
+      "local_path": "source/images/apc-news/asset-728bb7e544.jpg",
+      "public_path": "/images/apc-news/asset-728bb7e544.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 50251,
+      "sha256": "7ce970164b4903466e993fc77a9e70d35f7f69bb727f55f9cfb3a92ca11b7039",
+      "references": [
+        {
+          "file": "source/_data/apc_news.yml",
+          "count": 2
+        },
+        {
+          "file": "source/_data/apc_news_en.yml",
+          "count": 2
+        }
+      ]
+    },
+    {
       "source_url": "https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iel7jyiylej319y19y1kx.jpg",
       "fetched_url": "https://i3.wp.com/wx4.sinaimg.cn/large/006UcwnJgy1iel7jyiylej319y19y1kx.jpg",
       "local_path": "source/images/apc-news/asset-7466a12fb9.jpg",

@@ -2,6 +2,22 @@
 # start / end: YYYY-MM-DD, used to determine whether an event is upcoming, ongoing, or over
 # content: supports Markdown and embedded images
 
+- title: "Qzone 100w (One-Million-Visit) Guestbook Giveaway"
+  start: 2026-08-30
+  end: 2026-08-30
+  cover: /images/apc-news/asset-728bb7e544.jpg
+  content: |
+    A-Jun's Qzone has reached 100w (one million) visits, and we are celebrating!
+    Leave a message in A-Jun's QQ guestbook today. We will draw one lucky participant to receive a commemorative plate.
+    You could write about:
+    - What is A-Jun like in your eyes?
+    - Something you appreciate about A-Jun
+    - The science post that left the strongest impression on you
+    - How you first came across APC
+
+    The event lasts for one day. Messages posted by 8/30 23.59.59 are eligible, and the winner will be announced on Monday.
+    ![Event poster](/images/apc-news/asset-728bb7e544.jpg)
+
 - title: "APC Science Union Opens 2026 Summer Recruitment for Its 10th Anniversary!"
   start: 2026-08-06
   end: 2026-08-13
