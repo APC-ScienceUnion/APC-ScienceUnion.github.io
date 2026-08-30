@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-08-29",
+  "date": "2026-08-30",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,170 +8,201 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1904年",
-      "title": "心导管术先驱福斯曼出生",
-      "text": "德国外科医生福斯曼出生。他后来切开自己手臂静脉，把导管送入心脏并拍下X光片，这次自我实验为多种心脏检查铺平道路，1956年他与两位同行共享诺贝尔生理学或医学奖。",
-      "item_sha256": "71ffcc05697aca79c572d5c36267ee6678920d9ec9b615d4ee02304aab02b828",
+      "label": "1852年",
+      "title": "范托夫在鹿特丹出生",
+      "text": "荷兰化学家范托夫在鹿特丹降生。他提出碳原子正四面体构型、奠基立体化学，又以化学动力学和溶液渗透压研究荣获诺贝尔化学奖。",
+      "item_sha256": "8bc7136c4b6fe7e28058f123fbe8087df5fc1f0339831223606bc0b974e35185",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/medicine/1956/forssmann/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1956/forssmann/facts/",
-          "authority_type": "official archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/160",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/160",
+          "authority_type": "Nobel Prize official API",
           "date_context": "event-date",
-          "date_quote": "Born: 29 August 1904, Berlin, Germany",
-          "fact_quote": "From the crook of his arm he inserted a thin catheter through a vein into his heart and took an X-ray photo. The experiment paved the way for many types of heart studies.",
-          "retrieved_sha256": "85a2f6bb9c519ec3d62fce480c6351d8db88b0ccab88351afa36647d7af965c8",
-          "content_type": "text/html"
-        },
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/361",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/361",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "1904-08-29",
-          "fact_quote": "for their discoveries concerning heart catheterization and pathological changes in the circulatory system",
-          "retrieved_sha256": "03396cf3172b59455d0172b4f403949684a5361be82067df44c3f7af2ae73461",
+          "date_quote": "\"birth\":{\"date\":\"1852-08-30\",\"year\":\"1852\"",
+          "fact_quote": "\"fullName\":{\"en\":\"Jacobus Henricus van 't Hoff\"",
+          "retrieved_sha256": "70bda8395a07cd57ee29d16f0be48edb3574a2ed8b9ca8abd6bd199c98ebdce8",
           "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1911年",
-      "title": "雅希人伊希走出荒野",
-      "text": "当时被认为是雅希部落最后幸存者的伊希在加州奥罗维尔镇外被狗围住，结束了多年隐居。加州大学人类学家把他接到博物馆，用蜡筒录音保存其语言歌谣，成为美国人类学史上珍贵又饱受争议的一页。",
-      "item_sha256": "083d833e435e3f327f25847afa8da0c4044ea852706b6f683ff919150eb63d4b",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://hearstmuseum.berkeley.edu/ishi",
-          "final_url": "https://hearstmuseum.berkeley.edu/ishi/",
-          "authority_type": "university museum official page",
-          "date_context": "event-date",
-          "date_quote": "On August 29, 1911, after the death of his family and other remaining Yahi, Ishi was cornered by dogs outside the town of Oroville, CA.",
-          "fact_quote": "Holding Ishi in the local jail, town officials reached out to the Hearst Museum, then known as the University of California Museum of Anthropology.",
-          "retrieved_sha256": "f184dfa2a991654a039a8ceacaa57ea6603fe310f3f4be22d78c42d144d49cd6",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1943年",
-      "title": "中微子物理学家麦克唐纳出生",
-      "text": "加拿大物理学家麦克唐纳出生。他领导的萨德伯里中微子观测站发现太阳中微子振荡，显示中微子具有质量，为粒子物理带来重要修正，2015年获得诺贝尔物理学奖。",
-      "item_sha256": "b5ef5100594c2adad478730e972cd39cc5ed2d999bab5d39f9669f493957f4cf",
+      "label": "1884年",
+      "title": "斯韦德贝里出生",
+      "text": "瑞典化学家斯韦德贝里出生。他研制超速离心机，用沉降法测定蛋白质等大分子的分子量，以胶体与分散体系研究荣获诺贝尔化学奖。",
+      "item_sha256": "634f9a49ae18a15d018c803b524c2a0ef308d24b1a5ce5d2c6ee43e9b4b6c04a",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/920",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/920",
-          "authority_type": "official archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/183",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/183",
+          "authority_type": "Nobel Prize official API",
           "date_context": "event-date",
-          "date_quote": "1943-08-29",
-          "fact_quote": "for the discovery of neutrino oscillations, which shows that neutrinos have mass",
-          "retrieved_sha256": "ca0815165a674de3c5954985528e70ea75ed22b26f1d6b48d73e90633fbaf1b1",
+          "date_quote": "\"birth\":{\"date\":\"1884-08-30\",\"year\":\"1884\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for his work on disperse systems\"",
+          "retrieved_sha256": "6ba93f3e134b27581809280b588522acb9ed8a8e05499f9fb9644a5cf5406813",
           "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1949年",
-      "title": "苏联试爆首枚原子弹",
-      "text": "苏联在哈萨克斯坦塞米巴拉金斯克试验场引爆代号RDS-1的钚原子弹，库尔恰托夫主持的核物理与工程体系由此得到整体验证，冷战进入核军备竞赛新阶段。",
-      "item_sha256": "93bc55c63c84159281011fa1713b76f9a8169aebcc94fc0c16b56d592d5dbedf",
+      "label": "1905年",
+      "title": "日全食横跨北大西洋",
+      "text": "一场总日全食扫过北大西洋与伊比利亚半岛，全食带宽逾一百九十公里，中心持续近四分钟，为沿途天文学家提供了观测太阳外层大气的窗口。",
+      "item_sha256": "4c3a1d5b2b7c56c97aeb0c3d7632c36ecdea167b610db1896d8205ba4e1f664f",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nps.gov/articles/000/b-reactor-history-room-little-joe.htm",
-          "final_url": "https://www.nps.gov/articles/000/b-reactor-history-room-little-joe.htm",
-          "authority_type": "official archive",
+          "url": "https://eclipse.gsfc.nasa.gov/SEsearch/SEdata.php?Ecl=19050830",
+          "final_url": "https://eclipse.gsfc.nasa.gov/SEsearch/SEdata.php?Ecl=19050830",
+          "authority_type": "NASA eclipse catalog",
           "date_context": "event-date",
-          "date_quote": "The successful test of RDS-1, or Little Joe, occurred in a field in modern day Kazakhstan on August 29, 1949.",
-          "fact_quote": "With the help of information provided by spies in Los Alamos, physicist Igor Kurchatov developed the first Soviet atomic bomb.",
-          "retrieved_sha256": "056e842e78c4c86e201fb82fb91a03dab13a7859155b1688095a23e16a983ac8",
+          "date_quote": "Total Solar Eclipse of 1905 August 30",
+          "fact_quote": "Central Duration = 03m46s",
+          "retrieved_sha256": "0456cc43ed50c9ce44b1c1f0ed5cf32ac155ce0c7d2b8f03538adfe16c6170ff",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1965年",
-      "title": "双子座5号安全返航",
-      "text": "双子座5号飞船溅落大西洋，两名宇航员完成近8天轨道飞行，创下当时载人航天时长纪录，验证人体能适应长时间失重，为阿波罗登月铺路。",
-      "item_sha256": "91a91556c277195d251dcfd45cdfa460dde1fe1992be45239da0608c3ed2eb6e",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nasa.gov/mission/gemini-v",
-          "final_url": "https://www.nasa.gov/mission/gemini-v/",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "Landing Date: Aug. 29, 1965, 7:55:13 EST (12:55:13 UT)",
-          "fact_quote": "The mission demonstrated human ability to adapt to weightlessness over an extended period and then readapt to normal gravity and was considered successful.",
-          "retrieved_sha256": "39de9993c9a7f38d0e491c9137efab2a34fedf1a08c0a422437faa9dffaa5620",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1982年",
-      "title": "合成第109号元素鿏",
-      "text": "德国重离子研究所用铁-58原子核轰击铋-209靶，合成并确认了第109号元素。这一元素以物理学家莉泽·迈特纳命名，中文名为鿏，它极不稳定，是超重元素合成研究的重要里程碑。",
-      "item_sha256": "62db2654257c743fe64b808bfaf7905123bd662ee5182f2308da5e3e4d2cb1ab",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://periodic.lanl.gov/109.shtml",
-          "final_url": "https://periodic.lanl.gov/109.shtml",
-          "authority_type": "national laboratory official page",
-          "date_context": "event-date",
-          "date_quote": "On August 29, 1982, physicists at the Heavy Ion Research Laboratory, Darmstadt, West Germany made and identified element 109 by bombing a target of 209Bi with accelerated nuclei of 58Fe.",
-          "fact_quote": "This experiment demonstrated the feasibility of using fusion techniques as a method of making new, heavy nuclei.",
-          "retrieved_sha256": "162862d87c779d6b8a4c79ad4a4b2f8831323cdd1f3655409061a9aef3e3bf5e",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2018年",
-      "title": "经济学家莫里斯去世",
-      "text": "英国经济学家莫里斯在剑桥去世。他研究信息不对称下的激励机制，阐明税收与契约设计如何在信息不透明时仍能兼顾效率，与维克里分享1996年诺贝尔经济学奖。",
-      "item_sha256": "b469d2a86ead2ace413df598c0279ecb498f6593cf3f8cab0b2ba78f80851391",
+      "label": "1912年",
+      "title": "珀塞尔出生",
+      "text": "美国物理学家珀塞尔在伊利诺伊州出生。他发展核磁共振精密测量方法，与布洛赫共享诺贝尔物理学奖，这项技术后来成为化学分析与医学影像的重要工具。",
+      "item_sha256": "3338dc8b68e1512dd31790132d08d93b1518ea6b7635b7de4cb37df7b47538e9",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/715",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/715",
-          "authority_type": "official archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/59",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/59",
+          "authority_type": "Nobel Prize official API",
           "date_context": "event-date",
-          "date_quote": "2018-08-29",
-          "fact_quote": "for their fundamental contributions to the economic theory of incentives under asymmetric information",
-          "retrieved_sha256": "0a0cc94e4a3bd93bcfdca6026c0e1ab2fb0b75c9356980fc8b645960d5ba6cb3",
+          "date_quote": "\"birth\":{\"date\":\"1912-08-30\",\"year\":\"1912\"",
+          "fact_quote": "\"fullName\":{\"en\":\"Edward Mills Purcell\"",
+          "retrieved_sha256": "b239cd08f27afdbe869857851af3a3506dcd6f64900b723de46ef52f2d377c0b",
           "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1913年",
+      "title": "经济学家斯通出生",
+      "text": "英国经济学家斯通在伦敦出生。他系统构建国民收入核算体系，把国家经济账目整理为可统计的框架，极大改善了经验经济分析的基础，获诺贝尔经济学奖。",
+      "item_sha256": "0c13908dc2a3ecd691a85f3515fc50111007d288df33b72aa1b89f558b09fb98",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/698",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/698",
+          "authority_type": "Nobel Prize official API",
+          "date_context": "event-date",
+          "date_quote": "\"birth\":{\"date\":\"1913-08-30\",\"year\":\"1913\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for having made fundamental contributions to the development of systems of national accounts and hence greatly improved the basis for empirical economic analysis\"",
+          "retrieved_sha256": "46513822afe278357968221e458ddc344067c71ab0c60d10870efd18fc9742a4",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1928年",
+      "title": "维恩在慕尼黑去世",
+      "text": "德国物理学家维恩在慕尼黑去世。他以热辐射规律研究闻名，其位移定律刻画了黑体辐射峰值波长随温度变化的规律，获诺贝尔物理学奖。",
+      "item_sha256": "26a02807e82efc6297e40773d27d0ace93736423b0de7a5454367c796d5cfe3b",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/16",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/16",
+          "authority_type": "Nobel Prize official API",
+          "date_context": "event-date",
+          "date_quote": "\"death\":{\"date\":\"1928-08-30\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for his discoveries regarding the laws governing the radiation of heat\"",
+          "retrieved_sha256": "3d31a04622cacb4ba22395c3fb7dcc42b9a6e7902139a69aa9d09c2e682c3a50",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1940年",
+      "title": "汤姆孙在剑桥去世",
+      "text": "英国物理学家汤姆孙在剑桥去世。他以气体导电研究荣获诺贝尔物理学奖，其电子荷质比实验确立了电子作为基本粒子的地位，改写了原子不可分的观念。",
+      "item_sha256": "c831018cf1e61fb4be82d98f980b80a7e22bde17b3b05fe4ead7b698d9782463",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/10",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/10",
+          "authority_type": "Nobel Prize official API",
+          "date_context": "event-date",
+          "date_quote": "\"death\":{\"date\":\"1940-08-30\"",
+          "fact_quote": "\"fullName\":{\"en\":\"Joseph John Thomson\"",
+          "retrieved_sha256": "da22d0cf0b49a888c915ca203f5de85c1ba3b7bf4b19ccdda3757430912dcec2",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1983年",
+      "title": "挑战者号送首位非裔宇航员入轨",
+      "text": "挑战者号航天飞机完成夜间发射升空，任务专家布鲁福德成为首位进入太空的非裔美国人；机组还部署了印度通信卫星，并测试了低温环境下的飞行性能。",
+      "item_sha256": "304332b8e8b60c63ac730c5854051294298f68f53bbaa6594faa269127411f9c",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://airandspace.si.edu/stories/editorial/1983-first-african-american-space",
+          "final_url": "https://airandspace.si.edu/stories/editorial/1983-first-african-american-space",
+          "authority_type": "Smithsonian National Air and Space Museum",
+          "date_context": "event-date",
+          "date_quote": "Guion Bluford made history on August 30, 1983 when he became the first African American in space",
+          "fact_quote": "launching into low Earth orbit aboard the Space Shuttle Challenger",
+          "retrieved_sha256": "9b56ed73fe22cb76be4343b0512126a0a15ce965c4d5bc02e0c825cecaa3f55f",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1984年",
+      "title": "发现号航天飞机首航",
+      "text": "历经数次推迟后，发现号航天飞机从肯尼迪航天中心升空，执行STS-41D任务，部署三颗商用通信卫星并试验了可伸缩太阳能电池阵列。",
+      "item_sha256": "e844c6dc6f37dd2db09f306da36f8705b0367e1208648bc85b3b06f8f7d5fe1a",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/mission/sts-41d",
+          "final_url": "https://www.nasa.gov/mission/sts-41d/",
+          "authority_type": "NASA mission archive",
+          "date_context": "event-date",
+          "date_quote": "Launched: August 30, 1984 at 8:41:50 a.m. EDT",
+          "fact_quote": "First flight of Space Shuttle Discovery.",
+          "retrieved_sha256": "da0570b13e250f13cde16f869f5a1ed4c5207261e0dfdcf0f44513c45322a029",
+          "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-08-29:eef2c40a1190aaba9974292476caf8c1b05133a2614a4e2a06bce7026abc60d3",
-  "public_json_sha256": "1616597202cb4bc51340534f1aa9800b774ee3084691de6566d1298886af858c",
-  "poster_sha256": "a94ebae12e44357b8547365838d3694bba8cba1fdd81cef9a1fbde293ed4ebcb",
-  "poster_bytes": 1758702,
+  "delivery_id": "2026-08-30:dffbcecbb13f328174de5c3dc75d0cecb0454efcac1ee08199f90aa5e6dbff27",
+  "public_json_sha256": "6328af803f0600855421388e0f11ccccb3108d1af95b267eaca35ef8b336377a",
+  "poster_sha256": "19c3ff790d91f821533a3ff0e8206fd6243065148a99c19dfe813634a78f48f9",
+  "poster_bytes": 1818097,
   "poster_dimensions": {
     "width": 2160,
-    "height": 4462
+    "height": 4742
   }
 }
