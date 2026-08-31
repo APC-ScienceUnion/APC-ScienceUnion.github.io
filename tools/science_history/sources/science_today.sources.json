@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-08-30",
+  "date": "2026-08-31",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,201 +8,86 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1852年",
-      "title": "范托夫在鹿特丹出生",
-      "text": "荷兰化学家范托夫在鹿特丹降生。他提出碳原子正四面体构型、奠基立体化学，又以化学动力学和溶液渗透压研究荣获诺贝尔化学奖。",
-      "item_sha256": "8bc7136c4b6fe7e28058f123fbe8087df5fc1f0339831223606bc0b974e35185",
+      "label": "1949年",
+      "title": "波利策出生",
+      "text": "美国理论物理学家戴维·波利策出生。他与格罗斯、维尔切克共同发现强相互作用的渐近自由，夸克在极近距离上反而近乎自由，为量子色动力学奠定基石，三人同获2004年诺贝尔物理学奖。",
+      "item_sha256": "cf77096c535ec5059b89e615899fdf271ade5a44f88e91e1f912c7de9170f02a",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/160",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/160",
-          "authority_type": "Nobel Prize official API",
+          "url": "https://www.nobelprize.org/prizes/physics/2004/politzer/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/2004/politzer/facts/",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1852-08-30\",\"year\":\"1852\"",
-          "fact_quote": "\"fullName\":{\"en\":\"Jacobus Henricus van 't Hoff\"",
-          "retrieved_sha256": "70bda8395a07cd57ee29d16f0be48edb3574a2ed8b9ca8abd6bd199c98ebdce8",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1884年",
-      "title": "斯韦德贝里出生",
-      "text": "瑞典化学家斯韦德贝里出生。他研制超速离心机，用沉降法测定蛋白质等大分子的分子量，以胶体与分散体系研究荣获诺贝尔化学奖。",
-      "item_sha256": "634f9a49ae18a15d018c803b524c2a0ef308d24b1a5ce5d2c6ee43e9b4b6c04a",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/183",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/183",
-          "authority_type": "Nobel Prize official API",
-          "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1884-08-30\",\"year\":\"1884\"",
-          "fact_quote": "\"motivation\":{\"en\":\"for his work on disperse systems\"",
-          "retrieved_sha256": "6ba93f3e134b27581809280b588522acb9ed8a8e05499f9fb9644a5cf5406813",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1905年",
-      "title": "日全食横跨北大西洋",
-      "text": "一场总日全食扫过北大西洋与伊比利亚半岛，全食带宽逾一百九十公里，中心持续近四分钟，为沿途天文学家提供了观测太阳外层大气的窗口。",
-      "item_sha256": "4c3a1d5b2b7c56c97aeb0c3d7632c36ecdea167b610db1896d8205ba4e1f664f",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://eclipse.gsfc.nasa.gov/SEsearch/SEdata.php?Ecl=19050830",
-          "final_url": "https://eclipse.gsfc.nasa.gov/SEsearch/SEdata.php?Ecl=19050830",
-          "authority_type": "NASA eclipse catalog",
-          "date_context": "event-date",
-          "date_quote": "Total Solar Eclipse of 1905 August 30",
-          "fact_quote": "Central Duration = 03m46s",
-          "retrieved_sha256": "0456cc43ed50c9ce44b1c1f0ed5cf32ac155ce0c7d2b8f03538adfe16c6170ff",
+          "date_quote": "Born: 31 August 1949, New York, NY, USA",
+          "fact_quote": "Prize motivation: “for the discovery of asymptotic freedom in the theory of the strong interaction”",
+          "retrieved_sha256": "2f143dbfaf491bdf58baa2ceb196eccf86eddec14056a4c05facd6183815be11",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1912年",
-      "title": "珀塞尔出生",
-      "text": "美国物理学家珀塞尔在伊利诺伊州出生。他发展核磁共振精密测量方法，与布洛赫共享诺贝尔物理学奖，这项技术后来成为化学分析与医学影像的重要工具。",
-      "item_sha256": "3338dc8b68e1512dd31790132d08d93b1518ea6b7635b7de4cb37df7b47538e9",
+      "label": "2002年",
+      "title": "波特去世",
+      "text": "英国化学家乔治·波特去世。他与诺里什共同发明闪光光解技术，用微秒级强光脉冲截获化学反应瞬间的中间体，开创快速反应动力学研究，并因此分享1967年诺贝尔化学奖。",
+      "item_sha256": "c4172250401b92ea2549eea65abae9ab44defeddb206580ea2abffa3da0ecfbc",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/59",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/59",
-          "authority_type": "Nobel Prize official API",
+          "url": "https://www.nobelprize.org/prizes/chemistry/1967/porter/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/chemistry/1967/porter/facts/",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1912-08-30\",\"year\":\"1912\"",
-          "fact_quote": "\"fullName\":{\"en\":\"Edward Mills Purcell\"",
-          "retrieved_sha256": "b239cd08f27afdbe869857851af3a3506dcd6f64900b723de46ef52f2d377c0b",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1913年",
-      "title": "经济学家斯通出生",
-      "text": "英国经济学家斯通在伦敦出生。他系统构建国民收入核算体系，把国家经济账目整理为可统计的框架，极大改善了经验经济分析的基础，获诺贝尔经济学奖。",
-      "item_sha256": "0c13908dc2a3ecd691a85f3515fc50111007d288df33b72aa1b89f558b09fb98",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
+          "date_quote": "Died: 31 August 2002, Canterbury, United Kingdom",
+          "fact_quote": "Prize motivation: “for their studies of extremely fast chemical reactions, effected by disturbing the equilibrium by means of very short pulses of energy”",
+          "retrieved_sha256": "f4495976b37c836ef256f63b2cfb99652881747b2b55f0b76a495d3ff3e3c9ca",
+          "content_type": "text/html"
+        },
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/698",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/698",
-          "authority_type": "Nobel Prize official API",
+          "url": "https://www.nobelprize.org/prizes/chemistry/1967/porter/biographical",
+          "final_url": "https://www.nobelprize.org/prizes/chemistry/1967/porter/biographical/",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1913-08-30\",\"year\":\"1913\"",
-          "fact_quote": "\"motivation\":{\"en\":\"for having made fundamental contributions to the development of systems of national accounts and hence greatly improved the basis for empirical economic analysis\"",
-          "retrieved_sha256": "46513822afe278357968221e458ddc344067c71ab0c60d10870efd18fc9742a4",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1928年",
-      "title": "维恩在慕尼黑去世",
-      "text": "德国物理学家维恩在慕尼黑去世。他以热辐射规律研究闻名，其位移定律刻画了黑体辐射峰值波长随温度变化的规律，获诺贝尔物理学奖。",
-      "item_sha256": "26a02807e82efc6297e40773d27d0ace93736423b0de7a5454367c796d5cfe3b",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/16",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/16",
-          "authority_type": "Nobel Prize official API",
-          "date_context": "event-date",
-          "date_quote": "\"death\":{\"date\":\"1928-08-30\"",
-          "fact_quote": "\"motivation\":{\"en\":\"for his discoveries regarding the laws governing the radiation of heat\"",
-          "retrieved_sha256": "3d31a04622cacb4ba22395c3fb7dcc42b9a6e7902139a69aa9d09c2e682c3a50",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1940年",
-      "title": "汤姆孙在剑桥去世",
-      "text": "英国物理学家汤姆孙在剑桥去世。他以气体导电研究荣获诺贝尔物理学奖，其电子荷质比实验确立了电子作为基本粒子的地位，改写了原子不可分的观念。",
-      "item_sha256": "c831018cf1e61fb4be82d98f980b80a7e22bde17b3b05fe4ead7b698d9782463",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/10",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/10",
-          "authority_type": "Nobel Prize official API",
-          "date_context": "event-date",
-          "date_quote": "\"death\":{\"date\":\"1940-08-30\"",
-          "fact_quote": "\"fullName\":{\"en\":\"Joseph John Thomson\"",
-          "retrieved_sha256": "da22d0cf0b49a888c915ca203f5de85c1ba3b7bf4b19ccdda3757430912dcec2",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1983年",
-      "title": "挑战者号送首位非裔宇航员入轨",
-      "text": "挑战者号航天飞机完成夜间发射升空，任务专家布鲁福德成为首位进入太空的非裔美国人；机组还部署了印度通信卫星，并测试了低温环境下的飞行性能。",
-      "item_sha256": "304332b8e8b60c63ac730c5854051294298f68f53bbaa6594faa269127411f9c",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://airandspace.si.edu/stories/editorial/1983-first-african-american-space",
-          "final_url": "https://airandspace.si.edu/stories/editorial/1983-first-african-american-space",
-          "authority_type": "Smithsonian National Air and Space Museum",
-          "date_context": "event-date",
-          "date_quote": "Guion Bluford made history on August 30, 1983 when he became the first African American in space",
-          "fact_quote": "launching into low Earth orbit aboard the Space Shuttle Challenger",
-          "retrieved_sha256": "9b56ed73fe22cb76be4343b0512126a0a15ce965c4d5bc02e0c825cecaa3f55f",
+          "date_quote": "Lord Porter died on August 31, 2002.",
+          "fact_quote": "The idea of using short pulses of light, of shorter duration than the lifetime of the free radicals, occurred to him about a year later.",
+          "retrieved_sha256": "bb609003f766f26d4bb06d1f90c6cb807493c14d9b8faba2c980a581433f0a79",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1984年",
-      "title": "发现号航天飞机首航",
-      "text": "历经数次推迟后，发现号航天飞机从肯尼迪航天中心升空，执行STS-41D任务，部署三颗商用通信卫星并试验了可伸缩太阳能电池阵列。",
-      "item_sha256": "e844c6dc6f37dd2db09f306da36f8705b0367e1208648bc85b3b06f8f7d5fe1a",
+      "label": "2017年",
+      "title": "美国扶持青年科研人员",
+      "text": "美国国立卫生研究院启动“下一代研究者计划”，为职业早中期的科学家增加资助，缓解青年学者拿不到研究经费的困境。这是近年美国基础研究资助制度一次影响广泛的调整。",
+      "item_sha256": "de023c4ed32532899160725981253a2be9728cd478a5c275e72dad5644142899",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nasa.gov/mission/sts-41d",
-          "final_url": "https://www.nasa.gov/mission/sts-41d/",
-          "authority_type": "NASA mission archive",
+          "url": "https://www.nih.gov/about-nih/nih-almanac/chronology-events",
+          "final_url": "https://www.nih.gov/about-nih/nih-almanac/chronology-events",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Launched: August 30, 1984 at 8:41:50 a.m. EDT",
-          "fact_quote": "First flight of Space Shuttle Discovery.",
-          "retrieved_sha256": "da0570b13e250f13cde16f869f5a1ed4c5207261e0dfdcf0f44513c45322a029",
+          "date_quote": "August 31, 2017—The Next Generation Researchers Initiative, which bolsters NIH funding support for early- and mid-career researchers, was launched.",
+          "fact_quote": "August 31, 2017—The Next Generation Researchers Initiative, which bolsters NIH funding support for early- and mid-career researchers, was launched.",
+          "retrieved_sha256": "6bff1fe4a75ec78907a143fa517d41a3dbd777c1a78347b1cf2c5143800390aa",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-08-30:dffbcecbb13f328174de5c3dc75d0cecb0454efcac1ee08199f90aa5e6dbff27",
-  "public_json_sha256": "6328af803f0600855421388e0f11ccccb3108d1af95b267eaca35ef8b336377a",
-  "poster_sha256": "19c3ff790d91f821533a3ff0e8206fd6243065148a99c19dfe813634a78f48f9",
-  "poster_bytes": 1818097,
+  "delivery_id": "2026-08-31:6c79dd54185a3e5c1ddf8976407a03c240832e7f8b5540fe280b8f0b362a60d7",
+  "public_json_sha256": "a8f0bed7d153ec705376dfda561e99af1014465be272b9f7ebcbdf6a9ca7a73d",
+  "poster_sha256": "25dff3c3477030164616948e316a7752a56efd05c9be284784e1bb7e3bd1052f",
+  "poster_bytes": 1176441,
   "poster_dimensions": {
     "width": 2160,
-    "height": 4742
+    "height": 2596
   }
 }
