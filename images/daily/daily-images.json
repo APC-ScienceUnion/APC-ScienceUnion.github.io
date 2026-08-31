@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-29T17:05:42+00:00",
+  "updated_at": "2026-08-31T07:03:44+00:00",
   "providers": {
     "bing": {
-      "date": "2026-08-30",
-      "title": "鲸鲨与黄金鲹，极乐鸟湾，西巴布亚，印度尼西亚 ",
-      "headline": "鲸鲨与黄金鲹，极乐鸟湾，西巴布亚，印度尼西亚 ",
-      "subtitle": "名为鲨鱼的巨型鱼类",
-      "description": "今天，国际鲸鲨日将目光投向世界上最大的鱼类。鲸鲨虽然名字中带有“鲸”，却不是鲸类，而是鱼类；体长可达60英尺，体重约20吨。它们分布在温暖的热带海域，张着嘴在水中缓缓游动，滤食浮游生物、鱼卵和其他微小猎物。每条鲸鲨身上独特的白色斑点图案都各不相同，就像人类的指纹。\n图片捕捉到印度尼西亚西巴布亚极乐鸟湾中的一条鲸鲨，身旁伴随着一群黄金鲹。这些色彩明亮的鱼常与鲸鲨同游，借机获取食物残渣，并利用这位庞大伙伴提供的保护。\n国际鲸鲨日旨在关注这一濒危物种面临的挑战，包括兼捕、船只撞击、栖息地退化和气候变化。通过提高公众意识，这一纪念日鼓励人们采取行动，世代守护这些温和的海洋使者。",
-      "copyright": "© Pete Oxford/Nature Picture Library",
-      "source_page_url": "https://bing.ee123.net/img/?date=20260830&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.YellowShark_ZH-CN1570569826_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.YellowShark_ZH-CN1570569826_1920x1080.jpg",
+      "date": "2026-08-31",
+      "title": "雷吉斯坦广场的建筑细节，撒马尔罕，乌兹别克斯坦 ",
+      "headline": "雷吉斯坦广场的建筑细节，撒马尔罕，乌兹别克斯坦 ",
+      "subtitle": "图案艺术的典范",
+      "description": "站在雷吉斯坦广场上，你很容易明白为什么这里被视为撒马尔罕的建筑核心——撒马尔罕是中亚最古老的城市之一。这座位于乌兹别克斯坦的广场三面矗立着三座宏伟的经学院——伊斯兰学术中心——它们高耸的门廊吸引着人们仰头观望。然而，广场上一些最珍贵的瑰宝，只有在你走近细看时才会显露出来。\n今日图片中的细节让我们得以一窥几乎遍布每一处表面的精美艺术。琉璃砖、几何图案、花卉纹饰和优雅的书法以非凡的精确度融为一体，将砖石与灰泥化作绚丽夺目的色彩和图案展示。绿松石色、钴蓝色、金色和白色的色调随着光线变化而流转，使建筑在一天之中呈现出一种动态之感。\n这些经学院最初作为学习和宗教学术研究中心而建，环绕着一座热闹的公共广场；这里曾是丝绸之路沿线的生活中心。如今，雷吉斯坦依然同样引人入胜，吸引游客欣赏其宏伟的规模和非凡的工艺。",
+      "copyright": "© Piero M. Bianchi/Getty Images",
+      "source_page_url": "https://bing.ee123.net/img/?date=20260831&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-08-30-2ced5c62312f.jpg",
-      "image_path": "/images/daily/bing-2026-08-30-2ced5c62312f.jpg",
-      "bytes": 328176,
-      "sha256": "2ced5c62312f3a281a2525657b11e03c3aee1f1652e66706d4b0af87a7ef2591"
+      "local_url": "/images/daily/bing-2026-08-31-eb5745971e8d.jpg",
+      "image_path": "/images/daily/bing-2026-08-31-eb5745971e8d.jpg",
+      "bytes": 333134,
+      "sha256": "eb5745971e8d6ea94894c1dfbd46f6c4c66825564d32438445cedd7f0940ab74"
     },
     "apod": {
       "date": "2026-08-29",
@@ -37,19 +37,19 @@
       "sha256": "dd281cf98c4e4103f6ed24754fabeb8d58e1f956e2b3b905f592c9c9dcff8f96"
     },
     "wikipedia": {
-      "date": "2026-08-30",
-      "title": "Last American Soldier leaves Afghanistan",
-      "description": "Major General Chris Donahue, commander of the U.S. Army 82nd Airborne Division, XVIII Airborne Corps, boards a C-17 cargo plane at the Hamid Karzai International Airport in Kabul, Afghanistan. Maj. Gen. Donahue is the final American service member to depart Afghanistan; his departure closes the U.S. mission to evacuate American citizens, Afghan Special Immigrant Visa applicants, and vulnerable Afghans.",
-      "copyright": "Master Sgt. Alexander Burnett, U.S. Central Command Public Affairs · https://www.dvidshub.net/image/6810419/last-american-soldier-leaves-afghanistan · Public domain",
-      "article_url": "https://commons.wikimedia.org/wiki/File:Last_American_Soldier_leaves_Afghanistan.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Last_American_Soldier_leaves_Afghanistan.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Last_American_Soldier_leaves_Afghanistan.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Last_American_Soldier_leaves_Afghanistan.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-08-31",
+      "title": "Joseph and Potiphar's Wife label QS:Lfr,\"Joseph et la femme de Putiphar\" label QS:Lit,\"Josef e la moglie di Putifarre\" label QS:Len,\"Joseph and Potiphar's Wife\" label QS:Lde,\"Joseph und Potiphars Weib\" label QS:Lhe,\"יוסף ואשת פוטיפר\" label QS:Lnl,\"Jozef en de vrouw van Potifar\"",
+      "description": "",
+      "copyright": "Rembrandt · This image has been extracted from another file · Public domain",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_Joseph_and_Potiphar%27s_wife.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_Joseph_and_Potiphar%27s_wife.jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Rembrandt_-_Joseph_and_Potiphar%27s_wife.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Rembrandt_-_Joseph_and_Potiphar%27s_wife.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-08-30-b2a320d92b4e.jpg",
-      "image_path": "/images/daily/wikipedia-2026-08-30-b2a320d92b4e.jpg",
-      "bytes": 532459,
-      "sha256": "b2a320d92b4e2334b883e8d44a3aa640c6c9d73bc452e46cf595804a23488eb5"
+      "local_url": "/images/daily/wikipedia-2026-08-31-151e7f85a35a.jpg",
+      "image_path": "/images/daily/wikipedia-2026-08-31-151e7f85a35a.jpg",
+      "bytes": 6829404,
+      "sha256": "151e7f85a35a74b7a0999088bb423b5ae5d1308dd714da34361460c095c9affd"
     }
   }
 }
