@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-31T07:03:44+00:00",
+  "updated_at": "2026-08-31T17:38:43+00:00",
   "providers": {
     "bing": {
-      "date": "2026-08-31",
-      "title": "雷吉斯坦广场的建筑细节，撒马尔罕，乌兹别克斯坦 ",
-      "headline": "雷吉斯坦广场的建筑细节，撒马尔罕，乌兹别克斯坦 ",
-      "subtitle": "图案艺术的典范",
-      "description": "站在雷吉斯坦广场上，你很容易明白为什么这里被视为撒马尔罕的建筑核心——撒马尔罕是中亚最古老的城市之一。这座位于乌兹别克斯坦的广场三面矗立着三座宏伟的经学院——伊斯兰学术中心——它们高耸的门廊吸引着人们仰头观望。然而，广场上一些最珍贵的瑰宝，只有在你走近细看时才会显露出来。\n今日图片中的细节让我们得以一窥几乎遍布每一处表面的精美艺术。琉璃砖、几何图案、花卉纹饰和优雅的书法以非凡的精确度融为一体，将砖石与灰泥化作绚丽夺目的色彩和图案展示。绿松石色、钴蓝色、金色和白色的色调随着光线变化而流转，使建筑在一天之中呈现出一种动态之感。\n这些经学院最初作为学习和宗教学术研究中心而建，环绕着一座热闹的公共广场；这里曾是丝绸之路沿线的生活中心。如今，雷吉斯坦依然同样引人入胜，吸引游客欣赏其宏伟的规模和非凡的工艺。",
-      "copyright": "© Piero M. Bianchi/Getty Images",
-      "source_page_url": "https://bing.ee123.net/img/?date=20260831&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.SamarkandCeiling_ZH-CN1818913296_1920x1080.jpg",
+      "date": "2026-09-01",
+      "title": "马鬃小皮伞，白俄罗斯 ",
+      "headline": "马鬃小皮伞，白俄罗斯 ",
+      "subtitle": "脚下的世界",
+      "description": "九月的全国蘑菇月旨在赞颂一个常常不为人注意的世界。在森林地表、草坪和落叶下方，真菌网络循环利用养分，帮助生态系统蓬勃发展。我们看到的蘑菇只是这些隐秘生物的子实体，它们短暂现身释放孢子，随后又从视野中消失。它们并非植物；真菌自成一界，并在大自然的循环中发挥着至关重要的作用。\n今日图片展现的是马鬃小皮伞，这种真菌值得走近细看。这些微小的蘑菇生长在掉落的松针和林地碎屑上，纤巧的菌盖由深色、坚韧如丝的菌柄托起；菌柄纤细得如同一缕缕马毛。乍看之下，它们很容易被忽略，却揭示了隐藏在森林地表的惊人多样性。\n仔细观察，你便会发现，全国蘑菇月提醒着我们：大自然中一些最重要的工作发生在视线之外。从维系林地生态系统到丰富我们的餐盘，真菌证明，即使是最微小的结构也能产生巨大的影响。",
+      "copyright": "© Máté/Nature Picture Library",
+      "source_page_url": "https://bing.ee123.net/img/?date=20260901&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.HorseHairShroom_ZH-CN2241458451_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.HorseHairShroom_ZH-CN2241458451_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-08-31-eb5745971e8d.jpg",
-      "image_path": "/images/daily/bing-2026-08-31-eb5745971e8d.jpg",
-      "bytes": 333134,
-      "sha256": "eb5745971e8d6ea94894c1dfbd46f6c4c66825564d32438445cedd7f0940ab74"
+      "local_url": "/images/daily/bing-2026-09-01-6b9466662af2.jpg",
+      "image_path": "/images/daily/bing-2026-09-01-6b9466662af2.jpg",
+      "bytes": 337947,
+      "sha256": "6b9466662af297afb364eec2bd4526770a2b73dad727451c07a40ef708636d2e"
     },
     "apod": {
       "date": "2026-08-29",
@@ -37,19 +37,19 @@
       "sha256": "dd281cf98c4e4103f6ed24754fabeb8d58e1f956e2b3b905f592c9c9dcff8f96"
     },
     "wikipedia": {
-      "date": "2026-08-31",
-      "title": "Joseph and Potiphar's Wife label QS:Lfr,\"Joseph et la femme de Putiphar\" label QS:Lit,\"Josef e la moglie di Putifarre\" label QS:Len,\"Joseph and Potiphar's Wife\" label QS:Lde,\"Joseph und Potiphars Weib\" label QS:Lhe,\"יוסף ואשת פוטיפר\" label QS:Lnl,\"Jozef en de vrouw van Potifar\"",
-      "description": "",
-      "copyright": "Rembrandt · This image has been extracted from another file · Public domain",
-      "article_url": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_Joseph_and_Potiphar%27s_wife.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_Joseph_and_Potiphar%27s_wife.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Rembrandt_-_Joseph_and_Potiphar%27s_wife.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Rembrandt_-_Joseph_and_Potiphar%27s_wife.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-09-01",
+      "title": "Viperine water snake (Natrix maura)",
+      "description": "Viperine water snake ( Natrix maura ), Extremadura, Spain",
+      "copyright": "Charles J. Sharp · Own work , from Sharp Photography, sharpphotography.co.uk · CC BY-SA 4.0",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Viperine_water_snake_(Natrix_maura).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Viperine_water_snake_(Natrix_maura).jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Viperine_water_snake_%28Natrix_maura%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Viperine_water_snake_%28Natrix_maura%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-08-31-151e7f85a35a.jpg",
-      "image_path": "/images/daily/wikipedia-2026-08-31-151e7f85a35a.jpg",
-      "bytes": 6829404,
-      "sha256": "151e7f85a35a74b7a0999088bb423b5ae5d1308dd714da34361460c095c9affd"
+      "local_url": "/images/daily/wikipedia-2026-09-01-aab2c50632f5.jpg",
+      "image_path": "/images/daily/wikipedia-2026-09-01-aab2c50632f5.jpg",
+      "bytes": 3660878,
+      "sha256": "aab2c50632f5de0ec51758324280e88cb153b1745cb09fb209da3482a7a88657"
     }
   }
 }
