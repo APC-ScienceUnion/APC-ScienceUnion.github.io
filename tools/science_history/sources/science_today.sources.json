@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-08-31",
+  "date": "2026-09-01",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,86 +8,149 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1949年",
-      "title": "波利策出生",
-      "text": "美国理论物理学家戴维·波利策出生。他与格罗斯、维尔切克共同发现强相互作用的渐近自由，夸克在极近距离上反而近乎自由，为量子色动力学奠定基石，三人同获2004年诺贝尔物理学奖。",
-      "item_sha256": "cf77096c535ec5059b89e615899fdf271ade5a44f88e91e1f912c7de9170f02a",
+      "label": "1877年",
+      "title": "质谱仪发明者阿斯顿出生",
+      "text": "弗朗西斯·阿斯顿生于英国。他造出质谱仪，用磁场分离并称量不同质量的原子，发现多数元素由多种同位素组成，并提出“整数法则”，凭此获1922年诺贝尔化学奖。",
+      "item_sha256": "59ff6d3c9bc7bd379a5b68d138977edea72fd77bbcc877899ac0488f8da53203",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/physics/2004/politzer/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/physics/2004/politzer/facts/",
+          "url": "https://api.nobelprize.org/2.1/laureate/180",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/180",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Born: 31 August 1949, New York, NY, USA",
-          "fact_quote": "Prize motivation: “for the discovery of asymptotic freedom in the theory of the strong interaction”",
-          "retrieved_sha256": "2f143dbfaf491bdf58baa2ceb196eccf86eddec14056a4c05facd6183815be11",
-          "content_type": "text/html"
+          "date_quote": "\"birth\":{\"date\":\"1877-09-01\"",
+          "fact_quote": "for his discovery, by means of his mass spectrograph, of isotopes, in a large number of non-radioactive elements, and for his enunciation of the whole-number rule",
+          "retrieved_sha256": "aff4df091cc5ebcc2f2625954f5299548367b033b82a8a50b82f5764553bf774",
+          "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "2002年",
-      "title": "波特去世",
-      "text": "英国化学家乔治·波特去世。他与诺里什共同发明闪光光解技术，用微秒级强光脉冲截获化学反应瞬间的中间体，开创快速反应动力学研究，并因此分享1967年诺贝尔化学奖。",
-      "item_sha256": "c4172250401b92ea2549eea65abae9ab44defeddb206580ea2abffa3da0ecfbc",
+      "label": "1925年",
+      "title": "量子光学奠基人出生",
+      "text": "罗伊·格劳伯出生在纽约。他把量子力学引入光学，建立光相干性的量子理论，解释了激光等相干光场为何与普通光源行为迥异，为量子光学打下地基，因此分享2005年诺贝尔物理学奖。",
+      "item_sha256": "a13d1dd59c5948a0a4a4b56ad5eb5a229225608c102481b0bb015c4ca235c89e",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/chemistry/1967/porter/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/chemistry/1967/porter/facts/",
+          "url": "https://api.nobelprize.org/2.1/laureate/791",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/791",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Died: 31 August 2002, Canterbury, United Kingdom",
-          "fact_quote": "Prize motivation: “for their studies of extremely fast chemical reactions, effected by disturbing the equilibrium by means of very short pulses of energy”",
-          "retrieved_sha256": "f4495976b37c836ef256f63b2cfb99652881747b2b55f0b76a495d3ff3e3c9ca",
+          "date_quote": "\"birth\":{\"date\":\"1925-09-01\"",
+          "fact_quote": "for his contribution to the quantum theory of optical coherence",
+          "retrieved_sha256": "af994b7749b705b84ec1bf571821f8de629a8d605cf0e939b2d9bb0038e984a5",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1979年",
+      "title": "先驱者11号首次飞掠土星",
+      "text": "美国宇航局“先驱者11号”掠过土星，在距云顶约两万公里处成为首颗探访该行星的探测器。它传回440张图像，发现两颗新卫星与一条新环，确认土星磁场存在，并为后来的旅行者号踏勘航路。",
+      "item_sha256": "b5720e5298f5e5ea3279a4829a45093b2a77d104a96177f96aeded8058e7323d",
+      "strong_claim": true,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/solar-system/planets/saturn/40-years-ago-pioneer-11-first-to-explore-saturn",
+          "final_url": "https://www.nasa.gov/solar-system/planets/saturn/40-years-ago-pioneer-11-first-to-explore-saturn/",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "On Sep. 1, 1979, Pioneer 11 passed within 13,000 miles of Saturn’s cloud tops at a velocity of 71,000 miles per hour.",
+          "fact_quote": "During the encounter, it sent back data on the planet, its rings, and its satellites, including 440 images.",
+          "retrieved_sha256": "dba8f9ad8ecb4cba85b21fdf215a701000621fa186c9decc37c6ede87af5abc5",
           "content_type": "text/html"
         },
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/chemistry/1967/porter/biographical",
-          "final_url": "https://www.nobelprize.org/prizes/chemistry/1967/porter/biographical/",
-          "authority_type": "official archive",
+          "url": "https://atmos.nmsu.edu/data_and_services/atmospheres_data/SATURN/pioneer_flyby.html",
+          "final_url": "https://atmos.nmsu.edu/data_and_services/atmospheres_data/SATURN/pioneer_flyby.html",
+          "authority_type": "university archive",
           "date_context": "event-date",
-          "date_quote": "Lord Porter died on August 31, 2002.",
-          "fact_quote": "The idea of using short pulses of light, of shorter duration than the lifetime of the free radicals, occurred to him about a year later.",
-          "retrieved_sha256": "bb609003f766f26d4bb06d1f90c6cb807493c14d9b8faba2c980a581433f0a79",
+          "date_quote": "on September 1, 1979 the spacecraft passed through the ring plane at a distance of 35,400 km of the outer edge of the A Ring",
+          "fact_quote": "Established the existence of and quantified Saturn’s magnetic field.",
+          "retrieved_sha256": "77262a4c6bde70c81fa774fc9f8b4c04c04adebd60e444b037872e6871c72d8b",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2017年",
-      "title": "美国扶持青年科研人员",
-      "text": "美国国立卫生研究院启动“下一代研究者计划”，为职业早中期的科学家增加资助，缓解青年学者拿不到研究经费的困境。这是近年美国基础研究资助制度一次影响广泛的调整。",
-      "item_sha256": "de023c4ed32532899160725981253a2be9728cd478a5c275e72dad5644142899",
+      "label": "1982年",
+      "title": "组合逻辑大师柯里辞世",
+      "text": "美国数学家哈斯克尔·柯里去世。他毕生钻研数学基础，发展出组合子逻辑，提出“柯里悖论”与“柯里–霍华德对应”，后者揭示逻辑与程序语言间的深层联系，编程语言Haskell即以他命名。",
+      "item_sha256": "a5f348f2f7c705b4f6685afea906de2d6c8d44e5ce67f34ccbba2b963439abb0",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Curry",
+          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Curry/",
+          "authority_type": "university archive",
+          "date_context": "event-date",
+          "date_quote": "Died: 1 September 1982 State College, Pennsylvania, USA",
+          "fact_quote": "Haskell Curry worked in mathematical logic with particular interest in the theory of formal systems and processes.",
+          "retrieved_sha256": "a007f352a15ec5acf185b92c01bd643d7826dc73f76d7be447c34faca46f8c1d",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1985年",
+      "title": "沉睡73年的泰坦尼克号被找到",
+      "text": "美法联合考察队在大西洋约3800米深的海底找到泰坦尼克号残骸。伍兹霍尔海洋学研究所团队用遥控潜水器“阿尔戈”拖曳摄像机扫描海床，循碎片带锁定船体，也为深海探测技术树立里程碑。",
+      "item_sha256": "5f1dc3efa8805d1abc5992d85733e7bec8b79f76d724c8d0c9d0dc3e915319df",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nih.gov/about-nih/nih-almanac/chronology-events",
-          "final_url": "https://www.nih.gov/about-nih/nih-almanac/chronology-events",
+          "url": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/ocean-human-lives/underwater-archaeology/rms-titanic/1985-discovery-of-rms-titanic",
+          "final_url": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/ocean-human-lives/underwater-archaeology/rms-titanic/1985-discovery-of-rms-titanic/",
+          "authority_type": "research institution",
+          "date_context": "event-date",
+          "date_quote": "The discovery of the Titanic on September 1, 1985, is a tale of two research centers",
+          "fact_quote": "Just after 1:00 a.m. on September 1, 1985, under more than 12,400 feet of water, one of the Titanic’s boilers was identified, confirming the wreck had been found.",
+          "retrieved_sha256": "5a8f91c04dc0b44b2bebe10a2840d30453ebbe8fe61636f0e98e5725b28f743d",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1988年",
+      "title": "粒子物理学家阿尔瓦雷斯离世",
+      "text": "美国物理学家路易斯·阿尔瓦雷斯在伯克利去世。他用氢气泡室发现大批共振态粒子，获1968年诺贝尔物理学奖；晚年与儿子提出恐龙因小行星撞击而灭绝的假说，掀起地球科学界持续数十年的争论。",
+      "item_sha256": "a1be811adc44f1a45b5ec2b338f9a872c0fec88f4b4ef0ad97a1c6798404eb2d",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/89",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/89",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "August 31, 2017—The Next Generation Researchers Initiative, which bolsters NIH funding support for early- and mid-career researchers, was launched.",
-          "fact_quote": "August 31, 2017—The Next Generation Researchers Initiative, which bolsters NIH funding support for early- and mid-career researchers, was launched.",
-          "retrieved_sha256": "6bff1fe4a75ec78907a143fa517d41a3dbd777c1a78347b1cf2c5143800390aa",
-          "content_type": "text/html"
+          "date_quote": "\"death\":{\"date\":\"1988-09-01\"",
+          "fact_quote": "for his decisive contributions to elementary particle physics, in particular the discovery of a large number of resonance states, made possible through his development of the technique of using hydrogen bubble chamber and data analysis",
+          "retrieved_sha256": "34d518d251b2043e214ede79c8c45d3a60a0f1437cfdb94a83b43c2623277228",
+          "content_type": "application/json"
         }
       ]
     }
   ],
-  "delivery_id": "2026-08-31:6c79dd54185a3e5c1ddf8976407a03c240832e7f8b5540fe280b8f0b362a60d7",
-  "public_json_sha256": "a8f0bed7d153ec705376dfda561e99af1014465be272b9f7ebcbdf6a9ca7a73d",
-  "poster_sha256": "25dff3c3477030164616948e316a7752a56efd05c9be284784e1bb7e3bd1052f",
-  "poster_bytes": 1176441,
+  "delivery_id": "2026-09-01:69641cba4edacf9627a3fb4abe5637774a3b398f3ec70556aa4754b03a28249f",
+  "public_json_sha256": "59665bf92fd83937ce9251e3b9be0196136977d06822be71fbb799b12d627feb",
+  "poster_sha256": "65330034c7b6e690ad4c6eef8bcb9ce3228dfb0485c89f1eeba16090a7d021ea",
+  "poster_bytes": 1624222,
   "poster_dimensions": {
     "width": 2160,
-    "height": 2596
+    "height": 4070
   }
 }
