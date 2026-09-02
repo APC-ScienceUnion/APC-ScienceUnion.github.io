@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-01",
+  "date": "2026-09-02",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,149 +8,117 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1877年",
-      "title": "质谱仪发明者阿斯顿出生",
-      "text": "弗朗西斯·阿斯顿生于英国。他造出质谱仪，用磁场分离并称量不同质量的原子，发现多数元素由多种同位素组成，并提出“整数法则”，凭此获1922年诺贝尔化学奖。",
-      "item_sha256": "59ff6d3c9bc7bd379a5b68d138977edea72fd77bbcc877899ac0488f8da53203",
+      "label": "1853年",
+      "title": "物理化学奠基人出生",
+      "text": "物理化学奠基人奥斯特瓦尔德出生于拉脱维亚里加。他系统研究催化、化学平衡与反应速率并提出稀释定律，创办《物理化学杂志》，1909年因催化研究获诺贝尔化学奖，推动化学从描述走向定量。",
+      "item_sha256": "f550111fac4ae47245539af03726db524dc3f5cfb18eacc43f0b71c212a7afe6",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/180",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/180",
-          "authority_type": "official archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/168",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/168",
+          "authority_type": "official archive API",
           "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1877-09-01\"",
-          "fact_quote": "for his discovery, by means of his mass spectrograph, of isotopes, in a large number of non-radioactive elements, and for his enunciation of the whole-number rule",
-          "retrieved_sha256": "aff4df091cc5ebcc2f2625954f5299548367b033b82a8a50b82f5764553bf774",
+          "date_quote": "\"birth\": {\"date\": \"1853-09-02\"}",
+          "fact_quote": "in recognition of his work on catalysis and for his investigations into the fundamental principles governing chemical equilibria and rates of reaction",
+          "retrieved_sha256": "449b644ff4a245cbd0a48fa2d8f8ea1d24f068c1078362d6454b0e9bbeab654b",
           "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1925年",
-      "title": "量子光学奠基人出生",
-      "text": "罗伊·格劳伯出生在纽约。他把量子力学引入光学，建立光相干性的量子理论，解释了激光等相干光场为何与普通光源行为迥异，为量子光学打下地基，因此分享2005年诺贝尔物理学奖。",
-      "item_sha256": "a13d1dd59c5948a0a4a4b56ad5eb5a229225608c102481b0bb015c4ca235c89e",
+      "label": "1865年",
+      "title": "四元数之父离世",
+      "text": "爱尔兰数学家、皇家天文学家哈密顿在都柏林去世。他22岁执掌邓辛克天文台，创立四元数并开辟非交换代数研究，还写下哈密顿力学与光锥折射理论，为量子力学与现代物理提供关键工具。",
+      "item_sha256": "3221d544e19e4e0ba8e553eae2fb3e56e5d072b7b572397602ca4caccb1a476e",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/791",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/791",
-          "authority_type": "official archive",
+          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Hamilton",
+          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Hamilton/",
+          "authority_type": "university archive",
           "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1925-09-01\"",
-          "fact_quote": "for his contribution to the quantum theory of optical coherence",
-          "retrieved_sha256": "af994b7749b705b84ec1bf571821f8de629a8d605cf0e939b2d9bb0038e984a5",
+          "date_quote": "Died: 2 September 1865 Dublin, Ireland",
+          "fact_quote": "William Rowan Hamilton was an Irish astronomer and mathematician who discovered the quaternions.",
+          "retrieved_sha256": "16f5eaa2d1b58539dd2f038f724292bb56b161c2bf7d95c16438dd5ca8e8e508",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1922年",
+      "title": "光镊发明者出生",
+      "text": "美国物理学家阿什金出生于纽约。他在贝尔实验室用聚焦激光束发明光镊，能无损夹住微粒乃至活细胞，打开单分子生物学研究的大门，2018年以96岁高龄获诺贝尔物理学奖。",
+      "item_sha256": "17953260ec689de74042ae3d72b489aa58facf9c72277d57bb5d692a756b6fc5",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/960",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/960",
+          "authority_type": "official archive API",
+          "date_context": "event-date",
+          "date_quote": "\"birth\": {\"date\": \"1922-09-02\"}",
+          "fact_quote": "for the optical tweezers and their application to biological systems",
+          "retrieved_sha256": "d27ff5eadf4ab545d163500bd38eec59d6cfa02bd4165dc3adca1cd03f4430a1",
           "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1979年",
-      "title": "先驱者11号首次飞掠土星",
-      "text": "美国宇航局“先驱者11号”掠过土星，在距云顶约两万公里处成为首颗探访该行星的探测器。它传回440张图像，发现两颗新卫星与一条新环，确认土星磁场存在，并为后来的旅行者号踏勘航路。",
-      "item_sha256": "b5720e5298f5e5ea3279a4829a45093b2a77d104a96177f96aeded8058e7323d",
-      "strong_claim": true,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nasa.gov/solar-system/planets/saturn/40-years-ago-pioneer-11-first-to-explore-saturn",
-          "final_url": "https://www.nasa.gov/solar-system/planets/saturn/40-years-ago-pioneer-11-first-to-explore-saturn/",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "On Sep. 1, 1979, Pioneer 11 passed within 13,000 miles of Saturn’s cloud tops at a velocity of 71,000 miles per hour.",
-          "fact_quote": "During the encounter, it sent back data on the planet, its rings, and its satellites, including 440 images.",
-          "retrieved_sha256": "dba8f9ad8ecb4cba85b21fdf215a701000621fa186c9decc37c6ede87af5abc5",
-          "content_type": "text/html"
-        },
-        {
-          "level": "A",
-          "url": "https://atmos.nmsu.edu/data_and_services/atmospheres_data/SATURN/pioneer_flyby.html",
-          "final_url": "https://atmos.nmsu.edu/data_and_services/atmospheres_data/SATURN/pioneer_flyby.html",
-          "authority_type": "university archive",
-          "date_context": "event-date",
-          "date_quote": "on September 1, 1979 the spacecraft passed through the ring plane at a distance of 35,400 km of the outer edge of the A Ring",
-          "fact_quote": "Established the existence of and quantified Saturn’s magnetic field.",
-          "retrieved_sha256": "77262a4c6bde70c81fa774fc9f8b4c04c04adebd60e444b037872e6871c72d8b",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1982年",
-      "title": "组合逻辑大师柯里辞世",
-      "text": "美国数学家哈斯克尔·柯里去世。他毕生钻研数学基础，发展出组合子逻辑，提出“柯里悖论”与“柯里–霍华德对应”，后者揭示逻辑与程序语言间的深层联系，编程语言Haskell即以他命名。",
-      "item_sha256": "a5f348f2f7c705b4f6685afea906de2d6c8d44e5ce67f34ccbba2b963439abb0",
+      "label": "1992年",
+      "title": "“跳跃基因”发现者去世",
+      "text": "美国遗传学家麦克林托克在纽约去世。她在玉米染色体上发现可移动的“跳跃基因”（转座子），为遗传学研究开辟新方向，1983年凭此获诺贝尔生理学或医学奖。",
+      "item_sha256": "e6138b80049901b87dbe2bdd9a59584287fb8045bca2ebcb8f2685cc2ed227ec",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Curry",
-          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Curry/",
-          "authority_type": "university archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/428",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/428",
+          "authority_type": "official archive API",
           "date_context": "event-date",
-          "date_quote": "Died: 1 September 1982 State College, Pennsylvania, USA",
-          "fact_quote": "Haskell Curry worked in mathematical logic with particular interest in the theory of formal systems and processes.",
-          "retrieved_sha256": "a007f352a15ec5acf185b92c01bd643d7826dc73f76d7be447c34faca46f8c1d",
-          "content_type": "text/html"
+          "date_quote": "\"death\": {\"date\": \"1992-09-02\"}",
+          "fact_quote": "for her discovery of mobile genetic elements",
+          "retrieved_sha256": "f162b7b65f11f4ebce46a56daae1952dfbfd4ff81b835a6e213da9d165628824",
+          "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1985年",
-      "title": "沉睡73年的泰坦尼克号被找到",
-      "text": "美法联合考察队在大西洋约3800米深的海底找到泰坦尼克号残骸。伍兹霍尔海洋学研究所团队用遥控潜水器“阿尔戈”拖曳摄像机扫描海床，循碎片带锁定船体，也为深海探测技术树立里程碑。",
-      "item_sha256": "5f1dc3efa8805d1abc5992d85733e7bec8b79f76d724c8d0c9d0dc3e915319df",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/ocean-human-lives/underwater-archaeology/rms-titanic/1985-discovery-of-rms-titanic",
-          "final_url": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/ocean-human-lives/underwater-archaeology/rms-titanic/1985-discovery-of-rms-titanic/",
-          "authority_type": "research institution",
-          "date_context": "event-date",
-          "date_quote": "The discovery of the Titanic on September 1, 1985, is a tale of two research centers",
-          "fact_quote": "Just after 1:00 a.m. on September 1, 1985, under more than 12,400 feet of water, one of the Titanic’s boilers was identified, confirming the wreck had been found.",
-          "retrieved_sha256": "5a8f91c04dc0b44b2bebe10a2840d30453ebbe8fe61636f0e98e5725b28f743d",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1988年",
-      "title": "粒子物理学家阿尔瓦雷斯离世",
-      "text": "美国物理学家路易斯·阿尔瓦雷斯在伯克利去世。他用氢气泡室发现大批共振态粒子，获1968年诺贝尔物理学奖；晚年与儿子提出恐龙因小行星撞击而灭绝的假说，掀起地球科学界持续数十年的争论。",
-      "item_sha256": "a1be811adc44f1a45b5ec2b338f9a872c0fec88f4b4ef0ad97a1c6798404eb2d",
+      "label": "2013年",
+      "title": "交易成本理论奠基人去世",
+      "text": "英国经济学家科斯在芝加哥去世。他用“交易成本”解释企业为何存在，又用产权理论分析外部性问题，奠定法律经济学与制度经济学的基础，1991年获诺贝尔经济学奖。",
+      "item_sha256": "a9224c09340d00e27cb59d883144e7c9446b8cc970b77181c3712cfa04ecc29c",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/89",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/89",
-          "authority_type": "official archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/707",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/707",
+          "authority_type": "official archive API",
           "date_context": "event-date",
-          "date_quote": "\"death\":{\"date\":\"1988-09-01\"",
-          "fact_quote": "for his decisive contributions to elementary particle physics, in particular the discovery of a large number of resonance states, made possible through his development of the technique of using hydrogen bubble chamber and data analysis",
-          "retrieved_sha256": "34d518d251b2043e214ede79c8c45d3a60a0f1437cfdb94a83b43c2623277228",
+          "date_quote": "\"death\": {\"date\": \"2013-09-02\"}",
+          "fact_quote": "for his discovery and clarification of the significance of transaction costs and property rights for the institutional structure and functioning of the economy",
+          "retrieved_sha256": "7d74b29ab299e4dfd602f63fd0184c699ceb58f401ff084ea68af46074b66d35",
           "content_type": "application/json"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-01:69641cba4edacf9627a3fb4abe5637774a3b398f3ec70556aa4754b03a28249f",
-  "public_json_sha256": "59665bf92fd83937ce9251e3b9be0196136977d06822be71fbb799b12d627feb",
-  "poster_sha256": "65330034c7b6e690ad4c6eef8bcb9ce3228dfb0485c89f1eeba16090a7d021ea",
-  "poster_bytes": 1624222,
+  "delivery_id": "2026-09-02:92e11be4165e1e1d23ae2e23b5447b1e93e63cba497bb410b6d4d5f13179b9d7",
+  "public_json_sha256": "8c7d933f58eecb7c9215a2c24011c9296c03ced9b648862bfc61ae3586f73df0",
+  "poster_sha256": "cb15a2bcaa7216c61dacf51a652ff22ae321873f48bde4104085c4480553a707",
+  "poster_bytes": 1472899,
   "poster_dimensions": {
     "width": 2160,
-    "height": 4070
+    "height": 3580
   }
 }
