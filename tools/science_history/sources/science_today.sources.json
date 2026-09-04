@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-02",
+  "date": "2026-09-04",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,117 +8,96 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1853年",
-      "title": "物理化学奠基人出生",
-      "text": "物理化学奠基人奥斯特瓦尔德出生于拉脱维亚里加。他系统研究催化、化学平衡与反应速率并提出稀释定律，创办《物理化学杂志》，1909年因催化研究获诺贝尔化学奖，推动化学从描述走向定量。",
-      "item_sha256": "f550111fac4ae47245539af03726db524dc3f5cfb18eacc43f0b71c212a7afe6",
+      "label": "1882年",
+      "title": "珍珠街电站点亮曼哈顿",
+      "text": "爱迪生在纽约曼哈顿下城启动珍珠街直流电站，向约85家用户的数百盏白炽灯供电。集中式的发电与输配模式自此铺开，实验室与工厂开始获得稳定可靠的电力来源。",
+      "item_sha256": "ab886007e9fbfd04d6a33630f247f1efef3ad51699eae7e59e72f672c53c2121",
       "strong_claim": false,
-      "person_event": true,
+      "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/168",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/168",
-          "authority_type": "official archive API",
+          "url": "https://life.ieee.org/stamps-commemorate-the-start-of-the-electrical-age",
+          "final_url": "https://life.ieee.org/2022/09/stamps-commemorate-the-start-of-the-electrical-age/",
+          "authority_type": "professional society archive",
           "date_context": "event-date",
-          "date_quote": "\"birth\": {\"date\": \"1853-09-02\"}",
-          "fact_quote": "in recognition of his work on catalysis and for his investigations into the fundamental principles governing chemical equilibria and rates of reaction",
-          "retrieved_sha256": "449b644ff4a245cbd0a48fa2d8f8ea1d24f068c1078362d6454b0e9bbeab654b",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1865年",
-      "title": "四元数之父离世",
-      "text": "爱尔兰数学家、皇家天文学家哈密顿在都柏林去世。他22岁执掌邓辛克天文台，创立四元数并开辟非交换代数研究，还写下哈密顿力学与光锥折射理论，为量子力学与现代物理提供关键工具。",
-      "item_sha256": "3221d544e19e4e0ba8e553eae2fb3e56e5d072b7b572397602ca4caccb1a476e",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Hamilton",
-          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Hamilton/",
-          "authority_type": "university archive",
-          "date_context": "event-date",
-          "date_quote": "Died: 2 September 1865 Dublin, Ireland",
-          "fact_quote": "William Rowan Hamilton was an Irish astronomer and mathematician who discovered the quaternions.",
-          "retrieved_sha256": "16f5eaa2d1b58539dd2f038f724292bb56b161c2bf7d95c16438dd5ca8e8e508",
+          "date_quote": "On September 4, 1882, Thomas Edison began providing electricity to a portion of New York City",
+          "fact_quote": "He set to work on the Pearl Street station, which would become the first permanent central power station to supply incandescent lighting.",
+          "retrieved_sha256": "f2c796b25543c8ed79786be9c942d9f86574c9c48b9ad8eda5c3b4d415386565",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1922年",
-      "title": "光镊发明者出生",
-      "text": "美国物理学家阿什金出生于纽约。他在贝尔实验室用聚焦激光束发明光镊，能无损夹住微粒乃至活细胞，打开单分子生物学研究的大门，2018年以96岁高龄获诺贝尔物理学奖。",
-      "item_sha256": "17953260ec689de74042ae3d72b489aa58facf9c72277d57bb5d692a756b6fc5",
+      "label": "1888年",
+      "title": "伊斯曼的卷片相机获专利",
+      "text": "乔治·伊斯曼获得美国专利388850号，那是一款使用成卷胶片的便携相机。摄影自此告别笨重的湿版器材，普通人也能轻松留影；科研人员在野外与实验现场也多了一件可靠的记录工具。",
+      "item_sha256": "2421906f1760204a5af13bfcd827dde709b35df9ac7d118ed7c2b1b20016023d",
       "strong_claim": false,
-      "person_event": true,
+      "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/960",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/960",
-          "authority_type": "official archive API",
+          "url": "https://spectrum.ieee.org/september-1888-george-eastman-patents-his-kodak-camera",
+          "final_url": "https://spectrum.ieee.org/september-1888-george-eastman-patents-his-kodak-camera",
+          "authority_type": "professional society magazine",
           "date_context": "event-date",
-          "date_quote": "\"birth\": {\"date\": \"1922-09-02\"}",
-          "fact_quote": "for the optical tweezers and their application to biological systems",
-          "retrieved_sha256": "d27ff5eadf4ab545d163500bd38eec59d6cfa02bd4165dc3adca1cd03f4430a1",
-          "content_type": "application/json"
+          "date_quote": "The final step came 130 years ago, on 4 September 1888, when Eastman was awarded U.S. Patent No. 388,850 for a small, handheld, easy-to-use camera.",
+          "fact_quote": "His company had already begun making it three months earlier.",
+          "retrieved_sha256": "8b32777f7c502e1c9494308d9b4d0ae17a49b2c52a658d4892d04c2c8184f531",
+          "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1992年",
-      "title": "“跳跃基因”发现者去世",
-      "text": "美国遗传学家麦克林托克在纽约去世。她在玉米染色体上发现可移动的“跳跃基因”（转座子），为遗传学研究开辟新方向，1983年凭此获诺贝尔生理学或医学奖。",
-      "item_sha256": "e6138b80049901b87dbe2bdd9a59584287fb8045bca2ebcb8f2685cc2ed227ec",
+      "label": "1934年",
+      "title": "计量经济学家格兰杰诞生",
+      "text": "计量经济学家克莱夫·格兰杰生于英国斯旺西。他提出协整分析方法，让研究者能够正确处理带有共同趋势的经济时间序列，还留下广为人知的格兰杰因果检验思路，2003年获诺贝尔经济学奖。",
+      "item_sha256": "de46ba5a77b190a745bb741a689d0bc42420c8d7ee33f374bd569917b3d9a9e0",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/428",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/428",
-          "authority_type": "official archive API",
+          "url": "https://www.nobelprize.org/laureate/772",
+          "final_url": "https://www.nobelprize.org/prizes/economic-sciences/2003/granger/facts/",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "\"death\": {\"date\": \"1992-09-02\"}",
-          "fact_quote": "for her discovery of mobile genetic elements",
-          "retrieved_sha256": "f162b7b65f11f4ebce46a56daae1952dfbfd4ff81b835a6e213da9d165628824",
-          "content_type": "application/json"
+          "date_quote": "Born: 4 September 1934, Swansea, United Kingdom",
+          "fact_quote": "for methods of analyzing economic time series with common trends (cointegration)",
+          "retrieved_sha256": "b9acfacfd6ba85554756fd8dfd392c7cf116fbd508a404d39c5023a8560dbe46",
+          "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2013年",
-      "title": "交易成本理论奠基人去世",
-      "text": "英国经济学家科斯在芝加哥去世。他用“交易成本”解释企业为何存在，又用产权理论分析外部性问题，奠定法律经济学与制度经济学的基础，1991年获诺贝尔经济学奖。",
-      "item_sha256": "a9224c09340d00e27cb59d883144e7c9446b8cc970b77181c3712cfa04ecc29c",
+      "label": "2023年",
+      "title": "一氧化氮信使发现者穆拉德逝世",
+      "text": "1998年诺贝尔生理学或医学奖得主费里德·穆拉德在美国门洛帕克去世。他早年阐明硝酸甘油类药物通过释放一氧化氮来舒张血管，气体作为细胞间信号分子的角色由此进入药理学视野。",
+      "item_sha256": "d7eb6e8eadc3993e4dee541fef095c4a12a78265b841f85e08311a4a469eb2aa",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/707",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/707",
-          "authority_type": "official archive API",
+          "url": "https://www.nobelprize.org/laureate/460",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1998/murad/facts/",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "\"death\": {\"date\": \"2013-09-02\"}",
-          "fact_quote": "for his discovery and clarification of the significance of transaction costs and property rights for the institutional structure and functioning of the economy",
-          "retrieved_sha256": "7d74b29ab299e4dfd602f63fd0184c699ceb58f401ff084ea68af46074b66d35",
-          "content_type": "application/json"
+          "date_quote": "Died: 4 September 2023, Menlo Park, CL, USA",
+          "fact_quote": "for their discoveries concerning nitric oxide as a signalling molecule in the cardiovascular system",
+          "retrieved_sha256": "81589f2e2b5e7bc6b91dc79e8aef949e2e6c7db98144e283ff1dee6e8bd29823",
+          "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-02:92e11be4165e1e1d23ae2e23b5447b1e93e63cba497bb410b6d4d5f13179b9d7",
-  "public_json_sha256": "8c7d933f58eecb7c9215a2c24011c9296c03ced9b648862bfc61ae3586f73df0",
-  "poster_sha256": "cb15a2bcaa7216c61dacf51a652ff22ae321873f48bde4104085c4480553a707",
-  "poster_bytes": 1472899,
+  "delivery_id": "2026-09-04:24fb91ac535a8892ca274ee2bcc344278f86e40c8a101cd2303da7f26bdb82c1",
+  "public_json_sha256": "f6c432e8d0141fb158626239dd57f126f8b3e217c86a7cf34d8d227bfee41c1e",
+  "poster_sha256": "5443f5650516ca60c490cadd1fd040c139bc2b44579bf4262697ddb858cb1606",
+  "poster_bytes": 1366356,
   "poster_dimensions": {
     "width": 2160,
-    "height": 3580
+    "height": 3088
   }
 }
