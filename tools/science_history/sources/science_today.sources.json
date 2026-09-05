@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-04",
+  "date": "2026-09-05",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,96 +8,149 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1882年",
-      "title": "珍珠街电站点亮曼哈顿",
-      "text": "爱迪生在纽约曼哈顿下城启动珍珠街直流电站，向约85家用户的数百盏白炽灯供电。集中式的发电与输配模式自此铺开，实验室与工厂开始获得稳定可靠的电力来源。",
-      "item_sha256": "ab886007e9fbfd04d6a33630f247f1efef3ad51699eae7e59e72f672c53c2121",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://life.ieee.org/stamps-commemorate-the-start-of-the-electrical-age",
-          "final_url": "https://life.ieee.org/2022/09/stamps-commemorate-the-start-of-the-electrical-age/",
-          "authority_type": "professional society archive",
-          "date_context": "event-date",
-          "date_quote": "On September 4, 1882, Thomas Edison began providing electricity to a portion of New York City",
-          "fact_quote": "He set to work on the Pearl Street station, which would become the first permanent central power station to supply incandescent lighting.",
-          "retrieved_sha256": "f2c796b25543c8ed79786be9c942d9f86574c9c48b9ad8eda5c3b4d415386565",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1888年",
-      "title": "伊斯曼的卷片相机获专利",
-      "text": "乔治·伊斯曼获得美国专利388850号，那是一款使用成卷胶片的便携相机。摄影自此告别笨重的湿版器材，普通人也能轻松留影；科研人员在野外与实验现场也多了一件可靠的记录工具。",
-      "item_sha256": "2421906f1760204a5af13bfcd827dde709b35df9ac7d118ed7c2b1b20016023d",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://spectrum.ieee.org/september-1888-george-eastman-patents-his-kodak-camera",
-          "final_url": "https://spectrum.ieee.org/september-1888-george-eastman-patents-his-kodak-camera",
-          "authority_type": "professional society magazine",
-          "date_context": "event-date",
-          "date_quote": "The final step came 130 years ago, on 4 September 1888, when Eastman was awarded U.S. Patent No. 388,850 for a small, handheld, easy-to-use camera.",
-          "fact_quote": "His company had already begun making it three months earlier.",
-          "retrieved_sha256": "8b32777f7c502e1c9494308d9b4d0ae17a49b2c52a658d4892d04c2c8184f531",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1934年",
-      "title": "计量经济学家格兰杰诞生",
-      "text": "计量经济学家克莱夫·格兰杰生于英国斯旺西。他提出协整分析方法，让研究者能够正确处理带有共同趋势的经济时间序列，还留下广为人知的格兰杰因果检验思路，2003年获诺贝尔经济学奖。",
-      "item_sha256": "de46ba5a77b190a745bb741a689d0bc42420c8d7ee33f374bd569917b3d9a9e0",
+      "label": "1857年",
+      "title": "社会学先驱孔德在巴黎辞世",
+      "text": "法国哲学家孔德在巴黎寓所去世。他创立实证主义哲学，主张用可观察事实与科学方法研究社会，在《实证哲学教程》中系统构想这门新学问，为后来社会学的发展铺设了道路。",
+      "item_sha256": "d7db880089d534770c72313a67d07d50609850e051676ef0e163d5d0064fb32d",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/772",
-          "final_url": "https://www.nobelprize.org/prizes/economic-sciences/2003/granger/facts/",
-          "authority_type": "official archive",
+          "url": "https://plato.stanford.edu/entries/comte/",
+          "final_url": "https://plato.stanford.edu/entries/comte/",
+          "authority_type": "university encyclopedia",
           "date_context": "event-date",
-          "date_quote": "Born: 4 September 1934, Swansea, United Kingdom",
-          "fact_quote": "for methods of analyzing economic time series with common trends (cointegration)",
-          "retrieved_sha256": "b9acfacfd6ba85554756fd8dfd392c7cf116fbd508a404d39c5023a8560dbe46",
+          "date_quote": "Comte died on September 5, 1857, without having had time to draft the texts announced up to 35 years before",
+          "fact_quote": "Auguste Comte (1798–1857) is the founder of positivism, a philosophical and political movement which enjoyed a very wide diffusion in the second half of the nineteenth century.",
+          "retrieved_sha256": "1fad2e501ecb674cdc009beea3fa34042c1648de4f1585a68b267716795fde30",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2023年",
-      "title": "一氧化氮信使发现者穆拉德逝世",
-      "text": "1998年诺贝尔生理学或医学奖得主费里德·穆拉德在美国门洛帕克去世。他早年阐明硝酸甘油类药物通过释放一氧化氮来舒张血管，气体作为细胞间信号分子的角色由此进入药理学视野。",
-      "item_sha256": "d7eb6e8eadc3993e4dee541fef095c4a12a78265b841f85e08311a4a469eb2aa",
+      "label": "1906年",
+      "title": "统计物理奠基人玻尔兹曼去世",
+      "text": "奥地利物理学家玻尔兹曼在杜伊诺去世。他把热力学第二定律还原为分子微观运动的统计结果，给出了熵与微观状态数相联系的著名公式，是统计力学和原子理论的重要奠基者。",
+      "item_sha256": "6b4ea84c2db6a04b036e18063979afb72536da3eebdb400430999e1b95597d13",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/460",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1998/murad/facts/",
+          "url": "https://physicstoday.aip.org/news/boltzmann-honored-on-death-centenary",
+          "final_url": "https://physicstoday.aip.org/news/boltzmann-honored-on-death-centenary",
+          "authority_type": "professional society news",
+          "date_context": "event-date",
+          "date_quote": "The plaque is to hang in the hotel—now a college—where Boltzmann committed suicide on 5 September 1906 while on vacation with his family.",
+          "fact_quote": "the Austrian physicist and mathematician Ludwig Boltzmann is being honored with a commemorative plaque in Duino, Italy.",
+          "retrieved_sha256": "2ccf7da1db0b46795759e72b21ad1e2a06930d33c41c552bb6ac3edf208472b6",
+          "content_type": "text/html"
+        },
+        {
+          "level": "B",
+          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Boltzmann",
+          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Boltzmann/",
+          "authority_type": "university history of mathematics archive",
+          "date_context": "event-date",
+          "date_quote": "Died: 5 September 1906, Duino (near Trieste), Austria (now Italy)",
+          "fact_quote": "Ludwig Boltzmann was an Austrian mathematician who made important advances in electromagnetism and thermodynamics.",
+          "retrieved_sha256": "d0c682bf2da485dd07ef455a509851fe5268babb5a37fe73b69c45ba22cd7c74",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1939年",
+      "title": "免疫学家利根川进出生",
+      "text": "利根川进生于日本名古屋。他用实验阐明，种类繁多的抗体来自B淋巴细胞发育过程中基因片段的重排组合，从而解开免疫系统应对海量抗原的难题，并于1987年获得诺贝尔生理学或医学奖。",
+      "item_sha256": "1484b1380e574966f625b6d9dd23077fc141f2cca00d521c7663a7bd08181c7c",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/laureate/436",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1987/tonegawa/facts/",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Died: 4 September 2023, Menlo Park, CL, USA",
-          "fact_quote": "for their discoveries concerning nitric oxide as a signalling molecule in the cardiovascular system",
-          "retrieved_sha256": "81589f2e2b5e7bc6b91dc79e8aef949e2e6c7db98144e283ff1dee6e8bd29823",
+          "date_quote": "Born: 5 September 1939, Nagoya, Japan",
+          "fact_quote": "In 1976 Susumu Tonegawa showed how this is possible through the redistribution of genes in a cell during its development into an antibody-producing B lymphocyte.",
+          "retrieved_sha256": "bb56156d930d0303e0c729978cb3eb5d486da6a51eb41b4e6ed55e81936a0770",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1984年",
+      "title": "发现号航天飞机完成处女航",
+      "text": "发现号航天飞机完成代号STS-41-D的处女航，降落在加州爱德华兹空军基地。约六天的行程中，机组部署了三颗商业通信卫星，还展开实验性的大型太阳能帆板，为航天供电技术积累经验。",
+      "item_sha256": "dce77ef80b289875484ea397c88370fb7c407d946274fafc01f2fe02154c039c",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/mission/sts-41d",
+          "final_url": "https://www.nasa.gov/mission/sts-41d/",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "Landing: September 5, 1984 at 6:37:54 a.m. PDT",
+          "fact_quote": "Three satellites deployed during this mission: Satellite Business System SBS-D, SYNCOM IV-2 (also known as LEASAT2) and TELSTAR.",
+          "retrieved_sha256": "dc8f236f2928f37987ad8c809da43d3420449272b04534c202df22bf40e02ed7",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2002年",
+      "title": "宇宙微波背景研究专家威尔金森去世",
+      "text": "美国宇宙学家大卫·威尔金森在普林斯顿去世。他从1960年代起持续投身宇宙微波背景辐射的测量，从地面实验、气球到太空卫星不断推进精度，美国宇航局后来将一颗探测卫星以他的名字命名。",
+      "item_sha256": "4dfcf698f07ea715701972eb99ced8b3d5e8f6efd9864dffe5381c1d3b470370",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://science.nasa.gov/people/david-wilkinson",
+          "final_url": "https://science.nasa.gov/people/david-wilkinson/",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "After a long struggle with cancer, David Wilkinson died on September 5, 2002. He was 67.",
+          "fact_quote": "NASA renamed an orbiting satellite, called the Microwave Anisotropy Probe, in honor of David T. Wilkinson",
+          "retrieved_sha256": "716a4a4d0e09849ba0633e6b6c6587ed8d5bbe2ac9d0932a17a5a5da40e83d3a",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2017年",
+      "title": "激光光谱学先驱布隆伯根去世",
+      "text": "荷兰裔美籍物理学家布隆伯根在亚利桑那州图森去世。上世纪60年代，他用多束激光精确测定原子与分子的能级，发展出非线性激光光谱方法，并因此与肖洛分享了1981年诺贝尔物理学奖。",
+      "item_sha256": "c08ab7f9da8490544f69a5e964ae5ecaa9550a047fa78d4ee2baf496a6ba40c5",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/laureate/118",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1981/bloembergen/facts/",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "Died: 5 September 2017, Tucson, AZ, USA",
+          "fact_quote": "In the 1960s Nicolaas Bloembergen used laser light, which has waves in phase and of the same wavelength, to determine energy levels with great precision.",
+          "retrieved_sha256": "197d6b736dd9c1ba6edbd236649008177de648be01cf576f03d8dd55183f2f0d",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-04:24fb91ac535a8892ca274ee2bcc344278f86e40c8a101cd2303da7f26bdb82c1",
-  "public_json_sha256": "f6c432e8d0141fb158626239dd57f126f8b3e217c86a7cf34d8d227bfee41c1e",
-  "poster_sha256": "5443f5650516ca60c490cadd1fd040c139bc2b44579bf4262697ddb858cb1606",
-  "poster_bytes": 1366356,
+  "delivery_id": "2026-09-05:c11377466bfb177eb00c4488720adbcbc9eb20a42f4d36d8276bfef6689cbfd8",
+  "public_json_sha256": "b57cc83ab83ee37246b216d3459bb902c6d197239a926b9ed9856e118ab3c6ac",
+  "poster_sha256": "75c7aae575bb654636118a0387f1228be2970617fad8e44d5a5c1a3867b1d3dd",
+  "poster_bytes": 1678517,
   "poster_dimensions": {
     "width": 2160,
-    "height": 3088
+    "height": 4070
   }
 }
