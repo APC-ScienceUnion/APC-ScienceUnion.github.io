@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-06",
+  "date": "2026-09-07",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,128 +8,150 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1522年",
-      "title": "维多利亚号环球航行归来",
-      "text": "麦哲伦船队仅存的“维多利亚”号在埃尔卡诺指挥下返抵西班牙桑卢卡尔，船上只剩18名幸存者。历时三年的远航以实测印证地圆说，也让制图师看清行星的真实尺度与海洋格局。",
-      "item_sha256": "42e8163711167e625672c0a38508e46430adbde08f2b194114ddbe4466e0b789",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://static-prod.lib.princeton.edu/visual_materials/maps/websites/pacific/magellan/magellan.html",
-          "final_url": "https://static-prod.lib.princeton.edu/visual_materials/maps/websites/pacific/magellan/magellan.html",
-          "authority_type": "university archive",
-          "date_context": "event-date",
-          "date_quote": "On September 6, 1522, Victoria, with a ghastly/ghostly crew of eighteen survivors, reached Sanlúcar de Barrameda on the coast of Spain",
-          "fact_quote": "Accomplishments: First circumnavigation of the world, discovery of the Magellan Strait, Marianas, and Philippine Islands",
-          "retrieved_sha256": "395c835697df113fde303ee3da3e7e21c2383190d28de08a663b66f2ad9778e4",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1876年",
-      "title": "胰岛素诺奖得主麦克劳德出生",
-      "text": "苏格兰生理学家麦克劳德出生。他后来主持多伦多大学实验室，班廷与贝斯特正是在那里提取出胰岛素；他参与验证并推动临床推广，1923年与班廷共获诺贝尔生理学或医学奖。",
-      "item_sha256": "594198bb928a51938e686e195a2d1c3463fe561ebb8299ab3080da716e12f2c0",
+      "label": "1917年",
+      "title": "立体化学家康福思出生",
+      "text": "化学家约翰·康福思出生。他后来阐明酶催化反应的立体化学，揭示酶如何专一地区分分子的镜像形态，凭此获得1975年诺贝尔化学奖。",
+      "item_sha256": "4201be36cc14cf901dde33a86418f8bea48e1d0b24966f3c5be42a74394591ba",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/314",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/314",
+          "url": "https://api.nobelprize.org/2.1/laureate/247",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/247",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1876-09-06\",\"year\":\"1876\"",
-          "fact_quote": "\"motivation\":{\"en\":\"for the discovery of insulin\"",
-          "retrieved_sha256": "e0a3105a4b6e36ae573bbe1a191b39d4f0818f6d5ef058b1bfae27dcc66c68ff",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1954年",
-      "title": "美国商用核电站破土动工",
-      "text": "宾夕法尼亚州希平波特原子能电站动工，艾森豪威尔发表广播讲话宣布开工。这座压水堆电站于1957年底并网发电，把核能带进民用电网，成为原子能和平利用的标志工程。",
-      "item_sha256": "ec235c30a77abc466082e6ffcea04540da6125a1ce8db02e8e3ce0011e6f1039",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.presidency.ucsb.edu/documents/radio-and-television-remarks-the-occasion-the-ground-breaking-ceremony-for-the",
-          "final_url": "https://www.presidency.ucsb.edu/documents/radio-and-television-remarks-the-occasion-the-ground-breaking-ceremony-for-the",
-          "authority_type": "presidential archive",
-          "date_context": "event-date",
-          "date_quote": "September 06, 1954",
-          "fact_quote": "I now, by this act, begin construction of America's first commercial-size atomic power plant.",
-          "retrieved_sha256": "7fb7bf15a368d9353308f82490a914387f299f83956bb3bd1370d3f28cfd8c68",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1956年",
-      "title": "线形文字B释读者文特里斯去世",
-      "text": "英国建筑师兼语言学家迈克尔·文特里斯因车祸去世，年仅34岁。他1952年释读出克里特泥板上的线形文字B，揭示其记录的正是古希腊语；身后数周，他与查德威克合著的著作出版。",
-      "item_sha256": "248282b09943346e63913afe7afcfdcd4559edd61e5f05a71f7ff1b31176b97d",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.classics.cam.ac.uk/research/projects/mycep/decipherment/ventris",
-          "final_url": "https://www.classics.cam.ac.uk/research/projects/mycep/decipherment/ventris",
-          "authority_type": "university archive",
-          "date_context": "event-date",
-          "date_quote": "Ventris died in a car accident on 6 September 1956.",
-          "fact_quote": "Tragically, just weeks before the publication of Documents in Mycenaean Greek, Ventris died in a car accident on 6 September 1956.",
-          "retrieved_sha256": "9311641e73eafd3012e5ff2664958c4216cdd32a86979ffc9b458fe3bade1bff",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2025年",
-      "title": "逆转录酶发现者巴尔的摩去世",
-      "text": "生物学家巴尔的摩去世，享年87岁。他与特明各自发现逆转录酶，揭示遗传信息可由RNA流回DNA，冲击当时的中心法则，也为认识逆转录病毒铺路；1975年三人分享诺贝尔生理学或医学奖。",
-      "item_sha256": "1acf72f4d5c9fe08a18b16db4c2a6a6b1e473b98f5e3ecba9718a77638c1e198",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/406",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/406",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "\"death\":{\"date\":\"2025-09-06\"",
-          "fact_quote": "\"motivation\":{\"en\":\"for their discoveries concerning the interaction between tumour viruses and the genetic material of the cell\"",
-          "retrieved_sha256": "f20258663ea50987e9c7db048c5f733e930d1a1dca97802a5727d4f5c24001ad",
+          "date_quote": "\"birth\":{\"date\":\"1917-09-07\",\"year\":\"1917\"",
+          "fact_quote": "for his work on the stereochemistry of enzyme-catalyzed reactions",
+          "retrieved_sha256": "6a8447bb260e61988e961702e1c8d717c9dab28eae7cea0f9af13bcef2a42de9",
           "content_type": "application/json"
         },
         {
           "level": "A",
-          "url": "https://www.caltech.edu/about/news/caltech-mourns-the-passing-of-president-emeritus-and-nobel-laureate-david-baltimore",
-          "final_url": "https://www.caltech.edu/about/news/caltech-mourns-the-passing-of-president-emeritus-and-nobel-laureate-david-baltimore",
-          "authority_type": "university archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/247",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/247",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "passed away on September 6, 2025. He was 87 years old.",
-          "fact_quote": "David Baltimore, President Emeritus and the Judge Shirley Hufstedler Professor of Biology, at Caltech and a co-recipient of the 1975 Nobel Prize in Physiology or Medicine, passed away on September 6, 2025.",
-          "retrieved_sha256": "89d2089bfaa164c82edcf507deb266188ea6e9221c6a416f555e4c7d8176ce41",
+          "date_quote": "\"birth\":{\"date\":\"1917-09-07\",\"year\":\"1917\"",
+          "fact_quote": "\"awardYear\":\"1975\",\"category\":{\"en\":\"Chemistry\"",
+          "retrieved_sha256": "6a8447bb260e61988e961702e1c8d717c9dab28eae7cea0f9af13bcef2a42de9",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1927年",
+      "title": "全电子电视图像传输成功",
+      "text": "21岁的美国发明家法恩斯沃思与助手在旧金山实验室成功传输了一幅全电子电视图像。他在这里研制并申请专利的全电子电视系统由此得到验证，为现代电视技术打下基础。",
+      "item_sha256": "ac91df4da663c801044d00df19720700b80bc5f3f2efb218921100de7f6d1277",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://ohp.parks.ca.gov/ListedResources/Detail/941",
+          "final_url": "https://ohp.parks.ca.gov/ListedResources/Detail/941",
+          "authority_type": "state historic landmark registry",
+          "date_context": "event-date",
+          "date_quote": "On September 7,1927 the 21-year-old inventor and several dedicated assistants successfully transmitted the first all-electronic television image",
+          "fact_quote": "In a simple laboratory on this site, 202 Green Street, Philo Taylor Farnsworth, U.S. pioneer in electronics, invented and patented the first operational all-electronic 'television system.'",
+          "retrieved_sha256": "9a499934f4ccc8f63798866cde3b1b9cddaae3bff09c5c4943e1faa35017de9f",
           "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1936年",
+      "title": "最后一只圈养袋狼死去",
+      "text": "最后一只圈养袋狼在霍巴特动物园死去。这一物种当年刚被列入受保护野生动物名单，却仍走向灭绝：此后未再发现可靠活体，袋狼于1986年被宣告灭绝。",
+      "item_sha256": "00455e607a72894db6da5d9970d8a8ad4314197f01bc386165610881fb59b9d0",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://parks.tas.gov.au/discovery-and-learning/wildlife/tasmanian-tiger",
+          "final_url": "https://parks.tas.gov.au/discovery-and-learning/wildlife/tasmanian-tiger",
+          "authority_type": "official government agency",
+          "date_context": "event-date",
+          "date_quote": "In 1936 the thylacine was added to the list of protected wildlife but, on 7 September 1936, the last known thylacine in captivity died at the Hobart Zoo.",
+          "fact_quote": "The species was declared extinct in 1986.",
+          "retrieved_sha256": "84162c26b805cf6ed15478abe202a19a54930dd3a24a39c5e98cb25d661294fa",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1959年",
+      "title": "mRNA疫苗奠基者韦斯曼出生",
+      "text": "免疫学家德鲁·韦斯曼出生。他后来发现修饰核苷酸碱基能让信使RNA躲开免疫系统的过度监视，这项发现为新冠mRNA疫苗的问世铺平道路，他也因此获2023年诺贝尔生理学或医学奖。",
+      "item_sha256": "ae0dd632cbec3f60daeb77b39214512f230376a0bc2872c56c41ac11c1d44000",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/1025",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/1025",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "\"birth\":{\"date\":\"1959-09-07\",\"year\":\"1959\"",
+          "fact_quote": "for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19",
+          "retrieved_sha256": "520ffaf35716659953c394460b8426c0d6d032bc6e6d86db5844e3e8e270f260",
+          "content_type": "application/json"
+        },
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/1025",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/1025",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "\"birth\":{\"date\":\"1959-09-07\",\"year\":\"1959\"",
+          "fact_quote": "\"awardYear\":\"2023\",\"category\":{\"en\":\"Physiology or Medicine\"",
+          "retrieved_sha256": "520ffaf35716659953c394460b8426c0d6d032bc6e6d86db5844e3e8e270f260",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1991年",
+      "title": "超铀元素化学先驱麦克米伦去世",
+      "text": "美国物理学家埃德温·麦克米伦在加州去世。他因超铀元素化学领域的发现获1951年诺贝尔化学奖，为元素周期表向铀之后延伸的研究开辟了道路。",
+      "item_sha256": "5e3a8eaafca5fb90f6a8a21c0d215af4203b9fdedf7e6e6d41e3bc28c266a0bc",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/212",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/212",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "\"death\":{\"date\":\"1991-09-07\",\"place\":{\"city\":{\"en\":\"El Cerrito, CA\"",
+          "fact_quote": "for their discoveries in the chemistry of the transuranium elements",
+          "retrieved_sha256": "0f45509f97f8444e97d509ce892325c5f1924cad47225b2957f91157f989a690",
+          "content_type": "application/json"
+        },
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/212",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/212",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "\"death\":{\"date\":\"1991-09-07\",\"place\":{\"city\":{\"en\":\"El Cerrito, CA\"",
+          "fact_quote": "\"awardYear\":\"1951\",\"category\":{\"en\":\"Chemistry\"",
+          "retrieved_sha256": "0f45509f97f8444e97d509ce892325c5f1924cad47225b2957f91157f989a690",
+          "content_type": "application/json"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-06:860fcd7e5b2f275aec7c85d66433f43ca64040a0899e30d2f0134bb61694a91c",
-  "public_json_sha256": "b30ea6de0587c1c711b6e90968a06ef9d39e19d15c770c209e8e7a5a6f909a8b",
-  "poster_sha256": "94b616a0a9eabf31b0912e413e1a74db29d613fc7e3e7e631c5c203c616de446",
-  "poster_bytes": 1470255,
+  "delivery_id": "2026-09-07:486be55e9106c9b86af1aa47ce8242133f3b79e8e07f6d1c714941db590d9a9f",
+  "public_json_sha256": "a02ce60843db6e8f9c6425c899fdfb5ed147e16af73f655a538a3e0905cfd793",
+  "poster_sha256": "c7849a1382ce1cb075ae007c4cf4824ec8a058372d7ad0d0e82c5c534d367eee",
+  "poster_bytes": 1431703,
   "poster_dimensions": {
     "width": 2160,
-    "height": 3580
+    "height": 3478
   }
 }
