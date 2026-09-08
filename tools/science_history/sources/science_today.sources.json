@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-07",
+  "date": "2026-09-08",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,150 +8,159 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1917年",
-      "title": "立体化学家康福思出生",
-      "text": "化学家约翰·康福思出生。他后来阐明酶催化反应的立体化学，揭示酶如何专一地区分分子的镜像形态，凭此获得1975年诺贝尔化学奖。",
-      "item_sha256": "4201be36cc14cf901dde33a86418f8bea48e1d0b24966f3c5be42a74394591ba",
+      "label": "1894年",
+      "title": "亥姆霍兹在柏林去世",
+      "text": "系统阐述能量守恒的德国科学家亥姆霍兹在柏林夏洛滕堡去世。他发明眼底镜，深入研究视觉与听觉的生理机制，生前还参与创建并领导国家物理技术研究机构，是贯通实验物理与生理学的一代宗师。",
+      "item_sha256": "168e94c6575eaecaa10fa5aafc33efadb88f4b779c8f555f952654155f936420",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/247",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/247",
-          "authority_type": "official archive",
+          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Helmholtz/",
+          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Helmholtz/",
+          "authority_type": "university mathematics archive",
           "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1917-09-07\",\"year\":\"1917\"",
-          "fact_quote": "for his work on the stereochemistry of enzyme-catalyzed reactions",
-          "retrieved_sha256": "6a8447bb260e61988e961702e1c8d717c9dab28eae7cea0f9af13bcef2a42de9",
-          "content_type": "application/json"
-        },
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/247",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/247",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1917-09-07\",\"year\":\"1917\"",
-          "fact_quote": "\"awardYear\":\"1975\",\"category\":{\"en\":\"Chemistry\"",
-          "retrieved_sha256": "6a8447bb260e61988e961702e1c8d717c9dab28eae7cea0f9af13bcef2a42de9",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1927年",
-      "title": "全电子电视图像传输成功",
-      "text": "21岁的美国发明家法恩斯沃思与助手在旧金山实验室成功传输了一幅全电子电视图像。他在这里研制并申请专利的全电子电视系统由此得到验证，为现代电视技术打下基础。",
-      "item_sha256": "ac91df4da663c801044d00df19720700b80bc5f3f2efb218921100de7f6d1277",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://ohp.parks.ca.gov/ListedResources/Detail/941",
-          "final_url": "https://ohp.parks.ca.gov/ListedResources/Detail/941",
-          "authority_type": "state historic landmark registry",
-          "date_context": "event-date",
-          "date_quote": "On September 7,1927 the 21-year-old inventor and several dedicated assistants successfully transmitted the first all-electronic television image",
-          "fact_quote": "In a simple laboratory on this site, 202 Green Street, Philo Taylor Farnsworth, U.S. pioneer in electronics, invented and patented the first operational all-electronic 'television system.'",
-          "retrieved_sha256": "9a499934f4ccc8f63798866cde3b1b9cddaae3bff09c5c4943e1faa35017de9f",
+          "date_quote": "Died 8 September 1894 Berlin, Germany",
+          "fact_quote": "He received great acclaim for his invention of the ophthalmoscope in 1851 and rapidly gained a strong international reputation.",
+          "retrieved_sha256": "ff4ebbc24d30da11d40f85424b483aa03c4953a6753be35793f640130185ce91",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1936年",
-      "title": "最后一只圈养袋狼死去",
-      "text": "最后一只圈养袋狼在霍巴特动物园死去。这一物种当年刚被列入受保护野生动物名单，却仍走向灭绝：此后未再发现可靠活体，袋狼于1986年被宣告灭绝。",
-      "item_sha256": "00455e607a72894db6da5d9970d8a8ad4314197f01bc386165610881fb59b9d0",
+      "label": "1946年",
+      "title": "阿齐兹·桑贾尔出生",
+      "text": "阿齐兹·桑贾尔出生于土耳其东南部的萨武尔。他后来赴美国研究生物化学，通过细菌实验揭示细胞如何修复被紫外线损伤的DNA，厘清其中的酶学机制，并以此分享2015年诺贝尔化学奖。",
+      "item_sha256": "9f1841668409efebda7b9873ce03d2f3a60b2574546977fb2d6269aae5bb85aa",
       "strong_claim": false,
-      "person_event": false,
+      "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://parks.tas.gov.au/discovery-and-learning/wildlife/tasmanian-tiger",
-          "final_url": "https://parks.tas.gov.au/discovery-and-learning/wildlife/tasmanian-tiger",
-          "authority_type": "official government agency",
+          "url": "https://www.nobelprize.org/laureate/923",
+          "final_url": "https://www.nobelprize.org/prizes/chemistry/2015/sancar/facts/",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "In 1936 the thylacine was added to the list of protected wildlife but, on 7 September 1936, the last known thylacine in captivity died at the Hobart Zoo.",
-          "fact_quote": "The species was declared extinct in 1986.",
-          "retrieved_sha256": "84162c26b805cf6ed15478abe202a19a54930dd3a24a39c5e98cb25d661294fa",
+          "date_quote": "Born: 8 September 1946, Savur, Turkey",
+          "fact_quote": "In 1983, through studies of bacteria, Aziz Sancar showed how certain protein molecules, certain repair enzymes, repair DNA damaged by ultraviolet (UV) light.",
+          "retrieved_sha256": "2dd3e94d51c892e9dae940ea8bdd5ee965518501d4fc127260549f5a0487ae26",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1959年",
-      "title": "mRNA疫苗奠基者韦斯曼出生",
-      "text": "免疫学家德鲁·韦斯曼出生。他后来发现修饰核苷酸碱基能让信使RNA躲开免疫系统的过度监视，这项发现为新冠mRNA疫苗的问世铺平道路，他也因此获2023年诺贝尔生理学或医学奖。",
-      "item_sha256": "ae0dd632cbec3f60daeb77b39214512f230376a0bc2872c56c41ac11c1d44000",
+      "label": "1960年",
+      "title": "马歇尔航天中心正式揭幕",
+      "text": "艾森豪威尔在亨茨维尔为NASA马歇尔航天飞行中心揭幕，冯·布劳恩出任首任主任。这座由陆军火箭部门转隶而来的基地后来主持研制土星系列运载火箭，为阿波罗登月提供主力推进工具。",
+      "item_sha256": "e13157ce66ceec89a8059cab8e3a70c2f077f00330277d863ee0d4a0aaefabf0",
       "strong_claim": false,
-      "person_event": true,
+      "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/1025",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/1025",
+          "url": "https://plus.nasa.gov/video/nasas-marshall-space-flight-center-1960s-orientation-film-archival-film",
+          "final_url": "https://plus.nasa.gov/video/nasas-marshall-space-flight-center-1960s-orientation-film-archival-film/",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1959-09-07\",\"year\":\"1959\"",
-          "fact_quote": "for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19",
-          "retrieved_sha256": "520ffaf35716659953c394460b8426c0d6d032bc6e6d86db5844e3e8e270f260",
-          "content_type": "application/json"
-        },
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/1025",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/1025",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1959-09-07\",\"year\":\"1959\"",
-          "fact_quote": "\"awardYear\":\"2023\",\"category\":{\"en\":\"Physiology or Medicine\"",
-          "retrieved_sha256": "520ffaf35716659953c394460b8426c0d6d032bc6e6d86db5844e3e8e270f260",
-          "content_type": "application/json"
+          "date_quote": "On September 8, 1960, President Dwight David Eisenhower formally dedicated the George C. Marshall Space Flight Center in Huntsville, Alabama",
+          "fact_quote": "Dr. Wernher von Braun, who became the Center’s first Director, also participated.",
+          "retrieved_sha256": "e892d3c0d83030ee25e64b41119ba498b576aa27b1c0a06f3e2a1d7ddd4ef9d3",
+          "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1991年",
-      "title": "超铀元素化学先驱麦克米伦去世",
-      "text": "美国物理学家埃德温·麦克米伦在加州去世。他因超铀元素化学领域的发现获1951年诺贝尔化学奖，为元素周期表向铀之后延伸的研究开辟了道路。",
-      "item_sha256": "5e3a8eaafca5fb90f6a8a21c0d215af4203b9fdedf7e6e6d41e3bc28c266a0bc",
+      "label": "1981年",
+      "title": "汤川秀树在京都辞世",
+      "text": "理论物理学家汤川秀树在京都去世。1934年他预言，束缚原子核的强力由比电子重约两百倍的粒子传递，并命名“介子”；这一预言后来得到实验支持，他也由此获得1949年诺贝尔物理学奖。",
+      "item_sha256": "99f6a62e72714884ac9f67300a8bd9d8a35ae9d3239fc715569ebc9d271086cf",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/212",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/212",
+          "url": "https://www.nobelprize.org/laureate/54",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1949/yukawa/facts/",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "\"death\":{\"date\":\"1991-09-07\",\"place\":{\"city\":{\"en\":\"El Cerrito, CA\"",
-          "fact_quote": "for their discoveries in the chemistry of the transuranium elements",
-          "retrieved_sha256": "0f45509f97f8444e97d509ce892325c5f1924cad47225b2957f91157f989a690",
-          "content_type": "application/json"
-        },
+          "date_quote": "Died: 8 September 1981, Kyoto, Japan",
+          "fact_quote": "In 1934, Yukawa predicted that this particle should have a mass about 200 times that of an electron. He called this particle a “meson”. Mesons’ existence was verified in later experiments.",
+          "retrieved_sha256": "98e7382cdc35f040c7db60a70d6ee84e98f9d275dc693bfa57f9aecccc072c2a",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1985年",
+      "title": "病毒学家恩德斯逝世",
+      "text": "病毒学家恩德斯在康涅狄格州去世。1949年，他与同事让脊髓灰质炎病毒在组织培养中生长，打破病毒难以体外培养的成见，为脊灰疫苗问世铺平道路，并分享1954年诺贝尔生理学或医学奖。",
+      "item_sha256": "29d7f903029c8846ed1bad3045ec07c6d22e9e7efafcf2c62f65df6d843b0002",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/212",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/212",
+          "url": "https://www.nobelprize.org/laureate/356",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1954/enders/facts/",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "\"death\":{\"date\":\"1991-09-07\",\"place\":{\"city\":{\"en\":\"El Cerrito, CA\"",
-          "fact_quote": "\"awardYear\":\"1951\",\"category\":{\"en\":\"Chemistry\"",
-          "retrieved_sha256": "0f45509f97f8444e97d509ce892325c5f1924cad47225b2957f91157f989a690",
-          "content_type": "application/json"
+          "date_quote": "Died: 8 September 1985, Waterford, CT, USA",
+          "fact_quote": "in 1949 John Enders, Frederick Robbins, and Thomas Weller succeeded in culturing the virus that causes polio in human muscle and tissue in a laboratory setting. This became an important step on the road toward a vaccine against polio.",
+          "retrieved_sha256": "969671bbdeb6914b3e54c6466396664c7520ad1155bef98c5013fd4b833dbfa4",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2000年",
+      "title": "“亚特兰蒂斯”号补给空间站",
+      "text": "“亚特兰蒂斯”号从肯尼迪航天中心升空，执行STS-106空间站任务。机组向国际空间站转运约三吨物资并抬升轨道，赶在首批长期乘组进驻前完成整备，使空间站转入持续有人值守的新阶段。",
+      "item_sha256": "eaf8c4bfd0468e31fe4580bb9fcfe2fce6ff2331b5055311ef7db0f55463efed",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/mission/sts-106",
+          "final_url": "https://www.nasa.gov/mission/sts-106/",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "Launched: September 8, 2000, 8:45:47 a.m. EDT",
+          "fact_quote": "STS-106, during its 11-day mission to the International Space Station, completed all assigned mission objectives to prepare the station for the first crew scheduled to launch in October.",
+          "retrieved_sha256": "8389bc9842c85675a70f07e449c1066f87c420111b73990203e75c8906738e51",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2004年",
+      "title": "“起源”号坠落在犹他沙漠",
+      "text": "NASA太阳风采样探测器“起源”号返回舱在犹他州着陆，因降落伞未能打开而以近200英里时速撞地。团队随后仍从破损采集板中抢救出可用样本，让太阳风物质继续用于研究太阳系早期历史。",
+      "item_sha256": "6d87706712667a15690b65b5fc56e2fe8135896884377cefce318ce08c2ca58e",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://curator.jsc.nasa.gov/genesis/reentry.cfm",
+          "final_url": "https://curator.jsc.nasa.gov/genesis/reentry.cfm",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "The Genesis mission returned to Earth on September 8, 2004 after a nearly flawless three-year mission to collect solar matter.",
+          "fact_quote": "Unfortunately, both chutes failed to deploy, causing the capsule to fall to the desert floor at a speed of nearly 200 MPH.",
+          "retrieved_sha256": "c8e295ee1bd82da4df38246fe5dec1d4e0d86c87edd2dccf549d144b9e93de5a",
+          "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-07:486be55e9106c9b86af1aa47ce8242133f3b79e8e07f6d1c714941db590d9a9f",
-  "public_json_sha256": "a02ce60843db6e8f9c6425c899fdfb5ed147e16af73f655a538a3e0905cfd793",
-  "poster_sha256": "c7849a1382ce1cb075ae007c4cf4824ec8a058372d7ad0d0e82c5c534d367eee",
-  "poster_bytes": 1431703,
+  "delivery_id": "2026-09-08:e54d9fe940fee682eee26a071ac47f8df19444cbe9ef32860a223d836db71f5f",
+  "public_json_sha256": "2922057806692d55ed5b95178016c4584a4f12f3f29664351208e245afd02e45",
+  "poster_sha256": "23bcc36630337367fa401ef20684cbe454116acf344428025dda1020579c0865",
+  "poster_bytes": 1805756,
   "poster_dimensions": {
     "width": 2160,
-    "height": 3478
+    "height": 4562
   }
 }
