@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-08",
+  "date": "2026-09-09",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,159 +8,96 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1894年",
-      "title": "亥姆霍兹在柏林去世",
-      "text": "系统阐述能量守恒的德国科学家亥姆霍兹在柏林夏洛滕堡去世。他发明眼底镜，深入研究视觉与听觉的生理机制，生前还参与创建并领导国家物理技术研究机构，是贯通实验物理与生理学的一代宗师。",
-      "item_sha256": "168e94c6575eaecaa10fa5aafc33efadb88f4b779c8f555f952654155f936420",
+      "label": "1922年",
+      "title": "把离子“关”起来的德梅尔特出生",
+      "text": "德裔美国物理学家德梅尔特出生于格尔利茨。他开发的离子阱用电磁场把单个离子“囚禁”起来，可长时间观察并做极高精度测量，成为量子物理实验的关键工具，1989年因此获得诺贝尔物理学奖。",
+      "item_sha256": "dd1283ef3e4ef9ea207bb3955c400e48c9ed34acf6470282d1731e289ae6e245",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Helmholtz/",
-          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Helmholtz/",
-          "authority_type": "university mathematics archive",
-          "date_context": "event-date",
-          "date_quote": "Died 8 September 1894 Berlin, Germany",
-          "fact_quote": "He received great acclaim for his invention of the ophthalmoscope in 1851 and rapidly gained a strong international reputation.",
-          "retrieved_sha256": "ff4ebbc24d30da11d40f85424b483aa03c4953a6753be35793f640130185ce91",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1946年",
-      "title": "阿齐兹·桑贾尔出生",
-      "text": "阿齐兹·桑贾尔出生于土耳其东南部的萨武尔。他后来赴美国研究生物化学，通过细菌实验揭示细胞如何修复被紫外线损伤的DNA，厘清其中的酶学机制，并以此分享2015年诺贝尔化学奖。",
-      "item_sha256": "9f1841668409efebda7b9873ce03d2f3a60b2574546977fb2d6269aae5bb85aa",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/laureate/923",
-          "final_url": "https://www.nobelprize.org/prizes/chemistry/2015/sancar/facts/",
+          "url": "https://www.nobelprize.org/prizes/physics/1989/dehmelt/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1989/dehmelt/facts/",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Born: 8 September 1946, Savur, Turkey",
-          "fact_quote": "In 1983, through studies of bacteria, Aziz Sancar showed how certain protein molecules, certain repair enzymes, repair DNA damaged by ultraviolet (UV) light.",
-          "retrieved_sha256": "2dd3e94d51c892e9dae940ea8bdd5ee965518501d4fc127260549f5a0487ae26",
+          "date_quote": "Born: 9 September 1922, Görlitz, Prussia (now Germany)",
+          "fact_quote": "for the development of the ion trap technique",
+          "retrieved_sha256": "e9c1af63544bb4c5c0aaa554e63f8a510539141716a6a6def0876ce6d2b2cdf6",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1960年",
-      "title": "马歇尔航天中心正式揭幕",
-      "text": "艾森豪威尔在亨茨维尔为NASA马歇尔航天飞行中心揭幕，冯·布劳恩出任首任主任。这座由陆军火箭部门转隶而来的基地后来主持研制土星系列运载火箭，为阿波罗登月提供主力推进工具。",
-      "item_sha256": "e13157ce66ceec89a8059cab8e3a70c2f077f00330277d863ee0d4a0aaefabf0",
+      "label": "1923年",
+      "title": "盖杜谢克出生，追查新几内亚怪病",
+      "text": "美国医学家盖杜谢克出生于纽约。他在新几内亚调查库鲁病，判断其传播与当地分食逝者遗体的仪式有关，潜伏期达数年，病原类型前所未见；这项研究为认识朊病毒铺路，1976年获诺贝尔奖。",
+      "item_sha256": "234c3f873c343ad409c6e52353b9efbf494d29b020790e06085a6a88ec61d60f",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/prizes/medicine/1976/gajdusek/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1976/gajdusek/facts/",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "Born: 9 September 1923, Yonkers, NY, USA",
+          "fact_quote": "Carleton Gajdusek studied kuru, a rare disease, among the Fore people of New Guinea.",
+          "retrieved_sha256": "763d085a67120bd3893dce64ed6e9458e4cc17d0ff77d5c65bdfc2d11674ea9a",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1975年",
+      "title": "海盗2号启程，去火星寻找生命",
+      "text": "美国海盗2号探测器从卡纳维拉尔角升空，着陆器在乌托邦平原软着陆，与海盗1号一同开展寻找生命迹象的土壤实验。结果虽无定论，仍送回海量影像与测量数据，重塑了人类对火星的认识。",
+      "item_sha256": "d00482b1d445bcc233fbbc71945fb4c19741fd05f7a1acec3f9697717be979e4",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://plus.nasa.gov/video/nasas-marshall-space-flight-center-1960s-orientation-film-archival-film",
-          "final_url": "https://plus.nasa.gov/video/nasas-marshall-space-flight-center-1960s-orientation-film-archival-film/",
-          "authority_type": "official archive",
+          "url": "https://airandspace.si.edu/collection-objects/lander-mars-viking-proof-test-article/nasm_A19790215000",
+          "final_url": "https://airandspace.si.edu/collection-objects/lander-mars-viking-proof-test-article/nasm_A19790215000",
+          "authority_type": "museum archive",
           "date_context": "event-date",
-          "date_quote": "On September 8, 1960, President Dwight David Eisenhower formally dedicated the George C. Marshall Space Flight Center in Huntsville, Alabama",
-          "fact_quote": "Dr. Wernher von Braun, who became the Center’s first Director, also participated.",
-          "retrieved_sha256": "e892d3c0d83030ee25e64b41119ba498b576aa27b1c0a06f3e2a1d7ddd4ef9d3",
+          "date_quote": "Viking 2 was launched on September 9, 1975 and landed on September 3, 1976.",
+          "fact_quote": "The Viking project's primary mission ended on November 15, 1976, 11 days before Mars's superior conjunction (its passage behind the sun), although the Viking spacecraft continued to operate for six years after first reaching Mars.",
+          "retrieved_sha256": "38fd205ab590526928c7d74bc9b37e3d1a56dca3be494075167245f535e63f7a",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1981年",
-      "title": "汤川秀树在京都辞世",
-      "text": "理论物理学家汤川秀树在京都去世。1934年他预言，束缚原子核的强力由比电子重约两百倍的粒子传递，并命名“介子”；这一预言后来得到实验支持，他也由此获得1949年诺贝尔物理学奖。",
-      "item_sha256": "99f6a62e72714884ac9f67300a8bd9d8a35ae9d3239fc715569ebc9d271086cf",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/laureate/54",
-          "final_url": "https://www.nobelprize.org/prizes/physics/1949/yukawa/facts/",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "Died: 8 September 1981, Kyoto, Japan",
-          "fact_quote": "In 1934, Yukawa predicted that this particle should have a mass about 200 times that of an electron. He called this particle a “meson”. Mesons’ existence was verified in later experiments.",
-          "retrieved_sha256": "98e7382cdc35f040c7db60a70d6ee84e98f9d275dc693bfa57f9aecccc072c2a",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1985年",
-      "title": "病毒学家恩德斯逝世",
-      "text": "病毒学家恩德斯在康涅狄格州去世。1949年，他与同事让脊髓灰质炎病毒在组织培养中生长，打破病毒难以体外培养的成见，为脊灰疫苗问世铺平道路，并分享1954年诺贝尔生理学或医学奖。",
-      "item_sha256": "29d7f903029c8846ed1bad3045ec07c6d22e9e7efafcf2c62f65df6d843b0002",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/laureate/356",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1954/enders/facts/",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "Died: 8 September 1985, Waterford, CT, USA",
-          "fact_quote": "in 1949 John Enders, Frederick Robbins, and Thomas Weller succeeded in culturing the virus that causes polio in human muscle and tissue in a laboratory setting. This became an important step on the road toward a vaccine against polio.",
-          "retrieved_sha256": "969671bbdeb6914b3e54c6466396664c7520ad1155bef98c5013fd4b833dbfa4",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2000年",
-      "title": "“亚特兰蒂斯”号补给空间站",
-      "text": "“亚特兰蒂斯”号从肯尼迪航天中心升空，执行STS-106空间站任务。机组向国际空间站转运约三吨物资并抬升轨道，赶在首批长期乘组进驻前完成整备，使空间站转入持续有人值守的新阶段。",
-      "item_sha256": "eaf8c4bfd0468e31fe4580bb9fcfe2fce6ff2331b5055311ef7db0f55463efed",
+      "label": "1994年",
+      "title": "激光雷达在太空睁开“眼睛”",
+      "text": "发现号航天飞机载着LITE实验升空，激光雷达开始在轨道上工作：用激光脉冲探测云层、沙尘与污染物分布，运行53小时积累大量数据，为后来从太空遥感地球大气打下基础。",
+      "item_sha256": "77ae6fe147e0350d4dd0acbf31947c760671e965a14bcfeade11d4529efab029",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nasa.gov/mission/sts-106",
-          "final_url": "https://www.nasa.gov/mission/sts-106/",
+          "url": "https://www.nasa.gov/mission/sts-64",
+          "final_url": "https://www.nasa.gov/mission/sts-64/",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Launched: September 8, 2000, 8:45:47 a.m. EDT",
-          "fact_quote": "STS-106, during its 11-day mission to the International Space Station, completed all assigned mission objectives to prepare the station for the first crew scheduled to launch in October.",
-          "retrieved_sha256": "8389bc9842c85675a70f07e449c1066f87c420111b73990203e75c8906738e51",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2004年",
-      "title": "“起源”号坠落在犹他沙漠",
-      "text": "NASA太阳风采样探测器“起源”号返回舱在犹他州着陆，因降落伞未能打开而以近200英里时速撞地。团队随后仍从破损采集板中抢救出可用样本，让太阳风物质继续用于研究太阳系早期历史。",
-      "item_sha256": "6d87706712667a15690b65b5fc56e2fe8135896884377cefce318ce08c2ca58e",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://curator.jsc.nasa.gov/genesis/reentry.cfm",
-          "final_url": "https://curator.jsc.nasa.gov/genesis/reentry.cfm",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "The Genesis mission returned to Earth on September 8, 2004 after a nearly flawless three-year mission to collect solar matter.",
-          "fact_quote": "Unfortunately, both chutes failed to deploy, causing the capsule to fall to the desert floor at a speed of nearly 200 MPH.",
-          "retrieved_sha256": "c8e295ee1bd82da4df38246fe5dec1d4e0d86c87edd2dccf549d144b9e93de5a",
+          "date_quote": "Launched: September 9, 1994, 6:22:55 p.m. EDT",
+          "fact_quote": "STS-64 marked first flight of Lidar In-space Technology Experiment (LITE) and first untethered U.S. extravehicular activity (EVA) in 10 years.",
+          "retrieved_sha256": "0947ee22e3aa9ece3681942b0047a2aa35b9a051d84251044c4c576510ecb7f2",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-08:e54d9fe940fee682eee26a071ac47f8df19444cbe9ef32860a223d836db71f5f",
-  "public_json_sha256": "2922057806692d55ed5b95178016c4584a4f12f3f29664351208e245afd02e45",
-  "poster_sha256": "23bcc36630337367fa401ef20684cbe454116acf344428025dda1020579c0865",
-  "poster_bytes": 1805756,
+  "delivery_id": "2026-09-09:48d4bd0fa6b018c9a557336f3d8966edc127c63ed301f6dfbf978fcadd66ee64",
+  "public_json_sha256": "10e9b4dde5026e529526f21a8bff96816b7c0591b9774cd619360f634af259ee",
+  "poster_sha256": "14d8d75ece51bf0092626ad88eaa10a5d2d09bc595ddc2624a69c6aa0e56651b",
+  "poster_bytes": 1381145,
   "poster_dimensions": {
     "width": 2160,
-    "height": 4562
+    "height": 3088
   }
 }
