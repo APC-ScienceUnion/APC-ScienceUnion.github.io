@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-09",
+  "date": "2026-09-10",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,96 +8,138 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1922年",
-      "title": "把离子“关”起来的德梅尔特出生",
-      "text": "德裔美国物理学家德梅尔特出生于格尔利茨。他开发的离子阱用电磁场把单个离子“囚禁”起来，可长时间观察并做极高精度测量，成为量子物理实验的关键工具，1989年因此获得诺贝尔物理学奖。",
-      "item_sha256": "dd1283ef3e4ef9ea207bb3955c400e48c9ed34acf6470282d1731e289ae6e245",
+      "label": "1858年",
+      "title": "西尔发现小行星潘多拉",
+      "text": "美国天文学家乔治·玛丽·西尔在纽约州奥尔巴尼的达德利天文台观测到一颗新的小行星，它被编为第55号并命名为潘多拉。小行星的持续发现与编号积累，为研究太阳系的形成和演化提供了样本。",
+      "item_sha256": "453720601e4165a0c3aa493603995e35ccf1779dae588fe9ddccf53b78c3738e",
       "strong_claim": false,
-      "person_event": true,
+      "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/physics/1989/dehmelt/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/physics/1989/dehmelt/facts/",
-          "authority_type": "official archive",
+          "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=55&discovery=1",
+          "final_url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=55&discovery=1",
+          "authority_type": "NASA/JPL Small-Body Database",
           "date_context": "event-date",
-          "date_quote": "Born: 9 September 1922, Görlitz, Prussia (now Germany)",
-          "fact_quote": "for the development of the ion trap technique",
-          "retrieved_sha256": "e9c1af63544bb4c5c0aaa554e63f8a510539141716a6a6def0876ce6d2b2cdf6",
-          "content_type": "text/html"
+          "date_quote": "Discovered 1858-09-10 by Searle, G. at Albany",
+          "fact_quote": "Discovered 1858-09-10 by Searle, G. at Albany",
+          "retrieved_sha256": "380a10efe489680db1fe1c567dee0e96fccc1e224c93d343b6913a68f928dd2d",
+          "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1923年",
-      "title": "盖杜谢克出生，追查新几内亚怪病",
-      "text": "美国医学家盖杜谢克出生于纽约。他在新几内亚调查库鲁病，判断其传播与当地分食逝者遗体的仪式有关，潜伏期达数年，病原类型前所未见；这项研究为认识朊病毒铺路，1976年获诺贝尔奖。",
-      "item_sha256": "234c3f873c343ad409c6e52353b9efbf494d29b020790e06085a6a88ec61d60f",
+      "label": "1892年",
+      "title": "康普顿出生",
+      "text": "美国物理学家阿瑟·霍利·康普顿出生于俄亥俄州伍斯特。他研究X射线被电子散射后波长变长的现象，这个“康普顿效应”表明光子带有动量，1927年他因此获得诺贝尔物理学奖。",
+      "item_sha256": "7b04c75eb1ef43bbb5f4a683ce866c035c27392f1f74e5c8e1dac198ee55fab0",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/medicine/1976/gajdusek/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1976/gajdusek/facts/",
-          "authority_type": "official archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/33",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/33",
+          "authority_type": "Nobel Prize official archive",
           "date_context": "event-date",
-          "date_quote": "Born: 9 September 1923, Yonkers, NY, USA",
-          "fact_quote": "Carleton Gajdusek studied kuru, a rare disease, among the Fore people of New Guinea.",
-          "retrieved_sha256": "763d085a67120bd3893dce64ed6e9458e4cc17d0ff77d5c65bdfc2d11674ea9a",
-          "content_type": "text/html"
+          "date_quote": "\"birth\":{\"date\":\"1892-09-10\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for his discovery of the effect named after him\"",
+          "retrieved_sha256": "8e890d6d9a479c1eef13c29faecd5ad32467acb4954b08d6e065d39e124638a4",
+          "content_type": "application/json"
         }
       ]
     },
     {
       "label": "1975年",
-      "title": "海盗2号启程，去火星寻找生命",
-      "text": "美国海盗2号探测器从卡纳维拉尔角升空，着陆器在乌托邦平原软着陆，与海盗1号一同开展寻找生命迹象的土壤实验。结果虽无定论，仍送回海量影像与测量数据，重塑了人类对火星的认识。",
-      "item_sha256": "d00482b1d445bcc233fbbc71945fb4c19741fd05f7a1acec3f9697717be979e4",
+      "title": "汤姆孙去世",
+      "text": "英国物理学家乔治·佩吉特·汤姆孙在剑桥去世。他把电子束射向晶体，得到清晰的电子衍射图样，说明电子具有波动性；1937年他与戴维森共同获得诺贝尔物理学奖。",
+      "item_sha256": "494865c72196c91b2a58d8a5529e5984f634a30d48394d77830f5a973a3fe9ab",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/45",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/45",
+          "authority_type": "Nobel Prize official archive",
+          "date_context": "event-date",
+          "date_quote": "\"death\":{\"date\":\"1975-09-10\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for their experimental discovery of the diffraction of electrons by crystals\"",
+          "retrieved_sha256": "3c52a2ff9d533ed539073d41cc1ba183572a2ffffac22beab2cf0bd79558f53f",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1983年",
+      "title": "布洛赫去世",
+      "text": "瑞士裔美国物理学家费利克斯·布洛赫在苏黎世去世。他发展出核磁共振的精密测量方法，使原子核的磁性可以被直接测量，1952年他与珀塞尔共同获得诺贝尔物理学奖。",
+      "item_sha256": "5acb7e35f17ede5e72e16109e05cde82d16477b5a9cdd703bc06d864f1b82f9e",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/58",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/58",
+          "authority_type": "Nobel Prize official archive",
+          "date_context": "event-date",
+          "date_quote": "\"death\":{\"date\":\"1983-09-10\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for their development of new methods for nuclear magnetic precision measurements and discoveries in connection therewith\"",
+          "retrieved_sha256": "d0a30bc473dfc04c52b8e0a6cdc53c7ab8f78fd9536a585ec45b372c41b9b2ad",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "2008年",
+      "title": "大型强子对撞机通束运行",
+      "text": "欧洲核子研究中心的大型强子对撞机把质子束导入27公里长的环形容器并跑完整圈，机器投入运行。它让科学家能在更高能量下检验粒子物理标准模型，寻找希格斯粒子等新现象。",
+      "item_sha256": "ff6489d01eb043a4f17f90c2865801e1e14420a49d95289164ea22a1c4a43435",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://airandspace.si.edu/collection-objects/lander-mars-viking-proof-test-article/nasm_A19790215000",
-          "final_url": "https://airandspace.si.edu/collection-objects/lander-mars-viking-proof-test-article/nasm_A19790215000",
-          "authority_type": "museum archive",
+          "url": "https://www.bnl.gov/newsroom/news.php?a=1834",
+          "final_url": "https://www.bnl.gov/newsroom/news.php?a=1834",
+          "authority_type": "U.S. national laboratory (Brookhaven)",
           "date_context": "event-date",
-          "date_quote": "Viking 2 was launched on September 9, 1975 and landed on September 3, 1976.",
-          "fact_quote": "The Viking project's primary mission ended on November 15, 1976, 11 days before Mars's superior conjunction (its passage behind the sun), although the Viking spacecraft continued to operate for six years after first reaching Mars.",
-          "retrieved_sha256": "38fd205ab590526928c7d74bc9b37e3d1a56dca3be494075167245f535e63f7a",
+          "date_quote": "September 10, 2008",
+          "fact_quote": "scientists at CERN for the first time sent a beam of protons all the way around the 17-mile ring",
+          "retrieved_sha256": "6dbb795d02f525c86e6af4631ce23923e5a189b2dfc0fc72cd380ea1301c1719",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1994年",
-      "title": "激光雷达在太空睁开“眼睛”",
-      "text": "发现号航天飞机载着LITE实验升空，激光雷达开始在轨道上工作：用激光脉冲探测云层、沙尘与污染物分布，运行53小时积累大量数据，为后来从太空遥感地球大气打下基础。",
-      "item_sha256": "77ae6fe147e0350d4dd0acbf31947c760671e965a14bcfeade11d4529efab029",
+      "label": "2015年",
+      "title": "纳莱迪人化石公布",
+      "text": "南非金山大学公布在“升星洞”发现的古人类新物种纳莱迪人。研究者在洞穴深处取出1500多块化石，至少属于15个个体，为人类演化研究提供了大批材料。",
+      "item_sha256": "0dd3120028ecc9930e600bb9c8aae523e9c8c0348c4d459a498ef17217eecd5e",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nasa.gov/mission/sts-64",
-          "final_url": "https://www.nasa.gov/mission/sts-64/",
-          "authority_type": "official archive",
+          "url": "https://www.wits.ac.za/homonaledi/video-gallery",
+          "final_url": "https://www.wits.ac.za/homonaledi/video-gallery/",
+          "authority_type": "university official page (Wits University)",
           "date_context": "event-date",
-          "date_quote": "Launched: September 9, 1994, 6:22:55 p.m. EDT",
-          "fact_quote": "STS-64 marked first flight of Lidar In-space Technology Experiment (LITE) and first untethered U.S. extravehicular activity (EVA) in 10 years.",
-          "retrieved_sha256": "0947ee22e3aa9ece3681942b0047a2aa35b9a051d84251044c4c576510ecb7f2",
+          "date_quote": "On 10 September 2015 Wits University presented Homo naledi",
+          "fact_quote": "a new species of human relative, to the world during an international launch at Maropeng",
+          "retrieved_sha256": "72aed8ec530e0157cf3bbf43f5cd7ae88f78f6e1d137c903024f40f935abbdd4",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-09:48d4bd0fa6b018c9a557336f3d8966edc127c63ed301f6dfbf978fcadd66ee64",
-  "public_json_sha256": "10e9b4dde5026e529526f21a8bff96816b7c0591b9774cd619360f634af259ee",
-  "poster_sha256": "14d8d75ece51bf0092626ad88eaa10a5d2d09bc595ddc2624a69c6aa0e56651b",
-  "poster_bytes": 1381145,
+  "delivery_id": "2026-09-10:2dffe8d3fc51b25272104298a2c1893a424f37de42373c98e5ed4db98b16ea21",
+  "public_json_sha256": "afd48f2a92df25701389d404b2a8fbbafff5ddf705aefb945dbc4258da7ab313",
+  "poster_sha256": "7d5541cfd5c99d70e93fe10dd7ca5023962745b036818787d87b91a92647d1dc",
+  "poster_bytes": 1577635,
   "poster_dimensions": {
     "width": 2160,
-    "height": 3088
+    "height": 3870
   }
 }
