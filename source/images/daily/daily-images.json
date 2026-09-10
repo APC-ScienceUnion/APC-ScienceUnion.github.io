@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-09T06:01:12+00:00",
+  "updated_at": "2026-09-10T06:00:42+00:00",
   "providers": {
     "bing": {
-      "date": "2026-09-09",
-      "title": "安科拉附近的加比特凯尼海滩，卡纳塔克邦，印度 ",
-      "headline": "安科拉附近的加比特凯尼海滩，卡纳塔克邦，印度 ",
-      "subtitle": "印度西海岸的生活",
-      "description": "提到印度南部，人们常会想到香料贸易路线、古典音乐、民间舞蹈，以及数百年来连接印度与世界的海岸线。沿着这条海岸向西进入卡纳塔克邦，便会抵达安科拉附近一处更宁静的停靠点：加比特凯尼海滩。这里的生活围绕阿拉伯海展开，渔船在黎明前出海，载着当天的渔获归来。\n这片海滩以加比特渔民社区命名。探索北卡纳达县时，这里是个轻松顺路的停靠点，尤其适合与戈卡尔纳、卡尔瓦尔和历史悠久的米尔詹堡一同游览。观鸟者可能在溪流附近看到海岸鸟类，摄影者则常在清晨光线更柔和时驻足。何不尝尝当地美食？安科拉周边餐馆里，新鲜鱼咖喱、炸鱿鱼和鲜虾菜肴都很受欢迎。离开之前，不妨留出时间享用一顿新鲜海鲜；它或许会和这片海滩一样令人难忘。",
-      "copyright": "© Amith Nag Photography/Getty Images",
-      "source_page_url": "https://bing.ee123.net/img/?date=20260909&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.GabitKeni_ZH-CN2314122948_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.GabitKeni_ZH-CN2314122948_1920x1080.jpg",
+      "date": "2026-09-10",
+      "title": "奥尔韦拉航拍图，安达卢西亚，西班牙 ",
+      "headline": "奥尔韦拉航拍图，安达卢西亚，西班牙 ",
+      "subtitle": "俯瞰大地拼图",
+      "description": "你是否想过，安达卢西亚为何是西班牙最著名的地区之一？弗拉门戈、塔帕斯、摩尔式建筑和广阔的橄榄林都功不可没。在那些名城之外，还有奥尔韦拉这样的历史古镇。这座村庄被200多万棵橄榄树环绕，作为战略边境聚落发展而来，并在数百年的变迁中成形。奥尔韦拉城堡依然俯瞰着全镇，下方的化身圣母教堂则主导着天际线。前往拉西利亚文化中心，可以了解奥尔韦拉的中世纪历史与传统。\n饿了吗？可以尝尝“gazpacho”冷番茄汤、西班牙著名的“jamón ibérico”伊比利亚火腿，或酥脆的“torta de aceite”橄榄油薄饼。若想散步或骑行欣赏风景，可前往塞拉山绿色之路——一条由旧铁路线改造而成的热门步道。在陡峭的鹅卵石街道上要留心脚下：相机也许端得稳，脚步可未必！正如俗语所说，“poco a poco”——慢慢来。放慢脚步，随意漫步，让奥尔韦拉一点点展现自己。",
+      "copyright": "© Marco Bottigelli/Getty Images",
+      "source_page_url": "https://bing.ee123.net/img/?date=20260910&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.Olvera_ZH-CN2727093856_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.Olvera_ZH-CN2727093856_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-09-09-95bde0bec3ca.jpg",
-      "image_path": "/images/daily/bing-2026-09-09-95bde0bec3ca.jpg",
-      "bytes": 295743,
-      "sha256": "95bde0bec3ca18fd05652e76c1254a538a339e19a1593644531b8673797a121b"
+      "local_url": "/images/daily/bing-2026-09-10-88af675debc1.jpg",
+      "image_path": "/images/daily/bing-2026-09-10-88af675debc1.jpg",
+      "bytes": 334512,
+      "sha256": "88af675debc186ebf6adec33a059b9f03b793defa57b40886556a47de9c0d5f8"
     },
     "apod": {
       "date": "2026-09-05",
@@ -37,19 +37,19 @@
       "sha256": "4ace435e866baf2347eaf0d145a9afe693641a851aaba1114a84c1b8b069a423"
     },
     "wikipedia": {
-      "date": "2026-09-09",
-      "title": "Chief Joseph by Edward Sheriff Curtis",
-      "description": "Chief Joseph (Hin-mah-too-yah-lat-kekt or hinmatóowyalahtq̓it) of the Nez Perce , photogravure. Dimensions: Image: 39.7 × 28.1 cm (15 5/8 × 11 1/16\") Sheet: 56 × 46.6 cm (22 1/16 × 18 3/8\") Mat: 71.1 × 55.9 cm (28 × 22\") I believe this is the published form from The North American Indian , Portfolio VIII, Plate no. 256, 1911. per [1]",
-      "copyright": "Edward S. Curtis / Adam Cuerden · National Portrait Gallery, Smithsonian Institution · Public domain",
-      "article_url": "https://commons.wikimedia.org/wiki/File:Chief_Joseph_by_Edward_Sheriff_Curtis.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Chief_Joseph_by_Edward_Sheriff_Curtis.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Chief_Joseph_by_Edward_Sheriff_Curtis.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Chief_Joseph_by_Edward_Sheriff_Curtis.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-09-10",
+      "title": "Lesser yellowlegs (32690)",
+      "description": "Lesser yellowlegs ( Tringa flavipes ) on the Jamaica Bay Wildlife Refuge East Pond (Queens, NY, USA)",
+      "copyright": "Rhododendrites · Own work · CC BY-SA 4.0",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Lesser_yellowlegs_(32690).jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Lesser_yellowlegs_(32690).jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Lesser_yellowlegs_%2832690%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Lesser_yellowlegs_%2832690%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-09-09-b1f177860cab.jpg",
-      "image_path": "/images/daily/wikipedia-2026-09-09-b1f177860cab.jpg",
-      "bytes": 59426018,
-      "sha256": "b1f177860cab0800a2498695267c836b2d9479347d811320a3c7acf2fd7b31aa"
+      "local_url": "/images/daily/wikipedia-2026-09-10-98390a0825d4.jpg",
+      "image_path": "/images/daily/wikipedia-2026-09-10-98390a0825d4.jpg",
+      "bytes": 7663552,
+      "sha256": "98390a0825d4b4ca669125074194987e7d0bc3e3d2c34e83157715f6233d115f"
     }
   }
 }
