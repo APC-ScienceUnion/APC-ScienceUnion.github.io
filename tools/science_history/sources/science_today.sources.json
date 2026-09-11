@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-10",
+  "date": "2026-09-11",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,138 +8,107 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1858年",
-      "title": "西尔发现小行星潘多拉",
-      "text": "美国天文学家乔治·玛丽·西尔在纽约州奥尔巴尼的达德利天文台观测到一颗新的小行星，它被编为第55号并命名为潘多拉。小行星的持续发现与编号积累，为研究太阳系的形成和演化提供了样本。",
-      "item_sha256": "453720601e4165a0c3aa493603995e35ccf1779dae588fe9ddccf53b78c3738e",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=55&discovery=1",
-          "final_url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=55&discovery=1",
-          "authority_type": "NASA/JPL Small-Body Database",
-          "date_context": "event-date",
-          "date_quote": "Discovered 1858-09-10 by Searle, G. at Albany",
-          "fact_quote": "Discovered 1858-09-10 by Searle, G. at Albany",
-          "retrieved_sha256": "380a10efe489680db1fe1c567dee0e96fccc1e224c93d343b6913a68f928dd2d",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1892年",
-      "title": "康普顿出生",
-      "text": "美国物理学家阿瑟·霍利·康普顿出生于俄亥俄州伍斯特。他研究X射线被电子散射后波长变长的现象，这个“康普顿效应”表明光子带有动量，1927年他因此获得诺贝尔物理学奖。",
-      "item_sha256": "7b04c75eb1ef43bbb5f4a683ce866c035c27392f1f74e5c8e1dac198ee55fab0",
+      "label": "1847年",
+      "title": "天文学家惠特尼出生",
+      "text": "1847年的今天，天文学家玛丽·沃森·惠特尼生于马萨诸塞州。她师从玛丽亚·米切尔，后接任瓦萨学院天文台台长，将其建成全美最好的天文研究基地之一，并带学生研究彗星和小行星。",
+      "item_sha256": "ec157bf88a3165604467c7c54cec4e897bc51fff03c3709d0b1bc0995f37b055",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/33",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/33",
-          "authority_type": "Nobel Prize official archive",
+          "url": "https://vcencyclopedia.vassar.edu/distinguished-alumni/mary-watson-whitney",
+          "final_url": "https://vcencyclopedia.vassar.edu/distinguished-alumni/mary-watson-whitney/",
+          "authority_type": "university archive",
           "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1892-09-10\"",
-          "fact_quote": "\"motivation\":{\"en\":\"for his discovery of the effect named after him\"",
-          "retrieved_sha256": "8e890d6d9a479c1eef13c29faecd5ad32467acb4954b08d6e065d39e124638a4",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1975年",
-      "title": "汤姆孙去世",
-      "text": "英国物理学家乔治·佩吉特·汤姆孙在剑桥去世。他把电子束射向晶体，得到清晰的电子衍射图样，说明电子具有波动性；1937年他与戴维森共同获得诺贝尔物理学奖。",
-      "item_sha256": "494865c72196c91b2a58d8a5529e5984f634a30d48394d77830f5a973a3fe9ab",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
+          "date_quote": "Mary W. Whitney was born in Waltham, Massachusetts, on September 11, 1847, the daughter of Mary Watson Crehore and Samuel Buttrick Whitney.",
+          "fact_quote": "The assistant to Maria Mitchell until she succeeded her as chair of the astronomy department and as director of the observatory, Whitney built Vassar’s research program in astronomy into one of the nation’s finest.",
+          "retrieved_sha256": "321c2b8377922698e5b2c14f7a49073d60006aed4717969663e19b6e90c3cc2a",
+          "content_type": "text/html"
+        },
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/45",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/45",
-          "authority_type": "Nobel Prize official archive",
+          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Whitney_Mary",
+          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Whitney_Mary/",
+          "authority_type": "university archive (MacTutor)",
           "date_context": "event-date",
-          "date_quote": "\"death\":{\"date\":\"1975-09-10\"",
-          "fact_quote": "\"motivation\":{\"en\":\"for their experimental discovery of the diffraction of electrons by crystals\"",
-          "retrieved_sha256": "3c52a2ff9d533ed539073d41cc1ba183572a2ffffac22beab2cf0bd79558f53f",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1983年",
-      "title": "布洛赫去世",
-      "text": "瑞士裔美国物理学家费利克斯·布洛赫在苏黎世去世。他发展出核磁共振的精密测量方法，使原子核的磁性可以被直接测量，1952年他与珀塞尔共同获得诺贝尔物理学奖。",
-      "item_sha256": "5acb7e35f17ede5e72e16109e05cde82d16477b5a9cdd703bc06d864f1b82f9e",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/58",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/58",
-          "authority_type": "Nobel Prize official archive",
-          "date_context": "event-date",
-          "date_quote": "\"death\":{\"date\":\"1983-09-10\"",
-          "fact_quote": "\"motivation\":{\"en\":\"for their development of new methods for nuclear magnetic precision measurements and discoveries in connection therewith\"",
-          "retrieved_sha256": "d0a30bc473dfc04c52b8e0a6cdc53c7ab8f78fd9536a585ec45b372c41b9b2ad",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "2008年",
-      "title": "大型强子对撞机通束运行",
-      "text": "欧洲核子研究中心的大型强子对撞机把质子束导入27公里长的环形容器并跑完整圈，机器投入运行。它让科学家能在更高能量下检验粒子物理标准模型，寻找希格斯粒子等新现象。",
-      "item_sha256": "ff6489d01eb043a4f17f90c2865801e1e14420a49d95289164ea22a1c4a43435",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.bnl.gov/newsroom/news.php?a=1834",
-          "final_url": "https://www.bnl.gov/newsroom/news.php?a=1834",
-          "authority_type": "U.S. national laboratory (Brookhaven)",
-          "date_context": "event-date",
-          "date_quote": "September 10, 2008",
-          "fact_quote": "scientists at CERN for the first time sent a beam of protons all the way around the 17-mile ring",
-          "retrieved_sha256": "6dbb795d02f525c86e6af4631ce23923e5a189b2dfc0fc72cd380ea1301c1719",
+          "date_quote": "Born :   11 September 1847   Waltham, Massachusetts, USA",
+          "fact_quote": "Mary Watson Whitney was a mathematician and astronomer. She wrote around 70 astronomy papers, and directed the Vassar College Observatory.",
+          "retrieved_sha256": "993be0a3f73832dd8e54655c4d7aed0828e00bcdefb915e3221055cecfeb0677",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2015年",
-      "title": "纳莱迪人化石公布",
-      "text": "南非金山大学公布在“升星洞”发现的古人类新物种纳莱迪人。研究者在洞穴深处取出1500多块化石，至少属于15个个体，为人类演化研究提供了大批材料。",
-      "item_sha256": "0dd3120028ecc9930e600bb9c8aae523e9c8c0348c4d459a498ef17217eecd5e",
+      "label": "1952年",
+      "title": "首例人工心脏瓣膜植入成功",
+      "text": "1952年的今天，外科医生赫夫纳格尔在乔治敦大学医院为一位主动脉瓣关闭不全的女性植入自己设计的人工瓣膜，用金属笼中的硅胶球替代瓣叶，这是世界首例成功的人工心脏瓣膜手术。",
+      "item_sha256": "18e571a9472c45e3ea6e7c2066bb8837649eaa723401a973b7b092dd5ec9c208",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.wits.ac.za/homonaledi/video-gallery",
-          "final_url": "https://www.wits.ac.za/homonaledi/video-gallery/",
-          "authority_type": "university official page (Wits University)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10087943",
+          "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10087943/",
+          "authority_type": "peer-reviewed journal",
           "date_context": "event-date",
-          "date_quote": "On 10 September 2015 Wits University presented Homo naledi",
-          "fact_quote": "a new species of human relative, to the world during an international launch at Maropeng",
-          "retrieved_sha256": "72aed8ec530e0157cf3bbf43f5cd7ae88f78f6e1d137c903024f40f935abbdd4",
+          "date_quote": "This historical operation was performed on September 11, 1952 at Georgetown University Hospital in Washington, DC, in a female patient with",
+          "fact_quote": "The dawn of surgical treatment of aortic insufficiency",
+          "retrieved_sha256": "245d447bf61668f1f81262d9f5444debab19745448879774b7f12b4b5140cd48",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1960年",
+      "title": "蓝色LED发明者天野浩出生",
+      "text": "1960年的今天，天野浩生于日本滨松。他在名古屋大学培育出高质量氮化镓晶体，1989年做出蓝色发光二极管，补齐白光照明所需的三原色，使节能光源成真，因此获2014年诺贝尔物理学奖。",
+      "item_sha256": "b65bae47d9c91892cd3187de7a55aaa9d5da94614662d7853faa97ff46006d65",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/prizes/physics/2014/amano/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/2014/amano/facts/",
+          "authority_type": "Nobel Prize official archive",
+          "date_context": "event-date",
+          "date_quote": "Born:\t\t11 September 1960, Hamamatsu, Japan",
+          "fact_quote": "for the invention of efficient blue light-emitting diodes which has enabled bright and energy-saving white light sources",
+          "retrieved_sha256": "710ba1de19dfcf477da18aedaa4fd5e18eeb03b0c03f06c27c41db9b68cc77c6",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1997年",
+      "title": "火星勘测者进入环火轨道",
+      "text": "1997年的今天，火星勘测者探测器点火制动，进入环绕火星的椭圆轨道，随后靠掠过高空大气减速转入近圆轨道。它九年间绘出火星地形、矿物与磁场图，并在坑壁冲沟发现液态水迹象。",
+      "item_sha256": "6efde6af24a65b97bc1deb10bd1a2cb4d7486a56d50d6d6b683c908b0abdb10a",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://lpl.arizona.edu/missions/mars-global-surveyor",
+          "final_url": "https://lpl.arizona.edu/missions/mars-global-surveyor",
+          "authority_type": "university mission page",
+          "date_context": "event-date",
+          "date_quote": "Mars Global Surveyor arrived at Mars on September 11, 1997 (September 12, UTC)",
+          "fact_quote": "Mars Global Surveyor was the first successful U.S. mission launched to Mars since the Viking mission in 1976.",
+          "retrieved_sha256": "b7a38a07a4dd0c3f3150ff8c8beb19780d6b7055b4c97782e4eb468ddc7d7351",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-10:2dffe8d3fc51b25272104298a2c1893a424f37de42373c98e5ed4db98b16ea21",
-  "public_json_sha256": "afd48f2a92df25701389d404b2a8fbbafff5ddf705aefb945dbc4258da7ab313",
-  "poster_sha256": "7d5541cfd5c99d70e93fe10dd7ca5023962745b036818787d87b91a92647d1dc",
-  "poster_bytes": 1577635,
+  "delivery_id": "2026-09-11:15dff55f35b7d4909c46edf6acf4462d9a723c7e872d908ad966a010467681e0",
+  "public_json_sha256": "ffbc7491ba126b8dac5548eadb034ba4f55df1627cbf147b6da81e655358139e",
+  "poster_sha256": "5aa9595d262a96c4b5e6d68d494ba3dd4a077b08d1db861bc6be56f4fc98aa38",
+  "poster_bytes": 1359290,
   "poster_dimensions": {
     "width": 2160,
-    "height": 3870
+    "height": 3088
   }
 }
