@@ -4,7 +4,6 @@ title: "A Mathematician's Sense of Beauty: Penrose Tilings"
 date: '2018-12-25 18:38:50'
 lang: en
 translation_key: "数学家的美：彭罗斯铺陈"
-translation_source_sha256: "171c00f82b1da2dfcc0437e22fef2687b835f4a93dccf4ba4b9e7769e8e0a203"
 permalink: en/2018/12/25/beauty-of-mathematics-penrose-tilings/
 aside: true
 comments: false

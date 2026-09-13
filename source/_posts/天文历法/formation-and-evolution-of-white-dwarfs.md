@@ -4,7 +4,6 @@ title: The Formation and Evolution of White Dwarfs
 date: '2021-04-25 18:43:00'
 lang: en
 translation_key: "白矮星的形成与演化"
-translation_source_sha256: "fb611f7464a2a9d554522975fdd93cab6173d4871e58a4cbc271f7e5856217b8"
 permalink: en/2021/04/25/formation-and-evolution-of-white-dwarfs/
 aside: true
 comments: false

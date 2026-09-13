@@ -4,7 +4,6 @@ title: How to Get Color Right
 date: '2022-02-04 23:05:17'
 lang: en
 translation_key: "如何正确的搞颜色？"
-translation_source_sha256: "0bf001e0ce467b080eae05734e1e657c62afb4877ba48a61405a8be742b19d16"
 permalink: en/2022/02/04/how-to-use-color-well/
 aside: true
 comments: false

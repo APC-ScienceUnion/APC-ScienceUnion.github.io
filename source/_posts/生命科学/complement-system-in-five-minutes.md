@@ -4,7 +4,6 @@ title: "Five-Minute Immunology: The Complement System"
 date: 2019-09-18 18:00:00
 lang: en
 translation_key: "五分钟了解免疫｜补体系统"
-translation_source_sha256: "d6674ad4d30a20d2b39db1c89f85068312223b1efea1af4134e9aad55ade24c5"
 permalink: en/2019/09/18/complement-system-in-five-minutes/
 aside: true
 comments: false

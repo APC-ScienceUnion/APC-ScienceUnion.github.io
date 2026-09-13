@@ -4,7 +4,6 @@ title: 'Storms Beyond the Atmosphere: A Conversation About Space Weather'
 date: '2020-04-11 15:24:00'
 lang: en
 translation_key: "大气层外的风云——空间天气漫谈"
-translation_source_sha256: "ccfe2540eae9d87e732314a1f8f1b0a9883a79242c2b33cee91ba5d5cfe85aaf"
 permalink: en/2020/04/11/space-weather-beyond-the-atmosphere/
 aside: true
 comments: false

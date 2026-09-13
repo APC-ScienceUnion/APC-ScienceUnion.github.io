@@ -4,7 +4,6 @@ title: Variational Inference and Generative Models
 date: '2022-08-13 18:06:01'
 lang: en
 translation_key: "Variational Inference 与 GAN, NF,VAE"
-translation_source_sha256: "3f5cba27a8d62d1b585aa59dbed30da4a983b58ea841eec4216569281ecac68d"
 permalink: en/2022/08/13/variational-inference-gan-nf-vae/
 aside: true
 comments: false

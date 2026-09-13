@@ -4,7 +4,6 @@ title: "Leap Months in the Chinese Calendar and the 24 Solar Terms"
 date: '2020-05-23 18:03:08'
 lang: en
 translation_key: "农历置润和二十四节气"
-translation_source_sha256: "aae4d47747fd80de166dc04ee620b235a37195d7f15c51cd93d984795d9a00a3"
 permalink: en/2020/05/23/leap-months-and-the-24-solar-terms/
 aside: true
 comments: false

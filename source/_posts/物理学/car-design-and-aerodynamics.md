@@ -4,7 +4,6 @@ title: Automotive Styling and Aerodynamics
 date: '2022-04-03 22:01:47'
 lang: en
 translation_key: "汽车造型与空气动力学"
-translation_source_sha256: "d40a50b6649d241e67785fed11e4aaf88d10357ee3176087b647a705270d6868"
 permalink: en/2022/04/03/car-design-and-aerodynamics/
 aside: true
 comments: false

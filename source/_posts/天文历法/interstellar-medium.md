@@ -4,7 +4,6 @@ title: "What Is the Interstellar Medium?"
 date: '2023-03-23 13:53:08'
 lang: en
 translation_key: "星际介质"
-translation_source_sha256: "42fac87390006e0afae9832200afb58a776cbd0a7b0a9c01f1a73578cca1d29d"
 permalink: en/2023/03/23/interstellar-medium/
 aside: true
 comments: false

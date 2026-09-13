@@ -4,7 +4,6 @@ title: Fundamentals of Editing and Publishing
 date: 2025-05-14 15:55:44
 lang: en
 translation_key: "编辑出版基础知识"
-translation_source_sha256: "8ea71d52910b63f1f5aa4b7a31f00f70a329239c8306b3d1902224bcb30e45d4"
 permalink: en/2025/05/14/fundamentals-of-editing-and-publishing/
 aside: true
 comments: false

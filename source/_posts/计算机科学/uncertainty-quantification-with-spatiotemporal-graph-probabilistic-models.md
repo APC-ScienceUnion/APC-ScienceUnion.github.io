@@ -4,7 +4,6 @@ title: 'Uncertainty Quantification with Spatiotemporal Graph Probabilistic Model
 date: '2023-08-22 15:04:02'
 lang: en
 translation_key: "基于时空图概率模型的不确定性衡量"
-translation_source_sha256: "3e0c52d572a6afe81d41ae00020eb16d9a5ae5c639d0b2ea480b7a7e6e2ca91d"
 permalink: en/2023/08/22/uncertainty-quantification-with-spatiotemporal-graph-probabilistic-models/
 cover: '/images/%E5%9F%BA%E4%BA%8E%E6%97%B6%E7%A9%BA%E5%9B%BE%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E8%A1%A1%E9%87%8F/fig-001-d4db078819.png'
 copyright_author: '张逸仙'

@@ -4,7 +4,6 @@ title: 'The Wandering Earth: A Brief Film Review'
 date: 2019-02-05 20:00:00
 lang: en
 translation_key: "流浪地球｜电影简评"
-translation_source_sha256: "6b0edb68861708acaaeaba336d77962c07d5d97d0af15a3904778e9c6b81186c"
 permalink: en/2019/02/05/the-wandering-earth-film-review/
 aside: true
 comments: false

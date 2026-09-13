@@ -4,7 +4,6 @@ title: The Phases of Earth as Seen from the Moon
 date: '2022-02-28 14:15:00'
 lang: en
 translation_key: "从月球观测到地球相位"
-translation_source_sha256: "92dbb83f9fca17b29b776a9e2eb872b53b78fef2e1e2c4024f7f0a5180cc1300"
 permalink: en/2022/02/28/earth-phases-seen-from-the-moon/
 aside: true
 comments: false

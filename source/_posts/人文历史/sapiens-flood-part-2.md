@@ -4,7 +4,6 @@ title: "A Brief History of Humankind: The Sapiens Flood (Part II)"
 date: '2020-04-19 18:00:00'
 lang: en
 translation_key: "人类简史科普——智人洪水（中）"
-translation_source_sha256: "d40b663e7f6946b78948e0ac564a4233b95938cf028ac456cc4afd8697e14553"
 permalink: en/2020/04/19/sapiens-flood-part-2/
 aside: true
 comments: false

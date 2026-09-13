@@ -4,7 +4,6 @@ title: "Does Pi Always Equal 3.14…?"
 date: '2023-04-24 08:38:50'
 lang: en
 translation_key: "圆周率一定是3.14...吗？"
-translation_source_sha256: "23d6043d9ab9c8448c9764df67cf1eca633bd8c7932e4ae7fc3748a11e2302fc"
 permalink: en/2023/04/24/is-pi-always-3-14/
 aside: true
 comments: false

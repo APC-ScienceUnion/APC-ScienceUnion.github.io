@@ -4,7 +4,6 @@ title: 'Heat and Electricity, Part 1: How Does a Temperature Difference Generate
 date: 2026-07-12 01:00:00
 lang: en
 translation_key: "热与电的相互转化（1）——温差是怎么发电的呢？"
-translation_source_sha256: "a01aa562dfa0c1cb47e9bed7c0d9dbc05359e304eda377b38fbcbdaa6b30f8f9"
 permalink: en/2026/07/12/how-temperature-differences-generate-electricity/
 aside: true
 comments: false

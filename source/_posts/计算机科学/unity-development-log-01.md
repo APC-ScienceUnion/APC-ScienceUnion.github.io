@@ -4,7 +4,6 @@ title: "Unity Journal 01"
 date: '2021-04-24 18:00:00'
 lang: en
 translation_key: "Unity日志01"
-translation_source_sha256: "9c87cbb7ceafa7b980ebdcafc5609c01eb6c543e1a80df4aec3e031e3b2186d3"
 permalink: en/2021/04/24/unity-development-log-01/
 aside: true
 comments: false

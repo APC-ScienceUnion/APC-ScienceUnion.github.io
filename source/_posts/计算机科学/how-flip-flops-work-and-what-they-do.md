@@ -4,7 +4,6 @@ title: 'Flip-Flops: How They Work and What They Do'
 date: '2022-12-19 19:45:00'
 lang: en
 translation_key: "触发器的原理和应用"
-translation_source_sha256: "0b45e6229e444467d72af6663ede6da3af860841092da95bea5c45f4321b3768"
 permalink: en/2022/12/19/how-flip-flops-work-and-what-they-do/
 aside: true
 comments: false

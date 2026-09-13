@@ -4,7 +4,6 @@ title: "Apophis's 2029 Flyby: A Rare Observing Opportunity"
 date: 2019-05-05 08:40:00
 lang: en
 translation_key: "千载难逢的观测良机——2029年将与地球「擦肩而过」的小行星阿波菲斯"
-translation_source_sha256: "691b2aabfc2be535dcc5e6e5247ca98ab89aef8b73bc0e2d63d0afe59e9d76ca"
 permalink: en/2019/05/05/apophis-2029-a-rare-observing-opportunity/
 aside: true
 comments: false

@@ -4,7 +4,6 @@ title: The Degeneracy of the Genetic Code
 date: '2022-02-04 22:01:47'
 lang: en
 translation_key: "遗传密码的简并性"
-translation_source_sha256: "37d59cf1fd80cfaac2e15525135a0a114953243eca7660a499dbd282fad0a6dc"
 permalink: en/2022/02/04/degeneracy-of-the-genetic-code/
 aside: true
 comments: false

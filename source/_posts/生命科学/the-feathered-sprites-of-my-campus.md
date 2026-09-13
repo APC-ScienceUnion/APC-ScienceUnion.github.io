@@ -4,7 +4,6 @@ title: The Feathered Sprites on My Campus
 date: 2019-12-29 18:18:00
 lang: en
 translation_key: "我的校园飞羽精灵"
-translation_source_sha256: "0f8b951900daabe3d97a2eccc7c027c99193a93b5a8ea183fa566f9847e71c78"
 permalink: en/2019/12/29/the-feathered-sprites-of-my-campus/
 aside: true
 comments: false

@@ -4,7 +4,6 @@ title: Did Neptune's Tiny Moon Come from Proteus?
 date: 2019-03-01 10:10:00
 lang: en
 translation_key: "海王星的小卫星，其实来自海卫八？"
-translation_source_sha256: "a1225c162b2a64ecba0f1946d2b6ac6d2be5211dc0e521c36caacf0c1e10bd70"
 permalink: en/2019/03/01/did-neptunes-tiny-moon-come-from-proteus/
 aside: true
 comments: false

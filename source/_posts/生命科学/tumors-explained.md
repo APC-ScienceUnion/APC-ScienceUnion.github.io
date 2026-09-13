@@ -4,7 +4,6 @@ title: 'Tumors Explained'
 date: 2019-12-30 17:17:00
 lang: en
 translation_key: "肿瘤科普"
-translation_source_sha256: "2d43744783e1d33666db42566ea9b8b9b7122c423cfb65844d26be47abb04625"
 permalink: en/2019/12/30/tumors-explained/
 aside: true
 comments: false

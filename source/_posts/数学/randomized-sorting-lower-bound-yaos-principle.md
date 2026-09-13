@@ -4,7 +4,6 @@ title: 'A Lower Bound for Randomized Sorting: An Introduction to Yao''s Principl
 date: 2026-05-30 12:00:00
 lang: en
 translation_key: "随机排序的复杂度下界：Yao's principle 介绍"
-translation_source_sha256: "d08925e08685ae4f32be0ba24c0afe6b8395522ab596b2c26f7a73424403d07d"
 permalink: en/2026/05/30/randomized-sorting-lower-bound-yaos-principle/
 aside: true
 comments: false

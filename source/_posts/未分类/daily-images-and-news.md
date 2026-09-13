@@ -4,7 +4,6 @@ title: "Bing Wallpaper of the Day, Astronomy Picture of the Day, Wikipedia Pictu
 date: 2099-12-31 23:59:59
 lang: en
 translation_key: "每日新闻"
-translation_source_sha256: "d7a4316127ad5ea9f937366cf713c4e5b978e12fcf3eb9e9475a1c18186d053d"
 permalink: en/2099/12/31/daily-images-and-news/
 aside: true
 comments: false

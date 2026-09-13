@@ -4,7 +4,6 @@ title: SpaceX Rocket Launches First Privately Funded Lunar Lander
 date: 2019-02-22 21:09:00
 lang: en
 translation_key: "SpaceX 火箭发射首个私人月球着陆器"
-translation_source_sha256: "a00154ddf85d51940062770fae1a83e53ee4f28d16697f1f61575a07b26c2c04"
 permalink: en/2019/02/22/spacex-launches-first-private-lunar-lander/
 aside: true
 comments: false

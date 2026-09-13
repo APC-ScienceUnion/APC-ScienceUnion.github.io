@@ -4,7 +4,6 @@ title: 'Jumping Genes: Transposons'
 date: '2021-04-05 20:31:03'
 lang: en
 translation_key: "跳跃基因——转座子"
-translation_source_sha256: "d9f8c90006cc25f9d227846e99d4c2060b9ce618f3c6c9234ea83e2c0e355ef5"
 permalink: en/2021/04/05/jumping-genes-transposons/
 cover: '/images/%E8%B7%B3%E8%B7%83%E5%9F%BA%E5%9B%A0%E2%80%94%E2%80%94%E8%BD%AC%E5%BA%A7%E5%AD%90/cover-445bbcb67b.png'
 copyright_author: '神州'

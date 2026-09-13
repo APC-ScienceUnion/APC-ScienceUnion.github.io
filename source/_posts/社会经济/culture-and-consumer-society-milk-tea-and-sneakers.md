@@ -4,7 +4,6 @@ title: "Culture and Consumer Society, Part 1: I'll Take the Milk Tea and the Sne
 date: '2021-08-16 01:46:26'
 lang: en
 translation_key: "文化与消费社会｜①奶茶和球鞋我全都要！"
-translation_source_sha256: "95edf6bbc60b4639ee8913d24f59de6967b8886015328ba9628bbe73f418d613"
 permalink: en/2021/08/16/culture-and-consumer-society-milk-tea-and-sneakers/
 aside: true
 comments: false

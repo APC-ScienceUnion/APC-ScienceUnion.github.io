@@ -23,10 +23,6 @@ function normalizedSource(file) {
     .replace(/\r\n?/gu, '\n');
 }
 
-function sha256(value) {
-  return crypto.createHash('sha256').update(value).digest('hex');
-}
-
 function loadData(file) {
   assert.ok(fs.existsSync(file), `missing Honor Hall data file: ${file}`);
   const source = normalizedSource(file);
@@ -147,7 +143,6 @@ assert.equal(englishPage.lang, 'en');
 assert.equal(englishPage.permalink, 'en/honor-hall/');
 assert.equal(englishPage.honor_hall_data, '/en/honor-hall/data.js');
 assert.equal(englishPage.translation_key, 'page:honor-hall');
-assert.equal(englishPage.translation_source_sha256, sha256(chinesePageSource), 'English Honor Hall page is stale');
 assert.equal(chinesePage.aside, true, 'Chinese Honor Hall must use the same sidebar layout as regular site pages');
 assert.equal(englishPage.aside, true, 'English Honor Hall must use the same sidebar layout as regular site pages');
 assert.notEqual(chinesePage.top_img, false, 'Chinese Honor Hall must keep the standard page header treatment');

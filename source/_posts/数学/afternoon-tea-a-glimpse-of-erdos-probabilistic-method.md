@@ -4,7 +4,6 @@ title: "Mathematics over Coffee: A Glimpse of Erdős's Probabilistic Method"
 date: 2026-08-22 19:29:18
 lang: en
 translation_key: "下午茶时间：Erdős 概率方法的一瞥"
-translation_source_sha256: "079196c0db32589751889cd5d849fb2863697633d28793cabcca0b5836dc9898"
 permalink: en/2026/08/22/afternoon-tea-a-glimpse-of-erdos-probabilistic-method/
 aside: true
 comments: false

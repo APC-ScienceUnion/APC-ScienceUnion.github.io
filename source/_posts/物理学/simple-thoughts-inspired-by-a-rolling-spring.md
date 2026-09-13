@@ -4,7 +4,6 @@ title: 'A Few Simple Thoughts Inspired by a Rolling Spring'
 date: '2020-09-26 20:00:00'
 lang: en
 translation_key: "由滚动的弹簧引发的简单思考"
-translation_source_sha256: "c1e0c7ed7cd55ece684c9acd8e284ab6d442429391d000dd09344de1b2ebaf05"
 permalink: en/2020/09/26/simple-thoughts-inspired-by-a-rolling-spring/
 cover: /images/%E7%94%B1%E6%BB%9A%E5%8A%A8%E7%9A%84%E5%BC%B9%E7%B0%A7%E5%BC%95%E5%8F%91%E7%9A%84%E7%AE%80%E5%8D%95%E6%80%9D%E8%80%83/cover-98c44c240e.jpg
 copyright_author: 'phy东西'

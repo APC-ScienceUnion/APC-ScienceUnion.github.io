@@ -4,7 +4,6 @@ title: Boron, Sand, and Chernobyl
 date: 2019-06-01 20:00:00
 lang: en
 translation_key: "硼、沙子、切尔诺贝利"
-translation_source_sha256: "5fc954923777d2a6c14ab27755666cac936617f0b90d7e4396510a518a4a3bc7"
 permalink: en/2019/06/01/boron-sand-chernobyl/
 aside: true
 comments: false

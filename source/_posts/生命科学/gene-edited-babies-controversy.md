@@ -4,7 +4,6 @@ title: "The ‘Gene-Edited Babies’ Controversy: Six Questions"
 date: '2020-10-10 18:00:00'
 lang: en
 translation_key: "“基因编辑婴儿”话题聚焦"
-translation_source_sha256: "77755763de7e837f67deb13a1f87b12a7b4c35087d50c88134441af18abe3f43"
 permalink: en/2020/10/10/gene-edited-babies-controversy/
 cover: /images/%E2%80%9C%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91%E5%A9%B4%E5%84%BF%E2%80%9D%E8%AF%9D%E9%A2%98%E8%81%9A%E7%84%A6/cover-618e121ec5.jpg
 copyright_author: '@cheeze molecule'

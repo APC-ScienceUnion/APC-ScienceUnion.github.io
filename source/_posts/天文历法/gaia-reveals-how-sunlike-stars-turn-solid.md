@@ -4,7 +4,6 @@ title: Gaia Reveals How Dead Sun-Like Stars Crystallize
 date: 2019-01-25 18:00:00
 lang: en
 translation_key: "盖亚揭示了太阳般的恒星是如何在消亡后变为固体的"
-translation_source_sha256: "d470e9de7616dd661434b850a7bf9748a5094a32b1920c9b320523a8eb449b13"
 permalink: en/2019/01/25/gaia-reveals-how-sunlike-stars-turn-solid/
 aside: true
 comments: false

@@ -4,7 +4,6 @@ title: 'Artificial Intelligence: An Intuitive Introduction'
 date: 2019-08-25 09:09:00
 lang: en
 translation_key: "人工智能(AI) 通俗演义"
-translation_source_sha256: "667e36450d57ea00fe4708f9b4468aec110887f5a6f3eed4f2e13772daab6a38"
 permalink: en/2019/08/25/artificial-intelligence-an-intuitive-introduction/
 aside: true
 comments: false

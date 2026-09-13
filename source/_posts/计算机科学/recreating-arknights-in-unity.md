@@ -4,7 +4,6 @@ title: 'Recreating Arknights in Unity'
 date: '2021-04-04 22:30:38'
 lang: en
 translation_key: "用Unity简单实现明日方舟"
-translation_source_sha256: "bf96bbd46f333837b759aeadf75788257de9dfd7089247d2e0728c19f57269b7"
 permalink: en/2021/04/04/recreating-arknights-in-unity/
 aside: true
 comments: false

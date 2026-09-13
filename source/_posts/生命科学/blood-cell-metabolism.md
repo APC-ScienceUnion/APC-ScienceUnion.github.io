@@ -4,7 +4,6 @@ title: 'Blood Cell Metabolism'
 date: '2021-02-05 22:01:53'
 lang: en
 translation_key: "血细胞的物质代谢"
-translation_source_sha256: "963068940f00a7fc493fec19db65a9565cf588d2d4431bd7ef480fa0e8c6d094"
 permalink: en/2021/02/05/blood-cell-metabolism/
 cover: '/images/%E8%A1%80%E7%BB%86%E8%83%9E%E7%9A%84%E7%89%A9%E8%B4%A8%E4%BB%A3%E8%B0%A2/cover-4f3c05cd49.jpg'
 copyright_author: '神州'

@@ -4,7 +4,6 @@ title: "An Introduction to Blindfolded Cubing"
 date: 2019-09-10 15:00:00
 lang: en
 translation_key: "魔方盲拧浅谈"
-translation_source_sha256: "2e1b8fd5b430b9888c1a0dd02f0095d05c6157628b3705f8b24aa970e880c283"
 permalink: en/2019/09/10/introduction-to-blindfolded-cubing/
 aside: true
 comments: false

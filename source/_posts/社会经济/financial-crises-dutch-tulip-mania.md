@@ -4,7 +4,6 @@ title: "Financial Crises, Part I: The Dutch Tulip Craze"
 date: '2020-09-20 12:00:00'
 lang: en
 translation_key: "【金融危机】荷兰——郁金香的诱惑"
-translation_source_sha256: "1696740a260aa9126f90f45e6084a8dfe7da3f550ad34ad1ea42670436f45987"
 permalink: en/2020/09/20/financial-crises-dutch-tulip-mania/
 aside: true
 comments: false

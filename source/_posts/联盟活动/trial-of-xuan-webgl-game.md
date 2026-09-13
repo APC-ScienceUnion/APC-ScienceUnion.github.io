@@ -4,7 +4,6 @@ title: 'Trial of Xuan: A Unity WebGL Game'
 date: 2025-08-19 01:15:31
 lang: en
 translation_key: "【玄之试炼】网页版小游戏"
-translation_source_sha256: "b962d76add2b89987353798548036f936987d3a4911ef9b6979cd26aa623a05d"
 permalink: en/2025/08/19/trial-of-xuan-webgl-game/
 aside: true
 comments: false

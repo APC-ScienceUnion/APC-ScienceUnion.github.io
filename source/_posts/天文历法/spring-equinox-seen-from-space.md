@@ -4,7 +4,6 @@ title: Earth at the Spring Equinox, Seen from Space
 date: 2019-03-23 18:29:00
 lang: en
 translation_key: "从太空看地球上的春分时刻"
-translation_source_sha256: "172ba848612d55339b1890e1be8c837bd40015bb01f25ee66f43f2538507fb8d"
 permalink: en/2019/03/23/spring-equinox-seen-from-space/
 aside: true
 comments: false

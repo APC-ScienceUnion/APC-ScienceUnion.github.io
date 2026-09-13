@@ -4,7 +4,6 @@ title: 'APC Science Union Explainer: Audio Compression'
 date: '2020-11-04 12:00:00'
 lang: en
 translation_key: "【联盟科普】音频中的压缩"
-translation_source_sha256: "9ee33667a1bd4161425631cb1b152a2db582d4d45915207bd2bc7afb4f2dad4c"
 permalink: en/2020/11/04/audio-compression/
 cover: '/images/%E3%80%90%E8%81%94%E7%9B%9F%E7%A7%91%E6%99%AE%E3%80%91%E9%9F%B3%E9%A2%91%E4%B8%AD%E7%9A%84%E5%8E%8B%E7%BC%A9/cover-ec1b56f9e6.jpg'
 copyright_author: '时光'

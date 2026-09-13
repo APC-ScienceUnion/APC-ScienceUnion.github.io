@@ -5,8 +5,9 @@ Posts are grouped by the Chinese article category at
 side by side in that category directory. English posts are identified by their
 `lang: en` front matter, never by a special directory name.
 
-Every Chinese Markdown post below `source/_posts/` must have one English partner
-in the same category directory. The `section` segment in `new_post_name` keeps
+Every Chinese Markdown post below `source/_posts/` must have an English partner.
+The existing category layout places partners in the same category directory.
+The `section` segment in `new_post_name` keeps
 the physical category directory out of the post slug and taxonomy; new posts
 without an explicit section go to `未分类`.
 
@@ -42,14 +43,32 @@ name. The header language icon pairs English `translation_key` values with the
 Chinese source basename, so physical category directories do not affect pairing;
 Chinese source filenames and URLs remain unchanged.
 
-Standalone bilingual content currently includes `/about/` ↔ `/en/about/` and
-all yearly APC News routes under `/apc-news/` ↔ `/en/apc-news/`. The English
-news data in `source/_data/apc_news_en.yml` must stay in one-to-one order with
-`apc_news.yml`; dates, covers, embedded image paths, and link targets are
-immutable. `tools/apc-news-en-source.sha256` records the normalized source
-fingerprint. Update it only after the complete English news dataset has been
-reviewed against the current Chinese file. `tests/test_bilingual_pages.js`
-enforces these source-level pairs.
+## Automated bilingual check: file existence only
+
+`npm run bilingual:check` only verifies that each Chinese post has an English
+Markdown file. `lang: en` (or an `en-` locale) identifies an English file, and
+its `translation_key` identifies the Chinese source basename. The check does
+not compare prose, comments, headings, paragraph counts, formulas, dates,
+images, links, or other metadata. An additional English file does not fail
+this existence check.
+
+Standalone content follows the same rule: About and Honor Hall pages, Honor
+Hall data, and APC News data each need their corresponding English file when
+the Chinese file exists. Individual news entries are not compared.
+
+Source fingerprint fields have been removed and are no longer checked or
+maintained. Chinese edits require no fingerprint updates. Translation quality
+remains a manual editorial responsibility.
+
+The existence check has regression tests for changed content, missing
+counterparts, and standalone files. In-progress
+reporting remains available as `npm run bilingual:check-progress`.
+
+The older generated-page navigation regression suite remains available as
+the optional `npm run site-navigation:check-public` command after a build.
+It is not run by the deployment workflow and is not a translation gate.
+Independent category-layout, image-integrity, widget, and other site checks
+remain enabled.
 
 Before deployment, run:
 
@@ -59,7 +78,6 @@ npm run assets:refresh-references
 npm run assets:check
 npm run clean
 npm run build
-npm run bilingual:check-public
 npm run assets:check-public
 ```
 

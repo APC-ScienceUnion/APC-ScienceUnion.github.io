@@ -4,7 +4,6 @@ title: "How Do We Send Spacecraft to Other Planets? A Brief Guide to Motion and 
 date: '2023-04-10 13:01:00'
 lang: en
 translation_key: "如何将飞船送往其他行星？简谈航天器的运动和轨道问题"
-translation_source_sha256: "da4722fe0d766654793a2035cbb023bb5eb6bb7d33627bee95b4a2c3aa792d2a"
 permalink: en/2023/04/10/spacecraft-trajectories-to-other-planets/
 aside: true
 comments: false

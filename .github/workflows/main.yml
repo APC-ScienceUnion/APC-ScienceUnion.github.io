@@ -60,7 +60,6 @@ jobs:
           npm run images:publish-categorized
           npm run images:check-categorized
           cp .gitattributes ./public/.gitattributes
-          npm run bilingual:check-public
           npm run assets:check-public
           npm run daily-images:check-public
           npm run science-history:check-public

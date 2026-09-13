@@ -4,7 +4,6 @@ title: 'Why Do Batteries Swell—and Can EV Batteries Swell Too?'
 date: 2026-03-15 22:41:38
 lang: en
 translation_key: "为什么电池会鼓包？新能源车也会鼓包吗？"
-translation_source_sha256: "c3dbcd7a9e75db4850b8eee47a0424ca68c317db2d57171b6ed80ee18451a676"
 permalink: en/2026/03/15/why-batteries-swell-and-do-ev-batteries-swell-too/
 aside: true
 comments: false

@@ -4,7 +4,6 @@ title: 'Five-Minute Immunology: Immune Evasion'
 date: '2020-05-03 19:06:02'
 lang: en
 translation_key: '5分钟了解免疫之免疫逃避'
-translation_source_sha256: "3e9fb0ceef83aee8f5302561c2ae1964d6d5e1477b700fcfe7945c2d1e5df627"
 permalink: en/2020/05/03/immune-evasion-in-five-minutes/
 aside: true
 comments: false

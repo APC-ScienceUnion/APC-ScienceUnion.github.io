@@ -4,7 +4,6 @@ title: "How to Make a Simple 2D Game"
 date: '2021-01-03 18:30:00'
 lang: en
 translation_key: "如何制造一个简单的2D游戏？"
-translation_source_sha256: "a641f35cbe499db59855ba1df2a3e71c698fba0c6be243ffada7b778b885b132"
 permalink: en/2021/01/03/how-to-make-a-simple-2d-game/
 aside: true
 comments: false

@@ -4,7 +4,6 @@ title: 'Anyone Promoting Watson''s Child-Rearing Method Is Either Malicious or F
 date: 2019-05-25 10:00:00
 lang: en
 translation_key: "推广华生育人法？非坏即傻！"
-translation_source_sha256: "9dee70f974b4e8b90b8d1af12265d916132808265f95bd026a43abba5eadd27a"
 permalink: en/2019/05/25/watsons-child-rearing-method/
 aside: true
 comments: false

@@ -4,7 +4,6 @@ title: 'Procedural Art: Drawing a Black-and-White Checkerboard with Code'
 date: '2022-03-12 10:48:00'
 lang: en
 translation_key: "程序绘画——用代码画一个黑白棋盘格"
-translation_source_sha256: "abe8e929400212afdff4d803c6d85032e3ccea346c5e4982714dd509a11e7dd8"
 permalink: en/2022/03/12/procedural-art-black-white-checkerboard/
 aside: true
 comments: false

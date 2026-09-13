@@ -4,7 +4,6 @@ title: A Proof of the Water-Filling Theorem
 date: '2023-02-20 08:01:50'
 lang: en
 translation_key: "注水定理的证明"
-translation_source_sha256: "41bced41ac6dcfed973de525f6a556f9f835e2023ea9f286bc6778e947587fb0"
 permalink: en/2023/02/20/proof-of-the-water-filling-theorem/
 aside: true
 comments: false

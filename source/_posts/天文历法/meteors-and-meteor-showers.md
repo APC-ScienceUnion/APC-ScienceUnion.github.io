@@ -4,7 +4,6 @@ title: 'Why Meteor Showers Arrive on Schedule: It All Starts with a Speck of Spa
 date: 2026-08-16 12:00:00
 lang: en
 translation_key: "流星和流星雨"
-translation_source_sha256: "4874abcb327be5d0e452cf056014bea87de4e490f07b0a0d72165e1a9fde8d85"
 permalink: en/2026/08/16/meteors-and-meteor-showers/
 aside: true
 comments: false

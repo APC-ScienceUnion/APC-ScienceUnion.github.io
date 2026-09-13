@@ -4,7 +4,6 @@ title: "Financial Crises, Part III: The Rise and Fall of France's Mississippi Bu
 date: '2020-12-20 22:32:46'
 lang: en
 translation_key: "【金融危机(三)】载满黄金梦的土地：法国密西西比泡沫"
-translation_source_sha256: "a6570bf63f3dfa3922201565fe48b7a85b2bf45db0a1b968fa81f521e5e0ad99"
 permalink: en/2020/12/20/french-mississippi-bubble/
 aside: true
 comments: false

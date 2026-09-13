@@ -10,7 +10,7 @@ examples, and level of formality in idiomatic American English.
   conclusion from the source.
 - Do not add background facts, interpretations, or corrections that the source
   does not contain. If the source itself needs correction, edit the source
-  first and let the source fingerprint mark the English version for review.
+  first and review the English version manually when needed.
 - Preserve humor, uncertainty, rhetorical questions, and deliberate changes of
   register when they are part of the author's voice.
 - Keep link targets, image paths, code, mathematical expressions, data,
@@ -60,6 +60,7 @@ claim has been lost or invented.
 3. Read the English version on its own, without looking at the Chinese, and fix
    anything that sounds translated or machine-generated.
 4. Compare it with the Chinese source again for omissions or additions.
-5. Run the bilingual structure, source-fingerprint, link, image, formula, and
-   generated-page checks before publishing.
-
+5. Run the bilingual file-existence check before publishing. Translation
+   fidelity and editorial review are manual tasks, not deployment gates.
+   Content, comments, formatting, metadata, and historical source fingerprints
+   are not compared by the bilingual check.

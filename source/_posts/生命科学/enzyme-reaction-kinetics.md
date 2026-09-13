@@ -4,7 +4,6 @@ title: 'Enzyme Kinetics: From Rate Laws to Inhibition'
 date: '2021-03-09 12:52:58'
 lang: en
 translation_key: "酶的反应动力学"
-translation_source_sha256: "c4df1e77a41e79675f9b2f9ffe52decf3b22ed5f6d4c87550a53a2671df3c3d6"
 permalink: en/2021/03/09/enzyme-reaction-kinetics/
 cover: '/images/%E9%85%B6%E7%9A%84%E5%8F%8D%E5%BA%94%E5%8A%A8%E5%8A%9B%E5%AD%A6/cover-17daa1e0fb.png'
 copyright_author: '极地冰川'

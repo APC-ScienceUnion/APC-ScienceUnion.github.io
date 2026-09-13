@@ -4,7 +4,6 @@ title: 'From AC to DC: How Diodes Make Rectification Work'
 date: '2020-10-20 20:00:00'
 lang: en
 translation_key: "从交流电转直流电出发调研二极管的使用"
-translation_source_sha256: "cbdcf22d323bfbee459e0702919cc015fb53723fc1e808491a8fc64a7205e484"
 permalink: en/2020/10/20/from-ac-to-dc-how-diodes-are-used/
 aside: true
 comments: false

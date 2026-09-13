@@ -4,7 +4,6 @@ title: Fossils in the Milky Way
 date: '2020-03-18 15:05:00'
 lang: en
 translation_key: "银河系中的“化石”"
-translation_source_sha256: "49e62dbbd65e29456b535c746a750f9a5bae8014f09a82794f58c6e882c2cf66"
 permalink: en/2020/03/18/galactic-fossils/
 aside: true
 comments: false

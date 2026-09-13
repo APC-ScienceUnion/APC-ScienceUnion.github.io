@@ -4,7 +4,6 @@ title: "Did You Know? Moderate Drinking Can Carry a Cancer Risk Comparable to Sm
 date: 2019-03-29 20:00:00
 lang: en
 translation_key: "你知道吗~ 适量饮酒也相当于吸烟！"
-translation_source_sha256: "cb517ca1b004db07d2a31e15706222d3c6c55a1b21bc1908a42b5156c5422c54"
 permalink: en/2019/03/29/moderate-drinking-equivalent-to-smoking/
 aside: true
 comments: false

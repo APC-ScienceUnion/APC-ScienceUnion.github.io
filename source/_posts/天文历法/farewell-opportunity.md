@@ -4,7 +4,6 @@ title: 'Farewell, Opportunity: Remembering a Mars Exploration Pioneer'
 date: 2019-02-15 09:00:00
 lang: en
 translation_key: "再见，机遇号！告别火星探测车先驱"
-translation_source_sha256: "8d31cc48af2dd3d0b4c907b3cd85ec50a801a33aa5a8adff01fdc9a7b6b7718e"
 permalink: en/2019/02/15/farewell-opportunity/
 aside: true
 comments: false

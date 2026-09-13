@@ -4,7 +4,6 @@ title: 'From Simple to Complex: Algebra, Part 1'
 date: 2019-12-28 12:00:00
 lang: en
 translation_key: "由简入繁——代数学·Part1"
-translation_source_sha256: "46fd744886e103374e6ee92cdede977ecefc588a1c48636babcfe55e77deda12"
 permalink: en/2019/12/28/from-simple-to-complex-algebra-part-1/
 aside: true
 comments: false

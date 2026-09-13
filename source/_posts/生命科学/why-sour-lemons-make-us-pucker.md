@@ -4,7 +4,6 @@ title: 'Why Do Sour Lemons Make Us Pucker?'
 date: 2019-07-17 20:00:00
 lang: en
 translation_key: "为什么人们在吃酸柠檬的时候会皱眉？"
-translation_source_sha256: "f9bc336d9ec3a3e5baf205773f2bf64af8b2ed525ba34ae2a3a3a3fb832e53bd"
 permalink: en/2019/07/17/why-sour-lemons-make-us-pucker/
 aside: true
 comments: false

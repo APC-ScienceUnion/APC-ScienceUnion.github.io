@@ -4,7 +4,6 @@ title: How Does GPS Keep Us from Getting Lost?
 date: 2019-06-19 19:30:00
 lang: en
 translation_key: "GPS 用什么魔法让路痴不再迷路？"
-translation_source_sha256: "0c9a209eef00e03bf4c136a3b0415dad15ac9ab020254a062bdd4da6ffa40ea7"
 permalink: en/2019/06/19/how-gps-keeps-us-from-getting-lost/
 aside: true
 comments: false

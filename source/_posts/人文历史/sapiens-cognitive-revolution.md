@@ -4,7 +4,6 @@ title: 'A Brief History of Humankind: The Cognitive Revolution'
 date: 2019-12-22 22:51:00
 lang: en
 translation_key: "人类简史·认知革命"
-translation_source_sha256: "82e507e1ee98cc554b07483852c8ef2ea498c494e51dbdc04169b0df220921d8"
 permalink: en/2019/12/22/sapiens-cognitive-revolution/
 aside: true
 comments: false

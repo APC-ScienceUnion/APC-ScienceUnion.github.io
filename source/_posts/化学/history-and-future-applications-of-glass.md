@@ -4,7 +4,6 @@ title: "The History of Glass and Its Future Applications"
 date: '2021-05-18 12:00:00'
 lang: en
 translation_key: "玻璃的发展历史及未来应用展望"
-translation_source_sha256: "a55630c97ecc5007a816c916c351a0f5f183c5821d7f972e81b8001251b1970c"
 permalink: en/2021/05/18/history-and-future-applications-of-glass/
 aside: true
 comments: false

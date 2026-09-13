@@ -4,7 +4,6 @@ title: 'The Philosophy and Theology of Saint Augustine'
 date: 2022-03-19 13:47:00
 lang: en
 translation_key: "圣奥古斯丁的哲学与神学"
-translation_source_sha256: "c04fcb7aaf5094a115bd25deb02cdff182ebb2a1b8f8cb3eff930b84ee010700"
 permalink: en/2022/03/19/saint-augustines-philosophy-and-theology/
 aside: true
 comments: false

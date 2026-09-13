@@ -4,7 +4,6 @@ title: "Financial Crises, Part IV: A Sea of Corruption and Fraud—Britain's Sou
 date: '2021-02-22 18:00:00'
 lang: en
 translation_key: "【金融危机(四)】腐败与欺诈之海：英国南海泡沫"
-translation_source_sha256: "9957b4b59a03a51564f5f3642bce3fb2825948cf5895b6ba5f24af7e01317a9b"
 permalink: en/2021/02/22/british-south-sea-bubble/
 aside: true
 comments: false

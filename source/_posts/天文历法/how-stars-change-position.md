@@ -4,7 +4,6 @@ title: "The ‘Fixed’ Stars Aren't Fixed: How Their Positions Change"
 date: '2022-04-29 00:01:00'
 lang: en
 translation_key: "恒星不“恒”——简谈恒星的运动和位置变化"
-translation_source_sha256: "b0a5cb87f936c9e1fc72d60fced4315079a99d1fe0ff9e79556ff96fbfce0647"
 permalink: en/2022/04/29/how-stars-change-position/
 aside: true
 comments: false

@@ -3,7 +3,6 @@ title: About APC Science Union
 date: 2022-03-12 22:17:49
 lang: en
 translation_key: page:about
-translation_source_sha256: fd6b0bc8640e89dc48f0ba8e9e5e0a8cfc1707bec996aaac0a39f78d2b8645b7
 permalink: en/about/
 aside: true
 ---

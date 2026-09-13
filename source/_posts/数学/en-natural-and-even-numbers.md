@@ -4,7 +4,6 @@ title: Are there as many even numbers as natural numbers?
 date: 2026-09-08 00:00:00
 lang: en
 translation_key: 自然数和偶数一样多吗？
-translation_source_sha256: "771ae294e744f4189aa656a358b9e9cc309842e6916e4b57911c229d481882e1"
 permalink: en/2026/09/08/natural-and-even-numbers/
 aside: true
 comments: false

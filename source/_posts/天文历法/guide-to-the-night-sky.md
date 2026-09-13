@@ -4,7 +4,6 @@ title: 'Reading the Night Sky: Constellations and Celestial Events'
 date: '2020-04-27 13:00:00'
 lang: en
 translation_key: "辨天指南——天区分布及天象"
-translation_source_sha256: "b073fa99318023f28cfeb8a298898b97122782ac5fdd2f67e22d90c5a8378119"
 permalink: en/2020/04/27/guide-to-the-night-sky/
 cover: /images/%E8%BE%A8%E5%A4%A9%E6%8C%87%E5%8D%97%E2%80%94%E2%80%94%E5%A4%A9%E5%8C%BA%E5%88%86%E5%B8%83%E5%8F%8A%E5%A4%A9%E8%B1%A1/cover-8c9687e5f9.png
 copyright_author: '清流'

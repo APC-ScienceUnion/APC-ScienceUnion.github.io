@@ -4,7 +4,6 @@ title: "Mars One: Ready for Launch!"
 date: 2019-10-27 18:30:00
 lang: en
 translation_key: "火星一号，准备启航！"
-translation_source_sha256: "ebbcb986fdb124c7b8681797c1b0a607c27ab0e351d94d0cf493cb2bef49e7a9"
 permalink: en/2019/10/27/mars-one-ready-to-launch/
 aside: true
 comments: false

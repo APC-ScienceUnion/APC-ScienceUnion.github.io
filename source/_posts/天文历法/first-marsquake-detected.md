@@ -4,7 +4,6 @@ title: "InSight Detects the First Likely Marsquake"
 date: 2019-04-25 10:40:00
 lang: en
 translation_key: "人类首次探测到了火星震"
-translation_source_sha256: "0fc5d6836c06fd89a311c9261e39900a323eb7341c11af5836cb2107e234a33c"
 permalink: en/2019/04/25/first-marsquake-detected/
 aside: true
 comments: false
