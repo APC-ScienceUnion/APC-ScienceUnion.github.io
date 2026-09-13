@@ -16,25 +16,20 @@ top: true
 
 # Today in Science and Technology History
 
-<!-- The reviewed daily snapshot is currently Chinese-only, so the English page shows a language notice instead of embedding Chinese copy -->
 <div data-today-in-history></div>
 
 # Bing Wallpaper of the Day
 
-<!-- The image and text are read from this site's daily snapshot; a scheduled task retrieves and saves the original image byte for byte -->
 <div data-bing-wallpaper></div>
 
 # Astronomy Picture of the Day
 
-<!-- Read this site's APOD snapshot; on video days, automatically use the most recent NASA image snapshot -->
 <div data-apod></div>
 
 # Wikipedia Picture of the Day
 
-<!-- Read the image, description, and attribution from this site's daily snapshot without loading an image directly from Wikimedia -->
 <div id="wiki-daily-placeholder"></div>
 
 # Daily News
 
-<!-- Text is read from the 60s API; the page does not generate or display a news poster -->
 <div data-news60></div>
