@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-12",
+  "date": "2026-09-13",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,264 +8,159 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1897年",
-      "title": "伊雷娜·约里奥-居里诞生",
-      "text": "居里夫妇的长女伊雷娜出生在巴黎。她与丈夫弗雷德里克在实验中造出人工放射性同位素，1935年获诺贝尔化学奖，与母亲相隔二十余年登上同一领奖台。",
-      "item_sha256": "36dd47c0a91afedb39597581cea8f1762859d44e694c66e7840f0d05e98b76a4",
+      "label": "1848年",
+      "title": "铁棒穿颅的铁路工",
+      "text": "美国铁路工人菲尼亚斯·盖奇在佛蒙特州爆破作业时被铁棒贯穿头部，竟奇迹般活下来。此后他性格大变，医生哈洛多年追踪此案，把人格与额叶功能联系起来，成为神经科学最著名的案例。",
+      "item_sha256": "45006d36257341d8baa6aa6851635c76c9efa12f92640ada71830c8b3390485c",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://asklib.hms.harvard.edu/faq/153359",
+          "final_url": "https://asklib.hms.harvard.edu/faq/153359",
+          "authority_type": "university archive (Harvard Medical School, Warren Anatomical Museum)",
+          "date_context": "event-date",
+          "date_quote": "On the 13th of September 1848, while preparing the railroad bed, an accidental explosion of a charge he had set blew a 13-pound tamping iron straight through Gage's head, landing many yards away.",
+          "fact_quote": "The story of Phineas Gage illustrates some of the first medical knowledge gained on the relationship between personality and the functioning of the brain's frontal lobe.",
+          "retrieved_sha256": "62f1757818af0a8cc5d70b73dbaf5f70509b696f14461f92b72dfcc41182ac20",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1851年",
+      "title": "揭开黄热病传播之谜的军医",
+      "text": "美国军医沃尔特·里德出生于弗吉尼亚。他主持的调查以严格对照试验查明，黄热病是由蚊子叮咬而非污浊空气传播，这一结论让搁置的巴拿马运河工程得以推进，也为流行病学奠定了基础。",
+      "item_sha256": "db00bcb27b65a2a68cec8d66301271184dd21307894df0df2a64ce1b62e8c696",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/194",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/194",
-          "authority_type": "official archive",
+          "url": "https://www.dncr.nc.gov/blog/2023/12/01/dr-walter-reed-52",
+          "final_url": "https://www.dncr.nc.gov/blog/2023/12/01/dr-walter-reed-52",
+          "authority_type": "state government historical office (NC DNCR)",
           "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1897-09-12\",\"year\":\"1897\"",
-          "fact_quote": "\"motivation\":{\"en\":\"in recognition of their synthesis of new radioactive elements\"",
-          "retrieved_sha256": "45f6d0de74316517bc789e3ab7fcdfdbd4b5c43aea42c0bc14d664eaa35e7ed6",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1940年",
-      "title": "少年闯进拉斯科洞穴",
-      "text": "四名少年在蒙蒂尼亚克附近循着山坡上的窄缝钻进洞里，借着灯光看见满壁的野牛与马匹。这批约一万七千年前的壁画改写了人们对旧石器时代艺术的判断。",
-      "item_sha256": "a635585fba36d99397a7b35d6815d2808c4a374964a46d83ec06a34fd6338ce4",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.cambridge.org/core/journals/antiquity/article/abs/lascaux-ii-a-faithful-copy/66F885F58AB6A87634D414C150F71D4E",
-          "final_url": "https://www.cambridge.org/core/journals/antiquity/article/abs/lascaux-ii-a-faithful-copy/66F885F58AB6A87634D414C150F71D4E",
-          "authority_type": "peer-reviewed journal",
-          "date_context": "event-date",
-          "date_quote": "On 12 September 1940 Lascaux was discovered accidentally by four youths.",
-          "fact_quote": "They kept the secret for a few days, then decided to inform their former schoolmaster.",
-          "retrieved_sha256": "6d8989e3f44e204be0f0d2d16080d241cc5f23fa816645d5345a372b8ef131cb",
+          "date_quote": "Reed was born September 13, 1851 in Virginia to Lemuel Sutton and Pharaba White Reed.",
+          "fact_quote": "was able to conclusively demonstrate that mosquitoes transmitted the deadly disease",
+          "retrieved_sha256": "27a27aa92da627d20a50d271a81cb9ec5c2d00e0c71984b1ed3126903466d96c",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1941年",
-      "title": "施佩曼逝世",
-      "text": "以发现胚胎发育中的组织者效应获得1935年诺贝尔生理学或医学奖的施佩曼去世。他揭示出胚胎的某一部分能诱导邻近组织确定发育方向，为实验胚胎学打下地基。",
-      "item_sha256": "d16cf7c4631c7c3c55bd5e7fd80f8ae8a42c83cf0819f2efc0b0f41470d6c74f",
+      "label": "1886年",
+      "title": "讲清生物碱结构的化学家",
+      "text": "英国化学家罗伯特·罗宾逊出生于英格兰中部。他研究植物来源的天然产物，厘清了吗啡、士的宁等生物碱的结构，并阐明有机反应的电子机理，为药物的人工合成提供思路，1947年获诺贝尔化学奖。",
+      "item_sha256": "2ff3e06dc8778d4138b92d5b83aca3e7d8eaeb538cc2755666fb3cb40efa460a",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/329",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/329",
-          "authority_type": "official archive",
+          "url": "https://www.nobelprize.org/laureate/207",
+          "final_url": "https://www.nobelprize.org/prizes/chemistry/1947/robinson/facts/",
+          "authority_type": "official archive (Nobel Prize)",
           "date_context": "event-date",
-          "date_quote": "\"death\":{\"date\":\"1941-09-12\"",
-          "fact_quote": "\"motivation\":{\"en\":\"for his discovery of the organizer effect in embryonic development\"",
-          "retrieved_sha256": "00dcc401b41df9953d55abe747b0c48bc5b9e7afc08567a7a799c184865df6d6",
-          "content_type": "application/json"
+          "date_quote": "Born: 13 September 1886, Rufford, near Chesterfield, United Kingdom",
+          "fact_quote": "for his investigations on plant products of biological importance, especially the alkaloids",
+          "retrieved_sha256": "b1acfd8a8d1258c1ca4fddd3085b535bc15990c62cbc866663187d6de2669b89",
+          "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1945年",
-      "title": "理查德·塞勒诞生",
-      "text": "行为经济学家塞勒出生于新泽西州东奥兰治。他把心理学中的有限理性带进经济学，解释人们在储蓄、消费与投资中反复做出的可预测选择，2017年获诺贝尔经济学奖。",
-      "item_sha256": "4d1a1baec9f43635522f6803cf6a5159f4de77b8839686110085444c21418a4e",
+      "label": "1922年",
+      "title": "被推翻的世界高温纪录",
+      "text": "利比亚阿齐济耶当天记录到58℃高温，长期被视为地球最高气温。后来世界气象组织重新审查，认定测温仪器、场地与读数方式均有缺陷，判定这一纪录无效，把官方最高温改判给美国死亡谷。",
+      "item_sha256": "891c37611fa65c41d030382712249fde78585bebfdeba236a7c4098ad96314b3",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.ncei.noaa.gov/news/earths-hottest-temperature",
+          "final_url": "https://www.ncei.noaa.gov/news/earths-hottest-temperature",
+          "authority_type": "federal climate agency (NOAA NCEI)",
+          "date_context": "event-date",
+          "date_quote": "On September 13, 1922, a temperature of 136°F was recorded at El Azizia, Libya.",
+          "fact_quote": "additional evidence came to light indicating that the 136°F reading was invalid",
+          "retrieved_sha256": "6450c16d4f753b69ebd769fce301f3a9219a2070523c44138481a6ee971fe6dd",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1949年",
+      "title": "弄清毛细血管如何调节的生理学家",
+      "text": "丹麦生理学家奥古斯特·克罗去世。他研究毛细血管的收缩与舒张机制，说明身体在运动时如何精确调配各器官的血流，1920年获诺贝尔生理学或医学奖，还发展了气体交换与呼吸的测量方法。",
+      "item_sha256": "86cd915d31397fa54b2783ffa891090bd266d448944ecfa05ff6389468a8a507",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/949",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/949",
-          "authority_type": "official archive",
+          "url": "https://www.nobelprize.org/laureate/310",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1920/krogh/facts/",
+          "authority_type": "official archive (Nobel Prize)",
           "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1945-09-12\",\"year\":\"1945\"",
-          "fact_quote": "\"motivation\":{\"en\":\"for his contributions to behavioural economics\"",
-          "retrieved_sha256": "8b334f8126d9d526169f0bdb4f02b5e9520810ce9e22496c5799a2942474439a",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1962年",
-      "title": "莱斯大学的登月宣言",
-      "text": "肯尼迪在休斯敦莱斯大学向大批听众讲话，重申把载人登月定在十年之内的目标。此后NASA新建野外中心、启动新的航天计划，为兑现这句话重组了机构与工程体系。",
-      "item_sha256": "fd3854af9fa347384de66cf2e27711aceacc2259fc1ce568b116a5a0f3b4880b",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://jfk.blogs.archives.gov/2017/09/12/we-choose-to-go-to-the-moon-the-55th-anniversary-of-the-rice-university-speech",
-          "final_url": "https://jfk.blogs.archives.gov/2017/09/12/we-choose-to-go-to-the-moon-the-55th-anniversary-of-the-rice-university-speech/",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "On September 12, 1962, after viewing installations in Houston, President Kennedy had an opportunity to expand upon his press conference response in a speech at Rice University Stadium.",
-          "fact_quote": "The speech, written by Ted Sorensen, stressed that the United States' investment in and commitment to space exploration was in the national interest.",
-          "retrieved_sha256": "cfd98d797ce6ca650fc663aa4186ef8bef46566bcd3acc1bbe793259fd765bd0",
+          "date_quote": "Died: 13 September 1949, Copenhagen, Denmark",
+          "fact_quote": "for his discovery of the capillary motor regulating mechanism",
+          "retrieved_sha256": "7db6994ee189eff715b1205719eafbbfc05fe82bc7dee730025abcd85a9e4949",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1970年",
-      "title": "月球16号取回月壤",
-      "text": "苏联的月球16号在月面钻取岩芯，用返回舱把约101克月壤送回地球，全程没有航天员参与。自动化探测器从此也能完成登月取样的往返。",
-      "item_sha256": "6da41200fbfee84c2a6e47e53491eef735c6f15558d1e9f00bed0f0a9f542a77",
+      "label": "1961年",
+      "title": "水星计划的轨道试飞",
+      "text": "美国发射“水星-宇宙神4号”无人飞船，绕地球一圈后安全溅落并被回收。此前水星计划只完成过亚轨道飞行，这次验证了飞船在轨道上的环境控制与测控网络，为次年约翰·格伦的载人轨道飞行铺路。",
+      "item_sha256": "4f6ee5018f6e9087de1ffc12d08f2d6753878d7b492eaa27a8be77c4bc02d45e",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://science.nasa.gov/photojournal/luna-16",
-          "final_url": "https://science.nasa.gov/photojournal/luna-16/",
-          "authority_type": "official archive",
+          "url": "https://www.nasa.gov/missions/project-mercury/project-mercury-uncrewed-missions/",
+          "final_url": "https://www.nasa.gov/missions/project-mercury/project-mercury-uncrewed-missions/",
+          "authority_type": "official space agency (NASA)",
           "date_context": "event-date",
-          "date_quote": "It was launched by the Soviet Union on 12 September 1970; landed on the Moon on 20 September; lifted off on 21 September and returned to the Earth on 24 September.",
-          "fact_quote": "about 101 grams (3.5 ounces) of lunar material were returned",
-          "retrieved_sha256": "b9dd13cb3470233669f1ed05cd5dbb3f3df6d921fd96ec8be93aeea8902b2383",
+          "date_quote": "Launch:September 13, 1961",
+          "fact_quote": "Mission Objective:Spacecraft environmental control in orbit.",
+          "retrieved_sha256": "25c521fb67725620610920b946e1cbe117577e1169cbdda8e30d5773addd3a47",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1991年",
-      "title": "高层大气研究卫星升空",
-      "text": "高层大气研究卫星从发现号航天飞机的货舱释放，长期测量平流层与中间层的化学成分、风场和温度，帮助厘清臭氧损耗的机制，以及它与气候之间的联系。",
-      "item_sha256": "c6f874b0885ea32bf0d18b45928742d87dbbc7b15ef84cd8741f99529dc945d1",
+      "label": "1988年",
+      "title": "测到西半球最低海平面气压",
+      "text": "飓风“吉尔伯特”在加勒比海急剧增强，侦察机当天测得中心气压888百帕，创下当时大西洋飓风的最低纪录。这次观测刷新了强度纪录，也让气象学家更重视飓风短时间内爆发式增强的预报难题。",
+      "item_sha256": "ea075a29de5b6e2fa17fa6fb90a67438d17b9d30c19c5a4681d057f5aa67c259",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://science.nasa.gov/mission/uars/",
-          "final_url": "https://science.nasa.gov/mission/uars/",
-          "authority_type": "official archive",
+          "url": "https://www.weather.gov/lch/1988Gilbert",
+          "final_url": "https://www.weather.gov/lch/1988Gilbert",
+          "authority_type": "official weather service (US National Weather Service)",
           "date_context": "event-date",
-          "date_quote": "UARS Upper Atmosphere Research Satellite Type Earth Orbiter Launched September 12, 1991 Objective Study Earth's upper atmosphere",
-          "fact_quote": "UARS focused on the processes that lead to ozone depletion, complementing the measurements of total ozone made earlier by the Total Ozone Mapping Spectrometer onboard Nimbus-7 and the Russian Meteor-3 satellites.",
-          "retrieved_sha256": "19b54974c43e60291101d4f92b042d451105d9aa2f1a9f17b0ea62c1afd0128a",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1992年",
-      "title": "奋进号与空间实验室J",
-      "text": "奋进号搭载日本与美国合作的空间实验室J升空，在微重力环境下开展材料与生命科学实验。乘组中的杰米森与日本载荷专家毛利卫，让太空飞行的参与者更加多样。",
-      "item_sha256": "4d673e40bb053204ac7c3f7bfa0eb45af2e0dfabad4686503c5b26d05e013081",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nasa.gov/mission/sts-47/",
-          "final_url": "https://www.nasa.gov/mission/sts-47/",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "Launched: September 12, 1992, 10:23:00 a.m. EDT",
-          "fact_quote": "conducted microgravity investigations in materials and life sciences",
-          "retrieved_sha256": "ef141654fb2144617d60e7c550610145bd2aa5896018c99fef846632ae5a621b",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1993年",
-      "title": "发现号释放通信技术卫星",
-      "text": "发现号执行STS-51任务，在升空当天释放先进通信技术卫星，并用可回收的自由飞行平台收集远紫外与极紫外天体的光谱，为后续天文观测积累数据。",
-      "item_sha256": "a32ab009469bbdd96fc989eea66a7bb9284eb665254776d84c7a70646544608d",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nasa.gov/mission/sts-51/",
-          "final_url": "https://www.nasa.gov/mission/sts-51/",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "Launched: September 12, 1993, 7:45 a.m. EDT",
-          "fact_quote": "Deployment of Advanced Communications Technology Satellite (ACTS) and Orbiting and Retrievable Far and Extreme Ultraviolet Spectrograph-Shuttle Pallet Satellite",
-          "retrieved_sha256": "9711a625f03ac57d44a0d4008017c699845aee2299f172fc76af4b35226ae8a4",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2007年",
-      "title": "苏门答腊强震的波形记录",
-      "text": "苏门答腊近海发生8.4级地震，各国台站记录下的长周期波形被汇集起来，用于研究俯冲带的巨型逆冲地震，也为印度洋海啸预警系统留下可用样本。",
-      "item_sha256": "dd0131d13fb6baae0a33472bfff34586085b8b1b76b063bf6b5874019f1a6820",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://escweb.wr.usgs.gov/nsmp-data/data_sets/20070912_1110.html",
-          "final_url": "https://escweb.wr.usgs.gov/nsmp-data/data_sets/20070912_1110.html",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "The September 12, 2007, 11:10 UTC, Mw 8.4, Southern Sumatra, Indonesia Earthquake data recorded by the Caltech Tectonics Observatory",
-          "fact_quote": "with funding from USAID for the Indian Ocean Tsunami Warning System (IOTWS)",
-          "retrieved_sha256": "b61764bee91a538754160b9b5c970a5bed6a0e416601b3fa96a693e8e6fdac4e",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2009年",
-      "title": "绿色革命之父去世",
-      "text": "被称为绿色革命之父的农学家博洛格在达拉斯去世。他培育的矮秆抗倒伏小麦在墨西哥、印度等地大幅增产，1970年获诺贝尔和平奖，颁奖词称他给世界带来绿色革命的希望。",
-      "item_sha256": "6505b683d31ed8ea3cf17446d1e91cbb35a357e8c7034c8111c7ffff24d20d62",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/prizes/peace/1970/borlaug/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/peace/1970/borlaug/facts/",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "Born: 25 March 1914, Cresco, IA, USA Died: 12 September 2009, Dallas, TX, USA",
-          "fact_quote": "Prize motivation: “for having given a well-founded hope - the green revolution”",
-          "retrieved_sha256": "e9311736f9bcf606fe1011885d0786a6d406d31b6ac012a017692d8b3358b1a7",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2013年",
-      "title": "旅行者1号进入星际空间",
-      "text": "在分析等离子体振动数据后，NASA宣布旅行者1号已越过日球层顶，进入星际空间。它1977年出发，此时距太阳约190亿公里。",
-      "item_sha256": "0b21974063e84bf3d3a4267f76825d866e31f2034a5841af708268998581b0eb",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nature.com/articles/nature.2013.13735",
-          "final_url": "https://www.nature.com/articles/nature.2013.13735",
-          "authority_type": "peer-reviewed journal",
-          "date_context": "event-date",
-          "date_quote": "Published: 12 September 2013",
-          "fact_quote": "High electron densities show the craft left the Sun's bubble of influence in 2012.",
-          "retrieved_sha256": "5d1b223f53cceaf2fb39906c4fb6fa778808b0cb47cd9303795147a4d1ee185a",
+          "date_quote": "GOES-7 visible satellite image of Hurricane Gilbert at 6:01 PM EDT September 13, 1988 at peak intensity of 185 mph (160 knots) and minimum central pressure of 888 millibars (26.22 inches).",
+          "fact_quote": "the lowest sea level pressure ever recorded in the Western Hemisphere",
+          "retrieved_sha256": "b8482d89deecfd7d0e23d34b28b27e939d3ad8784e0d4bc2bdc95ba6d02d9d15",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-12:7793b76f9b0ad70d98022730348cebd735378bc07ec1bffc7db2e6a9a34b3001",
-  "public_json_sha256": "3dfa5f8ed8cc014849abc801001d257d3fa08e502655ea4d77f4a33c20660bd5",
-  "poster_sha256": "e81cb18ea0d64eaf8407336d02deac1fc8f4d5600bdc4ba77a9fc8cc235438b7",
-  "poster_bytes": 2220432,
+  "delivery_id": "2026-09-13:80c57a60950ca8bcda28870b0594f8e2663714487b84b066f5c6c2b5437f9a2b",
+  "public_json_sha256": "0416c58d3b9a4832daec210e88a399d7536c842f9c5bb99f14e54c6c7fe98305",
+  "poster_sha256": "6ef236f4f6ac29c2847879e7fbd2aec32ce1fd034977695591d900d107e1ab98",
+  "poster_bytes": 1811598,
   "poster_dimensions": {
     "width": 2160,
-    "height": 6520
+    "height": 4562
   }
 }
