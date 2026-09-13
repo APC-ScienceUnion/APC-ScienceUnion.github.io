@@ -11468,6 +11468,63 @@
           "count": 1
         }
       ]
+    },
+    {
+      "source_url": "https://i1.wp.com/wx4.sinaimg.cn/large/006UcwnJly1ih22o8ex62j30kk0dptc2.jpg",
+      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJly1ih22o8ex62j30kk0dptc2.jpg",
+      "local_path": "source/images/数学/自然数和偶数一样多吗？/cover-f62425d11f.jpg",
+      "public_path": "/images/%E8%87%AA%E7%84%B6%E6%95%B0%E5%92%8C%E5%81%B6%E6%95%B0%E4%B8%80%E6%A0%B7%E5%A4%9A%E5%90%97%EF%BC%9F/cover-f62425d11f.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 133979,
+      "sha256": "ee40174ea763d6f5025a9f5d56ba90fb988790050e505862f20f68f9ce5c597d",
+      "references": [
+        {
+          "file": "source/_posts/数学/en-natural-and-even-numbers.md",
+          "count": 1
+        },
+        {
+          "file": "source/_posts/数学/自然数和偶数一样多吗？.md",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source_url": "https://i2.wp.com/wx4.sinaimg.cn/large/006UcwnJly1ih22u9fylkj30dw0a2n2h.jpg",
+      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJly1ih22u9fylkj30dw0a2n2h.jpg",
+      "local_path": "source/images/数学/自然数和偶数一样多吗？/fig-001-858b268f6b.jpg",
+      "public_path": "/images/%E8%87%AA%E7%84%B6%E6%95%B0%E5%92%8C%E5%81%B6%E6%95%B0%E4%B8%80%E6%A0%B7%E5%A4%9A%E5%90%97%EF%BC%9F/fig-001-858b268f6b.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 206513,
+      "sha256": "7e629da957763fed0ada2c9a974b4f02e8ec411ce28fffd878798fc7df6c9ca9",
+      "references": [
+        {
+          "file": "source/_posts/数学/en-natural-and-even-numbers.md",
+          "count": 1
+        },
+        {
+          "file": "source/_posts/数学/自然数和偶数一样多吗？.md",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source_url": "https://i0.wp.com/wx4.sinaimg.cn/large/006UcwnJly1ih232r7g6xj306y095taa.jpg",
+      "fetched_url": "https://wx4.sinaimg.cn/large/006UcwnJly1ih232r7g6xj306y095taa.jpg",
+      "local_path": "source/images/数学/自然数和偶数一样多吗？/fig-002-0782eabd08.jpg",
+      "public_path": "/images/%E8%87%AA%E7%84%B6%E6%95%B0%E5%92%8C%E5%81%B6%E6%95%B0%E4%B8%80%E6%A0%B7%E5%A4%9A%E5%90%97%EF%BC%9F/fig-002-0782eabd08.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 68460,
+      "sha256": "d6ee3efc0d94b9530ee1504f38f3eb2bcd5ae0469b80a239f168e37c956d1743",
+      "references": [
+        {
+          "file": "source/_posts/数学/en-natural-and-even-numbers.md",
+          "count": 1
+        },
+        {
+          "file": "source/_posts/数学/自然数和偶数一样多吗？.md",
+          "count": 1
+        }
+      ]
     }
   ],
   "managed_directories": [
@@ -11567,6 +11624,7 @@
     "source/images/计算机科学/简历网站？",
     "source/images/计算机科学/触发器的原理和应用",
     "source/link/assets/images",
-    "themes/butterfly/source/img/site"
+    "themes/butterfly/source/img/site",
+    "source/images/数学/自然数和偶数一样多吗？"
   ]
 }

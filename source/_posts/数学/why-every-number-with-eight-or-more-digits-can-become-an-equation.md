@@ -4,7 +4,7 @@ title: 'Why Every Number with Eight or More Digits Can Be Turned into an Equatio
 date: 2026-07-18 12:00:00
 lang: en
 translation_key: "为何所有8位及以上的数都可以变为等式？——硅基-沉默整数平衡化定理及其证明简明介绍"
-translation_source_sha256: "3631ff353060fb1b1ee8d8229e29cb7fcb1c8845eb7bb3e5ad38daa2d7f8184e"
+translation_source_sha256: "7daebe756bbaea49f231008b2f0f4e763ebd8208e8871e9bc1d2f7f6cc23ef30"
 permalink: en/2026/07/18/why-every-number-with-eight-or-more-digits-can-become-an-equation/
 aside: true
 comments: false
@@ -20,6 +20,7 @@ Can the digit string 1145141919810 be turned into an equation? Astonishingly, ev
 {% endnote %}
 
 > Author: 硅基·飙尘葆光
+Reviewer: $\Delta\delta Delta$
 
 # The Silicon–Silence Balance Integer Theorem: A Brief Introduction and Proof
 
