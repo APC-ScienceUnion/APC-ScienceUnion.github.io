@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-13",
+  "date": "2026-09-14",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,159 +8,96 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1848年",
-      "title": "铁棒穿颅的铁路工",
-      "text": "美国铁路工人菲尼亚斯·盖奇在佛蒙特州爆破作业时被铁棒贯穿头部，竟奇迹般活下来。此后他性格大变，医生哈洛多年追踪此案，把人格与额叶功能联系起来，成为神经科学最著名的案例。",
-      "item_sha256": "45006d36257341d8baa6aa6851635c76c9efa12f92640ada71830c8b3390485c",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://asklib.hms.harvard.edu/faq/153359",
-          "final_url": "https://asklib.hms.harvard.edu/faq/153359",
-          "authority_type": "university archive (Harvard Medical School, Warren Anatomical Museum)",
-          "date_context": "event-date",
-          "date_quote": "On the 13th of September 1848, while preparing the railroad bed, an accidental explosion of a charge he had set blew a 13-pound tamping iron straight through Gage's head, landing many yards away.",
-          "fact_quote": "The story of Phineas Gage illustrates some of the first medical knowledge gained on the relationship between personality and the functioning of the brain's frontal lobe.",
-          "retrieved_sha256": "62f1757818af0a8cc5d70b73dbaf5f70509b696f14461f92b72dfcc41182ac20",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1851年",
-      "title": "揭开黄热病传播之谜的军医",
-      "text": "美国军医沃尔特·里德出生于弗吉尼亚。他主持的调查以严格对照试验查明，黄热病是由蚊子叮咬而非污浊空气传播，这一结论让搁置的巴拿马运河工程得以推进，也为流行病学奠定了基础。",
-      "item_sha256": "db00bcb27b65a2a68cec8d66301271184dd21307894df0df2a64ce1b62e8c696",
+      "label": "1849年",
+      "title": "巴甫洛夫出生",
+      "text": "俄国生理学家伊万·巴甫洛夫出生。他凭消化腺研究获得1904年诺贝尔生理学或医学奖；更著名的是唾液实验：铃声与食物多次同时出现后，狗只听到铃声也会分泌唾液，他把这种现象称为条件反射。",
+      "item_sha256": "28ce650ea2b5b2517c3967b1a87bc0253231e51a635d8799aefde26dd31b1068",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.dncr.nc.gov/blog/2023/12/01/dr-walter-reed-52",
-          "final_url": "https://www.dncr.nc.gov/blog/2023/12/01/dr-walter-reed-52",
-          "authority_type": "state government historical office (NC DNCR)",
+          "url": "https://www.nobelprize.org/laureate/296",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1904/pavlov/facts/",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Reed was born September 13, 1851 in Virginia to Lemuel Sutton and Pharaba White Reed.",
-          "fact_quote": "was able to conclusively demonstrate that mosquitoes transmitted the deadly disease",
-          "retrieved_sha256": "27a27aa92da627d20a50d271a81cb9ec5c2d00e0c71984b1ed3126903466d96c",
+          "date_quote": "Born: 14 September 1849, Ryazan, Russia",
+          "fact_quote": "in recognition of his work on the physiology of digestion, through which knowledge on vital aspects of the subject has been transformed and enlarged",
+          "retrieved_sha256": "94a01fef1745423792ed8069b1c55d289e6fce55e7798236f92ebb3e0da7be1d",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1886年",
-      "title": "讲清生物碱结构的化学家",
-      "text": "英国化学家罗伯特·罗宾逊出生于英格兰中部。他研究植物来源的天然产物，厘清了吗啡、士的宁等生物碱的结构，并阐明有机反应的电子机理，为药物的人工合成提供思路，1947年获诺贝尔化学奖。",
-      "item_sha256": "2ff3e06dc8778d4138b92d5b83aca3e7d8eaeb538cc2755666fb3cb40efa460a",
+      "label": "1959年",
+      "title": "月球2号撞上月球",
+      "text": "莫斯科时间凌晨0时2分，苏联“月球2号”以每秒约3.3公里撞上月球雨海一带，成为最早抵达月面的人造物体。它测出月球没有明显磁场，撞击前释放的钠云还让地面天文台看到了轨迹。",
+      "item_sha256": "2088004a23e6eea280094109167b1b38aa3e4155931304b7b60c45fc37cc3c7b",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://science.nasa.gov/deep-space-exploration",
+          "final_url": "https://science.nasa.gov/deep-space-exploration/",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "First spacecraft to impact on another celestial body: USSR / Second Soviet Space Rocket [Luna 2] / 14 September 1959 (Moon)",
+          "fact_quote": "First spacecraft to impact the Moon: USSR / Second Soviet Space Rocket [Luna 2] / 14 September 1959",
+          "retrieved_sha256": "a81a441f2b0532f78f655fecd5cfae87f1700b97da7d235f8ff1e7507ccef9e2",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2011年",
+      "title": "穆斯堡尔去世",
+      "text": "德国物理学家鲁道夫·穆斯堡尔去世。他发现的穆斯堡尔效应让晶格中的原子核无后坐力地发射和吸收伽马射线，把共振吸收变成精度极高的测量手段，1961年他因此获得诺贝尔物理学奖。",
+      "item_sha256": "f5ce282e5e1d900bee88ec79dabaffe8dba693590c983ec1d845963e1bbfbe86",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/207",
-          "final_url": "https://www.nobelprize.org/prizes/chemistry/1947/robinson/facts/",
-          "authority_type": "official archive (Nobel Prize)",
+          "url": "https://www.nobelprize.org/laureate/76",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1961/mossbauer/facts/",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Born: 13 September 1886, Rufford, near Chesterfield, United Kingdom",
-          "fact_quote": "for his investigations on plant products of biological importance, especially the alkaloids",
-          "retrieved_sha256": "b1acfd8a8d1258c1ca4fddd3085b535bc15990c62cbc866663187d6de2669b89",
+          "date_quote": "Died: 14 September 2011",
+          "fact_quote": "for his researches concerning the resonance absorption of gamma radiation",
+          "retrieved_sha256": "d4acb05271b467943c6f7329697d13b161ac6cb54a743bccf80005fe2c894079",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1922年",
-      "title": "被推翻的世界高温纪录",
-      "text": "利比亚阿齐济耶当天记录到58℃高温，长期被视为地球最高气温。后来世界气象组织重新审查，认定测温仪器、场地与读数方式均有缺陷，判定这一纪录无效，把官方最高温改判给美国死亡谷。",
-      "item_sha256": "891c37611fa65c41d030382712249fde78585bebfdeba236a7c4098ad96314b3",
+      "label": "2020年",
+      "title": "金星云层里的磷化氢",
+      "text": "《自然·天文学》刊出一篇观测论文：研究团队用射电望远镜在金星云层的强酸环境中探测到磷化氢。地球上这种气体多与生命活动或工业生产有关，论文随即在行星科学界引发争论与后续质疑。",
+      "item_sha256": "aaaffdb2af2935043fe9cdffe50fe9f4ced3209f441b06372a825af5bc10135f",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.ncei.noaa.gov/news/earths-hottest-temperature",
-          "final_url": "https://www.ncei.noaa.gov/news/earths-hottest-temperature",
-          "authority_type": "federal climate agency (NOAA NCEI)",
+          "url": "https://www.nature.com/articles/s41550-020-1174-4",
+          "final_url": "https://www.nature.com/articles/s41550-020-1174-4",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "On September 13, 1922, a temperature of 136°F was recorded at El Azizia, Libya.",
-          "fact_quote": "additional evidence came to light indicating that the 136°F reading was invalid",
-          "retrieved_sha256": "6450c16d4f753b69ebd769fce301f3a9219a2070523c44138481a6ee971fe6dd",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1949年",
-      "title": "弄清毛细血管如何调节的生理学家",
-      "text": "丹麦生理学家奥古斯特·克罗去世。他研究毛细血管的收缩与舒张机制，说明身体在运动时如何精确调配各器官的血流，1920年获诺贝尔生理学或医学奖，还发展了气体交换与呼吸的测量方法。",
-      "item_sha256": "86cd915d31397fa54b2783ffa891090bd266d448944ecfa05ff6389468a8a507",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/laureate/310",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1920/krogh/facts/",
-          "authority_type": "official archive (Nobel Prize)",
-          "date_context": "event-date",
-          "date_quote": "Died: 13 September 1949, Copenhagen, Denmark",
-          "fact_quote": "for his discovery of the capillary motor regulating mechanism",
-          "retrieved_sha256": "7db6994ee189eff715b1205719eafbbfc05fe82bc7dee730025abcd85a9e4949",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1961年",
-      "title": "水星计划的轨道试飞",
-      "text": "美国发射“水星-宇宙神4号”无人飞船，绕地球一圈后安全溅落并被回收。此前水星计划只完成过亚轨道飞行，这次验证了飞船在轨道上的环境控制与测控网络，为次年约翰·格伦的载人轨道飞行铺路。",
-      "item_sha256": "4f6ee5018f6e9087de1ffc12d08f2d6753878d7b492eaa27a8be77c4bc02d45e",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nasa.gov/missions/project-mercury/project-mercury-uncrewed-missions/",
-          "final_url": "https://www.nasa.gov/missions/project-mercury/project-mercury-uncrewed-missions/",
-          "authority_type": "official space agency (NASA)",
-          "date_context": "event-date",
-          "date_quote": "Launch:September 13, 1961",
-          "fact_quote": "Mission Objective:Spacecraft environmental control in orbit.",
-          "retrieved_sha256": "25c521fb67725620610920b946e1cbe117577e1169cbdda8e30d5773addd3a47",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1988年",
-      "title": "测到西半球最低海平面气压",
-      "text": "飓风“吉尔伯特”在加勒比海急剧增强，侦察机当天测得中心气压888百帕，创下当时大西洋飓风的最低纪录。这次观测刷新了强度纪录，也让气象学家更重视飓风短时间内爆发式增强的预报难题。",
-      "item_sha256": "ea075a29de5b6e2fa17fa6fb90a67438d17b9d30c19c5a4681d057f5aa67c259",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.weather.gov/lch/1988Gilbert",
-          "final_url": "https://www.weather.gov/lch/1988Gilbert",
-          "authority_type": "official weather service (US National Weather Service)",
-          "date_context": "event-date",
-          "date_quote": "GOES-7 visible satellite image of Hurricane Gilbert at 6:01 PM EDT September 13, 1988 at peak intensity of 185 mph (160 knots) and minimum central pressure of 888 millibars (26.22 inches).",
-          "fact_quote": "the lowest sea level pressure ever recorded in the Western Hemisphere",
-          "retrieved_sha256": "b8482d89deecfd7d0e23d34b28b27e939d3ad8784e0d4bc2bdc95ba6d02d9d15",
+          "date_quote": "Published: 14 September 2020",
+          "fact_quote": "Here we report the apparent presence of phosphine (PH3) gas in Venus’s atmosphere, where any phosphorus should be in oxidized forms.",
+          "retrieved_sha256": "029bff71aa0c823ddf255290d495bd229e6c12e5b41b9a5ea805f63349df25f6",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-13:80c57a60950ca8bcda28870b0594f8e2663714487b84b066f5c6c2b5437f9a2b",
-  "public_json_sha256": "0416c58d3b9a4832daec210e88a399d7536c842f9c5bb99f14e54c6c7fe98305",
-  "poster_sha256": "6ef236f4f6ac29c2847879e7fbd2aec32ce1fd034977695591d900d107e1ab98",
-  "poster_bytes": 1811598,
+  "delivery_id": "2026-09-14:600756afb8dfdac3b1099983a33e3986be7b18c14fb325601988befc33109656",
+  "public_json_sha256": "db024ebe8718b8e57535ccd962485add4707992488a6df370ce218cd91b03e77",
+  "poster_sha256": "2d31353f68cdc4f1d6b115667e2eebc768cf89c080e2ea52b75456a27eea13ab",
+  "poster_bytes": 1367150,
   "poster_dimensions": {
     "width": 2160,
-    "height": 4562
+    "height": 3088
   }
 }
