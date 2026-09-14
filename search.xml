@@ -231,11 +231,11 @@
             
             <tag> 发电 </tag>
             
+            <tag> 物理学 </tag>
+            
             <tag> 热电效应 </tag>
             
             <tag> 塞贝克效应 </tag>
-            
-            <tag> 物理学 </tag>
             
             <tag> 温差发电 </tag>
             
@@ -1391,9 +1391,9 @@
       
         <tags>
             
-            <tag> 颜色心理学 </tag>
-            
             <tag> 心理学 </tag>
+            
+            <tag> 颜色心理学 </tag>
             
             <tag> 设计 </tag>
             
@@ -1933,9 +1933,9 @@
             
             <tag> 太阳 </tag>
             
-            <tag> 太阳暗条 </tag>
-            
             <tag> 恒星 </tag>
+            
+            <tag> 太阳暗条 </tag>
             
         </tags>
       
@@ -3020,9 +3020,9 @@
       
         <tags>
             
-            <tag> 科普 </tag>
-            
             <tag> 进化 </tag>
+            
+            <tag> 科普 </tag>
             
             <tag> 生物学 </tag>
             
@@ -3650,11 +3650,11 @@
       
         <tags>
             
+            <tag> 科普 </tag>
+            
             <tag> 化学 </tag>
             
             <tag> 自然科学 </tag>
-            
-            <tag> 科普 </tag>
             
             <tag> 理论 </tag>
             
