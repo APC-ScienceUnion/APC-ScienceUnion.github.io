@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-14",
+  "date": "2026-09-15",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,96 +8,180 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1849年",
-      "title": "巴甫洛夫出生",
-      "text": "俄国生理学家伊万·巴甫洛夫出生。他凭消化腺研究获得1904年诺贝尔生理学或医学奖；更著名的是唾液实验：铃声与食物多次同时出现后，狗只听到铃声也会分泌唾液，他把这种现象称为条件反射。",
-      "item_sha256": "28ce650ea2b5b2517c3967b1a87bc0253231e51a635d8799aefde26dd31b1068",
+      "label": "1929年",
+      "title": "物理学家盖尔曼出生",
+      "text": "盖尔曼生于纽约，把纷乱的基本粒子按性质归类，并提出它们由更小的夸克组成；预言中的新粒子后来在加速器里被找到，他因此获得1969年诺贝尔物理学奖。",
+      "item_sha256": "568feb642e8247f753a1295c514d69d13bf343cfc88c0eb42f486c442d6427aa",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/296",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1904/pavlov/facts/",
-          "authority_type": "official archive",
+          "url": "https://www.nobelprize.org/prizes/physics/1969/gell-mann/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1969/gell-mann/facts/",
+          "authority_type": "Nobel Prize official archive",
           "date_context": "event-date",
-          "date_quote": "Born: 14 September 1849, Ryazan, Russia",
-          "fact_quote": "in recognition of his work on the physiology of digestion, through which knowledge on vital aspects of the subject has been transformed and enlarged",
-          "retrieved_sha256": "94a01fef1745423792ed8069b1c55d289e6fce55e7798236f92ebb3e0da7be1d",
+          "date_quote": "Born: 15 September 1929, New York, NY, USA",
+          "fact_quote": "He proposed that observed particles are in fact composite, that is, comprised of smaller building blocks called quarks",
+          "retrieved_sha256": "46837e27a55f4f3f0a39d8f6774ca05daf71123a70c82fc02fde2489ef92446e",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1959年",
-      "title": "月球2号撞上月球",
-      "text": "莫斯科时间凌晨0时2分，苏联“月球2号”以每秒约3.3公里撞上月球雨海一带，成为最早抵达月面的人造物体。它测出月球没有明显磁场，撞击前释放的钠云还让地面天文台看到了轨迹。",
-      "item_sha256": "2088004a23e6eea280094109167b1b38aa3e4155931304b7b60c45fc37cc3c7b",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://science.nasa.gov/deep-space-exploration",
-          "final_url": "https://science.nasa.gov/deep-space-exploration/",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "First spacecraft to impact on another celestial body: USSR / Second Soviet Space Rocket [Luna 2] / 14 September 1959 (Moon)",
-          "fact_quote": "First spacecraft to impact the Moon: USSR / Second Soviet Space Rocket [Luna 2] / 14 September 1959",
-          "retrieved_sha256": "a81a441f2b0532f78f655fecd5cfae87f1700b97da7d235f8ff1e7507ccef9e2",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2011年",
-      "title": "穆斯堡尔去世",
-      "text": "德国物理学家鲁道夫·穆斯堡尔去世。他发现的穆斯堡尔效应让晶格中的原子核无后坐力地发射和吸收伽马射线，把共振吸收变成精度极高的测量手段，1961年他因此获得诺贝尔物理学奖。",
-      "item_sha256": "f5ce282e5e1d900bee88ec79dabaffe8dba693590c983ec1d845963e1bbfbe86",
+      "label": "1932年",
+      "title": "化学家巴特利特出生",
+      "text": "巴特利特生于英国纽卡斯尔，在不列颠哥伦比亚大学把六氟化铂与氙混合，得到橙色的六氟合铂酸氙，改写了惰性气体不能成键的教科书结论。",
+      "item_sha256": "e65d706eb70b015e914a4fce190a9ae7c2d70b2b0a114e91a81e7b5d76b51c5d",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/76",
-          "final_url": "https://www.nobelprize.org/prizes/physics/1961/mossbauer/facts/",
-          "authority_type": "official archive",
+          "url": "https://senate.universityofcalifornia.edu/_files/inmemoriam/html/neilbartlett.html",
+          "final_url": "https://senate.universityofcalifornia.edu/_files/inmemoriam/html/neilbartlett.html",
+          "authority_type": "university archive (University of California In Memoriam)",
           "date_context": "event-date",
-          "date_quote": "Died: 14 September 2011",
-          "fact_quote": "for his researches concerning the resonance absorption of gamma radiation",
-          "retrieved_sha256": "d4acb05271b467943c6f7329697d13b161ac6cb54a743bccf80005fe2c894079",
+          "date_quote": "Bartlett was born on September 15, 1932, in Newcastle-upon-Tyne, England.",
+          "fact_quote": "He and his students had discovered that platinum hexafluoride, PtF 6 , was such a powerful oxidizing agent that it could even remove an electron from molecular oxygen",
+          "retrieved_sha256": "0b04cfdbb4ab4b2ab0c152de01a56d0de80d9db06144899d3686e9990e60fbbe",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2020年",
-      "title": "金星云层里的磷化氢",
-      "text": "《自然·天文学》刊出一篇观测论文：研究团队用射电望远镜在金星云层的强酸环境中探测到磷化氢。地球上这种气体多与生命活动或工业生产有关，论文随即在行星科学界引发争论与后续质疑。",
-      "item_sha256": "aaaffdb2af2935043fe9cdffe50fe9f4ced3209f441b06372a825af5bc10135f",
+      "label": "1937年",
+      "title": "经济学家卢卡斯出生",
+      "text": "卢卡斯生于美国华盛顿州亚基马，把理性预期引入宏观经济学，认为人们会跟着政策规则调整判断，使政策效果随之改变，1995年因此获得诺贝尔经济学奖。",
+      "item_sha256": "245e447c6a51b99bb077c7e9483504891635748b4b533df12f05c074b00b1810",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/prizes/economic-sciences/1995/lucas/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/economic-sciences/1995/lucas/facts/",
+          "authority_type": "Nobel Prize official archive",
+          "date_context": "event-date",
+          "date_quote": "Born: 15 September 1937, Yakima, WA, USA",
+          "fact_quote": "Robert E. Lucas Jr is known as a very influential macroeconomist",
+          "retrieved_sha256": "1fd3268dd399122b8bf6bba2759c65c5c5491c7c337310229b7858ca10743dc3",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1951年",
+      "title": "苏联第六次双犬亚轨道飞行",
+      "text": "苏联实施第六次双犬亚轨道飞行，一只试验狗中途逃跑，工作人员在食堂附近找到替身小狗并取名ZIB，两只狗升到约一百公里高空后安全回收。",
+      "item_sha256": "dab0a2b5116af55b0aebde09e6ce161ceca58c956cf94baca9bcb73ca3c616f9",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nature.com/articles/s41550-020-1174-4",
-          "final_url": "https://www.nature.com/articles/s41550-020-1174-4",
-          "authority_type": "official archive",
+          "url": "https://www.nasa.gov/history/a-brief-history-of-animals-in-space",
+          "final_url": "https://www.nasa.gov/history/a-brief-history-of-animals-in-space/",
+          "authority_type": "NASA history archive",
           "date_context": "event-date",
-          "date_quote": "Published: 14 September 2020",
-          "fact_quote": "Here we report the apparent presence of phosphine (PH3) gas in Venus’s atmosphere, where any phosphorus should be in oxidized forms.",
-          "retrieved_sha256": "029bff71aa0c823ddf255290d495bd229e6c12e5b41b9a5ea805f63349df25f6",
+          "date_quote": "On September 15, 1951, the sixth of the two-dog launches occurred.",
+          "fact_quote": "One of the two dogs, Bobik, escaped and a replacement was found near the local canteen",
+          "retrieved_sha256": "8d32462ab188532c5a0a6167b578e2b58c4b5b30f2473ea710493d5a6c035346",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1968年",
+      "title": "探测器5号带生物绕月",
+      "text": "苏联探测器5号升空，舱内搭载乌龟、酒蝇、粉虫、植物种子与细菌等生物，几天后绕过月球背面，返回舱再入地球大气，为载人绕月试飞探路。",
+      "item_sha256": "3409f8e5730c77e8c542aee45921b3ebf115b0b371649abfbe007d955bb63b59",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/history/a-brief-history-of-animals-in-space",
+          "final_url": "https://www.nasa.gov/history/a-brief-history-of-animals-in-space/",
+          "authority_type": "NASA history archive",
+          "date_context": "event-date",
+          "date_quote": "The first successful Zond (“probe”) launch was on September 15, 1968, when Zond 5 was launched.",
+          "fact_quote": "A biological payload of turtles, wine flies, mealworms, plants, seeds, bacteria, and other living matter was included in the flight",
+          "retrieved_sha256": "8d32462ab188532c5a0a6167b578e2b58c4b5b30f2473ea710493d5a6c035346",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1976年",
+      "title": "联盟22号升空测绘地球",
+      "text": "苏联把为联合飞行准备的备份联盟飞船改作对地观测平台，拆掉对接机构，换上东德蔡司耶拿研制的六通道多光谱相机，在较高纬度轨道上拍摄八天。",
+      "item_sha256": "9c7afffbc7e3fb69cf5e16c621f455a17ae0aa3e7e3fa1ec9392d3fc61857419",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/history/45-years-ago-astp-soyuz-returns-home",
+          "final_url": "https://www.nasa.gov/history/45-years-ago-astp-soyuz-returns-home/",
+          "authority_type": "NASA history archive",
+          "date_context": "event-date",
+          "date_quote": "a solo Earth observation mission, launched on Sep. 15, 1976",
+          "fact_quote": "The MKF-6 camera, carrying six cameras tuned to different wavelengths in the visible and near-infrared parts of the spectrum, was a precursor to similar equipment carried aboard the Salyut-6",
+          "retrieved_sha256": "952b7fb002d08e1f45714dc06faf64aca8c9b0650360cb9181c450876b9a4804",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1989年",
+      "title": "生物卫星9号搭载猕猴",
+      "text": "苏联生物卫星9号升空，两只猕猴在轨飞行两周，用于观察长时间失重对生物的影响；舱内蚂蚁和蚯蚓实验因温度异常而失败。",
+      "item_sha256": "73d807950d8999ba5b8c44993bcc02b02414c53bfb2893185a7aae49cabec0ec",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/history/a-brief-history-of-animals-in-space",
+          "final_url": "https://www.nasa.gov/history/a-brief-history-of-animals-in-space/",
+          "authority_type": "NASA history archive",
+          "date_context": "event-date",
+          "date_quote": "Bion 9/Kosmos 2044 was launched September 15, 1989, and carried the monkeys Zhakonya and Zabiyaka (“Troublemaker”) on a 14-day flight.",
+          "fact_quote": "Temperature problems onboard resulted in the loss of ant and earthworm experiments",
+          "retrieved_sha256": "8d32462ab188532c5a0a6167b578e2b58c4b5b30f2473ea710493d5a6c035346",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2017年",
+      "title": "卡西尼号坠入土星大气",
+      "text": "卡西尼号环绕土星十三年、燃料将尽，按计划冲入土星大气烧毁，以免日后撞上可能孕育生命的卫星；最后一段信号传回地球时，它已消失八十多分钟。",
+      "item_sha256": "eaef1f1d59ee8fea96bf9a1b21a741f37f79a2255c04a8d301fc3ebd1a703673",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens_overview",
+          "final_url": "https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens_overview",
+          "authority_type": "ESA official mission archive",
+          "date_context": "event-date",
+          "date_quote": "Cassini conducted science from orbit around Saturn until plunging into the giant planet's atmosphere on 15 September 2017.",
+          "fact_quote": "the Cassini orbiter produced a string of remarkable discoveries about Saturn's magnificent rings, its amazing moons and its dynamic magnetosphere",
+          "retrieved_sha256": "5eb521f4b58090939e0f9e0cd0a3b67f2479f906e45a4193954a7e4b03486b94",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-14:600756afb8dfdac3b1099983a33e3986be7b18c14fb325601988befc33109656",
-  "public_json_sha256": "db024ebe8718b8e57535ccd962485add4707992488a6df370ce218cd91b03e77",
-  "poster_sha256": "2d31353f68cdc4f1d6b115667e2eebc768cf89c080e2ea52b75456a27eea13ab",
-  "poster_bytes": 1367150,
+  "delivery_id": "2026-09-15:9bd8521b84da70d231050ab0ca5df73b5a7ad3554cdd688ef6ec8eb262e22402",
+  "public_json_sha256": "cfd2bfe6959c150aad055bfd850261e890955be4e93398d0a88c45be615d49d7",
+  "poster_sha256": "a9ae4f87d389ac3b0788e153b6924f5ef72fdb4ce4a2cba437c8563f61713d7c",
+  "poster_bytes": 1722090,
   "poster_dimensions": {
     "width": 2160,
-    "height": 3088
+    "height": 4452
   }
 }
