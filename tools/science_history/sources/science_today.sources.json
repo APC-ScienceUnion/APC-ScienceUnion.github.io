@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-17",
+  "date": "2026-09-18",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,86 +8,138 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1789年",
-      "title": "赫歇尔发现土卫一“弥玛斯”",
-      "text": "英国天文学家赫歇尔用四十英尺反射望远镜观测土星，在一个九月夜晚发现紧贴行星的微小天体——土卫一弥玛斯。它表面几乎占身体三分之一的巨大撞击坑，两百年后从探测器照片上看宛如“死星”。",
-      "item_sha256": "ad230b26961cb4bed6b2789f1f11149102aecf278e28814cece1bcfacb4d7700",
+      "label": "1783年",
+      "title": "欧拉在计算中度过最后一天",
+      "text": "在圣彼得堡，欧拉照常给孙辈上数学课，用粉笔演算气球的运动，又和同事讨论刚发现的天王星。傍晚他突发脑溢血，当晚辞世；此后圣彼得堡科学院又陆续整理出版了他大量遗稿。",
+      "item_sha256": "1dcfcca5605c67e3f0a9702e6e96a70dd7d5006a1d18a6cde460f4750bd688d4",
       "strong_claim": false,
-      "person_event": false,
+      "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.esa.int/Science_Exploration/Space_Science/17_September",
-          "final_url": "https://www.esa.int/Science_Exploration/Space_Science/17_September",
-          "authority_type": "official space agency",
+          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Euler/",
+          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Euler/",
+          "authority_type": "university archive (MacTutor)",
           "date_context": "event-date",
-          "date_quote": "1789: On 17 September 1789, Sir William Herschel, the German-born British astronomer discovered Saturn's moon Mimas.",
-          "fact_quote": "The surface of Mimas is dominated by an impact crater 130 kilometres across (almost one third of the diameter of the entire moon), called Herschel in honour of the moon's discoverer.",
-          "retrieved_sha256": "5b91e64306dff2de8eb5ca712b727fb6327f9c1051db4f8edd1cde528377ca5b",
+          "date_quote": "Died 18 September 1783 St Petersburg, Russia",
+          "fact_quote": "On 18 September 1783 Euler spent the first half of the day as usual. He gave a mathematics lesson to one of his grandchildren, did some calculations with chalk on two boards on the motion of balloons",
+          "retrieved_sha256": "972ba28877f8f333f6abbe1134e5e174064bb1c97aa0f3f8b3a5c6cf2cc2ab8b",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1976年",
-      "title": "航天飞机企业号公开亮相",
-      "text": "NASA在加州帕姆代尔公开展示了航天飞机轨道器企业号；因《星际迷航》剧迷写信游说，它没按原计划取名宪法号。这架只用于滑翔试验的样机，让可重复使用航天器的构想有了实体模样。",
-      "item_sha256": "7321df7b0965ce6200788989e978508b9e5fc88ffbb57044b1f1848e1bd2d64d",
+      "label": "1819年",
+      "title": "傅科出生：用摆演示地球自转",
+      "text": "莱昂·傅科生于巴黎。他让一个能在任意方向自由摆动的摆保持摆面不变，地面则随地球转动，观众因此能亲眼看到摆面偏转；他还造出陀螺仪，并用旋转镜改进了光速测定。",
+      "item_sha256": "934b07c9497754f1c41a4a070d0f3e5a0918bc8fb10a9fe91f97887d9067761a",
       "strong_claim": false,
-      "person_event": false,
+      "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nasa.gov/history/40-years-ago-space-shuttle-enterprise-rolls-to-the-pad",
-          "final_url": "https://www.nasa.gov/history/40-years-ago-space-shuttle-enterprise-rolls-to-the-pad/",
-          "authority_type": "official space agency",
+          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Foucault/",
+          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Foucault/",
+          "authority_type": "university archive (MacTutor)",
           "date_context": "event-date",
-          "date_quote": "California, facility, on September 17, 1976.",
-          "fact_quote": "Several Star Trek cast members as well as the show's creator were on hand to witness the event, accompanied by NASA Administrator Fletcher and the four astronauts who were scheduled to conduct the aerial tests with Enterprise",
-          "retrieved_sha256": "94cd3863e82c1583434f763ab64692211d12272e126bd403db9baa2d046fec5f",
+          "date_quote": "Born 18 September 1819 Paris, France",
+          "fact_quote": "In January 1851 he succeeded in constructing such a pendulum in the basement of his house. It did indeed retain its position in space, demonstrating clearly for the first time that the Earth rotates.",
+          "retrieved_sha256": "d7b0ce919f9e503e3c1e3b5b677cc994c855fd39814b30725ff74d25743f3384",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2006年",
-      "title": "沉睡万年的火山突然喷发",
-      "text": "阿拉斯加卡特迈国家公园附近、几乎被冰川盖住的四峰火山突然喷出蒸汽与火山灰，烟柱升到约六千米高空。它此前至少一万年没有喷发记录，冰层下涌动的岩浆让这座长期沉睡的火山重新苏醒。",
-      "item_sha256": "44ed479f0fc15ab538ba5bb38c81a65e7adc72a1395adf9378f1965c83b3e701",
+      "label": "1907年",
+      "title": "麦克米伦出生：铀之后的新元素",
+      "text": "埃德温·麦克米伦生于加州雷东多比奇。诺贝尔奖官网写道，他1940年用加速器让中子轰击铀，得到了原子序数93的元素并命名为镎；他后来改进回旋加速器，为同步加速器的出现铺路。",
+      "item_sha256": "e274bc8ce670ffc58b56eea4334ed5e40c410f5b3f7161621714fb94ad8da8fd",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/prizes/chemistry/1951/mcmillan/facts",
+          "final_url": "https://www.nobelprize.org/prizes/chemistry/1951/mcmillan/facts/",
+          "authority_type": "official archive (Nobel Foundation)",
+          "date_context": "event-date",
+          "date_quote": "Born: 18 September 1907, Redondo Beach, CA, USA",
+          "fact_quote": "In 1940 Edwin McMillan used a particle accelerator to radiate uranium with neutrons and proved that an element with an atomic number of 93 had been created. It was named neptunium.",
+          "retrieved_sha256": "05be4c01901e79ad05cd7c739f32ce7ddd375d8ee749530a3a694505beeb21fc",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1926年",
+      "title": "迈阿密飓风在清晨登陆",
+      "text": "美国国家气象局记录，一场四级飓风在清晨从迈阿密以南的帕尔梅托湾附近登陆，飓风强度大风向外延伸约一百英里，风暴潮把海水推入城区；当时的预报与警报手段有限，灾后当地逐步改进预警体系。",
+      "item_sha256": "23ab9506d43a4ad71e5c69e6080a8ff3924972e5da461a014a88f864226dd8bb",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://avo.alaska.edu/eruption/fourpeaked-2006-9",
-          "final_url": "https://avo.alaska.edu/eruption/fourpeaked-2006-9",
-          "authority_type": "official volcano observatory",
+          "url": "https://www.weather.gov/news/260915-great-miami-hurricane",
+          "final_url": "https://www.weather.gov/news/260915-great-miami-hurricane",
+          "authority_type": "official archive (NOAA/National Weather Service)",
           "date_context": "event-date",
-          "date_quote": "Start: 12:00:00 September 17, 2006 ± 10 Minutes",
-          "fact_quote": "Event Type: Explosive",
-          "retrieved_sha256": "af7691a6466cdcd2507da4de837d2c0894c6a4ed25b70e606bf5c64f0f7e8f7b",
+          "date_quote": "September 18, 2026, marks the 100th anniversary of the 1926 Great Miami Hurricane",
+          "fact_quote": "In the early morning hours of September 18, the large Category 4 hurricane is estimated to have made landfall near Palmetto Bay, about 10 miles south of downtown Miami",
+          "retrieved_sha256": "5c7e96860a5c8eb03ab41b9d1b0b724d1fedbc976f34effd35c038d32a97c24c",
           "content_type": "text/html"
-        },
+        }
+      ]
+    },
+    {
+      "label": "1959年",
+      "title": "先锋3号升空测量地球磁场",
+      "text": "先锋3号由先锋号火箭从卡纳维拉尔角送入轨道，星上装着质子磁力仪、X射线电离室和微流星探测器，用来测量地球磁场、太阳X射线和近地尘埃环境；这次发射也为“先锋”系列的发射活动画上句号。",
+      "item_sha256": "395dab05869511795799e2a24e7b955e626a5a03f94bead098b4334cf10955f1",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
         {
           "level": "A",
-          "url": "https://www.usgs.gov/publications/evidence-magma-intrusion-fourpeaked-volcano-alaska-2006-2007-a-rapid-response-seismic",
-          "final_url": "https://www.usgs.gov/publications/evidence-magma-intrusion-fourpeaked-volcano-alaska-2006-2007-a-rapid-response-seismic",
-          "authority_type": "national geological survey",
+          "url": "https://www.nasa.gov/history/sputnik/appendix.html",
+          "final_url": "https://www.nasa.gov/history/sputnik/appendix.html",
+          "authority_type": "official archive (NASA history)",
           "date_context": "event-date",
-          "date_quote": "On September 17th, 2006, Fourpeaked volcano had a widely-observed phreatic eruption.",
-          "fact_quote": "was an unmonitored volcano with no known Holocene activity",
-          "retrieved_sha256": "be026a21588d3f2ba02968b103583a796e1d3a54433f6aadf63488acbd12e29a",
+          "date_quote": "TV-4BU (18 Sep 1959)",
+          "fact_quote": "This vehicle incorporated the Allegheny Ballistics Laboratory X248 A2 solid-propellant motor as the 3d stage in place of the Grand Central motor used in previous Vanguard vehicles.",
+          "retrieved_sha256": "257215df1d45f18ba4be5295f4c310078fabde9e98c96886178e7ab3d937b371",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1980年",
+      "title": "联盟38号送古巴宇航员上天",
+      "text": "古巴飞行员塔马约·门德斯与苏联宇航员罗曼年科乘联盟38号升空，随后与礼炮6号对接，在轨飞行近八天。他穿特制鞋具参加前庭适应实验，还参与蔗糖结晶实验，为古巴制糖业寻找工艺线索。",
+      "item_sha256": "d4a25c7721ad44e2021cf0e6e94e5242003d17ce58e5309a3cf70aa0b4cefd34",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.cambridge.org/core/journals/british-journal-for-the-history-of-science/article/black-in-space-arnaldo-tamayo-and-the-cuban-cosmic-revolution/4B1D250F90C2B85C82D8FE8C1107768E",
+          "final_url": "https://www.cambridge.org/core/journals/british-journal-for-the-history-of-science/article/black-in-space-arnaldo-tamayo-and-the-cuban-cosmic-revolution/4B1D250F90C2B85C82D8FE8C1107768E",
+          "authority_type": "peer-reviewed journal",
+          "date_context": "event-date",
+          "date_quote": "The Joint Cuban–Soviet mission launched on 18 September 1980, and concluded on 26 September",
+          "fact_quote": "In September 1980, Tamayo blasted off aboard Soyuz 38 alongside Soviet commander Yuri Romanenko, embarking on a historic seven-day mission",
+          "retrieved_sha256": "193bb98d7a25c1db2b9f246637c884addfcde97d42f48e8cc82de6bee5c8dfc0",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-17:d792daa6e6dbd52a478c59cc7080e850d670a1bf2e5d0c38f519130250b02d64",
-  "public_json_sha256": "689c423c551609375953929681a5b60ba1764be44d2932617fa053d555d3ef01",
-  "poster_sha256": "5b9c84c3a7b9cc3a6bf0e3106f0b87c15175491419f11e7d3c5ba613ae7718d6",
-  "poster_bytes": 1225823,
+  "delivery_id": "2026-09-18:849902b8b7aa604665a41ce17882160d04fedd20d9040e5a7ba5eac7285c2751",
+  "public_json_sha256": "aacc761cf039bf53d3de7ab164972261613f40ddfd17730483ee9a0e5d5bfdcf",
+  "poster_sha256": "08c8d9fbb8dfe6c38fa70180304be1e34e788c6e4945e0518e8463f45c3117f5",
+  "poster_bytes": 1659751,
   "poster_dimensions": {
     "width": 2160,
-    "height": 2596
+    "height": 4070
   }
 }
