@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-18",
+  "date": "2026-09-19",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,138 +8,54 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1783年",
-      "title": "欧拉在计算中度过最后一天",
-      "text": "在圣彼得堡，欧拉照常给孙辈上数学课，用粉笔演算气球的运动，又和同事讨论刚发现的天王星。傍晚他突发脑溢血，当晚辞世；此后圣彼得堡科学院又陆续整理出版了他大量遗稿。",
-      "item_sha256": "1dcfcca5605c67e3f0a9702e6e96a70dd7d5006a1d18a6cde460f4750bd688d4",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Euler/",
-          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Euler/",
-          "authority_type": "university archive (MacTutor)",
-          "date_context": "event-date",
-          "date_quote": "Died 18 September 1783 St Petersburg, Russia",
-          "fact_quote": "On 18 September 1783 Euler spent the first half of the day as usual. He gave a mathematics lesson to one of his grandchildren, did some calculations with chalk on two boards on the motion of balloons",
-          "retrieved_sha256": "972ba28877f8f333f6abbe1134e5e174064bb1c97aa0f3f8b3a5c6cf2cc2ab8b",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1819年",
-      "title": "傅科出生：用摆演示地球自转",
-      "text": "莱昂·傅科生于巴黎。他让一个能在任意方向自由摆动的摆保持摆面不变，地面则随地球转动，观众因此能亲眼看到摆面偏转；他还造出陀螺仪，并用旋转镜改进了光速测定。",
-      "item_sha256": "934b07c9497754f1c41a4a070d0f3e5a0918bc8fb10a9fe91f97887d9067761a",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Foucault/",
-          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Foucault/",
-          "authority_type": "university archive (MacTutor)",
-          "date_context": "event-date",
-          "date_quote": "Born 18 September 1819 Paris, France",
-          "fact_quote": "In January 1851 he succeeded in constructing such a pendulum in the basement of his house. It did indeed retain its position in space, demonstrating clearly for the first time that the Earth rotates.",
-          "retrieved_sha256": "d7b0ce919f9e503e3c1e3b5b677cc994c855fd39814b30725ff74d25743f3384",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1907年",
-      "title": "麦克米伦出生：铀之后的新元素",
-      "text": "埃德温·麦克米伦生于加州雷东多比奇。诺贝尔奖官网写道，他1940年用加速器让中子轰击铀，得到了原子序数93的元素并命名为镎；他后来改进回旋加速器，为同步加速器的出现铺路。",
-      "item_sha256": "e274bc8ce670ffc58b56eea4334ed5e40c410f5b3f7161621714fb94ad8da8fd",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/prizes/chemistry/1951/mcmillan/facts",
-          "final_url": "https://www.nobelprize.org/prizes/chemistry/1951/mcmillan/facts/",
-          "authority_type": "official archive (Nobel Foundation)",
-          "date_context": "event-date",
-          "date_quote": "Born: 18 September 1907, Redondo Beach, CA, USA",
-          "fact_quote": "In 1940 Edwin McMillan used a particle accelerator to radiate uranium with neutrons and proved that an element with an atomic number of 93 had been created. It was named neptunium.",
-          "retrieved_sha256": "05be4c01901e79ad05cd7c739f32ce7ddd375d8ee749530a3a694505beeb21fc",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
       "label": "1926年",
-      "title": "迈阿密飓风在清晨登陆",
-      "text": "美国国家气象局记录，一场四级飓风在清晨从迈阿密以南的帕尔梅托湾附近登陆，飓风强度大风向外延伸约一百英里，风暴潮把海水推入城区；当时的预报与警报手段有限，灾后当地逐步改进预警体系。",
-      "item_sha256": "23ab9506d43a4ad71e5c69e6080a8ff3924972e5da461a014a88f864226dd8bb",
+      "title": "小柴昌俊出生",
+      "text": "1926年9月19日，小柴昌俊出生于日本丰桥。他后来在矿井深处的巨型水箱中捕捉中微子反应产生的微弱闪光，为太阳中微子的存在提供了直接证据，并因此共享2002年诺贝尔物理学奖。",
+      "item_sha256": "1c948107a2035d983d4bc7bf9a843f9c123a09b78e5aeb9f12c1c80d1bcbec58",
       "strong_claim": false,
-      "person_event": false,
+      "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.weather.gov/news/260915-great-miami-hurricane",
-          "final_url": "https://www.weather.gov/news/260915-great-miami-hurricane",
-          "authority_type": "official archive (NOAA/National Weather Service)",
+          "url": "https://www.nobelprize.org/laureate/754",
+          "final_url": "https://www.nobelprize.org/prizes/physics/2002/koshiba/facts/",
+          "authority_type": "official prize archive",
           "date_context": "event-date",
-          "date_quote": "September 18, 2026, marks the 100th anniversary of the 1926 Great Miami Hurricane",
-          "fact_quote": "In the early morning hours of September 18, the large Category 4 hurricane is estimated to have made landfall near Palmetto Bay, about 10 miles south of downtown Miami",
-          "retrieved_sha256": "5c7e96860a5c8eb03ab41b9d1b0b724d1fedbc976f34effd35c038d32a97c24c",
+          "date_quote": "Born: 19 September 1926, Toyohashi, Japan",
+          "fact_quote": "Prize motivation: “for pioneering contributions to astrophysics, in particular for the detection of cosmic neutrinos”",
+          "retrieved_sha256": "163611bfe2e6a088aabd03cf3fece0813f9c8236af462a8138045bb6db930104",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1959年",
-      "title": "先锋3号升空测量地球磁场",
-      "text": "先锋3号由先锋号火箭从卡纳维拉尔角送入轨道，星上装着质子磁力仪、X射线电离室和微流星探测器，用来测量地球磁场、太阳X射线和近地尘埃环境；这次发射也为“先锋”系列的发射活动画上句号。",
-      "item_sha256": "395dab05869511795799e2a24e7b955e626a5a03f94bead098b4334cf10955f1",
+      "label": "2001年",
+      "title": "美国布局纳米科学中心",
+      "text": "2001年9月19日，美国国家科学基金会宣布建立六个纳米尺度科学与工程研究中心，把物理、化学、生物与工程团队组织起来研究极小尺度的交叉问题，纳米研究由此走向有组织的平台。",
+      "item_sha256": "c1b36e87734dc82f7581cd984cb04e2d9b65f847d2b30aa91238e78a2bde0ba5",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nasa.gov/history/sputnik/appendix.html",
-          "final_url": "https://www.nasa.gov/history/sputnik/appendix.html",
-          "authority_type": "official archive (NASA history)",
+          "url": "https://www.nsf.gov/about/history",
+          "final_url": "https://www.nsf.gov/about/history",
+          "authority_type": "government agency",
           "date_context": "event-date",
-          "date_quote": "TV-4BU (18 Sep 1959)",
-          "fact_quote": "This vehicle incorporated the Allegheny Ballistics Laboratory X248 A2 solid-propellant motor as the 3d stage in place of the Grand Central motor used in previous Vanguard vehicles.",
-          "retrieved_sha256": "257215df1d45f18ba4be5295f4c310078fabde9e98c96886178e7ab3d937b371",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1980年",
-      "title": "联盟38号送古巴宇航员上天",
-      "text": "古巴飞行员塔马约·门德斯与苏联宇航员罗曼年科乘联盟38号升空，随后与礼炮6号对接，在轨飞行近八天。他穿特制鞋具参加前庭适应实验，还参与蔗糖结晶实验，为古巴制糖业寻找工艺线索。",
-      "item_sha256": "d4a25c7721ad44e2021cf0e6e94e5242003d17ce58e5309a3cf70aa0b4cefd34",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.cambridge.org/core/journals/british-journal-for-the-history-of-science/article/black-in-space-arnaldo-tamayo-and-the-cuban-cosmic-revolution/4B1D250F90C2B85C82D8FE8C1107768E",
-          "final_url": "https://www.cambridge.org/core/journals/british-journal-for-the-history-of-science/article/black-in-space-arnaldo-tamayo-and-the-cuban-cosmic-revolution/4B1D250F90C2B85C82D8FE8C1107768E",
-          "authority_type": "peer-reviewed journal",
-          "date_context": "event-date",
-          "date_quote": "The Joint Cuban–Soviet mission launched on 18 September 1980, and concluded on 26 September",
-          "fact_quote": "In September 1980, Tamayo blasted off aboard Soyuz 38 alongside Soviet commander Yuri Romanenko, embarking on a historic seven-day mission",
-          "retrieved_sha256": "193bb98d7a25c1db2b9f246637c884addfcde97d42f48e8cc82de6bee5c8dfc0",
+          "date_quote": "2001 – September 19",
+          "fact_quote": "NSF establishes six major centers for nanoscale science and engineering research.",
+          "retrieved_sha256": "2fb86b9bc0d3a0a53eefbcd6428327441a340e00bdecfbbcd7e167ac22ddb738",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-18:849902b8b7aa604665a41ce17882160d04fedd20d9040e5a7ba5eac7285c2751",
-  "public_json_sha256": "aacc761cf039bf53d3de7ab164972261613f40ddfd17730483ee9a0e5d5bfdcf",
-  "poster_sha256": "08c8d9fbb8dfe6c38fa70180304be1e34e788c6e4945e0518e8463f45c3117f5",
-  "poster_bytes": 1659751,
+  "delivery_id": "2026-09-19:6ff9340790f945cfb5c6b38ca354669a56dceb148cf9ace6dac2846453614372",
+  "public_json_sha256": "3a1a098b7295e973c2643a779c6bdb77ae7b36091fd4514f333b27edc5ab2731",
+  "poster_sha256": "3f0756647167835eeb052b4ee932be77d2edc27efd67effa8a5683dee3280c81",
+  "poster_bytes": 1054848,
   "poster_dimensions": {
     "width": 2160,
-    "height": 4070
+    "height": 2104
   }
 }
