@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-20",
+  "date": "2026-09-21",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,117 +8,170 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1910年",
-      "title": "数学家多萝西·沃恩出生",
-      "text": "1910年的今天，多萝西·沃恩生于密苏里州堪萨斯城。她当过中学数学教师，1943年进入航空咨询委员会的计算室，负责西区计算组，后来又改学电子计算机编程，为飞行试验计算数据。",
-      "item_sha256": "c54f2702861b9bd64dcddf50868e67c20f2ca5f740a3c525abafa44947b4c2ec",
+      "label": "1853年",
+      "title": "卡末林·昂内斯诞生",
+      "text": "荷兰物理学家卡末林·昂内斯出生。他把气体液化推向极限，先在实验室获得液态氦，随后发现汞在极低温下电阻突然消失，超导研究由此开启，低温实验方法与温标也在这一过程中成形。",
+      "item_sha256": "347d28e7be1f542218484a59fb061c56a4c6aa960e53e5f4c8bf65e2c5e73c84",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nasa.gov/people/dorothy-vaughan/",
-          "final_url": "https://www.nasa.gov/people/dorothy-vaughan/",
-          "authority_type": "NASA official biography",
+          "url": "https://www.nobelprize.org/prizes/physics/1913/onnes/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1913/onnes/facts/",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Date of Birth: September 20, 1910",
-          "fact_quote": "as the head of the National Advisory Committee for Aeronautics’ (NACA’s) segregated West Area Computing Unit from 1949 until 1958, Vaughan was both a respected mathematician and NASA’s first African-American manager",
-          "retrieved_sha256": "b9fc3eecbea2a54abfd0dbeebffb45075173be867348b9050467c13dcb7e6be9",
+          "date_quote": "Born: 21 September 1853, Groningen, the Netherlands",
+          "fact_quote": "for his investigations on the properties of matter at low temperatures which led, inter alia, to the production of liquid helium",
+          "retrieved_sha256": "a532db2d6273c452161e9bb1b6f8a34510a056820595d1539d70083df3483a5b",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1979年",
-      "title": "高能天文台HEAO-3升空",
-      "text": "1979年的今天，马歇尔航天飞行中心的高能天文台C由半人马座火箭从肯尼迪航天中心送入轨道，入轨后称HEAO-3，用伽马射线谱仪和宇宙线实验观测超新星遗迹、脉冲星与遥远星系。",
-      "item_sha256": "da18b8b8b5883ed3f5fe1c87f0ea465effeda1811c8b4c13fed98c7de5a7d1b9",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nasa.gov/image-article/launch-of-heao-3/",
-          "final_url": "https://www.nasa.gov/image-article/launch-of-heao-3/",
-          "authority_type": "NASA image article",
-          "date_context": "event-date",
-          "date_quote": "On September 20, 1979, the Marshall Space Flight Center’s third and final High Energy Astronomy Observatory (HEAO-C) was launched from Kennedy Space Center",
-          "fact_quote": "Known as HEAO-3 after its insertion into orbit, HEAO-C continued the program’s mission of probing the electromagnetic spectrum beyond the X-ray level, discovering a multitude of gamma and cosmic rays",
-          "retrieved_sha256": "40c8fed0658616547ce4a6354cde506f817605bd385325c21aaff1b0f591f502",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1994年",
-      "title": "发现号结束STS-64任务",
-      "text": "1994年的今天，发现号航天飞机在爱德华兹空军基地着陆，结束STS-64任务。此行用激光雷达系统LITE从轨道探测云层与大气，还释放并回收了一颗观测日冕与太阳风的卫星。",
-      "item_sha256": "34757df799579de9181b2f236c88239568a92f9b2ef36cb012929aed0acdb1e5",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nasa.gov/image-article/sts-64-discovery-landing-edwards/",
-          "final_url": "https://www.nasa.gov/image-article/sts-64-discovery-landing-edwards/",
-          "authority_type": "NASA image article",
-          "date_context": "event-date",
-          "date_quote": "STS-64 Discovery Landing at Edwards NASA Sep 20, 1994Image Article",
-          "fact_quote": "The mission featured the study of clouds and the atmosphere with a laser beaming system called Lidar In-Space Technology Experiment (LITE), and the first untethered space walk in over 10 years.",
-          "retrieved_sha256": "37716e4e07aeb9183fe57a88a5ea1dd692a9bbb254a47f1631cd469779f6f5e4",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1996年",
-      "title": "数学家保罗·爱多士逝世",
-      "text": "1996年的今天，保罗·爱多士在华沙去世。他一生与数百位同行联名发表上千篇论文，在数论、组合与离散数学里留下大量问题和方法，也让合作研究成为数学界的常见方式。",
-      "item_sha256": "984733903851ead05008e4dc6463392f3c44fa36b80efda563d03d5929f6e3a1",
+      "label": "1866年",
+      "title": "夏尔·尼科勒诞生",
+      "text": "法国细菌学家夏尔·尼科勒出生。他研究斑疹伤寒的流行方式，认定体虱是主要传播媒介，并据此提出隔离、消毒与灭虱的防控办法，使这类流行病的控制有了可操作的路径。",
+      "item_sha256": "8677a4813f5895bba04406e7aad77460ef4f6221708b83622339c3109289b387",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Erdos/",
-          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Erdos/",
-          "authority_type": "university archive (MacTutor)",
+          "url": "https://www.nobelprize.org/prizes/medicine/1928/nicolle/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1928/nicolle/facts/",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Died 20 September 1996 Warsaw, Poland",
-          "fact_quote": "posed and solved problems in number theory and other areas and founded the field of discrete mathematics",
-          "retrieved_sha256": "9f4a24acd2204f6560a1df488387d26c092d31b496c15e35d7ea6ac180410a00",
+          "date_quote": "Born: 21 September 1866, Rouen, France",
+          "fact_quote": "for his work on typhus",
+          "retrieved_sha256": "fbe44a1c1525c969900b1e6d2e5d02a29967f7b0b281c8827d1b4bc1bd7d6153",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2013年",
-      "title": "深度撞击号彗星探测器任务终结",
-      "text": "2013年的今天，NASA宣布深度撞击号彗星探测器任务结束。它2005年向坦普尔1号彗星释放撞击器，借撞击溅起的尘埃研究彗核成分，此后又飞掠哈特利2号彗星，累计传回约50万张图像。",
-      "item_sha256": "3fb739fc2435a1001f4b5084d8bce51e163f1020d42551a5c1230b1a9cb57bae",
+      "label": "1941年",
+      "title": "日全食横穿中国",
+      "text": "1941年9月21日发生日全食，全食带自中亚向东横穿中国西北到华东一带，中心线上全食持续约三分半钟。日食观测可精确校验日月位置与日冕结构，是天文学沿用很久的测量手段。",
+      "item_sha256": "55a4dfe1fdbbd6dfacd11ce3eb20ea5b92ba9af7fe4390aeb2ec4fa00679ec00",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nasa.gov/news-release/nasas-deep-space-comet-hunter-mission-comes-to-an-end/",
-          "final_url": "https://www.nasa.gov/news-release/nasas-deep-space-comet-hunter-mission-comes-to-an-end/",
-          "authority_type": "NASA press release",
+          "url": "https://eclipse.gsfc.nasa.gov/SEsearch/SEsearchmap.php?Ecl=19410921",
+          "final_url": "https://eclipse.gsfc.nasa.gov/SEsearch/SEsearchmap.php?Ecl=19410921",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "NASA Sep 20, 2013 RELEASE 13-290",
-          "fact_quote": "The project team at NASA’s Jet Propulsion Laboratory (JPL) in Pasadena, Calif., has reluctantly pronounced the mission at an end after being unable to communicate with the spacecraft for over a month.",
-          "retrieved_sha256": "a03028225e2d4f26b5177df38af9b38c518264ce85ff5c791b590037d67a1681",
+          "date_quote": "Total Solar Eclipse of 1941 September 21",
+          "fact_quote": "Total Solar Eclipse of 1941 September 21",
+          "retrieved_sha256": "ff2e84d2a4c95f5a13997f9e8b624f266938ee6ca07f1158707847a33d37d7d2",
+          "content_type": "text/html"
+        },
+        {
+          "level": "A",
+          "url": "https://eclipse.gsfc.nasa.gov/SEcat5/SE1901-2000.html",
+          "final_url": "https://eclipse.gsfc.nasa.gov/SEcat5/SE1901-2000.html",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "1941 Sep 21 04:34:03",
+          "fact_quote": "1941 Sep 21 04:34:03 25 -721 143 T p- 0.4649 1.0379 27N 119E 62 143 03m22s",
+          "retrieved_sha256": "1daf90d8b3f1763a09b45cc0d838150fc09edbef711fe1be80f2e0c0d8f6d5ff",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1974年",
+      "title": "水手10号再次掠过水星",
+      "text": "水手10号第二次飞掠水星，从南半球上空掠过并补拍上次未覆盖的区域，为拼接水星全球图提供了关键数据，也示范了借助行星引力多次回访同一目标的轨道设计。",
+      "item_sha256": "5ccdfd1535e2c9c6b663dad79c4f971f95f64b375c360f48cd5bddf6c4da4ac2",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://airandspace.si.edu/collection-objects/spacecraft-mariner-10-flight-spare/nasm_A19830006000",
+          "final_url": "https://airandspace.si.edu/collection-objects/spacecraft-mariner-10-flight-spare/nasm_A19830006000",
+          "authority_type": "museum",
+          "date_context": "event-date",
+          "date_quote": "1974 and did so a second time on September 21",
+          "fact_quote": "Mariner 10 first crossed the orbit of Mercury on March 29, 1974 and did so a second time on September 21, 1974.",
+          "retrieved_sha256": "ea44059d23e17fe618621bb8be9c68933ee543ee94a1e6f93caf8998b48fb464",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1999年",
+      "title": "集集地震留下密集强震记录",
+      "text": "1999年9月21日凌晨，台湾中部发生规模7.6强震，造成大范围破坏；随后又出现多次规模六级以上余震，部分余震使已受损结构倒塌。灾后调查与观测资料成为断层与耐震研究的重要样本。",
+      "item_sha256": "ec09ac689f4e1c1fb8086fde743a36409e6bfa774f4113c5e2dec0cda953babd",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.buffalo.edu/mceer/catalog.host.html/content/shared/www/mceer/publications/MCEER-99-SP03.detail.html",
+          "final_url": "https://www.buffalo.edu/mceer/catalog.host.html/content/shared/www/mceer/publications/MCEER-99-SP03.detail.html",
+          "authority_type": "university archive",
+          "date_context": "event-date",
+          "date_quote": "In the early morning hours of September 21, 1999, a devastating earthquake struck the central region of Taiwan.",
+          "fact_quote": "The magnitude of the 921 earthquake was MS= 7.6",
+          "retrieved_sha256": "e4cefefa72fea5358cceffd158981f789439b052fe790f204ba7170b55be6482",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2014年",
+      "title": "MAVEN进入火星轨道",
+      "text": "NASA的火星大气与挥发分演化探测器在十个月航行后点火制动，进入环绕火星的椭圆轨道，开始测量稀薄上层大气的组成与气体逃逸，为解释火星大气和水为何大量流失提供长期观测。",
+      "item_sha256": "ae4ec4611fcbb87d681693d52d9cff063bb759a011e915bd0cc59df6c8f2f0cc",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://svs.gsfc.nasa.gov/20213",
+          "final_url": "https://svs.gsfc.nasa.gov/20213",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "These animations depict MAVEN's arrival at Mars on September 21, 2014",
+          "fact_quote": "These animations depict MAVEN's arrival at Mars on September 21, 2014, and the ensuing science instrument deployments.",
+          "retrieved_sha256": "b595f72f0b15948605143862ce7c20a7cd9179b97340a20d9adb3d7b33493e78",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2018年",
+      "title": "巡视器落上小行星龙宫",
+      "text": "隼鸟2号释放的两台小型巡视器降落在小行星龙宫表面，靠内部转子跳跃移动，在不同位置拍摄图像并测量温度，为小行星表面的原位探测提供了新的观测方式。",
+      "item_sha256": "154359b2ac530f841c4ef61ccddc01c896bba50e57a87ab7b78649f10e767fec",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nature.com/articles/d41586-018-06808-0",
+          "final_url": "https://www.nature.com/articles/d41586-018-06808-0",
+          "authority_type": "peer-reviewed journal",
+          "date_context": "event-date",
+          "date_quote": "NEWS 21 September 2018",
+          "fact_quote": "Twin probes from Hayabusa2 mission have sent back their first pictures from Ryugu’s surface.",
+          "retrieved_sha256": "0f67cc5783c3e52b0307b40bf78f14215ed654926a3c5079b7fc9ef6c100e793",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-20:9170ce0f2e0bba0dec4588a589fd21c92a4f0f11c447500e163e0b152e6b7565",
-  "public_json_sha256": "f8e5a389f142445effcd833745473192e64f95254737955005a638437717062c",
-  "poster_sha256": "847808f57434cc79b01babe6ab680d9c1a83d6eb028e23e854ab90368909d8a1",
-  "poster_bytes": 1491327,
+  "delivery_id": "2026-09-21:3889e30f3ebe152e7294dbbab35ae72ff8c852d020f9a86a1f36a8f1e971b9e5",
+  "public_json_sha256": "0b121778e3d1d54535336135090fef42fc26efae746b764d3b435a16ae8ce6a1",
+  "poster_sha256": "2eec9e05e687e79d6be062c71c50d14f1d93fab7dd93513499402cbd8960e6c6",
+  "poster_bytes": 1711136,
   "poster_dimensions": {
     "width": 2160,
-    "height": 3580
+    "height": 4562
   }
 }
