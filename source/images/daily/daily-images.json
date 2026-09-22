@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-21T16:29:19+00:00",
+  "updated_at": "2026-09-22T06:18:01+00:00",
   "providers": {
     "bing": {
       "date": "2026-09-22",
@@ -19,22 +19,22 @@
       "sha256": "ef43a2e529096c4b341b3657b5e38c1d387780b137248cccf12cb973c08c18ae"
     },
     "apod": {
-      "date": "2026-09-21",
-      "title": "茧状星云的广角照片",
-      "title_en": "Cocoon Nebula Wide Field",
-      "description": "星云何时看起来像彗星？\n在这片宽逾两度、繁星拥挤的视野里，高悬天际的星座-\n天鹅座-最能吸引目光的是茧状星云。\n这片宇宙茧状星云是一个致密的恒星形成区，在影像右下方，它坐落于一片明亮的发射星云与\n反射星云之中，而向左则拖曳著一长串星际尘埃云，使整个复合结构看起来有些像彗星。\n该星云的编号为IC 5146，其中心明亮的头部跨度约为10光年，而昏暗、富含\n尘埃的尾部则跨度近100光年。整体距离我们约 2,500 光年。\n一颗靠近这片色彩斑斓的星云中心的明亮恒星可能为其提供能量，并帮助清出星云内部的空腔。\n在这幅可见光影像中，彗尾的长条状尘埃丝呈现暗色，但其中却隐藏著正在形成的恒星。\n这幅\n精选影像拍摄于七月，地点是美国加州的死亡谷。",
-      "explanation_en": "When does a nebula look like a comet? In this crowded starfield covering over two degrees within the high-flying constellation of the Swan ( Cygnus ), the eye is drawn to the Cocoon Nebula. A compact star forming region, the cosmic Cocoon punctuates a nebula bright in emission and reflection on the lower right, with a long trail of interstellar dust clouds to the left, making the entire complex appear a bit like a comet. Cataloged as IC 5146, the central bright head of the nebula spans about 10 light years, while the dark dust y tail spans nearly 100 light years. Both are located about 2,500 light years away. A bright star near the colorful nebula's center likely supplies power and helps clear out a cavity. The long dusty filaments of the tail, although dark in this visible light image, hide stars in the process of formation. The featured image was captured in July from Death Valley, California, USA.",
-      "copyright": "Piotr Czerski",
-      "tomorrow": "triple eclipse",
+      "date": "2026-09-22",
+      "title": "偶然的三重排列：飞机、太空站、太阳",
+      "title_en": "Chance Triple Alignment: Plane, Space Station, Sun",
+      "description": "这张照片意外捕捉到一个出乎预料的剪影。\n它是什么？\n它不是太阳黑子，太阳黑子由集中的磁场所造成、出现在太阳明亮光球上的小而暗的区域。\n太阳黑子通常持续数周，由于之前也观测过，所以这次的出现并不令人意外。\n它也不是国际太空站（ISS），也就是影像中偏左中部那个小巧的黝黑结构。\n这是因为这张精选影像拍摄时间精确到亚秒级，旨在记录这个标志性建筑从太阳前方经过的瞬间。\n答案其实是飞机。\n就在六月，在捷克共和国的普拉塞克拍摄这张照片的同时，一架飞机开始了它的小型偏食。\n结果就形成了这张太阳的三重排列影像。\n摄影师估计，从那个位置拍摄到包含太空站和飞机轮廓的随机太阳剪影的机率约为三千万分之一。",
+      "explanation_en": "This shot captured an unexpected silhouette. Which is it? It isn't the sunspots, the small dark regions caused by concentrated magnetic field s visible around the Sun's bright disk. Sunspots typically last for weeks and were expected, since these spots were seen previously. It isn’t the International Space Station (ISS), the small dark structure on the middle left. This is because the featured picture was planned with sub-second timing to record the iconic structure passing before the Sun. It is the airplane. Just as this exposure was taking place in June, from Prasek in the Czech Republic, an airplane began its own miniature partial eclipse. The result is this triply aligned image of our Sun. The photographer estimates that the chance of any random Sun image containing silhouettes of both a space station and an airplane, from that location, is about 30 million to one.",
+      "copyright": "Petr Horalek /\nInst. Physics Opava",
+      "tomorrow": "open space",
       "media_type": "image",
       "source_page_url": "https://sprite.phys.ncku.edu.tw/astrolab/mirrors/apod/apod.html",
-      "source_image_url": "https://sprite.phys.ncku.edu.tw/astrolab/mirrors/apod/image/2609/Cocoon_Czerski_3000.jpg",
-      "fetched_url": "https://sprite.phys.ncku.edu.tw/astrolab/mirrors/apod/image/2609/Cocoon_Czerski_3000.jpg",
+      "source_image_url": "https://sprite.phys.ncku.edu.tw/astrolab/mirrors/apod/image/2609/PlaneIssSpots_Horalek_1500.jpg",
+      "fetched_url": "https://sprite.phys.ncku.edu.tw/astrolab/mirrors/apod/image/2609/PlaneIssSpots_Horalek_1500.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/apod-2026-09-21-27721af06c80.jpg",
-      "image_path": "/images/daily/apod-2026-09-21-27721af06c80.jpg",
-      "bytes": 2683049,
-      "sha256": "27721af06c80afc5989a6b6383b4311c7c8b95e5f3232c9c1c11f9538db522dd"
+      "local_url": "/images/daily/apod-2026-09-22-789d4ac52d38.jpg",
+      "image_path": "/images/daily/apod-2026-09-22-789d4ac52d38.jpg",
+      "bytes": 390993,
+      "sha256": "789d4ac52d3863e01f017edfae4a2de43c90bdc440359d8b35038def7122646e"
     },
     "wikipedia": {
       "date": "2026-09-22",
