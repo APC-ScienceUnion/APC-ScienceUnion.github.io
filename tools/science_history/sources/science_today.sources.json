@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-21",
+  "date": "2026-09-22",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,170 +8,117 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1853年",
-      "title": "卡末林·昂内斯诞生",
-      "text": "荷兰物理学家卡末林·昂内斯出生。他把气体液化推向极限，先在实验室获得液态氦，随后发现汞在极低温下电阻突然消失，超导研究由此开启，低温实验方法与温标也在这一过程中成形。",
-      "item_sha256": "347d28e7be1f542218484a59fb061c56a4c6aa960e53e5f4c8bf65e2c5e73c84",
+      "label": "1791年",
+      "title": "法拉第诞生",
+      "text": "伦敦一个铁匠家庭的男孩几乎没有受过正规教育，靠装订学徒时的自学进入科学界。他发现电磁感应、提出力线思想，把电与磁的研究变成可实验、可应用的学问，也坚持用公开讲座向普通人解释科学。",
+      "item_sha256": "5abf3abe21d2b13d815c98cb3b493fa9588e33214c2d88d90b848f58bb04e7a5",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/physics/1913/onnes/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/physics/1913/onnes/facts/",
-          "authority_type": "official archive",
+          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Faraday/",
+          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Faraday/",
+          "authority_type": "university reference archive",
           "date_context": "event-date",
-          "date_quote": "Born: 21 September 1853, Groningen, the Netherlands",
-          "fact_quote": "for his investigations on the properties of matter at low temperatures which led, inter alia, to the production of liquid helium",
-          "retrieved_sha256": "a532db2d6273c452161e9bb1b6f8a34510a056820595d1539d70083df3483a5b",
+          "date_quote": "Born 22 September 1791 Newington Butts, Surrey (now London) England",
+          "fact_quote": "Michael Faraday was an English physicist whose discoveries in electricity had an enormous influence on the development of mathematics.",
+          "retrieved_sha256": "e2e247499f4b8214c06adaef092773709ba0b4da6c350f1f313afee8025b27b0",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1866年",
-      "title": "夏尔·尼科勒诞生",
-      "text": "法国细菌学家夏尔·尼科勒出生。他研究斑疹伤寒的流行方式，认定体虱是主要传播媒介，并据此提出隔离、消毒与灭虱的防控办法，使这类流行病的控制有了可操作的路径。",
-      "item_sha256": "8677a4813f5895bba04406e7aad77460ef4f6221708b83622339c3109289b387",
+      "label": "1901年",
+      "title": "哈金斯诞生",
+      "text": "加拿大出生的外科医生，后来长期在芝加哥研究癌症。他发现前列腺癌的生长依赖雄激素，于是把切除内分泌腺与激素给药引入治疗，让晚期患者有了延缓病情的办法，也确立了肿瘤治疗的一条新思路。",
+      "item_sha256": "76a35afbcd48b289bbc121ae2d02fd9f6db35b271c35fe8d6851692398a028d2",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/medicine/1928/nicolle/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1928/nicolle/facts/",
+          "url": "https://api.nobelprize.org/2.1/laureate/384",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/384",
           "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Born: 21 September 1866, Rouen, France",
-          "fact_quote": "for his work on typhus",
-          "retrieved_sha256": "fbe44a1c1525c969900b1e6d2e5d02a29967f7b0b281c8827d1b4bc1bd7d6153",
-          "content_type": "text/html"
+          "date_quote": "\"birth\":{\"date\":\"1901-09-22\"",
+          "fact_quote": "for his discoveries concerning hormonal treatment of prostatic cancer",
+          "retrieved_sha256": "7f27818b77cd21c6442298052dba30855766fd23a71151348564498cd035a168",
+          "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1941年",
-      "title": "日全食横穿中国",
-      "text": "1941年9月21日发生日全食，全食带自中亚向东横穿中国西北到华东一带，中心线上全食持续约三分半钟。日食观测可精确校验日月位置与日冕结构，是天文学沿用很久的测量手段。",
-      "item_sha256": "55a4dfe1fdbbd6dfacd11ce3eb20ea5b92ba9af7fe4390aeb2ec4fa00679ec00",
+      "label": "1956年",
+      "title": "索迪逝世",
+      "text": "英国化学家，在放射性研究里追踪原子蜕变，提出位移规律并引入同位素概念，说明来源相同的元素可以有不同原子量。他因放射性化学与同位素研究获诺贝尔化学奖，晚年则转向货币与经济问题。",
+      "item_sha256": "1935d24f616015ee587fb960d7dda45b007da3d4b10eb15ab4236c155d6bd582",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/179",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/179",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "\"death\":{\"date\":\"1956-09-22\"",
+          "fact_quote": "for his contributions to our knowledge of the chemistry of radioactive substances",
+          "retrieved_sha256": "e471ee1188cbb2cd0fdfdb1570a223ca611983dee07b314d0342dff33b2cb543",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1979年",
+      "title": "卫星记录南大西洋双闪",
+      "text": "美国薇拉6911号卫星在南大西洋上空记录到一次双脉冲闪光，光变曲线与大气层核爆的典型特征相似。数十年来，辐射与声波证据、卫星是否撞上微流星体的判断始终存在争论，原因至今没有定论。",
+      "item_sha256": "cd4204bb971d4d3a76402da41c65c1a039a8da9353f4234d728a839959e102cb",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://eclipse.gsfc.nasa.gov/SEsearch/SEsearchmap.php?Ecl=19410921",
-          "final_url": "https://eclipse.gsfc.nasa.gov/SEsearch/SEsearchmap.php?Ecl=19410921",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "Total Solar Eclipse of 1941 September 21",
-          "fact_quote": "Total Solar Eclipse of 1941 September 21",
-          "retrieved_sha256": "ff2e84d2a4c95f5a13997f9e8b624f266938ee6ca07f1158707847a33d37d7d2",
-          "content_type": "text/html"
-        },
-        {
-          "level": "A",
-          "url": "https://eclipse.gsfc.nasa.gov/SEcat5/SE1901-2000.html",
-          "final_url": "https://eclipse.gsfc.nasa.gov/SEcat5/SE1901-2000.html",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "1941 Sep 21 04:34:03",
-          "fact_quote": "1941 Sep 21 04:34:03 25 -721 143 T p- 0.4649 1.0379 27N 119E 62 143 03m22s",
-          "retrieved_sha256": "1daf90d8b3f1763a09b45cc0d838150fc09edbef711fe1be80f2e0c0d8f6d5ff",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1974年",
-      "title": "水手10号再次掠过水星",
-      "text": "水手10号第二次飞掠水星，从南半球上空掠过并补拍上次未覆盖的区域，为拼接水星全球图提供了关键数据，也示范了借助行星引力多次回访同一目标的轨道设计。",
-      "item_sha256": "5ccdfd1535e2c9c6b663dad79c4f971f95f64b375c360f48cd5bddf6c4da4ac2",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://airandspace.si.edu/collection-objects/spacecraft-mariner-10-flight-spare/nasm_A19830006000",
-          "final_url": "https://airandspace.si.edu/collection-objects/spacecraft-mariner-10-flight-spare/nasm_A19830006000",
-          "authority_type": "museum",
-          "date_context": "event-date",
-          "date_quote": "1974 and did so a second time on September 21",
-          "fact_quote": "Mariner 10 first crossed the orbit of Mercury on March 29, 1974 and did so a second time on September 21, 1974.",
-          "retrieved_sha256": "ea44059d23e17fe618621bb8be9c68933ee543ee94a1e6f93caf8998b48fb464",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1999年",
-      "title": "集集地震留下密集强震记录",
-      "text": "1999年9月21日凌晨，台湾中部发生规模7.6强震，造成大范围破坏；随后又出现多次规模六级以上余震，部分余震使已受损结构倒塌。灾后调查与观测资料成为断层与耐震研究的重要样本。",
-      "item_sha256": "ec09ac689f4e1c1fb8086fde743a36409e6bfa774f4113c5e2dec0cda953babd",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.buffalo.edu/mceer/catalog.host.html/content/shared/www/mceer/publications/MCEER-99-SP03.detail.html",
-          "final_url": "https://www.buffalo.edu/mceer/catalog.host.html/content/shared/www/mceer/publications/MCEER-99-SP03.detail.html",
+          "url": "https://nsarchive.gwu.edu/briefing-book/nuclear-vault/2019-09-22/vela-flash-forty-years-ago",
+          "final_url": "https://nsarchive.gwu.edu/briefing-book/nuclear-vault/2019-09-22/vela-flash-forty-years-ago",
           "authority_type": "university archive",
           "date_context": "event-date",
-          "date_quote": "In the early morning hours of September 21, 1999, a devastating earthquake struck the central region of Taiwan.",
-          "fact_quote": "The magnitude of the 921 earthquake was MS= 7.6",
-          "retrieved_sha256": "e4cefefa72fea5358cceffd158981f789439b052fe790f204ba7170b55be6482",
+          "date_quote": "An unidentified flash on 22 September 1979 in the far South Atlantic",
+          "fact_quote": "detected by a U.S. VELA satellite",
+          "retrieved_sha256": "55faff9f1feb6bb76177edaf3ee88d6a24306738ca793c892dbbe59f6b4ba1ab",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2014年",
-      "title": "MAVEN进入火星轨道",
-      "text": "NASA的火星大气与挥发分演化探测器在十个月航行后点火制动，进入环绕火星的椭圆轨道，开始测量稀薄上层大气的组成与气体逃逸，为解释火星大气和水为何大量流失提供长期观测。",
-      "item_sha256": "ae4ec4611fcbb87d681693d52d9cff063bb759a011e915bd0cc59df6c8f2f0cc",
+      "label": "2006年",
+      "title": "日出号太阳观测卫星升空",
+      "text": "日本与美英合作的太阳观测卫星从内之浦由M-V火箭送入轨道，搭载光学望远镜、X射线望远镜与极紫外成像光谱仪，长期连续观测太阳大气与耀斑，为研究太阳活动对地球空间环境的影响积累数据。",
+      "item_sha256": "655bbb2258738c5c42b899dae1530379897e9064c9287f49c69aedaf3b9f78df",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://svs.gsfc.nasa.gov/20213",
-          "final_url": "https://svs.gsfc.nasa.gov/20213",
-          "authority_type": "official archive",
+          "url": "https://www.esa.int/Science_Exploration/Space_Science/Hinode_Solar-B_overview",
+          "final_url": "https://www.esa.int/Science_Exploration/Space_Science/Hinode_Solar-B_overview",
+          "authority_type": "official agency page",
           "date_context": "event-date",
-          "date_quote": "These animations depict MAVEN's arrival at Mars on September 21, 2014",
-          "fact_quote": "These animations depict MAVEN's arrival at Mars on September 21, 2014, and the ensuing science instrument deployments.",
-          "retrieved_sha256": "b595f72f0b15948605143862ce7c20a7cd9179b97340a20d9adb3d7b33493e78",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2018年",
-      "title": "巡视器落上小行星龙宫",
-      "text": "隼鸟2号释放的两台小型巡视器降落在小行星龙宫表面，靠内部转子跳跃移动，在不同位置拍摄图像并测量温度，为小行星表面的原位探测提供了新的观测方式。",
-      "item_sha256": "154359b2ac530f841c4ef61ccddc01c896bba50e57a87ab7b78649f10e767fec",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nature.com/articles/d41586-018-06808-0",
-          "final_url": "https://www.nature.com/articles/d41586-018-06808-0",
-          "authority_type": "peer-reviewed journal",
-          "date_context": "event-date",
-          "date_quote": "NEWS 21 September 2018",
-          "fact_quote": "Twin probes from Hayabusa2 mission have sent back their first pictures from Ryugu’s surface.",
-          "retrieved_sha256": "0f67cc5783c3e52b0307b40bf78f14215ed654926a3c5079b7fc9ef6c100e793",
+          "date_quote": "Launched on 22 September 2006, Hinode (Solar-B) is a Japanese-led mission with ESA participation",
+          "fact_quote": "to study the mechanisms which power the solar atmosphere",
+          "retrieved_sha256": "aae2a93839725036c6b0dfd866d371055e06025422906158dc72df7c83b196a6",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-21:3889e30f3ebe152e7294dbbab35ae72ff8c852d020f9a86a1f36a8f1e971b9e5",
-  "public_json_sha256": "0b121778e3d1d54535336135090fef42fc26efae746b764d3b435a16ae8ce6a1",
-  "poster_sha256": "2eec9e05e687e79d6be062c71c50d14f1d93fab7dd93513499402cbd8960e6c6",
-  "poster_bytes": 1711136,
+  "delivery_id": "2026-09-22:d2a3f8ca702e90ce34db733d3e5a855627bfd207774c19fcfb9cb0c64177e4ef",
+  "public_json_sha256": "7e77fdf0dfa4401924f47c701f9c56497e00ecde113342c5df519e24579b6230",
+  "poster_sha256": "c0314be61293759773620ab4ee565ae0e24fa3a0c8a8a45b346ab1f4e7959031",
+  "poster_bytes": 1521258,
   "poster_dimensions": {
     "width": 2160,
-    "height": 4562
+    "height": 3580
   }
 }
