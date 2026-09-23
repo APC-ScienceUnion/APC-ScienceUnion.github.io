@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-22",
+  "date": "2026-09-23",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,115 +8,115 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1791年",
-      "title": "法拉第诞生",
-      "text": "伦敦一个铁匠家庭的男孩几乎没有受过正规教育，靠装订学徒时的自学进入科学界。他发现电磁感应、提出力线思想，把电与磁的研究变成可实验、可应用的学问，也坚持用公开讲座向普通人解释科学。",
-      "item_sha256": "5abf3abe21d2b13d815c98cb3b493fa9588e33214c2d88d90b848f58bb04e7a5",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Faraday/",
-          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Faraday/",
-          "authority_type": "university reference archive",
-          "date_context": "event-date",
-          "date_quote": "Born 22 September 1791 Newington Butts, Surrey (now London) England",
-          "fact_quote": "Michael Faraday was an English physicist whose discoveries in electricity had an enormous influence on the development of mathematics.",
-          "retrieved_sha256": "e2e247499f4b8214c06adaef092773709ba0b4da6c350f1f313afee8025b27b0",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1901年",
-      "title": "哈金斯诞生",
-      "text": "加拿大出生的外科医生，后来长期在芝加哥研究癌症。他发现前列腺癌的生长依赖雄激素，于是把切除内分泌腺与激素给药引入治疗，让晚期患者有了延缓病情的办法，也确立了肿瘤治疗的一条新思路。",
-      "item_sha256": "76a35afbcd48b289bbc121ae2d02fd9f6db35b271c35fe8d6851692398a028d2",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/384",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/384",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "\"birth\":{\"date\":\"1901-09-22\"",
-          "fact_quote": "for his discoveries concerning hormonal treatment of prostatic cancer",
-          "retrieved_sha256": "7f27818b77cd21c6442298052dba30855766fd23a71151348564498cd035a168",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1956年",
-      "title": "索迪逝世",
-      "text": "英国化学家，在放射性研究里追踪原子蜕变，提出位移规律并引入同位素概念，说明来源相同的元素可以有不同原子量。他因放射性化学与同位素研究获诺贝尔化学奖，晚年则转向货币与经济问题。",
-      "item_sha256": "1935d24f616015ee587fb960d7dda45b007da3d4b10eb15ab4236c155d6bd582",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/179",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/179",
-          "authority_type": "official archive",
-          "date_context": "event-date",
-          "date_quote": "\"death\":{\"date\":\"1956-09-22\"",
-          "fact_quote": "for his contributions to our knowledge of the chemistry of radioactive substances",
-          "retrieved_sha256": "e471ee1188cbb2cd0fdfdb1570a223ca611983dee07b314d0342dff33b2cb543",
-          "content_type": "application/json"
-        }
-      ]
-    },
-    {
-      "label": "1979年",
-      "title": "卫星记录南大西洋双闪",
-      "text": "美国薇拉6911号卫星在南大西洋上空记录到一次双脉冲闪光，光变曲线与大气层核爆的典型特征相似。数十年来，辐射与声波证据、卫星是否撞上微流星体的判断始终存在争论，原因至今没有定论。",
-      "item_sha256": "cd4204bb971d4d3a76402da41c65c1a039a8da9353f4234d728a839959e102cb",
+      "label": "1846年",
+      "title": "夜空里多出的一颗星",
+      "text": "柏林天文台的伽勒和学生达雷斯特收到勒维耶寄来的坐标，当晚对照星图找到一颗多出来的暗星，位置误差不到一度。由天王星轨道扰动反推未知行星、再用望远镜看到它，从此成为天文学的手段。",
+      "item_sha256": "5f9a9a0211b63fda1316c4e5e296fcf411f5cdafa7d2936f8beea9aa4b953842",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://nsarchive.gwu.edu/briefing-book/nuclear-vault/2019-09-22/vela-flash-forty-years-ago",
-          "final_url": "https://nsarchive.gwu.edu/briefing-book/nuclear-vault/2019-09-22/vela-flash-forty-years-ago",
-          "authority_type": "university archive",
+          "url": "https://science.nasa.gov/missions/hubble/hubbles-neptune-anniversary-pictures/",
+          "final_url": "https://science.nasa.gov/missions/hubble/hubbles-neptune-anniversary-pictures/",
+          "authority_type": "official space agency (NASA) science page",
           "date_context": "event-date",
-          "date_quote": "An unidentified flash on 22 September 1979 in the far South Atlantic",
-          "fact_quote": "detected by a U.S. VELA satellite",
-          "retrieved_sha256": "55faff9f1feb6bb76177edaf3ee88d6a24306738ca793c892dbbe59f6b4ba1ab",
+          "date_quote": "German astronomer Johann Galle discovered the planet on September 23, 1846.",
+          "fact_quote": "The giant planet experiences seasons just as Earth does, because it is tilted 29 degrees",
+          "retrieved_sha256": "225baae07d8006463284036ff2aa6bbd5cc376c7a33c2371cf50970a16772c14",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2006年",
-      "title": "日出号太阳观测卫星升空",
-      "text": "日本与美英合作的太阳观测卫星从内之浦由M-V火箭送入轨道，搭载光学望远镜、X射线望远镜与极紫外成像光谱仪，长期连续观测太阳大气与耀斑，为研究太阳活动对地球空间环境的影响积累数据。",
-      "item_sha256": "655bbb2258738c5c42b899dae1530379897e9064c9287f49c69aedaf3b9f78df",
+      "label": "1915年",
+      "title": "用中子看清原子排列的人",
+      "text": "美国物理学家舒尔生于匹兹堡。他在橡树岭把反应堆产生的中子束射向材料，从衍射花样里读出原子与磁矩的排布，让中子成为研究凝聚态结构的常规探针，1994年因此获得诺贝尔物理学奖。",
+      "item_sha256": "1ec996536f01e85a0bf81d917c08f59e3312934e0880395247c4e803d9609848",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/prizes/physics/1994/shull/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1994/shull/facts/",
+          "authority_type": "official archive (Nobel Prize)",
+          "date_context": "event-date",
+          "date_quote": "Born: 23 September 1915, Pittsburgh, PA, USA",
+          "fact_quote": "for the development of the neutron diffraction technique",
+          "retrieved_sha256": "077da9d1a1130b46739a691ab722f2b774bc232ae6845bfac5fd24a357c0d9ca",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1975年",
+      "title": "飓风埃洛伊丝冲上佛州海岸",
+      "text": "埃洛伊丝以强飓风强度在佛罗里达沃尔顿堡滩以东登陆，风暴潮冲毁码头与沙丘，埃格林空军基地录得每小时一百八十多公里的阵风。这场风暴促使美国气象部门加强飓风观测和沿岸预警。",
+      "item_sha256": "3ecea7a9101772cb4e28f1f2bc6dd540439e3c513c1760e19045b4100b9d82db",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.esa.int/Science_Exploration/Space_Science/Hinode_Solar-B_overview",
-          "final_url": "https://www.esa.int/Science_Exploration/Space_Science/Hinode_Solar-B_overview",
-          "authority_type": "official agency page",
+          "url": "https://www.weather.gov/mob/eloise",
+          "final_url": "https://www.weather.gov/mob/eloise",
+          "authority_type": "official weather service (US National Weather Service)",
           "date_context": "event-date",
-          "date_quote": "Launched on 22 September 2006, Hinode (Solar-B) is a Japanese-led mission with ESA participation",
-          "fact_quote": "to study the mechanisms which power the solar atmosphere",
-          "retrieved_sha256": "aae2a93839725036c6b0dfd866d371055e06025422906158dc72df7c83b196a6",
+          "date_quote": "Weather.gov > Mobile/Pensacola > Hurricane Eloise - September 23, 1975",
+          "fact_quote": "Strengthening continued until Eloise made landfall as a major hurricane about 10 miles east of Fort Walton Beach, FL (Okaloosa County) at approximately 7am CDT on the 23rd.",
+          "retrieved_sha256": "58fc1cb9d71f0e68e664373b07c9b61508add9f695a87b428dcb3f08560cf911",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2018年",
+      "title": "把玻璃丝变成通信干线的人",
+      "text": "高锟在香港去世。他早年指出，玻璃里的杂质才是光损耗的根源，只要把光纤提纯到足够程度，就能用光长距离传送信息。这一判断催生了光纤通信，他在2009年获得诺贝尔物理学奖。",
+      "item_sha256": "b48bb53737a11e41d2dc52059244e467f35a3762a9963fc0977c9b75eac9cdf5",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/prizes/physics/2009/kao/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/2009/kao/facts/",
+          "authority_type": "official archive (Nobel Prize)",
+          "date_context": "event-date",
+          "date_quote": "Died: 23 September 2018, Hong Kong, N/A",
+          "fact_quote": "for groundbreaking achievements concerning the transmission of light in fibers for optical communication",
+          "retrieved_sha256": "ae10eddc35beb75f522af1d1dafcee89f54a4b18ab9483446196a82554e64b51",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2023年",
+      "title": "奥菲莉亚清晨登陆北卡",
+      "text": "由大西洋沿岸一个非热带低压发展成的奥菲莉亚，在北卡罗来纳州翡翠岛一带登陆，给东南沿海带来风暴潮和强降雨，彭德、新汉诺威两县出现轻度风灾与海水倒灌。",
+      "item_sha256": "db28c17fff95b5f4f5c06212f3cd6c2b9c9f915d786f2aba1e950e03872da9e8",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.weather.gov/ilm/TropicalStormOphelia2023",
+          "final_url": "https://www.weather.gov/ilm/TropicalStormOphelia2023",
+          "authority_type": "official weather service (US National Weather Service)",
+          "date_context": "event-date",
+          "date_quote": "making landfall at Emerald Isle, NC during the early morning of September 23, 2023.",
+          "fact_quote": "Tropical Storm Ophelia developed from a non-tropical low off the Southeast U.S. coast",
+          "retrieved_sha256": "36259e135bb0caeb5cac98420dea7aa9716362097e887cc459772c0b2af80061",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-22:d2a3f8ca702e90ce34db733d3e5a855627bfd207774c19fcfb9cb0c64177e4ef",
-  "public_json_sha256": "7e77fdf0dfa4401924f47c701f9c56497e00ecde113342c5df519e24579b6230",
-  "poster_sha256": "c0314be61293759773620ab4ee565ae0e24fa3a0c8a8a45b346ab1f4e7959031",
-  "poster_bytes": 1521258,
+  "delivery_id": "2026-09-23:46ccb61fc7c40c354c631304cd00aea0fc27164a7965a65e4a44cffe597f8440",
+  "public_json_sha256": "64b1b54f60684b7a295ccfbce353ec103e3cd3175507795ad310ca6fed953b61",
+  "poster_sha256": "c8b5fc9927aec19917459c0d21914df1fff5bf505ce371b2854053d84a9db67d",
+  "poster_bytes": 1503972,
   "poster_dimensions": {
     "width": 2160,
     "height": 3580
