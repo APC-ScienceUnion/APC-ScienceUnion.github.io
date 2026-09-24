@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-23",
+  "date": "2026-09-24",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,117 +8,160 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1846年",
-      "title": "夜空里多出的一颗星",
-      "text": "柏林天文台的伽勒和学生达雷斯特收到勒维耶寄来的坐标，当晚对照星图找到一颗多出来的暗星，位置误差不到一度。由天王星轨道扰动反推未知行星、再用望远镜看到它，从此成为天文学的手段。",
-      "item_sha256": "5f9a9a0211b63fda1316c4e5e296fcf411f5cdafa7d2936f8beea9aa4b953842",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://science.nasa.gov/missions/hubble/hubbles-neptune-anniversary-pictures/",
-          "final_url": "https://science.nasa.gov/missions/hubble/hubbles-neptune-anniversary-pictures/",
-          "authority_type": "official space agency (NASA) science page",
-          "date_context": "event-date",
-          "date_quote": "German astronomer Johann Galle discovered the planet on September 23, 1846.",
-          "fact_quote": "The giant planet experiences seasons just as Earth does, because it is tilted 29 degrees",
-          "retrieved_sha256": "225baae07d8006463284036ff2aa6bbd5cc376c7a33c2371cf50970a16772c14",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1915年",
-      "title": "用中子看清原子排列的人",
-      "text": "美国物理学家舒尔生于匹兹堡。他在橡树岭把反应堆产生的中子束射向材料，从衍射花样里读出原子与磁矩的排布，让中子成为研究凝聚态结构的常规探针，1994年因此获得诺贝尔物理学奖。",
-      "item_sha256": "1ec996536f01e85a0bf81d917c08f59e3312934e0880395247c4e803d9609848",
+      "label": "1895年",
+      "title": "库尔南：心导管技术先驱",
+      "text": "法国医生安德烈·库尔南出生。他后来参与改进心导管技术，把细管经血管送入心腔测量压力并注入造影剂，让医生得以直接观察心脏与循环，为现代心脏病学打下基础。",
+      "item_sha256": "dfd2bc90caea2b04d7a7b3914c4d3877a4cad32498f3610f3db7492175a720a2",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/physics/1994/shull/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/physics/1994/shull/facts/",
-          "authority_type": "official archive (Nobel Prize)",
+          "url": "https://www.nobelprize.org/prizes/medicine/1956/cournand/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1956/cournand/facts/",
+          "authority_type": "nobel prize archive",
           "date_context": "event-date",
-          "date_quote": "Born: 23 September 1915, Pittsburgh, PA, USA",
-          "fact_quote": "for the development of the neutron diffraction technique",
-          "retrieved_sha256": "077da9d1a1130b46739a691ab722f2b774bc232ae6845bfac5fd24a357c0d9ca",
+          "date_quote": "Born: 24 September 1895",
+          "fact_quote": "for their discoveries concerning heart catheterization and pathological changes in the circulatory system",
+          "retrieved_sha256": "c14bf111d87a564def4f0d669d970230d9ca16d3580222fb9dc72254d24774e2",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1975年",
-      "title": "飓风埃洛伊丝冲上佛州海岸",
-      "text": "埃洛伊丝以强飓风强度在佛罗里达沃尔顿堡滩以东登陆，风暴潮冲毁码头与沙丘，埃格林空军基地录得每小时一百八十多公里的阵风。这场风暴促使美国气象部门加强飓风观测和沿岸预警。",
-      "item_sha256": "3ecea7a9101772cb4e28f1f2bc6dd540439e3c513c1760e19045b4100b9d82db",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.weather.gov/mob/eloise",
-          "final_url": "https://www.weather.gov/mob/eloise",
-          "authority_type": "official weather service (US National Weather Service)",
-          "date_context": "event-date",
-          "date_quote": "Weather.gov > Mobile/Pensacola > Hurricane Eloise - September 23, 1975",
-          "fact_quote": "Strengthening continued until Eloise made landfall as a major hurricane about 10 miles east of Fort Walton Beach, FL (Okaloosa County) at approximately 7am CDT on the 23rd.",
-          "retrieved_sha256": "58fc1cb9d71f0e68e664373b07c9b61508add9f695a87b428dcb3f08560cf911",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2018年",
-      "title": "把玻璃丝变成通信干线的人",
-      "text": "高锟在香港去世。他早年指出，玻璃里的杂质才是光损耗的根源，只要把光纤提纯到足够程度，就能用光长距离传送信息。这一判断催生了光纤通信，他在2009年获得诺贝尔物理学奖。",
-      "item_sha256": "b48bb53737a11e41d2dc52059244e467f35a3762a9963fc0977c9b75eac9cdf5",
+      "label": "1904年",
+      "title": "芬森：光疗的开拓者",
+      "text": "丹麦医生尼尔斯·吕贝里·芬森逝世。他提出用聚光的光线治疗狼疮等皮肤结核，并研制出早期的光疗装置，把光辐射变成一种医疗手段，因此获得诺贝尔生理学或医学奖。",
+      "item_sha256": "45d4094381a10b2f59ff218f0771384c339f054552301ea6f5330a44fd0146cb",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/physics/2009/kao/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/physics/2009/kao/facts/",
-          "authority_type": "official archive (Nobel Prize)",
+          "url": "https://www.nobelprize.org/prizes/medicine/1903/finsen/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1903/finsen/facts/",
+          "authority_type": "nobel prize archive",
           "date_context": "event-date",
-          "date_quote": "Died: 23 September 2018, Hong Kong, N/A",
-          "fact_quote": "for groundbreaking achievements concerning the transmission of light in fibers for optical communication",
-          "retrieved_sha256": "ae10eddc35beb75f522af1d1dafcee89f54a4b18ab9483446196a82554e64b51",
+          "date_quote": "Died: 24 September 1904",
+          "fact_quote": "in recognition of his contribution to the treatment of diseases, especially lupus vulgaris, with concentrated light radiation",
+          "retrieved_sha256": "ebd560341aecf4091d8156b72ff179fbd41723da346f718720ed3c8fb489e7d3",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2023年",
-      "title": "奥菲莉亚清晨登陆北卡",
-      "text": "由大西洋沿岸一个非热带低压发展成的奥菲莉亚，在北卡罗来纳州翡翠岛一带登陆，给东南沿海带来风暴潮和强降雨，彭德、新汉诺威两县出现轻度风灾与海水倒灌。",
-      "item_sha256": "db28c17fff95b5f4f5c06212f3cd6c2b9c9f915d786f2aba1e950e03872da9e8",
+      "label": "1906年",
+      "title": "魔鬼塔划为国家纪念地",
+      "text": "美国总统罗斯福签署公告，把怀俄明州高耸的火山岩柱“魔鬼塔”划为国家纪念地，让它免遭商业开发。此后美国陆续设立大量同类保护地，为地质与自然研究留出长期观察与教学的场所。",
+      "item_sha256": "05101fb6e742ee2a33b13d2035886682968cc7163e04020417e45dbc14d57484",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.weather.gov/ilm/TropicalStormOphelia2023",
-          "final_url": "https://www.weather.gov/ilm/TropicalStormOphelia2023",
-          "authority_type": "official weather service (US National Weather Service)",
+          "url": "https://www.nps.gov/deto/learn/historyculture/early-conservationists.htm",
+          "final_url": "https://www.nps.gov/deto/learn/historyculture/early-conservationists.htm",
+          "authority_type": "national park service",
           "date_context": "event-date",
-          "date_quote": "making landfall at Emerald Isle, NC during the early morning of September 23, 2023.",
-          "fact_quote": "Tropical Storm Ophelia developed from a non-tropical low off the Southeast U.S. coast",
-          "retrieved_sha256": "36259e135bb0caeb5cac98420dea7aa9716362097e887cc459772c0b2af80061",
+          "date_quote": "President Theodore Roosevelt proclaimed Devils Tower as the first national monument on September 24, 1906",
+          "fact_quote": "President Theodore Roosevelt proclaimed Devils Tower as the first national monument",
+          "retrieved_sha256": "de2ad0c3a9cbaa4ec17c85a58b307d3bc7d3782703ac7ebe09dea99049c48b40",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1929年",
+      "title": "席格蒙迪与胶体化学",
+      "text": "奥地利裔化学家理查德·席格蒙迪逝世。他用超显微镜追踪胶体微粒的布朗运动，说明胶体溶液并不均匀，还发展出一套研究胶体的方法，为胶体化学建立起实验基础。",
+      "item_sha256": "6e41861e0a9a6a6376d254c2decdfa99ca8230501f02c1a98386426fc0d11d90",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/prizes/chemistry/1925/zsigmondy/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/chemistry/1925/zsigmondy/facts/",
+          "authority_type": "nobel prize archive",
+          "date_context": "event-date",
+          "date_quote": "Died: 24 September 1929",
+          "fact_quote": "for his demonstration of the heterogenous nature of colloid solutions and for the methods he used",
+          "retrieved_sha256": "7b17acc0c650323c98b376fc93dde24619ac820a9be58f03ac092ab8fcb28a44",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2014年",
+      "title": "印度探测器入轨火星",
+      "text": "印度“曼加里安”号经约三百天行星际飞行后点燃主发动机减速，被火星引力捕获进入环绕轨道。印度由此跻身少数把探测器送入火星轨道的国家，并且首次尝试即取得成功。",
+      "item_sha256": "a47d0b5a59b0cacda1cf660c8a97de70a7686010c7804890e298c5be928e6518",
+      "strong_claim": true,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.isro.gov.in/Mars%20Orbiter%20Mission.html",
+          "final_url": "https://www.isro.gov.in/Mars%20Orbiter%20Mission.html",
+          "authority_type": "national space agency",
+          "date_context": "event-date",
+          "date_quote": "successfully got inserted into Martian orbit on September 24, 2014 in its first attempt",
+          "fact_quote": "launched on November 5, 2013 successfully got inserted into Martian orbit on September 24, 2014 in its first attempt",
+          "retrieved_sha256": "4c5e40e1ef57703d1b2611a6d9fd52352e9d4b3e71d7ab5f7a12989dae2d9306",
+          "content_type": "text/html"
+        },
+        {
+          "level": "A",
+          "url": "https://www.issdc.gov.in/marsmission.html",
+          "final_url": "https://www.issdc.gov.in/marsmission.html",
+          "authority_type": "national space data centre",
+          "date_context": "event-date",
+          "date_quote": "got inserted into Martian orbit on September 24, 2014 in its first attempt",
+          "fact_quote": "Mars Orbiter Mission (MOM), the maiden interplanetary mission of ISRO, launched on November 5, 2013 by PSLV-C25",
+          "retrieved_sha256": "3681f6420a2c4b3fd6c017a63548d1ef460c8d5394c44f969a1f1380bc205da9",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2025年",
+      "title": "日球层探测器升空",
+      "text": "美国发射“星际测绘与加速探测器”，同行的还有研究地球外逸辉的“卡拉瑟斯”天文台。前者飞向日地之间的拉格朗日点，长期观测太阳风与星际介质的交界，研究日球层怎样为地球挡下高能粒子。",
+      "item_sha256": "cbd09ee572e517d34660c6ea926119b3edc81ff095b70f35b5a59ab4c447e1d5",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://science.nasa.gov/science-missions",
+          "final_url": "https://science.nasa.gov/science-missions/",
+          "authority_type": "national space agency",
+          "date_context": "event-date",
+          "date_quote": "Launched September 24, 2025, IMAP will help researchers better understand the boundary of the heliosphere",
+          "fact_quote": "IMAP will help researchers better understand the boundary of the heliosphere, a huge bubble created by the Sun surrounding and protecting our solar system",
+          "retrieved_sha256": "d4910eb4de90ae9ff86bff844f28d375742e5653d949c0b0954b71f19e8e562d",
+          "content_type": "text/html"
+        },
+        {
+          "level": "A",
+          "url": "https://science.nasa.gov/mission/carruthers-geocorona-observatory",
+          "final_url": "https://science.nasa.gov/mission/carruthers-geocorona-observatory/",
+          "authority_type": "national space agency",
+          "date_context": "event-date",
+          "date_quote": "Launch September 24, 2025",
+          "fact_quote": "The Carruthers observatory studies Earth’s geocorona, the ultraviolet glow emitted by Earth's exosphere",
+          "retrieved_sha256": "44ffb6ab6e6e0e10d5f707cd8dc5f34bf957242f5c8f4d5e30f1d3faa91bdf7e",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-23:46ccb61fc7c40c354c631304cd00aea0fc27164a7965a65e4a44cffe597f8440",
-  "public_json_sha256": "64b1b54f60684b7a295ccfbce353ec103e3cd3175507795ad310ca6fed953b61",
-  "poster_sha256": "c8b5fc9927aec19917459c0d21914df1fff5bf505ce371b2854053d84a9db67d",
-  "poster_bytes": 1503972,
+  "delivery_id": "2026-09-24:294cbafa85fedfe06fc7f52b6492eedf97f88e37ec3e160f1201566ff97f7821",
+  "public_json_sha256": "497d805e5dd106d28d02e21b96c1da54f77d8dc0578d3eda70207e6f41fe34a0",
+  "poster_sha256": "ff46ea9f534accd559330295e68d50bf0e04993e4be6bc04e5b7748d6685057b",
+  "poster_bytes": 1606712,
   "poster_dimensions": {
     "width": 2160,
-    "height": 3580
+    "height": 4070
   }
 }
