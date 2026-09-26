@@ -390,9 +390,9 @@
       
         <tags>
             
-            <tag> 化学 </tag>
-            
             <tag> 材料科学 </tag>
+            
+            <tag> 化学 </tag>
             
             <tag> 能源 </tag>
             
@@ -651,8 +651,6 @@
             
             <tag> 计算机科学 </tag>
             
-            <tag> 投稿作品 </tag>
-            
             <tag> 知识图谱 </tag>
             
             <tag> 大型语言模型 </tag>
@@ -664,6 +662,8 @@
             <tag> KGs </tag>
             
             <tag> RAG </tag>
+            
+            <tag> 投稿作品 </tag>
             
         </tags>
       
@@ -777,9 +777,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 航天 </tag>
             
@@ -837,9 +837,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 宇宙 </tag>
             
@@ -930,9 +930,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 恒星 </tag>
             
@@ -1050,6 +1050,8 @@
             
             <tag> 计算机科学 </tag>
             
+            <tag> 投稿作品 </tag>
+            
             <tag> GAN </tag>
             
             <tag> 对抗学习 </tag>
@@ -1059,8 +1061,6 @@
             <tag> VAE </tag>
             
             <tag> 变分自编码器 </tag>
-            
-            <tag> 投稿作品 </tag>
             
         </tags>
       
@@ -1143,9 +1143,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 恒星 </tag>
             
@@ -1302,13 +1302,13 @@
       
         <tags>
             
+            <tag> 科普组第24小组 </tag>
+            
             <tag> 天文学 </tag>
             
             <tag> 地球 </tag>
             
             <tag> 月球 </tag>
-            
-            <tag> 科普组第24小组 </tag>
             
         </tags>
       
@@ -1391,8 +1391,6 @@
       
         <tags>
             
-            <tag> 科普组第24小组 </tag>
-            
             <tag> 颜色心理学 </tag>
             
             <tag> 心理学 </tag>
@@ -1400,6 +1398,8 @@
             <tag> 设计 </tag>
             
             <tag> 用户体验 </tag>
+            
+            <tag> 科普组第24小组 </tag>
             
         </tags>
       
@@ -1672,9 +1672,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 白矮星 </tag>
             
@@ -2503,9 +2503,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 历法 </tag>
             
@@ -2710,9 +2710,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 天体表 </tag>
             
@@ -2890,9 +2890,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 历法 </tag>
             
@@ -3020,9 +3020,9 @@
       
         <tags>
             
-            <tag> 进化 </tag>
-            
             <tag> 科普 </tag>
+            
+            <tag> 进化 </tag>
             
             <tag> 生物学 </tag>
             
@@ -3245,9 +3245,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 历法 </tag>
             
@@ -3309,9 +3309,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 星空 </tag>
             
@@ -3650,11 +3650,11 @@
       
         <tags>
             
-            <tag> 科普 </tag>
+            <tag> 化学 </tag>
             
             <tag> 自然科学 </tag>
             
-            <tag> 化学 </tag>
+            <tag> 科普 </tag>
             
             <tag> 理论 </tag>
             
