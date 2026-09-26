@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-25",
+  "date": "2026-09-26",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,75 +8,117 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1866年",
-      "title": "摩尔根出生：果蝇走进遗传学",
-      "text": "美国遗传学家托马斯·亨特·摩根出生。他用果蝇做繁殖实验，统计大量后代的性状分布，把基因定位到染色体上，发现基因成串排列、染色体之间还能交换片段，果蝇由此成为遗传学的重要实验动物。",
-      "item_sha256": "3548e1925ebcecfc96cbdb5c0f97c0fa891cdf40008701e2e3fbbc6004f62815",
+      "label": "1891年",
+      "title": "赖兴巴赫出生",
+      "text": "科学哲学家汉斯·赖兴巴赫出生于汉堡。他研究相对论与量子力学的哲学基础，主张几何与时空陈述必须由经验测量来检验，一九二八年在柏林创立经验哲学学会，成为逻辑经验主义的重要一翼。",
+      "item_sha256": "03bb53caf6b80eba5ede811e654b02d7b1680540e1b5bdedaf3a20697615f66b",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/325",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1933/morgan/facts/",
-          "authority_type": "official archive",
+          "url": "https://iep.utm.edu/reichenb/",
+          "final_url": "https://iep.utm.edu/reichenb/",
+          "authority_type": "university encyclopedia",
           "date_context": "event-date",
-          "date_quote": "Born: 25 September 1866, Lexington, KY, USA",
-          "fact_quote": "for his discoveries concerning the role played by the chromosome in heredity",
-          "retrieved_sha256": "aba3db1a5dda419663fb64ea3c56c14dc5fb72a09d6a497e88d5d422874070d7",
+          "date_quote": "Hans Reichenbach was born on September 26, 1891 in Hamburg, Germany.",
+          "fact_quote": "He studied physics, mathematics and philosophy at the universities of Berlin, Erlangen, Göttingen, and Munich in the 1910s.",
+          "retrieved_sha256": "0cd354c048c8400a72532ba0f9d0de3f8911b0cfa87c4992b46f91d59aa86c65",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1992年",
-      "title": "火星观测者号升空",
-      "text": "美国宇航局发射火星观测者号探测器，接续中断十七年的火星轨道探测。探测器载有相机、激光测高仪和伽马射线谱仪，计划用一整个火星年测绘火星地形、大气与磁场；一年后它在进入火星轨道前失联。",
-      "item_sha256": "a86ef41b5c83216a66525be76ec70291aed7a37e9e22712c95e48b94e43c3ebf",
+      "label": "1978年",
+      "title": "西格班逝世",
+      "text": "瑞典物理学家曼内·西格班在斯德哥尔摩去世。他改进 X 射线光谱的测量装置与方法，让不同元素的特征谱线波长精确可比，为原子结构与量子理论提供关键数据，并获一九二四年诺贝尔物理学奖。",
+      "item_sha256": "b5532ee7ad48131cfbbb1591d54139d38a8e1b9650b6760a790b4ce1eca24b5b",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/prizes/physics/1924/siegbahn/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1924/siegbahn/facts/",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "26 September 1978, Stockholm, Sweden",
+          "fact_quote": "Manne Siegbahn developed apparatus and methods for improving accuracy when mapping x-ray spectra.",
+          "retrieved_sha256": "4636bc8af5eff1ff6f619c7744b1c475b0018f121aabdc32f4a7fabe431bfdaa",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1996年",
+      "title": "露西德结束188天太空驻留",
+      "text": "亚特兰蒂斯号航天飞机在肯尼迪航天中心着陆，宇航员香农·露西德随机返回，她已在和平号空间站连续生活一百八十八天，写下美国宇航员长时间太空飞行的新纪录。",
+      "item_sha256": "f2608121caf4e689bc03beed3eb093b00e4031f70e2b2135a453bf897b5dc234",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://heasarc.gsfc.nasa.gov/docs/heasarc/missions/marsobs.html",
-          "final_url": "https://heasarc.gsfc.nasa.gov/docs/heasarc/missions/marsobs.html",
-          "authority_type": "government agency",
+          "url": "https://www.nasa.gov/mission/sts-79",
+          "final_url": "https://www.nasa.gov/mission/sts-79/",
+          "authority_type": "government agency archive",
           "date_context": "event-date",
-          "date_quote": "It was launched on September 25, 1992 from Kennedy Space Center aboard a Titan III rocket.",
-          "fact_quote": "The Mars Observer mission spacecraft was primarily designed for exploring Mars and the Martian environment.",
-          "retrieved_sha256": "80431714f4b2b85d5de8d7ce6b0d3483fcb4629435bd5932b624965ae1123700",
+          "date_quote": "Landing: September 26, 1996, 8:13:15 a.m. EDT",
+          "fact_quote": "STS-79 highlighted by return to Earth of U.S. astronaut Lucid after 188 days in space, first U.S. crew exchange aboard Russian Space Station Mir, and fourth Shuttle-Mir docking.",
+          "retrieved_sha256": "5df6b9b7825c3b25ce5836b88daaed2250bb8759ca11dbcc79b89acb8d400c24",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2003年",
-      "title": "莫迪利阿尼逝世：把储蓄放进模型",
-      "text": "意大利裔美国经济学家佛朗哥·莫迪利阿尼逝世。他提出的生命周期假说解释人们为何中年多储蓄、退休后动用积蓄，与同事建立的MM定理则让公司融资与资本市场成为可计算的研究对象。",
-      "item_sha256": "b9ff24b1b38ee1d546cf70a58c6335221db8f31731404a02cd09c61987ed58f9",
+      "label": "2022年",
+      "title": "DART 撞上小行星",
+      "text": "美国航天局的 DART 探测器撞上小行星迪莫弗斯，撞击时速约两万两千五百公里，用主动撞击的方式改变天体轨道；后续观测显示，迪莫弗斯绕母星的公转周期缩短了约半小时。",
+      "item_sha256": "fce49243c001bfab014a3c3e35d83ab5510df6dde602f03e2e15ef54d0a0a01f",
       "strong_claim": false,
-      "person_event": true,
+      "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/699",
-          "final_url": "https://www.nobelprize.org/prizes/economic-sciences/1985/modigliani/facts/",
-          "authority_type": "official archive",
+          "url": "https://nightsky.jpl.nasa.gov/events/22610",
+          "final_url": "https://nightsky.jpl.nasa.gov/events/22610/",
+          "authority_type": "government agency",
           "date_context": "event-date",
-          "date_quote": "Died: 25 September 2003, Cambridge, MA, USA",
-          "fact_quote": "for his pioneering analyses of saving and of financial markets",
-          "retrieved_sha256": "28a80c67778c86cec7e896cc7b22b8cac799c8d34f568f058015838c2bb92bd7",
+          "date_quote": "The DART spacecraft will intentionally crash into asteroid Dimorphos at 7:14 p.m. ET on Monday, September 26, 2022",
+          "fact_quote": "attempts humanity’s first-ever test of planetary defense",
+          "retrieved_sha256": "2114ce2ddcf76f4be83f8b0d62beac7e35ed5019e8fd7659c77b65d085938631",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2024年",
+      "title": "飓风海伦妮登陆佛罗里达",
+      "text": "四级飓风海伦妮在佛罗里达州大本德地区登陆，持续风速约每小时一百四十英里，带来数米高的风暴潮。灾情随后向北蔓延，北卡罗来纳山区出现严重洪灾，成为多年来美国本土致死人数最多的飓风之一。",
+      "item_sha256": "ae4e70c89b71dfa6b25d8dbc44032ac8943272c5c2529d77d33684ecc9c857c0",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://satlib.cira.colostate.edu/event/hurricane-helene",
+          "final_url": "https://satlib.cira.colostate.edu/event/hurricane-helene/",
+          "authority_type": "university archive",
+          "date_context": "event-date",
+          "date_quote": "just before midnight on September 26, 2024",
+          "fact_quote": "Helene underwent rapid intensification on September 26, 2024, reaching its peak as category 4 hurricane that afternoon as it accelerated towards Florida.",
+          "retrieved_sha256": "283f3215d01f708d1a48d8bc54131cd3f0f90c60651dbaf19dcd124a1dd37763",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-25:c0f017cf99cd1422cd6e6f4c5f921a5f9d7cac9bf24a6d182c095932aaeef97c",
-  "public_json_sha256": "31a63071c92bbb66c6195e4f69a84ecc1073af7ec81e7446d276dc968a00e1a7",
-  "poster_sha256": "b485091a02a4e448ed6b6471cbbccb5be820fdbde6a623958e601caf120881a5",
-  "poster_bytes": 1231769,
+  "delivery_id": "2026-09-26:30c10a694aa90759d6b42fd7911bf93f6547db3f7e7eb7437604de394f87d158",
+  "public_json_sha256": "0b75c026f93bbad66f0b10433bc46ba217d03b397af1a908ed84a76b3c006bf3",
+  "poster_sha256": "a5687422afc9e16c092c7f40588c6f1c7d95b6e1dc5db9bb17082ea14c9327f2",
+  "poster_bytes": 1468649,
   "poster_dimensions": {
     "width": 2160,
-    "height": 2596
+    "height": 3580
   }
 }
