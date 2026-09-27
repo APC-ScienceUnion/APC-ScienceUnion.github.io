@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-26",
+  "date": "2026-09-27",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,117 +8,223 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1891年",
-      "title": "赖兴巴赫出生",
-      "text": "科学哲学家汉斯·赖兴巴赫出生于汉堡。他研究相对论与量子力学的哲学基础，主张几何与时空陈述必须由经验测量来检验，一九二八年在柏林创立经验哲学学会，成为逻辑经验主义的重要一翼。",
-      "item_sha256": "03bb53caf6b80eba5ede811e654b02d7b1680540e1b5bdedaf3a20697615f66b",
+      "label": "1822年",
+      "title": "商博良破译古埃及圣书体",
+      "text": "法国学者商博良在法兰西文学院宣读《致达西耶先生的信》，公布他从罗塞塔石碑找出的圣书体表音规律。此前无人能读的埃及铭文，从此变成可以逐句核对的史料，埃及学由这封信起步。",
+      "item_sha256": "1172e5b3a0636669d76b669a25a90db0fda6ad9510a843c8a59e0e8ce08ac6e6",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Champollion",
+          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Champollion/",
+          "authority_type": "university mathematics history archive",
+          "date_context": "event-date",
+          "date_quote": "On 27 September 1822 he announced his major breakthrough in a paper to the Academy of Inscriptions",
+          "fact_quote": "founded scientific Egyptology and played a major role in the decipherment of Egyptian hieroglyphics",
+          "retrieved_sha256": "ddd5fcc99235c33ca4b8ce7e7775deb3a81a1bb3e8701c3cadfb36be8424f454",
+          "content_type": "text/html"
+        },
+        {
+          "level": "A",
+          "url": "https://history.rcp.ac.uk/blog/thomas-young-and-decipherment-hieroglyphics",
+          "final_url": "https://history.rcp.ac.uk/blog/thomas-young-and-decipherment-hieroglyphics",
+          "authority_type": "royal college museum page",
+          "date_context": "event-date",
+          "date_quote": "On 27 September 1822, he announced his breakthrough at a meeting of the Académie des Inscriptions et Belles-Lettres in Paris.",
+          "fact_quote": "Champollion also focused on cartouches, this time found on other monuments, and built up an extensive alphabet of hieroglyphs with their Greek equivalents.",
+          "retrieved_sha256": "08bfefbfd772a2f0ceea57dd34693bc4c940ba09bb4348cb460562a9a91a584c",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1905年",
+      "title": "爱因斯坦写下质能互换",
+      "text": "《物理学年鉴》编辑部收到爱因斯坦的三页短文《物体的惯性同它所含的能量有关吗？》。文中说明物体辐射出能量后质量会减少，质量与能量可以互相换算，这条关系后来被写成 E=mc²。",
+      "item_sha256": "5a08250bacd9a0ef6bd90c3bef6379534fbe784890ecbb16c1c65ef3ea067420",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://physicstoday.aip.org/news/einstein-paper",
+          "final_url": "https://physicstoday.aip.org/news/einstein-paper",
+          "authority_type": "professional society history",
+          "date_context": "event-date",
+          "date_quote": "Date in History: 27 September 1905",
+          "fact_quote": "On this day in 1905, a paper arrived at the editorial offices of the journal Annalen der Physik.",
+          "retrieved_sha256": "ab01c96fa4f1b74c095191e78fffab77231e0290d5be06f5233ff1eaf1c7fb52",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1918年",
+      "title": "射电天文学先驱赖尔出生",
+      "text": "马丁·赖尔生于英国布莱顿。他把相隔数公里的多台天线信号按相位叠加，用“综合孔径”凑出一架等效口径极大的射电望远镜，让射电观测得以分辨遥远星系的细节，1974年获诺贝尔物理学奖。",
+      "item_sha256": "8bdf490702abefe0440cee0975a49ea17e8ed89caa79f4a058ba6cb919c991f7",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://iep.utm.edu/reichenb/",
-          "final_url": "https://iep.utm.edu/reichenb/",
-          "authority_type": "university encyclopedia",
+          "url": "https://api.nobelprize.org/2.1/laureate/100",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/100",
+          "authority_type": "official prize archive",
           "date_context": "event-date",
-          "date_quote": "Hans Reichenbach was born on September 26, 1891 in Hamburg, Germany.",
-          "fact_quote": "He studied physics, mathematics and philosophy at the universities of Berlin, Erlangen, Göttingen, and Munich in the 1910s.",
-          "retrieved_sha256": "0cd354c048c8400a72532ba0f9d0de3f8911b0cfa87c4992b46f91d59aa86c65",
+          "date_quote": "\"birth\":{\"date\":\"1918-09-27\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for their pioneering research in radio astrophysics",
+          "retrieved_sha256": "71a10b187e53460b541e9bfdde8da11b833056e3fb61a291416b891dd4f19c42",
+          "content_type": "application/json"
+        },
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/laureate/100",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1974/ryle/facts/",
+          "authority_type": "official prize archive",
+          "date_context": "event-date",
+          "date_quote": "Born: 27 September 1918, Brighton, United Kingdom",
+          "fact_quote": "By connecting a number of telescopes several kilometers from one another, he created the equivalent of a telescope as large as the entire surface between the individual telescopes.",
+          "retrieved_sha256": "0c200328cbdfed704e8a01ab2959f26aa5ded074b39da4db22d0cb97c98f4c13",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1978年",
-      "title": "西格班逝世",
-      "text": "瑞典物理学家曼内·西格班在斯德哥尔摩去世。他改进 X 射线光谱的测量装置与方法，让不同元素的特征谱线波长精确可比，为原子结构与量子理论提供关键数据，并获一九二四年诺贝尔物理学奖。",
-      "item_sha256": "b5532ee7ad48131cfbbb1591d54139d38a8e1b9650b6760a790b4ce1eca24b5b",
+      "label": "1925年",
+      "title": "试管婴儿先驱爱德华兹出生",
+      "text": "罗伯特·爱德华兹生于英格兰巴特利。他摸索出让卵子在体外受精、并培养到可以移植回母体的方法，1978年与斯特普托迎来世界首例试管婴儿路易丝·布朗，2010年获诺贝尔生理学或医学奖。",
+      "item_sha256": "491645f95ab2123b8fbc7bf0fe755ddd5a75abd7ad74b1dd1cf175be7f539932",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/physics/1924/siegbahn/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/physics/1924/siegbahn/facts/",
-          "authority_type": "official archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/848",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/848",
+          "authority_type": "official prize archive",
           "date_context": "event-date",
-          "date_quote": "26 September 1978, Stockholm, Sweden",
-          "fact_quote": "Manne Siegbahn developed apparatus and methods for improving accuracy when mapping x-ray spectra.",
-          "retrieved_sha256": "4636bc8af5eff1ff6f619c7744b1c475b0018f121aabdc32f4a7fabe431bfdaa",
-          "content_type": "text/html"
+          "date_quote": "\"birth\":{\"date\":\"1925-09-27\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for the development of in vitro fertilization\"",
+          "retrieved_sha256": "f73db79bb96978dfe851132a79e0bc746b9b0e6244ea0917cabdc7a7e6c2c4f0",
+          "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1996年",
-      "title": "露西德结束188天太空驻留",
-      "text": "亚特兰蒂斯号航天飞机在肯尼迪航天中心着陆，宇航员香农·露西德随机返回，她已在和平号空间站连续生活一百八十八天，写下美国宇航员长时间太空飞行的新纪录。",
-      "item_sha256": "f2608121caf4e689bc03beed3eb093b00e4031f70e2b2135a453bf897b5dc234",
+      "label": "1932年",
+      "title": "威廉姆森与新制度经济学",
+      "text": "奥利弗·威廉姆森生于美国威斯康星州苏必利尔。他用交易成本解释企业为什么存在、规模会停在哪里，把组织与契约问题变成可以检验的经济学题目，2009年获诺贝尔经济学奖。",
+      "item_sha256": "077db7eae2f26328238f0b3efb77ab904a88b3378dc8a8ca8c313f7ed64cc5a9",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/847",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/847",
+          "authority_type": "official prize archive",
+          "date_context": "event-date",
+          "date_quote": "\"birth\":{\"date\":\"1932-09-27\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for his analysis of economic governance, especially the boundaries of the firm\"",
+          "retrieved_sha256": "55de9603e9272ddae525f4e0a3cfbb3379cefa753e96ad848deadf88f6522732",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1940年",
+      "title": "发热疗法的开创者离世",
+      "text": "奥地利医生瓦格纳-尧雷格在维也纳去世。他发现接种疟疾可以缓解麻痹性痴呆，因此获得1927年诺贝尔生理学或医学奖；以发热对抗精神疾病的尝试后来被更安全的疗法取代。",
+      "item_sha256": "3e240d15a21c2d35a06067efbe74373189506451ea291da730e067df3275b6a3",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/317",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/317",
+          "authority_type": "official prize archive",
+          "date_context": "event-date",
+          "date_quote": "\"death\":{\"date\":\"1940-09-27\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for his discovery of the therapeutic value of malaria inoculation in the treatment of dementia paralytica\"",
+          "retrieved_sha256": "5d54c5653fc7456eabac8e0ca492e76f91e0cc927239266f99bbb5b05ed28ab2",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1962年",
+      "title": "《寂静的春天》出版",
+      "text": "海洋生物学家蕾切尔·卡逊的《寂静的春天》由霍顿·米夫林公司出版。她用大量证据说明滥用杀虫剂正在毒害鸟类、土壤和水体，引发全国性争论，也把环境风险推成公共议题。",
+      "item_sha256": "ebef5de84c4f293c75abb3a56dd2f3eaec339b657e5bf9128a0c95449c04b930",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nasa.gov/mission/sts-79",
-          "final_url": "https://www.nasa.gov/mission/sts-79/",
-          "authority_type": "government agency archive",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10559720",
+          "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10559720/",
+          "authority_type": "NIH literature archive",
           "date_context": "event-date",
-          "date_quote": "Landing: September 26, 1996, 8:13:15 a.m. EDT",
-          "fact_quote": "STS-79 highlighted by return to Earth of U.S. astronaut Lucid after 188 days in space, first U.S. crew exchange aboard Russian Space Station Mir, and fourth Shuttle-Mir docking.",
-          "retrieved_sha256": "5df6b9b7825c3b25ce5836b88daaed2250bb8759ca11dbcc79b89acb8d400c24",
+          "date_quote": "Silent Spring by Rachel Carson on September 27, 1962",
+          "fact_quote": "The Silent Spring unveiled the mystery behind the use of synthetic chemical inputs",
+          "retrieved_sha256": "fba019ee541e7165e8d732271b8f168fb06696f8ba40d8a59fbf7c85a2c605cb",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2022年",
-      "title": "DART 撞上小行星",
-      "text": "美国航天局的 DART 探测器撞上小行星迪莫弗斯，撞击时速约两万两千五百公里，用主动撞击的方式改变天体轨道；后续观测显示，迪莫弗斯绕母星的公转周期缩短了约半小时。",
-      "item_sha256": "fce49243c001bfab014a3c3e35d83ab5510df6dde602f03e2e15ef54d0a0a01f",
+      "label": "2003年",
+      "title": "SMART-1奔赴月球",
+      "text": "欧洲空间局的SMART-1探测器搭乘阿里安5号火箭从法属圭亚那升空，靠离子发动机用一年多时间缓慢盘旋飞向月球，验证了太阳能电推进，并系统盘点月面的关键化学元素。",
+      "item_sha256": "996230961cb7f9c3ff32c67d9ecb2d59c07085587ee155c0ea6590724da63e69",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://nightsky.jpl.nasa.gov/events/22610",
-          "final_url": "https://nightsky.jpl.nasa.gov/events/22610/",
-          "authority_type": "government agency",
+          "url": "https://www.esa.int/esaSC/SEMI29374OD_0_spk.html",
+          "final_url": "https://www.esa.int/esaSC/SEMI29374OD_0_spk.html",
+          "authority_type": "space agency press kit",
           "date_context": "event-date",
-          "date_quote": "The DART spacecraft will intentionally crash into asteroid Dimorphos at 7:14 p.m. ET on Monday, September 26, 2022",
-          "fact_quote": "attempts humanity’s first-ever test of planetary defense",
-          "retrieved_sha256": "2114ce2ddcf76f4be83f8b0d62beac7e35ed5019e8fd7659c77b65d085938631",
+          "date_quote": "SMART-1 was launched on 27 September 2003.",
+          "fact_quote": "SMART-1 is the first European mission to the Moon.",
+          "retrieved_sha256": "83eccfe994ddde5d3df9f4275ecdbda9c28a57d64a1685e25e0ce4c6b2ced899",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "2024年",
-      "title": "飓风海伦妮登陆佛罗里达",
-      "text": "四级飓风海伦妮在佛罗里达州大本德地区登陆，持续风速约每小时一百四十英里，带来数米高的风暴潮。灾情随后向北蔓延，北卡罗来纳山区出现严重洪灾，成为多年来美国本土致死人数最多的飓风之一。",
-      "item_sha256": "ae4e70c89b71dfa6b25d8dbc44032ac8943272c5c2529d77d33684ecc9c857c0",
+      "label": "2007年",
+      "title": "黎明号启程巡视小行星带",
+      "text": "美国宇航局的黎明号探测器升空，前往小行星带拜访原行星灶神星与矮行星谷神星。靠离子发动机长时间持续加速，它先后环绕了两个地外天体飞行，探明两者迥异的内部与表面。",
+      "item_sha256": "47e1720c5be01eeb1303935526196f7bca1d47c0f196566b515f24375e75db75",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://satlib.cira.colostate.edu/event/hurricane-helene",
-          "final_url": "https://satlib.cira.colostate.edu/event/hurricane-helene/",
-          "authority_type": "university archive",
+          "url": "https://ntrs.nasa.gov/citations/20210008613",
+          "final_url": "https://ntrs.nasa.gov/citations/20210008613",
+          "authority_type": "NASA technical reports server",
           "date_context": "event-date",
-          "date_quote": "just before midnight on September 26, 2024",
-          "fact_quote": "Helene underwent rapid intensification on September 26, 2024, reaching its peak as category 4 hurricane that afternoon as it accelerated towards Florida.",
-          "retrieved_sha256": "283f3215d01f708d1a48d8bc54131cd3f0f90c60651dbaf19dcd124a1dd37763",
+          "date_quote": "The Dawn spacecraft was launched from the Cape Canaveral Air Force Station on September 27, 2007",
+          "fact_quote": "The Dawn mission, part of NASA's Discovery Program, has as its goal the scientific exploration of the two most massive main-belt objects, Vesta and Ceres.",
+          "retrieved_sha256": "9d79dd7fab917599ee39f61ccb3fb296471118a98dbeb5fe384501df405cbd8d",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-26:30c10a694aa90759d6b42fd7911bf93f6547db3f7e7eb7437604de394f87d158",
-  "public_json_sha256": "0b75c026f93bbad66f0b10433bc46ba217d03b397af1a908ed84a76b3c006bf3",
-  "poster_sha256": "a5687422afc9e16c092c7f40588c6f1c7d95b6e1dc5db9bb17082ea14c9327f2",
-  "poster_bytes": 1468649,
+  "delivery_id": "2026-09-27:f0dab8072954e9d0082dd32afeb8e9a0b58c68907b5a1e1636ab8c17146a8e71",
+  "public_json_sha256": "678895b2a2ddb1b1d85063e02953f79744557b604fee981248d826d8fd433e29",
+  "poster_sha256": "5226075bb0794ccfb622fdae478f2189c7f216342822cac83445f8e937e02f33",
+  "poster_bytes": 2065491,
   "poster_dimensions": {
     "width": 2160,
-    "height": 3580
+    "height": 5546
   }
 }
