@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-13",
+  "date": "2026-09-27",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,159 +8,223 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1848年",
-      "title": "铁棒穿颅的铁路工",
-      "text": "美国铁路工人菲尼亚斯·盖奇在佛蒙特州爆破作业时被铁棒贯穿头部，竟奇迹般活下来。此后他性格大变，医生哈洛多年追踪此案，把人格与额叶功能联系起来，成为神经科学最著名的案例。",
-      "item_sha256": "45006d36257341d8baa6aa6851635c76c9efa12f92640ada71830c8b3390485c",
+      "label": "1822年",
+      "title": "商博良破译古埃及圣书体",
+      "text": "法国学者商博良在法兰西文学院宣读《致达西耶先生的信》，公布他从罗塞塔石碑找出的圣书体表音规律。此前无人能读的埃及铭文，从此变成可以逐句核对的史料，埃及学由这封信起步。",
+      "item_sha256": "1172e5b3a0636669d76b669a25a90db0fda6ad9510a843c8a59e0e8ce08ac6e6",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://asklib.hms.harvard.edu/faq/153359",
-          "final_url": "https://asklib.hms.harvard.edu/faq/153359",
-          "authority_type": "university archive (Harvard Medical School, Warren Anatomical Museum)",
+          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Champollion",
+          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Champollion/",
+          "authority_type": "university mathematics history archive",
           "date_context": "event-date",
-          "date_quote": "On the 13th of September 1848, while preparing the railroad bed, an accidental explosion of a charge he had set blew a 13-pound tamping iron straight through Gage's head, landing many yards away.",
-          "fact_quote": "The story of Phineas Gage illustrates some of the first medical knowledge gained on the relationship between personality and the functioning of the brain's frontal lobe.",
-          "retrieved_sha256": "62f1757818af0a8cc5d70b73dbaf5f70509b696f14461f92b72dfcc41182ac20",
+          "date_quote": "On 27 September 1822 he announced his major breakthrough in a paper to the Academy of Inscriptions",
+          "fact_quote": "founded scientific Egyptology and played a major role in the decipherment of Egyptian hieroglyphics",
+          "retrieved_sha256": "ddd5fcc99235c33ca4b8ce7e7775deb3a81a1bb3e8701c3cadfb36be8424f454",
+          "content_type": "text/html"
+        },
+        {
+          "level": "A",
+          "url": "https://history.rcp.ac.uk/blog/thomas-young-and-decipherment-hieroglyphics",
+          "final_url": "https://history.rcp.ac.uk/blog/thomas-young-and-decipherment-hieroglyphics",
+          "authority_type": "royal college museum page",
+          "date_context": "event-date",
+          "date_quote": "On 27 September 1822, he announced his breakthrough at a meeting of the Académie des Inscriptions et Belles-Lettres in Paris.",
+          "fact_quote": "Champollion also focused on cartouches, this time found on other monuments, and built up an extensive alphabet of hieroglyphs with their Greek equivalents.",
+          "retrieved_sha256": "08bfefbfd772a2f0ceea57dd34693bc4c940ba09bb4348cb460562a9a91a584c",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1851年",
-      "title": "揭开黄热病传播之谜的军医",
-      "text": "美国军医沃尔特·里德出生于弗吉尼亚。他主持的调查以严格对照试验查明，黄热病是由蚊子叮咬而非污浊空气传播，这一结论让搁置的巴拿马运河工程得以推进，也为流行病学奠定了基础。",
-      "item_sha256": "db00bcb27b65a2a68cec8d66301271184dd21307894df0df2a64ce1b62e8c696",
+      "label": "1905年",
+      "title": "爱因斯坦写下质能互换",
+      "text": "《物理学年鉴》编辑部收到爱因斯坦的三页短文《物体的惯性同它所含的能量有关吗？》。文中说明物体辐射出能量后质量会减少，质量与能量可以互相换算，这条关系后来被写成 E=mc²。",
+      "item_sha256": "5a08250bacd9a0ef6bd90c3bef6379534fbe784890ecbb16c1c65ef3ea067420",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://physicstoday.aip.org/news/einstein-paper",
+          "final_url": "https://physicstoday.aip.org/news/einstein-paper",
+          "authority_type": "professional society history",
+          "date_context": "event-date",
+          "date_quote": "Date in History: 27 September 1905",
+          "fact_quote": "On this day in 1905, a paper arrived at the editorial offices of the journal Annalen der Physik.",
+          "retrieved_sha256": "ab01c96fa4f1b74c095191e78fffab77231e0290d5be06f5233ff1eaf1c7fb52",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1918年",
+      "title": "射电天文学先驱赖尔出生",
+      "text": "马丁·赖尔生于英国布莱顿。他把相隔数公里的多台天线信号按相位叠加，用“综合孔径”凑出一架等效口径极大的射电望远镜，让射电观测得以分辨遥远星系的细节，1974年获诺贝尔物理学奖。",
+      "item_sha256": "8bdf490702abefe0440cee0975a49ea17e8ed89caa79f4a058ba6cb919c991f7",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.dncr.nc.gov/blog/2023/12/01/dr-walter-reed-52",
-          "final_url": "https://www.dncr.nc.gov/blog/2023/12/01/dr-walter-reed-52",
-          "authority_type": "state government historical office (NC DNCR)",
+          "url": "https://api.nobelprize.org/2.1/laureate/100",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/100",
+          "authority_type": "official prize archive",
           "date_context": "event-date",
-          "date_quote": "Reed was born September 13, 1851 in Virginia to Lemuel Sutton and Pharaba White Reed.",
-          "fact_quote": "was able to conclusively demonstrate that mosquitoes transmitted the deadly disease",
-          "retrieved_sha256": "27a27aa92da627d20a50d271a81cb9ec5c2d00e0c71984b1ed3126903466d96c",
+          "date_quote": "\"birth\":{\"date\":\"1918-09-27\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for their pioneering research in radio astrophysics",
+          "retrieved_sha256": "71a10b187e53460b541e9bfdde8da11b833056e3fb61a291416b891dd4f19c42",
+          "content_type": "application/json"
+        },
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/laureate/100",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1974/ryle/facts/",
+          "authority_type": "official prize archive",
+          "date_context": "event-date",
+          "date_quote": "Born: 27 September 1918, Brighton, United Kingdom",
+          "fact_quote": "By connecting a number of telescopes several kilometers from one another, he created the equivalent of a telescope as large as the entire surface between the individual telescopes.",
+          "retrieved_sha256": "0c200328cbdfed704e8a01ab2959f26aa5ded074b39da4db22d0cb97c98f4c13",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1886年",
-      "title": "讲清生物碱结构的化学家",
-      "text": "英国化学家罗伯特·罗宾逊出生于英格兰中部。他研究植物来源的天然产物，厘清了吗啡、士的宁等生物碱的结构，并阐明有机反应的电子机理，为药物的人工合成提供思路，1947年获诺贝尔化学奖。",
-      "item_sha256": "2ff3e06dc8778d4138b92d5b83aca3e7d8eaeb538cc2755666fb3cb40efa460a",
+      "label": "1925年",
+      "title": "试管婴儿先驱爱德华兹出生",
+      "text": "罗伯特·爱德华兹生于英格兰巴特利。他摸索出让卵子在体外受精、并培养到可以移植回母体的方法，1978年与斯特普托迎来世界首例试管婴儿路易丝·布朗，2010年获诺贝尔生理学或医学奖。",
+      "item_sha256": "491645f95ab2123b8fbc7bf0fe755ddd5a75abd7ad74b1dd1cf175be7f539932",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/207",
-          "final_url": "https://www.nobelprize.org/prizes/chemistry/1947/robinson/facts/",
-          "authority_type": "official archive (Nobel Prize)",
+          "url": "https://api.nobelprize.org/2.1/laureate/848",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/848",
+          "authority_type": "official prize archive",
           "date_context": "event-date",
-          "date_quote": "Born: 13 September 1886, Rufford, near Chesterfield, United Kingdom",
-          "fact_quote": "for his investigations on plant products of biological importance, especially the alkaloids",
-          "retrieved_sha256": "b1acfd8a8d1258c1ca4fddd3085b535bc15990c62cbc866663187d6de2669b89",
-          "content_type": "text/html"
+          "date_quote": "\"birth\":{\"date\":\"1925-09-27\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for the development of in vitro fertilization\"",
+          "retrieved_sha256": "f73db79bb96978dfe851132a79e0bc746b9b0e6244ea0917cabdc7a7e6c2c4f0",
+          "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1922年",
-      "title": "被推翻的世界高温纪录",
-      "text": "利比亚阿齐济耶当天记录到58℃高温，长期被视为地球最高气温。后来世界气象组织重新审查，认定测温仪器、场地与读数方式均有缺陷，判定这一纪录无效，把官方最高温改判给美国死亡谷。",
-      "item_sha256": "891c37611fa65c41d030382712249fde78585bebfdeba236a7c4098ad96314b3",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.ncei.noaa.gov/news/earths-hottest-temperature",
-          "final_url": "https://www.ncei.noaa.gov/news/earths-hottest-temperature",
-          "authority_type": "federal climate agency (NOAA NCEI)",
-          "date_context": "event-date",
-          "date_quote": "On September 13, 1922, a temperature of 136°F was recorded at El Azizia, Libya.",
-          "fact_quote": "additional evidence came to light indicating that the 136°F reading was invalid",
-          "retrieved_sha256": "6450c16d4f753b69ebd769fce301f3a9219a2070523c44138481a6ee971fe6dd",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1949年",
-      "title": "弄清毛细血管如何调节的生理学家",
-      "text": "丹麦生理学家奥古斯特·克罗去世。他研究毛细血管的收缩与舒张机制，说明身体在运动时如何精确调配各器官的血流，1920年获诺贝尔生理学或医学奖，还发展了气体交换与呼吸的测量方法。",
-      "item_sha256": "86cd915d31397fa54b2783ffa891090bd266d448944ecfa05ff6389468a8a507",
+      "label": "1932年",
+      "title": "威廉姆森与新制度经济学",
+      "text": "奥利弗·威廉姆森生于美国威斯康星州苏必利尔。他用交易成本解释企业为什么存在、规模会停在哪里，把组织与契约问题变成可以检验的经济学题目，2009年获诺贝尔经济学奖。",
+      "item_sha256": "077db7eae2f26328238f0b3efb77ab904a88b3378dc8a8ca8c313f7ed64cc5a9",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/310",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1920/krogh/facts/",
-          "authority_type": "official archive (Nobel Prize)",
+          "url": "https://api.nobelprize.org/2.1/laureate/847",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/847",
+          "authority_type": "official prize archive",
           "date_context": "event-date",
-          "date_quote": "Died: 13 September 1949, Copenhagen, Denmark",
-          "fact_quote": "for his discovery of the capillary motor regulating mechanism",
-          "retrieved_sha256": "7db6994ee189eff715b1205719eafbbfc05fe82bc7dee730025abcd85a9e4949",
-          "content_type": "text/html"
+          "date_quote": "\"birth\":{\"date\":\"1932-09-27\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for his analysis of economic governance, especially the boundaries of the firm\"",
+          "retrieved_sha256": "55de9603e9272ddae525f4e0a3cfbb3379cefa753e96ad848deadf88f6522732",
+          "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1961年",
-      "title": "水星计划的轨道试飞",
-      "text": "美国发射“水星-宇宙神4号”无人飞船，绕地球一圈后安全溅落并被回收。此前水星计划只完成过亚轨道飞行，这次验证了飞船在轨道上的环境控制与测控网络，为次年约翰·格伦的载人轨道飞行铺路。",
-      "item_sha256": "4f6ee5018f6e9087de1ffc12d08f2d6753878d7b492eaa27a8be77c4bc02d45e",
+      "label": "1940年",
+      "title": "发热疗法的开创者离世",
+      "text": "奥地利医生瓦格纳-尧雷格在维也纳去世。他发现接种疟疾可以缓解麻痹性痴呆，因此获得1927年诺贝尔生理学或医学奖；以发热对抗精神疾病的尝试后来被更安全的疗法取代。",
+      "item_sha256": "3e240d15a21c2d35a06067efbe74373189506451ea291da730e067df3275b6a3",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://api.nobelprize.org/2.1/laureate/317",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/317",
+          "authority_type": "official prize archive",
+          "date_context": "event-date",
+          "date_quote": "\"death\":{\"date\":\"1940-09-27\"",
+          "fact_quote": "\"motivation\":{\"en\":\"for his discovery of the therapeutic value of malaria inoculation in the treatment of dementia paralytica\"",
+          "retrieved_sha256": "5d54c5653fc7456eabac8e0ca492e76f91e0cc927239266f99bbb5b05ed28ab2",
+          "content_type": "application/json"
+        }
+      ]
+    },
+    {
+      "label": "1962年",
+      "title": "《寂静的春天》出版",
+      "text": "海洋生物学家蕾切尔·卡逊的《寂静的春天》由霍顿·米夫林公司出版。她用大量证据说明滥用杀虫剂正在毒害鸟类、土壤和水体，引发全国性争论，也把环境风险推成公共议题。",
+      "item_sha256": "ebef5de84c4f293c75abb3a56dd2f3eaec339b657e5bf9128a0c95449c04b930",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nasa.gov/missions/project-mercury/project-mercury-uncrewed-missions/",
-          "final_url": "https://www.nasa.gov/missions/project-mercury/project-mercury-uncrewed-missions/",
-          "authority_type": "official space agency (NASA)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10559720",
+          "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10559720/",
+          "authority_type": "NIH literature archive",
           "date_context": "event-date",
-          "date_quote": "Launch:September 13, 1961",
-          "fact_quote": "Mission Objective:Spacecraft environmental control in orbit.",
-          "retrieved_sha256": "25c521fb67725620610920b946e1cbe117577e1169cbdda8e30d5773addd3a47",
+          "date_quote": "Silent Spring by Rachel Carson on September 27, 1962",
+          "fact_quote": "The Silent Spring unveiled the mystery behind the use of synthetic chemical inputs",
+          "retrieved_sha256": "fba019ee541e7165e8d732271b8f168fb06696f8ba40d8a59fbf7c85a2c605cb",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1988年",
-      "title": "测到西半球最低海平面气压",
-      "text": "飓风“吉尔伯特”在加勒比海急剧增强，侦察机当天测得中心气压888百帕，创下当时大西洋飓风的最低纪录。这次观测刷新了强度纪录，也让气象学家更重视飓风短时间内爆发式增强的预报难题。",
-      "item_sha256": "ea075a29de5b6e2fa17fa6fb90a67438d17b9d30c19c5a4681d057f5aa67c259",
+      "label": "2003年",
+      "title": "SMART-1奔赴月球",
+      "text": "欧洲空间局的SMART-1探测器搭乘阿里安5号火箭从法属圭亚那升空，靠离子发动机用一年多时间缓慢盘旋飞向月球，验证了太阳能电推进，并系统盘点月面的关键化学元素。",
+      "item_sha256": "996230961cb7f9c3ff32c67d9ecb2d59c07085587ee155c0ea6590724da63e69",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.weather.gov/lch/1988Gilbert",
-          "final_url": "https://www.weather.gov/lch/1988Gilbert",
-          "authority_type": "official weather service (US National Weather Service)",
+          "url": "https://www.esa.int/esaSC/SEMI29374OD_0_spk.html",
+          "final_url": "https://www.esa.int/esaSC/SEMI29374OD_0_spk.html",
+          "authority_type": "space agency press kit",
           "date_context": "event-date",
-          "date_quote": "GOES-7 visible satellite image of Hurricane Gilbert at 6:01 PM EDT September 13, 1988 at peak intensity of 185 mph (160 knots) and minimum central pressure of 888 millibars (26.22 inches).",
-          "fact_quote": "the lowest sea level pressure ever recorded in the Western Hemisphere",
-          "retrieved_sha256": "b8482d89deecfd7d0e23d34b28b27e939d3ad8784e0d4bc2bdc95ba6d02d9d15",
+          "date_quote": "SMART-1 was launched on 27 September 2003.",
+          "fact_quote": "SMART-1 is the first European mission to the Moon.",
+          "retrieved_sha256": "83eccfe994ddde5d3df9f4275ecdbda9c28a57d64a1685e25e0ce4c6b2ced899",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2007年",
+      "title": "黎明号启程巡视小行星带",
+      "text": "美国宇航局的黎明号探测器升空，前往小行星带拜访原行星灶神星与矮行星谷神星。靠离子发动机长时间持续加速，它先后环绕了两个地外天体飞行，探明两者迥异的内部与表面。",
+      "item_sha256": "47e1720c5be01eeb1303935526196f7bca1d47c0f196566b515f24375e75db75",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://ntrs.nasa.gov/citations/20210008613",
+          "final_url": "https://ntrs.nasa.gov/citations/20210008613",
+          "authority_type": "NASA technical reports server",
+          "date_context": "event-date",
+          "date_quote": "The Dawn spacecraft was launched from the Cape Canaveral Air Force Station on September 27, 2007",
+          "fact_quote": "The Dawn mission, part of NASA's Discovery Program, has as its goal the scientific exploration of the two most massive main-belt objects, Vesta and Ceres.",
+          "retrieved_sha256": "9d79dd7fab917599ee39f61ccb3fb296471118a98dbeb5fe384501df405cbd8d",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-13:80c57a60950ca8bcda28870b0594f8e2663714487b84b066f5c6c2b5437f9a2b",
-  "public_json_sha256": "0416c58d3b9a4832daec210e88a399d7536c842f9c5bb99f14e54c6c7fe98305",
-  "poster_sha256": "6ef236f4f6ac29c2847879e7fbd2aec32ce1fd034977695591d900d107e1ab98",
-  "poster_bytes": 1811598,
+  "delivery_id": "2026-09-27:f0dab8072954e9d0082dd32afeb8e9a0b58c68907b5a1e1636ab8c17146a8e71",
+  "public_json_sha256": "678895b2a2ddb1b1d85063e02953f79744557b604fee981248d826d8fd433e29",
+  "poster_sha256": "5226075bb0794ccfb622fdae478f2189c7f216342822cac83445f8e937e02f33",
+  "poster_bytes": 2065491,
   "poster_dimensions": {
     "width": 2160,
-    "height": 4562
+    "height": 5546
   }
 }
