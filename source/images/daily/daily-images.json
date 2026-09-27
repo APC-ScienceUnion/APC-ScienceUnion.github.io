@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-26T06:11:58+00:00",
+  "updated_at": "2026-09-27T06:38:34+00:00",
   "providers": {
     "bing": {
-      "date": "2026-09-26",
-      "title": "熊耳国家纪念区附近的雪松台地和骡子角，犹他州，美国 ",
-      "headline": "熊耳国家纪念区附近的雪松台地和骡子角，犹他州，美国 ",
-      "subtitle": "写在大地上的故事",
-      "description": "熊的耳朵、着火的房屋和遍布急转弯的道路有什么共同之处？它们都是犹他州东南部公共土地故事的一部分。\n在国家公共土地日，雪松台地及附近的骡子角展现出古老历史与高地沙漠风光的非凡交融。熊耳国家纪念区拥有重要的文化和自然资源，其中包括反映数千年人类历史的考古遗址。它的名字源于两座形似熊耳的孤峰。",
-      "copyright": "© Jeff Clay/Tandem Stills + Motion",
-      "source_page_url": "https://bing.ee123.net/img/?date=20260926&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.BearsEars_ZH-CN0496897450_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.BearsEars_ZH-CN0496897450_1920x1080.jpg",
+      "date": "2026-09-27",
+      "title": "海笔上的装饰蟹，科莫多国家公园，印度尼西亚 ",
+      "headline": "海笔上的装饰蟹，科莫多国家公园，印度尼西亚 ",
+      "subtitle": "深海夜花园",
+      "description": "不妨把这看作一场水下捉迷藏：海笔格外醒目，螃蟹却融入其中。今天的图片拍摄于印度尼西亚科莫多国家公园周边水域。该公园成立于1980年，以世界上现存最大的蜥蜴科莫多巨蜥命名。这片保护区包括岛屿、红树林、海草床和珊瑚礁。公园位于太平洋与印度洋之间，强劲洋流塑造了这里的生态环境，孕育出丰富多样的海洋生物，其中也包括依靠伪装生存的物种。\n装饰蟹是伪装大师。它们把藻类、海绵、水螅和其他海洋物质附着在甲壳带钩的刚毛上，形成水下伪装。海笔是固定在海床上的软珊瑚，为它们提供了理想的藏身之处。海笔的分枝结构有助于打散螃蟹的轮廓，使捕食者更难在流动的海水中发现它。夜潜时请保持距离：某些物种受到惊扰后会短暂发光，从而让伪装失效。",
+      "copyright": "© Alex Mustard/Nature Picture Library",
+      "source_page_url": "https://bing.ee123.net/img/?date=20260927&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.DecoCrab_ZH-CN0973306994_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.DecoCrab_ZH-CN0973306994_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-09-26-23c9f6da4d9c.jpg",
-      "image_path": "/images/daily/bing-2026-09-26-23c9f6da4d9c.jpg",
-      "bytes": 339681,
-      "sha256": "23c9f6da4d9c2671bb214167030830e02d115219779e2a8c0e0b74c3539eff50"
+      "local_url": "/images/daily/bing-2026-09-27-286dc9a9cc69.jpg",
+      "image_path": "/images/daily/bing-2026-09-27-286dc9a9cc69.jpg",
+      "bytes": 340466,
+      "sha256": "286dc9a9cc6904d622451e41631084c250240b642f24c4223458b303d1a2ab58"
     },
     "apod": {
       "date": "2026-09-22",
@@ -37,19 +37,19 @@
       "sha256": "789d4ac52d3863e01f017edfae4a2de43c90bdc440359d8b35038def7122646e"
     },
     "wikipedia": {
-      "date": "2026-09-26",
-      "title": "FRE-OCE-10-French Oceania-50 centimes (1943)",
-      "description": "French Oceania , WWII emergency issue currency, 50 centimes (1943). The note was printed in Papeete for use in the colony of French Oceania . The note bears the facsimile signature of Jean-Henri Liauzun and measures 111 x 71mm.",
-      "copyright": "National Museum of American History · Image by Godot13 · Public domain",
-      "article_url": "https://commons.wikimedia.org/wiki/File:FRE-OCE-10-French_Oceania-50_centimes_(1943).jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:FRE-OCE-10-French_Oceania-50_centimes_(1943).jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/FRE-OCE-10-French_Oceania-50_centimes_%281943%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/FRE-OCE-10-French_Oceania-50_centimes_%281943%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-09-26-1eb87c043672.jpg",
-      "image_path": "/images/daily/wikipedia-2026-09-26-1eb87c043672.jpg",
-      "bytes": 6897101,
-      "sha256": "1eb87c043672ba5b0e88e4e755c18f6bec2f5420d11b4695a2dc495881832c51"
+      "date": "2026-09-27",
+      "title": "Tumbler key lock explained in four steps",
+      "description": "Explanation of how a tumbler key lock",
+      "copyright": "PNG: User:Wapcaplet ; SVG: User:Pbroks13 ; this combined image: User:Crisco 1492 . · File:Pin tumbler with key.svg , File:Pin tumbler unlocked.svg , File:Pin tumbler no key.svg , File:Pin tumbler bad key.svg , · CC BY-SA 3.0",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Tumbler_key_lock_explained_in_four_steps.png",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Tumbler_key_lock_explained_in_four_steps.png",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Tumbler_key_lock_explained_in_four_steps.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Tumbler_key_lock_explained_in_four_steps.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "mime": "image/png",
+      "local_url": "/images/daily/wikipedia-2026-09-27-90d37c31eec5.png",
+      "image_path": "/images/daily/wikipedia-2026-09-27-90d37c31eec5.png",
+      "bytes": 835062,
+      "sha256": "90d37c31eec5b91723ae0beb7a3acc4972f34b655eddcbe810dc8d7fa44487ab"
     }
   }
 }
