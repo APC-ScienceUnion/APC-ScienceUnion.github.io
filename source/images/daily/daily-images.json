@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-28T06:58:51+00:00",
+  "updated_at": "2026-09-28T18:11:08+00:00",
   "providers": {
     "bing": {
-      "date": "2026-09-28",
-      "title": "斋浦尔附近琥珀堡内的 Sattais Katcheri 大厅，拉贾斯坦邦，印度 ",
-      "headline": "斋浦尔附近琥珀堡内的 Sattais Katcheri 大厅，拉贾斯坦邦，印度 ",
-      "subtitle": "可览美景的历史胜地",
-      "description": "大多数初次到访印度拉贾斯坦邦斋浦尔的游客都知道这座城市有“粉红之城”的美誉，但更早的王都以琥珀堡为中心。这个王朝的大部分政治与建筑史正是在那里书写的。琥珀堡的营建历时一个多世纪，始于1592年拉贾·曼·辛格一世统治时期，之后由历代卡奇瓦哈统治者续建；他们统治的王国后来成为斋浦尔土邦。王室于 1727 年迁往新规划的斋浦尔城，但琥珀堡仍继续承担礼仪功能。\n从建筑上看，这座堡垒将拉杰普特式防御特色与受莫卧儿风格启发的拱门、庭院、彩绘表面和大理石装饰融为一体。图中的Sattais Katcheri大厅因其27根柱子而得名。这座建筑被认为曾用于行政事务。堡内还有觐见厅、王室庭院以及装饰华丽的镜宫。探索这片宏大的建筑群，感受“Padharo Sa”的热情好客，也别忘了留点肚子品尝一盘达尔巴蒂楚尔玛——烤小麦面团、扁豆和一种香甜松散的甜点。",
-      "copyright": "© R.M. Nunes/Getty Images",
-      "source_page_url": "https://bing.ee123.net/img/?date=20260928&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.AmberHall_ZH-CN1223127100_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.AmberHall_ZH-CN1223127100_1920x1080.jpg",
+      "date": "2026-09-29",
+      "title": "卡西洛夫河冰川融水滋养的湛蓝河水，阿拉斯加州，美国 ",
+      "headline": "卡西洛夫河冰川融水滋养的湛蓝河水，阿拉斯加州，美国 ",
+      "subtitle": "冰川孕育之河",
+      "description": "从空中俯瞰，卡西洛夫河宛如一条绿松石色的丝带，蜿蜒穿过阿拉斯加州的基奈半岛。鲜艳的蓝色河水源于从图斯图梅纳湖向下游输送的冰川粉砂；该湖是阿拉斯加州最大的淡水湖之一。河流全长约17英里，最终注入库克湾。它虽比著名的邻河基奈河短，却同样不同凡响。\n卡西洛夫河发源于冰塑地貌，与当地的渔业文化始终密不可分。长期以来，这条河一直是德纳伊纳人的重要资源，后来又成为商业捕捞、生计捕捞和休闲垂钓的重地。如今，垂钓者为洄游的鲑鱼而来，游客则可探索附近的休闲场所、露营地和自然步道。卡西洛夫社区本身是半岛西海岸的一座小渔镇；这里的河流、森林和河口栖息地滋养着丰富的野生动物。无论从漂流艇上还是空中观赏，卡西洛夫河都能让人鲜明地窥见阿拉斯加的冰川起源，以及这片土地与水之间绵延不绝的联系。",
+      "copyright": "© jared lloyd/Getty Images",
+      "source_page_url": "https://bing.ee123.net/img/?date=20260929&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.KasilofRiver_ZH-CN2394091052_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.KasilofRiver_ZH-CN2394091052_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-09-28-28dab89f48eb.jpg",
-      "image_path": "/images/daily/bing-2026-09-28-28dab89f48eb.jpg",
-      "bytes": 334134,
-      "sha256": "28dab89f48ebbbacda4760e2cd81b21821a12e3a69833efd0e507bacc1734f2f"
+      "local_url": "/images/daily/bing-2026-09-29-5f3c76c05817.jpg",
+      "image_path": "/images/daily/bing-2026-09-29-5f3c76c05817.jpg",
+      "bytes": 309689,
+      "sha256": "5f3c76c05817653e12304b42269c925b1bc8bb776a23a91564b0462f35cdb479"
     },
     "apod": {
       "date": "2026-09-22",
@@ -37,19 +37,19 @@
       "sha256": "789d4ac52d3863e01f017edfae4a2de43c90bdc440359d8b35038def7122646e"
     },
     "wikipedia": {
-      "date": "2026-09-28",
-      "title": "Cinnamon flycatcher (Pyrrhomyias cinnamomeus pyrrhopterus) San Isidro",
-      "description": "Cinnamon flycatcher ( Pyrrhomyias cinnamomeus pyrrhopterus ), San Isidro, Ecuador",
-      "copyright": "Charles J. Sharp · Own work , from Sharp Photography, sharpphotography.co.uk · CC BY-SA 4.0",
-      "article_url": "https://commons.wikimedia.org/wiki/File:Cinnamon_flycatcher_(Pyrrhomyias_cinnamomeus_pyrrhopterus)_San_Isidro.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Cinnamon_flycatcher_(Pyrrhomyias_cinnamomeus_pyrrhopterus)_San_Isidro.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Cinnamon_flycatcher_%28Pyrrhomyias_cinnamomeus_pyrrhopterus%29_San_Isidro.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Cinnamon_flycatcher_%28Pyrrhomyias_cinnamomeus_pyrrhopterus%29_San_Isidro.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-09-29",
+      "title": "Enrico Fermi 1943-49",
+      "description": "Enrico Fermi , Italian-American physicist, received the 1938 Nobel Prize in physics for identifying new elements and discovering nuclear reactions by his method of nuclear irradiation and bombardment. He was born in Rome, Italy, on September 29, 1901, and died in Chicago, Illinois, on November 28, 1954.",
+      "copyright": "Department of Energy-Office of Public Affairs, restored by Yann · This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . · Public domain",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Enrico_Fermi_1943-49.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Enrico_Fermi_1943-49.jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Enrico_Fermi_1943-49.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Enrico_Fermi_1943-49.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-09-28-b95379a29867.jpg",
-      "image_path": "/images/daily/wikipedia-2026-09-28-b95379a29867.jpg",
-      "bytes": 10832290,
-      "sha256": "b95379a298678e72f3f51bf9e47d815d80ebf62ebcdc1886e445505fb987704d"
+      "local_url": "/images/daily/wikipedia-2026-09-29-fb7f838f07d3.jpg",
+      "image_path": "/images/daily/wikipedia-2026-09-29-fb7f838f07d3.jpg",
+      "bytes": 2560057,
+      "sha256": "fb7f838f07d3c1a013555c7c28e56a6cd51a8c7100bda69f50125d7201d10458"
     }
   }
 }
