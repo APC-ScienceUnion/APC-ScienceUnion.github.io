@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,170 +8,171 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1852年",
-      "title": "化学家莫瓦桑出生",
-      "text": "亨利·莫瓦桑生于巴黎。他用低温电解的方法把氟从它的化合物中分离出来，又造出可升温到三千摄氏度以上的电弧炉，让硅、硼、碳化钙等难熔物质得以制备，这种炉子后来以他的名字命名。",
-      "item_sha256": "80c4571928aab17dc49e520f9b0115b3dc8696459ef723070bd315e86e319a89",
+      "label": "1901年",
+      "title": "费米诞生",
+      "text": "恩里科·费米出生于罗马。他用中子轰击多种元素，造出一批新的放射性核素，并发现慢中子更容易引发核反应；后来他领导建成芝加哥一号堆，让链式反应从设想变为可控装置。",
+      "item_sha256": "28413a98ba7022107b0147ed2067880d530f795848c0971bcbf9f09bfa0b03f5",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/chemistry/1906/moissan/biographical/",
-          "final_url": "https://www.nobelprize.org/prizes/chemistry/1906/moissan/biographical/",
-          "authority_type": "official archive",
+          "url": "https://www.nobelprize.org/laureate/46",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1938/fermi/facts/",
+          "authority_type": "official laureate archive",
           "date_context": "event-date",
-          "date_quote": "Henri Moissan was born in Paris on September 28, 1852.",
-          "fact_quote": "Henri Moissan was born in Paris on September 28, 1852.",
-          "retrieved_sha256": "0acf821637745ea5db76e8cadb441f7f4e5f301b5ae0113b365b82a244b0839b",
+          "date_quote": "Born: 29 September 1901, Rome, Italy",
+          "fact_quote": "for his demonstrations of the existence of new radioactive elements produced by neutron irradiation, and for his related discovery of nuclear reactions brought about by slow neutrons",
+          "retrieved_sha256": "1ed4c5cc0b3e0c483f2220a1d979918786f861bccd813d47dda9aa7b12592dfc",
           "content_type": "text/html"
         },
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/165",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/165",
-          "authority_type": "official archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/46",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/46",
+          "authority_type": "official laureate API",
           "date_context": "event-date",
-          "date_quote": "\"date\":\"1852-09-28\"",
-          "fact_quote": "in recognition of the great services rendered by him in his investigation and isolation of the element fluorine, and for the adoption in the service of science of the electric furnace called after him",
-          "retrieved_sha256": "af41f070ec5553adaeb0f79100716aeba2f1121d57b1fde95f26f2175c10e91d",
+          "date_quote": "\"date\":\"1901-09-29\"",
+          "fact_quote": "for his demonstrations of the existence of new radioactive elements produced by neutron irradiation, and for his related discovery of nuclear reactions brought about by slow neutrons",
+          "retrieved_sha256": "8aac3c84c053104929553f80ca7d391c2b328583f82db83c4f15d806311556e8",
           "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1895年",
-      "title": "巴斯德逝世",
-      "text": "巴斯德在巴黎近郊的马恩拉科凯去世，享年七十二岁。他揭示了微生物与发酵、疾病之间的联系，建立巴氏消毒法，晚年又做出狂犬病疫苗；他逝世时，靠公众捐款建成的巴斯德研究所已运转七年。",
-      "item_sha256": "a675885e4a47156fe71ceab20a9ab54c3033ed7ee5592f6b49e20d7114e9996d",
+      "label": "1954年",
+      "title": "欧洲核子研究组织成立",
+      "text": "欧洲核子研究组织的成立公约生效，实验室由此正式诞生。西欧多国把加速器与粒子束实验集中到同一屋檐下，此后它成为高能物理合作与人才培养的中枢，万维网也在这样的土壤里被发明出来。",
+      "item_sha256": "5318f70b3d5acd0576b6787f0cc8babc36c2a0238ae03a7f75c825637e947369",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://council.web.cern.ch/en/content/convention-establishment-european-organization-nuclear-research",
+          "final_url": "https://council.web.cern.ch/en/content/convention-establishment-european-organization-nuclear-research",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "entered into force on 29  September,  1954",
+          "fact_quote": "The Convention for the Establishment of a European Organization for Nuclear Research and the Financial Protocol annexed thereto, open for signature at Paris from 1 July to 31 December 1953, entered into force on 29  September,  1954.",
+          "retrieved_sha256": "5614e447ac10e01c8ee7e0dd96b8804fe87a2648afe4fca98c2c174f01c72d56",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1962年",
+      "title": "加拿大首颗卫星云雀一号升空",
+      "text": "加拿大首颗卫星「云雀一号」升空，它由本国团队设计制造，用来探测电离层。卫星用超长天线发射无线电脉冲，由回波反推电子密度的垂直分布，加拿大由此成为世界上第三个自主造出卫星的国家。",
+      "item_sha256": "ef2c42ae8463a30d48659ac22ac47094f82c4f8ac6e3c1b76912438cc7c7b278",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://airandspace.si.edu/collection-objects/satellite-alouette-model/nasm_A19761103000",
+          "final_url": "https://airandspace.si.edu/collection-objects/satellite-alouette-model/nasm_A19761103000",
+          "authority_type": "national museum record",
+          "date_context": "event-date",
+          "date_quote": "The original, Canada's first space satellite, was designed to study the ionosphere. It was launched from the Pacific Missile range on September 29, 1962 atop a Thor-Agena vehicle",
+          "fact_quote": "The original, Canada's first space satellite, was designed to study the ionosphere.",
+          "retrieved_sha256": "a416c46fbd7073679f101663364db080620b64c602ae1c964aaf06544dfce1a6",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2004年",
+      "title": "图塔蒂斯近距离掠过地球",
+      "text": "小行星4179图塔蒂斯以约155万公里的距离掠过地球，是该世纪同类大小的已知天体中最近的一次接近。射电望远镜抓住机会做雷达成像，测出它像土豆一样的不规则外形与缓慢翻滚的自转。",
+      "item_sha256": "61b1fdeeb0c5b4a7da947f8d9711232c37f9657eeef4f099ea1586f9d953de69",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://echo.jpl.nasa.gov/asteroids/4179_Toutatis/toutatis.html",
+          "final_url": "https://echo.jpl.nasa.gov/asteroids/4179_Toutatis/toutatis.html",
+          "authority_type": "national research center",
+          "date_context": "event-date",
+          "date_quote": "The Sep. 29, 2004, approach is the closest in this century of any known asteroid at least as large as Toutatis.",
+          "fact_quote": "The Sep. 29, 2004, approach is the closest in this century of any known asteroid at least as large as Toutatis.",
+          "retrieved_sha256": "0d05540c061e9d78a64bdca350cfd4e610c5cfc711bd584ab70fcb4f356a8f85",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2009年",
+      "title": "萨摩亚8.1级地震与海啸",
+      "text": "萨摩亚群岛附近海底发生8.1级地震，数分钟后海啸袭击岛屿，在萨摩亚、美属萨摩亚和汤加造成约两百人死亡。灾后野外考察发现，这次海啸由少见的洋壳外侧正断层引发，浪高分布远超预期。",
+      "item_sha256": "21df5fa1f79bcf000e3acf956a7dcf1ebf9a191bfa74b350e8321acd628c31bf",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.usgs.gov/news/surprises-deadly-september-29-2009-samoa-tsunami",
+          "final_url": "https://www.usgs.gov/news/surprises-deadly-september-29-2009-samoa-tsunami",
+          "authority_type": "national survey agency",
+          "date_context": "event-date",
+          "date_quote": "The Samoa tsunami of September 29, 2009, was the fifth tsunami studied by U.S. Geological Survey (USGS) field teams in 15 years, and yet it presented many surprises.",
+          "fact_quote": "The tsunami was generated by a magnitude 8.1 earthquake that occurred about 190 km southwest of American Samoa at 6:48 a.m. Samoa Standard Time.",
+          "retrieved_sha256": "ad3d10a43350020128b14e3033dfd79cae7ce7f95e1a68b8ca3e2848d2bdc309",
+          "content_type": "text/html"
+        },
+        {
+          "level": "A",
+          "url": "https://sos.noaa.gov/catalog/datasets/tsunami-historical-series-samoa-2009",
+          "final_url": "https://sos.noaa.gov:443/catalog/datasets/tsunami-historical-series-samoa-2009/",
+          "authority_type": "national ocean agency",
+          "date_context": "event-date",
+          "date_quote": "This tsunami was generated by an 8.1 magnitude earthquake near the Samoan Islands on September 29, 2009.",
+          "fact_quote": "it was very destructive near the earthquake and killed 192 people in Samoa, American Samoa, and Tonga",
+          "retrieved_sha256": "c3b4ed4b72cd9eca41e83df91e5b9786d5a55863ee8c51e2b0c28b94cba0901f",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2010年",
+      "title": "多丝正比室发明人夏帕克去世",
+      "text": "物理学家乔治·夏帕克去世。他发明并改进多丝正比室，用一排排细丝把带电粒子的径迹转成可读电信号，使探测器能同时定位大量粒子，为后来的高能物理实验和医学成像提供了关键手段。",
+      "item_sha256": "c975925df49b4643e63105ca40410cc54e1c750eb9cf98c62ad37e48736e01fd",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.cam.ac.uk/stories/yearofcovid",
-          "final_url": "https://www.cam.ac.uk/stories/yearofcovid",
-          "authority_type": "university archive",
+          "url": "https://www.nobelprize.org/laureate/142",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1992/charpak/facts/",
+          "authority_type": "official laureate archive",
           "date_context": "event-date",
-          "date_quote": "Louis Pasteur (27 December 1822 – 28 September 1895)",
-          "fact_quote": "Louis Pasteur (27 December 1822 – 28 September 1895)",
-          "retrieved_sha256": "bb244d82083e56b88e573dd2627f3a98738c81cc786fbc732255184dbd58adb8",
+          "date_quote": "Died: 29 September 2010, Paris, France",
+          "fact_quote": "for his invention and development of particle detectors, in particular the multiwire proportional chamber",
+          "retrieved_sha256": "ce55cb5f698fe03ddd47085bc8f5caaf85e7bbf1437dc3c28593f5ca60543c76",
           "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1948年",
-      "title": "刘易斯飞行推进实验室得名",
-      "text": "美国国家航空咨询委员会把克利夫兰的飞机发动机研究实验室改名为刘易斯飞行推进实验室，以纪念主持航空研究近三十年的乔治·刘易斯；十年后它并入新成立的NASA，改称刘易斯研究中心。",
-      "item_sha256": "c561caa761f4f2ab42643a52544d4eb226e038fae5df5b7e69a7362b689c4746",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
+        },
         {
           "level": "A",
-          "url": "https://www.archives.gov/research/guide-fed-records/groups/255.html",
-          "final_url": "https://www.archives.gov/research/guide-fed-records/groups/255.html",
-          "authority_type": "national archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/142",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/142",
+          "authority_type": "official laureate API",
           "date_context": "event-date",
-          "date_quote": "Redesignated Lewis Flight Propulsion Laboratory, September 28, 1948, in honor of Dr. George W. Lewis, NACA Director of Aeronautical Research (1919-47).",
-          "fact_quote": "in honor of Dr. George W. Lewis, NACA Director of Aeronautical Research",
-          "retrieved_sha256": "6e18df2dcaa76966af18fb2825883616259bc3e7def2797dca3f37a4baccc2c7",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1953年",
-      "title": "哈勃逝世",
-      "text": "埃德温·哈勃在加州圣马力诺去世，终年六十三岁。他在威尔逊山与帕洛马山用造父变星作量天尺，把旋涡星云推到银河系之外，又发现星系退行速度与距离成正比，宇宙膨胀从此成为观测结论。",
-      "item_sha256": "fa8cf2daf0fe8d3a895afe42f6dc75dea80e05ca4062fc30f22daf6ba8d5ab61",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://fi.edu/en/news/case-files-edwin-hubble",
-          "final_url": "https://fi.edu/en/news/case-files-edwin-hubble",
-          "authority_type": "science museum",
-          "date_context": "event-date",
-          "date_quote": "Hubble continued his research at Mount Wilson and Mount Palomar observatories until his death in San Marino, California, on September 28, 1953, from a cerebral thrombosis.",
-          "fact_quote": "until his death in San Marino, California, on September 28, 1953, from a cerebral thrombosis",
-          "retrieved_sha256": "cbcc73a06e38b6293d4970f84993daef82e1cd8874fe99c255a6f45a99230a5b",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1969年",
-      "title": "默奇森陨石坠落",
-      "text": "一颗碳质球粒陨石在澳大利亚维多利亚州默奇森上空爆裂，碎片散落在三十五平方公里内。样品被送进刚建成的洁净实验室，研究者从中检出氨基酸等有机分子，它成了研究太阳系早期化学的重要样本。",
-      "item_sha256": "12d9c817b2ed58257d000a6e8ba5a5ed7a7256b4eafe779aa8fa0fc5fa728687",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://meteorites.asu.edu/meteorites/murchison",
-          "final_url": "https://meteorites.asu.edu/meteorites/murchison",
-          "authority_type": "research center",
-          "date_context": "event-date",
-          "date_quote": "This carbonaceous chondrite was witnessed entering the Earth's atmosphere between 10:45 and 11:00 AM September 28th, 1969, in Victoria, Australia.",
-          "fact_quote": "It was by studying Murchison that a team of researchers, including CMS founding director Dr. Carleton B. Moore, discovered the first evidence of extraterrestrial amino acids in 1970",
-          "retrieved_sha256": "7de49a43b008fab019b128912017f1ad784924b6dc194e3d71e856f5fc0b3585",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2015年",
-      "title": "火星表面液态水的证据",
-      "text": "NASA公布火星勘测轨道飞行器的观测结果：在季节性伸展的暗色斜坡条纹上检出含水盐，说明今天的火星表面仍有含盐液态水在间歇流动，寻找火星生命因此多了一类值得取样复查的地点。",
-      "item_sha256": "e429c88a31a159cfc1043869ada3c89f38fb76a38f3413913ec8e0f219f35a17",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nasa.gov/news-release/nasa-confirms-evidence-that-liquid-water-flows-on-todays-mars",
-          "final_url": "https://www.nasa.gov/news-release/nasa-confirms-evidence-that-liquid-water-flows-on-todays-mars/",
-          "authority_type": "space agency",
-          "date_context": "event-date",
-          "date_quote": "NASA Sep 28, 2015 RELEASE 15-195",
-          "fact_quote": "the detection of hydrated salts on these slopes means that water plays a vital role in the formation of these streaks",
-          "retrieved_sha256": "c5c3dcd4fe6bdb8eef29b4a71380caf88b95977a2a6e2c3e695e267cbfe1abb8",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2016年",
-      "title": "北极科学部长级会议",
-      "text": "多国科学部长与首席科学顾问在华盛顿会商北极科研合作，谈观测、监测与数据共享，原住民代表也到场。会议希望把北极研究从零散项目推向更长期的国际协作。",
-      "item_sha256": "598232eb1917177e4747017e5b63abcd1b7493a9709ebc15bb735fd71c6991ed",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://obamawhitehouse.archives.gov/blog/2016/05/13/white-house-arctic-science-ministerial-september-28-2016",
-          "final_url": "https://obamawhitehouse.archives.gov/blog/2016/05/13/white-house-arctic-science-ministerial-september-28-2016",
-          "authority_type": "government archive",
-          "date_context": "event-date",
-          "date_quote": "On September 28, 2016, science ministers from across the globe will gather in Washington, DC, for the first-ever White House Arctic Science Ministerial.",
-          "fact_quote": "to expand joint collaborations focused on Arctic science, research, observations, monitoring, and data-sharing",
-          "retrieved_sha256": "b36e3bb73a317a52bb33302d933d23b32071a02d072866b73faefdf353867612",
-          "content_type": "text/html"
+          "date_quote": "\"date\":\"2010-09-29\"",
+          "fact_quote": "for his invention and development of particle detectors, in particular the multiwire proportional chamber",
+          "retrieved_sha256": "2dcd039c483cc62a7804bef24c777f1521e499901035bd5602b6404cd2425ea5",
+          "content_type": "application/json"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-28:20c11daf119d39a788550aef19d9d237efc644119e7f9daebe06e30bae182a4e",
-  "public_json_sha256": "d6bfa2d96552dea6e52fd0e703cf5068d144c2ff2b00ed8cbf0e30ccf9345652",
-  "poster_sha256": "32772d246ff807e140b3b07eccf7ace446316f09e49068a8bef397ac99ea5d0d",
-  "poster_bytes": 1787383,
+  "delivery_id": "2026-09-29:c1991df2bfeb7caba3abb02feae11878e3879310536255425fa0bb1304f34ce1",
+  "public_json_sha256": "7a78b7b53a695919443be91d74cdc8ac14e6e6fd7e54ba23ba9620b382569175",
+  "poster_sha256": "b9f32f5f97edcb3c5b166e9c4bcfca3d5957f57632f49e766a132652a3957919",
+  "poster_bytes": 1631468,
   "poster_dimensions": {
     "width": 2160,
-    "height": 4562
+    "height": 4070
   }
 }
