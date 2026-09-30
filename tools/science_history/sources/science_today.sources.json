@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-29",
+  "date": "2026-09-30",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,171 +8,222 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1901年",
-      "title": "费米诞生",
-      "text": "恩里科·费米出生于罗马。他用中子轰击多种元素，造出一批新的放射性核素，并发现慢中子更容易引发核反应；后来他领导建成芝加哥一号堆，让链式反应从设想变为可控装置。",
-      "item_sha256": "28413a98ba7022107b0147ed2067880d530f795848c0971bcbf9f09bfa0b03f5",
+      "label": "1870年",
+      "title": "让·佩兰出生",
+      "text": "佩兰生于法国里尔。他把显微镜下悬浮微粒的随机运动归结为分子碰撞，用实验为分子的真实存在提供依据，也让布朗运动成为测量分子数量的工具，1926年获诺贝尔物理学奖。",
+      "item_sha256": "40888b87ab0e0808c05509283822f8cf6891ea86ebc7ff7c73490476427eff82",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/46",
-          "final_url": "https://www.nobelprize.org/prizes/physics/1938/fermi/facts/",
-          "authority_type": "official laureate archive",
+          "url": "https://www.nobelprize.org/laureate/32/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1926/perrin/facts/",
+          "authority_type": "official prize archive",
           "date_context": "event-date",
-          "date_quote": "Born: 29 September 1901, Rome, Italy",
-          "fact_quote": "for his demonstrations of the existence of new radioactive elements produced by neutron irradiation, and for his related discovery of nuclear reactions brought about by slow neutrons",
-          "retrieved_sha256": "1ed4c5cc0b3e0c483f2220a1d979918786f861bccd813d47dda9aa7b12592dfc",
+          "date_quote": "Born: 30 September 1870, Lille, France",
+          "fact_quote": "for his work on the discontinuous structure of matter, and especially for his discovery of sedimentation equilibrium",
+          "retrieved_sha256": "f84080845ab78203697ca335dc8a45f629f8ad17849381b7a2064ab833fc8d0e",
           "content_type": "text/html"
-        },
-        {
-          "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/46",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/46",
-          "authority_type": "official laureate API",
-          "date_context": "event-date",
-          "date_quote": "\"date\":\"1901-09-29\"",
-          "fact_quote": "for his demonstrations of the existence of new radioactive elements produced by neutron irradiation, and for his related discovery of nuclear reactions brought about by slow neutrons",
-          "retrieved_sha256": "8aac3c84c053104929553f80ca7d391c2b328583f82db83c4f15d806311556e8",
-          "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "1954年",
-      "title": "欧洲核子研究组织成立",
-      "text": "欧洲核子研究组织的成立公约生效，实验室由此正式诞生。西欧多国把加速器与粒子束实验集中到同一屋檐下，此后它成为高能物理合作与人才培养的中枢，万维网也在这样的土壤里被发明出来。",
-      "item_sha256": "5318f70b3d5acd0576b6787f0cc8babc36c2a0238ae03a7f75c825637e947369",
+      "label": "1882年",
+      "title": "伏尔甘街水电站发电",
+      "text": "威斯康星州阿普尔顿的伏尔甘街电站开始发电，把福克斯河的水力变成电，供应两家造纸厂和罗杰斯住宅等用户；这种原本只在展会上演示的供电方式，从这里走向商业运营。",
+      "item_sha256": "b54e5c976a48714a7f757a75ee0b543b735fc655cea193fcf05b04f620c01216",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://council.web.cern.ch/en/content/convention-establishment-european-organization-nuclear-research",
-          "final_url": "https://council.web.cern.ch/en/content/convention-establishment-european-organization-nuclear-research",
-          "authority_type": "official archive",
+          "url": "https://events.vtools.ieee.org/m/366345",
+          "final_url": "https://events.vtools.ieee.org/m/366345",
+          "authority_type": "professional engineering society record",
           "date_context": "event-date",
-          "date_quote": "entered into force on 29  September,  1954",
-          "fact_quote": "The Convention for the Establishment of a European Organization for Nuclear Research and the Financial Protocol annexed thereto, open for signature at Paris from 1 July to 31 December 1953, entered into force on 29  September,  1954.",
-          "retrieved_sha256": "5614e447ac10e01c8ee7e0dd96b8804fe87a2648afe4fca98c2c174f01c72d56",
+          "date_quote": "When it began operation on September 30, 1882, the Vulcan Street Plant",
+          "fact_quote": "was the first Edison hydroelectric central station to serve a system of private and commercial customers in North America",
+          "retrieved_sha256": "d4a73a9a808d17bfe867a1e3843521bbbd854b89b36d1153c49c883e6356dbb4",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1962年",
-      "title": "加拿大首颗卫星云雀一号升空",
-      "text": "加拿大首颗卫星「云雀一号」升空，它由本国团队设计制造，用来探测电离层。卫星用超长天线发射无线电脉冲，由回波反推电子密度的垂直分布，加拿大由此成为世界上第三个自主造出卫星的国家。",
-      "item_sha256": "ef2c42ae8463a30d48659ac22ac47094f82c4f8ac6e3c1b76912438cc7c7b278",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://airandspace.si.edu/collection-objects/satellite-alouette-model/nasm_A19761103000",
-          "final_url": "https://airandspace.si.edu/collection-objects/satellite-alouette-model/nasm_A19761103000",
-          "authority_type": "national museum record",
-          "date_context": "event-date",
-          "date_quote": "The original, Canada's first space satellite, was designed to study the ionosphere. It was launched from the Pacific Missile range on September 29, 1962 atop a Thor-Agena vehicle",
-          "fact_quote": "The original, Canada's first space satellite, was designed to study the ionosphere.",
-          "retrieved_sha256": "a416c46fbd7073679f101663364db080620b64c602ae1c964aaf06544dfce1a6",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2004年",
-      "title": "图塔蒂斯近距离掠过地球",
-      "text": "小行星4179图塔蒂斯以约155万公里的距离掠过地球，是该世纪同类大小的已知天体中最近的一次接近。射电望远镜抓住机会做雷达成像，测出它像土豆一样的不规则外形与缓慢翻滚的自转。",
-      "item_sha256": "61b1fdeeb0c5b4a7da947f8d9711232c37f9657eeef4f099ea1586f9d953de69",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://echo.jpl.nasa.gov/asteroids/4179_Toutatis/toutatis.html",
-          "final_url": "https://echo.jpl.nasa.gov/asteroids/4179_Toutatis/toutatis.html",
-          "authority_type": "national research center",
-          "date_context": "event-date",
-          "date_quote": "The Sep. 29, 2004, approach is the closest in this century of any known asteroid at least as large as Toutatis.",
-          "fact_quote": "The Sep. 29, 2004, approach is the closest in this century of any known asteroid at least as large as Toutatis.",
-          "retrieved_sha256": "0d05540c061e9d78a64bdca350cfd4e610c5cfc711bd584ab70fcb4f356a8f85",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2009年",
-      "title": "萨摩亚8.1级地震与海啸",
-      "text": "萨摩亚群岛附近海底发生8.1级地震，数分钟后海啸袭击岛屿，在萨摩亚、美属萨摩亚和汤加造成约两百人死亡。灾后野外考察发现，这次海啸由少见的洋壳外侧正断层引发，浪高分布远超预期。",
-      "item_sha256": "21df5fa1f79bcf000e3acf956a7dcf1ebf9a191bfa74b350e8321acd628c31bf",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.usgs.gov/news/surprises-deadly-september-29-2009-samoa-tsunami",
-          "final_url": "https://www.usgs.gov/news/surprises-deadly-september-29-2009-samoa-tsunami",
-          "authority_type": "national survey agency",
-          "date_context": "event-date",
-          "date_quote": "The Samoa tsunami of September 29, 2009, was the fifth tsunami studied by U.S. Geological Survey (USGS) field teams in 15 years, and yet it presented many surprises.",
-          "fact_quote": "The tsunami was generated by a magnitude 8.1 earthquake that occurred about 190 km southwest of American Samoa at 6:48 a.m. Samoa Standard Time.",
-          "retrieved_sha256": "ad3d10a43350020128b14e3033dfd79cae7ce7f95e1a68b8ca3e2848d2bdc309",
-          "content_type": "text/html"
-        },
-        {
-          "level": "A",
-          "url": "https://sos.noaa.gov/catalog/datasets/tsunami-historical-series-samoa-2009",
-          "final_url": "https://sos.noaa.gov:443/catalog/datasets/tsunami-historical-series-samoa-2009/",
-          "authority_type": "national ocean agency",
-          "date_context": "event-date",
-          "date_quote": "This tsunami was generated by an 8.1 magnitude earthquake near the Samoan Islands on September 29, 2009.",
-          "fact_quote": "it was very destructive near the earthquake and killed 192 people in Samoa, American Samoa, and Tonga",
-          "retrieved_sha256": "c3b4ed4b72cd9eca41e83df91e5b9786d5a55863ee8c51e2b0c28b94cba0901f",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2010年",
-      "title": "多丝正比室发明人夏帕克去世",
-      "text": "物理学家乔治·夏帕克去世。他发明并改进多丝正比室，用一排排细丝把带电粒子的径迹转成可读电信号，使探测器能同时定位大量粒子，为后来的高能物理实验和医学成像提供了关键手段。",
-      "item_sha256": "c975925df49b4643e63105ca40410cc54e1c750eb9cf98c62ad37e48736e01fd",
+      "label": "1905年",
+      "title": "内维尔·莫特出生",
+      "text": "莫特生于英国利兹。他研究电子在原子核之间的运动，1949年解释了某些晶体为何能在导体与绝缘体之间切换，并把无序材料纳入统一图景，1977年获诺贝尔物理学奖。",
+      "item_sha256": "4acde34765db600a88da933a33956126a56966da7b3a55d109e5c23a154cc759",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/142",
-          "final_url": "https://www.nobelprize.org/prizes/physics/1992/charpak/facts/",
-          "authority_type": "official laureate archive",
+          "url": "https://www.nobelprize.org/laureate/108/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1977/mott/facts/",
+          "authority_type": "official prize archive",
           "date_context": "event-date",
-          "date_quote": "Died: 29 September 2010, Paris, France",
-          "fact_quote": "for his invention and development of particle detectors, in particular the multiwire proportional chamber",
-          "retrieved_sha256": "ce55cb5f698fe03ddd47085bc8f5caaf85e7bbf1437dc3c28593f5ca60543c76",
+          "date_quote": "Born: 30 September 1905, Leeds, United Kingdom",
+          "fact_quote": "By observing the interaction between electrons, Nevill Mott explained in 1949 how certain crystals can alternate between being electrical conductors and insulators.",
+          "retrieved_sha256": "f1d7273cf5c217c5731db049980f6f98b620701532b597d7c2194d11cd2d8c79",
           "content_type": "text/html"
-        },
+        }
+      ]
+    },
+    {
+      "label": "1935年",
+      "title": "胡佛大坝落成",
+      "text": "罗斯福总统为科罗拉多河上的博尔德大坝（今胡佛大坝）主持落成典礼。工程规模迫使设计者研究混凝土配比与冷却、应力分析和水工模型，此后大型水电工程多沿用这里的经验。",
+      "item_sha256": "985ccd004223d7fec51315ee0962f541b6a5e7427c166df8a8c0afc6703f4c05",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
         {
           "level": "A",
-          "url": "https://api.nobelprize.org/2.1/laureate/142",
-          "final_url": "https://api.nobelprize.org/2.1/laureate/142",
-          "authority_type": "official laureate API",
+          "url": "https://www.usbr.gov/history/hoover.html",
+          "final_url": "https://www.usbr.gov/history/hoover.html",
+          "authority_type": "government agency history",
           "date_context": "event-date",
-          "date_quote": "\"date\":\"2010-09-29\"",
-          "fact_quote": "for his invention and development of particle detectors, in particular the multiwire proportional chamber",
-          "retrieved_sha256": "2dcd039c483cc62a7804bef24c777f1521e499901035bd5602b6404cd2425ea5",
-          "content_type": "application/json"
+          "date_quote": "Boulder Dam was dedicated by President Franklin Roosevelt on September 30, 1935.",
+          "fact_quote": "The unprecedented size of the dam led to studies in almost every aspect of dam construction including concrete composition and cooling, stress analysis, hydraulic design, and hydraulic and structural modeling.",
+          "retrieved_sha256": "582ee9e6d95e89eddbe938b5f06fe333205f93db79c64f73444156b4fb4348ad",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1946年",
+      "title": "NACA进驻穆罗克",
+      "text": "五名美国国家航空咨询委员会（NACA）工程师抵达加州穆罗克陆军机场，为贝尔X-1超音速试飞做准备；这个小组后来发展为NASA阿姆斯特朗飞行研究中心，跨声速空气动力学等研究由此展开。",
+      "item_sha256": "b6acc33a02934868aa1037249949b7e92857775cebe41257fbc886945cb0e2d9",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/armstrong/history",
+          "final_url": "https://www.nasa.gov/armstrong/history/",
+          "authority_type": "space agency history",
+          "date_context": "event-date",
+          "date_quote": "Since September 30, 1946, NASA",
+          "fact_quote": "arrived at Muroc Army Air Field to participate in the first attempt by a human to fly faster than the speed of sound in the Bell X-1.",
+          "retrieved_sha256": "155ebb8c69b26d19e7e81c922b8243f8bf7bbc09bcf7a768ddd69acf5270669d",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1951年",
+      "title": "巴里·马歇尔出生",
+      "text": "马歇尔生于澳大利亚卡尔古利。他与罗宾·沃伦培养出幽门螺杆菌，1982年用实验说明这种细菌与胃溃疡反复发作有关，清除细菌后病情明显改善，他因此在2005年获诺贝尔生理学或医学奖。",
+      "item_sha256": "6c54865fc6a0cea44318f8829cd953ae00f43df429efa6b8cfac0ef96abd378e",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/laureate/789/",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/2005/marshall/facts/",
+          "authority_type": "official prize archive",
+          "date_context": "event-date",
+          "date_quote": "Born: 30 September 1951, Kalgoorlie, Australia",
+          "fact_quote": "Warren and Marshall proved in 1982 that patients could only be cured if the bacteria were eliminated.",
+          "retrieved_sha256": "9f924aeba7f6871c07eb76ed2b7ba311b69f2503e53a500b46f995b13cec775e",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1994年",
+      "title": "奋进号空间雷达任务",
+      "text": "美国奋进号航天飞机升空执行STS-68任务，搭载空间雷达实验室进行对地观测，飞行持续11天；这是当年第二次空间雷达实验室飞行，任务中的雷达影像覆盖了火山与山地等地貌。",
+      "item_sha256": "94b3d5d05ba96de0e7f8c79e9d29f7b061ec833d89bd855c103d79df508c3bcc",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.esa.int/esatv/Videos/1994/10/STS-68_Post-Flight_Presentation",
+          "final_url": "https://www.esa.int/esatv/Videos/1994/10/STS-68_Post-Flight_Presentation",
+          "authority_type": "space agency mission record",
+          "date_context": "event-date",
+          "date_quote": "The space shuttle Endeavour was launched on the STS-68 mission on September 30th, 1994.",
+          "fact_quote": "The second flight that year",
+          "retrieved_sha256": "580732733948cac0070bec97bdaae52a58ab5d92ca3a3fe9d053c1e3fcb4ada9",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "1994年",
+      "title": "安德烈·利沃夫逝世",
+      "text": "法国微生物学家利沃夫在巴黎去世。他研究噬菌体，在20世纪50年代初阐明溶原现象：病毒基因可整合进细菌基因组长期潜伏，直到紫外光等因素触发复制；他于1965年获诺贝尔奖。",
+      "item_sha256": "b4f971b8885a16418603f5122fa0b800547fc8c726d34c720890ac54241740f0",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/laureate/381/",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/1965/lwoff/facts/",
+          "authority_type": "official prize archive",
+          "date_context": "event-date",
+          "date_quote": "Died: 30 September 1994, Paris, France",
+          "fact_quote": "In the early 1950s André Lwoff successfully explained how this process, known as lysogeny, works.",
+          "retrieved_sha256": "f6c6d381d0811988783cdfd73b7f8aa8926a5d44ae2a1faacb52c06a0edff0d5",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2011年",
+      "title": "拉尔夫·斯坦曼逝世",
+      "text": "加拿大裔免疫学家斯坦曼在纽约去世。他1973年发现树突状细胞，并说明这类细胞能激活T细胞、建立免疫记忆，为疫苗与肿瘤免疫治疗提供基础；评奖机构宣布他获奖时不知他三天前已离世。",
+      "item_sha256": "bb12bc2bd78865700a4b891b9e4f9f63999f5507f17e967615ca8558925a8335",
+      "strong_claim": false,
+      "person_event": true,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nobelprize.org/laureate/863/",
+          "final_url": "https://www.nobelprize.org/prizes/medicine/2011/steinman/facts/",
+          "authority_type": "official prize archive",
+          "date_context": "event-date",
+          "date_quote": "Died: 30 September 2011, New York, NY, USA",
+          "fact_quote": "Ralph Steinman discovered, in 1973, a new cell type that he called the dendritic cell.",
+          "retrieved_sha256": "63849d055af5fbc91de8e77fd80efa9fda8accb238cfb5a2443acf48c9817fad",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2016年",
+      "title": "罗塞塔号任务结束",
+      "text": "欧洲空间局的罗塞塔号按计划降落到彗星67P/丘留莫夫-格拉西缅科表面的迈阿特区域，结束12年任务。它在下降过程中继续采集气体与尘埃数据，用于研究彗核结构和太阳系早期物质。",
+      "item_sha256": "50a18e4bd3c8a398de29da3d8b0772bef9007607346f3468f8daa00c1126e4b4",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://esoc.esa.int/content/rosetta",
+          "final_url": "https://esoc.esa.int/content/rosetta",
+          "authority_type": "space agency mission record",
+          "date_context": "event-date",
+          "date_quote": "mission culminated with a descent on 30 September 2016 towards a region of active pits on the comet",
+          "fact_quote": "Rosetta's main objective was to rendezvous with and enter orbit around Comet 67P/Churyumov-Gerasimenko, performing observations of the comet's nucleus and coma.",
+          "retrieved_sha256": "696fe5ee33463219f4e64553b8858445735795f1c0155e4cc1273cc75d3404c1",
+          "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-29:c1991df2bfeb7caba3abb02feae11878e3879310536255425fa0bb1304f34ce1",
-  "public_json_sha256": "7a78b7b53a695919443be91d74cdc8ac14e6e6fd7e54ba23ba9620b382569175",
-  "poster_sha256": "b9f32f5f97edcb3c5b166e9c4bcfca3d5957f57632f49e766a132652a3957919",
-  "poster_bytes": 1631468,
+  "delivery_id": "2026-09-30:fb101ca0820c7b7c0d2fbf2f713c7add6c19986f6eac2de3307ba321fd627969",
+  "public_json_sha256": "de61c63a86a882ec655d99eee372e5f11b333c67268d9736d083178b94e2d429",
+  "poster_sha256": "facea645e2e389ec13a81caa09848106d39fe8bbe0f054ab903c87fca831ed8e",
+  "poster_bytes": 2139049,
   "poster_dimensions": {
     "width": 2160,
-    "height": 4070
+    "height": 6038
   }
 }
