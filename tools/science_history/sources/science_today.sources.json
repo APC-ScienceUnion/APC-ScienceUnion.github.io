@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-09-30",
+  "date": "2026-10-01",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,222 +8,181 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1870年",
-      "title": "让·佩兰出生",
-      "text": "佩兰生于法国里尔。他把显微镜下悬浮微粒的随机运动归结为分子碰撞，用实验为分子的真实存在提供依据，也让布朗运动成为测量分子数量的工具，1926年获诺贝尔物理学奖。",
-      "item_sha256": "40888b87ab0e0808c05509283822f8cf6891ea86ebc7ff7c73490476427eff82",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/laureate/32/",
-          "final_url": "https://www.nobelprize.org/prizes/physics/1926/perrin/facts/",
-          "authority_type": "official prize archive",
-          "date_context": "event-date",
-          "date_quote": "Born: 30 September 1870, Lille, France",
-          "fact_quote": "for his work on the discontinuous structure of matter, and especially for his discovery of sedimentation equilibrium",
-          "retrieved_sha256": "f84080845ab78203697ca335dc8a45f629f8ad17849381b7a2064ab833fc8d0e",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1882年",
-      "title": "伏尔甘街水电站发电",
-      "text": "威斯康星州阿普尔顿的伏尔甘街电站开始发电，把福克斯河的水力变成电，供应两家造纸厂和罗杰斯住宅等用户；这种原本只在展会上演示的供电方式，从这里走向商业运营。",
-      "item_sha256": "b54e5c976a48714a7f757a75ee0b543b735fc655cea193fcf05b04f620c01216",
+      "label": "1890年",
+      "title": "优胜美地成为国家公园",
+      "text": "在约翰·缪尔等人推动下，国会把优胜美地谷地周围约一千五百平方英里的荒野划为国家公园。以花岗岩崖壁和巨杉闻名的这片山地自此有了统一保护身份，是美国国家公园体系早期的重要一块。",
+      "item_sha256": "f990e2ec9506610430ed2d5d042d611a5883677cf9e71a6d50372fcb84aab786",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://events.vtools.ieee.org/m/366345",
-          "final_url": "https://events.vtools.ieee.org/m/366345",
-          "authority_type": "professional engineering society record",
+          "url": "https://www.nps.gov/yose/learn/news/yose120.htm",
+          "final_url": "https://www.nps.gov/yose/learn/news/yose120.htm",
+          "authority_type": "government agency",
           "date_context": "event-date",
-          "date_quote": "When it began operation on September 30, 1882, the Vulcan Street Plant",
-          "fact_quote": "was the first Edison hydroelectric central station to serve a system of private and commercial customers in North America",
-          "retrieved_sha256": "d4a73a9a808d17bfe867a1e3843521bbbd854b89b36d1153c49c883e6356dbb4",
+          "date_quote": "Yosemite National Park was designated by an Act of Congress on October 1, 1890, making it the third national park in the United States",
+          "fact_quote": "Yosemite National Park was designated by an Act of Congress on October 1, 1890",
+          "retrieved_sha256": "664fea2b5275535db16f73aa308ed6dbccc40979dc73add38aebeb203df93c89",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1905年",
-      "title": "内维尔·莫特出生",
-      "text": "莫特生于英国利兹。他研究电子在原子核之间的运动，1949年解释了某些晶体为何能在导体与绝缘体之间切换，并把无序材料纳入统一图景，1977年获诺贝尔物理学奖。",
-      "item_sha256": "4acde34765db600a88da933a33956126a56966da7b3a55d109e5c23a154cc759",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/laureate/108/",
-          "final_url": "https://www.nobelprize.org/prizes/physics/1977/mott/facts/",
-          "authority_type": "official prize archive",
-          "date_context": "event-date",
-          "date_quote": "Born: 30 September 1905, Leeds, United Kingdom",
-          "fact_quote": "By observing the interaction between electrons, Nevill Mott explained in 1949 how certain crystals can alternate between being electrical conductors and insulators.",
-          "retrieved_sha256": "f1d7273cf5c217c5731db049980f6f98b620701532b597d7c2194d11cd2d8c79",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1935年",
-      "title": "胡佛大坝落成",
-      "text": "罗斯福总统为科罗拉多河上的博尔德大坝（今胡佛大坝）主持落成典礼。工程规模迫使设计者研究混凝土配比与冷却、应力分析和水工模型，此后大型水电工程多沿用这里的经验。",
-      "item_sha256": "985ccd004223d7fec51315ee0962f541b6a5e7427c166df8a8c0afc6703f4c05",
+      "label": "1890年",
+      "title": "美国气象局成立，天气预报交给文职机构",
+      "text": "国会通过法案，把陆军信号兵团承担的气象观测与报务工作移交农业部新设的气象局，天气预报由此交给文职机构，为后来国家气象局的飓风警报、农业与航空气象服务打下基础。",
+      "item_sha256": "c94099c1de4594811a8677665fbef670dc904ac0df553ad055b5cb59334772ff",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.usbr.gov/history/hoover.html",
-          "final_url": "https://www.usbr.gov/history/hoover.html",
-          "authority_type": "government agency history",
+          "url": "https://www.weather.gov/timeline",
+          "final_url": "https://www.weather.gov/timeline",
+          "authority_type": "government agency",
           "date_context": "event-date",
-          "date_quote": "Boulder Dam was dedicated by President Franklin Roosevelt on September 30, 1935.",
-          "fact_quote": "The unprecedented size of the dam led to studies in almost every aspect of dam construction including concrete composition and cooling, stress analysis, hydraulic design, and hydraulic and structural modeling.",
-          "retrieved_sha256": "582ee9e6d95e89eddbe938b5f06fe333205f93db79c64f73444156b4fb4348ad",
+          "date_quote": "October 1, 1890: The weather service is first identified as a civilian agency",
+          "fact_quote": "passes an act transferring the meteorological responsibilities of the Signal Service to the newly-created U.S. Weather Bureau in the Department of Agriculture.",
+          "retrieved_sha256": "b7096b18a6a939d20b59e5b04f943f268075058f21dd23281ac170cc844d3bef",
+          "content_type": "text/html"
+        },
+        {
+          "level": "A",
+          "url": "https://www.archives.gov/research/guide-fed-records/groups/027.html",
+          "final_url": "https://www.archives.gov/research/guide-fed-records/groups/027.html",
+          "authority_type": "official archive",
+          "date_context": "event-date",
+          "date_quote": "Established: In the Department of Agriculture by an act of October 1, 1890 (26 Stat. 653).",
+          "fact_quote": "Established: In the Department of Agriculture by an act of October 1, 1890",
+          "retrieved_sha256": "dd80f4f14c7a339c2ec07e557138e540db19ce013b9198b04bc8cb5b4dec9360",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1946年",
-      "title": "NACA进驻穆罗克",
-      "text": "五名美国国家航空咨询委员会（NACA）工程师抵达加州穆罗克陆军机场，为贝尔X-1超音速试飞做准备；这个小组后来发展为NASA阿姆斯特朗飞行研究中心，跨声速空气动力学等研究由此展开。",
-      "item_sha256": "b6acc33a02934868aa1037249949b7e92857775cebe41257fbc886945cb0e2d9",
+      "label": "1908年",
+      "title": "T型车开出底特律",
+      "text": "福特汽车公司开始向客户交付T型车。这款车结构简单、零件通用，配上后来成熟的流水线，把汽车从少数人的奢侈品变成普通家庭买得起的工具，也让装配线生产方式成为二十世纪制造业的样板。",
+      "item_sha256": "5632b6174b5d9ab0e55af73cb53fe4bc3cc4e331526f46b7b2c04bb7e50dc9e8",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nasa.gov/armstrong/history",
-          "final_url": "https://www.nasa.gov/armstrong/history/",
-          "authority_type": "space agency history",
+          "url": "https://www.cambridge.org/core/journals/journal-of-economic-history/article/model-t/A783993184F1741EDC6F6A76B9D6D98D",
+          "final_url": "https://www.cambridge.org/core/journals/journal-of-economic-history/article/model-t/A783993184F1741EDC6F6A76B9D6D98D",
+          "authority_type": "peer-reviewed journal",
           "date_context": "event-date",
-          "date_quote": "Since September 30, 1946, NASA",
-          "fact_quote": "arrived at Muroc Army Air Field to participate in the first attempt by a human to fly faster than the speed of sound in the Bell X-1.",
-          "retrieved_sha256": "155ebb8c69b26d19e7e81c922b8243f8bf7bbc09bcf7a768ddd69acf5270669d",
+          "date_quote": "Model T deliveries started on 1 October 1908",
+          "fact_quote": "Production rose from 10,660 in the first year of production",
+          "retrieved_sha256": "4836f85d3983bc3d96fc849b9f90690c16070e22ddd3696eea5caf7f98e757ab",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1951年",
-      "title": "巴里·马歇尔出生",
-      "text": "马歇尔生于澳大利亚卡尔古利。他与罗宾·沃伦培养出幽门螺杆菌，1982年用实验说明这种细菌与胃溃疡反复发作有关，清除细菌后病情明显改善，他因此在2005年获诺贝尔生理学或医学奖。",
-      "item_sha256": "6c54865fc6a0cea44318f8829cd953ae00f43df429efa6b8cfac0ef96abd378e",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/laureate/789/",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/2005/marshall/facts/",
-          "authority_type": "official prize archive",
-          "date_context": "event-date",
-          "date_quote": "Born: 30 September 1951, Kalgoorlie, Australia",
-          "fact_quote": "Warren and Marshall proved in 1982 that patients could only be cured if the bacteria were eliminated.",
-          "retrieved_sha256": "9f924aeba7f6871c07eb76ed2b7ba311b69f2503e53a500b46f995b13cec775e",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1994年",
-      "title": "奋进号空间雷达任务",
-      "text": "美国奋进号航天飞机升空执行STS-68任务，搭载空间雷达实验室进行对地观测，飞行持续11天；这是当年第二次空间雷达实验室飞行，任务中的雷达影像覆盖了火山与山地等地貌。",
-      "item_sha256": "94b3d5d05ba96de0e7f8c79e9d29f7b061ec833d89bd855c103d79df508c3bcc",
+      "label": "1942年",
+      "title": "喷气动力进入美国航空试验",
+      "text": "加州穆罗克干湖滑跑测试中，贝尔试飞员斯坦利驾XP-59A短暂离地，喷气动力就此进入美国航空试验。它用引进英国技术的涡轮喷气发动机，速度并不出众，却让美国航空工业摸到喷气时代的门槛。",
+      "item_sha256": "5f0c8f3b1fd0a980ba9cd04492f383be90a108c616efbf675fef920fa8850bc4",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.esa.int/esatv/Videos/1994/10/STS-68_Post-Flight_Presentation",
-          "final_url": "https://www.esa.int/esatv/Videos/1994/10/STS-68_Post-Flight_Presentation",
-          "authority_type": "space agency mission record",
+          "url": "https://airandspace.si.edu/collection-objects/bell-xp-59a-airacomet/nasm_A19450016000",
+          "final_url": "https://airandspace.si.edu/collection-objects/bell-xp-59a-airacomet/nasm_A19450016000",
+          "authority_type": "national museum archive",
           "date_context": "event-date",
-          "date_quote": "The space shuttle Endeavour was launched on the STS-68 mission on September 30th, 1994.",
-          "fact_quote": "The second flight that year",
-          "retrieved_sha256": "580732733948cac0070bec97bdaae52a58ab5d92ca3a3fe9d053c1e3fcb4ada9",
+          "date_quote": "On October 1, 1942, Bell test pilot Robert M. Stanley took the XP-59A into the air for the first time.",
+          "fact_quote": "Bell mounted a dummy propeller on the nose and threw a tarpaulin over the fuselage to disguise the Airacomet",
+          "retrieved_sha256": "15a25c9b18727e61a837979ebeda2f6e03dc208c707e0b23845ceabd04d16284",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1994年",
-      "title": "安德烈·利沃夫逝世",
-      "text": "法国微生物学家利沃夫在巴黎去世。他研究噬菌体，在20世纪50年代初阐明溶原现象：病毒基因可整合进细菌基因组长期潜伏，直到紫外光等因素触发复制；他于1965年获诺贝尔奖。",
-      "item_sha256": "b4f971b8885a16418603f5122fa0b800547fc8c726d34c720890ac54241740f0",
+      "label": "1947年",
+      "title": "阐明蛋白质降解机制的切哈诺沃出生",
+      "text": "以色列化学家阿龙·切哈诺沃出生于海法。他后来与赫什科、罗斯一起阐明泛素介导的蛋白质降解过程，说明细胞怎样给不再需要的蛋白质贴上标记并送往销毁，2004年因此获得诺贝尔化学奖。",
+      "item_sha256": "b9da281ca33389274c90d4149d86fdaacb40e40c768273d99d60db806ff46e47",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/laureate/381/",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1965/lwoff/facts/",
-          "authority_type": "official prize archive",
+          "url": "https://api.nobelprize.org/2.1/laureate/779",
+          "final_url": "https://api.nobelprize.org/2.1/laureate/779",
+          "authority_type": "official archive",
           "date_context": "event-date",
-          "date_quote": "Died: 30 September 1994, Paris, France",
-          "fact_quote": "In the early 1950s André Lwoff successfully explained how this process, known as lysogeny, works.",
-          "retrieved_sha256": "f6c6d381d0811988783cdfd73b7f8aa8926a5d44ae2a1faacb52c06a0edff0d5",
-          "content_type": "text/html"
+          "date_quote": "\"birth\":{\"date\":\"1947-10-01\"",
+          "fact_quote": "for the discovery of ubiquitin-mediated protein degradation",
+          "retrieved_sha256": "3ea806f91c68ed875b5fe22dff0ada946ee66cdd1df7583bf49e14329978bfc4",
+          "content_type": "application/json"
         }
       ]
     },
     {
-      "label": "2011年",
-      "title": "拉尔夫·斯坦曼逝世",
-      "text": "加拿大裔免疫学家斯坦曼在纽约去世。他1973年发现树突状细胞，并说明这类细胞能激活T细胞、建立免疫记忆，为疫苗与肿瘤免疫治疗提供基础；评奖机构宣布他获奖时不知他三天前已离世。",
-      "item_sha256": "bb12bc2bd78865700a4b891b9e4f9f63999f5507f17e967615ca8558925a8335",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/laureate/863/",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/2011/steinman/facts/",
-          "authority_type": "official prize archive",
-          "date_context": "event-date",
-          "date_quote": "Died: 30 September 2011, New York, NY, USA",
-          "fact_quote": "Ralph Steinman discovered, in 1973, a new cell type that he called the dendritic cell.",
-          "retrieved_sha256": "63849d055af5fbc91de8e77fd80efa9fda8accb238cfb5a2443acf48c9817fad",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2016年",
-      "title": "罗塞塔号任务结束",
-      "text": "欧洲空间局的罗塞塔号按计划降落到彗星67P/丘留莫夫-格拉西缅科表面的迈阿特区域，结束12年任务。它在下降过程中继续采集气体与尘埃数据，用于研究彗核结构和太阳系早期物质。",
-      "item_sha256": "50a18e4bd3c8a398de29da3d8b0772bef9007607346f3468f8daa00c1126e4b4",
+      "label": "1958年",
+      "title": "NASA正式开始运作",
+      "text": "美国国家航空航天局挂牌办公，原国家航空咨询委员会的三个实验室、八千名雇员和全部设备整建制转入，卫星与探空火箭项目也移交过来。民用航天由此有了统一的联邦机构，美国太空计划进入新阶段。",
+      "item_sha256": "9b5c0d6ca49e836bf9348f2ff1ea699c668d0319142c6471f98986f98d859da4",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://esoc.esa.int/content/rosetta",
-          "final_url": "https://esoc.esa.int/content/rosetta",
-          "authority_type": "space agency mission record",
+          "url": "https://www.nasa.gov/history/65-years-ago-nasa-begins-operations",
+          "final_url": "https://www.nasa.gov/history/65-years-ago-nasa-begins-operations/",
+          "authority_type": "government agency",
           "date_context": "event-date",
-          "date_quote": "mission culminated with a descent on 30 September 2016 towards a region of active pits on the comet",
-          "fact_quote": "Rosetta's main objective was to rendezvous with and enter orbit around Comet 67P/Churyumov-Gerasimenko, performing observations of the comet's nucleus and coma.",
-          "retrieved_sha256": "696fe5ee33463219f4e64553b8858445735795f1c0155e4cc1273cc75d3404c1",
+          "date_quote": "On Oct. 1, 1958, the National Aeronautics and Space Administration (NASA) officially began operations.",
+          "fact_quote": "transferred to NASA on Oct. 1, with a total of 8,000 employees and an annual budget of $100 million.",
+          "retrieved_sha256": "6a87f9163173c0ba1e0389efa5e81693b034da1b8bc2a3804fbc575f6d5f3681",
+          "content_type": "text/html"
+        },
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/history/monograph10/nasabrth.html",
+          "final_url": "https://www.nasa.gov/history/monograph10/nasabrth.html",
+          "authority_type": "government agency",
+          "date_context": "event-date",
+          "date_quote": "On October 1, 1958, NASA officially opened for business with five facilities inherited from the NACA",
+          "fact_quote": "On October 1, 1958, NASA officially opened for business",
+          "retrieved_sha256": "e9ada6431ce0001c483281776de26d0c6ffc4110f80d1b3d364b75ff85788796",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2010年",
+      "title": "嫦娥二号发射",
+      "text": "嫦娥二号从西昌卫星发射中心升空，作为嫦娥一号的备份星改造而来，相机分辨率更高、奔月时间更短。它环绕月球获取了更精细的全月三维影像，并为后来嫦娥三号在虹湾软着陆预先选择了着陆区。",
+      "item_sha256": "2618998ddbe0b67a8cd370a95a2e7963af49cbfb873ebddf625244a005972a17",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nssdc.ac.cn/mobile/nssdc_en/html/task/change2.html",
+          "final_url": "https://www.nssdc.ac.cn/mobile/nssdc_en/html/task/change2.html",
+          "authority_type": "national data center",
+          "date_context": "event-date",
+          "date_quote": "It was launched on October 1, 2010, aiming at similar scientific objectives as the Chang’E-1",
+          "fact_quote": "conducted research from a 100-kilometer-high lunar orbit in preparation for the Chang’E-3 lander and rover",
+          "retrieved_sha256": "fa813277b696c783731250282176562812ce0657f6446c860101fffcab9fe0a0",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-09-30:fb101ca0820c7b7c0d2fbf2f713c7add6c19986f6eac2de3307ba321fd627969",
-  "public_json_sha256": "de61c63a86a882ec655d99eee372e5f11b333c67268d9736d083178b94e2d429",
-  "poster_sha256": "facea645e2e389ec13a81caa09848106d39fe8bbe0f054ab903c87fca831ed8e",
-  "poster_bytes": 2139049,
+  "delivery_id": "2026-10-01:493a7dcff17548f10c04b69caa43bf909b0725341495ace2eb7d9ad31acb206f",
+  "public_json_sha256": "42fac02c521a43f8465d46becf07662311b894aac5eeb73c7728ad359588ebec",
+  "poster_sha256": "720d96e8d0554513411d28f5e79b4658c1e1468954e4d44c2a81cb282c7fe88d",
+  "poster_bytes": 1814172,
   "poster_dimensions": {
     "width": 2160,
-    "height": 6038
+    "height": 4562
   }
 }
