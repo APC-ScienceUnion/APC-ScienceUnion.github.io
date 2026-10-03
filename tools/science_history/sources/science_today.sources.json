@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-10-02",
+  "date": "2026-10-03",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,200 +8,178 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1832年",
-      "title": "文化人类学的奠基人泰勒出生",
-      "text": "英国学者爱德华·泰勒出生。他遍游美洲，比较各地风俗与信仰，主张用演化的眼光看待各文化的先后阶段，并在《原始文化》里给出文化的系统定义，让人类学从零散见闻变为有理论框架的学科。",
-      "item_sha256": "5299d1576558219da3390e9dab391bab7966940ce0e2873fd9a78ecb450bb2b1",
+      "label": "1904年",
+      "title": "冠醚的发现者出生",
+      "text": "查尔斯·佩德森生于朝鲜釜山，后在美国杜邦公司工作。1967年他发现环状分子“冠醚”，环心能扣住特定金属离子并带入有机溶剂，让难做的反应得以进行，他因此分享1987年诺贝尔化学奖。",
+      "item_sha256": "ba8d6fb967dda01cce018f7f5170dbae7717495e2af7a9a1b9923ae5fb7c8389",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://web.prm.ox.ac.uk/sma/index.php/articles/article-index/335-edward-burnett-tylor-1832-1917.html",
-          "final_url": "https://web.prm.ox.ac.uk/sma/index.php/articles/article-index/335-edward-burnett-tylor-1832-1917.html",
-          "authority_type": "university museum archive",
+          "url": "https://www.nobelprize.org/prizes/chemistry/1987/pedersen/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/chemistry/1987/pedersen/facts/",
+          "authority_type": "official award archive",
           "date_context": "event-date",
-          "date_quote": "Edward Burnett Tylor was born on 2 October 1832 at Camberwell, Surrey.",
-          "fact_quote": "Tylor is agreed to be an important figure in the early history of anthropology as a discipline",
-          "retrieved_sha256": "fdc51a7e996281031d8a31a63f1076431e091fbba6dd4c54a8981afb145daefd",
+          "date_quote": "Born: 3 October 1904, Pusan, Korea (now South Korea)",
+          "fact_quote": "In 1967 Charles Pedersen discovered crown ethers, a family of ring-shaped molecules that have the ability to bind certain metallic atoms in the middle of the ring.",
+          "retrieved_sha256": "db0f5188bb691602cffaf978892b9f8cb115733bea097591830d9f3b3802b75f",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1836年",
-      "title": "小猎犬号返航，达尔文回到英国",
-      "text": "历经近五年环球航行，小猎犬号驶入法尔茅斯港，达尔文在此登岸。他沿途采集化石与标本、记录各地地质与生物分布，为日后的演化理论攒下素材；二十多年后，这些观察才写进《物种起源》。",
-      "item_sha256": "e4a3a111cb3ce70b5b47f3331bd71a8cfb24bddc63448ce57e6e69208f57fdbb",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://wwwe.lib.cam.ac.uk/CUL/exhibitions/Darwin/wanderings.html",
-          "final_url": "https://wwwe.lib.cam.ac.uk/CUL/exhibitions/Darwin/wanderings.html",
-          "authority_type": "university library archive",
-          "date_context": "event-date",
-          "date_quote": "the Beagle arrived in Falmouth on 2 October 1836 after a voyage of four years, nine months and six days",
-          "fact_quote": "the Beagle arrived in Falmouth on 2 October 1836 after a voyage of four years, nine months and six days. Darwin, now twenty-six, wrote wearily",
-          "retrieved_sha256": "9d69ec2b7934fa377b8675e1a386d7428f8b8aa2fbaf752ca3baa0d457d5391a",
-          "content_type": "text/html"
-        },
-        {
-          "level": "A",
-          "url": "https://www.darwinproject.ac.uk/robert-fitzroy",
-          "final_url": "https://www.darwinproject.ac.uk/robert-fitzroy",
-          "authority_type": "academic research project",
-          "date_context": "event-date",
-          "date_quote": "the Beagle docked at Falmouth on 2 October 1836, two years later than originally planned",
-          "fact_quote": "Robert FitzRoy was captain of HMS Beagle when Darwin was aboard.",
-          "retrieved_sha256": "2d6ef8704a77e060cef5c9f18af54332c137f9f713da755d34ec01926aabc899",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1852年",
-      "title": "发现惰性气体的化学家拉姆齐出生",
-      "text": "苏格兰化学家威廉·拉姆齐出生。他与瑞利一起从空气里辨认出氩，又接连发现氖、氪、氙，把这一整族几乎不参与反应的气体逐一找齐，补上元素周期表里的空缺，并因此获得1904年诺贝尔化学奖。",
-      "item_sha256": "05ddb08a6353c6a82296c2f98cd1f2720d2191ac23f8878f59d8486f8392f7a7",
+      "label": "1919年",
+      "title": "公共选择理论的奠基者出生",
+      "text": "詹姆斯·布坎南生于田纳西州，二战后到芝加哥大学读经济学。他把个人选择的分析搬到政府与公共部门，与塔洛克合著《同意的计算》，研究规则如何约束公共决策，并获1986年诺贝尔经济学奖。",
+      "item_sha256": "653b638134c2ffddab5c5097cc3bb0881f1885d23e2f575a0894d0522de6ba32",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/chemistry/1904/ramsay/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/chemistry/1904/ramsay/facts/",
-          "authority_type": "official archive",
+          "url": "https://www.nobelprize.org/prizes/economic-sciences/1986/buchanan/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/economic-sciences/1986/buchanan/facts/",
+          "authority_type": "official award archive",
           "date_context": "event-date",
-          "date_quote": "Born: 2 October 1852, Glasgow, Scotland",
-          "fact_quote": "After discovering another noble gas, helium, Ramsay predicted other noble gases based on the periodic table of elements and could establish the existence of neon, krypton and xenon.",
-          "retrieved_sha256": "31814490caf2b4b98df503b8410c1f4017d17f510f2eaae521c497657e15e9d6",
+          "date_quote": "Born: 3 October 1919, Murfreesboro, TN, USA",
+          "fact_quote": "His best-known work is Calculus of Consent (1962), written in collaboration with Gordon Tullock.",
+          "retrieved_sha256": "4ee55d96d2c17174591f69410d80cf891d934d94954ad0eb9404fc68e1a614e4",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1917年",
-      "title": "发现溶酶体的德·迪夫出生",
-      "text": "比利时细胞学家克里斯蒂安·德·迪夫出生。他用离心分离分开细胞里的小结构，辨认出负责分解废物的溶酶体，又发现过氧化物酶体，补全了细胞内部的图景，并获得1974年诺贝尔生理学或医学奖。",
-      "item_sha256": "fc859751785516642cd0d8a332e16d5c447e42d0fae4435a32d242060b4490e4",
+      "label": "1944年",
+      "title": "解开韦伊猜想的数学家出生",
+      "text": "皮埃尔·德利涅生于布鲁塞尔。他融合代数几何与代数数论，1974年解决了韦伊提出的三条猜想，并发展出新的上同调工具，1978年获菲尔兹奖，后来又获沃尔夫奖与阿贝尔奖。",
+      "item_sha256": "ddb6ab19780620824ab6f1a6929cda3c41b2bca563354649fa01b9dc25b30b23",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/medicine/1974/duve/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1974/duve/facts/",
-          "authority_type": "official archive",
+          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Deligne/",
+          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Deligne/",
+          "authority_type": "university history archive",
           "date_context": "event-date",
-          "date_quote": "Born: 2 October 1917, Thames Ditton, United Kingdom",
-          "fact_quote": "In 1955 Christian de Duve discovered previously unknown organelles in the cell, lysosomes.",
-          "retrieved_sha256": "2fd0dfdf6d18a22328297ba37e8321470bb6866f847f4a267005279b51f67a7d",
+          "date_quote": "Born    3 October 1944  Etterbeek, Brussels, Belgium",
+          "fact_quote": "A solution of the three Weil conjectures was given by Deligne in 1974.",
+          "retrieved_sha256": "b9db8c130585a5e51c56c9bb40ba328ba52d66f8b28c9aed085bac241ec37bb6",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1925年",
-      "title": "贝尔德传出有明暗层次的图像",
-      "text": "苏格兰发明家贝尔德在伦敦的阁楼里，用旋转的穿孔圆盘把画面拆成光点再拼合，传出带有明暗层次的图像，画面是一个名叫斯图基·比尔的傀儡头。此后不久，他在皇家学会成员面前公开展示了电视。",
-      "item_sha256": "f9aecff622eb054fbd8d080a3340d07f7ba3a5b0b153694d57dbc3323f6fda16",
+      "label": "1945年",
+      "title": "原子能控制写入国家议程",
+      "text": "广岛、长崎之后不到两个月，杜鲁门向国会发出关于原子能的特别咨文，主张尽速立法，把核原料与设施交给原子能委员会管理，委员由总统提名、经参议院同意，由此开启核能该由谁掌控的长期争论。",
+      "item_sha256": "7327ccca2552a2568930064dca3ff97e0bcfca8981790407da1063e36605d3f8",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.strath.ac.uk/whystrathclyde/news/2026/fromstrathclydetotheworld100yearssincetelevisionsfirstdemonstration",
-          "final_url": "https://www.strath.ac.uk/whystrathclyde/news/2026/fromstrathclydetotheworld100yearssincetelevisionsfirstdemonstration/",
-          "authority_type": "university news archive",
+          "url": "https://www.trumanlibrary.gov/library/public-papers/156/special-message-congress-atomic-energy",
+          "final_url": "https://www.trumanlibrary.gov/library/public-papers/156/special-message-congress-atomic-energy",
+          "authority_type": "presidential library archive",
           "date_context": "event-date",
-          "date_quote": "By 2 October 1925, he had successfully transmitted a television image with tonal gradation from his Frith Street laboratory",
-          "fact_quote": "famously using a ventriloquist’s dummy known as ‘Stooky Bill’, before progressing to live human faces",
-          "retrieved_sha256": "7ed60eaa8ea4f82f5cf12cc0f1af1cb9acff3d638fed8cac6d8abed63532d4df",
+          "date_quote": "October 3, 1945  To the Congress of the United States:",
+          "fact_quote": "The legislation should give jurisdiction for these purposes to an Atomic Energy Commission with members appointed by the President with the advice and consent of the Senate.",
+          "retrieved_sha256": "a520e235abadf121d68c961d2d2ab29412072f66c26a8aeb2374576211fe9380",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1955年",
-      "title": "电子计算机ENIAC退役",
-      "text": "服役近十年的电子计算机ENIAC被关停退役。它由莫奇利和埃克特设计，1946年公开亮相时运算速度比当时的机电机器快上千倍，用上万只真空管工作，改换题目还要靠手工重新插接线路。",
-      "item_sha256": "6af65f3b29914b4857ad26566e3ed5d1278154728bbbb675c175b5f5045fdcae",
+      "label": "1962年",
+      "title": "施艾拉绕地球六圈",
+      "text": "宇航员施艾拉乘坐“西格玛7号”升空，用九小时十三分绕地球六圈，创下当时美国载人飞行的最长纪录。他多数时间让飞船自由飘浮以节省姿态控制燃料，还拍摄地球照片，最后溅落太平洋由航母接回。",
+      "item_sha256": "634ebed6e0531bea8919c84880b2317e3b7ac98e033a3c4e284fd15069c6297e",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://spectrum.ieee.org/eniac-80-ieee-milestone",
-          "final_url": "https://spectrum.ieee.org/eniac-80-ieee-milestone",
-          "authority_type": "professional society publication",
+          "url": "https://www.nasa.gov/history/60-years-ago-astronaut-schirra-orbits-the-earth-six-times-aboard-sigma-7/",
+          "final_url": "https://www.nasa.gov/history/60-years-ago-astronaut-schirra-orbits-the-earth-six-times-aboard-sigma-7/",
+          "authority_type": "government space agency",
           "date_context": "event-date",
-          "date_quote": "After almost nine years of operation, ENIAC officially was decommissioned on 2 October 1955.",
-          "fact_quote": "ENIAC made high-speed, general-purpose computing practicable and laid the foundation for today’s machines.",
-          "retrieved_sha256": "ad652fd30f63c06a1f02712c635f74b93253092dcbb85c78f15e84587573d66e",
-          "content_type": "text/html"
-        },
-        {
-          "level": "B",
-          "url": "https://www.computerhistory.org/tdih/october/2",
-          "final_url": "https://www.computerhistory.org/tdih/october/2/",
-          "authority_type": "museum",
-          "date_context": "event-date",
-          "date_quote": "october 2, 1955 ENIAC Computer Retired",
-          "fact_quote": "After eleven years of calculating and processing programs, the ENIAC was retired.",
-          "retrieved_sha256": "892b4b9fb1ed9a3a3ae880f65bc74cd8a513c3e7646857843360e350c60ca2fc",
+          "date_quote": "On Oct. 3, 1962, astronaut Walter M. “Wally” Schirra completed America’s third and then-longest orbital spaceflight during the Mercury-Atlas 8 mission.",
+          "fact_quote": "Naming his spacecraft Sigma 7, Schirra completed six orbits of the Earth, conducting engineering tests of his spacecraft and several experiments including photography of the planet.",
+          "retrieved_sha256": "3ba0445391ed6e81b69ae2c58b9348f18f2d142fef3cdb348bb11e157def105e",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1968年",
-      "title": "熔盐实验堆改用铀-233运行",
-      "text": "美国橡树岭国家实验室的熔盐实验堆改用铀-233运行。铀-233由钍转化而来，这次运行让人们看到，以钍为原料的核燃料循环在技术上可行，也为后来的钍基核能研究留下了样本。",
-      "item_sha256": "8a33633eedc0f934a60ea8ab60fe3966783a68ed303e2e9014817d3fbb372d41",
+      "label": "1967年",
+      "title": "有人驾驶飞机的速度纪录",
+      "text": "飞行员皮特·奈特驾驶 X-15A-2 试验机，由 B-52 空中投放后点燃火箭，飞到时速约4520英里、即6.7倍音速，创下有人驾驶动力飞机的速度纪录；其数据后来为载人航天所用。",
+      "item_sha256": "daef62b00a0f21ee3be08980eacf77a44accfaf4443465fbae76c2b2503e2a27",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.ornl.gov/timeline",
-          "final_url": "https://www.ornl.gov/timeline",
-          "authority_type": "national laboratory official page",
+          "url": "https://www.nasa.gov/centers-and-facilities/armstrong/x-15/",
+          "final_url": "https://www.nasa.gov/reference/x-15/",
+          "authority_type": "government space agency",
           "date_context": "event-date",
-          "date_quote": "On October 2, 1968, MSRE becomes the first reactor to operate using uranium-233.",
-          "fact_quote": "The MSRE goes critical using uranium-235 on June 1.",
-          "retrieved_sha256": "8bfa6d3677c8e8995eeefe5eba47aa7b1ceb35f09a5535e52e7c92b675de85e1",
+          "date_quote": "The aircraft set unofficial world speed and altitude records: 4,520 mph (Mach 6.7) on Oct. 3, 1967, piloted by Air Force pilot Pete Knight",
+          "fact_quote": "Data gained from the X-15 program contributed to the development of the Mercury, Gemini, and Apollo spaceflight programs, as well as the space shuttle program.",
+          "retrieved_sha256": "ff46fb2e2afb2dcbb340ee7bc8cc80557166d1741fb4100a4ad2be07407d71c3",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1987年",
-      "title": "免疫学家梅达沃去世",
-      "text": "英国免疫学家彼得·梅达沃去世。他在小鼠胚胎期注入另一品系的细胞，使它们长大后不再排斥异体组织，揭示免疫系统如何在早期区分自身与外来，即获得性免疫耐受，为器官移植研究扫清观念障碍。",
-      "item_sha256": "f0e13e2ed45351c77b5dc1b68cc5829b397c846f4f053916a3f3ffae20d0e669",
+      "label": "1985年",
+      "title": "亚特兰蒂斯号首航",
+      "text": "航天飞机“亚特兰蒂斯号”从肯尼迪航天中心升空，执行编号 STS-51J 的国防部专任务，这是它的首航。五名宇航员在轨四天多、绕地球64圈，10月7日在爱德华兹空军基地着陆。",
+      "item_sha256": "d526793f97a5770b500fc7e3a73aae1a5aa707448366e083f8d1d8df1cd911db",
+      "strong_claim": false,
+      "person_event": false,
+      "sources": [
+        {
+          "level": "A",
+          "url": "https://www.nasa.gov/mission/sts-51j/",
+          "final_url": "https://www.nasa.gov/mission/sts-51j/",
+          "authority_type": "government space agency",
+          "date_context": "event-date",
+          "date_quote": "Launched: Oct. 3, 1985 at 11:15:30 a.m. EDT",
+          "fact_quote": "STS-51J was the 21st NASA Space Shuttle mission and the first flight of Space Shuttle Atlantis.",
+          "retrieved_sha256": "9c82efc4e2715cab91c2d971adb904bb8834b4dc4fbb37eb295a009a578df173",
+          "content_type": "text/html"
+        }
+      ]
+    },
+    {
+      "label": "2018年",
+      "title": "μ中微子的发现者去世",
+      "text": "物理学家莱昂·莱德曼在美国爱达荷州去世。1962年他与同事用加速器造出中微子束，发现其中一部分会打出更重的 μ 子，从而确认存在第二种中微子，三人分享1988年诺贝尔物理学奖。",
+      "item_sha256": "9b073e7e5f9e5f087c4aed212c6310571e165f998bef3ef76a688be8c9e5f113",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/medicine/1960/medawar/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/medicine/1960/medawar/facts/",
-          "authority_type": "official archive",
+          "url": "https://www.nobelprize.org/prizes/physics/1988/lederman/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1988/lederman/facts/",
+          "authority_type": "official award archive",
           "date_context": "event-date",
-          "date_quote": "Died: 2 October 1987, London, United Kingdom",
-          "fact_quote": "Peter Medawar successfully transplanted tissue between mouse fetuses without rejection in 1951.",
-          "retrieved_sha256": "3231ac6b8ad88ea8c2f7bf332ecf3f9d73d23c2b87c1ffbf2f746773962c76b8",
+          "date_quote": "Died: 3 October 2018, Rexburg, ID, USA",
+          "fact_quote": "In 1962, they discovered that, in some cases, instead of producing an electron, a muon (200 times heavier than an electron) was produced, proving the existence of a new type of neutrino, the muon neutrino.",
+          "retrieved_sha256": "79b793d38bfd7d5558f47737f80363357606a89e101cc1463dbb8e2c3d960b8f",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-10-02:4c7ffde8927a829ef1ce6b4ea5d446d83a95b923f864d1db985c4986dd72d75c",
-  "public_json_sha256": "1ead18fba029d717abca626fc1a47b97395054df51b8c20f48036914debf356e",
-  "poster_sha256": "5084d8fbbed8ea0ad9bacd3c962fb47f832fca9d7860e3b688cfb1ffd50a2fae",
-  "poster_bytes": 1968972,
+  "delivery_id": "2026-10-03:c2dc6c48d5178fbd000d6c54c191c218100f58cde65fac1c752f38b6f3dd89e8",
+  "public_json_sha256": "c692f55a2ebfe836d595cda0e9bb5b5e40037261f36f91b0dfb096081d1ee09a",
+  "poster_sha256": "07e0aa22c2e8aab22959f8b460fb2349518a8abe7d60fae1761ca44547eca4b2",
+  "poster_bytes": 1905459,
   "poster_dimensions": {
     "width": 2160,
     "height": 5054
