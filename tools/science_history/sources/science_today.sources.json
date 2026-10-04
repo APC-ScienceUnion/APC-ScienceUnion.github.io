@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-10-03",
+  "date": "2026-10-04",
   "timezone": "Asia/Shanghai",
   "review_mode": "automated-retrieval-gates",
   "producer": "astrbot:science-history-today",
@@ -8,180 +8,75 @@
   "validation_scope": "自动取证门禁已重新抓取每个 URL，并匹配短的来源原文 date_quote/fact_quote 与目标月日。该门禁不等于自动完成全部语义史学论证，旁路信息保留供复核。",
   "items": [
     {
-      "label": "1904年",
-      "title": "冠醚的发现者出生",
-      "text": "查尔斯·佩德森生于朝鲜釜山，后在美国杜邦公司工作。1967年他发现环状分子“冠醚”，环心能扣住特定金属离子并带入有机溶剂，让难做的反应得以进行，他因此分享1987年诺贝尔化学奖。",
-      "item_sha256": "ba8d6fb967dda01cce018f7f5170dbae7717495e2af7a9a1b9923ae5fb7c8389",
+      "label": "1947年",
+      "title": "量子论奠基者普朗克去世",
+      "text": "1947年10月4日，马克斯·普朗克在哥廷根去世。他1900年为解释黑体辐射提出能量量子化，被视为量子论的起点，1918年获诺贝尔物理学奖；晚年目睹量子力学推翻许多经典直觉。",
+      "item_sha256": "b8d3b49294e5b041b3063d0218419cbd44ac85ccb98b8d71bcb7661148baf00f",
       "strong_claim": false,
       "person_event": true,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nobelprize.org/prizes/chemistry/1987/pedersen/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/chemistry/1987/pedersen/facts/",
-          "authority_type": "official award archive",
+          "url": "https://www.nobelprize.org/prizes/physics/1918/planck/facts/",
+          "final_url": "https://www.nobelprize.org/prizes/physics/1918/planck/facts/",
+          "authority_type": "official",
           "date_context": "event-date",
-          "date_quote": "Born: 3 October 1904, Pusan, Korea (now South Korea)",
-          "fact_quote": "In 1967 Charles Pedersen discovered crown ethers, a family of ring-shaped molecules that have the ability to bind certain metallic atoms in the middle of the ring.",
-          "retrieved_sha256": "db0f5188bb691602cffaf978892b9f8cb115733bea097591830d9f3b3802b75f",
+          "date_quote": "Died: 4 October 1947, Göttingen, West Germany (now Germany)",
+          "fact_quote": "Prize motivation: “in recognition of the services he rendered to the advancement of Physics by his discovery of energy quanta”",
+          "retrieved_sha256": "cd366faf4df9cffc004f8c5ffbbc41b7ba0d72b64b76ea8591b8ffef4b3ca535",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1919年",
-      "title": "公共选择理论的奠基者出生",
-      "text": "詹姆斯·布坎南生于田纳西州，二战后到芝加哥大学读经济学。他把个人选择的分析搬到政府与公共部门，与塔洛克合著《同意的计算》，研究规则如何约束公共决策，并获1986年诺贝尔经济学奖。",
-      "item_sha256": "653b638134c2ffddab5c5097cc3bb0881f1885d23e2f575a0894d0522de6ba32",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/prizes/economic-sciences/1986/buchanan/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/economic-sciences/1986/buchanan/facts/",
-          "authority_type": "official award archive",
-          "date_context": "event-date",
-          "date_quote": "Born: 3 October 1919, Murfreesboro, TN, USA",
-          "fact_quote": "His best-known work is Calculus of Consent (1962), written in collaboration with Gordon Tullock.",
-          "retrieved_sha256": "4ee55d96d2c17174591f69410d80cf891d934d94954ad0eb9404fc68e1a614e4",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1944年",
-      "title": "解开韦伊猜想的数学家出生",
-      "text": "皮埃尔·德利涅生于布鲁塞尔。他融合代数几何与代数数论，1974年解决了韦伊提出的三条猜想，并发展出新的上同调工具，1978年获菲尔兹奖，后来又获沃尔夫奖与阿贝尔奖。",
-      "item_sha256": "ddb6ab19780620824ab6f1a6929cda3c41b2bca563354649fa01b9dc25b30b23",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Deligne/",
-          "final_url": "https://mathshistory.st-andrews.ac.uk/Biographies/Deligne/",
-          "authority_type": "university history archive",
-          "date_context": "event-date",
-          "date_quote": "Born    3 October 1944  Etterbeek, Brussels, Belgium",
-          "fact_quote": "A solution of the three Weil conjectures was given by Deligne in 1974.",
-          "retrieved_sha256": "b9db8c130585a5e51c56c9bb40ba328ba52d66f8b28c9aed085bac241ec37bb6",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1945年",
-      "title": "原子能控制写入国家议程",
-      "text": "广岛、长崎之后不到两个月，杜鲁门向国会发出关于原子能的特别咨文，主张尽速立法，把核原料与设施交给原子能委员会管理，委员由总统提名、经参议院同意，由此开启核能该由谁掌控的长期争论。",
-      "item_sha256": "7327ccca2552a2568930064dca3ff97e0bcfca8981790407da1063e36605d3f8",
+      "label": "1957年",
+      "title": "斯普特尼克1号升空",
+      "text": "1957年10月4日，苏联把斯普特尼克1号送入近地轨道。这颗带四根天线的金属球每98分钟绕地球一圈，它的无线电哔声被全球爱好者收听到，也推动美国大幅增加科研与教育投入。",
+      "item_sha256": "b33b90933e6956d260821d4c2db67857456c8980c1bbe2e6d668ef9accc7ce3c",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.trumanlibrary.gov/library/public-papers/156/special-message-congress-atomic-energy",
-          "final_url": "https://www.trumanlibrary.gov/library/public-papers/156/special-message-congress-atomic-energy",
-          "authority_type": "presidential library archive",
+          "url": "https://www.nsf.gov/about/history",
+          "final_url": "https://www.nsf.gov/about/history",
+          "authority_type": "official",
           "date_context": "event-date",
-          "date_quote": "October 3, 1945  To the Congress of the United States:",
-          "fact_quote": "The legislation should give jurisdiction for these purposes to an Atomic Energy Commission with members appointed by the President with the advice and consent of the Senate.",
-          "retrieved_sha256": "a520e235abadf121d68c961d2d2ab29412072f66c26a8aeb2374576211fe9380",
+          "date_quote": "1957 - October 4",
+          "fact_quote": "The Soviet Union launches Sputnik I, the first satellite, into orbit. This triggers a national self-appraisal of scientific research and education, and the U.S. Congress responds by more than doubling the NSF appropriation to $134 million, beginning July 1, 1958.",
+          "retrieved_sha256": "3d8980deac7a5c811ec9d04a5001907d75f548276087487d94a9a9a38ec8a176",
           "content_type": "text/html"
         }
       ]
     },
     {
-      "label": "1962年",
-      "title": "施艾拉绕地球六圈",
-      "text": "宇航员施艾拉乘坐“西格玛7号”升空，用九小时十三分绕地球六圈，创下当时美国载人飞行的最长纪录。他多数时间让飞船自由飘浮以节省姿态控制燃料，还拍摄地球照片，最后溅落太平洋由航母接回。",
-      "item_sha256": "634ebed6e0531bea8919c84880b2317e3b7ac98e033a3c4e284fd15069c6297e",
+      "label": "1959年",
+      "title": "月球3号启程拍摄月球背面",
+      "text": "1959年10月4日，苏联把自动行星际站送上天，它后来被称作月球3号。三天后它绕过月球，用机上胶片拍下月球背面并把影像传回地面，人类由这些照片看到背面几乎没有大片月海。",
+      "item_sha256": "30bc79a187b08dc62aafb6a0eb108ee080d1f76b7821f9061b14943468b28923",
       "strong_claim": false,
       "person_event": false,
       "sources": [
         {
           "level": "A",
-          "url": "https://www.nasa.gov/history/60-years-ago-astronaut-schirra-orbits-the-earth-six-times-aboard-sigma-7/",
-          "final_url": "https://www.nasa.gov/history/60-years-ago-astronaut-schirra-orbits-the-earth-six-times-aboard-sigma-7/",
-          "authority_type": "government space agency",
+          "url": "https://www.nasa.gov/history/60-years-ago-luna-2-makes-impact-in-moon-race",
+          "final_url": "https://www.nasa.gov/history/60-years-ago-luna-2-makes-impact-in-moon-race/",
+          "authority_type": "official",
           "date_context": "event-date",
-          "date_quote": "On Oct. 3, 1962, astronaut Walter M. “Wally” Schirra completed America’s third and then-longest orbital spaceflight during the Mercury-Atlas 8 mission.",
-          "fact_quote": "Naming his spacecraft Sigma 7, Schirra completed six orbits of the Earth, conducting engineering tests of his spacecraft and several experiments including photography of the planet.",
-          "retrieved_sha256": "3ba0445391ed6e81b69ae2c58b9348f18f2d142fef3cdb348bb11e157def105e",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1967年",
-      "title": "有人驾驶飞机的速度纪录",
-      "text": "飞行员皮特·奈特驾驶 X-15A-2 试验机，由 B-52 空中投放后点燃火箭，飞到时速约4520英里、即6.7倍音速，创下有人驾驶动力飞机的速度纪录；其数据后来为载人航天所用。",
-      "item_sha256": "daef62b00a0f21ee3be08980eacf77a44accfaf4443465fbae76c2b2503e2a27",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nasa.gov/centers-and-facilities/armstrong/x-15/",
-          "final_url": "https://www.nasa.gov/reference/x-15/",
-          "authority_type": "government space agency",
-          "date_context": "event-date",
-          "date_quote": "The aircraft set unofficial world speed and altitude records: 4,520 mph (Mach 6.7) on Oct. 3, 1967, piloted by Air Force pilot Pete Knight",
-          "fact_quote": "Data gained from the X-15 program contributed to the development of the Mercury, Gemini, and Apollo spaceflight programs, as well as the space shuttle program.",
-          "retrieved_sha256": "ff46fb2e2afb2dcbb340ee7bc8cc80557166d1741fb4100a4ad2be07407d71c3",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "1985年",
-      "title": "亚特兰蒂斯号首航",
-      "text": "航天飞机“亚特兰蒂斯号”从肯尼迪航天中心升空，执行编号 STS-51J 的国防部专任务，这是它的首航。五名宇航员在轨四天多、绕地球64圈，10月7日在爱德华兹空军基地着陆。",
-      "item_sha256": "d526793f97a5770b500fc7e3a73aae1a5aa707448366e083f8d1d8df1cd911db",
-      "strong_claim": false,
-      "person_event": false,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nasa.gov/mission/sts-51j/",
-          "final_url": "https://www.nasa.gov/mission/sts-51j/",
-          "authority_type": "government space agency",
-          "date_context": "event-date",
-          "date_quote": "Launched: Oct. 3, 1985 at 11:15:30 a.m. EDT",
-          "fact_quote": "STS-51J was the 21st NASA Space Shuttle mission and the first flight of Space Shuttle Atlantis.",
-          "retrieved_sha256": "9c82efc4e2715cab91c2d971adb904bb8834b4dc4fbb37eb295a009a578df173",
-          "content_type": "text/html"
-        }
-      ]
-    },
-    {
-      "label": "2018年",
-      "title": "μ中微子的发现者去世",
-      "text": "物理学家莱昂·莱德曼在美国爱达荷州去世。1962年他与同事用加速器造出中微子束，发现其中一部分会打出更重的 μ 子，从而确认存在第二种中微子，三人分享1988年诺贝尔物理学奖。",
-      "item_sha256": "9b073e7e5f9e5f087c4aed212c6310571e165f998bef3ef76a688be8c9e5f113",
-      "strong_claim": false,
-      "person_event": true,
-      "sources": [
-        {
-          "level": "A",
-          "url": "https://www.nobelprize.org/prizes/physics/1988/lederman/facts/",
-          "final_url": "https://www.nobelprize.org/prizes/physics/1988/lederman/facts/",
-          "authority_type": "official award archive",
-          "date_context": "event-date",
-          "date_quote": "Died: 3 October 2018, Rexburg, ID, USA",
-          "fact_quote": "In 1962, they discovered that, in some cases, instead of producing an electron, a muon (200 times heavier than an electron) was produced, proving the existence of a new type of neutrino, the muon neutrino.",
-          "retrieved_sha256": "79b793d38bfd7d5558f47737f80363357606a89e101cc1463dbb8e2c3d960b8f",
+          "date_quote": "They launched the Automatic Interplanetary Station (later renamed Luna 3) on Oct. 4, 1959.",
+          "fact_quote": "In addition to its photographic imaging system, Luna 3 carried five instruments to measure radiation levels and micrometeorite impacts.",
+          "retrieved_sha256": "ae2a7ddf3d77883e2890a0655bd4011302c63ef3c03aa4a2abd47637107d2c32",
           "content_type": "text/html"
         }
       ]
     }
   ],
-  "delivery_id": "2026-10-03:c2dc6c48d5178fbd000d6c54c191c218100f58cde65fac1c752f38b6f3dd89e8",
-  "public_json_sha256": "c692f55a2ebfe836d595cda0e9bb5b5e40037261f36f91b0dfb096081d1ee09a",
-  "poster_sha256": "07e0aa22c2e8aab22959f8b460fb2349518a8abe7d60fae1761ca44547eca4b2",
-  "poster_bytes": 1905459,
+  "delivery_id": "2026-10-04:3c2b99c5632efd99222c46c19fb9973c76f2f7fae90e3c475a84d3041e989ad8",
+  "public_json_sha256": "f327ee3c072cd2dbde889aea434c858083f0b3d1f091b7d40668018b62bc55d0",
+  "poster_sha256": "3c2fa67c32633cbd58fd2f7e4efecf2ff55fb84f1e999a5a9d1535cadcf50ef2",
+  "poster_bytes": 1185222,
   "poster_dimensions": {
     "width": 2160,
-    "height": 5054
+    "height": 2596
   }
 }
