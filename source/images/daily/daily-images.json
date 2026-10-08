@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-07T17:26:54+00:00",
+  "updated_at": "2026-10-08T17:25:23+00:00",
   "providers": {
     "bing": {
-      "date": "2026-10-08",
-      "title": "印度洋马约特岛，一只呈防御姿态的章鱼 ",
-      "headline": "印度洋马约特岛，一只呈防御姿态的章鱼 ",
-      "subtitle": "现在你“海”能看见我……",
-      "description": "显然有什么东西越界了。在印度洋马约特岛近海，这只章鱼摆出了一副防御姿态，仿佛在说：无论是什么正在靠近，都该重新考虑一下自己的生命选择。\n这是章鱼能够以别具一格的方式发出的警告。它们不依赖盔甲，而是依靠变形。被称为乳突的微小肌肉结构与充满色素的色素胞共同作用，使它们能在数秒内改变颜色、图案，甚至皮肤纹理。于是，这种动物可以变得像岩石、珊瑚、藻类或阴影。它不只是融入周围环境，而是化身为环境本身。\n而伪装只是开场。章鱼可以消失在一团墨汁中，挤过仅比其喙大一点的缝隙，解开谜题，并用分布着大量神经元的腕足进行探索。从某种意义上说，每条腕足都有自己的思想。世界章鱼日赞颂海洋中演化形成的一种奇特生物：三颗心脏、八条腕足、蓝色血液。在这个生物身上，大自然真的完全不按剧本来。",
-      "copyright": "© Gabriel Barathieu/Minden Pictures",
-      "source_page_url": "https://bing.ee123.net/img/?date=20261008&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.MayotteOctopus_ZH-CN2837659998_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.MayotteOctopus_ZH-CN2837659998_1920x1080.jpg",
+      "date": "2026-10-09",
+      "title": "桑吉奈尔群岛景观，摄自科西嘉岛，法国 ",
+      "headline": "桑吉奈尔群岛景观，摄自科西嘉岛，法国 ",
+      "subtitle": "科西嘉岛的岩石前哨",
+      "description": "桑吉奈尔群岛就在法国科西嘉岛近海，从地中海中拔地而起，是一个由四座崎岖岩石岛屿组成的小型群岛。从一座历史悠久的瞭望塔望去，它们坐落在阿雅克肖湾的入口处。陡峭的悬崖、历经数百年的地标和开阔的海景，世世代代吸引着游客来到这一地区。尽管最远的岛屿距离海岸仅约1.2英里，但这片群岛给人的感觉却出奇地偏远：它四周被开阔水域环绕，并受到风、海浪和盐雾的塑造。\n游客可以搭乘获准运营的船只前往最大的岛屿梅祖马雷岛，并沿指定步道探索。其他地方的受保护栖息地则为筑巢的海鸟和适应干燥、多风环境的耐寒地中海植物提供庇护。梅祖马雷岛上的一座灯塔令人想起这片群岛悠久的航海历史，以及它位于海湾入口处的战略位置。如今，桑吉奈尔群岛拥有壮丽的景色、野生动物和丰富航海遗产的印记，共同构成了科西嘉岛最令人难忘的自然景观之一。",
+      "copyright": "© Francesco Riccardo Iacomino/Getty Images",
+      "source_page_url": "https://bing.ee123.net/img/?date=20261009&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.IlesSanguinaires_ZH-CN3149346035_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.IlesSanguinaires_ZH-CN3149346035_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-10-08-e702ebe962d0.jpg",
-      "image_path": "/images/daily/bing-2026-10-08-e702ebe962d0.jpg",
-      "bytes": 334942,
-      "sha256": "e702ebe962d0828ed8b8fc94cd7847297de58148305b15fd6d212c4d08e37753"
+      "local_url": "/images/daily/bing-2026-10-09-bb4981752c51.jpg",
+      "image_path": "/images/daily/bing-2026-10-09-bb4981752c51.jpg",
+      "bytes": 339477,
+      "sha256": "bb4981752c516bce58c8e066f2d15489af60db0106fa947f727ff4dda9f385eb"
     },
     "apod": {
       "date": "2026-09-29",
@@ -37,19 +37,19 @@
       "sha256": "5b2ab38fe6757cb9e8423fddb427e4ce6f8e40aeeef131a29f5aea87131579e9"
     },
     "wikipedia": {
-      "date": "2026-10-08",
-      "title": "Narva asv2022-04 img09 Castle",
-      "description": "Narva Castle (or Hermann Castle) in Narva, Estonia",
-      "copyright": "A.Savin · Own work · FAL",
-      "article_url": "https://commons.wikimedia.org/wiki/File:Narva_asv2022-04_img09_Castle.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Narva_asv2022-04_img09_Castle.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Narva_asv2022-04_img09_Castle.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Narva_asv2022-04_img09_Castle.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-10-09",
+      "title": "Alhambra evening panorama Mirador San Nicolas sRGB-1",
+      "description": "Evening panorama of Alhambra from Mirador de San Nicolás, Granada , Spain.",
+      "copyright": "Slaunger · Own work · CC BY-SA 3.0",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Alhambra_evening_panorama_Mirador_San_Nicolas_sRGB-1.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Alhambra_evening_panorama_Mirador_San_Nicolas_sRGB-1.jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Alhambra_evening_panorama_Mirador_San_Nicolas_sRGB-1.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Alhambra_evening_panorama_Mirador_San_Nicolas_sRGB-1.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-10-08-4b95dca959ac.jpg",
-      "image_path": "/images/daily/wikipedia-2026-10-08-4b95dca959ac.jpg",
-      "bytes": 15498446,
-      "sha256": "4b95dca959aca2a884b849be2da54e428aec3420bda54fd91fe7e63645b3f3fe"
+      "local_url": "/images/daily/wikipedia-2026-10-09-2131e95793cb.jpg",
+      "image_path": "/images/daily/wikipedia-2026-10-09-2131e95793cb.jpg",
+      "bytes": 13406039,
+      "sha256": "2131e95793cb29d82762074a2d1855703782fc29e5831997879756dc15686240"
     }
   }
 }
