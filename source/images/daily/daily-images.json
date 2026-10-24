@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-23T06:04:45+00:00",
+  "updated_at": "2026-10-24T05:57:09+00:00",
   "providers": {
     "bing": {
-      "date": "2026-10-23",
-      "title": "两只灰狼，黄石国家公园，怀俄明州，美国 ",
-      "headline": "两只灰狼，黄石国家公园，怀俄明州，美国 ",
-      "subtitle": "荒野伙伴",
-      "description": "两只灰狼穿行在怀俄明州黄石国家公园的山艾灌丛中，这里生活着北美洲一些最受密切关注的狼群。厚实的皮毛帮助它们抵御严冬，敏锐的感官则使它们成为技艺高超的猎手和交流者。\n狼保护宣传周期间，世界各地的人们都会认识到狼在健康生态系统中发挥的重要作用。灰狼是高度社会化的动物，通常以家庭群体（即狼群）的形式生活，并合作捕猎、保卫领地和抚育幼崽。20世纪初，灰狼从黄石国家公园消失；1995年，作为一项具有里程碑意义的保护行动，它们被重新引入公园，使这一物种重返其最具代表性的栖息地之一。\n如今，黄石国家公园仍是观察这些捕食者的最佳地点之一，让人们得以一窥这种备受北美洲瞩目的野生动物的生活。",
-      "copyright": "© John Morrison/Getty Images",
-      "source_page_url": "https://bing.ee123.net/img/?date=20261023&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.YellowstoneWolves_ZH-CN6767268961_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.YellowstoneWolves_ZH-CN6767268961_1920x1080.jpg",
+      "date": "2026-10-24",
+      "title": "皇家葡萄牙语阅览室，里约热内卢，巴西 ",
+      "headline": "皇家葡萄牙语阅览室，里约热内卢，巴西 ",
+      "subtitle": "书香里的极致华美",
+      "description": "今天，我们走进巴西里约热内卢的皇家葡萄牙语阅览室。在这里，翻开一本书这一朴素举动，被赋予了宏伟的建筑抱负。巴西独立仅15年后，43名葡萄牙移民于1837年创办了这家机构；约半个世纪后，机构最终迁入眼前这座以华丽的新曼努埃尔式建成的建筑。书架环绕宽阔的阅览大厅，高逾70英尺；大厅上方覆盖着一扇巨型彩绘玻璃天窗，让自然光也成为设计的一部分。\n这座建筑成了连接两个国家的桥梁：其外立面在里斯本雕刻完成，横越大西洋运抵里约热内卢，再于当地组装。最终成果令人惊叹，2014年，它入选世界最美的20座图书馆。这里于1900年向公众开放，如今收藏着数十万册书籍，是葡萄牙境外规模最大的葡萄牙文学藏书地。然而，在这一切繁复华美与宏伟气象之下，最初的理念依旧简单而美好：让人们有书可读。",
+      "copyright": "© Antonio Salaverry/Shutterstock",
+      "source_page_url": "https://bing.ee123.net/img/?date=20261024&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.PortugueseLibrary_ZH-CN7096893027_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.PortugueseLibrary_ZH-CN7096893027_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-10-23-45cdb151899c.jpg",
-      "image_path": "/images/daily/bing-2026-10-23-45cdb151899c.jpg",
-      "bytes": 339531,
-      "sha256": "45cdb151899c52893a28d07364cae4a693399b549fc5c0a8a4f2fe85aae754c0"
+      "local_url": "/images/daily/bing-2026-10-24-74e15859bb6e.jpg",
+      "image_path": "/images/daily/bing-2026-10-24-74e15859bb6e.jpg",
+      "bytes": 340818,
+      "sha256": "74e15859bb6e38fbc29597d4e0fb0c08a8799bc0ef89f816e6ca609934430025"
     },
     "apod": {
       "date": "2026-09-29",
@@ -37,19 +37,19 @@
       "sha256": "5b2ab38fe6757cb9e8423fddb427e4ce6f8e40aeeef131a29f5aea87131579e9"
     },
     "wikipedia": {
-      "date": "2026-10-22",
-      "title": "Pons brooks",
-      "description": "12P/Pons–Brooks is a periodiccomet with an orbital period of 71 years. It fits the classical definition of a Halley-type comet with an orbital period between 20 and 200 years, and is also one of the brightest known periodic comets, reaching an absolute visual magnitude ~5 in its approach to perihelion.=10.5px Comet Pons-Brooks was discovered at Marseilles Observatory in July 1812 by Jean-Louis Pons, and then later recovered in 1883 by William Robert Brooks.",
-      "copyright": "Taavi Niittee/Tõrva Astronoomiaklubi/Tõrva Astronomy Club · Own work · CC0",
-      "article_url": "https://commons.wikimedia.org/wiki/File:Pons_brooks.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Pons_brooks.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Pons_brooks.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Pons_brooks.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-10-24",
+      "title": "Gacela de Thomson (Eudorcas thomsonii), parque nacional de Amboseli, Kenia, 2024-05-23, DD 11",
+      "description": "Thomson's gazelle ( Eudorcas thomsonii ), Amboseli National Park , Kenya. Named after British explorer Joseph Thomson , this is the most common type of gazelle in East Africa with numbers over 200,000. It's claimed to have top speeds up to 80–90 km/h (50–55 mph), making it the fourth-fastest land animal, after the cheetah (its main predator), pronghorn, and springbok.",
+      "copyright": "Diego Delso · Own work · CC BY-SA 4.0",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Gacela_de_Thomson_(Eudorcas_thomsonii),_parque_nacional_de_Amboseli,_Kenia,_2024-05-23,_DD_11.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Gacela_de_Thomson_(Eudorcas_thomsonii),_parque_nacional_de_Amboseli,_Kenia,_2024-05-23,_DD_11.jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Gacela_de_Thomson_%28Eudorcas_thomsonii%29%2C_parque_nacional_de_Amboseli%2C_Kenia%2C_2024-05-23%2C_DD_11.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Gacela_de_Thomson_%28Eudorcas_thomsonii%29%2C_parque_nacional_de_Amboseli%2C_Kenia%2C_2024-05-23%2C_DD_11.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-10-22-2b09d79876c0.jpg",
-      "image_path": "/images/daily/wikipedia-2026-10-22-2b09d79876c0.jpg",
-      "bytes": 8878915,
-      "sha256": "2b09d79876c0ed009489c1c5337ff1e1f39a7e7a447bc865d1e3788729653c28"
+      "local_url": "/images/daily/wikipedia-2026-10-24-29b9f649c003.jpg",
+      "image_path": "/images/daily/wikipedia-2026-10-24-29b9f649c003.jpg",
+      "bytes": 10880337,
+      "sha256": "29b9f649c0030f5f049cb45f0ed043ce1f412aa379d81bc5cf5da86bd8dab162"
     }
   }
 }
