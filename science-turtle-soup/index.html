@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
+<!DOCTYPE html><html lang="zh-CN"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#10191c">
@@ -57,10 +55,10 @@
           </div>
         </header>
 
-        <section class="network-banner" id="networkBanner" hidden aria-live="polite">
+        <section class="network-banner" id="networkBanner" hidden="" aria-live="polite">
           <span class="network-indicator" aria-hidden="true"></span>
           <strong id="networkMessage">AI 服务就绪</strong>
-          <button id="retryButton" type="button" hidden>重试</button>
+          <button id="retryButton" type="button" hidden="">重试</button>
         </section>
 
         <section class="soup-surface" aria-labelledby="surfaceTitle">
@@ -104,17 +102,17 @@
 
         <section class="composer" id="composer">
           <label for="questionInput">你的问题</label>
-          <textarea id="questionInput" rows="2" maxlength="220" placeholder="例如：这位人物生活在 20 世纪吗？" disabled></textarea>
+          <textarea id="questionInput" rows="2" maxlength="220" placeholder="例如：这位人物生活在 20 世纪吗？" disabled=""></textarea>
           <div class="composer-footer">
             <span><b id="characterCount">0</b> / 220 · Enter 提问，Shift + Enter 换行</span>
             <div>
-              <button class="guess-button" id="guessButton" type="button" disabled>我来猜汤底</button>
-              <button class="ask-button" id="askButton" type="button" disabled>提交问题 <span>↗</span></button>
+              <button class="guess-button" id="guessButton" type="button" disabled="">我来猜汤底</button>
+              <button class="ask-button" id="askButton" type="button" disabled="">提交问题 <span>↗</span></button>
             </div>
           </div>
         </section>
 
-        <section class="finished-panel" id="finishedPanel" hidden aria-live="polite">
+        <section class="finished-panel" id="finishedPanel" hidden="" aria-live="polite">
           <p class="eyebrow" id="finishedEyebrow">CASE SOLVED</p>
           <h2 id="finishedTitle">回答正确</h2>
           <p class="answer-name" id="answerName"></p>
@@ -170,11 +168,11 @@
           </div>
           <p>浏览器会缓存当前公开进度；导出文件含不透明恢复凭据，可在换设备后向服务端验证恢复。</p>
           <div class="tool-grid">
-            <button type="button" id="exportButton" disabled><span>↓</span>导出记录</button>
+            <button type="button" id="exportButton" disabled=""><span>↓</span>导出记录</button>
             <button type="button" id="importButton"><span>↑</span>上传恢复</button>
-            <button class="reveal-button" type="button" id="revealButton" disabled><span>◉</span>放弃并揭晓</button>
+            <button class="reveal-button" type="button" id="revealButton" disabled=""><span>◉</span>放弃并揭晓</button>
           </div>
-          <input id="recordInput" type="file" accept=".json,application/json" hidden>
+          <input id="recordInput" type="file" accept=".json,application/json" hidden="">
           <small class="privacy-note">问题与猜测会发送至 AI 服务。请勿输入敏感信息，也不要公开导出的场次恢复文件。</small>
         </section>
       </aside>
@@ -189,8 +187,8 @@
       <p class="dialog-lead">AI 服务会从所选领域秘密准备一个对象。同一浏览器只缓存一场当前游戏。</p>
       <p class="start-limit"><strong>开局限额：</strong>每个网络地址每天最多开始3局，上海时间00:00重置。</p>
       <div class="domain-grid" id="domainGrid" role="radiogroup" aria-label="科学领域"></div>
-      <p class="replace-warning" id="replaceWarning" hidden>开始后会覆盖当前未结束的场次；你可以先导出记录。</p>
-      <p class="start-status" id="startStatus" role="status" aria-live="polite" hidden></p>
+      <p class="replace-warning" id="replaceWarning" hidden="">开始后会覆盖当前未结束的场次；你可以先导出记录。</p>
+      <p class="start-status" id="startStatus" role="status" aria-live="polite" hidden=""></p>
       <div class="dialog-actions">
         <button class="secondary-button" value="cancel">取消</button>
         <button class="primary-button" id="startGameButton" type="button">开始游戏</button>
@@ -236,5 +234,6 @@
   <script src="./engine.js"></script>
   <script src="./api.js"></script>
   <script src="./app.js"></script>
-</body>
-</html>
+
+
+</body></html>

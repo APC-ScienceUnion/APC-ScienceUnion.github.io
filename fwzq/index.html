@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
+<!DOCTYPE html><html lang="zh-CN"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#211913">
@@ -54,12 +52,12 @@
 
         <div class="canvas-wrap" id="canvasWrap">
           <canvas id="board" width="900" height="900" aria-label="15 乘 15 反五子棋棋盘" role="application"></canvas>
-          <div class="result-overlay" id="resultOverlay" hidden>
+          <div class="result-overlay" id="resultOverlay" hidden="">
             <span id="resultKicker">对局结束</span>
             <strong id="resultText">黑方获胜</strong>
             <button type="button" id="overlayNewGame">再来一局</button>
           </div>
-          <div class="thinking" id="thinking" hidden aria-live="polite">
+          <div class="thinking" id="thinking" hidden="" aria-live="polite">
             <span></span><span></span><span></span><b>AI 正在思考</b>
           </div>
         </div>
@@ -111,7 +109,7 @@
             <span>AI 强度</span>
             <select id="difficultySelect">
               <option value="easy">轻松 · 快速随机</option>
-              <option value="medium" selected>标准 · 局面评估</option>
+              <option value="medium" selected="">标准 · 局面评估</option>
               <option value="hard">深入 · 两层搜索</option>
             </select>
           </label>
@@ -120,14 +118,14 @@
             <select id="whiteRestrictSelect">
               <option value="0">不限制</option>
               <option value="1">1 回合</option>
-              <option value="2" selected>2 回合</option>
+              <option value="2" selected="">2 回合</option>
               <option value="3">3 回合</option>
               <option value="4">4 回合</option>
             </select>
           </label>
           <label class="switch-field">
             <span><b>屏蔽立即自杀着</b><small>保持与桌面版默认规则一致</small></span>
-            <input id="suicideToggle" type="checkbox" checked>
+            <input id="suicideToggle" type="checkbox" checked="">
             <i aria-hidden="true"></i>
           </label>
         </section>
@@ -137,7 +135,7 @@
           <button type="button" id="undoButton"><span>↶</span>悔棋</button>
           <button type="button" id="saveButton"><span>↓</span>保存棋谱</button>
           <button type="button" id="loadButton"><span>↑</span>读取棋谱</button>
-          <input id="recordInput" type="file" accept=".afg,.txt,text/plain" hidden>
+          <input id="recordInput" type="file" accept=".afg,.txt,text/plain" hidden="">
         </section>
 
         <section class="legend-card">
@@ -177,5 +175,6 @@
 
   <script src="./engine.js"></script>
   <script src="./app.js"></script>
-</body>
-</html>
+
+
+</body></html>
