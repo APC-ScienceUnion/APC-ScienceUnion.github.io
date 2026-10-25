@@ -340,6 +340,7 @@ assertVisibleAside(englishHome);
 assertEnglishRecentPosts(englishHome, englishArticlePaths);
 
 const expectedTopMenu = [
+  ...(config.community && config.community.enable ? [{ name: 'My account', href: '/en/account/' }] : []),
   { name: 'Archives', href: '/en/archives/' },
   { name: 'Hall of Honor', href: '/en/honor-hall/' },
   { name: 'Science Galleries', href: 'javascript:void(0);' },

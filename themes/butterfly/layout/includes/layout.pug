@@ -54,7 +54,7 @@ html(lang=page.lang || config.language data-theme=theme.display_mode class=htmlR
         - webBgMerged = `background: ${heroLayer} center/cover no-repeat fixed, ${theme.background} center/cover no-repeat fixed;`
       else if !theme.disable_top_img && (theme.index_img !== false)
         //- 與首頁一致：頂圖層 + theme.background（未啟用「頂圖作全頁底」時）
-        - var hmIdx = theme.index_img || theme.default_top_img
+        - var hmIdx = daily_wallpaper_url() || theme.index_img || theme.default_top_img
         - var layerIdx = hmIdx && hmIdx.indexOf('/') !== -1 ? `url(${css_url_for(hmIdx)})` : hmIdx
         - webBgMerged = `background: ${layerIdx} center/cover no-repeat fixed, ${theme.background} center/cover no-repeat fixed;`
       #web_bg(style=webBgMerged ? webBgMerged : false)

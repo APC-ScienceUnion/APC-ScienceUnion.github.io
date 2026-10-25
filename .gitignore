@@ -18,3 +18,7 @@ package.json
 .dev.vars.*
 .netlify/
 .wrangler/
+services/community/data/
+services/community/backups/
+tmp/community-*
+!services/community/package.json

@@ -19,7 +19,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "24"
           cache: npm
 
       - uses: actions/setup-python@v5
@@ -41,7 +41,18 @@ jobs:
           npm install hexo-all-minifier --save
           
       - name: Build
+        env:
+          COMMUNITY_API_URL: ${{ vars.COMMUNITY_API_URL }}
+          IMAGE_HOST_URL: ${{ vars.IMAGE_HOST_URL }}
+          APC_SERVER_ENABLED: ${{ vars.APC_SERVER_ENABLED }}
         run: |
+          if [ -n "$COMMUNITY_API_URL$IMAGE_HOST_URL" ] && [ "$APC_SERVER_ENABLED" != "true" ]; then
+            echo 'Server URLs require APC_SERVER_ENABLED=true so images and article permissions are synced before publication.'
+            exit 1
+          fi
+          npm test --prefix services/community
+          node --test tests/test_server_assets.js
+          python tools/localize_gallery_images.py --check
           npm run content-layout:check
           npm run bilingual:check
           npm run honor-hall:check
@@ -64,8 +75,26 @@ jobs:
           npm run daily-images:check-public
           npm run science-history:check-public
           npm run homepage:check-public
+          node tests/test_community_pages.js
           cp -r ./404 ./public
-          
+
+      - name: Sync images and community article manifest
+        if: vars.APC_SERVER_ENABLED == 'true'
+        env:
+          APC_SERVER_HOST: ${{ vars.APC_SERVER_HOST }}
+          APC_DEPLOY_USER: ${{ vars.APC_DEPLOY_USER }}
+          COMMUNITY_API_URL: ${{ vars.COMMUNITY_API_URL }}
+          IMAGE_HOST_URL: ${{ vars.IMAGE_HOST_URL }}
+          APC_DEPLOY_KEY: ${{ secrets.APC_PUBLISH_KEY }}
+          APC_KNOWN_HOSTS: ${{ secrets.APC_KNOWN_HOSTS }}
+        run: |
+          umask 077
+          export APC_SSH_KEY_FILE="$RUNNER_TEMP/apc_deploy_key"
+          export APC_KNOWN_HOSTS_FILE="$RUNNER_TEMP/apc_known_hosts"
+          printf '%s\n' "$APC_DEPLOY_KEY" > "$APC_SSH_KEY_FILE"
+          printf '%s\n' "$APC_KNOWN_HOSTS" > "$APC_KNOWN_HOSTS_FILE"
+          bash services/community/deploy/publish.sh
+
       - name: Deploy
         run: |
           cd public

@@ -1,6 +1,6 @@
 ---
 title: Science&三行情书
-cover: https://tvax1.sinaimg.cn/large/006UcwnJly1h5h6tjj65hj31ck0yg1ky.jpg
+cover: /gallery/assets/server/asset-503a83484d.jpg
 ---
 {% note info simple %}
 **Science&三行情书**是2022年夏天阿婆村举办的一场征集活动。我们选出了部分优秀作品，在经过作者同意的情况下制作成了这些精美的卡片并展示了出来。
@@ -9,35 +9,35 @@ cover: https://tvax1.sinaimg.cn/large/006UcwnJly1h5h6tjj65hj31ck0yg1ky.jpg
 {% endnote %}
 
 {% gallery %}
-![](https://tvax4.sinaimg.cn/large/006UcwnJly1h5h6xuqnu2j31ck0yg1ky.jpg)
-![](https://tvax3.sinaimg.cn/large/006UcwnJly1h5h6y41fc4j31ck0ygkjl.jpg)
-![](https://tva4.sinaimg.cn/large/006UcwnJly1h5h6ycaf3jj31ck0ygnpd.jpg)
-![](https://tva2.sinaimg.cn/large/006UcwnJly1h5h6yjhe85j31ck0ygb2a.jpg)
-![](https://tvax1.sinaimg.cn/large/006UcwnJly1h5h6yss1toj31ck0ygx6p.jpg)
+![](/gallery/assets/server/asset-093a9d1a19.jpg)
+![](/gallery/assets/server/asset-658599b426.jpg)
+![](/gallery/assets/server/asset-65908069f0.jpg)
+![](/gallery/assets/server/asset-5bc499d4f7.jpg)
+![](/gallery/assets/server/asset-5e5c8e4f46.jpg)
 
-![](https://tvax3.sinaimg.cn/large/006UcwnJly1h5h6z0clq2j31ck0ygqv5.jpg)
-![](https://tvax2.sinaimg.cn/large/006UcwnJly1h5h6z7d3lyj31ck0ygb29.jpg)
-![](https://tvax1.sinaimg.cn/large/006UcwnJly1h5h6zgvxo9j31ck0yg4qq.jpg)
-![](https://tva2.sinaimg.cn/large/006UcwnJly1h5h6zmlwvaj31ck0ygx6p.jpg)
-![](https://tvax3.sinaimg.cn/large/006UcwnJly1h5h6zswzpkj31ck0ygkjl.jpg)
+![](/gallery/assets/server/asset-8b49fc42b7.jpg)
+![](/gallery/assets/server/asset-d003b1fb82.jpg)
+![](/gallery/assets/server/asset-c60a71b321.jpg)
+![](/gallery/assets/server/asset-c896fe68b9.jpg)
+![](/gallery/assets/server/asset-a34feb3d97.jpg)
 
-![](https://tva4.sinaimg.cn/large/006UcwnJly1h5h712zterj31ck0ygkjl.jpg)
-![](https://tvax3.sinaimg.cn/large/006UcwnJly1h5ibnbpohuj31ck0yg4qp.jpg)
-![](https://tvax1.sinaimg.cn/large/006UcwnJgy1h5jh5875ezj31ck0ygu0x.jpg)
-![](https://tva4.sinaimg.cn/large/006UcwnJly1h7plggle8oj31ck0yg1ky.jpg)
-![](https://tvax2.sinaimg.cn/large/006UcwnJly1h7plh9panjj31ck0ygqv5.jpg)
+![](/gallery/assets/server/asset-1822506dad.jpg)
+![](/gallery/assets/server/asset-40b6b6e254.jpg)
+![](/gallery/assets/server/asset-e65b1e1171.jpg)
+![](/gallery/assets/server/asset-08414113b1.jpg)
+![](/gallery/assets/server/asset-34ec06a1ac.jpg)
 
-![](https://tvax3.sinaimg.cn/large/006UcwnJly1h7plhmx18nj31ck0ygkjl.jpg)
-![](https://tvax3.sinaimg.cn/large/006UcwnJly1h7plicj3b8j31ck0yghdt.jpg)
-![](https://tva1.sinaimg.cn/large/006UcwnJly1h7plinsgx6j31ck0ygnpd.jpg)
-![](https://tva4.sinaimg.cn/large/006UcwnJly1h7pliz0hqyj31ck0ygu0x.jpg)
-![](https://tva1.sinaimg.cn/large/006UcwnJly1h7pljwlhn2j31ck0ygb29.jpg)
+![](/gallery/assets/server/asset-3bc1c6933e.jpg)
+![](/gallery/assets/server/asset-4aa5e63f4b.jpg)
+![](/gallery/assets/server/asset-3d145b895b.jpg)
+![](/gallery/assets/server/asset-679a4c58c7.jpg)
+![](/gallery/assets/server/asset-e6e4219bc9.jpg)
 
-![](https://tva1.sinaimg.cn/large/006UcwnJly1h7plkkwdxej31ck0ygx6p.jpg)
-![](https://tva4.sinaimg.cn/large/006UcwnJly1h7plkyusllj31ck0yg1ky.jpg)
-![](https://tvax1.sinaimg.cn/large/006UcwnJly1h7pllapv9rj31ck0yghdt.jpg)
-![](https://tvax1.sinaimg.cn/large/006UcwnJly1h7plllt6z0j31ck0yg1ky.jpg)
-![](https://tva4.sinaimg.cn/large/006UcwnJly1h7pllwoamqj31ck0ygx6p.jpg)
+![](/gallery/assets/server/asset-0ddbfe709f.jpg)
+![](/gallery/assets/server/asset-76231a0ed7.jpg)
+![](/gallery/assets/server/asset-2e989ccb8b.jpg)
+![](/gallery/assets/server/asset-a3677ceb77.jpg)
+![](/gallery/assets/server/asset-df6a5a3692.jpg)
 
-![](https://tvax1.sinaimg.cn/large/006UcwnJly1h7plmed72bj31ck0ygkjl.jpg)
+![](/gallery/assets/server/asset-24691a3ab7.jpg)
 {% endgallery %}

@@ -16,3 +16,6 @@
   - const localizedFooterText = page.lang === 'en' && theme.footer.custom_text_en ? theme.footer.custom_text_en : theme.footer.custom_text
   if localizedFooterText
     .footer_custom_text!=`${localizedFooterText}`
+  if theme.footer.icp
+    .footer-icp
+      a(href='https://beian.miit.gov.cn/' target='_blank' rel='noopener noreferrer')= theme.footer.icp

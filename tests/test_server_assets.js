@@ -1,0 +1,20 @@
+'use strict';
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const os=require('node:os');
+const path=require('node:path');
+const {prepare,rewrite}=require('../tools/server_assets');
+test('all image paths and bytes survive staging, including encoded Unicode and dynamic JSON',t=>{
+  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'apc-assets-'));t.after(()=>fs.rmSync(tmp,{recursive:true,force:true}));
+  const source=path.join(tmp,'public'),out=path.join(tmp,'stage');fs.mkdirSync(path.join(source,'images','中文'),{recursive:true});fs.mkdirSync(path.join(source,'gallery'),{recursive:true});
+  const bytes=Buffer.from([0,255,1,2]);fs.writeFileSync(path.join(source,'images','中文','a.png'),bytes);
+  fs.writeFileSync(path.join(source,'community-topics.json'),'{"topics":["/articles/test"]}');
+  fs.writeFileSync(path.join(source,'index.html'),'<img src="/images/%E4%B8%AD%E6%96%87/a.png"><img srcset="/images/中文/a.png 1x, /images/中文/a.png 2x"><img src="https://external.test/x.png">');
+  fs.writeFileSync(path.join(source,'gallery','data.json'),JSON.stringify({image:'../images/中文/a.png',unchanged:'../images/missing.png'}));
+  const records=prepare(source,out);assert.equal(records.length,1);assert.deepEqual(fs.readFileSync(path.join(out,'media','images','中文','a.png')),bytes);
+  rewrite(source,'https://img.example.com');
+  const html=fs.readFileSync(path.join(source,'index.html'),'utf8');assert.ok(html.includes('https://img.example.com/images/%E4%B8%AD%E6%96%87/a.png'));assert.ok(html.includes('https://external.test/x.png'));
+  const data=JSON.parse(fs.readFileSync(path.join(source,'gallery','data.json')));assert.ok(data.image.startsWith('https://img.example.com/'));assert.equal(data.unchanged,'../images/missing.png');
+  assert.ok(fs.readFileSync(path.join(source,'_redirects'),'utf8').includes('302!'));
+});

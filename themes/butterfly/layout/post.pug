@@ -26,7 +26,13 @@ block content
     if theme.related_post && theme.related_post.enable
       != related_posts(page,site.posts)
 
-    if page.comments !== false && theme.comments && theme.comments.use
+    if config.community && config.community.enable && page.community_comments !== false
+      section.apc-community.apc-discussion(data-topic=community_topic(page) aria-label=page.lang === 'en' ? 'Comments' : '评论区')
+        h2= page.lang === 'en' ? 'Join the discussion' : '一起聊聊'
+        p.apc-muted= page.lang === 'en' ? 'A question, a new idea, a different perspective.' : '一个疑问、一点发现，或是另一种看法。'
+        .apc-thread
+          p.apc-muted= page.lang === 'en' ? 'Loading comments…' : '正在加载评论…'
+        noscript 请启用 JavaScript 以查看和参与评论。
+    else if page.comments !== false && theme.comments && theme.comments.use
       - var commentsJsLoad = true
       !=partial('includes/third-party/comments/index', {}, {cache: true})
-      

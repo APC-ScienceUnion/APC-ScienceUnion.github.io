@@ -3,6 +3,7 @@
 # --------------------------------------
 
 menu:
+  个人中心: /account/ || fas fa-user-circle
   时间轴: /archives/ || fas fa-archive
   # 标签: /tags/ || fas fa-tags
   荣誉殿堂: /honor-hall/ || fas fa-award
@@ -21,6 +22,7 @@ menu:
 # English navigation mirrors the complete Chinese header. Article listings,
 # archives, Hall of Honor, APC News, and About use dedicated English routes.
 menu_en:
+  My account: /en/account/ || fas fa-user-circle
   Archives: /en/archives/ || fas fa-archive
   Hall of Honor: /en/honor-hall/ || fas fa-award
   Science Galleries||fa-regular fa-images:
@@ -439,6 +441,7 @@ footer:
     since: 2016
   custom_text: 格物社 · 在线电子图书馆
   custom_text_en: APC Science Union · Online Library
+  icp: 沪ICP备2026055463号-1
   copyright: false # Copyright of theme and framework
 
 # Analysis

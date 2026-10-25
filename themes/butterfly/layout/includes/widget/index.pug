@@ -21,6 +21,15 @@
     !=partial('includes/widget/card_announcement', {}, {cache: false})
     !=partial('includes/widget/card_top_self', {}, {cache: false})
 
+    if is_home() && config.community && config.community.enable
+      .card-widget.apc-community.apc-guestbook(data-topic='guestbook')
+        .item-headline
+          i.far.fa-comment-dots
+          span= page.lang === 'en' ? 'Guestbook' : '留言板'
+        p.apc-muted= page.lang === 'en' ? 'Leave a little hello.' : '来过，就留下一句问候吧。'
+        .apc-thread
+          p.apc-muted= page.lang === 'en' ? 'Loading…' : '正在加载留言…'
+
     .sticky_layout
       if showToc
         include ./card_post_toc.pug

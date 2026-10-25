@@ -1,0 +1,44 @@
+.apc-community{--apc-accent:#228896;--apc-border:rgba(127,145,154,.25);--apc-soft:rgba(34,136,150,.07);color:var(--font-color);font-size:15px;line-height:1.75}
+.apc-community *{box-sizing:border-box}
+.apc-community [hidden]{display:none!important}
+.apc-community .apc-muted{color:var(--font-color);opacity:.7;font-size:.9em;margin:.4rem 0 1rem}
+.apc-community h2,.apc-community h3{margin:.4rem 0 .8rem;font-weight:600}
+.apc-community h2:before,.apc-community h3:before{display:none!important}
+.apc-community a{color:var(--apc-accent);text-decoration:none}
+.apc-community button,.apc-community .apc-button{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;border:1px solid var(--apc-border);border-radius:9px;padding:.55rem 1rem;min-height:40px;background:var(--apc-soft);color:var(--font-color);font:inherit;line-height:1.5;cursor:pointer;transition:background .15s}
+.apc-community button:hover,.apc-community .apc-button:hover{background:rgba(34,136,150,.17)}
+.apc-community button:focus-visible,.apc-community a:focus-visible,.apc-community input:focus-visible,.apc-community textarea:focus-visible{outline:3px solid #49b1f5;outline-offset:3px}
+.apc-community button.apc-primary{background:var(--apc-accent);border-color:var(--apc-accent);color:white}
+.apc-community button:disabled{opacity:.5;cursor:wait}
+.apc-community .apc-form{display:grid;gap:1rem;margin:1rem 0}
+.apc-community label{display:grid;gap:.35rem;font-size:.9em;font-weight:500}
+.apc-community input,.apc-community textarea{width:100%;padding:.7rem .85rem;border:1px solid var(--apc-border);border-radius:9px;background:var(--card-bg,#fff);color:var(--font-color);font:inherit;line-height:1.6}
+.apc-community textarea{min-height:100px;resize:vertical}
+.apc-community .apc-actions{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.apc-community .apc-tabs{display:flex;gap:.5rem;flex-wrap:wrap;padding-bottom:1rem;border-bottom:1px solid var(--apc-border)}
+.apc-community .apc-tabs [aria-current=true]{background:var(--apc-accent);color:#fff}
+.apc-community .apc-status{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.9em;padding:.5rem 0;color:var(--apc-accent)}
+.apc-community .apc-status[data-error=true]{color:#c34b40}
+.apc-community .apc-status:empty{display:none}
+.apc-community .apc-profile{display:flex;gap:1rem;align-items:center;padding:1.4rem;border-radius:14px;background:var(--apc-soft);margin-bottom:1.3rem;overflow-wrap:anywhere}
+.apc-community .apc-avatar{flex:none;width:44px;height:44px;border-radius:12px;display:block;margin:0!important}
+.apc-community .apc-profile .apc-avatar{width:72px;height:72px;border-radius:18px}
+.apc-community .apc-badge{display:inline-block;font-size:11px;color:var(--apc-accent);border:1px solid var(--apc-border);border-radius:5px;padding:0 .35rem;margin-left:.5rem;vertical-align:middle}
+.apc-community .apc-panels{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.apc-community .apc-panel{border:1px solid var(--apc-border);border-radius:14px;padding:1.3rem;min-width:0}
+.apc-community .apc-auth{max-width:480px;margin:0 auto;padding:1rem 0 2rem}
+.apc-community .apc-comment{padding:1rem 0;border-top:1px solid var(--apc-border)}
+.apc-community .apc-comment-head{display:flex;gap:.65rem;align-items:center}
+.apc-community .apc-comment-name{font-weight:600;overflow-wrap:anywhere}
+.apc-community time{font-size:.78em;opacity:.65;display:block}
+.apc-community .apc-comment-body{white-space:pre-wrap;overflow-wrap:anywhere;margin:.6rem 0;font-size:.95em}
+.apc-community .apc-delete{font-size:.78em;padding:.2rem .5rem;min-height:30px;background:transparent}
+.apc-community .apc-counter{margin-left:auto;font-size:.8em;opacity:.65}
+.apc-discussion{margin-top:2.5rem;border-top:2px solid var(--apc-border);padding-top:1.5rem}
+.apc-guestbook .apc-thread{max-height:650px;overflow:auto;scrollbar-width:thin}
+.apc-guestbook .apc-avatar{width:34px;height:34px;border-radius:9px}
+.apc-guestbook textarea{min-height:85px}
+.apc-guestbook .apc-comment-body{font-size:.9em}
+[data-theme=dark] .apc-community{--apc-accent:#69c4c7;--apc-soft:rgba(105,196,199,.08)}
+[data-theme=dark] .apc-community button.apc-primary,[data-theme=dark] .apc-community .apc-tabs [aria-current=true]{background:#246b76;color:#fff}
+@media(max-width:680px){.apc-community .apc-panels{grid-template-columns:1fr}.apc-community .apc-panel{padding:1rem}.apc-community .apc-profile{padding:1rem}.apc-community .apc-auth{padding-top:0}.apc-community .apc-profile .apc-avatar{width:56px;height:56px}}

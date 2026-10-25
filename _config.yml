@@ -129,6 +129,16 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: butterfly
 
+# Account/comment API is separate from static Hexo hosting.
+# Set COMMUNITY_API_URL during deployment after HTTPS has been verified.
+community:
+  enable: false
+  api_url: ''
+
+image_server:
+  url: ''
+
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

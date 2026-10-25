@@ -1,0 +1,12 @@
+{
+  "name": "apc-community",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.14.0" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "test": "node --test test/*.test.js",
+    "backup": "node --env-file-if-exists=.env src/backup.js"
+  }
+}

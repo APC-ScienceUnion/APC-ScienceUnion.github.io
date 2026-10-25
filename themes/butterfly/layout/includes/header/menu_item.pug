@@ -1,4 +1,5 @@
-- const localizedMenu = page.lang === 'en' && theme.menu_en ? theme.menu_en : theme.menu
+- const sourceMenu = page.lang === 'en' && theme.menu_en ? theme.menu_en : theme.menu
+- const localizedMenu = Object.fromEntries(Object.entries(sourceMenu || {}).filter(([label, value]) => (config.community && config.community.enable) || typeof value !== 'string' || !/^\/(?:en\/)?account\/?$/.test(value.split('||')[0].trim())))
 if localizedMenu
   .menus_items
     each value, label in localizedMenu

@@ -140,6 +140,7 @@ function pairedPostInfo(page) {
 
   const staticPair = [
     { zhPath: '/about/', enPath: '/en/about/' },
+    { zhPath: '/account/', enPath: '/en/account/' },
     { zhPath: '/honor-hall/', enPath: '/en/honor-hall/' }
   ].find(pair => pair.zhPath === currentPath || pair.enPath === currentPath);
 

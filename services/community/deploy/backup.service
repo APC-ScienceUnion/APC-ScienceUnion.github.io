@@ -1,0 +1,15 @@
+[Unit]
+Description=Consistent SQLite backup for APC community
+[Service]
+Type=oneshot
+User=apc-community
+Group=apc-community
+WorkingDirectory=/opt/apc-community/current
+EnvironmentFile=/etc/apc-community.env
+Environment=BACKUP_DIR=/var/lib/apc-community/backups
+ExecStart=/usr/local/bin/node src/backup.js
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/apc-community

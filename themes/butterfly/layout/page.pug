@@ -1,7 +1,11 @@
 extends includes/layout.pug
 
 block content
-  if page.type === 'categories'
+  if page.type === 'community-account' && !(config.community && config.community.enable)
+    #page
+      h1.page-title= page.title
+      p= page.lang === 'en' ? 'Accounts and comments are not available yet.' : '账号与评论功能暂未开放。'
+  else if page.type === 'categories'
     include includes/page/categories.pug
   else if page.type === 'apc-news'
     include includes/page/apc-news.pug

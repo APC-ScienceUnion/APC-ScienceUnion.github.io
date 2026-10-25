@@ -27,6 +27,10 @@ if theme.aside.card_webinfo.enable
         .webinfo-item
           .item-name= _p('aside.card_webinfo.site_pv_name') + " :"
           .item-count#busuanzi_value_site_pv
+      if config.community && config.community.enable
+        .webinfo-item
+          .item-name= page.lang === 'en' ? 'Registered users :' : '已注册用户数 :'
+          .item-count(data-community-users aria-live='polite') —
       if theme.aside.card_webinfo.last_push_date
         .webinfo-item
           .item-name= _p('aside.card_webinfo.last_push_date.name') + " :"
@@ -44,4 +48,3 @@ if theme.aside.card_webinfo.enable
             != `&copy;${_ftYear} ${theme.footer.custom_text || ''}`
         else if theme.footer.custom_text
           != theme.footer.custom_text
-

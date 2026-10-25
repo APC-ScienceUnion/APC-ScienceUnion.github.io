@@ -1,0 +1,25 @@
+[Unit]
+Description=APC blog accounts and comments
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=apc-community
+Group=apc-community
+WorkingDirectory=/opt/apc-community/current
+EnvironmentFile=/etc/apc-community.env
+ExecStart=/usr/local/bin/node src/server.js
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/apc-community
+MemoryMax=512M
+TasksMax=64
+
+[Install]
+WantedBy=multi-user.target
