@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-24T05:57:09+00:00",
+  "updated_at": "2026-10-25T06:11:28+00:00",
   "providers": {
     "bing": {
-      "date": "2026-10-24",
-      "title": "皇家葡萄牙语阅览室，里约热内卢，巴西 ",
-      "headline": "皇家葡萄牙语阅览室，里约热内卢，巴西 ",
-      "subtitle": "书香里的极致华美",
-      "description": "今天，我们走进巴西里约热内卢的皇家葡萄牙语阅览室。在这里，翻开一本书这一朴素举动，被赋予了宏伟的建筑抱负。巴西独立仅15年后，43名葡萄牙移民于1837年创办了这家机构；约半个世纪后，机构最终迁入眼前这座以华丽的新曼努埃尔式建成的建筑。书架环绕宽阔的阅览大厅，高逾70英尺；大厅上方覆盖着一扇巨型彩绘玻璃天窗，让自然光也成为设计的一部分。\n这座建筑成了连接两个国家的桥梁：其外立面在里斯本雕刻完成，横越大西洋运抵里约热内卢，再于当地组装。最终成果令人惊叹，2014年，它入选世界最美的20座图书馆。这里于1900年向公众开放，如今收藏着数十万册书籍，是葡萄牙境外规模最大的葡萄牙文学藏书地。然而，在这一切繁复华美与宏伟气象之下，最初的理念依旧简单而美好：让人们有书可读。",
-      "copyright": "© Antonio Salaverry/Shutterstock",
-      "source_page_url": "https://bing.ee123.net/img/?date=20261024&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.PortugueseLibrary_ZH-CN7096893027_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.PortugueseLibrary_ZH-CN7096893027_1920x1080.jpg",
+      "date": "2026-10-25",
+      "title": "玛琳湖，贾斯珀国家公园，艾伯塔省，加拿大 ",
+      "headline": "玛琳湖，贾斯珀国家公园，艾伯塔省，加拿大 ",
+      "subtitle": "群峰与宁静相遇之地",
+      "description": "夜幕降临加拿大艾伯塔省的贾斯珀国家公园时，群山便有了全新的背景。该公园于2011年被指定为暗夜天空保护区，面积超过11,000平方千米，并采取了减少光污染的措施。在这里，繁星、行星和银河系联袂上演天幕奇观，让游客不由得仰望天空。晨光到来后，视线又从头顶的天空转向脚下的景致。\n贾斯珀国家公园的森林中分布着成片的杨树和花旗松，高山草甸与草原则令这里的山地栖息地更显多样。这些景观孕育着53种哺乳动物，包括灰熊、美洲黑熊、马鹿、驼鹿、大角羊、雪羊、狼和郊狼。玛琳湖也是一大亮点。这座由冰川补给的湖泊长22千米，是加拿大落基山脉最大的天然湖泊。湖边设有步道，划船者也可以沿着漫长的湖岸探索，不过即使在夏季，湖水依然十分寒冷。从繁星满天的夜晚到野生动物出没的白昼，贾斯珀国家公园总能让人兴味盎然。",
+      "copyright": "© Andrey Popov/Getty Images",
+      "source_page_url": "https://bing.ee123.net/img/?date=20261025&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.MaligneFest_ZH-CN8343066766_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.MaligneFest_ZH-CN8343066766_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-10-24-74e15859bb6e.jpg",
-      "image_path": "/images/daily/bing-2026-10-24-74e15859bb6e.jpg",
-      "bytes": 340818,
-      "sha256": "74e15859bb6e38fbc29597d4e0fb0c08a8799bc0ef89f816e6ca609934430025"
+      "local_url": "/images/daily/bing-2026-10-25-9cfb06cd9ee5.jpg",
+      "image_path": "/images/daily/bing-2026-10-25-9cfb06cd9ee5.jpg",
+      "bytes": 331717,
+      "sha256": "9cfb06cd9ee51e537f4277d8b120107ad6de3960d3f1e8cef54e3647798c549d"
     },
     "apod": {
       "date": "2026-09-29",
@@ -37,19 +37,19 @@
       "sha256": "5b2ab38fe6757cb9e8423fddb427e4ce6f8e40aeeef131a29f5aea87131579e9"
     },
     "wikipedia": {
-      "date": "2026-10-24",
-      "title": "Gacela de Thomson (Eudorcas thomsonii), parque nacional de Amboseli, Kenia, 2024-05-23, DD 11",
-      "description": "Thomson's gazelle ( Eudorcas thomsonii ), Amboseli National Park , Kenya. Named after British explorer Joseph Thomson , this is the most common type of gazelle in East Africa with numbers over 200,000. It's claimed to have top speeds up to 80–90 km/h (50–55 mph), making it the fourth-fastest land animal, after the cheetah (its main predator), pronghorn, and springbok.",
-      "copyright": "Diego Delso · Own work · CC BY-SA 4.0",
-      "article_url": "https://commons.wikimedia.org/wiki/File:Gacela_de_Thomson_(Eudorcas_thomsonii),_parque_nacional_de_Amboseli,_Kenia,_2024-05-23,_DD_11.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Gacela_de_Thomson_(Eudorcas_thomsonii),_parque_nacional_de_Amboseli,_Kenia,_2024-05-23,_DD_11.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Gacela_de_Thomson_%28Eudorcas_thomsonii%29%2C_parque_nacional_de_Amboseli%2C_Kenia%2C_2024-05-23%2C_DD_11.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Gacela_de_Thomson_%28Eudorcas_thomsonii%29%2C_parque_nacional_de_Amboseli%2C_Kenia%2C_2024-05-23%2C_DD_11.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-10-25",
+      "title": "Isla Tapu, Phuket, Tailandia, 2013-08-20, DD 36",
+      "description": "Ko Tapu (Tapu Island) is a 20 m tall islet in front of the Khao Phing Kan islands, in the Phang Nga Bay , in Thailand. The island belongs to the Phang Nga National Park and since 1974 is also known as James Bond Island , because the James Bond movie The Man with the Golden Gun was filmed there.",
+      "copyright": "Diego Delso · Own work · CC BY-SA 3.0",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Isla_Tapu,_Phuket,_Tailandia,_2013-08-20,_DD_36.JPG",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Isla_Tapu,_Phuket,_Tailandia,_2013-08-20,_DD_36.JPG",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Isla_Tapu%2C_Phuket%2C_Tailandia%2C_2013-08-20%2C_DD_36.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Isla_Tapu%2C_Phuket%2C_Tailandia%2C_2013-08-20%2C_DD_36.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-10-24-29b9f649c003.jpg",
-      "image_path": "/images/daily/wikipedia-2026-10-24-29b9f649c003.jpg",
-      "bytes": 10880337,
-      "sha256": "29b9f649c0030f5f049cb45f0ed043ce1f412aa379d81bc5cf5da86bd8dab162"
+      "local_url": "/images/daily/wikipedia-2026-10-25-87dac6fc0830.jpg",
+      "image_path": "/images/daily/wikipedia-2026-10-25-87dac6fc0830.jpg",
+      "bytes": 6325892,
+      "sha256": "87dac6fc083039af9bb7d933286b95baca29ecbc968020e4201162d81b99256e"
     }
   }
 }
