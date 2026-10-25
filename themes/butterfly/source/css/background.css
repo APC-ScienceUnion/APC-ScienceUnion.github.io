@@ -1151,8 +1151,8 @@ html:not(.site-home) .flink-item-desc {
   color: var(--font-color) !important;
 }
 
-/* 版權併入「網站資訊」時隱藏底欄；單欄模式側欄隱藏時恢復底欄 */
-#body-wrap:has(#aside-content .card-webinfo) #footer {
+/* 版權併入「網站資訊」時隱藏底欄；有備案連結時保留可見底欄。 */
+#body-wrap:has(#aside-content .card-webinfo) #footer:not(:has(.footer-icp)) {
   display: none !important;
   height: 0 !important;
   min-height: 0 !important;
