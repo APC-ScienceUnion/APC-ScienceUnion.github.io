@@ -62,6 +62,7 @@ jobs:
           npm run science-history:check
           hexo clean
           git clone https://oauth2:${{ secrets.GITHUB_TOKEN }}@github.com/APC-ScienceUnion/APC-ScienceUnion.github.io.git public -b main --depth=1 
+          node tools/server_assets.js snapshot public "$RUNNER_TEMP/apc_previous_images"
           cd public
           git rm -rf .
           cd ..
@@ -77,6 +78,9 @@ jobs:
           npm run homepage:check-public
           node tests/test_community_pages.js
           cp -r ./404 ./public
+          # Keep previously published image paths available for cached articles.
+          # Restore only absent images after checking the current source assets.
+          node tools/server_assets.js restore "$RUNNER_TEMP/apc_previous_images" public
 
       - name: Sync images and community article manifest
         if: vars.APC_SERVER_ENABLED == 'true'

@@ -33,6 +33,19 @@ function prepare(publicRoot, outputRoot) {
   console.log(`Staged and verified ${records.length} images (${(records.reduce((n,r)=>n+r.bytes,0)/1024/1024).toFixed(1)} MiB).`);
   return records;
 }
+function snapshotImages(sourceRoot, outputRoot, missingOnly=false) {
+  sourceRoot=path.resolve(sourceRoot);outputRoot=path.resolve(outputRoot);
+  if(outputRoot===sourceRoot || outputRoot.startsWith(sourceRoot+path.sep))throw new Error('Image archive must be outside the source tree.');
+  let copied=0;
+  for(const file of walk(sourceRoot).filter(file=>imageExtension.test(file))){
+    const destination=path.join(outputRoot,file);
+    if(missingOnly && fs.existsSync(destination))continue;
+    fs.mkdirSync(path.dirname(destination),{recursive:true});
+    fs.copyFileSync(path.join(sourceRoot,file),destination);copied++;
+  }
+  console.log(`${missingOnly?'Retained historical':'Archived published'} images: ${copied}.`);
+  return copied;
+}
 function rewrite(publicRoot, host, site='https://apc-science.cn') {
   host=origin(host); const local=new URL(site).origin;
   const files=walk(publicRoot), images=new Set(files.filter(file=>imageExtension.test(file)).map(file=>'/'+file));
@@ -76,6 +89,8 @@ if(require.main===module){
   if(!target)throw new Error('Usage: node tools/server_assets.js prepare public <stage> | rewrite public <https-image-origin>');
   if(command==='prepare')prepare(publicRoot,target);
   else if(command==='rewrite')rewrite(publicRoot,target);
+  else if(command==='snapshot')snapshotImages(publicRoot,target);
+  else if(command==='restore')snapshotImages(publicRoot,target,true);
   else throw new Error('Unknown command.');
 }
-module.exports={prepare,rewrite};
+module.exports={prepare,rewrite,snapshotImages};

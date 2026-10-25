@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const os=require('node:os');
 const path=require('node:path');
-const {prepare,rewrite}=require('../tools/server_assets');
+const {prepare,rewrite,snapshotImages}=require('../tools/server_assets');
 test('all image paths and bytes survive staging, including encoded Unicode and dynamic JSON',t=>{
   const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'apc-assets-'));t.after(()=>fs.rmSync(tmp,{recursive:true,force:true}));
   const source=path.join(tmp,'public'),out=path.join(tmp,'stage');fs.mkdirSync(path.join(source,'images','中文'),{recursive:true});fs.mkdirSync(path.join(source,'gallery'),{recursive:true});
@@ -20,4 +20,16 @@ test('all image paths and bytes survive staging, including encoded Unicode and d
   assert.equal(fs.readFileSync(path.join(source,'_redirects'),'utf8'),'/old /new 301\n');
   assert.ok(!html.includes('onerror='));
   assert.deepEqual(fs.readFileSync(path.join(source,'images','中文','a.png')),bytes);
+});
+test('historical image paths survive rebuilds without replacing current images or restoring old HTML',t=>{
+  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'apc-retain-'));t.after(()=>fs.rmSync(tmp,{recursive:true,force:true}));
+  const previous=path.join(tmp,'previous'),archive=path.join(tmp,'archive'),current=path.join(tmp,'current');
+  fs.mkdirSync(previous);fs.mkdirSync(current);
+  fs.writeFileSync(path.join(previous,'old.png'),'old');fs.writeFileSync(path.join(previous,'current.png'),'before');fs.writeFileSync(path.join(previous,'index.html'),'old HTML');
+  fs.writeFileSync(path.join(current,'current.png'),'after');fs.writeFileSync(path.join(current,'index.html'),'new HTML');
+  snapshotImages(previous,archive);snapshotImages(archive,current,true);
+  assert.equal(fs.readFileSync(path.join(current,'old.png'),'utf8'),'old');
+  assert.equal(fs.readFileSync(path.join(current,'current.png'),'utf8'),'after');
+  assert.equal(fs.readFileSync(path.join(current,'index.html'),'utf8'),'new HTML');
+  assert.ok(!fs.existsSync(path.join(archive,'index.html')));
 });
