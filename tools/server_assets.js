@@ -3,6 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const cheerio = require('cheerio');
 const imageExtension = /\.(?:png|jpe?g|gif|webp|avif|svg|ico|bmp|tiff?)$/i;
 const digest = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 function walk(root, prefix='') {
@@ -45,7 +46,7 @@ function rewrite(publicRoot, host, site='https://apc-science.cn') {
     } catch{return value;}
   }
   let changed=0;
-  for(const file of files.filter(file=>/\.(html|css|js|json|xml)$/i.test(file))) {
+  for(const file of files.filter(file=>/\.(html|js|json|xml)$/i.test(file))) {
     // The daily widgets validate local paths in their cached metadata. Their rendered
     // image URLs are mapped by image-host.js; preserve metadata and checksums here.
     if(file==='images/daily/daily-images.json')continue;
@@ -55,14 +56,20 @@ function rewrite(publicRoot, host, site='https://apc-science.cn') {
     after=after.replace(/url\(\s*([^)'"\s]+)\s*\)/g,(all,value)=>`url(${rewriteUrl(value,file)})`);
     // srcset lists have descriptors; rewrite each URL separately.
     after=after.replace(/srcset=(["'])([^"']+)\1/g,(all,quote,value)=>'srcset='+quote+value.split(',').map(part=>part.trim().split(/\s+/).map((v,i)=>i===0?rewriteUrl(v,file):v).join(' ')).join(', ')+quote);
+    if (file.endsWith('.html')) {
+      const $=cheerio.load(after);
+      // Old inline placeholders can discard the failed URL before the deferred
+      // fallback script starts. Keep that URL so the local copy can be retried.
+      $('img').each((_,img)=>{if(String($(img).attr('src')||'').startsWith(host+'/'))$(img).removeAttr('onerror');});
+      after=$.html();
+    }
     if(after!==before){fs.writeFileSync(absolute,after);changed++;}
   }
-  // Covers URLs assembled by gallery/game JavaScript on Netlify, with no change to legacy paths.
+  // Same-origin files are the fallback. Never redirect them back to the failed host.
   const redirectFile=path.join(publicRoot,'_redirects');
   const existing=(fs.existsSync(redirectFile)?fs.readFileSync(redirectFile,'utf8'):'').replace(/# APC IMAGES START\n[\s\S]*?# APC IMAGES END\n?/g,'');
-  const block=[...images].sort().map(p=>`${p.split('/').map(encodeURIComponent).join('/')} ${host}${p.split('/').map(encodeURIComponent).join('/')} 302!`).join('\n');
-  fs.writeFileSync(redirectFile,'# APC IMAGES START\n'+block+'\n# APC IMAGES END\n'+existing);
-  console.log(`Rewrote image references in ${changed} files; added ${images.size} legacy image redirects.`);
+  fs.writeFileSync(redirectFile,existing);
+  console.log(`Rewrote image references in ${changed} files; retained ${images.size} local fallback files without redirects.`);
 }
 if(require.main===module){
   const [command,publicRoot='public',target]=process.argv.slice(2);

@@ -33,7 +33,7 @@ meta(name ="format-detection" content="telephone=no")
 meta(name="theme-color" content=themeColor)
 if image_host_url()
   meta(name="image-host" content=image_host_url())
-  script(src=url_for('/js/image-host.js') defer)
+  script(src=url_for('/js/image-host.js?v=2') defer)
 if config.community && config.community.enable
   meta(name="community-api" content=community_api_url())
   link(rel="stylesheet" href=url_for('/css/community.css'))

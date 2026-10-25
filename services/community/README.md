@@ -29,7 +29,7 @@
 6. 构建博客，执行 `node tools/server_assets.js prepare public tmp/community-deploy`。上传 `media/` 内的文件到 `/srv/apc-media/`，保持完整相对路径；上传文章清单到上述 `TOPICS_FILE`。同步时不要删除旧图片，旧文章和缓存仍可能需要它们。
 7. 以 root 执行 `bash deploy/install.sh` 安装应用和 systemd 服务。安装脚本只管理本应用目录。将 `deploy/Caddyfile` 安装或合并到 Caddy 配置并先运行 `caddy validate`，再加载。
 8. 检查 `/api/health`、HTTPS、实际图片和邮件投递后，设置根目录 `_config.yml` 的 `community.api_url` / `image_server.url`，或构建环境变量 `COMMUNITY_API_URL=https://api.apc-science.cn`、`IMAGE_HOST_URL=https://img.apc-science.cn`。
-9. 运行现有图片一致性检查后，再执行 `node tools/server_assets.js rewrite public https://img.apc-science.cn`，最后发布静态站点。重写脚本也生成 Netlify 图片重定向，覆盖脚本动态拼接的旧地址。每日快照元数据保留本地路径，其实际图片由前端映射到图片域名。
+9. 运行现有图片一致性检查后，再执行 `node tools/server_assets.js rewrite public https://img.apc-science.cn`，最后发布静态站点。保留同路径静态图片作为备用，不再生成图片强制重定向；前端在服务器报错或超时时回退本站图片。每日快照元数据保留本地路径，其实际图片由前端映射到图片域名。
 10. 用配置的管理员邮箱正常注册，收取验证码并自行设置密码。切勿将数据库、`.env`、SSH 私钥、备份或本地测试文件放入静态发布目录。
 
 备案或域名验证未完成时，可使用 `deploy/Caddyfile.staging` 在服务器的 `127.0.0.1:8080` 检查服务；该配置明确绑定回环地址。正式配置通过检查后再切换 `deploy/Caddyfile`。个人备案须与网站实际主办者和内容相符，社团/单位性质的网站不能直接改填成个人博客。
@@ -51,6 +51,10 @@
 待备案和接入条件满足、站长决定恢复后，先在网站下线状态下同步最新图片与文章清单，配置并验证图片及账号接口的 HTTPS，再发布对应的静态构建。确认无缺图、评论身份正确后，启用 Netlify 项目，并仅停用上述临时 Cloudflare 规则。最后验证主域名、www、图片、注册邮件、登录、密码重置与评论；GitHub Pages 的备用入口按站长需要另行恢复，不是 Netlify 上线的前提。
 
 ## 后续图片和文章更新
+
+2026-10-25 已恢复文章及图片公开访问，Netlify 已启用，Cloudflare 的备案临时拦截已禁用，GitHub Pages 保持关闭。账号、评论和留言仍未开放。
+
+本地可双击仓库根目录的 `图片上传工具.cmd`，上传图片后复制 Markdown，也可按文章引用批量上传并规范路径。操作、故障回退策略及本机配置见 [图片上传说明](../../tools/IMAGE_HOSTING.md)。上传不会删除旧图，备用文件需与文章一起发布。
 
 已有定时任务会更新每日图片并触发 Pages 构建。启用服务器图床后，每次发布都必须先同步图片和 `community-topics.json`，确认服务可用，再发布含服务器地址的页面。`deploy/publish.sh` 提供 Linux/CI 上传流程，需要显式设置主机、SSH 用户、专用密钥和已核对的主机指纹；不要关闭 SSH 主机身份检查。
 

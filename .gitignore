@@ -21,4 +21,5 @@ package.json
 services/community/data/
 services/community/backups/
 tmp/community-*
+.image-upload.local.json
 !services/community/package.json
