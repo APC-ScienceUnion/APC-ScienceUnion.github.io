@@ -2,8 +2,8 @@
 layout: post
 title: 'How much water could your daily energy use bring to a boil?'
 date: 2026-10-25 12:00:00
-author: '锅炉-251'
-copyright_author: '锅炉-251'
+author: '秋风熙'
+copyright_author: '秋风熙'
 lang: en
 translation_key: '你一天能烧多少开水？'
 permalink: en/2026/10/25/how-much-water-could-your-daily-energy-boil/
@@ -12,17 +12,18 @@ comments: false
 tags: []
 categories: []
 katex: true
-cover: /images/你一天能烧多少开水？/image4.jpeg
+cover: /images/你一天能烧多少开水？/cover-brain.png
 ---
 
 {% note blue 'fas fa-fire' %}
-How much water could you bring to a boil with the energy a person uses in a day? The answer may surprise you—that energy could also run a refrigerator for more than two days!
-
+How much water could you bring to a boil with the energy a person uses in a day? The answer may surprise you!
 This article explores human metabolism and the conversion between calories and electrical energy to see how much energy our quietly working bodies use each day.
 {% endnote %}
 
-> Author: 锅炉-251
+> Author: 秋风熙
 > Reviewed by: 司徒陌
+
+# How much water could you bring to a boil in a day?
 
 We all know that people need to take in energy to maintain their metabolism, move around, and go about their daily activities. Heating water to its boiling point also requires energy. So, as the title suggests, today's question is: how much water could we bring to a boil with the energy a person uses in one day?
 
@@ -72,7 +73,7 @@ $$
 m=2099÷80=26.24\mathrm{kg}
 $$
 
-That is a striking figure, but it is still hard to picture. Let's express 26.24 kg of water in terms of 550 ml bottles of Nongfu Spring:
+That is a striking figure, but it is still hard to picture. Let's express 26.24 kg of water in terms of 550 ml bottles of mineral water:
 
 $$
 p=\frac{26.24\mathrm{kg}}{550\mathrm{ml}×1\mathrm{kg}/\mathrm{L}}=47.71\text{ bottles}
@@ -111,7 +112,7 @@ $$
 \begin{aligned}2099\ \mathrm{kcal} × 4.186\ \mathrm{kJ}/\mathrm{kcal} &≈ 8786\ \mathrm{kJ}\\8786\ \mathrm{kJ} ÷ 3600\ \mathrm{kJ}/\mathrm{kW}·\mathrm{h} &≈ 2.44\ \mathrm{kW}·\mathrm{h}\end{aligned}
 $$
 
-In other words, **about two and a half kilowatt-hours would be enough to power A for a day**. Now let's compare that with some actual machines.
+In other words, **about two and a half kilowatt-hours would be enough to power A for a day**. Now let's compare that with some actual machines:
 
 <img src="/images/你一天能烧多少开水？/image2.jpeg" alt="A four-door refrigerator and its energy label, showing total energy consumption of 0.95 kW·h per 24 hours." />
 
