@@ -51,7 +51,7 @@ jobs:
             exit 1
           fi
           npm test --prefix services/community
-          node --test tests/test_server_assets.js tests/test_upload_images.js
+          node --test tests/test_server_assets.js tests/test_upload_images.js tests/test_visitor_count.js
           python tools/localize_gallery_images.py --check
           npm run content-layout:check
           npm run bilingual:check

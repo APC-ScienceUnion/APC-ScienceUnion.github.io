@@ -7,6 +7,11 @@ function topicFor(page) {
   return '/articles/' + encodeURIComponent(key.normalize('NFC'));
 }
 hexo.extend.helper.register('community_topic', topicFor);
+hexo.extend.helper.register('visitor_stats_url', function () {
+  const value = this.config.visitor_stats?.api_url || '';
+  if (value && !/^https:\/\/[^/]+$/.test(value)) throw new Error('visitor_stats.api_url must be an HTTPS origin.');
+  return value;
+});
 hexo.extend.helper.register('image_host_url', function () {
   const value=process.env.IMAGE_HOST_URL || this.config.image_server?.url || '';
   if(value && !/^https:\/\/[^/]+$/.test(value))throw new Error('IMAGE_HOST_URL must be an HTTPS origin.');

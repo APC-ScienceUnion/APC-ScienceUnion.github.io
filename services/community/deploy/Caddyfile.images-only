@@ -13,6 +13,12 @@ api.apc-science.cn {
             header_up X-Real-IP {remote_host}
         }
     }
+    # Public anonymous counters only; account and comment routes stay closed.
+    handle /api/visits {
+        reverse_proxy 127.0.0.1:8787 {
+            header_up X-Real-IP {remote_host}
+        }
+    }
     handle {
         respond "Community service is not open yet" 503
     }

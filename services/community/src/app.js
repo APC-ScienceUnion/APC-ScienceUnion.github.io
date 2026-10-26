@@ -2,6 +2,7 @@ import { randomBytes, randomInt, randomUUID } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { openDatabase, transaction } from './db.js';
 import { codeMessage } from './mail.js';
+import { createVisits } from './visits.js';
 import { fail, sha256, hmac, emailValue, nicknameValue, nicknameKey, passwordValue, hashPassword, verifyPassword, publicUser, privateUser } from './security.js';
 
 const MINUTE = 60000;
@@ -21,6 +22,7 @@ export async function createApp(config, { sendMail, now = Date.now } = {}) {
   const cookieName = config.production ? '__Host-apc_session' : 'apc_session';
   const topics = config.topicsFile ? new Set(JSON.parse(readFileSync(config.topicsFile, 'utf8')).topics) : null;
   if (config.production && (!topics || !topics.size)) throw new Error('Production requires a nonempty article manifest.');
+  const visits = createVisits(db, { secret: config.secret, topics, now });
   let passwordJobs = 0;
   const passwordWork = async fn => {
     if (passwordJobs >= 4) fail(429, '登录请求较多，请稍后重试。');
@@ -118,6 +120,11 @@ export async function createApp(config, { sendMail, now = Date.now } = {}) {
       const url = new URL(req.url, 'http://localhost');
       const route = url.pathname;
       if (req.method === 'GET' && route === '/api/health') return json(res, 200, { ok: true });
+      if (req.method === 'GET' && route === '/api/visits') return json(res, 200, visits.read(url.searchParams.get('topic') || '/'));
+      if (req.method === 'POST' && route === '/api/visits') {
+        rate(`visits:${ip}`, 60, MINUTE);
+        return json(res, 200, visits.record(await body(req)));
+      }
       if (req.method === 'GET' && route === '/api/stats') return json(res, 200, { registeredUsers: db.prepare('SELECT count(*) AS count FROM users').get().count });
       if (req.method === 'GET' && route === '/api/session') {
         const user = session(req);

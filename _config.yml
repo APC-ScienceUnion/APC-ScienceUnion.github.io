@@ -135,6 +135,11 @@ community:
   enable: false
   api_url: ''
 
+# Independent of accounts/comments. Counts begin at the first recorded visit.
+visitor_stats:
+  enable: true
+  api_url: https://api.apc-science.cn
+
 image_server:
   url: ''
 

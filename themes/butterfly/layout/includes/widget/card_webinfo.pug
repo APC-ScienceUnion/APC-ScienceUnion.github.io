@@ -19,11 +19,16 @@ if theme.aside.card_webinfo.enable
         .webinfo-item
           .item-name=_p('aside.card_webinfo.site_wordcount') + " :"
           .item-count=totalcount(site)
-      if theme.busuanzi.site_uv 
+      if config.visitor_stats && config.visitor_stats.enable
+        .webinfo-item
+          .item-name= page.lang === 'en' ? 'Visitors :' : '本站访客数 :'
+          .item-count(data-visit-count='siteVisitors' aria-live='polite') —
+        p(data-visit-start style='font-size:12px;line-height:1.6;opacity:.75')= page.lang === 'en' ? 'New statistics · loading start date…' : '新统计 · 起点加载中…'
+      else if theme.busuanzi.site_uv
         .webinfo-item
           .item-name= _p('aside.card_webinfo.site_uv_name') + " :"
           .item-count#busuanzi_value_site_uv
-      if theme.busuanzi.site_pv
+      if theme.busuanzi.site_pv && !(config.visitor_stats && config.visitor_stats.enable)
         .webinfo-item
           .item-name= _p('aside.card_webinfo.site_pv_name') + " :"
           .item-count#busuanzi_value_site_pv

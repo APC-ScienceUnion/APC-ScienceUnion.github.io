@@ -24,6 +24,22 @@ async function fixture(t, options={}) {
   return {app,mail,request,code,register,advance:(ms=3600001)=>{time+=ms;}};
 }
 
+test('anonymous visit API checks origins, deduplicates retries and limits writes without mail or login', async t => {
+  const f = await fixture(t);
+  const data = { topic: '/', visitorId: '12345678-1234-4234-8234-123456789abc', viewId: '12345678-1234-4234-8234-123456789abd' };
+  assert.equal((await f.request('/visits', data, { headers: { Origin: 'https://evil.test' } })).status, 403);
+  assert.equal((await f.request('/visits', data, { headers: { 'X-Community-Request': '' } })).status, 403);
+  const one = await f.request('/visits', data);
+  assert.equal(one.status, 200); assert.equal(one.data.siteVisitors, 1);
+  assert.equal(one.cookie, undefined);
+  const repeat = await f.request('/visits', data);
+  assert.deepEqual(repeat.data, one.data);
+  assert.equal((await f.request('/visits?topic=/')).data.siteViews, 1);
+  for (let i = 0; i < 58; i++) assert.equal((await f.request('/visits', data)).status, 200);
+  assert.equal((await f.request('/visits', data)).status, 429);
+  assert.equal(f.mail.length, 0);
+});
+
 test('verified registration: fixed identity, role allowlist, nickname protection and private email',async t=>{
   const f=await fixture(t);const ordinary=await f.register('alice@example.com','Alice',{role:'admin'});
   assert.equal(ordinary.data.user.role,'user');assert.match(ordinary.data.user.id,/^[\da-f-]{36}$/);assert.match(ordinary.data.user.avatarSeed,/^[\da-f]{32}$/);
