@@ -82,10 +82,10 @@ $$
 Laid out in front of us, that would look roughly like this:
 
 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
-<img src="/images/你一天能烧多少开水？/image1.jpeg" alt="Pack 1: twelve 550 ml bottles of water." />
-<img src="/images/你一天能烧多少开水？/image1.jpeg" alt="Pack 2: twelve 550 ml bottles of water." />
-<img src="/images/你一天能烧多少开水？/image1.jpeg" alt="Pack 3: twelve 550 ml bottles of water." />
-<img src="/images/你一天能烧多少开水？/image1.jpeg" alt="Pack 4: twelve 550 ml bottles of water." />
+<img src="/images/你一天能烧多少开水？/image1-redacted.png" alt="Pack 1: twelve 550 ml bottles of water." />
+<img src="/images/你一天能烧多少开水？/image1-redacted.png" alt="Pack 2: twelve 550 ml bottles of water." />
+<img src="/images/你一天能烧多少开水？/image1-redacted.png" alt="Pack 3: twelve 550 ml bottles of water." />
+<img src="/images/你一天能烧多少开水？/image1-redacted.png" alt="Pack 4: twelve 550 ml bottles of water." />
 </div>
 
 <center><font size=2px color=grey>Four packs of twelve 550 ml bottles, illustrating a total of nearly 48 bottles.</font></center>
