@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-28T16:49:31+00:00",
+  "updated_at": "2026-10-29T16:56:57+00:00",
   "providers": {
     "bing": {
-      "date": "2026-10-29",
-      "title": "立石，埃夫伯里，威尔特郡，英格兰 ",
-      "headline": "立石，埃夫伯里，威尔特郡，英格兰 ",
-      "subtitle": "薄雾邂逅千年时光",
-      "description": "晨雾在英格兰威尔特郡埃夫伯里的立石间飘荡，眼前景象仿佛超越了时间。这些古老的巨石构成了世界上最非凡的史前景观之一，其核心是一座约建于4500年前的宏大新石器时代纪念性建筑。埃夫伯里拥有世界上最大的史前石圈，还有一座巨型环形遗址，以及延伸至周围乡野的石列大道。它与附近的锡尔伯里山、西肯尼特大道等遗迹共同组成一处规模宏大的新石器时代遗址群，令一代又一代游客、研究人员和考古学家为之着迷。\n与许多考古遗址不同，埃夫伯里允许游客亲自在石头之间漫步。作为“巨石阵、埃夫伯里和相关遗址”世界遗产的一部分，这里被列为联合国教科文组织世界遗产，为人们提供了难得的机会，亲身感受古代纪念性建筑与现代乡野依然融为一体的史前环境。尽管这些遗迹的确切用途和含义仍未确定，但其宏大规模毋庸置疑。",
-      "copyright": "© George W Johnson/Getty Images",
-      "source_page_url": "https://bing.ee123.net/img/?date=20261029&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.AveburyStones_ZH-CN9127100951_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.AveburyStones_ZH-CN9127100951_1920x1080.jpg",
+      "date": "2026-10-30",
+      "title": "沙丘鹤，博斯克德尔阿帕奇国家野生动物保护区，新墨西哥州，美国 ",
+      "headline": "沙丘鹤，博斯克德尔阿帕奇国家野生动物保护区，新墨西哥州，美国 ",
+      "subtitle": "展翅高飞的时节",
+      "description": "冬天为新墨西哥州的博斯克德尔阿帕奇国家野生动物保护区带来熟悉的节奏。沙丘鹤陆续飞来，湿地聚满鸟儿，这片区域成为季节性野生动物的聚集地。这座占地57,331英亩的保护区成立于1939年，旨在为迁徙的水鸟提供受保护的中途栖息地。如今，这里的湿地、田野和水道全年滋养着野生动物。画面中的沙丘鹤尤其是保护区冬季的标志性身影。\n这些沙丘鹤通常从10月下旬开始抵达，并在此度过整个冬季。夜里，它们栖息在浅水中，日出前后飞往附近的田野觅食。保护区是沙丘鹤落基山种群的重要越冬地；这一种群迁徙时会经过中里奥格兰德河谷。其他季节性访客包括雪雁、细嘴雁、针尾鸭、琵嘴鸭、鹰和雕。骡鹿、郊狼、北美野兔等哺乳动物也栖息于此，而这里的生境还为受威胁和濒危物种提供支持。",
+      "copyright": "© Terry St.Louis/Getty Images",
+      "source_page_url": "https://bing.ee123.net/img/?date=20261030&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.AutumnCranes_ZH-CN5772055404_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.AutumnCranes_ZH-CN5772055404_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-10-29-1d455ef6ebf4.jpg",
-      "image_path": "/images/daily/bing-2026-10-29-1d455ef6ebf4.jpg",
-      "bytes": 335977,
-      "sha256": "1d455ef6ebf4b46e7bfa647410cd6a1d18897486724bf00c9b40c74f75c00d7d"
+      "local_url": "/images/daily/bing-2026-10-30-e3ebcd282c58.jpg",
+      "image_path": "/images/daily/bing-2026-10-30-e3ebcd282c58.jpg",
+      "bytes": 333190,
+      "sha256": "e3ebcd282c588aac8eac31f84416f13608d75bab57cb0fa02a3fff04550b18bc"
     },
     "apod": {
       "date": "2026-09-29",
@@ -37,19 +37,19 @@
       "sha256": "5b2ab38fe6757cb9e8423fddb427e4ce6f8e40aeeef131a29f5aea87131579e9"
     },
     "wikipedia": {
-      "date": "2026-10-28",
-      "title": "IND-17-Republik Indonesia-1 Rupiah (1945)",
-      "description": "Republic of Indonesia - 1 Rupiah (1945 Issue, first banknotes issued by newly formed Indonesia). Dated 17 October 1945, the notes were not actually issued until late 1946. The legal tender obligation is arched across the front of the note Tanda pembajaran jang sah (\"A valid/legal indication of payment\"}. Top and bottom of design are not completely parallel, in addition to uneven cutting.",
-      "copyright": "National Museum of American History · Image by Godot13 · Public domain",
-      "article_url": "https://commons.wikimedia.org/wiki/File:IND-17-Republik_Indonesia-1_Rupiah_(1945).jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:IND-17-Republik_Indonesia-1_Rupiah_(1945).jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/IND-17-Republik_Indonesia-1_Rupiah_%281945%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/IND-17-Republik_Indonesia-1_Rupiah_%281945%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-10-30",
+      "title": "DJLImageheadshot",
+      "description": "Danell Leyva head shot",
+      "copyright": "Giulipino · Own work · CC BY-SA 4.0",
+      "article_url": "https://commons.wikimedia.org/wiki/File:DJLImageheadshot.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:DJLImageheadshot.jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/DJLImageheadshot.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/DJLImageheadshot.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-10-28-42362921dc04.jpg",
-      "image_path": "/images/daily/wikipedia-2026-10-28-42362921dc04.jpg",
-      "bytes": 22190907,
-      "sha256": "42362921dc04c6c10f78c73492d50079865c9ac0f34c6eac3df22ee68d9e8bf3"
+      "local_url": "/images/daily/wikipedia-2026-10-30-3760410fffdb.jpg",
+      "image_path": "/images/daily/wikipedia-2026-10-30-3760410fffdb.jpg",
+      "bytes": 712699,
+      "sha256": "3760410fffdbcd50da174677f09e4dc1f54d9bfeb46baea4ccf1511d35dc7597"
     }
   }
 }
