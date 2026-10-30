@@ -15,7 +15,19 @@
 
 ## 本地预览
 
-在仓库根目录运行 `npx hexo server --port 4000`，在另一个终端进入本目录运行 `node src/dev.js`。打开 `http://localhost:4000/account/`。
+在仓库根目录分别打开两个终端：
+
+```powershell
+# 终端一：启用仅用于本地的社区预览，绑定回环地址
+npx hexo server --config '_config.yml,_config.community-preview.yml' --output tmp/community-preview-cache --ip 127.0.0.1 --port 4000
+
+# 终端二：本地账号 API 与模拟邮件
+node services/community/src/dev.js
+```
+
+打开 `http://127.0.0.1:4000/account/`，可预览注册、登录、个人中心与找回密码；文章下方显示评论，首页侧栏显示留言板与注册人数。预览配置不会修改正式的 `community.enable: false`，生成文件和 Hexo 缓存放在被 Git 忽略的 `tmp/community-preview-*`，与正式 `public/` 分开。正式部署不加载这份配置。
+
+如果 4000 端口已有服务，将终端一的端口改为 4001，并在终端二启动前运行 `$env:PREVIEW_SITE_PORT='4001'`。不要停止其他任务占用的服务。API 始终监听本机 `127.0.0.1:8787`；无论从哪个目录启动，其数据库与模拟邮件都固定保存在 `services/community/data/`。
 
 本地测试账号为 `preview@example.test`，密码为 `LocalPreview-2026!`，仅存在于 `data/preview.sqlite`。测试邮件写入本机 `data/preview-mail.jsonl`，不发送真实邮件，也不由 API 返回验证码。该服务拒绝在 `NODE_ENV=production` 下运行。生产数据库及安装包不含预览账号。
 

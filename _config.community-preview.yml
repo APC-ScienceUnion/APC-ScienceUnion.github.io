@@ -1,0 +1,10 @@
+# Local-only overlay: keep preview pages separate from production output.
+url: http://localhost:4000
+public_dir: tmp/community-preview-public
+community:
+  enable: true
+  api_url: ''
+visitor_stats:
+  enable: false
+image_server:
+  url: ''
