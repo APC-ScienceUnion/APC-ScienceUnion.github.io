@@ -442,6 +442,10 @@ footer:
   custom_text: 格物社 · 在线电子图书馆
   custom_text_en: APC Science Union · Online Library
   icp: 沪ICP备2026055463号-1
+  public_security:
+    number: 沪公网安备31011202023849号
+    url: https://beian.mps.gov.cn/#/query/webSearch?code=31011202023849
+    icon: /img/mps-beian.png
   copyright: false # Copyright of theme and framework
 
 # Analysis

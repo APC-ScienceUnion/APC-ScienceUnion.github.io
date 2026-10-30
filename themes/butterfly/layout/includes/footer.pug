@@ -19,3 +19,8 @@
   if theme.footer.icp
     .footer-icp
       a(href='https://beian.miit.gov.cn/' target='_blank' rel='noopener noreferrer')= theme.footer.icp
+  if theme.footer.public_security && theme.footer.public_security.number
+    .footer-public-security
+      a(href=theme.footer.public_security.url target='_blank' rel='noopener noreferrer')
+        img.public-security-icon(src=url_for(theme.footer.public_security.icon) width='20' height='20' alt='')
+        span= theme.footer.public_security.number
