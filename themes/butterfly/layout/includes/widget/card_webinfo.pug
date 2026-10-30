@@ -23,7 +23,8 @@ if theme.aside.card_webinfo.enable
         .webinfo-item
           .item-name= page.lang === 'en' ? 'Visitors :' : '本站访客数 :'
           .item-count(data-visit-count='siteVisitors' aria-live='polite') —
-        p(data-visit-start style='font-size:12px;line-height:1.6;opacity:.75')= page.lang === 'en' ? 'New statistics · loading start date…' : '新统计 · 起点加载中…'
+        .visit-start-aside
+          small.visit-start-note(data-visit-start)= page.lang === 'en' ? 'Loading start date…' : '统计起点加载中…'
       else if theme.busuanzi.site_uv
         .webinfo-item
           .item-name= _p('aside.card_webinfo.site_uv_name') + " :"

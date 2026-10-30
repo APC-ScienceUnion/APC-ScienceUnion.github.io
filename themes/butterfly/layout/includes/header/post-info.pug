@@ -64,7 +64,7 @@
       if config.visitor_stats && config.visitor_stats.enable
         +pvBlock('','post-meta-pv-cv','')
           span(data-visit-count='pageViews' aria-live='polite') —
-          small(data-visit-start style='margin-left:6px')= page.lang === 'en' ? '(new statistics)' : '（新统计）'
+          small.visit-start-note.visit-start-inline(data-visit-start)= page.lang === 'en' ? 'Loading start date…' : '统计起点加载中…'
       else if theme.busuanzi.page_pv
         +pvBlock('','post-meta-pv-cv','')
           span#busuanzi_value_page_pv

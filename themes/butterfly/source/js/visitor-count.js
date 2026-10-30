@@ -9,7 +9,7 @@
     ? 'Counted by anonymous browser; clearing browser data counts as a new visitor. Previous Busuanzi totals are excluded.'
     : '按匿名浏览器去重；清理浏览器数据后会重新计数。不含原不蒜子累计数。';
   const message = text => counts.forEach(node => { node.textContent = text; });
-  const note = text => notes.forEach(node => { node.textContent = text; node.title = explain; });
+  const note = (text, detail = explain) => notes.forEach(node => { node.textContent = text; node.title = detail; });
   // Never add localhost, deployment previews, or archived copies to live totals.
   if (!['apc-science.cn', 'www.apc-science.cn'].includes(location.hostname)) {
     message('—'); note(english ? 'Preview · not counted' : '本地/预览页面不计数'); return;
@@ -49,7 +49,8 @@
       const part = name => parts.find(p => p.type === name).value;
       const date = `${part('year')}-${part('month')}-${part('day')}`;
       counts.forEach(node => { node.textContent = result[node.dataset.visitCount].toLocaleString(english ? 'en-US' : 'zh-CN'); node.title = explain; });
-      note(english ? `New counts since ${date} (UTC+8)` : `新统计自 ${date} 起（北京时间）`);
+      note(english ? `Since ${date}` : `自 ${date} 起`,
+        (english ? `Statistics started on ${date} (UTC+8). ` : `统计自 ${date} 起（北京时间）。`) + explain);
     } catch {
       message(english ? 'Unavailable' : '暂不可用');
       note(english ? 'New statistics · temporarily unavailable' : '新统计 · 服务暂不可用');
