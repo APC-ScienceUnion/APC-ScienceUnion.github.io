@@ -14,7 +14,7 @@ hexo.extend.filter.register('before_generate', () => {
    */
 
   const defaultCDN = {
-    main_css: '/css/index.css',
+    main_css: '/css/index.css?v=20261030',
     main: '/js/main.js',
     utils: '/js/utils.js',
 
