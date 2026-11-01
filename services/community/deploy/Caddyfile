@@ -8,6 +8,9 @@ api.apc-science.cn {
     request_body {
         max_size 16KB
     }
+    handle /account/* {
+        redir https://apc-science.cn/account/ 302
+    }
     handle /api/* {
         reverse_proxy 127.0.0.1:8787 {
             header_up X-Real-IP {remote_host}
