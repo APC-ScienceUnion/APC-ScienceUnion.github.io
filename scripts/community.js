@@ -2,6 +2,11 @@
 
 const path = require('node:path');
 const fs = require('node:fs');
+const { createHash } = require('node:crypto');
+hexo.extend.helper.register('community_asset', function (asset) {
+  const content = fs.readFileSync(path.join(hexo.theme_dir, 'source', asset));
+  return '/' + asset + '?v=' + createHash('sha256').update(content).digest('hex').slice(0, 12);
+});
 function topicFor(page) {
   const key = page.translation_key || path.posix.basename(String(page.source || page.slug || page.path).replace(/\\/g, '/')).replace(/\.md$/i, '');
   return '/articles/' + encodeURIComponent(key.normalize('NFC'));

@@ -36,8 +36,8 @@ if image_host_url()
   script(src=url_for('/js/image-host.js?v=2') defer)
 if config.community && config.community.enable
   meta(name="community-api" content=community_api_url())
-  link(rel="stylesheet" href=url_for('/css/community.css'))
-  script(src=url_for('/js/community.js') defer)
+  link(rel="stylesheet" href=url_for(community_asset('css/community.css')))
+  script(src=url_for(community_asset('js/community.js')) defer)
 
 //- Open_Graph
 include ./head/Open_Graph.pug
