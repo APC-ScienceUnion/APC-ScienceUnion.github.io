@@ -3,8 +3,10 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const cheerio=require('cheerio');
-const root=path.resolve(__dirname,'../public');
-const config=require('js-yaml').load(fs.readFileSync(path.resolve(__dirname,'../_config.yml'),'utf8'));
+const options={public:path.resolve(__dirname,'../public'),config:path.resolve(__dirname,'../_config.yml')};
+for(let i=2;i<process.argv.length;i+=2){const key=process.argv[i].replace(/^--/,'');assert.ok(['public','config'].includes(key)&&process.argv[i+1],`Unknown or incomplete option: ${process.argv[i]}`);options[key]=process.argv[i+1];}
+const root=path.resolve(options.public);
+const config=options.config.split(',').reduce((merged,file)=>Object.assign(merged,require('js-yaml').load(fs.readFileSync(path.resolve(file),'utf8'))),{});
 const enabled=config.community?.enable === true;
 const read=file=>cheerio.load(fs.readFileSync(path.join(root,file),'utf8'));
 for(const file of ['index.html','en/index.html']){const home=read(file);assert.equal(home('.apc-guestbook[data-topic="guestbook"]').length,Number(enabled));assert.equal(home('[data-community-users]').length,Number(enabled));assert.equal(home('#menus a[href$="/account/"]').length,Number(enabled));}

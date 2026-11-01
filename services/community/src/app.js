@@ -3,15 +3,22 @@ import { readFileSync } from 'node:fs';
 import { openDatabase, transaction } from './db.js';
 import { codeMessage } from './mail.js';
 import { createVisits } from './visits.js';
+import { createIdentityStore } from './identity-store.js';
 import { fail, sha256, hmac, emailValue, nicknameValue, nicknameKey, passwordValue, hashPassword, verifyPassword, publicUser, privateUser } from './security.js';
 
 const MINUTE = 60000;
 const DAY = 86400000;
 const genericCodeMessage = '如果该邮箱可用于此操作，验证码将发送到邮箱，10 分钟内有效。';
 
-export async function createApp(config, { sendMail, now = Date.now } = {}) {
+export async function createApp(config, { sendMail, now = Date.now, identityProvider = null } = {}) {
   if (!sendMail) throw new Error('A mail transport must be configured.');
+  if(config.production && !config.requireVerifiedIdentity)throw new Error('Production comments require verified identities.');
+  if(identityProvider && config.production && config.identity?.mode!=='authing-wechat')throw new Error('Configure the pinned identity provider before enabling production binding.');
+  if(identityProvider && (!config.identityReturnUrl || !config.origins.includes(new URL(config.identityReturnUrl).origin)))throw new Error('Identity return URL must belong to an allowed site origin.');
   const db = openDatabase(config.database);
+  const identities=(identityProvider||config.requireVerifiedIdentity)?createIdentityStore(db,{secret:config.secret,now}):null;
+  const identityAttempts=new Map(),identityInFlight=new Map(),identityReceipts=new Map();
+  const identityMaps=[identityAttempts,identityInFlight,identityReceipts];
   // Only the deployment allowlist may grant the owner role, including accounts
   // created before the owner address was configured. Nicknames never grant it.
   if(config.adminEmail) {
@@ -39,6 +46,14 @@ export async function createApp(config, { sendMail, now = Date.now } = {}) {
     return db.prepare('SELECT u.* FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=? AND s.expires_at>?').get(sha256(token), now()) || null;
   }
   function requireUser(req) { const user = session(req); if (!user) fail(401, '请先登录。'); return user; }
+  function sessionKey(req){
+    const value=(req.headers.cookie||'').split(';').map(x=>x.trim()).find(x=>x.startsWith(`${cookieName}=`))?.slice(cookieName.length+1);
+    return typeof value==='string'&&/^[a-f0-9]{64}$/.test(value)?sha256(value):'';
+  }
+  const currentIdentityAttempt=(req,item)=>item&&item.expiresAt>now()&&item.sessionKey===sessionKey(req)&&session(req)?.id===item.userId&&getUser(item.userId)?.password_hash===item.passwordHash;
+  function cleanIdentityAttempts(){
+    for(const map of identityMaps)for(const [key,item] of map)if(item.expiresAt<=now())map.delete(key);
+  }
   function startSession(res, id) {
     const token = randomBytes(32).toString('hex');
     db.prepare('INSERT INTO sessions VALUES (?,?,?)').run(sha256(token), id, now() + 14 * DAY);
@@ -128,7 +143,60 @@ export async function createApp(config, { sendMail, now = Date.now } = {}) {
       if (req.method === 'GET' && route === '/api/stats') return json(res, 200, { registeredUsers: db.prepare('SELECT count(*) AS count FROM users').get().count });
       if (req.method === 'GET' && route === '/api/session') {
         const user = session(req);
-        return json(res, 200, { user: user ? privateUser(user) : null });
+        return json(res, 200, { user: user ? privateUser(user) : null,
+          identityAvailable:!!identityProvider,identityRequired:!!config.requireVerifiedIdentity,
+          identity:user&&identities?identities.status(user.id):{verified:false} });
+      }
+      if(identityProvider && route.startsWith('/api/identity/')){
+        cleanIdentityAttempts();
+        const user=requireUser(req);
+        if(req.method==='GET' && route==='/api/identity/status'){
+          const pending=[...identityReceipts].find(([,item])=>currentIdentityAttempt(req,item));
+          return json(res,200,{...identities.status(user.id),pending:pending?{receipt:pending[0],phoneMasked:`${pending[1].proof.phone.slice(0,6)}****${pending[1].proof.phone.slice(-4)}`} : null});
+        }
+        if(req.method==='POST' && route==='/api/identity/cancel'){
+          for(const map of identityMaps)for(const [key,item] of map)if(item.userId===user.id&&item.sessionKey===sessionKey(req))map.delete(key);
+          return json(res,200,{ok:true});
+        }
+        if(req.method==='POST' && route==='/api/identity/start'){
+          const data=await body(req);
+          if(data.consent!==true)fail(400,'请先确认由 Authing 和微信提供手机号验证。');
+          rate(`identity-start:${user.id}`,5,15*MINUTE);
+          if(identities.status(user.id).verified)fail(409,'此账号已完成手机号验证。');
+          if(!await passwordWork(()=>verifyPassword(passwordValue(data.password),user.password_hash)))fail(400,'当前密码错误。');
+          if(session(req)?.id!==user.id||getUser(user.id)?.password_hash!==user.password_hash)fail(401,'登录已失效，请重新登录。');
+          if(identityMaps.reduce((total,map)=>total+map.size,0)>=1000)fail(429,'认证请求较多，请稍后重试。');
+          for(const map of identityMaps)for(const [key,item] of map)if(item.userId===user.id)map.delete(key);
+          const binding=sessionKey(req),started=identityProvider.start(binding),state=new URL(started.authorizationUrl).searchParams.get('state');
+          if(!state)throw new Error('Missing provider state');
+          identityAttempts.set(state,{userId:user.id,passwordHash:user.password_hash,sessionKey:binding,expiresAt:now()+5*MINUTE});
+          return json(res,200,{authorizationUrl:started.authorizationUrl});
+        }
+        if(req.method==='GET' && route==='/api/identity/callback'){
+          const state=url.searchParams.get('state'),attempt=identityAttempts.get(state);
+          let result='failed';
+          if(url.searchParams.getAll('state').length===1 && currentIdentityAttempt(req,attempt)){
+            identityAttempts.delete(state);
+            identityInFlight.set(state,attempt);
+            try{
+              if(url.searchParams.has('error')||url.searchParams.getAll('code').length!==1)throw new Error('Provider rejected');
+              const proof=await identityProvider.finish({state,code:url.searchParams.get('code'),sessionBinding:attempt.sessionKey});
+              if(identityInFlight.get(state)!==attempt||!currentIdentityAttempt(req,attempt))throw new Error('Session changed or verification cancelled');
+              const receipt=randomBytes(32).toString('base64url');
+              identityReceipts.set(receipt,{...attempt,proof,expiresAt:Math.min(attempt.expiresAt,now()+5*MINUTE)});
+              result='confirm';
+            }catch{ /* No raw provider responses or identifiers in logs or URLs. */ }
+            finally{identityInFlight.delete(state);}
+          }
+          const destination=new URL(config.identityReturnUrl);destination.searchParams.set('identity',result);
+          res.setHeader('Referrer-Policy','no-referrer');res.writeHead(303,{Location:destination.toString()});res.end();return;
+        }
+        if(req.method==='POST' && route==='/api/identity/confirm'){
+          const data=await body(req),pending=identityReceipts.get(data.receipt);
+          if(data.confirm!==true||!currentIdentityAttempt(req,pending))fail(400,'绑定请求已失效，请重新验证。');
+          identityReceipts.delete(data.receipt);
+          return json(res,200,{identity:identities.bind(user.id,pending.proof)});
+        }
       }
       if (req.method === 'POST' && route === '/api/auth/code') {
         const data = await body(req);
@@ -257,6 +325,16 @@ export async function createApp(config, { sendMail, now = Date.now } = {}) {
         startSession(res, user.id);
         return json(res, 200, { user: privateUser(getUser(user.id)) });
       }
+      if (req.method === 'GET' && route === '/api/admin/comments') {
+        if(requireUser(req).role!=='admin')fail(403,'仅站长可查看管理列表。');
+        const limit=Math.min(30,Math.max(1,Number(url.searchParams.get('limit'))||20));
+        const before=Number(url.searchParams.get('before'))||Number.MAX_SAFE_INTEGER;
+        if(!Number.isSafeInteger(before)||!Number.isInteger(limit))fail(400,'分页参数错误。');
+        const rows=db.prepare(`SELECT c.id,c.topic,c.body,c.created_at,u.id AS user_id,u.nickname,u.avatar_seed,u.role FROM comments c JOIN users u ON u.id=c.user_id
+          WHERE c.deleted_at IS NULL AND c.id<? ORDER BY c.id DESC LIMIT ?`).all(before,limit+1);
+        const more=rows.length>limit;if(more)rows.pop();
+        return json(res,200,{items:rows.map(r=>({id:r.id,topic:r.topic,body:r.body,createdAt:r.created_at,user:publicUser({...r,id:r.user_id})})),nextCursor:more?rows.at(-1).id:null});
+      }
       if (req.method === 'GET' && route === '/api/comments') {
         const topic = topicValue(url.searchParams.get('topic'));
         const limit = Math.min(30, Math.max(1, Number(url.searchParams.get('limit')) || 20));
@@ -270,6 +348,7 @@ export async function createApp(config, { sendMail, now = Date.now } = {}) {
       }
       if (req.method === 'POST' && route === '/api/comments') {
         const user = requireUser(req), data = await body(req), topic = topicValue(data.topic);
+        if(config.requireVerifiedIdentity&&!identities?.status(user.id).verified)fail(403,'请先在个人中心完成手机号验证，再发表评论或留言。');
         const text = typeof data.body === 'string' ? data.body.trim() : '';
         if (!text || [...text].length > 2000 || /[\x00-\x08\x0b\x0c\x0e-\x1f]/.test(text)) fail(400, '请输入 1–2000 字的评论。');
         rate(`comment-interval:${user.id}`, 1, 10000);

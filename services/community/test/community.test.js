@@ -7,12 +7,13 @@ import { readConfig } from '../src/config.js';
 async function fixture(t, options={}) {
   let time=Date.now(); const mail=[];
   const config={production:false,database:':memory:',secret:'test-secret-'.repeat(4),origins:['http://localhost:4000'],adminEmail:'owner@example.com',adminNickname:'guinyの时光',topicsFile:null,trustProxy:false,mailDailyLimit:90,mailMonthlyLimit:2900,...options};
-  const app=await createApp(config,{now:()=>time,sendMail:async message=>{if(options.failMail)throw new Error('offline');mail.push(message);}});
+  const app=await createApp(config,{identityProvider:options.identityProvider,now:()=>time,sendMail:async message=>{if(options.failMail)throw new Error('offline');mail.push(message);}});
   const server=http.createServer(app.handler); await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
   t.after(async()=>{await new Promise(resolve=>server.close(resolve));app.close();});
   const request=async(route,data,options={})=>{
-    const response=await fetch(`http://127.0.0.1:${server.address().port}/api${route}`,{method:data===undefined?'GET':options.method||'POST',headers:{Origin:'http://localhost:4000','Content-Type':'application/json','X-Community-Request':'1',...(options.cookie?{Cookie:options.cookie}:{}),...options.headers},body:data===undefined?undefined:JSON.stringify(data)});
-    return {status:response.status,data:await response.json(),cookie:response.headers.get('set-cookie')?.split(';')[0],headers:response.headers};
+    const response=await fetch(`http://127.0.0.1:${server.address().port}/api${route}`,{redirect:'manual',method:data===undefined?'GET':options.method||'POST',headers:{Origin:'http://localhost:4000','Content-Type':'application/json','X-Community-Request':'1',...(options.cookie?{Cookie:options.cookie}:{}),...options.headers},body:data===undefined?undefined:JSON.stringify(data)});
+    const text=await response.text();
+    return {status:response.status,data:text?JSON.parse(text):null,cookie:response.headers.get('set-cookie')?.split(';')[0],headers:response.headers};
   };
   const code=async(email,purpose='register',extra={})=>{
     const response=await request('/auth/code',{email,purpose,...extra.data},extra); assert.equal(response.status,200,JSON.stringify(response.data));
@@ -23,6 +24,100 @@ async function fixture(t, options={}) {
   };
   return {app,mail,request,code,register,advance:(ms=3600001)=>{time+=ms;}};
 }
+
+function identityProviderFixture(){
+  let counter=0;const pending=new Map();
+  return {
+    start(binding){const state=`test-state-${++counter}`;pending.set(state,binding);return {authorizationUrl:`https://test.authing.cn/oidc/auth?state=${state}`};},
+    async finish({state,code,sessionBinding}){
+      assert.equal(code,'test-provider-code');assert.equal(pending.get(state),sessionBinding);pending.delete(state);
+      return {provider:'authing',evidence:'wechat-source',issuer:'https://test.authing.cn/oidc',subject:'test-wechat-subject',phone:'+8613800138000',sourceId:'a'.repeat(24),connectionId:'b'.repeat(24),verifiedAt:Date.now(),role:'admin'};
+    }
+  };
+}
+
+test('identity binding requires consent, password, same session and confirmation; gates comments for all roles',async t=>{
+  const f=await fixture(t,{identityProvider:identityProviderFixture(),identityReturnUrl:'http://localhost:4000/account/',requireVerifiedIdentity:true});
+  const alice=await f.register(),bob=await f.register('bob@example.com','Bob'),owner=await f.register('owner@example.com','Owner');
+  for(const user of [alice,owner])assert.equal((await f.request('/comments',{topic:'guestbook',body:'not verified'},{cookie:user.cookie})).status,403);
+  assert.equal((await f.request('/identity/start',{password:'secure-test-password'},{cookie:alice.cookie})).status,400);
+  assert.equal((await f.request('/identity/start',{consent:true,password:'incorrect-password'},{cookie:alice.cookie})).status,400);
+  const start=await f.request('/identity/start',{consent:true,password:'secure-test-password'},{cookie:alice.cookie});assert.equal(start.status,200);
+  const state=new URL(start.data.authorizationUrl).searchParams.get('state');
+  const callback=`/identity/callback?state=${state}&code=test-provider-code`;
+  const wrong=await f.request(callback,undefined,{cookie:bob.cookie});assert.match(wrong.headers.get('location'),/identity=failed/);
+  const accepted=await f.request(callback,undefined,{cookie:alice.cookie});assert.match(accepted.headers.get('location'),/identity=confirm/);
+  const status=(await f.request('/identity/status',undefined,{cookie:alice.cookie})).data;
+  assert.equal(status.verified,false);assert.equal(status.pending.phoneMasked,'+86138****8000');assert.doesNotMatch(JSON.stringify(status),/13800138000|test-wechat-subject/);
+  assert.equal((await f.request('/identity/status',undefined,{cookie:bob.cookie})).data.pending,null);
+  assert.equal((await f.request('/identity/confirm',{receipt:status.pending.receipt,confirm:true},{cookie:bob.cookie})).status,400);
+  assert.equal((await f.request('/identity/confirm',{receipt:status.pending.receipt,confirm:true,role:'admin',phone:'+8613900139000'},{cookie:alice.cookie})).status,200);
+  assert.equal((await f.request('/identity/confirm',{receipt:status.pending.receipt,confirm:true},{cookie:alice.cookie})).status,400);
+  const session=(await f.request('/session',undefined,{cookie:alice.cookie})).data;
+  assert.equal(session.identity.verified,true);assert.equal(session.user.role,'user');
+  assert.equal((await f.request('/comments',{topic:'guestbook',body:'verified comment'},{cookie:alice.cookie})).status,201);
+  assert.doesNotMatch(JSON.stringify((await f.request('/comments?topic=guestbook')).data),/phone|13800138000/);
+  assert.match((await f.request(callback,undefined,{cookie:alice.cookie})).headers.get('location'),/identity=failed/);
+});
+
+test('identity receipts expire and session revocation prevents account binding',async t=>{
+  const f=await fixture(t,{identityProvider:identityProviderFixture(),identityReturnUrl:'http://localhost:4000/account/',requireVerifiedIdentity:true});
+  const user=await f.register();
+  const start=await f.request('/identity/start',{consent:true,password:'secure-test-password'},{cookie:user.cookie});
+  const state=new URL(start.data.authorizationUrl).searchParams.get('state');
+  await f.request(`/identity/callback?state=${state}&code=test-provider-code`,undefined,{cookie:user.cookie});
+  const pending=(await f.request('/identity/status',undefined,{cookie:user.cookie})).data.pending;
+  await f.request('/auth/logout',{}, {cookie:user.cookie});
+  const again=await f.request('/auth/login',{email:'alice@example.com',password:'secure-test-password'});
+  assert.equal((await f.request('/identity/confirm',{receipt:pending.receipt,confirm:true},{cookie:again.cookie})).status,400);
+  f.advance(300001);
+  assert.equal((await f.request('/identity/status',undefined,{cookie:again.cookie})).data.pending,null);
+  assert.equal(f.app.db.prepare('SELECT count(*) AS n FROM verified_identities').get().n,0);
+});
+
+test('cancelling identity verification invalidates pending callbacks and receipts only in the current session',async t=>{
+  const f=await fixture(t,{identityProvider:identityProviderFixture(),identityReturnUrl:'http://localhost:4000/account/',requireVerifiedIdentity:true});
+  const user=await f.register(),other=await f.register('bob@example.com','Bob');
+  const begin=async()=>{
+    const response=await f.request('/identity/start',{consent:true,password:'secure-test-password'},{cookie:user.cookie});
+    assert.equal(response.status,200);
+    return `/identity/callback?state=${new URL(response.data.authorizationUrl).searchParams.get('state')}&code=test-provider-code`;
+  };
+  const cancelled=await begin();
+  assert.equal((await f.request('/identity/cancel',{}, {cookie:user.cookie})).status,200);
+  assert.match((await f.request(cancelled,undefined,{cookie:user.cookie})).headers.get('location'),/identity=failed/);
+  const callback=await begin();
+  await f.request('/identity/cancel',{}, {cookie:other.cookie});
+  assert.match((await f.request(callback,undefined,{cookie:user.cookie})).headers.get('location'),/identity=confirm/);
+  const pending=(await f.request('/identity/status',undefined,{cookie:user.cookie})).data.pending;
+  await f.request('/identity/cancel',{}, {cookie:user.cookie});
+  assert.equal((await f.request('/identity/status',undefined,{cookie:user.cookie})).data.pending,null);
+  assert.equal((await f.request('/identity/confirm',{receipt:pending.receipt,confirm:true},{cookie:user.cookie})).status,400);
+  assert.equal(f.app.db.prepare('SELECT count(*) AS n FROM verified_identities').get().n,0);
+});
+
+test('cancellation and a new verification invalidate a callback still awaiting the provider',async t=>{
+  for(const action of ['cancel','restart'])await t.test(action,async t=>{
+    const provider=identityProviderFixture();
+    const finish=provider.finish;
+    let release,entered;
+    const waiting=new Promise(resolve=>{entered=resolve;});
+    provider.finish=async args=>{entered();await new Promise(resolve=>{release=resolve;});return finish(args);};
+    const f=await fixture(t,{identityProvider:provider,identityReturnUrl:'http://localhost:4000/account/',requireVerifiedIdentity:true});
+    const user=await f.register();
+    const start=()=>f.request('/identity/start',{consent:true,password:'secure-test-password'},{cookie:user.cookie});
+    const result=await start(),state=new URL(result.data.authorizationUrl).searchParams.get('state');
+    const callback=f.request(`/identity/callback?state=${state}&code=test-provider-code`,undefined,{cookie:user.cookie});
+    await waiting;
+    try{
+      const changed=action==='cancel'?await f.request('/identity/cancel',{}, {cookie:user.cookie}):await start();
+      assert.equal(changed.status,200);
+    }finally{release();}
+    assert.match((await callback).headers.get('location'),/identity=failed/);
+    assert.equal((await f.request('/identity/status',undefined,{cookie:user.cookie})).data.pending,null);
+    assert.equal(f.app.db.prepare('SELECT count(*) AS n FROM verified_identities').get().n,0);
+  });
+});
 
 test('anonymous visit API checks origins, deduplicates retries and limits writes without mail or login', async t => {
   const f = await fixture(t);
@@ -93,6 +188,24 @@ test('comments isolate articles, escape via plain data, paginate and enforce aut
   assert.equal((await f.request('/comments/'+a.data.id,{}, {method:'DELETE',cookie:owner.cookie})).status,200);
   assert.equal(f.app.db.prepare('SELECT deleted_by FROM comments WHERE id=?').get(a.data.id).deleted_by,owner.data.user.id);
   f.advance(11000);assert.equal((await f.request('/comments',{topic:'guestbook',body:'a greeting'},{cookie:alice.cookie})).status,201);
+});
+
+test('administrator overview spans topics, paginates, hides removed posts and never exposes private identity',async t=>{
+  const f=await fixture(t),alice=await f.register(),owner=await f.register('owner@example.com','Owner');
+  assert.equal((await f.request('/admin/comments')).status,401);
+  assert.equal((await f.request('/admin/comments',undefined,{cookie:alice.cookie})).status,403);
+  const first=await f.request('/comments',{topic:'guestbook',body:'Message'},{cookie:alice.cookie});
+  f.advance(11000);
+  const second=await f.request('/comments',{topic:'/articles/test',body:'Article comment'},{cookie:alice.cookie});
+  const page=(await f.request('/admin/comments?limit=1',undefined,{cookie:owner.cookie})).data;
+  assert.equal(page.items[0].id,second.data.id);assert.equal(page.items[0].topic,'/articles/test');assert.ok(page.nextCursor);
+  const older=(await f.request('/admin/comments?limit=1&before='+page.nextCursor,undefined,{cookie:owner.cookie})).data;
+  assert.equal(older.items[0].id,first.data.id);assert.equal(older.items[0].topic,'guestbook');assert.equal(older.nextCursor,null);
+  assert.doesNotMatch(JSON.stringify(page),/email|phone|password|subject|alice@example/);
+  assert.equal((await f.request('/comments/'+second.data.id,{}, {method:'DELETE',cookie:owner.cookie})).status,200);
+  const remaining=(await f.request('/admin/comments',undefined,{cookie:owner.cookie})).data;
+  assert.deepEqual(remaining.items.map(item=>item.id),[first.data.id]);
+  assert.equal((await f.request('/admin/comments?before=1.5',undefined,{cookie:owner.cookie})).status,400);
 });
 
 test('CSRF protection, session cookie attributes, logout and password change',async t=>{

@@ -10,8 +10,8 @@
 - 个人中心可修改昵称、密码和普通用户绑定邮箱。换邮箱需要当前密码和新邮箱验证码；旧邮箱找回码与其他会话随之失效。管理员邮箱只由运维配置管理。
 - 找回密码必须设置不同的新密码，随后撤销全部旧会话，用户重新登录。原密码不能查询或发回邮件。
 - 每篇文章都有独立评论，中英文翻译共享文章身份。新增 `community_comments: false` 可单独关闭；旧的 `comments: false` 属于原主题插件配置，不会意外隐藏新评论区。
-- 首页侧栏留言板要求登录，注册统计只计算已完成邮箱验证的账号。
-- 评论仅以纯文本显示，作者及管理员可以移除评论；数据库保留移除记录。
+- 首页侧栏留言板要求登录；生产评论和留言还必须完成微信手机号验证，注册统计只计算已完成邮箱验证的账号。
+- 评论仅以纯文本显示，作者及管理员可以移除评论；数据库保留移除记录。站长个人中心可分页查看所有文章评论和留言并移除，管理列表不返回邮箱或手机号。
 
 ## 本地预览
 
@@ -62,6 +62,78 @@ node services/community/src/dev.js
 
 待备案和接入条件满足、站长决定恢复后，先在网站下线状态下同步最新图片与文章清单，配置并验证图片及账号接口的 HTTPS，再发布对应的静态构建。确认无缺图、评论身份正确后，启用 Netlify 项目，并仅停用上述临时 Cloudflare 规则。最后验证主域名、www、图片、注册邮件、登录、密码重置与评论；GitHub Pages 的备用入口按站长需要另行恢复，不是 Netlify 上线的前提。
 
+## 评论身份认证（2026-11-01，正式账号联调中）
+
+站长已要求继续推进身份认证，但暂不接受短信费用，优先寻找免费方案。未开通付费认证服务，未恢复生产账号、评论或留言。邮箱注册、密码登录和找回密码实现保留；身份核验应作为首次发言前的独立步骤，不将邮箱验证或普通第三方登录直接视为真实身份核验。
+
+- 阿里云 **号码认证服务 PNVS 的短信认证**明确支持个人实名认证账号和 Web，无需企业营业执照，使用预置签名/模板；这是普通短信服务 SMS 之外的产品。小用量公开按量价为 0.06 元/条，用户已暂不采用。依据：[个人接入指南](https://help.aliyun.com/zh/pnvs/use-cases/sms-verify-for-individual-developers)、[产品选型和价格](https://help.aliyun.com/zh/sms/product-overview/selection-guide-for-short-message-service-and-sms-verification-service)。不要将赠送签名误读为免费发送额度。
+- 免费候选为 **Authing「小登录」/ 微信 PC 小程序扫码**。官方文档称可免费获取手机号，可使用 Authing 提供的小程序；公开价格页列出免费版 8,000 月活跃用户、1 个社交账号连接和 1 个应用。尚需登录控制台核对当前免费版实际权限、是否另收手机号调用费用及移动端体验，并完成真实授权测试，不能据此宣称已获得长期免费服务。依据：[短信配置中的免费小登录说明](https://docs.authing.cn/v2/guides/userpool-config/sms/)、[小程序扫码接入](https://docs.authing.cn/v2/guides/wechat-ecosystem/wechat-miniprogram-qrcode/)、[价格页](https://www.authing.cn/pricing)。该免费版的短信仅共计 10 条，不能作为持续免费短信方案。
+- 国家网络身份认证公共服务允许互联网平台自愿接入，但尚未核实个人博客的具体申请入口和接入条件，不将公众免费申领网号网证等同于本站已获接口资格。依据：[管理办法](https://www.cac.gov.cn/2025-05/23/c_1749711107835487.htm)。
+
+控制台和真实测试进度（2026-10-31）：
+
+- 已创建 `APC 博客读者` B2C 免费用户池，创建前取消了 30 天体验期；使用自带的标准 Web 示例应用，没有购买套餐。
+- 已创建默认公有云 `PC 小程序扫码` 身份源 `apc-wechat-phone` 并关联示例应用。自动账号绑定关闭，仅配置本机回调 `http://127.0.0.1:8787/api/identity/callback`。应用采用 RS256 / client_secret_post，仅保留 authorization_code 授权模式，保留知情同意页。
+- 初次扫码提示无权限，原因是应用访问规则默认为“所有人：拒绝”。经站长当次确认，已为该单个扫码账号保存 7 天允许规则，其他账号仍拒绝。
+- 实际 OIDC Token / JWKS / UserInfo 请求成功，但即使请求 `prompt=login` 和 `max_age=1`，ID Token 仍不含 `auth_time`，且 `phone_number_verified` 为布尔 `false`。不能直接将登录成功视作手机号验证成功，也没有手动修改这个标记。
+- 改为通过相同用户的 Access Token 调用官方 `/api/v3/get-identities`，核对微信 `openid` 身份、精确身份源 ID、连接 ID、身份源原始手机号与 UserInfo 号码一致。**本机真实的微信手机号来源验证已通过，并已绑定本地预览账号**。截图保存在 Git 忽略的 `tmp/community-deploy/community-identity-bound.png`。这不代表生产管理员已注册、长期免费额度保证或全部上线要求。
+
+服务端实现：
+
+- `src/authing-phone.js` 使用授权码 + PKCE，只请求 `openid phone`；事务有效期 5 分钟，绑定当前会话，网络请求前一次性消费，重启后须重新发起。固定 HTTPS issuer 和端点，校验 RS256、audience、nonce、有效期、新签发时间及 UserInfo subject 一致。默认模式仍严格要求新认证时间和 `phone_number_verified === true`。
+- 微信来源模式额外固定 source / connection，只有唯一的匹配微信 openid 身份及来源手机号一致才接受；缺失、冲突、其他连接、可编辑资料号码不匹配均拒绝。来源验证不证明第三方重新登录时间；绑定时另要求本站当前密码、原会话和号码二次确认。生产允许显式配置该来源模式，仍强制 HTTPS；没有固定微信来源的普通 OIDC 模式仍要求有效的 `auth_time` 和已验证号码标记。
+- `src/identity-store.js` 保存独立的账号身份表，手机号使用 AES-256-GCM 加密并绑定本地用户 ID，手机号和外部身份索引使用分用途 HMAC。一个手机号或外部身份只能绑定一个账号，不静默覆盖旧绑定，不改变本站 UUID / 角色。返回个人中心的只有脱敏号码。
+- `app.js` 已实现本地绑定路由：POST `/api/identity/start` 要求本站登录、正确密码和同意验证；GET callback 绑定原会话和密码版本；GET `/api/identity/status` 提供脱敏号码和一次性确认凭据；POST `/api/identity/confirm` 显式确认后入库。POST `/api/identity/cancel` 撤销当前会话未完成的绑定。退出、换账号、改密码、超时或重放都不能继续绑定。
+- 生产总是要求评论和留言写入者已绑定身份，管理员也不能绕过；未配置提供器时只关闭新验证，不放宽评论门禁。个人中心已接入验证、脱敏号码确认和取消流程；取消或重新发起会使处理中回调失效。浏览器真实联调已验证本地绑定、留言、文章评论、旧评论昵称同步，以及测试管理员查看和移除评论。新增账号与隐私说明，告知公开字段、邮件及手机号服务商、必要会话 Cookie 和移除内容的处理方式。
+- 自动化测试使用模拟身份提供器，覆盖来源冲突、跨账号绑定、会话撤销、取消、重放、字段伪造、加密存储及评论门禁；真实微信授权与本地预览账号绑定另外通过浏览器验证。两类证据不能互相替代。
+- 本次 71 项服务测试通过。隔离构建共生成 2,336 个文件，启用社区时的 298 个中英文文章页、两种语言个人中心和首页留言板/注册数入口均通过检查；浏览器实测注册人数为 2（仅本地测试账号）。线上健康检查为 200，账号及评论接口保持 503。
+- 官方将该身份源标为 PC 网站扫码场景，页面明确建议电脑展示二维码、手机微信扫码；完成绑定后手机可继续用邮箱密码登录。手机同屏完成首次扫码尚未实测。浏览器直接尺寸覆盖未生效后，已改用本地 390px iframe 实际检查中英文个人中心和首页：内容视口扣除滚动条为 380px，文档宽度同为 380px，表单无横向溢出，个人中心卡片为单列 340px，留言板为 370px，注册数为 2。截图为 `tmp/community-deploy/community-mobile-account.png` 和 `community-mobile-home.png`；该验证只覆盖布局，不替代真实手机上的微信授权验证。
+
+2026-10-31 站长明确要求停止推进公安备案变更，不再将公安平台登录或变更申请作为本次部署的操作前置条件；不代为修改或提交备案资料。现有邮箱注册、强制重置密码、昵称、头像和角色数据库保留在上海服务器；不导入第三方角色或信任浏览器提交的手机号。评论、留言及账号线上入口仍关闭。
+
+正式进程 `server.js` 已接入 `identity-config.js`。在服务器私有环境文件中设置 `IDENTITY_PROVIDER=authing-wechat`，填写 Authing issuer、应用 ID、应用密钥、精确 source / connection ID、`AUTHING_REDIRECT_URI=https://api.apc-science.cn/api/identity/callback` 与 `IDENTITY_RETURN_URL=https://apc-science.cn/account/` 后才启用；任何缺失、无效来源或回跳地址都会阻止启动。默认 `none` 保持验证关闭。生产 `APP_SECRET` 是手机号加密和唯一索引密钥的来源，必须保留原值并安全备份，不复制本地预览密钥或数据库。上线还需在 Authing 控制台登记正式回调和开放面向访客的访问规则；目前只有单个测试账号的 7 天规则，不能直接供所有读者使用。
+
+可在仓库根目录运行 `node services/community/deploy/package-release.mjs tmp/community-release-新版本名` 生成部署目录。打包仅复制明确列出的运行时代码和部署配置，统一 LF 换行，并输出 SHA-256 文件清单；排除开发服务器、测试、密钥及数据。更新已有服务器前先备份数据库及私有配置，记录当前 release 以便回退；先保留 images-only 代理检查新服务，待实名接入、真实邮件和管理员账号验证完成后再开放社区路由。
+
+2026-10-31 刷新公安备案后台后确认会话过期，未以旧页面认定最新状态，也未修改备案资料。后续依站长指示停止该平台操作。
+
+2026-11-01 腾讯云登录恢复后，已通过控制台自动化助手将 19 个明确列出的发布文件安装至 `/opt/apc-community/releases/20261101-identity`。切换前完成 SQLite 在线备份，并将旧环境文件、Caddy 配置及旧版本路径保存在 root 私有目录 `/var/backups/apc-community/20261101-identity`。安装过程中校验文件 SHA-256、检查 JavaScript 语法，并设置失败回退旧版本；服务重启后健康检查成功。生产环境文件和 Caddy 配置逐字节比较未变，身份认证仍未启用，账号及评论公网入口仍关闭。
+
+站长于 2026-11-01 明确授权正式认证访问及联调后开放。Authing 应用现名为 `APC 博客 · 手机号验证`，默认访客授权已改为允许，回调白名单保留本机地址并新增 `https://api.apc-science.cn/api/identity/callback`。应用密钥通过服务器临时 RSA-OAEP 公钥加密后传入私有环境文件，命令记录没有明文密钥；写入后已清除临时传输私钥。原 `APP_SECRET` 保留不变，内部 `/api/session` 已确认 `identityAvailable: true`、`identityRequired: true`。
+
+正式 HTTPS 联调入口是 `https://api.apc-science.cn/account/`，使用与博客相同的账号前端，资源位于 `/srv/apc-account-preview`，不被搜索引擎索引。当前临时回跳地址为该个人中心，允许来源临时增加 API 自身 HTTPS 源。Caddy 已提供账号 API；未登录评论写入返回 401，未登录身份查询返回 401，非白名单来源返回 403，博客来源 CORS 预检返回 204。主博客社区入口尚未发布。正式站长注册验证码请求已成功，仍待站长自行设置密码及确认微信绑定；不得将请求成功等同于收件箱实际送达。
+
+当前剩余工作（不能据本地测试宣称上线完成）：实际验证 Resend 注册/找回邮件；由站长自行设置正式账号密码并确认管理员角色、完成公网微信绑定；通过后发布博客社区页面，将身份回跳切换回 `https://apc-science.cn/account/` 并收起临时个人中心入口。本地管理员 `preview-admin@example.test` 仅供测试，不是站长的生产账号。既有受限图片上传账号不能用于程序部署，不得绕过其权限限制。
+
+参考：[Authing 用户字段释义](https://docs.authing.cn/v2/guides/user/user-profile.html)、[获取外部身份源](https://docs.authing.cn/v3/reference/sdk/go/authentication/账号绑定/get-identities.html)、[官方 Node SDK](https://github.com/Authing/authing-node-sdk)（已核对 `AuthenticationClient.getIdentities` 和请求头实现）。
+
+### 本机真实授权测试
+
+`src/authing-local-test.js` 仅由本地 `dev.js` 在 `AUTHING_LOCAL_TEST=1` 时加载，生产模式拒绝启动。它使用独立的临时 Cookie 会话，只验证来源并显示脱敏号码，不写入博客账号数据库，不发送短信。只接受 `127.0.0.1:8787` Host，发起操作校验精确 Origin；结果只保存在内存中，30 分钟过期，授权事务 5 分钟过期。
+
+本机凭据位于 Git 忽略的 `services/community/.env.authing-local`，Windows ACL 已限定当前用户、管理员和 SYSTEM；禁止提交或放入前端。先停止本机原来的 8787 预览进程，再在 PowerShell 启动：
+
+```powershell
+$env:PREVIEW_SITE_PORT='4001'
+$env:AUTHING_LOCAL_TEST='1'
+node --env-file=services/community/.env.authing-local services/community/src/dev.js
+```
+
+浏览器打开 `http://127.0.0.1:8787/identity-test`。此独立诊断页尚未与博客个人中心连接，不能用于保存绑定。诊断日志仅输出状态码和布尔判断，不输出手机号、用户标识、令牌或密钥。
+
+### 本地个人中心绑定联调
+
+使用同一个私有环境文件，额外设置持久的随机 `APP_SECRET`（至少 32 字符）、`AUTHING_WECHAT_SOURCE_ID` 和 `AUTHING_WECHAT_CONNECTION_ID`。不要使用演示密钥；丢失或修改密钥后将无法解密已有手机号。该模式与独立诊断页互斥：
+
+```powershell
+$env:PREVIEW_SITE_PORT='4001'
+$env:AUTHING_LOCAL_TEST='0'
+$env:AUTHING_BLOG_BINDING='1'
+node --env-file=services/community/.env.authing-local services/community/src/dev.js
+```
+
+配合隔离的 Hexo 预览打开 `http://127.0.0.1:4001/account/`。数据仅写入 Git 忽略的 `services/community/data/preview.sqlite`，邮件写入本地预览收件箱；不接触生产账号。先输入本站当前密码并确认手机号用途，再进行微信授权，回到个人中心核对脱敏号码后确认绑定。测试账号已授权并绑定时无需重复扫码。应用仍只允许指定测试用户访问，不能据此开放生产评论。
+
 ## 后续图片和文章更新
 
 2026-10-25 已恢复文章及图片公开访问，Netlify 已启用，Cloudflare 的备案临时拦截已禁用，GitHub Pages 保持关闭。账号、评论和留言仍未开放。
@@ -94,6 +166,8 @@ npm test --prefix services/community
 node --test tests/test_server_assets.js
 npx hexo generate
 node tests/test_community_pages.js
+# 检查隔离的社区启用构建；先使用对应叠加配置执行 hexo generate
+node tests/test_community_pages.js --public tmp/community-preview-public --config _config.yml,_config.community-preview.yml
 node tests/test_site_navigation.js
 node tests/test_daily_local_images.js
 python tools/localize_gallery_images.py --check

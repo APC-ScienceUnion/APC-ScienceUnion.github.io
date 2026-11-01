@@ -132,8 +132,8 @@ theme: butterfly
 # Account/comment API is separate from static Hexo hosting.
 # Set COMMUNITY_API_URL during deployment after HTTPS has been verified.
 community:
-  enable: false
-  api_url: ''
+  enable: true
+  api_url: https://api.apc-science.cn
 
 # Independent of accounts/comments. Counts begin at the first recorded visit.
 visitor_stats:

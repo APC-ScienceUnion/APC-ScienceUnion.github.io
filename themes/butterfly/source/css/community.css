@@ -14,6 +14,9 @@
 .apc-community label{display:grid;gap:.35rem;font-size:.9em;font-weight:500}
 .apc-community input,.apc-community textarea{width:100%;padding:.7rem .85rem;border:1px solid var(--apc-border);border-radius:9px;background:var(--card-bg,#fff);color:var(--font-color);font:inherit;line-height:1.6}
 .apc-community textarea{min-height:100px;resize:vertical}
+.apc-community .apc-consent{display:flex;align-items:flex-start;gap:.65rem;font-weight:400}
+.apc-community .apc-consent input{width:18px;height:18px;flex:none;margin:.25rem 0 0;padding:0;accent-color:var(--apc-accent)}
+.apc-community .apc-verified{color:var(--apc-accent);font-weight:600;overflow-wrap:anywhere}
 .apc-community .apc-actions{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
 .apc-community .apc-tabs{display:flex;gap:.5rem;flex-wrap:wrap;padding-bottom:1rem;border-bottom:1px solid var(--apc-border)}
 .apc-community .apc-tabs [aria-current=true]{background:var(--apc-accent);color:#fff}
@@ -26,6 +29,12 @@
 .apc-community .apc-badge{display:inline-block;font-size:11px;color:var(--apc-accent);border:1px solid var(--apc-border);border-radius:5px;padding:0 .35rem;margin-left:.5rem;vertical-align:middle}
 .apc-community .apc-panels{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .apc-community .apc-panel{border:1px solid var(--apc-border);border-radius:14px;padding:1.3rem;min-width:0}
+.apc-community .apc-privacy{margin-top:1rem;border-top:1px solid var(--apc-border);padding-top:.75rem}
+.apc-community .apc-privacy summary{cursor:pointer;color:var(--apc-accent);font-size:.9em}
+.apc-community .apc-privacy summary:focus-visible{outline:3px solid #49b1f5;outline-offset:3px}
+.apc-community .apc-privacy p:first-of-type{margin-top:.8rem}
+.apc-community .apc-moderation{grid-column:1/-1}
+.apc-community .apc-moderation .apc-muted{overflow-wrap:anywhere}
 .apc-community .apc-auth{max-width:480px;margin:0 auto;padding:1rem 0 2rem}
 .apc-community .apc-comment{padding:1rem 0;border-top:1px solid var(--apc-border)}
 .apc-community .apc-comment-head{display:flex;gap:.65rem;align-items:center}

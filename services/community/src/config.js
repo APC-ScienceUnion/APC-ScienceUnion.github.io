@@ -1,4 +1,5 @@
 import path from 'node:path';
+import { readIdentityConfig } from './identity-config.js';
 
 export function readConfig(env = process.env) {
   const production = env.NODE_ENV === 'production';
@@ -28,5 +29,6 @@ export function readConfig(env = process.env) {
     if (!config.mailFrom || !config.resendKey) throw new Error('Configure the mail provider before starting production.');
   }
   if (![config.mailDailyLimit, config.mailMonthlyLimit].every(n => Number.isInteger(n) && n > 0)) throw new Error('Mail limits must be positive integers.');
+  Object.assign(config, readIdentityConfig(env, config));
   return config;
 }
