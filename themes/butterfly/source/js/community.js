@@ -114,7 +114,7 @@
     details.append(el('summary','',t('隐私说明','Privacy')));
     for(const [zh,en] of [
       ['本站使用邮箱提供登录与密码找回，使用授权手机号验证发言身份，并通过必要的 Cookie 保持登录。昵称、头像和发言公开，邮箱与手机号不公开。','We use email for sign-in and account recovery, your authorized phone to verify your posting identity, and necessary cookies to keep you signed in. Nicknames, avatars and posts are public; email addresses and phone numbers are not.'],
-      ['你可以在个人中心管理资料、移除自己的发言。账号使用期间保存必要资料；移除的发言不再公开，后台记录和备份可能保留。','You can manage your profile and remove your posts. Necessary account information is retained while your account is in use. Removed posts are no longer public; server records and backups may remain.']
+      ['你可以管理个人资料或移除自己的发言。账号使用期间保存必要资料；移除的发言不再公开，后台记录和备份可能保留。','You can manage your profile and remove your posts. Necessary account information is retained while your account is in use. Removed posts are no longer public; server records and backups may remain.']
     ])details.append(el('p','apc-muted',t(zh,en)));
     const providers=el('details','apc-privacy-services'); providers.append(el('summary','',t('第三方服务','Third-party services')));
     providers.append(el('p','apc-muted',t('Resend 接收邮箱及验证码邮件内容以投递邮件；Authing 与微信处理你授权的手机号以完成身份验证。','Resend receives your email address and verification email content to deliver messages. Authing and WeChat process your authorized phone for identity verification.'))); details.append(providers);
