@@ -44,6 +44,11 @@
 .apc-community .apc-privacy p:first-of-type{margin-top:.8rem}
 .apc-community .apc-moderation{grid-column:1/-1}
 .apc-community .apc-moderation .apc-muted{overflow-wrap:anywhere}
+.apc-community .apc-review-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.apc-community .apc-review-tabs button[aria-pressed=true]{background:var(--apc-accent);color:#fff}
+.apc-community .apc-review-status{margin-left:auto;font-size:.8em;border:1px solid var(--apc-border);border-radius:999px;padding:.15rem .65rem;white-space:nowrap}
+.apc-community .apc-review-cues{display:flex;gap:.4rem;flex-wrap:wrap;margin:.75rem 0}
+.apc-community .apc-review-cues span{font-size:.8em;background:var(--apc-soft);color:var(--apc-accent);padding:.15rem .55rem;border-radius:6px}
 .apc-community .apc-auth{max-width:440px;margin:1.5rem auto;padding:2rem;border:1px solid var(--apc-border);border-radius:18px;background:var(--card-bg,#fff);box-shadow:0 12px 36px rgba(30,65,75,.05)}
 .apc-community .apc-auth-title{font-size:1.6rem;letter-spacing:.04em;margin:0 0 1.5rem}
 .apc-community .apc-auth .apc-form{gap:1.15rem}

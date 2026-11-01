@@ -10,7 +10,8 @@ const target=path.resolve(process.argv[2]||'');
 if(!process.argv[2]||existsSync(target))throw new Error('Pass a new, nonexistent output directory.');
 const files=[
   'package.json',
-  ...['app','authing-phone','backup','config','db','identity-config','identity-store','mail','security','server','visits'].map(name=>`src/${name}.js`),
+  ...['app','authing-phone','backup','config','db','identity-config','identity-store','mail','moderation','reviews','security','server','visits'].map(name=>`src/${name}.js`),
+  'src/moderation-lexicon.json','src/moderation-LICENSE.txt',
   ...['install.sh','community.service','backup.service','backup.timer','Caddyfile','Caddyfile.images-only','Caddyfile.staging'].map(name=>`deploy/${name}`)
 ];
 const records=[];

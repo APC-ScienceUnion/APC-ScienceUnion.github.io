@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { openDatabase, transaction } from './db.js';
 import { codeMessage } from './mail.js';
 import { createVisits } from './visits.js';
+import { createReviews } from './reviews.js';
 import { createIdentityStore } from './identity-store.js';
 import { fail, sha256, hmac, emailValue, nicknameValue, nicknameKey, passwordValue, hashPassword, verifyPassword, publicUser, privateUser } from './security.js';
 
@@ -16,6 +17,7 @@ export async function createApp(config, { sendMail, now = Date.now, identityProv
   if(identityProvider && config.production && config.identity?.mode!=='authing-wechat')throw new Error('Configure the pinned identity provider before enabling production binding.');
   if(identityProvider && (!config.identityReturnUrl || !config.origins.includes(new URL(config.identityReturnUrl).origin)))throw new Error('Identity return URL must belong to an allowed site origin.');
   const db = openDatabase(config.database);
+  const reviews = createReviews(db, { now });
   const identities=(identityProvider||config.requireVerifiedIdentity)?createIdentityStore(db,{secret:config.secret,now}):null;
   const identityAttempts=new Map(),identityInFlight=new Map(),identityReceipts=new Map();
   const identityMaps=[identityAttempts,identityInFlight,identityReceipts];
@@ -325,6 +327,17 @@ export async function createApp(config, { sendMail, now = Date.now, identityProv
         startSession(res, user.id);
         return json(res, 200, { user: privateUser(getUser(user.id)) });
       }
+      if (req.method === 'GET' && ['/api/admin/reviews','/api/me/reviews'].includes(route)) {
+        return json(res,200,reviews.list(requireUser(req),url.searchParams,route==='/api/admin/reviews'));
+      }
+      if (req.method === 'POST' && /^\/api\/admin\/reviews\/\d+$/.test(route)) {
+        const user=requireUser(req);
+        if(user.role!=='admin')fail(403,'仅站长可审核。');
+        return json(res,200,reviews.decide(Number(route.split('/').at(-1)),user,(await body(req)).decision));
+      }
+      if (req.method === 'DELETE' && /^\/api\/me\/reviews\/\d+$/.test(route)) {
+        return json(res,200,reviews.withdraw(Number(route.split('/').at(-1)),requireUser(req)));
+      }
       if (req.method === 'GET' && route === '/api/admin/comments') {
         if(requireUser(req).role!=='admin')fail(403,'仅站长可查看管理列表。');
         const limit=Math.min(30,Math.max(1,Number(url.searchParams.get('limit'))||20));
@@ -353,8 +366,10 @@ export async function createApp(config, { sendMail, now = Date.now, identityProv
         if (!text || [...text].length > 2000 || /[\x00-\x08\x0b\x0c\x0e-\x1f]/.test(text)) fail(400, '请输入 1–2000 字的评论。');
         rate(`comment-interval:${user.id}`, 1, 10000);
         rate(`comment-hour:${user.id}`, 30, 60 * MINUTE);
+        const held=reviews.hold(topic,user.id,text);
+        if(held)return json(res,201,held);
         const result = db.prepare('INSERT INTO comments(topic,user_id,body,created_at) VALUES(?,?,?,?)').run(topic, user.id, text, now());
-        return json(res, 201, { id: Number(result.lastInsertRowid) });
+        return json(res, 201, { id: Number(result.lastInsertRowid), status:'published' });
       }
       if (req.method === 'DELETE' && /^\/api\/comments\/\d+$/.test(route)) {
         const user = requireUser(req), id = Number(route.split('/').at(-1));

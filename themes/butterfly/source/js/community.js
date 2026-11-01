@@ -187,7 +187,11 @@
       const submit=button(t('确认更换邮箱','Update email'),null,true); submit.type='submit'; form.append(submit);
       handle(form,submit,async data => { user=(await api('/me/email',data)).user; renderAccount(root); }); binding.append(form);
     }
-    if(user.role==='admin')renderModeration(panel(t('评论与留言管理','Comment management')));
+    renderReviews(panel(t('我的待审发言','Your reviewed posts')),false);
+    if(user.role==='admin'){
+      renderReviews(panel(t('发言审核','Post review')),true);
+      renderModeration(panel(t('已发布评论与留言','Published comments')));
+    }
     privacyNotice(root);
   }
   function removalButton(item,card,onRemoved,show) {
@@ -227,6 +231,64 @@
       finally{more.disabled=false;}
     }
     await load();
+  }
+  function reviewTopic(topic) {
+    if(topic==='guestbook')return t('首页留言板','Home guestbook');
+    let label=topic.replace(/^\/articles\//,'');
+    try{label=decodeURIComponent(label);}catch{ /* Plain text fallback. */ }
+    return t('文章：','Article: ')+label;
+  }
+  async function renderReviews(section,admin) {
+    section.classList.add('apc-moderation');
+    const accountId=user.id,show=status(section),list=el('div');
+    let cursor=null,filter='pending',generation=0;
+    const tabs=el('div','apc-review-tabs');
+    if(admin){
+      for(const [key,zh,en] of [['pending','待审核','Pending'],['rejected','未通过','Rejected'],['approved','已通过','Approved']]){
+        const tab=button(t(zh,en),()=>{filter=key;load(true);});tab.dataset.filter=key;tabs.append(tab);
+      }
+      section.append(tabs);
+    }
+    section.append(list);
+    const more=button(t('加载更多','Load more'),()=>load(false));section.append(more);
+    async function load(reset){
+      const run=++generation;
+      if(reset){cursor=null;list.replaceChildren();}
+      for(const tab of tabs.children)tab.setAttribute('aria-pressed',String(tab.dataset.filter===filter));
+      more.disabled=true;show('');
+      try{
+        const result=await api((admin?'/admin/reviews?status='+filter:'/me/reviews?')+'&limit=20'+(cursor?'&before='+cursor:''));
+        if(run!==generation||!section.isConnected||user?.id!==accountId)return;
+        if(!cursor&&!result.items.length)list.append(el('p','apc-muted',t('暂无待处理内容。','Nothing to review.')));
+        for(const item of result.items){
+          const card=el('article','apc-comment apc-review'),head=el('div','apc-comment-head');
+          if(item.user)head.append(avatar(item.user.avatarSeed),identity(item.user));
+          head.append(el('span','apc-review-status',t(item.status==='pending'?'待审核':item.status==='rejected'?'未通过':'已通过',item.status==='pending'?'Pending':item.status==='rejected'?'Rejected':'Approved')));
+          card.append(head,el('p','apc-muted',reviewTopic(item.topic)+' · '+new Date(item.createdAt).toLocaleString(english()?'en-GB':'zh-CN')),el('p','apc-comment-body',item.body));
+          if(admin){
+            const cues=el('div','apc-review-cues');
+            for(const match of item.matches){const cue=el('span','',match.term);cue.title=match.category;cues.append(cue);}
+            card.append(cues);
+          }
+          const actions=el('div','apc-actions');
+          const act=(label,decision,primary=false)=>{
+            const control=button(label,async()=>{
+              for(const node of actions.children)node.disabled=true;
+              try{
+                await api((admin?'/admin/reviews/':'/me/reviews/')+item.id,admin?{decision}:{},admin?'POST':'DELETE');
+                await load(true);await refreshThreads();
+              }catch(error){show(error.message,true);for(const node of actions.children)node.disabled=false;}
+            },primary);actions.append(control);
+          };
+          if(admin&&item.status==='pending'){act(t('通过并公开','Approve and publish'),'approve',true);act(t('不通过','Reject'),'reject');}
+          if(!admin)act(t(item.status==='pending'?'撤回':'移除记录',item.status==='pending'?'Withdraw':'Dismiss'),'withdraw');
+          card.append(actions);list.append(card);
+        }
+        cursor=result.nextCursor;more.hidden=!cursor;
+      }catch(error){if(run===generation){show(error.message,true);more.hidden=false;more.textContent=t('重试','Retry');}}
+      finally{if(run===generation)more.disabled=false;}
+    }
+    await load(true);
   }
   async function renderVerification(section,root) {
     const title=section.firstChild,loading=el('p','apc-muted',t('正在读取验证状态…','Loading verification status…'));section.append(loading);
@@ -268,7 +330,7 @@
       });section.append(form);
     }catch(error){if(!section.isConnected||user?.id!==accountId)return;loading.textContent=error.message;loading.className='apc-status';loading.dataset.error='true';section.append(loading,button(t('重试','Retry'),()=>renderAccount(root)));}
   }
-  async function renderThread(root) {
+  async function renderThread(root,notice='') {
     const container=root.querySelector('.apc-thread'); if(!container) return;
     container.replaceChildren(); const show=status(container);
     const topic=root.dataset.topic;
@@ -277,7 +339,10 @@
       const text=field(form,t(topic==='guestbook'?'写下你的留言':'写下你的评论',topic==='guestbook'?'Leave a message':'Write a comment'),'body','textarea'); text.maxLength=2000;
       const row=el('div','apc-actions'), send=button(t('发表','Post'),null,true), count=el('span','apc-counter','0 / 2000'); send.type='submit';
       text.addEventListener('input',()=>{count.textContent=`${[...text.value].length} / 2000`;}); row.append(send,count); form.append(row);
-      handle(form,send,async data=>{await api('/comments',{...data,topic}); await renderThread(root);}); container.append(form);
+      handle(form,send,async data=>{
+        const result=await api('/comments',{...data,topic});
+        await renderThread(root,result.status==='pending'?t('已提交，待审核。可在个人中心查看或撤回。','Submitted for review. View or withdraw it in your account.'):'');
+      }); container.append(form);
     } else {
       const prompt=el('p','apc-muted'), link=el('a','apc-button',user?t('验证手机号后参与','Verify your phone to join'):t('登录 / 注册后参与','Sign in / register to join')); link.href=accountUrl(); prompt.append(link); container.append(prompt);
     }
@@ -301,7 +366,7 @@
       }catch(error){show(error.message,true); more.hidden=false; more.textContent=t('重试','Retry');}
       finally{more.disabled=false;}
     }
-    container.append(more); await load(true);
+    container.append(more); await load(true);if(notice)show(notice);
   }
   async function refreshThreads(){await Promise.all([...document.querySelectorAll('.apc-community[data-topic]')].map(renderThread));}
   async function loadStats(){

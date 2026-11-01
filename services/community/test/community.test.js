@@ -208,6 +208,62 @@ test('administrator overview spans topics, paginates, hides removed posts and ne
   assert.equal((await f.request('/admin/comments?before=1.5',undefined,{cookie:owner.cookie})).status,400);
 });
 
+test('matched posts stay private; only an admin can approve exactly once with original text and author',async t=>{
+  const f=await fixture(t),alice=await f.register(),bob=await f.register('bob@example.com','Bob'),owner=await f.register('owner@example.com','Owner');
+  const text='科普讨论：出售\u200b手 枪 <script>alert(1)</script>';
+  const held=await f.request('/comments',{topic:'guestbook',body:text,status:'published'},{cookie:alice.cookie});
+  assert.equal(held.status,201);assert.equal(held.data.status,'pending');assert.equal(held.data.id,undefined);
+  assert.doesNotMatch(JSON.stringify(held.data),/matches|term|category/);
+  assert.deepEqual((await f.request('/comments?topic=guestbook')).data,{items:[],nextCursor:null,total:0});
+  assert.deepEqual((await f.request('/admin/comments',undefined,{cookie:owner.cookie})).data.items,[]);
+  assert.equal((await f.request('/me/reviews')).status,401);
+  const mine=(await f.request('/me/reviews',undefined,{cookie:alice.cookie})).data;
+  assert.equal(mine.items[0].body,text);assert.equal(mine.items[0].status,'pending');
+  assert.doesNotMatch(JSON.stringify(mine),/matches|lexiconVersion|email|phone/);
+  assert.equal((await f.request('/me/reviews',undefined,{cookie:bob.cookie})).data.total,0);
+  assert.equal((await f.request('/admin/reviews',undefined,{cookie:alice.cookie})).status,403);
+  const route='/admin/reviews/'+held.data.reviewId;
+  assert.equal((await f.request(route,{decision:'approve'},{cookie:alice.cookie})).status,403);
+  const queue=(await f.request('/admin/reviews',undefined,{cookie:owner.cookie})).data;
+  assert.equal(queue.items[0].matches[0].term,'出售手枪');
+  assert.doesNotMatch(JSON.stringify(queue),/email|phone|password|alice@example/);
+  assert.equal((await f.request(route,{decision:'unknown'},{cookie:owner.cookie})).status,400);
+  await f.request('/me',{nickname:'Alice updated'},{method:'PATCH',cookie:alice.cookie});
+  const outcomes=await Promise.all([1,2].map(()=>f.request(route,{decision:'approve',body:'replacement',user_id:owner.data.user.id},{cookie:owner.cookie})));
+  assert.deepEqual(outcomes.map(r=>r.status).sort(),[200,409]);
+  const published=(await f.request('/comments?topic=guestbook')).data;
+  assert.equal(published.total,1);assert.equal(published.items[0].body,text);assert.equal(published.items[0].user.id,alice.data.user.id);
+  assert.equal(published.items[0].user.nickname,'Alice updated');assert.equal((await f.request('/me/reviews',undefined,{cookie:alice.cookie})).data.total,0);
+  assert.equal((await f.request('/admin/reviews?status=approved',undefined,{cookie:owner.cookie})).data.items.length,1);
+  assert.equal((await f.request('/me/reviews/'+held.data.reviewId,{}, {method:'DELETE',cookie:alice.cookie})).status,409);
+  assert.equal((await f.request('/comments/'+published.items[0].id,{}, {method:'DELETE',cookie:alice.cookie})).status,200);
+  assert.equal((await f.request('/comments?topic=guestbook')).data.total,0);
+});
+
+test('rejection, withdrawal, pagination and rate limits also protect article reviews and admin submissions',async t=>{
+  const f=await fixture(t),alice=await f.register(),bob=await f.register('bob@example.com','Bob'),owner=await f.register('owner@example.com','Owner');
+  const send=async(cookie)=>f.request('/comments',{topic:'/articles/test',body:'代开发票'},{cookie});
+  const first=await send(alice.cookie);
+  assert.equal((await send(alice.cookie)).status,429);
+  assert.equal((await f.request('/admin/reviews/'+first.data.reviewId,{decision:'reject'},{cookie:owner.cookie})).status,200);
+  assert.equal((await f.request('/comments?topic=/articles/test')).data.total,0);
+  assert.equal((await f.request('/me/reviews',undefined,{cookie:alice.cookie})).data.items[0].status,'rejected');
+  f.advance(11000);const second=await send(alice.cookie);
+  const page=(await f.request('/me/reviews?limit=1',undefined,{cookie:alice.cookie})).data;
+  assert.equal(page.items[0].id,second.data.reviewId);assert.ok(page.nextCursor);
+  const next=(await f.request('/me/reviews?limit=1&before='+page.nextCursor,undefined,{cookie:alice.cookie})).data;
+  assert.equal(next.items[0].id,first.data.reviewId);assert.equal(next.nextCursor,null);
+  const withdraw='/me/reviews/'+second.data.reviewId;
+  assert.equal((await f.request(withdraw,{}, {method:'DELETE',cookie:bob.cookie})).status,404);
+  assert.equal((await f.request(withdraw,{}, {method:'DELETE',cookie:alice.cookie})).status,200);
+  assert.equal((await f.request('/admin/reviews/'+second.data.reviewId,{decision:'approve'},{cookie:owner.cookie})).status,409);
+  assert.equal((await send(owner.cookie)).data.status,'pending');
+  assert.equal((await f.request('/admin/reviews?status=withdrawn',undefined,{cookie:owner.cookie})).status,400);
+  assert.equal((await f.request('/admin/reviews?before=1.5',undefined,{cookie:owner.cookie})).status,400);
+  assert.equal((await f.request('/me/reviews?limit=-1',undefined,{cookie:alice.cookie})).status,400);
+  assert.equal((await f.request('/comments?topic=/articles/test')).data.total,0);
+});
+
 test('CSRF protection, session cookie attributes, logout and password change',async t=>{
   const f=await fixture(t);const registered=await f.register();
   assert.match(registered.headers.get('set-cookie'),/HttpOnly; SameSite=Lax/);
