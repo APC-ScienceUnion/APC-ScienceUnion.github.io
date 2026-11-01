@@ -53,9 +53,16 @@
   }
   async function api(route, data, method = 'POST') {
     if (!apiBase) throw new Error(t('社区服务正在准备中，请稍后再来。', 'The community service is being prepared. Please check back soon.'));
-    const response = await fetch(apiBase + '/api' + route, { method: data === undefined ? 'GET' : method, credentials: 'include', cache: 'no-store',
-      headers: data === undefined ? {} : { 'Content-Type': 'application/json', 'X-Community-Request': '1' },
-      body: data === undefined ? undefined : JSON.stringify(data), signal: AbortSignal.timeout(20000) });
+    let response;
+    try {
+      response = await fetch(apiBase + '/api' + route, { method: data === undefined ? 'GET' : method, credentials: 'include', cache: 'no-store',
+        headers: data === undefined ? {} : { 'Content-Type': 'application/json', 'X-Community-Request': '1' },
+        body: data === undefined ? undefined : JSON.stringify(data), signal: AbortSignal.timeout(20000) });
+    } catch (error) {
+      throw new Error(error.name === 'TimeoutError'
+        ? t('连接超时，请稍后重试。', 'Connection timed out. Please try again.')
+        : t('暂时无法连接，请稍后重试。', 'Unable to connect right now. Please try again.'));
+    }
     const result = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(result.error || t('连接失败，请稍后再试。', 'Connection failed. Please try again.'));
     return result;
