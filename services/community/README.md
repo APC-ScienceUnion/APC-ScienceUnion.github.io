@@ -25,7 +25,7 @@ npx hexo server --config '_config.yml,_config.community-preview.yml' --output tm
 node services/community/src/dev.js
 ```
 
-打开 `http://127.0.0.1:4000/account/`，可预览注册、登录、个人中心与找回密码；文章下方显示评论，首页侧栏显示留言板与注册人数。预览配置不会修改正式的 `community.enable: false`，生成文件和 Hexo 缓存放在被 Git 忽略的 `tmp/community-preview-*`，与正式 `public/` 分开。正式部署不加载这份配置。
+打开 `http://127.0.0.1:4000/account/`，可预览注册、登录、个人中心与找回密码；文章下方显示评论，首页侧栏显示留言板与注册人数。预览配置不会修改正式的 `community` 设置，生成文件和 Hexo 缓存放在被 Git 忽略的 `tmp/community-preview-*`，与正式 `public/` 分开。正式部署不加载这份配置。
 
 如果 4000 端口已有服务，将终端一的端口改为 4001，并在终端二启动前运行 `$env:PREVIEW_SITE_PORT='4001'`。不要停止其他任务占用的服务。API 始终监听本机 `127.0.0.1:8787`；无论从哪个目录启动，其数据库与模拟邮件都固定保存在 `services/community/data/`。
 
@@ -91,7 +91,7 @@ node services/community/src/dev.js
 
 2026-10-31 站长明确要求停止推进公安备案变更，不再将公安平台登录或变更申请作为本次部署的操作前置条件；不代为修改或提交备案资料。现有邮箱注册、强制重置密码、昵称、头像和角色数据库保留在上海服务器；不导入第三方角色或信任浏览器提交的手机号。评论、留言及账号线上入口仍关闭。
 
-正式进程 `server.js` 已接入 `identity-config.js`。在服务器私有环境文件中设置 `IDENTITY_PROVIDER=authing-wechat`，填写 Authing issuer、应用 ID、应用密钥、精确 source / connection ID、`AUTHING_REDIRECT_URI=https://api.apc-science.cn/api/identity/callback` 与 `IDENTITY_RETURN_URL=https://apc-science.cn/account/` 后才启用；任何缺失、无效来源或回跳地址都会阻止启动。默认 `none` 保持验证关闭。生产 `APP_SECRET` 是手机号加密和唯一索引密钥的来源，必须保留原值并安全备份，不复制本地预览密钥或数据库。上线还需在 Authing 控制台登记正式回调和开放面向访客的访问规则；目前只有单个测试账号的 7 天规则，不能直接供所有读者使用。
+正式进程 `server.js` 已接入 `identity-config.js`。在服务器私有环境文件中设置 `IDENTITY_PROVIDER=authing-wechat`，填写 Authing issuer、应用 ID、应用密钥、精确 source / connection ID、`AUTHING_REDIRECT_URI=https://api.apc-science.cn/api/identity/callback` 与 `IDENTITY_RETURN_URL=https://apc-science.cn/account/` 后才启用；任何缺失、无效来源或回跳地址都会阻止启动。默认 `none` 保持验证关闭。生产 `APP_SECRET` 是手机号加密和唯一索引密钥的来源，必须保留原值并安全备份，不复制本地预览密钥或数据库。正式回调和面向访客的访问规则须与服务器配置一致；2026-11-01 已完成正式配置，详见下方部署记录。
 
 可在仓库根目录运行 `node services/community/deploy/package-release.mjs tmp/community-release-新版本名` 生成部署目录。打包仅复制明确列出的运行时代码和部署配置，统一 LF 换行，并输出 SHA-256 文件清单；排除开发服务器、测试、密钥及数据。更新已有服务器前先备份数据库及私有配置，记录当前 release 以便回退；先保留 images-only 代理检查新服务，待实名接入、真实邮件和管理员账号验证完成后再开放社区路由。
 
@@ -99,11 +99,11 @@ node services/community/src/dev.js
 
 2026-11-01 腾讯云登录恢复后，已通过控制台自动化助手将 19 个明确列出的发布文件安装至 `/opt/apc-community/releases/20261101-identity`。切换前完成 SQLite 在线备份，并将旧环境文件、Caddy 配置及旧版本路径保存在 root 私有目录 `/var/backups/apc-community/20261101-identity`。安装过程中校验文件 SHA-256、检查 JavaScript 语法，并设置失败回退旧版本；服务重启后健康检查成功。生产环境文件和 Caddy 配置逐字节比较未变，身份认证仍未启用，账号及评论公网入口仍关闭。
 
-站长于 2026-11-01 明确授权正式认证访问及联调后开放。Authing 应用现名为 `APC 博客 · 手机号验证`，默认访客授权已改为允许，回调白名单保留本机地址并新增 `https://api.apc-science.cn/api/identity/callback`。应用密钥通过服务器临时 RSA-OAEP 公钥加密后传入私有环境文件，命令记录没有明文密钥；写入后已清除临时传输私钥。原 `APP_SECRET` 保留不变，内部 `/api/session` 已确认 `identityAvailable: true`、`identityRequired: true`。
+站长于 2026-11-01 明确授权正式认证访问及联调后开放。Authing 应用现名为 `APC 博客 · 手机号验证`，默认访客授权已改为允许，回调白名单只保留 `https://api.apc-science.cn/api/identity/callback`。最初把本机和正式地址按换行填写，保存后仍出现 `redirect_uri_mismatch`；改为单一正式地址后已实际完成 OAuth 回跳，不再把编辑框显示成功等同于认证端已接受地址。应用密钥通过服务器临时 RSA-OAEP 公钥加密后传入私有环境文件，命令记录没有明文密钥；写入后已清除临时传输私钥。原 `APP_SECRET` 保留不变，内部 `/api/session` 已确认 `identityAvailable: true`、`identityRequired: true`。
 
-正式 HTTPS 联调入口是 `https://api.apc-science.cn/account/`，使用与博客相同的账号前端，资源位于 `/srv/apc-account-preview`，不被搜索引擎索引。当前临时回跳地址为该个人中心，允许来源临时增加 API 自身 HTTPS 源。Caddy 已提供账号 API；未登录评论写入返回 401，未登录身份查询返回 401，非白名单来源返回 403，博客来源 CORS 预检返回 204。主博客社区入口尚未发布。正式站长注册验证码请求已成功，仍待站长自行设置密码及确认微信绑定；不得将请求成功等同于收件箱实际送达。
+正式 HTTPS 联调入口是 `https://api.apc-science.cn/account/`，使用与博客相同的账号前端，资源位于 `/srv/apc-account-preview`，不被搜索引擎索引。当前临时回跳地址为该个人中心，允许来源临时增加 API 自身 HTTPS 源。Caddy 已提供账号 API；未登录评论写入返回 401，未登录身份查询返回 401，非白名单来源返回 403，博客来源 CORS 预检返回 204。主博客社区入口尚未发布。站长已亲自完成邮箱验证码注册并设置密码，账号显示 `Guinyの时光` 和“站长”标识，微信来源手机号绑定已成功且仅展示脱敏号码。正式服务上的留言写入与软移除已实测通过，测试留言已从公开列表移除。
 
-当前剩余工作（不能据本地测试宣称上线完成）：实际验证 Resend 注册/找回邮件；由站长自行设置正式账号密码并确认管理员角色、完成公网微信绑定；通过后发布博客社区页面，将身份回跳切换回 `https://apc-science.cn/account/` 并收起临时个人中心入口。本地管理员 `preview-admin@example.test` 仅供测试，不是站长的生产账号。既有受限图片上传账号不能用于程序部署，不得绕过其权限限制。
+当前剩余工作：发布博客社区页面，将身份回跳切换回 `https://apc-science.cn/account/` 并收起临时个人中心入口，再核对主站 Cookie/CORS、留言板、文章评论及注册人数。邮箱注册已完成生产实测；密码重置的强制换密、旧会话失效等已通过自动测试，没有为了测试而替站长重置正式密码。本地管理员 `preview-admin@example.test` 仅供测试，不是站长的生产账号。既有受限图片上传账号不能用于程序部署，不得绕过其权限限制。
 
 参考：[Authing 用户字段释义](https://docs.authing.cn/v2/guides/user/user-profile.html)、[获取外部身份源](https://docs.authing.cn/v3/reference/sdk/go/authentication/账号绑定/get-identities.html)、[官方 Node SDK](https://github.com/Authing/authing-node-sdk)（已核对 `AuthenticationClient.getIdentities` 和请求头实现）。
 
