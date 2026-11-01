@@ -187,10 +187,16 @@
       const submit=button(t('确认更换邮箱','Update email'),null,true); submit.type='submit'; form.append(submit);
       handle(form,submit,async data => { user=(await api('/me/email',data)).user; renderAccount(root); }); binding.append(form);
     }
-    renderReviews(panel(t('我的待审发言','Your reviewed posts')),false);
+    const ownReviews=panel(t('我的待审发言','Your reviewed posts'));
+    renderReviews(ownReviews,false);
     if(user.role==='admin'){
-      renderReviews(panel(t('发言审核','Post review')),true);
-      renderModeration(panel(t('已发布评论与留言','Published comments')));
+      const queue=panel(t('发言审核','Post review')),published=panel(t('已发布评论与留言','Published comments'));
+      renderReviews(queue,true,async()=>{
+        if(!queue.isConnected)return;
+        ownReviews.replaceChildren(ownReviews.firstElementChild);published.replaceChildren(published.firstElementChild);
+        await Promise.all([renderReviews(ownReviews,false),renderModeration(published)]);
+      });
+      renderModeration(published);
     }
     privacyNotice(root);
   }
@@ -238,7 +244,7 @@
     try{label=decodeURIComponent(label);}catch{ /* Plain text fallback. */ }
     return t('文章：','Article: ')+label;
   }
-  async function renderReviews(section,admin) {
+  async function renderReviews(section,admin,onChanged=async()=>{}) {
     section.classList.add('apc-moderation');
     const accountId=user.id,show=status(section),list=el('div');
     let cursor=null,filter='pending',generation=0;
@@ -276,7 +282,7 @@
               for(const node of actions.children)node.disabled=true;
               try{
                 await api((admin?'/admin/reviews/':'/me/reviews/')+item.id,admin?{decision}:{},admin?'POST':'DELETE');
-                await load(true);await refreshThreads();
+                await load(true);await onChanged();await refreshThreads();
               }catch(error){show(error.message,true);for(const node of actions.children)node.disabled=false;}
             },primary);actions.append(control);
           };
