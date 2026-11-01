@@ -18,12 +18,21 @@
 .apc-community .apc-consent input{width:18px;height:18px;flex:none;margin:.25rem 0 0;padding:0;accent-color:var(--apc-accent)}
 .apc-community .apc-verified{color:var(--apc-accent);font-weight:600;overflow-wrap:anywhere}
 .apc-community .apc-actions{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
-.apc-community .apc-tabs{display:flex;gap:.5rem;flex-wrap:wrap;padding-bottom:1rem;border-bottom:1px solid var(--apc-border)}
-.apc-community .apc-tabs [aria-current=true]{background:var(--apc-accent);color:#fff}
+.apc-community .apc-auth-links{display:flex;justify-content:flex-end;gap:1rem;margin-top:.5rem}
+.apc-community .apc-auth-links button{padding:.25rem 0;min-height:36px;border:0;border-radius:3px;background:none;color:var(--apc-accent);font-size:.9em}
+.apc-community .apc-auth-links button:hover{text-decoration:underline;text-underline-offset:4px}
+.apc-community .apc-password-wrap{position:relative;display:block}
+.apc-community .apc-password-wrap input{padding-right:3rem}
+.apc-community .apc-password-match{position:absolute;right:.85rem;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:15px;line-height:1;font-weight:700;pointer-events:none;background:#fbe9e7;color:#a73128}
+.apc-community .apc-password-match[data-match=true]{background:#e1f3eb;color:#16704e}
+.apc-community .apc-password-wrap input[aria-invalid=true]{border-color:#bd5149}
 .apc-community .apc-status{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.9em;padding:.5rem 0;color:var(--apc-accent)}
 .apc-community .apc-status[data-error=true]{color:#c34b40}
 .apc-community .apc-status:empty{display:none}
 .apc-community .apc-profile{display:flex;gap:1rem;align-items:center;padding:1.4rem;border-radius:14px;background:var(--apc-soft);margin-bottom:1.3rem;overflow-wrap:anywhere}
+.apc-community .apc-profile-details{flex:1;min-width:0}
+.apc-community .apc-profile-details .apc-muted{margin:.25rem 0 0}
+.apc-community button.apc-logout{flex:none;margin-left:auto;background:transparent;font-size:.85em}
 .apc-community .apc-avatar{flex:none;width:44px;height:44px;border-radius:12px;display:block;margin:0!important}
 .apc-community .apc-profile .apc-avatar{width:72px;height:72px;border-radius:18px}
 .apc-community .apc-badge{display:inline-block;font-size:11px;color:var(--apc-accent);border:1px solid var(--apc-border);border-radius:5px;padding:0 .35rem;margin-left:.5rem;vertical-align:middle}
@@ -35,7 +44,12 @@
 .apc-community .apc-privacy p:first-of-type{margin-top:.8rem}
 .apc-community .apc-moderation{grid-column:1/-1}
 .apc-community .apc-moderation .apc-muted{overflow-wrap:anywhere}
-.apc-community .apc-auth{max-width:480px;margin:0 auto;padding:1rem 0 2rem}
+.apc-community .apc-auth{max-width:440px;margin:1.5rem auto;padding:2rem;border:1px solid var(--apc-border);border-radius:18px;background:var(--card-bg,#fff);box-shadow:0 12px 36px rgba(30,65,75,.05)}
+.apc-community .apc-auth-title{font-size:1.6rem;letter-spacing:.04em;margin:0 0 1.5rem}
+.apc-community .apc-auth .apc-form{gap:1.15rem}
+.apc-community .apc-auth .apc-form>button.apc-primary{margin-top:.35rem;min-height:46px}
+.apc-community .apc-auth .apc-privacy{font-size:.86em;margin-top:1.4rem}
+.apc-community .apc-privacy-services{margin:.75rem 0}
 .apc-community .apc-comment{padding:1rem 0;border-top:1px solid var(--apc-border)}
 .apc-community .apc-comment-head{display:flex;gap:.65rem;align-items:center}
 .apc-community .apc-comment-name{font-weight:600;overflow-wrap:anywhere}
@@ -49,5 +63,7 @@
 .apc-guestbook textarea{min-height:85px}
 .apc-guestbook .apc-comment-body{font-size:.9em}
 [data-theme=dark] .apc-community{--apc-accent:#69c4c7;--apc-soft:rgba(105,196,199,.08)}
-[data-theme=dark] .apc-community button.apc-primary,[data-theme=dark] .apc-community .apc-tabs [aria-current=true]{background:#246b76;color:#fff}
-@media(max-width:680px){.apc-community .apc-panels{grid-template-columns:1fr}.apc-community .apc-panel{padding:1rem}.apc-community .apc-profile{padding:1rem}.apc-community .apc-auth{padding-top:0}.apc-community .apc-profile .apc-avatar{width:56px;height:56px}}
+[data-theme=dark] .apc-community button.apc-primary{background:#246b76;color:#fff}
+[data-theme=dark] .apc-community .apc-password-match{background:#512c2b;color:#ffb4ac}
+[data-theme=dark] .apc-community .apc-password-match[data-match=true]{background:#204e40;color:#9be1bd}
+@media(max-width:680px){.apc-community .apc-panels{grid-template-columns:1fr}.apc-community .apc-panel{padding:1rem}.apc-community .apc-profile{padding:1rem;gap:.75rem;flex-wrap:wrap}.apc-community .apc-auth{padding:1.3rem;margin:1rem auto}.apc-community .apc-profile .apc-avatar{width:48px;height:48px}.apc-community button.apc-logout{padding:.4rem .65rem}.apc-community .apc-profile-details{flex-basis:calc(100% - 70px)}}

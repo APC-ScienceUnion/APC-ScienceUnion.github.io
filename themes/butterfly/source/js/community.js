@@ -33,6 +33,24 @@
     if (name === 'code') { input.inputMode = 'numeric'; input.pattern = '[0-9]{6}'; input.maxLength = 6; }
     wrapper.append(input); form.append(wrapper); return input;
   }
+  function passwordMatch(password, confirm) {
+    confirm.setAttribute('aria-label',confirm.parentElement.textContent);
+    const wrap=el('span','apc-password-wrap'), mark=el('span','apc-password-match');
+    mark.setAttribute('role','status'); mark.setAttribute('aria-live','polite');
+    mark.hidden=true; confirm.before(wrap); wrap.append(confirm,mark);
+    const update=()=>{
+      const hasConfirmation=confirm.value.length>0, matches=password.value===confirm.value;
+      mark.hidden=!hasConfirmation;
+      mark.dataset.match=String(matches);
+      mark.textContent=matches?'✓':'×';
+      const message=t(matches?'两次密码一致':'两次密码不一致',matches?'Passwords match':'Passwords do not match');
+      mark.setAttribute('aria-label',hasConfirmation?message:''); mark.title=hasConfirmation?message:'';
+      confirm.setAttribute('aria-invalid',String(hasConfirmation&&!matches));
+      confirm.setCustomValidity(hasConfirmation&&!matches?message:'');
+    };
+    password.addEventListener('input',update); confirm.addEventListener('input',update);
+    password.addEventListener('change',update); confirm.addEventListener('change',update); update();
+  }
   async function api(route, data, method = 'POST') {
     if (!apiBase) throw new Error(t('社区服务正在准备中，请稍后再来。', 'The community service is being prepared. Please check back soon.'));
     const response = await fetch(apiBase + '/api' + route, { method: data === undefined ? 'GET' : method, credentials: 'include', cache: 'no-store',
@@ -93,23 +111,21 @@
   }
   function privacyNotice(parent) {
     const details=el('details','apc-privacy');
-    details.append(el('summary','',t('账号与隐私说明','Account and privacy information')));
+    details.append(el('summary','',t('隐私说明','Privacy')));
     for(const [zh,en] of [
-      ['昵称、随机头像及发表的内容会公开；邮箱和手机号不会显示在评论中。','Your nickname, random avatar and posts are public. Your email and phone are not shown in comments.'],
-      ['邮箱用于登录、验证码和找回密码，验证码邮件由 Resend 发送。密码保存为不可逆校验值；找回时必须重置密码。','Email is used for sign-in, verification and recovery; Resend delivers verification emails. Passwords are stored as one-way hashes and recovery requires a new password.'],
-      ['首次发言前，通过 Authing 接收微信授权的手机号用于身份验证。本站加密保存号码，个人中心只显示脱敏号码；此授权不会把本站密码交给 Authing 或微信。','Before your first post, Authing supplies your WeChat-authorized phone for identity verification. The blog stores it encrypted and displays a masked number. Your blog password is not shared with Authing or WeChat.'],
-      ['登录使用必要的会话 Cookie。你可以修改昵称、更换邮箱、退出登录，或移除自己的评论；移除后内容不再公开，但后台记录和备份可能保留。','A necessary session cookie keeps you signed in. You can change your nickname or email, sign out, and remove your own comments. Removed posts are hidden publicly; server records and backups may remain.']
+      ['本站使用邮箱提供登录与密码找回，使用授权手机号验证发言身份，并通过必要的 Cookie 保持登录。昵称、头像和发言公开，邮箱与手机号不公开。','We use email for sign-in and account recovery, your authorized phone to verify your posting identity, and necessary cookies to keep you signed in. Nicknames, avatars and posts are public; email addresses and phone numbers are not.'],
+      ['你可以在个人中心管理资料、移除自己的发言。账号使用期间保存必要资料；移除的发言不再公开，后台记录和备份可能保留。','You can manage your profile and remove your posts. Necessary account information is retained while your account is in use. Removed posts are no longer public; server records and backups may remain.']
     ])details.append(el('p','apc-muted',t(zh,en)));
+    const providers=el('details','apc-privacy-services'); providers.append(el('summary','',t('第三方服务','Third-party services')));
+    providers.append(el('p','apc-muted',t('Resend 接收邮箱及验证码邮件内容以投递邮件；Authing 与微信处理你授权的手机号以完成身份验证。','Resend receives your email address and verification email content to deliver messages. Authing and WeChat process your authorized phone for identity verification.'))); details.append(providers);
+    const contact=el('p','apc-muted',t('个人信息查询、更正、删除或注销申请，请','For requests to access, correct or delete personal information, or close an account, ')), link=el('a','',t('联系站长','contact the site owner'));
+    link.href=english()?'/en/about/':'/about/'; contact.append(link); details.append(contact);
     parent.append(details);
   }
   function auth(root, mode = 'login', notice = '') {
     root.replaceChildren();
-    const box = el('div','apc-auth'), tabs = el('nav','apc-tabs'); tabs.setAttribute('aria-label',t('账号操作','Account actions'));
-    for (const [key,label] of [['login',t('登录','Sign in')],['register',t('注册','Register')],['reset',t('找回密码','Reset password')]]) {
-      const tab = button(label, () => auth(root,key)); tab.setAttribute('aria-current',String(mode === key)); tabs.append(tab);
-    }
-    box.append(tabs);
-    box.append(el('p','apc-muted',mode === 'register' ? t('用邮箱创建你的身份。昵称和随机头像会出现在评论中，邮箱不会公开。','Create your identity with email. Your nickname and random avatar are public; your email stays private.') : mode === 'reset' ? t('验证绑定邮箱后，必须设置一个与原来不同的新密码。','Verify your email and choose a new password different from the old one.') : t('欢迎回来，继续这场关于科学的对话。','Welcome back to the conversation.')));
+    const box = el('div','apc-auth');
+    box.append(el('h2','apc-auth-title',mode==='login'?t('登录','Sign in'):mode==='register'?t('创建账号','Create account'):t('找回密码','Reset password')));
     if(notice) box.append(el('p','apc-status',notice));
     const form = el('form','apc-form');
     const email = field(form,t('邮箱','Email'),'email','email','email');
@@ -117,7 +133,7 @@
     if(mode !== 'login') { codeButton(form,mode,email); field(form,t('邮箱验证码','Email code'),'code','text','one-time-code'); }
     const password = field(form,mode === 'login' ? t('密码','Password') : t('新密码（至少 10 个字符）','New password (at least 10 characters)'),'password','password',mode === 'login' ? 'current-password' : 'new-password');
     let confirm;
-    if(mode !== 'login') confirm = field(form,t('确认密码','Confirm password'),'confirm','password','new-password');
+    if(mode !== 'login') { confirm = field(form,t('确认密码','Confirm password'),'confirm','password','new-password'); passwordMatch(password,confirm); }
     const submit = button(mode === 'login' ? t('登录','Sign in') : mode === 'register' ? t('创建账号','Create account') : t('重置密码','Reset password'),null,true);
     submit.type = 'submit'; form.append(submit);
     handle(form,submit,async (data,show) => {
@@ -126,38 +142,44 @@
       if(mode === 'reset') { user=null; auth(root,'login',result.message); await refreshThreads(); }
       else { await loadSession(); renderAccount(root); await refreshThreads(); await loadStats(); }
     });
-    box.append(form); privacyNotice(box); root.append(box);
+    box.append(form);
+    const links=el('nav','apc-auth-links'); links.setAttribute('aria-label',t('账号操作','Account actions'));
+    for(const [key,label] of [['login',t('返回登录','Back to sign in')],['register',t('注册','Register')],['reset',t('找回密码','Forgot password')]]) {
+      if(key===mode)continue;
+      const link=button(label,()=>auth(root,key)); links.append(link);
+    }
+    box.append(links); privacyNotice(box); root.append(box);
   }
   function renderAccount(root) {
     if(!user) return auth(root);
     root.replaceChildren();
-    const summary = el('div','apc-profile'), details = el('div'); details.append(identity(user),el('div','apc-muted',user.email));
+    const summary = el('div','apc-profile'), details = el('div','apc-profile-details'); details.append(identity(user),el('div','apc-muted',user.email));
     summary.append(avatar(user.avatarSeed),details); root.append(summary);
-    const actions = el('div','apc-actions');
     const logout = button(t('退出登录','Sign out'),async () => {
       logout.disabled = true;
       try { await api('/auth/logout',{}); user=null; auth(root); await refreshThreads(); }
       catch(error) { notice(error.message,true); logout.disabled=false; }
-    }); actions.append(logout); root.append(actions); const notice=status(root);
+    }); logout.classList.add('apc-logout'); summary.append(logout); const notice=status(root);
     const panels=el('div','apc-panels'); root.append(panels);
     function panel(title) { const section=el('section','apc-panel'); section.append(el('h3','',title)); panels.append(section); return section; }
     if(verification.available||verification.required)renderVerification(panel(t('微信手机号验证','WeChat phone verification')),root);
     const profile=panel(t('我的昵称','Your nickname')), profileForm=el('form','apc-form');
-    const nickname=field(profileForm,t('显示在评论和留言里的名字','Your name in comments'),'nickname','text','nickname'); nickname.value=user.nickname;
+    const nickname=field(profileForm,t('昵称','Nickname'),'nickname','text','nickname'); nickname.value=user.nickname;
     const save=button(t('保存昵称','Save nickname'),null,true); save.type='submit'; profileForm.append(save);
     handle(profileForm,save,async data => { user=(await api('/me',data,'PATCH')).user; renderAccount(root); await refreshThreads(); }); profile.append(profileForm);
     const security=panel(t('修改密码','Change password')), passwordForm=el('form','apc-form');
     field(passwordForm,t('当前密码','Current password'),'currentPassword','password','current-password');
-    field(passwordForm,t('新密码（至少 10 个字符）','New password (at least 10 characters)'),'password','password','new-password');
-    field(passwordForm,t('确认新密码','Confirm new password'),'confirm','password','new-password');
+    const newPassword=field(passwordForm,t('新密码（至少 10 个字符）','New password (at least 10 characters)'),'password','password','new-password');
+    const confirmation=field(passwordForm,t('确认新密码','Confirm new password'),'confirm','password','new-password');
+    passwordMatch(newPassword,confirmation);
     const change=button(t('修改并重新登录','Change and sign in again'),null,true); change.type='submit'; passwordForm.append(change);
     handle(passwordForm,change,async data => {
       if(data.password!==data.confirm) throw new Error(t('两次输入的密码不一致。','Passwords do not match.'));
       const result=await api('/me/password',data); user=null; auth(root,'login',result.message); await refreshThreads();
     }); security.append(passwordForm);
     const binding=panel(t('绑定邮箱','Recovery email'));
-    binding.append(el('p','apc-muted',t('当前邮箱已验证，可用于找回密码。更换邮箱需要验证新邮箱和当前密码。','Your verified email can recover your account. Changing it requires your password and verification of the new email.')));
-    if(user.role==='admin') binding.append(el('p','',t('站长邮箱由服务器配置管理。','The administrator email is managed on the server.')));
+    binding.append(el('p','apc-verified',t('已验证','Verified')),el('p','apc-muted',user.email));
+    if(user.role==='admin') binding.append(el('p','apc-muted',t('站长邮箱','Site owner email')));
     else {
       const form=el('form','apc-form'), email=field(form,t('新邮箱','New email'),'email','email','email');
       const password=field(form,t('当前密码','Current password'),'password','password','current-password');
@@ -165,10 +187,8 @@
       const submit=button(t('确认更换邮箱','Update email'),null,true); submit.type='submit'; form.append(submit);
       handle(form,submit,async data => { user=(await api('/me/email',data)).user; renderAccount(root); }); binding.append(form);
     }
-    const privacy=panel(t('你的社区身份','Your community identity'));
-    privacy.append(el('p','apc-muted',t('头像由随机种子生成，昵称修改后会同步到过去的评论。邮箱仅用于身份验证与找回密码。验证码邮件由 Resend 发送。','Your avatar comes from a random seed. Nickname changes apply to earlier comments. Email is used only for verification and recovery; verification mail is delivered by Resend.')));
-    privacyNotice(privacy);
     if(user.role==='admin')renderModeration(panel(t('评论与留言管理','Comment management')));
+    privacyNotice(root);
   }
   function removalButton(item,card,onRemoved,show) {
     const remove=button(t('移除','Remove'),()=>{
@@ -218,7 +238,7 @@
       section.replaceChildren(title);
       if(result.verified){
         verification={...verification,...result};
-        section.append(el('p','apc-verified',t('已验证 · ','Verified · ')+result.phoneMasked),el('p','apc-muted',t('可参与评论与留言。手机号不会公开，找回密码仍使用绑定邮箱。','You can post comments and messages. Your phone stays private; use your email to recover your account.')));return;
+        section.append(el('p','apc-verified',t('已验证 · ','Verified · ')+result.phoneMasked));return;
       }
       if(result.pending){
         section.append(el('p','',t('请确认将此手机号绑定到当前账号：','Confirm this phone belongs to the current account:')),el('p','apc-verified',result.pending.phoneMasked),el('p','apc-muted',user.email));
@@ -235,8 +255,7 @@
       }
       const callbackStatus=new URLSearchParams(location.search).get('identity');
       if(callbackStatus==='failed')section.append(el('p','apc-status',t('上次验证未完成，请重新发起。','The last verification did not complete. Please try again.')));
-      section.append(el('p','apc-muted',t('首次发言前，用微信授权手机号。验证后仍使用本站密码登录；手机号不会出现在评论中。','Authorize your phone through WeChat before your first post. Keep signing in with your blog password; your phone will not appear in comments.')));
-      section.append(el('p','apc-muted',t('建议在电脑打开此页，前往验证后用手机微信扫描二维码。完成一次绑定后，手机上也可用邮箱和密码登录、发表评论。','For verification, open this page on a computer and scan the code with WeChat on your phone. After binding once, you can sign in and comment on your phone using your email and password.')));
+      section.append(el('p','apc-muted',t('首次发言前完成验证。请在电脑打开此页，用手机微信扫码。','Verify before your first post. Open this page on a computer and scan with WeChat on your phone.')));
       const form=el('form','apc-form');field(form,t('确认本站密码','Confirm your blog password'),'password','password','current-password');
       const consent=el('label','apc-consent'),checkbox=el('input');checkbox.type='checkbox';checkbox.required=true;checkbox.name='consent';
       consent.append(checkbox,el('span','',t('同意通过 Authing 接收微信授权手机号，并由本站加密保存以验证评论身份。','I agree to share my WeChat-authorized phone through Authing and let this blog store it encrypted for comment verification.')));form.append(consent);
