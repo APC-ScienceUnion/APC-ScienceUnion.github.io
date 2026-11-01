@@ -31,8 +31,8 @@ api.apc-science.cn {
         reverse_proxy 127.0.0.1:8787 {
             header_up X-Real-IP {remote_host}
             header_up X-Client-Port {remote_port}
-            header_up X-Server-Address {local_host}
-            header_up X-Server-Port {local_port}
+            header_up X-Server-Address {http.request.local.host}
+            header_up X-Server-Port {http.request.local.port}
         }
     }
     handle {
