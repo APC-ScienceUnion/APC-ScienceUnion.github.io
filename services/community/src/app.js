@@ -4,6 +4,7 @@ import { openDatabase, transaction } from './db.js';
 import { codeMessage } from './mail.js';
 import { createVisits } from './visits.js';
 import { createReviews } from './reviews.js';
+import { createAudit } from './audit.js';
 import { createIdentityStore } from './identity-store.js';
 import { fail, sha256, hmac, emailValue, nicknameValue, nicknameKey, passwordValue, hashPassword, verifyPassword, publicUser, privateUser } from './security.js';
 
@@ -18,6 +19,8 @@ export async function createApp(config, { sendMail, now = Date.now, identityProv
   if(identityProvider && (!config.identityReturnUrl || !config.origins.includes(new URL(config.identityReturnUrl).origin)))throw new Error('Identity return URL must belong to an allowed site origin.');
   const db = openDatabase(config.database);
   const reviews = createReviews(db, { now });
+  const audit = createAudit(db, { now });
+  const auditActors = new WeakMap();
   const identities=(identityProvider||config.requireVerifiedIdentity)?createIdentityStore(db,{secret:config.secret,now}):null;
   const identityAttempts=new Map(),identityInFlight=new Map(),identityReceipts=new Map();
   const identityMaps=[identityAttempts,identityInFlight,identityReceipts];
@@ -57,6 +60,7 @@ export async function createApp(config, { sendMail, now = Date.now, identityProv
     for(const map of identityMaps)for(const [key,item] of map)if(item.expiresAt<=now())map.delete(key);
   }
   function startSession(res, id) {
+    auditActors.set(res,id);
     const token = randomBytes(32).toString('hex');
     db.prepare('INSERT INTO sessions VALUES (?,?,?)').run(sha256(token), id, now() + 14 * DAY);
     res.setHeader('Set-Cookie', cookie(token, 14 * DAY / 1000));
@@ -107,6 +111,22 @@ export async function createApp(config, { sendMail, now = Date.now, identityProv
   function json(res, status, data) { res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' }); res.end(JSON.stringify(data)); }
   let lastCleanup = 0;
   async function handler(req, res) {
+    let auditId;
+    try {
+      auditActors.set(res,session(req)?.id || null);
+      auditId=audit.start(req,auditActors.get(res),config.trustProxy);
+    } catch {
+      console.error('Security audit unavailable; request rejected');
+      return json(res,503,{error:'服务暂时不可用，请稍后重试。'});
+    }
+    let audited=false;
+    const finishAudit=status=>{
+      if(audited)return;audited=true;
+      try{audit.finish(auditId,auditActors.get(res),status);}
+      catch{console.error('Security audit completion failed; start record retained');}
+    };
+    res.once('finish',()=>finishAudit(res.statusCode));
+    res.once('close',()=>finishAudit(res.writableFinished?res.statusCode:499));
     res.setHeader('Cache-Control', 'no-store');
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('Vary', 'Origin');
@@ -284,6 +304,7 @@ export async function createApp(config, { sendMail, now = Date.now, identityProv
           db.prepare('DELETE FROM codes WHERE email=? OR user_id=?').run(email, user.id);
         });
         res.setHeader('Set-Cookie', cookie('', 0));
+        auditActors.set(res,user.id);
         return json(res, 200, { message: '密码已重置，所有旧登录已失效，请使用新密码登录。' });
       }
       if (req.method === 'PATCH' && route === '/api/me') {

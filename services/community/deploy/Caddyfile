@@ -1,4 +1,20 @@
 api.apc-science.cn {
+    log {
+        output file /var/log/caddy/apc-api-access.json {
+            mode 0600
+            roll_size 10MiB
+            roll_keep -1
+            roll_keep_for 4800h
+        }
+        format filter {
+            wrap json
+            fields {
+                request>headers delete
+                request>uri delete
+                resp_headers delete
+            }
+        }
+    }
     encode zstd gzip
     header {
         Strict-Transport-Security "max-age=31536000"
@@ -14,6 +30,9 @@ api.apc-science.cn {
     handle /api/* {
         reverse_proxy 127.0.0.1:8787 {
             header_up X-Real-IP {remote_host}
+            header_up X-Client-Port {remote_port}
+            header_up X-Server-Address {local_host}
+            header_up X-Server-Port {local_port}
         }
     }
     handle {
@@ -22,6 +41,22 @@ api.apc-science.cn {
 }
 
 img.apc-science.cn {
+    log {
+        output file /var/log/caddy/apc-img-access.json {
+            mode 0600
+            roll_size 10MiB
+            roll_keep -1
+            roll_keep_for 4800h
+        }
+        format filter {
+            wrap json
+            fields {
+                request>headers delete
+                request>uri delete
+                resp_headers delete
+            }
+        }
+    }
     root * /srv/apc-media
     @images path_regexp images \.(?i:png|jpe?g|gif|webp|avif|svg|ico|bmp|tiff?)$
     handle @images {
