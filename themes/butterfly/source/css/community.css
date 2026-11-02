@@ -67,17 +67,10 @@
 .apc-guestbook .apc-avatar{width:34px;height:34px;border-radius:9px}
 .apc-guestbook textarea{min-height:85px}
 .apc-guestbook .apc-comment-body{font-size:.9em}
-/* Keep sidebar text readable over both bright and dark wallpaper images. */
-#aside-content .card-widget.apc-community.apc-guestbook{--font-color:#f4f8fa;--apc-accent:#9ee7eb;--apc-border:#66828e;--apc-soft:#334f5c;background:rgba(24,39,48,.94)!important;color:var(--font-color)!important;border-color:rgba(207,222,228,.35)!important;text-shadow:none}
-#aside-content .apc-guestbook .item-headline{color:var(--font-color)}
-#aside-content .apc-guestbook .apc-muted,#aside-content .apc-guestbook time,#aside-content .apc-guestbook .apc-counter{color:#cfdee4;opacity:1}
-#aside-content .apc-guestbook a{color:var(--apc-accent)}
-#aside-content .apc-guestbook button,#aside-content .apc-guestbook .apc-button{background:var(--apc-soft);color:var(--font-color);font-weight:500}
-#aside-content .apc-guestbook button:hover,#aside-content .apc-guestbook .apc-button:hover{background:#416373}
-#aside-content .apc-guestbook button.apc-primary{background:var(--apc-accent);color:#153238;border-color:var(--apc-accent)}
-#aside-content .apc-guestbook button.apc-primary:hover{background:#c0f2f4}
-#aside-content .apc-guestbook textarea{background:#20343f;color:var(--font-color)}
-#aside-content .apc-guestbook .apc-status[data-error=true]{color:#ffd2cc;background:rgba(255,160,145,.08);border-left:3px solid #ffa99a;border-radius:4px;padding:.6rem .75rem}
+/* Match the light text on the homepage's existing glass sidebar cards. */
+html.site-home #aside-content .apc-guestbook .apc-muted,html.site-home #aside-content .apc-guestbook time,html.site-home #aside-content .apc-guestbook .apc-counter{color:#fff;opacity:1}
+html.site-home #aside-content .apc-guestbook a,html.site-home #aside-content .apc-guestbook button,html.site-home #aside-content .apc-guestbook .apc-badge,html.site-home #aside-content .apc-guestbook .apc-status{color:#fff}
+html.site-home #aside-content .apc-guestbook .apc-status[data-error=true]{color:#ffe5df}
 [data-theme=dark] .apc-community{--apc-accent:#69c4c7;--apc-soft:rgba(105,196,199,.08)}
 [data-theme=dark] .apc-community button.apc-primary{background:#246b76;color:#fff}
 [data-theme=dark] .apc-community .apc-password-match{background:#512c2b;color:#ffb4ac}
