@@ -22,7 +22,13 @@ async function fixture(t, options={}) {
   const register=async(email='alice@example.com',nickname='Alice',extra={})=>{
     const otp=await code(email); const response=await request('/auth/register',{email,nickname,password:'secure-test-password',code:otp,...extra}); assert.equal(response.status,201,JSON.stringify(response.data));return response;
   };
-  return {app,mail,request,code,register,advance:(ms=3600001)=>{time+=ms;}};
+  const approve=async(post,owner)=>{
+    assert.equal(post.data.status,'pending');
+    const result=await request('/admin/reviews/'+post.data.reviewId,{decision:'approve'},{cookie:owner.cookie});
+    assert.equal(result.status,200,JSON.stringify(result.data));
+    return result.data.commentId;
+  };
+  return {app,mail,request,code,register,approve,advance:(ms=3600001)=>{time+=ms;}};
 }
 
 function identityProviderFixture(){
@@ -39,6 +45,9 @@ function identityProviderFixture(){
 test('identity binding requires consent, password, same session and confirmation; gates comments for all roles',async t=>{
   const f=await fixture(t,{identityProvider:identityProviderFixture(),identityReturnUrl:'http://localhost:4000/account/',requireVerifiedIdentity:true});
   const alice=await f.register(),bob=await f.register('bob@example.com','Bob'),owner=await f.register('owner@example.com','Owner');
+  assert.equal(alice.data.registrationComplete,false);
+  assert.equal((await f.request('/session',undefined,{cookie:alice.cookie})).data.registrationComplete,false);
+  assert.equal((await f.request('/stats')).data.registeredUsers,0);
   for(const user of [alice,owner])assert.equal((await f.request('/comments',{topic:'guestbook',body:'not verified'},{cookie:user.cookie})).status,403);
   assert.equal((await f.request('/identity/start',{password:'secure-test-password'},{cookie:alice.cookie})).status,400);
   assert.equal((await f.request('/identity/start',{consent:true,password:'incorrect-password'},{cookie:alice.cookie})).status,400);
@@ -55,7 +64,18 @@ test('identity binding requires consent, password, same session and confirmation
   assert.equal((await f.request('/identity/confirm',{receipt:status.pending.receipt,confirm:true},{cookie:alice.cookie})).status,400);
   const session=(await f.request('/session',undefined,{cookie:alice.cookie})).data;
   assert.equal(session.identity.verified,true);assert.equal(session.user.role,'user');
-  assert.equal((await f.request('/comments',{topic:'guestbook',body:'verified comment'},{cookie:alice.cookie})).status,201);
+  assert.equal(session.registrationComplete,true);
+  assert.equal((await f.request('/stats')).data.registeredUsers,1);
+  const held=await f.request('/comments',{topic:'guestbook',body:'verified comment'},{cookie:alice.cookie});
+  assert.equal(held.status,201);assert.equal(held.data.status,'pending');
+  assert.equal((await f.request('/comments?topic=guestbook')).data.total,0);
+  // Losing the bound identity between submission and review cannot publish it.
+  const saved=f.app.db.prepare('SELECT * FROM verified_identities WHERE user_id=?').get(alice.data.user.id);
+  f.app.db.prepare('DELETE FROM verified_identities WHERE user_id=?').run(alice.data.user.id);
+  assert.equal((await f.request('/admin/reviews/'+held.data.reviewId,{decision:'approve'},{cookie:owner.cookie})).status,409);
+  f.app.db.prepare('INSERT INTO verified_identities VALUES(?,?,?,?,?,?,?,?,?)').run(...Object.values(saved));
+  await f.approve(held,owner);
+  assert.equal((await f.request('/comments?topic=guestbook')).data.total,1);
   assert.doesNotMatch(JSON.stringify((await f.request('/comments?topic=guestbook')).data),/phone|13800138000/);
   assert.match((await f.request(callback,undefined,{cookie:alice.cookie})).headers.get('location'),/identity=failed/);
 });
@@ -175,6 +195,7 @@ test('comments isolate articles, escape via plain data, paginate and enforce aut
   const f=await fixture(t);const alice=await f.register();const bob=await f.register('bob@example.com','Bob');const owner=await f.register('owner@example.com','Owner');
   const malicious='<img src=x onerror=alert(1)>';
   const a=await f.request('/comments',{topic:'/articles/one',body:malicious},{cookie:alice.cookie});assert.equal(a.status,201);
+  a.data.id=await f.approve(a,owner);
   assert.equal((await f.request('/comments',{topic:'/articles/two',body:'no auth'})).status,401);
   assert.equal((await f.request('/comments',{topic:'/articles/one',body:'too fast'},{cookie:alice.cookie})).status,429);
   assert.equal((await f.request('/comments/'+a.data.id,{}, {method:'DELETE',cookie:bob.cookie})).status,403);
@@ -182,7 +203,7 @@ test('comments isolate articles, escape via plain data, paginate and enforce aut
   await f.request('/me',{nickname:'Alice renamed',role:'admin'},{method:'PATCH',cookie:alice.cookie});
   const list=(await f.request('/comments?topic=%2Farticles%2Fone')).data;
   assert.equal(list.items[0].body,malicious);assert.equal(list.items[0].user.nickname,'Alice renamed');assert.equal(list.items[0].user.role,'user');
-  f.advance(11000);await f.request('/comments',{topic:'/articles/one',body:'second'},{cookie:alice.cookie});
+  f.advance(11000);await f.approve(await f.request('/comments',{topic:'/articles/one',body:'second'},{cookie:alice.cookie}),owner);
   const first=(await f.request('/comments?topic=%2Farticles%2Fone&limit=1')).data;assert.ok(first.nextCursor);
   const next=(await f.request('/comments?topic=%2Farticles%2Fone&limit=1&before='+first.nextCursor)).data;assert.equal(next.items[0].id,a.data.id);
   assert.equal((await f.request('/comments/'+a.data.id,{}, {method:'DELETE',cookie:owner.cookie})).status,200);
@@ -195,8 +216,10 @@ test('administrator overview spans topics, paginates, hides removed posts and ne
   assert.equal((await f.request('/admin/comments')).status,401);
   assert.equal((await f.request('/admin/comments',undefined,{cookie:alice.cookie})).status,403);
   const first=await f.request('/comments',{topic:'guestbook',body:'Message'},{cookie:alice.cookie});
+  first.data.id=await f.approve(first,owner);
   f.advance(11000);
   const second=await f.request('/comments',{topic:'/articles/test',body:'Article comment'},{cookie:alice.cookie});
+  second.data.id=await f.approve(second,owner);
   const page=(await f.request('/admin/comments?limit=1',undefined,{cookie:owner.cookie})).data;
   assert.equal(page.items[0].id,second.data.id);assert.equal(page.items[0].topic,'/articles/test');assert.ok(page.nextCursor);
   const older=(await f.request('/admin/comments?limit=1&before='+page.nextCursor,undefined,{cookie:owner.cookie})).data;
@@ -206,6 +229,21 @@ test('administrator overview spans topics, paginates, hides removed posts and ne
   const remaining=(await f.request('/admin/comments',undefined,{cookie:owner.cookie})).data;
   assert.deepEqual(remaining.items.map(item=>item.id),[first.data.id]);
   assert.equal((await f.request('/admin/comments?before=1.5',undefined,{cookie:owner.cookie})).status,400);
+});
+
+test('every ordinary and admin post stays private across article and guestbook topics, even without keyword matches',async t=>{
+  const f=await fixture(t),alice=await f.register(),owner=await f.register('owner@example.com','Owner');
+  for(const author of [alice,owner])for(const topic of ['guestbook','/articles/test']){
+    f.advance(11000);
+    const held=await f.request('/comments',{topic,body:'地球围绕太阳运行。',status:'published',reviewed_by:owner.data.user.id},{cookie:author.cookie});
+    assert.equal(held.status,201);assert.equal(held.data.status,'pending');assert.equal(held.data.id,undefined);
+    assert.equal((await f.request('/comments?topic='+encodeURIComponent(topic))).data.total,0);
+    assert.equal((await f.request('/admin/reviews/'+held.data.reviewId,{decision:'approve'},{cookie:alice.cookie})).status,403);
+  }
+  const queue=(await f.request('/admin/reviews',undefined,{cookie:owner.cookie})).data;
+  assert.equal(queue.total,4);assert.ok(queue.items.every(item=>item.matches.length===0));
+  assert.equal((await f.request('/admin/comments',undefined,{cookie:owner.cookie})).data.items.length,0);
+  assert.equal(f.app.db.prepare('SELECT count(*) AS n FROM comments').get().n,0);
 });
 
 test('matched posts stay private; only an admin can approve exactly once with original text and author',async t=>{

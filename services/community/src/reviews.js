@@ -2,7 +2,7 @@ import { transaction } from './db.js';
 import { fail, publicUser } from './security.js';
 import { reviewMatches, moderationVersion } from './moderation.js';
 
-export function createReviews(db, { now }) {
+export function createReviews(db, { now, canPublish = () => true }) {
   // Unpublished text never enters comments. Even an older release's public
   // queries cannot accidentally expose a pending or rejected submission.
   db.exec(`CREATE TABLE IF NOT EXISTS comment_reviews (
@@ -23,7 +23,6 @@ export function createReviews(db, { now }) {
 
   function hold(topic, userId, text) {
     const matches = reviewMatches(text);
-    if (!matches.length) return null;
     const row = db.prepare(`INSERT INTO comment_reviews(topic,user_id,body,created_at,matches,lexicon_version)
       VALUES(?,?,?,?,?,?)`).run(topic, userId, text, now(), JSON.stringify(matches), moderationVersion);
     return { reviewId: Number(row.lastInsertRowid), status: 'pending' };
@@ -54,6 +53,7 @@ export function createReviews(db, { now }) {
       if (row.status !== 'pending') fail(409, '这条内容已处理，请刷新列表。');
       let commentId = null;
       if (decision === 'approve') {
+        if (!canPublish(row.user_id)) fail(409, '作者尚未完成手机号绑定，暂不能公开此发言。');
         commentId = Number(db.prepare('INSERT INTO comments(topic,user_id,body,created_at) VALUES(?,?,?,?)')
           .run(row.topic,row.user_id,row.body,row.created_at).lastInsertRowid);
       }
@@ -70,5 +70,17 @@ export function createReviews(db, { now }) {
     db.prepare("UPDATE comment_reviews SET status='withdrawn',reviewed_at=?,reviewed_by=? WHERE id=?").run(now(),user.id,id);
     return {ok:true};
   }
+  // Existing automatically published posts need a real review too. Preserve
+  // their originals as soft-deleted records, never invent an approval history.
+  // The transaction is restart-safe: only visible, unreviewed rows are moved.
+  transaction(db, () => {
+    const legacy = db.prepare(`SELECT c.* FROM comments c WHERE c.deleted_at IS NULL
+      AND NOT EXISTS (SELECT 1 FROM comment_reviews r WHERE r.comment_id=c.id AND r.status='approved')`).all();
+    for (const row of legacy) {
+      const held = hold(row.topic,row.user_id,row.body);
+      db.prepare('UPDATE comment_reviews SET created_at=? WHERE id=?').run(row.created_at,held.reviewId);
+      db.prepare('UPDATE comments SET deleted_at=? WHERE id=?').run(now(),row.id);
+    }
+  });
   return {hold,list,decide,withdraw};
 }

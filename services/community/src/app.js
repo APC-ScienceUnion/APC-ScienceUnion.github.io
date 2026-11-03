@@ -18,10 +18,11 @@ export async function createApp(config, { sendMail, now = Date.now, identityProv
   if(identityProvider && config.production && config.identity?.mode!=='authing-wechat')throw new Error('Configure the pinned identity provider before enabling production binding.');
   if(identityProvider && (!config.identityReturnUrl || !config.origins.includes(new URL(config.identityReturnUrl).origin)))throw new Error('Identity return URL must belong to an allowed site origin.');
   const db = openDatabase(config.database);
-  const reviews = createReviews(db, { now });
   const audit = createAudit(db, { now });
   const auditActors = new WeakMap();
   const identities=(identityProvider||config.requireVerifiedIdentity)?createIdentityStore(db,{secret:config.secret,now}):null;
+  const registrationComplete = id => !config.requireVerifiedIdentity || identities.status(id).verified;
+  const reviews = createReviews(db, { now, canPublish: registrationComplete });
   const identityAttempts=new Map(),identityInFlight=new Map(),identityReceipts=new Map();
   const identityMaps=[identityAttempts,identityInFlight,identityReceipts];
   // Only the deployment allowlist may grant the owner role, including accounts
@@ -162,11 +163,14 @@ export async function createApp(config, { sendMail, now = Date.now, identityProv
         rate(`visits:${ip}`, 60, MINUTE);
         return json(res, 200, visits.record(await body(req)));
       }
-      if (req.method === 'GET' && route === '/api/stats') return json(res, 200, { registeredUsers: db.prepare('SELECT count(*) AS count FROM users').get().count });
+      if (req.method === 'GET' && route === '/api/stats') return json(res, 200, { registeredUsers: db.prepare(config.requireVerifiedIdentity
+        ? 'SELECT count(*) AS count FROM users u JOIN verified_identities i ON i.user_id=u.id'
+        : 'SELECT count(*) AS count FROM users').get().count });
       if (req.method === 'GET' && route === '/api/session') {
         const user = session(req);
         return json(res, 200, { user: user ? privateUser(user) : null,
           identityAvailable:!!identityProvider,identityRequired:!!config.requireVerifiedIdentity,
+          registrationComplete:!!user&&registrationComplete(user.id),
           identity:user&&identities?identities.status(user.id):{verified:false} });
       }
       if(identityProvider && route.startsWith('/api/identity/')){
@@ -265,7 +269,7 @@ export async function createApp(config, { sendMail, now = Date.now, identityProv
           db.prepare('INSERT INTO users VALUES (?,?,?,?,?,?,?,?)').run(id, email, nickname, nicknameKey(nickname), passwordHash, randomBytes(16).toString('hex'), role, now());
         });
         startSession(res, id);
-        return json(res, 201, { user: privateUser(getUser(id)) });
+        return json(res, 201, { user: privateUser(getUser(id)), registrationComplete:registrationComplete(id) });
       }
       if (req.method === 'POST' && route === '/api/auth/login') {
         const data = await body(req), email = emailValue(data.email);
@@ -387,10 +391,7 @@ export async function createApp(config, { sendMail, now = Date.now, identityProv
         if (!text || [...text].length > 2000 || /[\x00-\x08\x0b\x0c\x0e-\x1f]/.test(text)) fail(400, '请输入 1–2000 字的评论。');
         rate(`comment-interval:${user.id}`, 1, 10000);
         rate(`comment-hour:${user.id}`, 30, 60 * MINUTE);
-        const held=reviews.hold(topic,user.id,text);
-        if(held)return json(res,201,held);
-        const result = db.prepare('INSERT INTO comments(topic,user_id,body,created_at) VALUES(?,?,?,?)').run(topic, user.id, text, now());
-        return json(res, 201, { id: Number(result.lastInsertRowid), status:'published' });
+        return json(res,201,reviews.hold(topic,user.id,text));
       }
       if (req.method === 'DELETE' && /^\/api\/comments\/\d+$/.test(route)) {
         const user = requireUser(req), id = Number(route.split('/').at(-1));

@@ -16,7 +16,7 @@ test('curated dictionary avoids generic science, nationality and institution ter
   assert.equal(reviewMatches('出售手枪'.repeat(300)).length,1);
 });
 
-test('legacy published rows survive initialization and pending text is outside public tables',()=>{
+test('legacy auto-published rows move to review once; originals survive and approved posts stay visible on restart',()=>{
   const db=openDatabase(':memory:');
   try{
     db.prepare('INSERT INTO users VALUES(?,?,?,?,?,?,?,?)').run('u','u@example.test','昵称','昵称','hash','a'.repeat(32),'user',1);
@@ -24,7 +24,14 @@ test('legacy published rows survive initialization and pending text is outside p
     const reviews=createReviews(db,{now:()=>3});
     reviews.hold('guestbook','u','代开发票');
     createReviews(db,{now:()=>4});
-    assert.deepEqual(db.prepare('SELECT id,body FROM comments WHERE deleted_at IS NULL').all().map(r=>({...r})),[{id:1,body:'已有留言'}]);
-    assert.equal(db.prepare('SELECT count(*) AS n FROM comment_reviews').get().n,1);
+    assert.equal(db.prepare('SELECT count(*) AS n FROM comments WHERE deleted_at IS NULL').get().n,0);
+    assert.equal(db.prepare('SELECT body FROM comments WHERE id=1').get().body,'已有留言');
+    assert.equal(db.prepare('SELECT count(*) AS n FROM comment_reviews').get().n,2);
+    assert.equal(db.prepare('SELECT created_at FROM comment_reviews WHERE id=1').get().created_at,2);
+    db.prepare('INSERT INTO users VALUES(?,?,?,?,?,?,?,?)').run('admin','admin@example.test','Admin','admin','hash','b'.repeat(32),'admin',1);
+    reviews.decide(1,{id:'admin',role:'admin'},'approve');
+    createReviews(db,{now:()=>5});
+    assert.equal(db.prepare('SELECT count(*) AS n FROM comment_reviews').get().n,2);
+    assert.equal(db.prepare('SELECT count(*) AS n FROM comments WHERE deleted_at IS NULL').get().n,1);
   }finally{db.close();}
 });

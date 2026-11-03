@@ -133,7 +133,7 @@
   function auth(root, mode = 'login', notice = '') {
     root.replaceChildren();
     const box = el('div','apc-auth');
-    box.append(el('h2','apc-auth-title',mode==='login'?t('登录','Sign in'):mode==='register'?t('创建账号','Create account'):t('找回密码','Reset password')));
+    box.append(el('h2','apc-auth-title',mode==='login'?t('登录','Sign in'):mode==='register'?t('注册 · 1/2 邮箱与密码','Register · 1/2 Email and password'):t('找回密码','Reset password')));
     if(notice) box.append(el('p','apc-status',notice));
     const form = el('form','apc-form');
     const email = field(form,t('邮箱','Email'),'email','email','email');
@@ -142,7 +142,7 @@
     const password = field(form,mode === 'login' ? t('密码','Password') : t('新密码（至少 10 个字符）','New password (at least 10 characters)'),'password','password',mode === 'login' ? 'current-password' : 'new-password');
     let confirm;
     if(mode !== 'login') { confirm = field(form,t('确认密码','Confirm password'),'confirm','password','new-password'); passwordMatch(password,confirm); }
-    const submit = button(mode === 'login' ? t('登录','Sign in') : mode === 'register' ? t('创建账号','Create account') : t('重置密码','Reset password'),null,true);
+    const submit = button(mode === 'login' ? t('登录','Sign in') : mode === 'register' ? t('下一步：绑定手机号','Next: verify phone') : t('重置密码','Reset password'),null,true);
     submit.type = 'submit'; form.append(submit);
     handle(form,submit,async (data,show) => {
       if(confirm && confirm.value !== password.value) throw new Error(t('两次输入的密码不一致。','Passwords do not match.'));
@@ -170,7 +170,9 @@
     }); logout.classList.add('apc-logout'); summary.append(logout); const notice=status(root);
     const panels=el('div','apc-panels'); root.append(panels);
     function panel(title) { const section=el('section','apc-panel'); section.append(el('h3','',title)); panels.append(section); return section; }
-    if(verification.available||verification.required)renderVerification(panel(t('微信手机号验证','WeChat phone verification')),root);
+    const incomplete=verification.required&&!verification.verified;
+    if(verification.available||verification.required)renderVerification(panel(incomplete?t('完成注册 · 2/2 绑定手机号','Complete registration · 2/2 Verify phone'):t('微信手机号验证','WeChat phone verification')),root);
+    if(incomplete){privacyNotice(root);return;}
     const profile=panel(t('我的昵称','Your nickname')), profileForm=el('form','apc-form');
     const nickname=field(profileForm,t('昵称','Nickname'),'nickname','text','nickname'); nickname.value=user.nickname;
     const save=button(t('保存昵称','Save nickname'),null,true); save.type='submit'; profileForm.append(save);
@@ -321,7 +323,7 @@
         const actions=el('div','apc-actions'),show=status(section);
         const confirm=button(t('确认绑定此手机号','Confirm phone binding'),async()=>{
           confirm.disabled=true;
-          try{await api('/identity/confirm',{receipt:result.pending.receipt,confirm:true});await loadSession();renderAccount(root);await refreshThreads();}
+          try{await api('/identity/confirm',{receipt:result.pending.receipt,confirm:true});await loadSession();renderAccount(root);await refreshThreads();await loadStats();}
           catch(error){show(error.message,true);confirm.disabled=false;}
         },true);
         const cancel=button(t('不是我的号码，取消','Wrong number — cancel'),async()=>{
@@ -331,7 +333,7 @@
       }
       const callbackStatus=new URLSearchParams(location.search).get('identity');
       if(callbackStatus==='failed')section.append(el('p','apc-status',t('上次验证未完成，请重新发起。','The last verification did not complete. Please try again.')));
-      section.append(el('p','apc-muted',t('首次发言前完成验证。请在电脑打开此页，用手机微信扫码。','Verify before your first post. Open this page on a computer and scan with WeChat on your phone.')));
+      section.append(el('p','apc-muted',t('绑定手机号以完成注册。请用手机微信扫码。','Verify your phone to complete registration. Scan with WeChat.')));
       const form=el('form','apc-form');field(form,t('确认本站密码','Confirm your blog password'),'password','password','current-password');
       const consent=el('label','apc-consent'),checkbox=el('input');checkbox.type='checkbox';checkbox.required=true;checkbox.name='consent';
       consent.append(checkbox,el('span','',t('同意通过 Authing 接收微信授权手机号，并由本站加密保存以验证评论身份。','I agree to share my WeChat-authorized phone through Authing and let this blog store it encrypted for comment verification.')));form.append(consent);
@@ -355,7 +357,7 @@
       text.addEventListener('input',()=>{count.textContent=`${[...text.value].length} / 2000`;}); row.append(send,count); form.append(row);
       handle(form,send,async data=>{
         const result=await api('/comments',{...data,topic});
-        await renderThread(root,result.status==='pending'?t('已提交，待审核。可在个人中心查看或撤回。','Submitted for review. View or withdraw it in your account.'):'');
+        await renderThread(root,t('已提交，人工审核通过后显示。可在个人中心查看或撤回。','Submitted. Visible after manual approval. View or withdraw it in your account.'));
       }); container.append(form);
     } else {
       const prompt=el('p','apc-muted'), link=el('a','apc-button',user?t('验证手机号后参与','Verify your phone to join'):t('登录 / 注册后参与','Sign in / register to join')); link.href=accountUrl(); prompt.append(link); container.append(prompt);
