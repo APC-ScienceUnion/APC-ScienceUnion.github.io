@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-09T20:46:35+00:00",
+  "updated_at": "2026-11-10T17:53:28+00:00",
   "providers": {
     "bing": {
-      "date": "2026-11-10",
-      "title": "玫瑰岛航拍图，巴哈马 ",
-      "headline": "玫瑰岛航拍图，巴哈马 ",
-      "subtitle": "惬意放松，尽享海岛时光",
-      "description": "从空中俯瞰，玫瑰岛就像一抹绿意，周围环绕着深浅不一的蓝色海水。这座狭长的小岛位于巴哈马天堂岛以东仅三英里处，没有繁忙的道路和成片的城市街区，取而代之的是沙滩、浅海和岛内潟湖。宁静的外表之下，它还藏着一段电影故事：1965年的詹姆斯·邦德冒险电影《霹雳弹》曾在玫瑰岛取景，其中包括“飞碟号”被炸毁的场景。\n除了在电影中亮相，玫瑰岛也让人得以领略巴哈马引人注目的风貌。这座岛以游泳猪闻名，为海岸增添了一抹意想不到的生趣。纵观整个群岛，地势低平的岛屿和小岛与礁石、沙洲及明亮的浅海相接。清澈海水下的浅色沙地，勾勒出一道道绿松石色、海蓝色和深蓝色的纹路。从这样的高度望去，陆地与海洋仿佛融为一体，印证了有时候，欣赏天堂般美景的最佳视角就在空中。",
-      "copyright": "© Abstract Aerial Art/Getty Images",
-      "source_page_url": "https://bing.ee123.net/img/?date=20261110&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.RoseIsland_ZH-CN6477140814_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.RoseIsland_ZH-CN6477140814_1920x1080.jpg",
+      "date": "2026-11-11",
+      "title": "大西洋森林，巴西 ",
+      "headline": "大西洋森林，巴西 ",
+      "subtitle": "奇妙纷呈的森林",
+      "description": "大西洋森林是世界上重要的生物多样性热点地区之一，沿巴西大西洋沿岸的广大地带延伸，并进入阿根廷和巴拉圭境内。这里的景观包括热带与亚热带森林、红树林和海岸生境，孕育了约2万种植物以及种类繁多的野生动物，其中包括美洲豹和金狮绢毛猴。几个世纪以来，大片森林已经消失，但它仍在储存碳，并为该地区数百万人提供淡水方面发挥着重要作用。",
+      "copyright": "© FG Trade/Getty Images",
+      "source_page_url": "https://bing.ee123.net/img/?date=20261111&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.Atlantica_ZH-CN6593995386_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.Atlantica_ZH-CN6593995386_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-11-10-7785e345588a.jpg",
-      "image_path": "/images/daily/bing-2026-11-10-7785e345588a.jpg",
-      "bytes": 333586,
-      "sha256": "7785e345588a4057406977cc8bb919c4b8cb9ce9e4034a52fc9b1eeb6f27a8a7"
+      "local_url": "/images/daily/bing-2026-11-11-9fe136a4194d.jpg",
+      "image_path": "/images/daily/bing-2026-11-11-9fe136a4194d.jpg",
+      "bytes": 332964,
+      "sha256": "9fe136a4194dbb030673e10c6c611314890785a2610df91913ce5c133acb438a"
     },
     "apod": {
       "date": "2026-09-29",
@@ -37,19 +37,19 @@
       "sha256": "5b2ab38fe6757cb9e8423fddb427e4ce6f8e40aeeef131a29f5aea87131579e9"
     },
     "wikipedia": {
-      "date": "2026-11-10",
-      "title": "Liechtenstein asv2022-10 img22 Vaduz Schloss",
-      "description": "Vaduz Castle (town side) in Vaduz, Liechtenstein",
-      "copyright": "A.Savin · Own work · FAL",
-      "article_url": "https://commons.wikimedia.org/wiki/File:Liechtenstein_asv2022-10_img22_Vaduz_Schloss.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Liechtenstein_asv2022-10_img22_Vaduz_Schloss.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Liechtenstein_asv2022-10_img22_Vaduz_Schloss.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Liechtenstein_asv2022-10_img22_Vaduz_Schloss.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-11-11",
+      "title": "Daddy, what did You do in the Great War?",
+      "description": "First World War recruiting poster, playing on the guilt of those who did not volunteer. By the en:Parliamentary Recruiting Committee . Height: 750 mm (29.5 in); width: 495 mm (19.4 in)",
+      "copyright": "Savile Lumley / Johnson, Riddle & Co. Ltd. / Adam Cuerden · https://aptlyrandom.files.wordpress.com/2013/11/posters-5.jpeg · Public domain",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Daddy,_what_did_You_do_in_the_Great_War%3F.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Daddy,_what_did_You_do_in_the_Great_War%3F.jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Daddy%2C_what_did_You_do_in_the_Great_War%3F.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Daddy%2C_what_did_You_do_in_the_Great_War%3F.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-11-10-877496b70718.jpg",
-      "image_path": "/images/daily/wikipedia-2026-11-10-877496b70718.jpg",
-      "bytes": 20749351,
-      "sha256": "877496b70718ed9d70ecfeb2d084346d00e836244801915054863d20edd89171"
+      "local_url": "/images/daily/wikipedia-2026-11-11-91520e5c4a51.jpg",
+      "image_path": "/images/daily/wikipedia-2026-11-11-91520e5c4a51.jpg",
+      "bytes": 20625663,
+      "sha256": "91520e5c4a5104ced5355a0b2a45cfac2a5de905e3de0a01c57dd3274f300cb7"
     }
   }
 }
