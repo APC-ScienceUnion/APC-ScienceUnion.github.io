@@ -75,7 +75,8 @@ async function upload(records,config=configuration()){
     }
     const convert=process.platform==='win32'?msys:value=>value;
     const remoteShell=[config.ssh,'-i',config.keyFile,'-o','BatchMode=yes','-o','IdentitiesOnly=yes','-o','StrictHostKeyChecking=yes','-o','ConnectTimeout=15','-o','ServerAliveInterval=15','-o','ServerAliveCountMax=3','-o','UserKnownHostsFile='+convert(config.knownHostsFile)].map((v,i)=>quote(i===0||i===2?convert(v):v)).join(' ');
-    await execute(config.rsync,['-az','--checksum','--chmod=D755,F644','--timeout=90','-e',remoteShell,convert(stage)+'/',`${config.user}@${config.host}:/apc-media/`],{cwd:root,env:{...process.env,PATH:[config.runtimePath||'',process.env.PATH].filter(Boolean).join(path.delimiter)}});
+    // Fresh staging timestamps must not invalidate unchanged server images.
+    await execute(config.rsync,['-az','--checksum','--no-times','--chmod=D755,F644','--timeout=90','-e',remoteShell,convert(stage)+'/',`${config.user}@${config.host}:/apc-media/`],{cwd:root,env:{...process.env,PATH:[config.runtimePath||'',process.env.PATH].filter(Boolean).join(path.delimiter)}});
     const results=[];
     for(const record of records){
       const route=encodeRoute(record.publicRoute),serverUrl=config.imageOrigin+route;
