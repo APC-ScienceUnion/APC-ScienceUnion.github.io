@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-10T17:53:28+00:00",
+  "updated_at": "2026-11-11T17:55:11+00:00",
   "providers": {
     "bing": {
-      "date": "2026-11-11",
-      "title": "大西洋森林，巴西 ",
-      "headline": "大西洋森林，巴西 ",
-      "subtitle": "奇妙纷呈的森林",
-      "description": "大西洋森林是世界上重要的生物多样性热点地区之一，沿巴西大西洋沿岸的广大地带延伸，并进入阿根廷和巴拉圭境内。这里的景观包括热带与亚热带森林、红树林和海岸生境，孕育了约2万种植物以及种类繁多的野生动物，其中包括美洲豹和金狮绢毛猴。几个世纪以来，大片森林已经消失，但它仍在储存碳，并为该地区数百万人提供淡水方面发挥着重要作用。",
-      "copyright": "© FG Trade/Getty Images",
-      "source_page_url": "https://bing.ee123.net/img/?date=20261111&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.Atlantica_ZH-CN6593995386_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.Atlantica_ZH-CN6593995386_1920x1080.jpg",
+      "date": "2026-11-12",
+      "title": "北窗，拱门国家公园，莫阿布，犹他州，美国 ",
+      "headline": "北窗，拱门国家公园，莫阿布，犹他州，美国 ",
+      "subtitle": "没有建筑师的建筑杰作",
+      "description": "11月12日是拱门国家公园于1971年获指定为国家公园的周年纪念日。这座高海拔沙漠公园位于犹他州莫阿布以北，拥有2000多座天然砂岩拱门，是世界上拱门分布最密集的地区。今天图片中的北窗，是公园窗区最知名的地貌之一；在那里，高耸的岩脊、岩石开口和经自然雕琢的砂岩，共同构成了一片近乎建筑作品般的景观。\n北窗确实像一座巨大的石门，将远处的悬崖和不断变幻的天空框入其中。但它的形成既没有蓝图，也没有建筑师或施工队。相反，是水、冰、气温变化和重力逐渐侵蚀较软的岩石，留下了更坚硬的岩层。\n成为国家公园五十多年后，拱门国家公园依然证明：大自然可以是一位技艺非凡的建筑师——只不过，它的施工期可谓漫长至极。",
+      "copyright": "© lightphoto/Getty Images",
+      "source_page_url": "https://bing.ee123.net/img/?date=20261112&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.NorthWindow_ZH-CN6734579353_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.NorthWindow_ZH-CN6734579353_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-11-11-9fe136a4194d.jpg",
-      "image_path": "/images/daily/bing-2026-11-11-9fe136a4194d.jpg",
-      "bytes": 332964,
-      "sha256": "9fe136a4194dbb030673e10c6c611314890785a2610df91913ce5c133acb438a"
+      "local_url": "/images/daily/bing-2026-11-12-dcdaf91fd881.jpg",
+      "image_path": "/images/daily/bing-2026-11-12-dcdaf91fd881.jpg",
+      "bytes": 333226,
+      "sha256": "dcdaf91fd881ce9779f276aa85877fdfbbe107ce4d8e75e7d4921f30e9108db0"
     },
     "apod": {
       "date": "2026-09-29",
@@ -37,19 +37,19 @@
       "sha256": "5b2ab38fe6757cb9e8423fddb427e4ce6f8e40aeeef131a29f5aea87131579e9"
     },
     "wikipedia": {
-      "date": "2026-11-11",
-      "title": "Daddy, what did You do in the Great War?",
-      "description": "First World War recruiting poster, playing on the guilt of those who did not volunteer. By the en:Parliamentary Recruiting Committee . Height: 750 mm (29.5 in); width: 495 mm (19.4 in)",
-      "copyright": "Savile Lumley / Johnson, Riddle & Co. Ltd. / Adam Cuerden · https://aptlyrandom.files.wordpress.com/2013/11/posters-5.jpeg · Public domain",
-      "article_url": "https://commons.wikimedia.org/wiki/File:Daddy,_what_did_You_do_in_the_Great_War%3F.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Daddy,_what_did_You_do_in_the_Great_War%3F.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Daddy%2C_what_did_You_do_in_the_Great_War%3F.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Daddy%2C_what_did_You_do_in_the_Great_War%3F.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-11-12",
+      "title": "Collared lory (Vini solitaria) on octopus tree (Heptapleurum actinophyllum) Colo-I-Suva",
+      "description": "Collared lory ( Vini solitaria ) on octopus tree ( Heptapleurum actinophyllum ), Colo-I-Suva, Viti Levu, Fiji",
+      "copyright": "Charles J. Sharp · Own work , from Sharp Photography, sharpphotography.co.uk · CC BY-SA 4.0",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Collared_lory_(Vini_solitaria)_on_octopus_tree_(Heptapleurum_actinophyllum)_Colo-I-Suva.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Collared_lory_(Vini_solitaria)_on_octopus_tree_(Heptapleurum_actinophyllum)_Colo-I-Suva.jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Collared_lory_%28Vini_solitaria%29_on_octopus_tree_%28Heptapleurum_actinophyllum%29_Colo-I-Suva.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Collared_lory_%28Vini_solitaria%29_on_octopus_tree_%28Heptapleurum_actinophyllum%29_Colo-I-Suva.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-11-11-91520e5c4a51.jpg",
-      "image_path": "/images/daily/wikipedia-2026-11-11-91520e5c4a51.jpg",
-      "bytes": 20625663,
-      "sha256": "91520e5c4a5104ced5355a0b2a45cfac2a5de905e3de0a01c57dd3274f300cb7"
+      "local_url": "/images/daily/wikipedia-2026-11-12-eec102b8d736.jpg",
+      "image_path": "/images/daily/wikipedia-2026-11-12-eec102b8d736.jpg",
+      "bytes": 3414589,
+      "sha256": "eec102b8d736b0e754c185076b0ff14e86307837771cbe24754ccb2063b30437"
     }
   }
 }
