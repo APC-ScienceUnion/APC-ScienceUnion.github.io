@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-12T18:21:12+00:00",
+  "updated_at": "2026-11-13T17:46:11+00:00",
   "providers": {
     "bing": {
-      "date": "2026-11-13",
-      "title": "亚伯拉罕湖，艾伯塔省，加拿大 ",
-      "headline": "亚伯拉罕湖，艾伯塔省，加拿大 ",
-      "subtitle": "冰下秘境",
-      "description": "黎明的第一缕曙光映照在亚伯拉罕湖冰封的湖面上，远处是落基山脉的群峰。冬季，这座位于艾伯塔省的如画湖泊以困在冰层下的甲烷气泡而闻名。强风使湖面不被积雪覆盖，让人们整个冬天都能观赏这一景象。到了春天，冰层融化，气体便逸散到大气中。\n尽管风光天然秀美，这座湖其实是一座人工水库，建于1972年，当时人们在北萨斯喀彻温河上修建了大角羊坝。冬季的冰雪之美与夏季的碧绿湖水，使它成为全年备受欢迎的摄影地点。",
-      "copyright": "© Guang Cao/Getty Images",
-      "source_page_url": "https://bing.ee123.net/img/?date=20261113&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.AbrahamCanada_ZH-CN0344365912_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.AbrahamCanada_ZH-CN0344365912_1920x1080.jpg",
+      "date": "2026-11-14",
+      "title": "中国香港维多利亚港 ",
+      "headline": "中国香港维多利亚港 ",
+      "subtitle": "唯有向上发展",
+      "description": "欢迎来到香港，这里拥有全球最多的摩天大楼。图中的高楼耸立在维多利亚港上方，港口水深，使香港得以发展成为繁忙的贸易港。自19世纪40年代起，载着茶叶、丝绸和其他货物的船只便在这里往来；第二次世界大战后的几十年间，经济增长急剧加速，带动了建筑业的繁荣。港口与山丘之间可用的平地有限，开发商只得向上建造，塑造了这片独具特色的天际线。2026年，香港有569栋高度超过492英尺的建筑，比任何其他城市都多。",
+      "copyright": "© Juan Romero/Cavan Images",
+      "source_page_url": "https://bing.ee123.net/img/?date=20261114&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.BlueHK_ZH-CN1382345392_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.BlueHK_ZH-CN1382345392_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-11-13-c4a85cc47b55.jpg",
-      "image_path": "/images/daily/bing-2026-11-13-c4a85cc47b55.jpg",
-      "bytes": 338225,
-      "sha256": "c4a85cc47b55c1ed4687c86ea1d1ac3afe0e809682cac43140a865d26d86c8a4"
+      "local_url": "/images/daily/bing-2026-11-14-5ceff2cd66ac.jpg",
+      "image_path": "/images/daily/bing-2026-11-14-5ceff2cd66ac.jpg",
+      "bytes": 335830,
+      "sha256": "5ceff2cd66acd58625e2ccae44cb98dd26d9b8b5355bd12b9e4359fbfaad3f3e"
     },
     "apod": {
       "date": "2026-09-29",
@@ -37,19 +37,19 @@
       "sha256": "5b2ab38fe6757cb9e8423fddb427e4ce6f8e40aeeef131a29f5aea87131579e9"
     },
     "wikipedia": {
-      "date": "2026-11-13",
-      "title": "A smoky day at the Sugar Bowl v2",
-      "description": "A smoky day at the Sugar Bowl--Hupa. Hupa man with spear, standing on rock midstream, in background, fog partially obscures trees on mountainsides. Published 1924 in The North American Indian / Edward S. Curtis. [Seattle, Wash.] : Edward S. Curtis, 1907-30, Suppl., v. 13, pl. 471.",
-      "copyright": "Edward S. Curtis · This image is available from the United States Library of Congress 's Prints and Photographs division under the digital ID cph.3a55028 . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . · Public domain",
-      "article_url": "https://commons.wikimedia.org/wiki/File:A_smoky_day_at_the_Sugar_Bowl_v2.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:A_smoky_day_at_the_Sugar_Bowl_v2.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/A_smoky_day_at_the_Sugar_Bowl_v2.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/A_smoky_day_at_the_Sugar_Bowl_v2.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-11-14",
+      "title": "Harold Urey, 1934",
+      "description": "Harold Urey, Nobel Prize for Chemistry, 1934. For more information or additional images, please contact 202-586-5251.",
+      "copyright": "Flickr: ENERGY.GOV - Unknown photographer. Restored by Creator:Adam Cuerden · HD.3F.004 · Public domain",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Harold_Urey,_1934.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Harold_Urey,_1934.jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Harold_Urey%2C_1934.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Harold_Urey%2C_1934.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-11-13-74ab7e672ed3.jpg",
-      "image_path": "/images/daily/wikipedia-2026-11-13-74ab7e672ed3.jpg",
-      "bytes": 6732979,
-      "sha256": "74ab7e672ed3e86549355d54421bf2f60251a582849ae6b925f2fb3703380235"
+      "local_url": "/images/daily/wikipedia-2026-11-14-e862199ffe30.jpg",
+      "image_path": "/images/daily/wikipedia-2026-11-14-e862199ffe30.jpg",
+      "bytes": 2099173,
+      "sha256": "e862199ffe309eece7def40b65af4ec7e68217a60390d4f1c9995654c71045f6"
     }
   }
 }
