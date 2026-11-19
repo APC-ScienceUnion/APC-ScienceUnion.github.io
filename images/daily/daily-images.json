@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T18:52:26+00:00",
+  "updated_at": "2026-11-19T19:00:23+00:00",
   "providers": {
     "bing": {
-      "date": "2026-11-19",
-      "title": "雕塑《知识之躯》，由豪梅·普兰萨创作，位于德国法兰克福的法兰克福歌德大学 ",
-      "headline": "雕塑《知识之躯》，由豪梅·普兰萨创作，位于德国法兰克福的法兰克福歌德大学 ",
-      "subtitle": "思想在此成形",
-      "description": "今天是世界哲学日，思想家们齐聚一堂，探讨人生中永恒的谜题。为庆祝这一节日，今天的图片展示了位于德国法兰克福的法兰克福歌德大学的雕塑《知识之躯》：来自八种不同文字体系的钢制字母被塑造成一个人形。西班牙艺术家豪梅·普兰萨解释道：‘我们的身体是精神的家园，是思想栖居的地方。’在世界哲学日，我们都受到鼓励，去超越简单的答案，探索塑造我们自身和周围世界的问题。\n雕塑《知识之躯》将汉字、拉丁与希腊字母等八种文字镂空拼接，向上收拢成人形壳体。数毫米厚的不锈钢边缘保留机械切割痕，阳光穿过字符缝隙，把晴空切碎成流动光影。凭借透空结构，沉重金属反而显轻盈，不同文字在光影中自然交融。世界哲学日之际，这具多语种符号支撑的躯体，印证思想本就跨越语言边界。",
-      "copyright": "© Todamo/Shutterstock",
-      "source_page_url": "https://bing.ee123.net/img/?date=20261119&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.KnowledgeSculpture_ZH-CN3168800853_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.KnowledgeSculpture_ZH-CN3168800853_1920x1080.jpg",
+      "date": "2026-11-20",
+      "title": "正在潜水的座头鲸，挪威北部特罗姆斯的克瓦尔岛 ",
+      "headline": "正在潜水的座头鲸，挪威北部特罗姆斯的克瓦尔岛 ",
+      "subtitle": "在峡湾中大快朵颐",
+      "description": "在挪威北部特罗姆斯的克瓦尔岛近海，座头鲸穿行于寒冷的北极海水中，寻找一顿丰盛的美餐。冬季，它们追随迁徙的鲱鱼进入峡湾，来到这一地区。座头鲸以气泡网捕食闻名：这种非凡的狩猎技巧是鲸鱼吹出一圈圈气泡，将鱼群围拢，然后张开大嘴向上猛冲，捕获猎物。在今天的图片中，一头座头鲸在柔和的霞光下潜入冰冷的波浪，定格了挪威北部荒野中宁静的一刻。\n座头鲸在深潜前弓起背脊，尾叶高抬出水面。尾部下缘附着的藤壶形成粗糙的浅色硬块。边缘凹凸的锯齿轮廓是野外识别个体身份的标记。海水顺着黑色尾鳍滑落，在波浪间形成半透明水幕。极夜来临前微弱的地平线光线在大气中散射为粉紫色。低垂的黄色圆月照亮起伏的冷水洋面。扬起的尾鳍与海面翻腾的白浪共同界定了极地海洋的开阔空间。",
+      "copyright": "© Espen Bergersen/Minden Pictures",
+      "source_page_url": "https://bing.ee123.net/img/?date=20261120&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.Megaptera_ZH-CN3361807823_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.Megaptera_ZH-CN3361807823_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-11-19-66dff4d6bbae.jpg",
-      "image_path": "/images/daily/bing-2026-11-19-66dff4d6bbae.jpg",
-      "bytes": 339778,
-      "sha256": "66dff4d6bbae62d765efd2d529d117708a6661a857dbb6013aebd1249b792b7a"
+      "local_url": "/images/daily/bing-2026-11-20-6e0008348cd5.jpg",
+      "image_path": "/images/daily/bing-2026-11-20-6e0008348cd5.jpg",
+      "bytes": 334458,
+      "sha256": "6e0008348cd511655ef374e224e4f98d2588487a10f683322141df3aeeff2541"
     },
     "apod": {
       "date": "2026-09-29",
@@ -37,19 +37,19 @@
       "sha256": "5b2ab38fe6757cb9e8423fddb427e4ce6f8e40aeeef131a29f5aea87131579e9"
     },
     "wikipedia": {
-      "date": "2026-11-19",
-      "title": "Robinson projection SW",
-      "description": "The world on Robinson projection . 15° graticule. Imagery is a derivative of NASA's Blue Marble summer month composite with oceans lightened to enhance legibility and contrast. Image created with the Geocart map projection software.",
-      "copyright": "Strebe · Own work · CC BY-SA 3.0",
-      "article_url": "https://commons.wikimedia.org/wiki/File:Robinson_projection_SW.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Robinson_projection_SW.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Robinson_projection_SW.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Robinson_projection_SW.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-11-20",
+      "title": "Telamonia dimidiata female",
+      "description": "Female Telamonia dimidiata in the Lalbagh Botanical gardens, Bangalore, India",
+      "copyright": "Muhammad Mahdi Karim · Own work · GFDL 1.2",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Telamonia_dimidiata_female.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Telamonia_dimidiata_female.jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Telamonia_dimidiata_female.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Telamonia_dimidiata_female.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-11-19-c9f7e387dfa3.jpg",
-      "image_path": "/images/daily/wikipedia-2026-11-19-c9f7e387dfa3.jpg",
-      "bytes": 651921,
-      "sha256": "c9f7e387dfa3987661c2432723955029c0cf0f8256d6c01c5559fe78d55f403e"
+      "local_url": "/images/daily/wikipedia-2026-11-20-9f02957c3550.jpg",
+      "image_path": "/images/daily/wikipedia-2026-11-20-9f02957c3550.jpg",
+      "bytes": 1705652,
+      "sha256": "9f02957c35503854d8f0bb17e94d00e5c93474e7f5585128baa07f7c6d4ca3cd"
     }
   }
 }
