@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-19T19:00:23+00:00",
+  "updated_at": "2026-11-20T18:38:40+00:00",
   "providers": {
     "bing": {
-      "date": "2026-11-20",
-      "title": "正在潜水的座头鲸，挪威北部特罗姆斯的克瓦尔岛 ",
-      "headline": "正在潜水的座头鲸，挪威北部特罗姆斯的克瓦尔岛 ",
-      "subtitle": "在峡湾中大快朵颐",
-      "description": "在挪威北部特罗姆斯的克瓦尔岛近海，座头鲸穿行于寒冷的北极海水中，寻找一顿丰盛的美餐。冬季，它们追随迁徙的鲱鱼进入峡湾，来到这一地区。座头鲸以气泡网捕食闻名：这种非凡的狩猎技巧是鲸鱼吹出一圈圈气泡，将鱼群围拢，然后张开大嘴向上猛冲，捕获猎物。在今天的图片中，一头座头鲸在柔和的霞光下潜入冰冷的波浪，定格了挪威北部荒野中宁静的一刻。\n座头鲸在深潜前弓起背脊，尾叶高抬出水面。尾部下缘附着的藤壶形成粗糙的浅色硬块。边缘凹凸的锯齿轮廓是野外识别个体身份的标记。海水顺着黑色尾鳍滑落，在波浪间形成半透明水幕。极夜来临前微弱的地平线光线在大气中散射为粉紫色。低垂的黄色圆月照亮起伏的冷水洋面。扬起的尾鳍与海面翻腾的白浪共同界定了极地海洋的开阔空间。",
-      "copyright": "© Espen Bergersen/Minden Pictures",
-      "source_page_url": "https://bing.ee123.net/img/?date=20261120&size=1920x1080&imgtype=jpg&type=json",
-      "source_image_url": "https://cn.bing.com/th?id=OHR.Megaptera_ZH-CN3361807823_1920x1080.jpg",
-      "fetched_url": "https://cn.bing.com/th?id=OHR.Megaptera_ZH-CN3361807823_1920x1080.jpg",
+      "date": "2026-11-21",
+      "title": "法国普罗旺斯-阿尔卑斯-蔚蓝海岸大区尼斯 ",
+      "headline": "法国普罗旺斯-阿尔卑斯-蔚蓝海岸大区尼斯 ",
+      "subtitle": "陶瓦屋顶下的梦",
+      "description": "在今天的图片中，尼斯沐浴在温暖的阳光下：赤陶色屋顶、历史悠久的教堂和柔和色调的建筑外墙，拼成法国蔚蓝海岸的一幅斑斓图景。尼斯由古希腊人建立，长期与意大利王室萨伏依王朝有着渊源，并于1860年正式成为法国的一部分。如今，在这座位于法国南部的海滨城市，那段层层叠叠的历史依然随处可见：古老的建筑与蔚蓝的地中海海水、蔚蓝海岸阳光照耀的山丘交相辉映。\n尼斯的红瓦屋顶与意大利式穹顶并非偶然，根源在1860年之前这里归属萨伏依王朝，城市建筑长期沿用热那亚工匠的营造法式。外墙涂抹的赭黄石灰砂浆掺入碎瓦粉，既抵御高盐度海风的侵蚀，也让色调与皮埃蒙特平原的村镇一脉相承。凭借密集的坡地排屋，建筑顺势层叠而上，把狭窄街巷压缩成天然遮阳的通道。1860年尼斯公投并入法国后，这种意大利基因才被纳入法兰西的行政版图。",
+      "copyright": "© Siripong Kaewla-iad/Getty Images",
+      "source_page_url": "https://bing.ee123.net/img/?date=20261121&size=1920x1080&imgtype=jpg&type=json",
+      "source_image_url": "https://cn.bing.com/th?id=OHR.RedNice_ZH-CN3518429866_1920x1080.jpg",
+      "fetched_url": "https://cn.bing.com/th?id=OHR.RedNice_ZH-CN3518429866_1920x1080.jpg",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/bing-2026-11-20-6e0008348cd5.jpg",
-      "image_path": "/images/daily/bing-2026-11-20-6e0008348cd5.jpg",
-      "bytes": 334458,
-      "sha256": "6e0008348cd511655ef374e224e4f98d2588487a10f683322141df3aeeff2541"
+      "local_url": "/images/daily/bing-2026-11-21-a64ccff29cf4.jpg",
+      "image_path": "/images/daily/bing-2026-11-21-a64ccff29cf4.jpg",
+      "bytes": 339616,
+      "sha256": "a64ccff29cf4a1fed0acf48e4c1abea5b785cd3314ed5d37dc856e019c90adbc"
     },
     "apod": {
       "date": "2026-09-29",
@@ -37,19 +37,19 @@
       "sha256": "5b2ab38fe6757cb9e8423fddb427e4ce6f8e40aeeef131a29f5aea87131579e9"
     },
     "wikipedia": {
-      "date": "2026-11-20",
-      "title": "Telamonia dimidiata female",
-      "description": "Female Telamonia dimidiata in the Lalbagh Botanical gardens, Bangalore, India",
-      "copyright": "Muhammad Mahdi Karim · Own work · GFDL 1.2",
-      "article_url": "https://commons.wikimedia.org/wiki/File:Telamonia_dimidiata_female.jpg",
-      "source_page_url": "https://commons.wikimedia.org/wiki/File:Telamonia_dimidiata_female.jpg",
-      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Telamonia_dimidiata_female.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
-      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Telamonia_dimidiata_female.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "date": "2026-11-21",
+      "title": "Fortress of Guaita 2013-09-19",
+      "description": "The fortress of Città di San Marino , viewed from the side of Torre Guaita on Monte Titano ( Appennino tosco-romagnolo ), Central Italy . UNESCO World Heritage Site.",
+      "copyright": "Max_Ryazanov · Own work · CC BY-SA 3.0",
+      "article_url": "https://commons.wikimedia.org/wiki/File:Fortress_of_Guaita_2013-09-19.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Fortress_of_Guaita_2013-09-19.jpg",
+      "source_image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Fortress_of_Guaita_2013-09-19.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "fetched_url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Fortress_of_Guaita_2013-09-19.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
       "mime": "image/jpeg",
-      "local_url": "/images/daily/wikipedia-2026-11-20-9f02957c3550.jpg",
-      "image_path": "/images/daily/wikipedia-2026-11-20-9f02957c3550.jpg",
-      "bytes": 1705652,
-      "sha256": "9f02957c35503854d8f0bb17e94d00e5c93474e7f5585128baa07f7c6d4ca3cd"
+      "local_url": "/images/daily/wikipedia-2026-11-21-d454b10286b0.jpg",
+      "image_path": "/images/daily/wikipedia-2026-11-21-d454b10286b0.jpg",
+      "bytes": 4518930,
+      "sha256": "d454b10286b0c2b95dee68c6469d5d399ae4118c0b7e076a4a614fc812b8f47b"
     }
   }
 }
