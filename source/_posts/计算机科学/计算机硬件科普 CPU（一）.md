@@ -6,7 +6,7 @@ copyright_author: 'emmm'
 tags: ['科普','计算机硬件','CPU','数字电路']
 categories: '计算机科学'
 katex: true
-cover: '/images/计算机硬件科普 CPU（一）/logic-to-alu.png'
+cover: '/images/计算机硬件科普 CPU（一）/cover.png'
 ---
 
 {% note blue 'fas fa-microchip' %}

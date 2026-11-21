@@ -11,7 +11,7 @@ aside: true
 comments: false
 tags: []
 categories: []
-cover: '/images/计算机硬件科普 序/desktop-hardware.png'
+cover: '/images/计算机硬件科普 序/cover.png'
 ---
 
 {% note blue 'fas fa-desktop' %}

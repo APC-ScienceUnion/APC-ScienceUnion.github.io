@@ -12,7 +12,7 @@ comments: false
 tags: []
 categories: []
 katex: true
-cover: '/images/计算机硬件科普 CPU（一）/logic-to-alu.png'
+cover: '/images/计算机硬件科普 CPU（一）/cover.png'
 ---
 
 {% note blue 'fas fa-microchip' %}
