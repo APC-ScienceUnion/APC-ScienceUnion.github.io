@@ -1,6 +1,6 @@
 ---
 title: '计算机硬件科普 CPU（一）'
-date: 2026-11-08 12:00:00
+date: 2026-11-21 12:00:00
 author: 'emmm'
 copyright_author: 'emmm'
 tags: ['科普','计算机硬件','CPU','数字电路']
@@ -14,7 +14,7 @@ cover: '/images/计算机硬件科普 CPU（一）/logic-to-alu.png'
 {% endnote %}
 
 > 作者：emmm
-> 审核：赖渊、**silverxz**
+> 审核：**silverxz**
 
 &emsp;&emsp;在序篇里我们聊到，当你双击打开软件、在表格里计算一组数字的总和，或者在文档里敲下一行字时，背后都是 **CPU** 在按照软件给出的操作步骤，一条接一条地执行**指令**。
 

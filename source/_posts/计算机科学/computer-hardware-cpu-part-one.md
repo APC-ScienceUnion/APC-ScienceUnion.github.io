@@ -1,12 +1,12 @@
 ---
 layout: post
 title: 'Computer hardware explained: CPU (I)'
-date: 2026-11-08 12:00:00
+date: 2026-11-21 12:00:00
 author: 'emmm'
 copyright_author: 'emmm'
 lang: en
 translation_key: '计算机硬件科普 CPU（一）'
-permalink: en/2026/11/08/computer-hardware-cpu-part-one/
+permalink: en/2026/11/21/computer-hardware-cpu-part-one/
 aside: true
 comments: false
 tags: []
@@ -20,7 +20,7 @@ The phones and computers we use every day all depend on a heart—the CPU. How c
 {% endnote %}
 
 > Author: emmm
-> Reviewed by: 赖渊, **silverxz**
+> Reviewed by: **silverxz**
 
 In the introductory installment, we discussed how, whenever you double-click to open a program, calculate the sum of a set of numbers in a spreadsheet, or type a line in a document, the **CPU** is working behind the scenes, following the steps supplied by the software and executing **instructions** one after another.
 
