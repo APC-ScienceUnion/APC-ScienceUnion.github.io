@@ -21,7 +21,7 @@
       <link href="/2026/11/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE%20CPU%EF%BC%88%E4%B8%80%EF%BC%89/"/>
       <url>/2026/11/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE%20CPU%EF%BC%88%E4%B8%80%EF%BC%89/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note blue icon flat"><i class="note-icon fas fa-microchip"></i><p>我们日常生活中使用的手机和电脑都离不开一个心脏——CPU。为什么这枚小小的电子元件能够理解指令、进行计算，甚至运行起复杂的游戏？让我们看看 CPU 的背后究竟用了什么魔法吧。</p></div><blockquote><p>作者：emmm<br />审核：<strong>silverxz</strong></p></blockquote><p>  在序篇里我们聊到，当你双击打开软件、在表格里计算一组数字的总和，或者在文档里敲下一行字时，背后都是 <strong>CPU</strong> 在按照软件给出的操作步骤，一条接一条地执行<strong>指令</strong>。</p><p>  但如果放大观察 CPU 内部，你看到的只是密密麻麻的<strong>晶体管</strong>与连线，很难直接认出哪里负责计算、哪里负责保存数据。</p><p>  这不由得让人好奇：一堆通上电的金属和硅片，到底是怎么学会“算数”和“判断”，又是怎么一步步把程序跑起来的？要解开这个谜题，我们要先看看芯片最底层长什么样。</p><h2 id="一-会算账的电路"><a class="markdownIt-Anchor" href="#一-会算账的电路"></a> 一、会算账的电路</h2><p>  我们平时算数习惯用<strong>十进制</strong>，但在电路的世界里，想要可靠地区分十种不同的电压并不容易——稍微受点干扰，数字“5”就可能被误读成“6”。一种更容易实现的方法，是只区分两种状态：用较高的一段电压范围表示 1，称为<strong>高电平</strong>；用较低的一段电压范围表示 0，称为<strong>低电平</strong>。<strong>低电平并不等于断电。</strong></p><p>  这也是计算机广泛采用<strong>二进制</strong>的重要原因。一个只能取“0”或“1”的最小信息单位，就叫做一个<strong>位（Bit，也称比特）</strong>。把许多个位组合起来，<strong>位数越多，能表示的数值范围就越大</strong>；按照约定的<strong>编码</strong>，还能表示文字乃至程序指令。</p><p>  有了表示数字的方法，电路又是怎样处理这些 0 和 1 的呢？答案就在一种叫 <strong>MOSFET</strong>（<strong>金属-氧化物-半导体场效应晶体管</strong>）的微小元件里。</p><p>  我们不需要深究它复杂的半导体物理细节，只需要把它看作一个<strong>用电压控制的开关</strong>。以常见的一类晶体管为例，在适当的连接方式下，控制端电压足够高时，开关就导通；足够低时，开关就关断。实际芯片会搭配使用两类控制特性互补的晶体管，以降低<strong>静态功耗</strong>，这就是 <strong>CMOS 技术</strong>的基础。不过，真实电路仍然存在漏电，开关切换时也会消耗能量。</p><p>  单个开关只能决定电流通不通，但把几个开关巧妙地串联或并联起来，就能搭出遵循逻辑规则的<strong>基本逻辑门</strong>：</p><p>  <strong>非门（NOT）</strong>：输入 1 就输出 0，输入 0 就输出 1，专门负责输出相反值。</p><p>  <strong>与门（AND）</strong>：只有两个输入端同时为 1 时，输出才为 1，相当于“两个条件都满足才放行”。</p><p>  <strong>或门（OR）</strong>：只要有一个输入端为 1，输出就为 1，相当于“满足任意一个条件就放行”。</p><p>  二进制的加法规则很简单：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>+</mo><mn>0</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">0+0=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0+1=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>1</mn><msub><mn>0</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1+1=10_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.79444em;vertical-align:-0.15em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>（下标 2 表示二进制）。两个 1 相加时，本位变成 0，向左边进一位 1。先只看两个一位数相加，<strong>不考虑更低位传来的进位</strong>，可以拆成两件事：</p><ol><li><p><strong>进位怎么办？</strong></p><p>显然只有当两个数都是 1 时才产生进位——这正好就是一个现成的与门。</p></li><li><p><strong>本位留什么？</strong></p><p>两个数不一样时是 1，相同时是 0（也就是“至少有一个是 1，但不能两个都是 1”）。把前面的与门、或门和非门像拼积木一样组合一下，这个逻辑就被轻松搭出来了。</p></li></ol><p>  把算本位和算进位的门电路打包在一起，就得到了最简单的一位加法电路，也叫<strong>半加器</strong>。要计算多位数，<strong>每一位还需要把低一位传来的进位算进去</strong>；将能够处理这种进位的电路连接起来，就能构成<strong>多位加法器（Adder）</strong>。</p><p>  有时，电路还需要从几路数据中选择一路，例如在加法结果和逻辑运算结果之间选择本次需要的结果。这就要用到<strong>选择器（MUX，Multiplexer，也称多路复用器）</strong>。你可以把它想象成铁路上的“道岔”：<strong>控制信号</strong>决定道岔的方向，让指定的一路数据通过。</p><p>  把加法器、选择器以及各种逻辑运算电路组合起来，就可以构成 CPU 内部负责算术和逻辑运算的重要部件——<strong>算术逻辑单元（ALU，Arithmetic Logic Unit）</strong>。</p><p><img src="https://img.apc-science.cn/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE%20CPU%EF%BC%88%E4%B8%80%EF%BC%89/logic-to-alu.png" alt="电控开关、基本逻辑门、加法器与选择器逐级组合为算术逻辑单元（ALU）。" /></p><center><font size=2px color=grey>图 1 从电控开关到算术逻辑单元（ALU）的构建层次</font></center><h2 id="二-电路具体怎样协作"><a class="markdownIt-Anchor" href="#二-电路具体怎样协作"></a> 二、电路具体怎样协作</h2><p>  有了 ALU，电路已经能算加法、做比较了，但它本身不会替程序记住上一步算出的数。程序往往需要保存中间结果，再用同一套运算电路接着完成后面的步骤。</p><p>  因此，我们还要解决两个问题：<strong>结果存在哪里，又在什么时候更新</strong>？在常见的<strong>同步电路</strong>中，这就需要<strong>寄存器</strong>和<strong>时钟</strong>。下面用一个简化模型，看看它们怎样配合。</p><p>  寄存器（Register）是 CPU 核心内部紧挨着运算电路、读写很快的“贴身草稿纸”。它利用<strong>反馈电路</strong>结构，<strong>在供电正常时保持当前保存的 0 和 1</strong>。ALU 算出的中间结果可以先存进寄存器，后面的步骤需要时，再从中快速读出。</p><p>  读到这里，你也许会问：寄存器这么快，为啥不多做点呢？因为高速读写所需的存储单元、读写端口和连接线路会占用芯片面积，也会增加功耗。寄存器数量增加后，选择和传送数据的电路还会变得更复杂，可能拖慢访问速度，因此不能无限增加。</p><p>  那么，寄存器什么时候该保持旧数据，什么时候该接收新数据呢？</p><p>  这就需要<strong>时钟信号</strong>（<strong>Clock</strong>）来约定更新的时刻。</p><p>  时钟信号像节拍器一样，周而复始地发出高低交替的电脉冲。这里的“一拍”，指一个完整的<strong>时钟周期</strong>，例如从一次<strong>上升沿</strong>到下一次上升沿的间隔；上升沿就是电平由低变高的瞬间。在这个简化模型里，输入寄存器在一个上升沿更新数据，运算电路随后进行计算；到下一个上升沿，需要接收结果的寄存器再把已经稳定的数据采样、保存下来。<strong>时钟约定什么时候更新，控制电路则决定读哪些数据、做什么运算、把结果写到哪里。</strong></p><p><img src="https://img.apc-science.cn/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE%20CPU%EF%BC%88%E4%B8%80%EF%BC%89/clock-and-registers.png" alt="输入寄存器在一个上升沿更新数据，数据经过 ALU 运算后，由结果寄存器在下一个上升沿采样保存。" /></p><center><font size=2px color=grey>图 2 时钟信号与寄存器配合推进数据示意</font></center><p>  注：图中示意时钟、寄存器与运算电路的配合。以相邻两个上升沿为例，前一个边沿更新输入，中间留出计算时间，后一个边沿保存结果。</p><p>  在你购买电脑或配件的时候，看到的 <strong>5 GHz</strong> 之类的参数，说的就是<strong>时钟频率</strong>：当 CPU 核心以这一频率运行时，相当于每秒钟打 <strong>50 亿拍</strong>。在每个周期平均完成的工作量等其他条件相同时，频率越高，完成同样任务所需的时间通常越短。不过，性能还取决于<strong>平均每个时钟周期完成的指令数</strong>，也就是 <strong>IPC（Instructions Per Cycle）</strong>。频率与 IPC 怎样共同影响性能，我们后面会专门聊到。</p><h2 id="三-一条指令的完整旅程"><a class="markdownIt-Anchor" href="#三-一条指令的完整旅程"></a> 三、一条指令的完整旅程</h2><p>  现在，算账的 ALU、存草稿的寄存器、打拍子的时钟都已经就位。我们终于可以回到序篇留下的问题：CPU 到底是怎么执行程序指令的？不妨假设你在表格软件里设置了一个简单的规则：“把单元格 A1 和 B1 的数字加起来；如果总和大于 100，就执行标红提醒的步骤。”</p><p>  这条规则最终需要许多<strong>机器指令</strong>配合完成。为了看清原理，我们只抽出读取数字、相加、判断和按条件跳转这几个动作，用一个简化的 CPU 模型来说明。程序的机器指令保存在<strong>内存</strong>里，CPU 中有一个叫<strong>程序计数器</strong>（<strong>PC，Program Counter</strong>）的特殊寄存器，就像一根指着菜谱的竹签，帮助 CPU 记录接下来从哪里取指令。</p><p>  假设前面的取数操作已经把 A1 和 B1 的数值读入寄存器。接下来，我们先跟随其中的加法指令，看看它经过的四个基本环节。这里介绍的是便于理解的流程，<strong>并不表示每个环节都固定占一拍，也不表示所有指令的具体步骤完全相同</strong>。</p><p>  <strong>取指（Fetch）</strong>：CPU 根据程序计数器（PC）提供的地址，从内存中取来这条加法指令。在顺序执行的情况下，取指位置随后向下一条指令推进。</p><p>  <strong>译码（Decode）</strong>：取回来的指令是一串 0 和 1 组成的编码。<strong>指令译码器</strong>像在“翻字典”，识别出这是一条加法指令，并确定要从哪些寄存器读取数据、把结果写到哪个寄存器。这些参与运算的数据，也叫<strong>操作数</strong>。</p><p>  <strong>执行（Execute）</strong>：控制电路按照译码结果发出控制信号，让两个操作数从寄存器送入 ALU，并让 ALU 按照加法规则算出总和。</p><p>  <strong>写回（Writeback）</strong>：运算结果通过写回通路，<strong>存入指定的目标寄存器</strong>，供后续指令使用。如果程序还需要把结果保存到内存，则由相应的存储操作完成。</p><p>  加法完成后，后续指令还要判断总和是否大于 100。比较与控制电路会根据判断结果，决定接下来是按原顺序取指，还是把 PC 更新为另一处地址。如果条件满足，就转到执行标红提醒的那段程序。这样，<strong>程序就能根据计算结果选择不同的执行路径</strong>。</p><p><img src="https://img.apc-science.cn/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE%20CPU%EF%BC%88%E4%B8%80%EF%BC%89/instruction-cycle.png" alt="CPU 从内存取指并译码，从寄存器读取操作数交给 ALU 运算，再沿写回通路将结果保存到寄存器。" /></p><center><font size=2px color=grey>图 3 CPU 执行一条指令的核心流程</font></center><p>  注：图中的方框表示硬件部件，取指、译码、执行和写回表示处理指令的环节。本例的加法结果写回寄存器；写入内存需要相应的存储操作。<strong>条件跳转</strong>则通过更新 PC 改变后续取指位置。</p><p>  CPU 不断取来指令、解析含义，再调动相应的电路完成操作。大量指令这样接续执行，就能实现软件、游戏和操作系统中的各种功能。</p><p>  不过，当我们把目光从单条指令拉远，另一个问题就出现了：</p><p>  刚才我们看到，CPU 执行指令时，需要取得指令和数据。偏偏 CPU 内部打拍子的速度实在太快了——在 CPU 眼里，寄存器里的数据伸手就能拿到，而去内存取一趟数据，慢得就像要跨过半个城市去仓库提货。如果所需的指令和数据都得临时从内存取来，<strong>哪怕 CPU 算得再快，也会把不少时间花在等待上</strong>。</p><p>  CPU 究竟是怎么解决这个难题的？<strong>缓存</strong>的作用又是什么？且待下回分解。</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note blue icon flat"><i class="note-icon fas fa-microchip"></i><p>我们日常生活中使用的手机和电脑都离不开一个心脏——CPU。为什么这枚小小的电子元件能够理解指令、进行计算，甚至运行起复杂的游戏？让我们看看 CPU 的背后究竟用了什么魔法吧。</p></div><blockquote><p>作者：emmm<br />审核：<strong>silverxz</strong></p></blockquote><p>  在序篇里我们聊到，当你双击打开软件、在表格里计算一组数字的总和，或者在文档里敲下一行字时，背后都是 <strong>CPU</strong> 在按照软件给出的操作步骤，一条接一条地执行指令。</p><p>  但如果放大观察 CPU 内部，你看到的只是密密麻麻的晶体管与连线，很难直接认出哪里负责计算、哪里负责保存数据。</p><p>  这不由得让人好奇：一堆通上电的金属和硅片，到底是怎么学会“算数”和“判断”，又是怎么一步步把程序跑起来的？要解开这个谜题，我们要先看看芯片最底层长什么样。</p><h2 id="一-会算账的电路"><a class="markdownIt-Anchor" href="#一-会算账的电路"></a> 一、会算账的电路</h2><p>  我们平时算数习惯用<strong>十进制</strong>，但在电路的世界里，想要可靠地区分十种不同的电压并不容易——稍微受点干扰，数字“5”就可能被误读成“6”。一种更容易实现的方法，是只区分两种状态：用较高的一段电压范围表示 1，称为<strong>高电平</strong>；用较低的一段电压范围表示 0，称为<strong>低电平</strong>。<strong>低电平并不等于断电。</strong></p><p>  这也是计算机广泛采用<strong>二进制</strong>的重要原因。一个只能取“0”或“1”的最小信息单位，就叫做一个<strong>位（Bit，也称比特）</strong>。把许多个位组合起来，<strong>位数越多，能表示的数值范围就越大</strong>；按照约定的<strong>编码</strong>，还能表示文字乃至程序指令。</p><p>  有了表示数字的方法，电路又是怎样处理这些 0 和 1 的呢？答案就在一种叫 <strong>MOSFET</strong>（<strong>金属-氧化物-半导体场效应晶体管</strong>）的微小元件里。</p><p>  我们不需要深究它复杂的半导体物理细节，只需要把它看作一个<strong>用电压控制的开关</strong>。以常见的一类晶体管为例，在适当的连接方式下，控制端电压足够高时，开关就导通；足够低时，开关就关断。实际芯片会搭配使用两类控制特性互补的晶体管，以降低<strong>静态功耗</strong>，这就是 <strong>CMOS 技术</strong>的基础。不过，真实电路仍然存在漏电，开关切换时也会消耗能量。</p><p>  单个开关只能决定电流通不通，但把几个开关巧妙地串联或并联起来，就能搭出遵循逻辑规则的<strong>基本逻辑门</strong>：</p><ul><li><p><strong>非门（NOT）</strong>：输入 1 就输出 0，输入 0 就输出 1，专门负责输出相反值。</p></li><li><p><strong>与门（AND）</strong>：只有两个输入端同时为 1 时，输出才为 1，相当于“两个条件都满足才放行”。</p></li><li><p><strong>或门（OR）</strong>：只要有一个输入端为 1，输出就为 1，相当于“满足任意一个条件就放行”。</p></li></ul><p>  二进制的加法规则很简单：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>+</mo><mn>0</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">0+0=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0+1=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>1</mn><msub><mn>0</mn><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">1+1=10_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.79444em;vertical-align:-0.15em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>（下标 2 表示二进制）。两个 1 相加时，本位变成 0，向左边进一位 1。先只看两个一位数相加，<strong>不考虑更低位传来的进位</strong>，可以拆成两件事：</p><ol><li><p><strong>进位怎么办？</strong></p><p>显然只有当两个数都是 1 时才产生进位——这正好就是一个现成的与门。</p></li><li><p><strong>本位留什么？</strong></p><p>两个数不一样时是 1，相同时是 0（也就是“至少有一个是 1，但不能两个都是 1”）。把前面的与门、或门和非门像拼积木一样组合一下，这个逻辑就被轻松搭出来了。</p></li></ol><p>  把算本位和算进位的门电路打包在一起，就得到了最简单的一位加法电路，也叫<strong>半加器</strong>。要计算多位数，<strong>每一位还需要把低一位传来的进位算进去</strong>；将能够处理这种进位的电路连接起来，就能构成<strong>多位加法器（Adder）</strong>。</p><p>  有时，电路还需要从几路数据中选择一路，例如在加法结果和逻辑运算结果之间选择本次需要的结果。这就要用到<strong>选择器（MUX，Multiplexer，也称多路复用器）</strong>。你可以把它想象成铁路上的“道岔”：控制信号决定道岔的方向，让指定的一路数据通过。</p><p>  把加法器、选择器以及各种逻辑运算电路组合起来，就可以构成 CPU 内部负责算术和逻辑运算的重要部件——<strong>算术逻辑单元（ALU，Arithmetic Logic Unit）</strong>。</p><p><img src="https://img.apc-science.cn/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE%20CPU%EF%BC%88%E4%B8%80%EF%BC%89/logic-to-alu.png" alt="电控开关、基本逻辑门、加法器与选择器逐级组合为算术逻辑单元（ALU）。" /></p><center><font size=2px color=grey>图 1 从电控开关到算术逻辑单元（ALU）的构建层次</font></center><h2 id="二-电路具体怎样协作"><a class="markdownIt-Anchor" href="#二-电路具体怎样协作"></a> 二、电路具体怎样协作</h2><p>  有了 ALU，电路已经能算加法、做比较了，但它本身不会替程序记住上一步算出的数。程序往往需要保存中间结果，再用同一套运算电路接着完成后面的步骤。</p><p>  因此，我们还要解决两个问题：<strong>结果存在哪里，又在什么时候更新</strong>？在常见的同步电路中，这就需要<strong>寄存器</strong>和<strong>时钟</strong>。下面用一个简化模型，看看它们怎样配合。</p><p>  寄存器（Register）是 CPU 核心内部紧挨着运算电路、读写很快的“贴身草稿纸”。它利用反馈电路结构，<strong>在供电正常时保持当前保存的 0 和 1</strong>。ALU 算出的中间结果可以先存进寄存器，后面的步骤需要时，再从中快速读出。</p><p>  读到这里，你也许会问：寄存器这么快，为啥不多做点呢？因为高速读写所需的存储单元、读写端口和连接线路会占用芯片面积，也会增加功耗。寄存器数量增加后，选择和传送数据的电路还会变得更复杂，可能拖慢访问速度，因此不能无限增加。</p><p>  那么，寄存器什么时候该保持旧数据，什么时候该接收新数据呢？</p><p>  这就需要<strong>时钟信号</strong>（<strong>Clock</strong>）来约定更新的时刻。</p><p>  时钟信号像节拍器一样，周而复始地发出高低交替的电脉冲。这里的“一拍”，指一个完整的<strong>时钟周期</strong>，例如从一次<strong>上升沿</strong>到下一次上升沿的间隔；上升沿就是电平由低变高的瞬间。在这个简化模型里，输入寄存器在一个上升沿更新数据，运算电路随后进行计算；到下一个上升沿，需要接收结果的寄存器再把已经稳定的数据采样、保存下来。<strong>时钟约定什么时候更新，控制电路则决定读哪些数据、做什么运算、把结果写到哪里。</strong></p><p><img src="https://img.apc-science.cn/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE%20CPU%EF%BC%88%E4%B8%80%EF%BC%89/clock-and-registers.png" alt="输入寄存器在一个上升沿更新数据，数据经过 ALU 运算后，由结果寄存器在下一个上升沿采样保存。" /></p><center><font size=2px color=grey>图 2 时钟信号与寄存器配合推进数据示意</font></center><p>  注：图中示意时钟、寄存器与运算电路的配合。以相邻两个上升沿为例，前一个边沿更新输入，中间留出计算时间，后一个边沿保存结果。</p><p>  在你购买电脑或配件的时候，看到的 <strong>5 GHz</strong> 之类的参数，说的就是<strong>时钟频率</strong>：当 CPU 核心以这一频率运行时，相当于每秒钟打 <strong>50 亿拍</strong>。在每个周期平均完成的工作量等其他条件相同时，频率越高，完成同样任务所需的时间通常越短。不过，性能还取决于<strong>平均每个时钟周期完成的指令数</strong>，也就是 <strong>IPC（Instructions Per Cycle）</strong>。频率与 IPC 怎样共同影响性能，我们后面会专门聊到。</p><h2 id="三-一条指令的完整旅程"><a class="markdownIt-Anchor" href="#三-一条指令的完整旅程"></a> 三、一条指令的完整旅程</h2><p>  现在，算账的 ALU、存草稿的寄存器、打拍子的时钟都已经就位。我们终于可以回到序篇留下的问题：CPU 到底是怎么执行程序指令的？不妨假设你在表格软件里设置了一个简单的规则：“把单元格 A1 和 B1 的数字加起来；如果总和大于 100，就执行标红提醒的步骤。”</p><p>  这条规则最终需要许多<strong>机器指令</strong>配合完成。为了看清原理，我们只抽出读取数字、相加、判断和按条件跳转这几个动作，用一个简化的 CPU 模型来说明。程序的机器指令保存在<strong>内存</strong>里，CPU 中有一个叫<strong>程序计数器</strong>（<strong>PC，Program Counter</strong>）的特殊寄存器，就像一根指着菜谱的竹签，帮助 CPU 记录接下来从哪里取指令。</p><p>  假设前面的取数操作已经把 A1 和 B1 的数值读入寄存器。接下来，我们先跟随其中的加法指令，看看它经过的四个基本环节。这里介绍的是便于理解的流程，<strong>并不表示每个环节都固定占一拍，也不表示所有指令的具体步骤完全相同</strong>。</p><ul><li><p><strong>取指（Fetch）</strong>：CPU 根据程序计数器（PC）提供的地址，从内存中取来这条加法指令。在顺序执行的情况下，取指位置随后向下一条指令推进。</p></li><li><p><strong>译码（Decode）</strong>：取回来的指令是一串 0 和 1 组成的编码。<strong>指令译码器</strong>像在“翻字典”，识别出这是一条加法指令，并确定要从哪些寄存器读取数据、把结果写到哪个寄存器。这些参与运算的数据，也叫<strong>操作数</strong>。</p></li><li><p><strong>执行（Execute）</strong>：控制电路按照译码结果发出控制信号，让两个操作数从寄存器送入 ALU，并让 ALU 按照加法规则算出总和。</p></li><li><p><strong>写回（Writeback）</strong>：运算结果通过写回通路，<strong>存入指定的目标寄存器</strong>，供后续指令使用。如果程序还需要把结果保存到内存，则由相应的存储操作完成。</p></li></ul><p>  加法完成后，后续指令还要判断总和是否大于 100。比较与控制电路会根据判断结果，决定接下来是按原顺序取指，还是把 PC 更新为另一处地址。如果条件满足，就转到执行标红提醒的那段程序。这样，<strong>程序就能根据计算结果选择不同的执行路径</strong>。</p><p><img src="https://img.apc-science.cn/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%A7%91%E6%99%AE%20CPU%EF%BC%88%E4%B8%80%EF%BC%89/instruction-cycle.png" alt="CPU 从内存取指并译码，从寄存器读取操作数交给 ALU 运算，再沿写回通路将结果保存到寄存器。" /></p><center><font size=2px color=grey>图 3 CPU 执行一条指令的核心流程</font></center><p>  注：图中的方框表示硬件部件，取指、译码、执行和写回表示处理指令的环节。本例的加法结果写回寄存器；写入内存需要相应的存储操作。条件跳转则通过更新 PC 改变后续取指位置。</p><p>  CPU 不断取来指令、解析含义，再调动相应的电路完成操作。大量指令这样接续执行，就能实现软件、游戏和操作系统中的各种功能。</p><p>  不过，当我们把目光从单条指令拉远，另一个问题就出现了：</p><p>  刚才我们看到，CPU 执行指令时，需要取得指令和数据。偏偏 CPU 内部打拍子的速度实在太快了——在 CPU 眼里，寄存器里的数据伸手就能拿到，而去内存取一趟数据，慢得就像要跨过半个城市去仓库提货。如果所需的指令和数据都得临时从内存取来，<strong>哪怕 CPU 算得再快，也会把不少时间花在等待上</strong>。</p><p>  CPU 究竟是怎么解决这个难题的？<strong>缓存</strong>的作用又是什么？且待下回分解。</p>]]></content>
       
       
       <categories>
@@ -161,9 +161,9 @@
             
             <tag> 科普 </tag>
             
-            <tag> 算法 </tag>
-            
             <tag> 计算机科学 </tag>
+            
+            <tag> 算法 </tag>
             
             <tag> 计算复杂性 </tag>
             
@@ -450,9 +450,9 @@
             
             <tag> 能源 </tag>
             
-            <tag> 热力学 </tag>
-            
             <tag> 发电 </tag>
+            
+            <tag> 热力学 </tag>
             
             <tag> 热电效应 </tag>
             
@@ -485,13 +485,13 @@
       
         <tags>
             
-            <tag> 数学 </tag>
-            
-            <tag> 概率论 </tag>
+            <tag> 计算机科学 </tag>
             
             <tag> 算法 </tag>
             
-            <tag> 计算机科学 </tag>
+            <tag> 数学 </tag>
+            
+            <tag> 概率论 </tag>
             
         </tags>
       
@@ -518,13 +518,13 @@
             
             <tag> 科普 </tag>
             
+            <tag> 热力学 </tag>
+            
             <tag> 自然对流 </tag>
             
             <tag> 传热学 </tag>
             
             <tag> 流体力学 </tag>
-            
-            <tag> 热力学 </tag>
             
         </tags>
       
@@ -582,11 +582,11 @@
             
             <tag> 能源 </tag>
             
-            <tag> 热力学 </tag>
-            
             <tag> 发电 </tag>
             
             <tag> 热力循环 </tag>
+            
+            <tag> 热力学 </tag>
             
             <tag> 电力系统 </tag>
             
@@ -969,13 +969,13 @@
       
         <tags>
             
+            <tag> 科普组第1小组 </tag>
+            
             <tag> 数学 </tag>
             
             <tag> 证明 </tag>
             
             <tag> 圆周率 </tag>
-            
-            <tag> 科普组第1小组 </tag>
             
         </tags>
       
@@ -1000,9 +1000,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 航天 </tag>
             
@@ -1060,9 +1060,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 宇宙 </tag>
             
@@ -1153,9 +1153,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 恒星 </tag>
             
@@ -1366,9 +1366,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 恒星 </tag>
             
@@ -1395,11 +1395,11 @@
       
         <tags>
             
-            <tag> 科普组第1小组 </tag>
-            
             <tag> 空气动力学 </tag>
             
             <tag> 汽车 </tag>
+            
+            <tag> 科普组第1小组 </tag>
             
         </tags>
       
@@ -1525,13 +1525,13 @@
       
         <tags>
             
+            <tag> 科普组第24小组 </tag>
+            
             <tag> 天文学 </tag>
             
             <tag> 地球 </tag>
             
             <tag> 月球 </tag>
-            
-            <tag> 科普组第24小组 </tag>
             
         </tags>
       
@@ -1614,8 +1614,6 @@
       
         <tags>
             
-            <tag> 科普组第24小组 </tag>
-            
             <tag> 颜色心理学 </tag>
             
             <tag> 心理学 </tag>
@@ -1623,6 +1621,8 @@
             <tag> 设计 </tag>
             
             <tag> 用户体验 </tag>
+            
+            <tag> 科普组第24小组 </tag>
             
         </tags>
       
@@ -1895,9 +1895,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 白矮星 </tag>
             
@@ -2726,9 +2726,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 历法 </tag>
             
@@ -2933,9 +2933,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 天体表 </tag>
             
@@ -3113,9 +3113,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 历法 </tag>
             
@@ -3468,9 +3468,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 历法 </tag>
             
@@ -3532,9 +3532,9 @@
       
         <tags>
             
-            <tag> 天文学 </tag>
-            
             <tag> 科普组第24小组 </tag>
+            
+            <tag> 天文学 </tag>
             
             <tag> 星空 </tag>
             
